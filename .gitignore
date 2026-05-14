@@ -1,0 +1,14 @@
+node_modules
+dist
+.DS_Store
+*.local
+.vite
+
+# PII — dados reais da Fila PLD (não commitar)
+src/data/registration-queue-real.json
+.tools/node/
+.tools/*.log
+
+# Credenciais e segredos
+.env
+certs/

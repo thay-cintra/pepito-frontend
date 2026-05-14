@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.cora.pepito.refresh</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/thay/Projetos Thay/pepito-frontend/.tools/refresh-daily.sh</string>
+  </array>
+
+  <!-- Roda 1x por dia, 06:00 da manhã. Ajuste Hour/Minute se quiser. -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>6</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+
+  <!-- Se a máquina estiver desligada às 06:00, roda assim que ligar. -->
+  <key>RunAtLoad</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>/Users/thay/Projetos Thay/pepito-frontend/.tools/refresh-daily.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/thay/Projetos Thay/pepito-frontend/.tools/refresh-daily.log</string>
+</dict>
+</plist>
