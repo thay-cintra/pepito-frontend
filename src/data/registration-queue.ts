@@ -1,15 +1,3 @@
-/**
- * Carrega os 29 casos REAIS da Fila PLD (sub_status=PLD_SCORE) extraídos via
- * Athena de `squad_core.registration_notebook_output_single` e enriquece cada
- * caso com:
- *   - 20+ links de verificação parametrizados (TSE, CNJ, sanções, mídia, etc.)
- *   - Análise consolidada baseada nos sinais já apurados pelo pipeline
- *   - Parecer sugerido em PT-BR
- *
- * O JSON `registration-queue-real.json` está no .gitignore (contém PII).
- * Para regenerar: rode `python pepito-frontend/.tools/build-real-queue.py`.
- */
-
 import type { RegistrationCase } from "@/types/registration";
 import {
   gerarResultados,
@@ -18,7 +6,6 @@ import {
   recomendacaoSugerida,
   gerarHistoricoComentarios,
 } from "./registration-enrich";
-import realData from "./registration-queue-real.json";
 
 type Raw = Omit<
   RegistrationCase,
@@ -35,20 +22,53 @@ interface QueuePayload {
   items: Raw[];
 }
 
-// JSON pode estar no formato antigo (array) ou novo ({_meta, items})
-const payload = realData as QueuePayload | Raw[];
-const RAW: Raw[] = Array.isArray(payload) ? payload : payload.items;
-const META = Array.isArray(payload)
-  ? { fetched_at: "", source_table: "squad_core.registration_notebook_output_single", total: payload.length, by_bucket: {} }
-  : payload._meta;
+export const QUEUE_UPDATED_EVENT = "pepito:queue-updated";
 
-export const REGISTRATION_META = META;
+const EMPTY_META: QueuePayload["_meta"] = {
+  fetched_at: "",
+  source_table: "squad_core.registration_notebook_output_single",
+  total: 0,
+  by_bucket: {},
+};
 
-export const REGISTRATION_QUEUE: RegistrationCase[] = RAW.map((c) => ({
-  ...c,
-  resultados_pesquisa: gerarResultados(c),
-  analise_geral: gerarAnaliseGeral(c),
-  parecer_sugerido: gerarParecerSugerido(c),
-  recomendacao_sugerida: recomendacaoSugerida(c),
-  historico_comentarios: gerarHistoricoComentarios(c),
-}));
+// Cache in-memory — atualizado pela API, nunca pelo build
+export let REGISTRATION_QUEUE: RegistrationCase[] = [];
+export let REGISTRATION_META: QueuePayload["_meta"] = EMPTY_META;
+
+function enrich(raw: Raw[]): RegistrationCase[] {
+  return raw.map((c) => ({
+    ...c,
+    resultados_pesquisa: gerarResultados(c),
+    analise_geral: gerarAnaliseGeral(c),
+    parecer_sugerido: gerarParecerSugerido(c),
+    recomendacao_sugerida: recomendacaoSugerida(c),
+    historico_comentarios: gerarHistoricoComentarios(c),
+  }));
+}
+
+/** Busca a fila do servidor (/api/queue) e atualiza o cache em memória.
+ *  Retorna quantos casos vieram e quantos são novos em relação ao cache anterior. */
+export async function refreshQueueFromServer(): Promise<{ total: number; novos: number }> {
+  try {
+    const res = await fetch("/api/queue");
+    if (!res.ok) return { total: 0, novos: 0 };
+    const payload: QueuePayload | Raw[] = await res.json();
+
+    const raw = Array.isArray(payload) ? payload : payload.items;
+    const meta = Array.isArray(payload) ? { ...EMPTY_META, total: raw.length } : payload._meta;
+
+    const anterior = new Set(REGISTRATION_QUEUE.map((c) => c.draft_id));
+    const novos = raw.filter((c) => !anterior.has(c.draft_id)).length;
+
+    REGISTRATION_QUEUE = enrich(raw);
+    REGISTRATION_META = meta;
+
+    window.dispatchEvent(new CustomEvent(QUEUE_UPDATED_EVENT, { detail: { total: raw.length, novos } }));
+    return { total: raw.length, novos };
+  } catch {
+    return { total: 0, novos: 0 };
+  }
+}
+
+// Carrega automaticamente ao importar o módulo
+refreshQueueFromServer().catch(() => {});

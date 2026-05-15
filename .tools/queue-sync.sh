@@ -1,27 +1,22 @@
 #!/usr/bin/env bash
-# Refresh diário da Fila PLD a partir do Athena (notebook coralago) +
-# pesquisa obrigatória de mídia externa + regeneração dos pareceres.
-#
-# Disparado pelo LaunchAgent com.cora.pepito.refresh (~/Library/LaunchAgents).
-# Logs: pepito-frontend/.tools/refresh-daily.log
+# queue-sync.sh — Sincronização rápida com Athena (sem pareceres AI, sem rebuild)
+# Disparado pelo botão "Sincronizar Athena" na interface.
+# Tempo típico: ~15-30 segundos vs ~5 min do refresh completo.
 set -euo pipefail
 
 ROOT="/Users/thay/Projetos Thay"
-LOG="$ROOT/pepito-frontend/.tools/refresh-daily.log"
+LOG="$ROOT/pepito-frontend/.tools/queue-sync.log"
 
 {
   echo ""
-  echo "=== $(date -Iseconds) refresh start ==="
+  echo "=== $(date -Iseconds) queue-sync start ==="
   cd "$ROOT"
-
-  # Ativa venv (coralago + openai + dotenv vivem aqui)
-  # shellcheck disable=SC1091
   source "$ROOT/.venv/bin/activate"
 
-  echo "[1/5] build-real-queue.py — pulling Athena ..."
+  echo "[1/3] build-real-queue.py — pulling Athena ..."
   python pepito-frontend/.tools/build-real-queue.py
 
-  echo "[1b] Sincronizando token_pf_cred e pareceres-real.json ..."
+  echo "[2/3] Sincronizando token_pf_cred e pareceres-real.json ..."
   python - << 'PYEOF'
 import json, sys
 from pathlib import Path
@@ -32,6 +27,7 @@ lake = Lake()
 root = Path.home() / "Projetos Thay/pepito-frontend/src/data"
 with open(root / "registration-queue-real.json") as f: d = json.load(f)
 items = d["items"] if isinstance(d, dict) else d
+if not items: print("  sem itens"); exit(0)
 ids_in = ",".join(f"'{i['draft_id']}'" for i in items)
 df = wr.athena.read_sql_query(
     f"SELECT draft_id, token_pf_cred, token_pj_cred FROM squad_core.registration_notebook_output_single WHERE draft_id IN ({ids_in})",
@@ -54,28 +50,11 @@ for item in items:
         if not any(c.get("acao")=="ENVIAR_LIDERANCA_PLD" for c in entry["comentarios"]):
             entry["comentarios"].insert(0, {"timestamp": envio.get("timestamp",""), "user_email": envio.get("user_email",""), "acao": "ENVIAR_LIDERANCA_PLD", "tipo": "parecer", "text": envio["text"]}); added += 1
 pr_path.write_text(json.dumps(pr, ensure_ascii=False, indent=2))
-print(f"  tokens: {sum(1 for i in items if i.get('token_pf_cred'))}/{len(items)} | pareceres-real +{added}")
+print(f"  tokens: {sum(1 for i in items if i.get('token_pf_cred'))}/{len(items)} | pareceres +{added}")
 PYEOF
 
-  echo "[2/5] fetch-media-findings.py — pesquisa obrigatória de mídia + JusBrasil API (CHECK_LIDERANCA + CHECK_ANALISTA) ..."
-  python pepito-frontend/.tools/fetch-media-findings.py
-
-  echo "[3/5] build-pep-history.py — historical PEP analyses ..."
-  python pepito-frontend/.tools/build-pep-history.py
-
-  echo "[3b] fetch-pep-planilha.py — mesclar planilha PEP ONB (falsos positivos + rotas compliance) ..."
-  python pepito-frontend/.tools/fetch-pep-planilha.py || echo "  ⚠️  Planilha não disponível (credenciais ausentes) — pulando"
-
-  echo "[4/5] generate-sugestao-parecer.py — ANALISTA pareceres ..."
-  python pepito-frontend/.tools/generate-sugestao-parecer.py
-
-  echo "[5/5] generate-sugestao-lideranca.py — LIDERANCA pareceres ..."
-  python pepito-frontend/.tools/generate-sugestao-lideranca.py
-
-  echo "[6/6] generate-pld-risk-scores.py — scores de probabilidade de LD ..."
+  echo "[3/3] generate-pld-risk-scores.py ..."
   python pepito-frontend/.tools/generate-pld-risk-scores.py
 
-  # Rebuild não é mais necessário — /api/queue serve o JSON diretamente em tempo real.
-
-  echo "=== $(date -Iseconds) refresh done ==="
+  echo "=== $(date -Iseconds) queue-sync done ==="
 } >> "$LOG" 2>&1

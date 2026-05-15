@@ -30,8 +30,10 @@ const LOCAL_MODE     = process.env.LOCAL_MODE === "true";
 
 const DIST          = path.join(__dirname, "dist");
 const ANALISES_FILE = path.join(__dirname, "src", "data", "analises-salvas.json");
+const QUEUE_FILE    = path.join(__dirname, "src", "data", "registration-queue-real.json");
 const REFRESH_LOG   = path.join(__dirname, ".tools", "refresh-daily.log");
 const REFRESH_SH    = path.join(__dirname, ".tools", "refresh-daily.sh");
+const QUEUE_SYNC_SH = path.join(__dirname, ".tools", "queue-sync.sh");
 const COOKIE_NAME   = "pepito_session";
 
 // ── JWT mínimo (HS256) — sem dependências externas ──────────────────────────
@@ -200,6 +202,43 @@ app.post("/api/analises", requireAuth, (req, res) => {
     fs.writeFileSync(ANALISES_FILE, JSON.stringify(existing, null, 2));
     res.json({ ok: true });
   } catch (e) { res.status(500).json({ error: String(e) }); }
+});
+
+// ── Fila PLD — serve JSON em tempo real (sem rebuild) ───────────────────────
+app.get("/api/queue", requireAuth, (req, res) => {
+  try {
+    const raw = fs.existsSync(QUEUE_FILE) ? fs.readFileSync(QUEUE_FILE, "utf8") : '{"_meta":{},"items":[]}';
+    res.setHeader("Content-Type", "application/json");
+    res.send(raw);
+  } catch (e) { res.status(500).json({ error: String(e) }); }
+});
+
+let queueSyncRunning = false;
+const QUEUE_SYNC_LOG = path.join(__dirname, ".tools", "queue-sync.log");
+
+// Sincronização rápida com Athena (só build-real-queue.py, sem AI e sem rebuild)
+app.get("/api/queue/sync", requireAuth, (req, res) => {
+  let lastLine = "";
+  try {
+    const log = fs.existsSync(QUEUE_SYNC_LOG)
+      ? fs.readFileSync(QUEUE_SYNC_LOG, "utf8").trim().split("\n")
+      : [];
+    lastLine = log.filter((l) => l.trim()).slice(-1)[0] ?? "";
+  } catch { /* ignore */ }
+  res.json({ running: queueSyncRunning, lastLine });
+});
+
+app.post("/api/queue/sync", requireAuth, (req, res) => {
+  if (queueSyncRunning) return res.status(409).json({ error: "Sincronização já em andamento." });
+  queueSyncRunning = true;
+  console.log(`[queue/sync] Iniciado por ${req.user?.email}`);
+  const proc = spawn("/bin/bash", [QUEUE_SYNC_SH], {
+    detached: true, stdio: "ignore",
+    env: { ...process.env, PATH: `/bin:/usr/bin:/usr/local/bin:${process.env.PATH ?? ""}` },
+  });
+  proc.unref();
+  proc.on("close", () => { queueSyncRunning = false; });
+  res.status(202).json({ ok: true });
 });
 
 app.get("/api/refresh", requireAuth, (req, res) => {

@@ -71,6 +71,7 @@ function pepitoPersistencePlugin() {
         },
     };
 }
+var QUEUE_FILE = path.resolve(__dirname, "src/data/registration-queue-real.json");
 var REFRESH_SCRIPT = path.resolve(__dirname, ".tools/refresh-daily.sh");
 var REFRESH_LOG = path.resolve(__dirname, ".tools/refresh-daily.log");
 var refreshRunning = false;
@@ -87,6 +88,24 @@ function pepitoRefreshPlugin() {
                 if (req.url === "/me") {
                     res.writeHead(401);
                     res.end(JSON.stringify({ error: "dev mode — SSO desativado" }));
+                    return;
+                }
+                next();
+            });
+            // Serve registration-queue-real.json dinamicamente (sem rebuild)
+            server.middlewares.use("/api/queue", function (req, res, next) {
+                res.setHeader("Access-Control-Allow-Origin", "*");
+                res.setHeader("Content-Type", "application/json");
+                if (req.method === "GET") {
+                    try {
+                        var raw = fs.existsSync(QUEUE_FILE) ? fs.readFileSync(QUEUE_FILE, "utf8") : '{"_meta":{},"items":[]}';
+                        res.writeHead(200);
+                        res.end(raw);
+                    }
+                    catch (_a) {
+                        res.writeHead(200);
+                        res.end('{"_meta":{},"items":[]}');
+                    }
                     return;
                 }
                 next();

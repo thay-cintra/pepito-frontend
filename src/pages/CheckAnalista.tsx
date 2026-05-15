@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { listByBucket, countTotalPLD } from "@/lib/registration-queue";
+import { listByBucket, countTotalPLD, QUEUE_UPDATED_EVENT } from "@/lib/registration-queue";
 import { KEY_VERSION } from "@/lib/storage";
 import type {
   RegistrationCase,
@@ -54,14 +54,14 @@ export function CheckAnalista() {
   }, [refreshKey, location.pathname]);
 
   useEffect(() => {
-    const onStorage = (e: StorageEvent) => {
-      if (e.key === KEY_VERSION) {
-        setCasos(listByBucket("CHECK_ANALISTA"));
-        setTotalPLD(countTotalPLD());
-      }
-    };
+    const reload = () => { setCasos(listByBucket("CHECK_ANALISTA")); setTotalPLD(countTotalPLD()); };
+    const onStorage = (e: StorageEvent) => { if (e.key === KEY_VERSION) reload(); };
     window.addEventListener("storage", onStorage);
-    return () => window.removeEventListener("storage", onStorage);
+    window.addEventListener(QUEUE_UPDATED_EVENT, reload);
+    return () => {
+      window.removeEventListener("storage", onStorage);
+      window.removeEventListener(QUEUE_UPDATED_EVENT, reload);
+    };
   }, []);
 
   const filtrados = useMemo(() => {

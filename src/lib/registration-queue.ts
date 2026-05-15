@@ -1,4 +1,5 @@
-import { REGISTRATION_QUEUE, REGISTRATION_META } from "@/data/registration-queue";
+import { REGISTRATION_QUEUE, REGISTRATION_META, refreshQueueFromServer, QUEUE_UPDATED_EVENT } from "@/data/registration-queue";
+export { refreshQueueFromServer, QUEUE_UPDATED_EVENT };
 import type {
   CheckBucket,
   RegistrationCase,

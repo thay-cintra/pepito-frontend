@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
-import { listByBucket } from "@/lib/registration-queue";
+import { listByBucket, QUEUE_UPDATED_EVENT } from "@/lib/registration-queue";
 import { KEY_VERSION } from "@/lib/storage";
 import type {
   RegistrationCase,
@@ -52,11 +52,14 @@ export function FilaRevisao() {
   }, [refreshKey, location.pathname]);
 
   useEffect(() => {
-    const onStorage = (e: StorageEvent) => {
-      if (e.key === KEY_VERSION) setEscalados(listByBucket("CHECK_LIDERANCA"));
-    };
+    const reload = () => setEscalados(listByBucket("CHECK_LIDERANCA"));
+    const onStorage = (e: StorageEvent) => { if (e.key === KEY_VERSION) reload(); };
     window.addEventListener("storage", onStorage);
-    return () => window.removeEventListener("storage", onStorage);
+    window.addEventListener(QUEUE_UPDATED_EVENT, reload);
+    return () => {
+      window.removeEventListener("storage", onStorage);
+      window.removeEventListener(QUEUE_UPDATED_EVENT, reload);
+    };
   }, []);
 
   const filtrados = useMemo(() => {

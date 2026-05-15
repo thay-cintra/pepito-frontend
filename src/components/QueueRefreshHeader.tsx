@@ -1,69 +1,103 @@
-import { RefreshCw, Database, Clock, CheckCircle2, AlertCircle } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { RefreshCw, Database, Clock, CheckCircle2, AlertCircle, Zap } from "lucide-react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/components/ui/toast";
-import { getQueueSnapshotMeta } from "@/lib/registration-queue";
+import { getQueueSnapshotMeta, refreshQueueFromServer, QUEUE_UPDATED_EVENT } from "@/lib/registration-queue";
 
-type RefreshState = "idle" | "running" | "done" | "error";
+const POLL_INTERVAL_MS = 90_000; // auto-refresh da fila a cada 90 segundos
 
-/** Aciona refresh-daily.sh via POST /api/refresh (Vite plugin).
- *  Faz polling em /api/refresh a cada 2.5s e recarrega a página ao concluir. */
+type SyncState = "idle" | "running" | "done" | "error";
+
 export function QueueRefreshHeader({ onRefresh }: { onRefresh?: () => void }) {
-  const meta = getQueueSnapshotMeta();
   const { toast } = useToast();
-  const [state, setState] = useState<RefreshState>("idle");
+  const [meta, setMeta] = useState(getQueueSnapshotMeta());
+  const [syncState, setSyncState] = useState<SyncState>("idle");
   const [lastLine, setLastLine] = useState("");
-  const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const [novosDetectados, setNovosDetectados] = useState(0);
+  const syncPollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const autoPollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  // Atualiza meta quando a fila recarrega
+  useEffect(() => {
+    const onUpdate = () => { setMeta(getQueueSnapshotMeta()); };
+    window.addEventListener(QUEUE_UPDATED_EVENT, onUpdate);
+    return () => window.removeEventListener(QUEUE_UPDATED_EVENT, onUpdate);
+  }, []);
+
+  // Auto-polling: busca /api/queue a cada 90s e atualiza silenciosamente
+  const silentRefresh = useCallback(async () => {
+    const { novos } = await refreshQueueFromServer();
+    if (novos > 0) {
+      setNovosDetectados((n) => n + novos);
+      toast({
+        variant: "success",
+        title: `${novos} novo${novos > 1 ? "s" : ""} caso${novos > 1 ? "s" : ""} na fila`,
+        description: "A lista foi atualizada automaticamente.",
+      });
+      onRefresh?.();
+    }
+  }, [onRefresh, toast]);
+
+  useEffect(() => {
+    autoPollRef.current = setInterval(silentRefresh, POLL_INTERVAL_MS);
+    return () => { if (autoPollRef.current) clearInterval(autoPollRef.current); };
+  }, [silentRefresh]);
+
+  // Botão "Atualizar" — relê /api/queue imediatamente (sem Athena)
+  const handleRefreshImediato = async () => {
+    const { total, novos } = await refreshQueueFromServer();
+    setMeta(getQueueSnapshotMeta());
+    onRefresh?.();
+    toast({
+      variant: "success",
+      title: novos > 0 ? `${novos} novo${novos > 1 ? "s" : ""} caso${novos > 1 ? "s" : ""} detectado${novos > 1 ? "s" : ""}` : "Fila atualizada",
+      description: `${total} casos na fila.`,
+    });
+  };
+
+  // Botão "Sincronizar Athena" — dispara build-real-queue.py (sem rebuild do bundle)
+  const stopSyncPolling = () => {
+    if (syncPollRef.current) { clearInterval(syncPollRef.current); syncPollRef.current = null; }
+  };
+
+  const handleSincronizarAthena = async () => {
+    if (syncState === "running") return;
+    try {
+      const r = await fetch("/api/queue/sync", { method: "POST" });
+      if (r.status === 409) { toast({ title: "Sincronização já em andamento" }); return; }
+      if (!r.ok) throw new Error();
+      setSyncState("running");
+      toast({ title: "Sincronizando com Athena…", description: "Consultando squad_core.registration_notebook_output_single" });
+
+      // Polling do status da sincronização
+      syncPollRef.current = setInterval(async () => {
+        try {
+          const d = await fetch("/api/queue/sync").then((r) => r.json());
+          if (d.lastLine) setLastLine(d.lastLine);
+          if (!d.running) {
+            stopSyncPolling();
+            // Após sincronização, relê a fila atualizada
+            const { total, novos } = await refreshQueueFromServer();
+            setMeta(getQueueSnapshotMeta());
+            setSyncState("done");
+            onRefresh?.();
+            toast({
+              variant: "success",
+              title: `Athena sincronizado — ${total} casos`,
+              description: novos > 0 ? `${novos} novo${novos > 1 ? "s" : ""} caso${novos > 1 ? "s" : ""} adicionado${novos > 1 ? "s" : ""}.` : "Nenhum caso novo.",
+            });
+          }
+        } catch { stopSyncPolling(); setSyncState("error"); }
+      }, 3000);
+    } catch {
+      setSyncState("error");
+      toast({ variant: "destructive", title: "Erro ao sincronizar", description: "Verifique a conexão com o Athena." });
+    }
+  };
 
   const fetchedAt = meta.fetched_at ? new Date(meta.fetched_at) : null;
   const tempoRelativo = fetchedAt ? formatRelative(fetchedAt) : "—";
-
-  const stopPolling = () => {
-    if (pollRef.current) { clearInterval(pollRef.current); pollRef.current = null; }
-  };
-
-  // Detecta refresh em andamento ao montar (ex.: tab reaberta durante update)
-  useEffect(() => {
-    fetch("/api/refresh").then((r) => r.json()).then((d) => {
-      if (d.running) startPolling();
-    }).catch(() => {});
-    return stopPolling;
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const startPolling = () => {
-    setState("running");
-    pollRef.current = setInterval(async () => {
-      try {
-        const d = await fetch("/api/refresh").then((r) => r.json());
-        if (d.lastLine) setLastLine(d.lastLine);
-        if (!d.running) {
-          stopPolling();
-          setState("done");
-          toast({ variant: "success", title: "Fila atualizada", description: "Recarregando em 2s…" });
-          setTimeout(() => { onRefresh?.(); window.location.reload(); }, 2000);
-        }
-      } catch { stopPolling(); setState("error"); }
-    }, 2500);
-  };
-
-  const handleRefresh = async () => {
-    if (state === "running") return;
-    try {
-      const r = await fetch("/api/refresh", { method: "POST" });
-      if (r.status === 409) { toast({ title: "Refresh já em andamento" }); startPolling(); return; }
-      if (!r.ok) throw new Error(await r.text());
-      toast({ title: "Atualizando fila PLD…", description: "Consultando Athena + regenerando pareceres." });
-      startPolling();
-    } catch {
-      toast({
-        variant: "destructive",
-        title: "Disponível apenas no dev server",
-        description: "Rode: bash '.tools/refresh-daily.sh' na pasta pepito-frontend",
-      });
-    }
-  };
 
   return (
     <div className="flex flex-wrap items-center gap-2">
@@ -73,25 +107,42 @@ export function QueueRefreshHeader({ onRefresh }: { onRefresh?: () => void }) {
       </Badge>
       <Badge variant="outline" className="text-[10px]">
         <Clock className="h-3 w-3 mr-1" />
-        Última atualização: {tempoRelativo}
+        {tempoRelativo}
       </Badge>
-      {state === "running" && lastLine && (
+      {novosDetectados > 0 && (
+        <Badge variant="outline" className="text-[10px] text-primary border-primary">
+          +{novosDetectados} novos detectados
+        </Badge>
+      )}
+      {syncState === "running" && lastLine && (
         <span className="text-[10px] text-muted-foreground max-w-[280px] truncate italic">{lastLine}</span>
       )}
-      {state === "done" && (
+      {syncState === "done" && (
         <Badge variant="outline" className="text-[10px] text-green-600 border-green-400">
-          <CheckCircle2 className="h-3 w-3 mr-1" /> Atualizado
+          <CheckCircle2 className="h-3 w-3 mr-1" /> Athena sincronizado
         </Badge>
       )}
-      {state === "error" && (
+      {syncState === "error" && (
         <Badge variant="outline" className="text-[10px] text-destructive border-destructive">
-          <AlertCircle className="h-3 w-3 mr-1" /> Erro — veja refresh-daily.log
+          <AlertCircle className="h-3 w-3 mr-1" /> Erro na sincronização
         </Badge>
       )}
-      <Button variant="outline" size="sm" onClick={handleRefresh}
-        disabled={state === "running"} className="h-7 text-xs">
-        <RefreshCw className={`h-3 w-3 ${state === "running" ? "animate-spin" : ""}`} />
-        {state === "running" ? "Atualizando…" : "Atualizar fila"}
+
+      {/* Atualizar: relê /api/queue imediatamente, sem consultar Athena */}
+      <Button variant="outline" size="sm" onClick={handleRefreshImediato} className="h-7 text-xs">
+        <RefreshCw className="h-3 w-3" /> Atualizar
+      </Button>
+
+      {/* Sincronizar: consulta Athena via Python e atualiza o JSON */}
+      <Button
+        variant="outline" size="sm"
+        onClick={handleSincronizarAthena}
+        disabled={syncState === "running"}
+        className="h-7 text-xs"
+        title="Consulta o Athena agora e atualiza a fila sem precisar reiniciar o servidor"
+      >
+        <Zap className={`h-3 w-3 ${syncState === "running" ? "animate-pulse" : ""}`} />
+        {syncState === "running" ? "Sincronizando…" : "Sincronizar Athena"}
       </Button>
     </div>
   );
@@ -105,5 +156,6 @@ function formatRelative(d: Date): string {
   const hr = Math.floor(min / 60);
   if (hr < 24) return `há ${hr}h`;
   const days = Math.floor(hr / 24);
-  if (days === 1) return "ontem"; return `há ${days} dias`;
+  if (days === 1) return "ontem";
+  return `há ${days} dias`;
 }
