@@ -11,6 +11,7 @@
     "start": "node server.cjs"
   },
   "dependencies": {
+    "@google-cloud/storage": "^7.16.0",
     "clsx": "^2.1.1",
     "cookie-parser": "^1.4.7",
     "dotenv": "^17.4.2",
