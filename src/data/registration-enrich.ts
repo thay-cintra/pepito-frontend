@@ -538,7 +538,7 @@ export function gerarAnaliseGeral(c: Raw): string {
 
   if (sinalMidia) partes.push(`Pipeline interno (PJ/PF mídia negativa): "${(c.pf_midianegativas || c.pj_midianegativas || "").slice(0, 120)}".`);
   if (sinalProc) partes.push(`Pipeline interno (processos): "${(c.processosjudiciais_pf || c.processosjudiciais_pj || "").slice(0, 120)}".`);
-  if (!sinalMidia && !sinalProc && !findings.length) partes.push(`Sem sinais materiais; cadastro candidato a aprovação com monitoramento.`);
+  if (!sinalMidia && !sinalProc && !findings.length) partes.push(`Sem sinais materiais; cadastro candidato a aprovação pelo fluxo PLD padrão.`);
 
   return partes.join(" ");
 }
@@ -569,9 +569,9 @@ export function gerarParecerSugerido(c: Raw): string {
   } else if (altoExterno || (sinalMidia && sinalProc)) {
     fim = `Achados externos de alto risco e/ou sinais cumulativos de pipeline. Sugestão preliminar: ${c.bucket === "CHECK_LIDERANCA" ? "REPROVAÇÃO" : "MONITORAMENTO REFORÇADO com escalação à Liderança"}.`;
   } else if (sinalMidia || sinalProc || findings.length > 0) {
-    fim = `Sinais não-materiais detectados (mídia/processos pré-apurados ou achados externos de baixo/médio risco). Sugestão preliminar: ${c.bucket === "CHECK_LIDERANCA" ? "MONITORAMENTO REFORÇADO" : "APROVAÇÃO COM MONITORAMENTO REFORÇADO"}.`;
+    fim = `Sinais não-materiais detectados (mídia/processos pré-apurados ou achados externos de baixo/médio risco). Sugestão preliminar: ${c.bucket === "CHECK_LIDERANCA" ? "MONITORAMENTO REFORÇADO" : "APROVAÇÃO"}.`;
   } else {
-    fim = `Sem sinais materiais. Sugestão preliminar: APROVAÇÃO COM MONITORAMENTO REFORÇADO (revisão semestral).`;
+    fim = `Sem sinais materiais. Sugestão preliminar: APROVAÇÃO (fluxo PLD padrão para PEP).`;
   }
 
   return [inicio, meio, fim].join(" ");
@@ -636,7 +636,7 @@ export function gerarParecerAnalista(c: Raw): string {
   } else if (altoExterno || c.bucket === "CHECK_LIDERANCA") {
     frase3 = `Dito isso, considerando o ${altoExterno ? "achado externo de risco alto" : "score PLD elevado"} e o ${tipoPep === "titular" ? "exercício direto de mandato pelo titular" : "vínculo ativo com PEP em mandato"}, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão semestral, conforme Circular BACEN 3.978/2020.`;
   } else {
-    frase3 = `Dito isso, considerando que não foram identificados desabonos relevantes sob a ótica de LD, não temos objeções ao início do relacionamento, porém, considerando o atual cumprimento de mandato ativo pela ${tipoPep === "titular" ? "pessoa titular" : "pessoa relacionada"}, sugerimos a inclusão em MONITORAMENTO REFORÇADO${c.cnae ? `, devido ${tipoPep === "relacionado" ? "ter sociedade com PEP ativa" : "ao próprio titular ser PEP ativo"} em empresa com atividade ligada a ${c.cnae.replace(/^\d{2}\.\d{2}-\d-\d{2}\s*-\s*/, "")}` : ""}.`;
+    frase3 = `Considerando que não foram identificados desabonos relevantes sob a ótica de LD, não temos objeções ao início do relacionamento. O cadastro segue fluxo PLD padrão de derivação PEP, conforme Circular BACEN 3.978/2020.`;
   }
 
   return `${frase1} ${frase2} ${frase3}`;
@@ -723,13 +723,14 @@ export function recomendacaoSugerida(c: Raw): StatusAnalise {
     return "falso_positivo";
   }
 
-  // Todos os findings são alertas de homônimo: pré-decisão é monitoramento
+  // Todos os findings são alertas de homônimo: pré-decisão é monitoramento (identidade incerta)
   if (homonimoSemConfirmacao) return "monitoramento";
   // Alto risco confirmado → reprovado
   if (altoConfirmado) return "reprovado";
   // Liderança: sinais cumulativos → reprovado
   if (c.bucket === "CHECK_LIDERANCA" && (sinalMidia && sinalProc)) return "reprovado";
-  return "monitoramento";
+  // Sem achados materiais: fluxo PLD padrão cobre PEPs; não escalar para monitoramento reforçado
+  return "aprovado";
 }
 
 // ─── Score de Risco de Lavagem de Dinheiro ───────────────────────────────────

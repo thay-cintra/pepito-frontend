@@ -85,7 +85,9 @@ export function AnalisePrimeiraCamada() {
           nomePessoaVinculada: cargoOrgao.nomePEP,
           cpfPepTitular: tipoPep === "relacionado" ? (cargoOrgao.cpfTitular || caso.pep_pf?.[0]?.cpf_titular || "") : "",
           credilinkNumeroToken: caso.token_pf_cred || "",
-          credilinkLinkDossie: "",
+          credilinkLinkDossie: caso.token_pf_cred
+            ? `https://dashboard.tesserati.com.br/Compliance/VisualizarDossie?token=${caso.token_pf_cred}`
+            : "",
           cpfResponsavel: caso.cpf,
           tipoPep,
           tipoVinculo: tipoPep === "relacionado" ? "Owner é vínculo do PEP titular" : "",

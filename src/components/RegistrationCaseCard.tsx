@@ -186,7 +186,7 @@ export function RegistrationCaseCard({ caso }: Props) {
 
         {/* Sugestão de parecer (só ANALISTA — texto conciso no estilo Josinalva) */}
         {caso.bucket === "CHECK_ANALISTA" && (() => {
-          const sugestao = getSugestaoParecer(caso.draft_id);
+          const sugestao = getSugestaoParecer(caso.draft_id) ?? caso.parecer_sugerido;
           if (!sugestao) return null;
           return (
             <div className="rounded-md bg-secondary/30 border border-secondary p-3 text-xs leading-relaxed">

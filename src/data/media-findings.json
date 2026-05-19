@@ -246,12 +246,13 @@
   "76d4138a-bf93-4674-8b21-49fb25241629": [
     {
       "title": "Processos criminais (2 encontrados) — LUCAS DIETERICH ESPINDOLA BRENNER",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=LUCAS%20DIETERICH%20ESPINDOLA%20BRENNER&tb=processos",
       "snippet": "LUCAS DIETERICH ESPINDOLA BRENNER tem 3 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 966.608.720-00 — 2 processo(s) sem polo passivo crítico"
+      "match": "CPF 966.608.720-00 — 2 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Credilink: PEP não identificado — candidato a Falso Positivo",
@@ -267,12 +268,13 @@
   "cfc443fb-2bf3-4264-a427-876c0683c3c1": [
     {
       "title": "JusBrasil API: nenhum processo criminal — CARLOS EMANUEL TEIXEIRA PIRES BICHEIRO",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=CARLOS%20EMANUEL%20TEIXEIRA%20PIRES%20BICHEIRO&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 131.227.068-30 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 131.227.068-30 confirmado na API — sem processos criminais"
+      "match": "CPF 131.227.068-30 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Credilink: PEP não identificado — candidato a Falso Positivo",
@@ -351,12 +353,13 @@
     },
     {
       "title": "Processos criminais (2 encontrados) — BERNARDINO BRITO NETO",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=BERNARDINO%20BRITO%20NETO&tb=processos",
       "snippet": "BERNARDINO BRITO NETO tem 2 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 02727653506 — 2 processo(s) sem polo passivo crítico"
+      "match": "CPF 02727653506 — 2 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Confirmação de mandato PEP — BERNARDINO BRITO NETO como Vereador em Ruy Barbosa-BA (Eleições 2024)",
@@ -513,12 +516,13 @@
   "7f6e8ac2-89a5-40cb-932c-8b87a6603250": [
     {
       "title": "Processos criminais (5 encontrados) — JOAO MAICKON LEMOS DE ARAUJO",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=JOAO%20MAICKON%20LEMOS%20DE%20ARAUJO&tb=processos",
       "snippet": "JOAO MAICKON LEMOS DE ARAUJO tem 6 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 066.142.775-70 — 5 processo(s) sem polo passivo crítico"
+      "match": "CPF 066.142.775-70 — 5 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "MP — Inquérito/Investigação criminal — JOAO MAICKON LEMOS DE ARAUJO",
@@ -531,12 +535,13 @@
     },
     {
       "title": "Processos criminais (5 encontrados) — JOAO MAICKON LEMOS DE ARAUJO",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=JOAO%20MAICKON%20LEMOS%20DE%20ARAUJO&tb=processos",
       "snippet": "JOAO MAICKON LEMOS DE ARAUJO tem 6 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 06614277570 — 5 processo(s) sem polo passivo crítico"
+      "match": "CPF 06614277570 — 5 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Confirmação de Mandato Ativo — Câmara Municipal de Serrinha-BA (Site Oficial)",
@@ -688,12 +693,13 @@
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — ALEX MORETINI",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=ALEX%20MORETINI&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 10787762881 não retornou processos criminais. Total retornado: 2. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 10787762881 confirmado na API — sem processos criminais"
+      "match": "CPF 10787762881 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Alex Moretini eleito prefeito de Cajuru (SP) — Confirmação TSE/CNN Brasil",
@@ -816,21 +822,23 @@
   "672b5137-cc4f-4d12-b265-8fecac548303": [
     {
       "title": "JusBrasil API: nenhum processo criminal — CARLA SOUSA BORGES",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=CARLA%20SOUSA%20BORGES&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 105.562.676-05 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 105.562.676-05 confirmado na API — sem processos criminais"
+      "match": "CPF 105.562.676-05 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — EDUARDO SOUSA BORGES",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=EDUARDO%20SOUSA%20BORGES&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 06688903636 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 06688903636 confirmado na API — sem processos criminais"
+      "match": "CPF 06688903636 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "EDUARDO SOUSA BORGES — Eleito Vereador em Douradoquara-MG (Eleições 2024, TSE)",
@@ -917,21 +925,23 @@
   "ac873b5c-9783-4a79-b169-c23942c39518": [
     {
       "title": "JusBrasil API: nenhum processo criminal — KAIQUE DIEGO DE ALMEIDA SANTOS",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=KAIQUE%20DIEGO%20DE%20ALMEIDA%20SANTOS&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 013.974.954-30 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 013.974.954-30 confirmado na API — sem processos criminais"
+      "match": "CPF 013.974.954-30 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — LARISSA ALESSANDRA SANTOS DE ALMEIDA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=LARISSA%20ALESSANDRA%20SANTOS%20DE%20ALMEIDA&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 08103441490 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 08103441490 confirmado na API — sem processos criminais"
+      "match": "CPF 08103441490 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Ata de Sessão Plenária – Câmara de Vereadores de Capela/AL (2023)",
@@ -1009,12 +1019,13 @@
   "4bca8825-d5ff-4251-8b86-fc38cf9bbbee": [
     {
       "title": "JusBrasil API: nenhum processo criminal — POLLYANA PONCI PERES TADINI MARTINS",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=POLLYANA%20PONCI%20PERES%20TADINI%20MARTINS&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 394.268.718-61 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 394.268.718-61 confirmado na API — sem processos criminais"
+      "match": "CPF 394.268.718-61 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Processo criminal — APARECIDA PERPETUA PONCI PERES (PEP_FILHA(O))",
@@ -1120,21 +1131,23 @@
   "4556104e-cb9a-49e9-ace2-87933ce979ba": [
     {
       "title": "JusBrasil API: nenhum processo criminal — JONATHAN RAMOS MEDEIROS",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=JONATHAN%20RAMOS%20MEDEIROS&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 012.250.421-60 não retornou processos criminais. Total retornado: 4. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 012.250.421-60 confirmado na API — sem processos criminais"
+      "match": "CPF 012.250.421-60 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — JONATHAN RAMOS MEDEIROS",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=JONATHAN%20RAMOS%20MEDEIROS&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 01225042160 não retornou processos criminais. Total retornado: 4. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 01225042160 confirmado na API — sem processos criminais"
+      "match": "CPF 01225042160 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Empresa eleitoral 'Eleicao 2024 Jonathan Ramos Medeiros Vereador' constituída em Tapurah-MT — CNPJ 56.798.631/0001-52",
@@ -1232,21 +1245,23 @@
   "39418459-0314-410d-8c26-23d69dea3561": [
     {
       "title": "JusBrasil API: nenhum processo criminal — JOAO PAULO DE LIMA MARCAL",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=JOAO%20PAULO%20DE%20LIMA%20MARCAL&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 035.871.552-08 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 035.871.552-08 confirmado na API — sem processos criminais"
+      "match": "CPF 035.871.552-08 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — RENAN CENTENO NORMANDO",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=RENAN%20CENTENO%20NORMANDO&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 02963362200 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 02963362200 confirmado na API — sem processos criminais"
+      "match": "CPF 02963362200 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Confirmação de Mandato Ativo — Renan Centeno Normando, Vereador de Belém (2º mandato)",
@@ -1360,21 +1375,23 @@
   "e1baa8ff-aa5f-4190-9c5c-0c74c22d2ae1": [
     {
       "title": "Processos criminais (1 encontrados) — DEYMISON DA SILVA COSTA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=DEYMISON%20DA%20SILVA%20COSTA&tb=processos",
       "snippet": "DEYMISON DA SILVA COSTA tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 000.313.532-23 — 1 processo(s) sem polo passivo crítico"
+      "match": "CPF 000.313.532-23 — 1 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Processos criminais (1 encontrados) — ANDERSON MARCELO DA SILVA SOUZA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=ANDERSON%20MARCELO%20DA%20SILVA%20SOUZA&tb=processos",
       "snippet": "ANDERSON MARCELO DA SILVA SOUZA tem 3 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 70884170225 — 1 processo(s) sem polo passivo crítico"
+      "match": "CPF 70884170225 — 1 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Busca PEP M1 — Confirmação de mandato/cargo: ANDERSON MARCELO DA SILVA SOUZA",
@@ -1564,21 +1581,23 @@
   "386e9d78-c517-4dee-8317-ae24c3ebab76": [
     {
       "title": "JusBrasil API: nenhum processo criminal — ALINE MARIA CARRER DA SILVA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=ALINE%20MARIA%20CARRER%20DA%20SILVA&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 375.913.728-82 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 375.913.728-82 confirmado na API — sem processos criminais"
+      "match": "CPF 375.913.728-82 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — ALINE MARIA CARRER DA SILVA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=ALINE%20MARIA%20CARRER%20DA%20SILVA&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 37591372882 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 37591372882 confirmado na API — sem processos criminais"
+      "match": "CPF 37591372882 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Câmara Municipal de Ribeirão Corrente — Portal Institucional Ativo",
@@ -1674,21 +1693,23 @@
   "f2a4b186-aa2b-4825-b1e0-b92a837e902a": [
     {
       "title": "JusBrasil API: nenhum processo criminal — MARCELO AUGUSTO MENDES DE SOUSA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=MARCELO%20AUGUSTO%20MENDES%20DE%20SOUSA&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 105.076.836-17 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 105.076.836-17 confirmado na API — sem processos criminais"
+      "match": "CPF 105.076.836-17 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — ALEX VINICIUS COELHO",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=ALEX%20VINICIUS%20COELHO&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 03802986601 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 03802986601 confirmado na API — sem processos criminais"
+      "match": "CPF 03802986601 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Alex Vinicius Coelho — Mandato ativo confirmado: Vereador na Câmara de Visconde do Rio Branco (2024)",
@@ -1854,21 +1875,23 @@
   "fecc8d67-9964-4e68-8f22-5c62a696ada2": [
     {
       "title": "JusBrasil API: nenhum processo criminal — SILVIO LUIZ PAGANINI JUNIOR",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=SILVIO%20LUIZ%20PAGANINI%20JUNIOR&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 234.340.498-43 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 234.340.498-43 confirmado na API — sem processos criminais"
+      "match": "CPF 234.340.498-43 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — CLAUDIA HELENA FERREIRA PAGANINI",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=CLAUDIA%20HELENA%20FERREIRA%20PAGANINI&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 21990297862 não retornou processos criminais. Total retornado: 1. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 21990297862 confirmado na API — sem processos criminais"
+      "match": "CPF 21990297862 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "CLAUDIA HELENA FERREIRA PAGANINI — Confirmação de Mandato Ativo como Vereadora (MDB) — Câmara Municipal de Sales Oliveira",
@@ -1955,21 +1978,23 @@
   "3224a5e5-4754-414b-8920-02e25812bf66": [
     {
       "title": "JusBrasil API: nenhum processo criminal — MEIRE SILVA DOS SANTOS",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=MEIRE%20SILVA%20DOS%20SANTOS&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 833.686.045-20 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 833.686.045-20 confirmado na API — sem processos criminais"
+      "match": "CPF 833.686.045-20 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — MOISES DOS SANTOS SILVA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=MOISES%20DOS%20SANTOS%20SILVA&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 80829546553 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 80829546553 confirmado na API — sem processos criminais"
+      "match": "CPF 80829546553 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Confirmação de mandato ativo: Moisés dos Santos Silva — Vereador em Simões Filho-BA (Legislatura 2021–2024)",
@@ -2056,21 +2081,23 @@
   "63bd6c5e-8fd0-4f0a-a705-db26168e777c": [
     {
       "title": "JusBrasil API: nenhum processo criminal — IGOR MATHEUS SILVA BRITA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=IGOR%20MATHEUS%20SILVA%20BRITA&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 077.196.169-36 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 077.196.169-36 confirmado na API — sem processos criminais"
+      "match": "CPF 077.196.169-36 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — FLAVIA CHERONI DA SILVA BRITA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=FLAVIA%20CHERONI%20DA%20SILVA%20BRITA&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 01731086954 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 01731086954 confirmado na API — sem processos criminais"
+      "match": "CPF 01731086954 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Flavia Cheroni da Silva Brita — Confirmação de Mandato TSE (Eleições 2024)",
@@ -2175,12 +2202,13 @@
   "b884e1da-2492-4c80-ad16-e242ba63f31d": [
     {
       "title": "Processos criminais (1 encontrados) — DIOGO CUNHA PEREIRA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=DIOGO%20CUNHA%20PEREIRA&tb=processos",
       "snippet": "DIOGO CUNHA PEREIRA tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 531.052.142-91 — 1 processo(s) sem polo passivo crítico"
+      "match": "CPF 531.052.142-91 — 1 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "MP — Inquérito/Investigação criminal — DIOGO CUNHA PEREIRA",
@@ -2193,12 +2221,13 @@
     },
     {
       "title": "Processos criminais (1 encontrados) — DIOGO CUNHA PEREIRA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=DIOGO%20CUNHA%20PEREIRA&tb=processos",
       "snippet": "DIOGO CUNHA PEREIRA tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 53105214291 — 1 processo(s) sem polo passivo crítico"
+      "match": "CPF 53105214291 — 1 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Alerta de Homônimo — Diogo Cunha Pereira (PA) vs. Owner/PEP (SP)",
@@ -2285,12 +2314,13 @@
   "eaa0e882-3756-427e-b0dd-c15244573e58": [
     {
       "title": "JusBrasil API: nenhum processo criminal — RICARDO FREITAS DE LUCENA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=RICARDO%20FREITAS%20DE%20LUCENA&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 045.833.444-81 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 045.833.444-81 confirmado na API — sem processos criminais"
+      "match": "CPF 045.833.444-81 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Credilink: PEP não identificado — candidato a Falso Positivo",
@@ -2306,12 +2336,13 @@
   "53416d66-03af-4915-9239-5b7c140db4fa": [
     {
       "title": "JusBrasil API: nenhum processo criminal — MIQUEIAS PEREIRA DE SOUSA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=MIQUEIAS%20PEREIRA%20DE%20SOUSA&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 051.862.333-58 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 051.862.333-58 confirmado na API — sem processos criminais"
+      "match": "CPF 051.862.333-58 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Credilink: PEP não identificado — candidato a Falso Positivo",
@@ -2327,12 +2358,13 @@
   "2569031f-eab9-4816-89d9-c49226c48ace": [
     {
       "title": "Processos criminais (12 encontrados) — RAIMUNDO NONATO MARREIROS MOREIRA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=RAIMUNDO%20NONATO%20MARREIROS%20MOREIRA&tb=processos",
       "snippet": "RAIMUNDO NONATO MARREIROS MOREIRA tem 13 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 227.202.433-53 — 12 processo(s) sem polo passivo crítico"
+      "match": "CPF 227.202.433-53 — 12 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "MP — Inquérito/Investigação criminal — RAIMUNDO NONATO MARREIROS MOREIRA",
@@ -2390,31 +2422,34 @@
     },
     {
       "title": "Tesserati — Processos criminais (7) — Raimundo Nonato Marreiros Moreira",
-      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "url": "https://www.jusbrasil.com.br/busca?q=Raimundo%20Nonato%20Marreiros%20Moreira&tb=processos",
       "snippet": "Raimundo Nonato Marreiros Moreira tem 7 processo(s) criminal(is) via Tesserati. Assuntos: DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DESOBEDIENCIA A DECISAO JUDICIAL. Fonte: base consolidada de tribunais brasileiros.",
       "source": "Tesserati — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 227.202.433-53",
-      "decisao_recomendada": "REPROVAÇÃO — 7 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 7 processo(s) criminal(is) confirmado(s) via Tesserati.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — JOSE DE OLIVEIRA NETO",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=JOSE%20DE%20OLIVEIRA%20NETO&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 15954382387 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 15954382387 confirmado na API — sem processos criminais"
+      "match": "CPF 15954382387 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Tesserati — Mídias Negativas — JOSE DE OLIVEIRA NETO",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "url": "https://www.escavador.com/busca?entidade=pessoas&q=JOSE%20DE%20OLIVEIRA%20NETO",
       "snippet": "2 mídia(s) negativa(s) identificada(s) para JOSE DE OLIVEIRA NETO via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/grafica-de-familia-de-bene-recebeu-mais-de-r-3-mi-do-pt-de-minas/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-",
       "source": "Tesserati — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
-      "match": "Nome JOSE DE OLIVEIRA NETO"
+      "match": "Nome JOSE DE OLIVEIRA NETO",
+      "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Tesserati Mídias Negativas"
     },
     {
       "title": "CNPJ Eleitoral 2012 – JOSE DE OLIVEIRA NETO VEREADOR – Pimenteiras-PI (BAIXADO)",
@@ -2519,21 +2554,23 @@
   "48db5d63-9f01-42e2-b7df-e04e4710ff41": [
     {
       "title": "JusBrasil API: nenhum processo criminal — VANESSA ZAGONEL DOS REIS",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=VANESSA%20ZAGONEL%20DOS%20REIS&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 003.105.670-92 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 003.105.670-92 confirmado na API — sem processos criminais"
+      "match": "CPF 003.105.670-92 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Processos criminais (13 encontrados) — EDVINO DOMINGOS ZAGONEL",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=EDVINO%20DOMINGOS%20ZAGONEL&tb=processos",
       "snippet": "EDVINO DOMINGOS ZAGONEL tem 16 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 00457450053 — 13 processo(s) sem polo passivo crítico"
+      "match": "CPF 00457450053 — 13 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "M1 — Confirmação de cargo/mandato PEP: nenhum resultado TSE/câmara/prefeitura encontrado",
@@ -2669,22 +2706,24 @@
     },
     {
       "title": "Tesserati — Processos criminais (2) — Luciano Santos Costa",
-      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "url": "https://www.jusbrasil.com.br/busca?q=Luciano%20Santos%20Costa&tb=processos",
       "snippet": "Luciano Santos Costa tem 2 processo(s) criminal(is) via Tesserati. Assuntos: AMEACA; DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.",
       "source": "Tesserati — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 025.730.141-00",
-      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
     },
     {
       "title": "Tesserati — Mídias Negativas — Luciano Santos Costa",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "url": "https://www.escavador.com/busca?entidade=pessoas&q=Luciano%20Santos%20Costa",
       "snippet": "5 mídia(s) negativa(s) identificada(s) para Luciano Santos Costa via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/eleicoes/2024/candidatos-mt/ribeirao-cascalheira/vereador/luciano-do-gas-77777/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_u",
       "source": "Tesserati — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
-      "match": "Nome Luciano Santos Costa"
+      "match": "Nome Luciano Santos Costa",
+      "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Tesserati Mídias Negativas"
     },
     {
       "title": "Processo criminal — LUCIANO SANTOS COSTA (PEP_MAE)",
@@ -2728,13 +2767,14 @@
     },
     {
       "title": "Tesserati — Processos criminais (2) — LUCIANO SANTOS COSTA",
-      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "url": "https://www.jusbrasil.com.br/busca?q=LUCIANO%20SANTOS%20COSTA&tb=processos",
       "snippet": "LUCIANO SANTOS COSTA tem 2 processo(s) criminal(is) via Tesserati. Assuntos: AMEACA; DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.",
       "source": "Tesserati — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 02573014100",
-      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
     },
     {
       "title": "Luciano Santos Costa – Vereador Ativo – Câmara Municipal de Ribeirão Cascalheira-MT",
@@ -2848,21 +2888,23 @@
   "d40bbad8-2c38-4713-aadd-5f5d2a066a1c": [
     {
       "title": "JusBrasil API: nenhum processo criminal — MAGNO JARDEL GOMES DE FREITAS",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=MAGNO%20JARDEL%20GOMES%20DE%20FREITAS&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 058.611.663-07 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 058.611.663-07 confirmado na API — sem processos criminais"
+      "match": "CPF 058.611.663-07 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — MARIA ELSA VIEIRA GOMES",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=MARIA%20ELSA%20VIEIRA%20GOMES&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 41701640325 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 41701640325 confirmado na API — sem processos criminais"
+      "match": "CPF 41701640325 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Maria Elsa Vieira Gomes — Secretária Municipal de Turismo de Quiterianópolis (COMTUR)",
@@ -2940,21 +2982,23 @@
   "df1b9b34-f82f-42ec-8c8b-58df4839ee39": [
     {
       "title": "JusBrasil API: nenhum processo criminal — MATEUS APARECIDO LIMA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=MATEUS%20APARECIDO%20LIMA&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 350.933.698-45 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 350.933.698-45 confirmado na API — sem processos criminais"
+      "match": "CPF 350.933.698-45 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — MATEUS APARECIDO LIMA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=MATEUS%20APARECIDO%20LIMA&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 35093369845 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 35093369845 confirmado na API — sem processos criminais"
+      "match": "CPF 35093369845 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Câmara Municipal de Santa Lúcia-SP | Gestão 2025-2026 (site oficial)",
@@ -3041,40 +3085,44 @@
   "23e03df6-f24d-413a-b06c-e926918e8bbc": [
     {
       "title": "JusBrasil API: nenhum processo criminal — LARISSA BARROS",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=LARISSA%20BARROS&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 455.689.688-61 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 455.689.688-61 confirmado na API — sem processos criminais"
+      "match": "CPF 455.689.688-61 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Tesserati — Mídias Negativas — Larissa Barros",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "url": "https://www.escavador.com/busca?entidade=pessoas&q=Larissa%20Barros",
       "snippet": "2 mídia(s) negativa(s) identificada(s) para Larissa Barros via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/sp/sao-paulo/noticia/2025/05/27/acabaram-com-a-vida-de-uma-menina-cheia-de-planos-lamenta-familia-de-jovem-morta-em-acidente-com-moto-de-app-em-sp.ghtml\",",
       "source": "Tesserati — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
-      "match": "Nome Larissa Barros"
+      "match": "Nome Larissa Barros",
+      "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Tesserati Mídias Negativas"
     },
     {
       "title": "Processos criminais (1 encontrados) — ITALO PEREIRA IBIAPINA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=ITALO%20PEREIRA%20IBIAPINA&tb=processos",
       "snippet": "ITALO PEREIRA IBIAPINA tem 2 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 04943621384 — 1 processo(s) sem polo passivo crítico"
+      "match": "CPF 04943621384 — 1 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Tesserati — Processos criminais (1) — ITALO PEREIRA IBIAPINA",
-      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "url": "https://www.jusbrasil.com.br/busca?q=ITALO%20PEREIRA%20IBIAPINA&tb=processos",
       "snippet": "ITALO PEREIRA IBIAPINA tem 1 processo(s) criminal(is) via Tesserati. Assuntos: DIREITO PENAL - CRIMES CONTRA A HONRA - DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.",
       "source": "Tesserati — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 04943621384",
-      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Tesserati.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
     },
     {
       "title": "TSE/O Tempo — Italo Pereira Ibiapina eleito Vereador em Campo Maior-PI (Eleições 2024)",
@@ -3114,12 +3162,13 @@
     },
     {
       "title": "MPPI — Recomendação Administrativa nº 003/2023: Irregularidade em inexigibilidade de licitação no Município de Campo Maior-PI",
-      "url": "https://www.mppi.mp.br/consulta-publica/tac/dw?id=1116323&pmov=55039694",
+      "url": "https://www.mppi.mp.br/consulta-publica/",
       "snippet": "MPPI emitiu recomendação ao Secretário Municipal de Turismo de Campo Maior-PI (Heldervan Lopes Eugênio Gomes) por 'possível ocorrência de atentado aos princípios da administração' em licitações via inexigibilidade em 2022. Foram contratadas bandas por R$ 200.000 com indícios de irregularidades formais. O MPPI referenciou possível ato de improbidade administrativa (art. 11, V, da Lei 8.429/92).",
       "source": "mppi.mp.br (MPPI — Ministério Público do Piauí)",
       "risk_indicator": "medio",
       "tipo": "midia",
-      "match": "M4 — Irregularidade em contrato/inexigibilidade no município do PEP (Campo Maior-PI), gestão coincidente com período de atuação política local"
+      "match": "M4 — Irregularidade em contrato/inexigibilidade no município do PEP (Campo Maior-PI), gestão coincidente com período de atuação política local",
+      "url_nota": "URL original do documento pode exigir autenticação. Acesse o portal MPPI e busque por Recomendação nº 003/2023 – Campo Maior-PI"
     },
     {
       "title": "Viagora — Operação Monopolium (PF): Responsável por licitações de Campo Maior recebeu dinheiro de alvo da PF",
@@ -3180,50 +3229,55 @@
     },
     {
       "title": "Tesserati — Processos criminais (4) — Diogo Antonio De Almeida Barbosa Pereira",
-      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "url": "https://www.jusbrasil.com.br/busca?q=Diogo%20Antonio%20De%20Almeida%20Barbosa%20Pereira&tb=processos",
       "snippet": "Diogo Antonio De Almeida Barbosa Pereira tem 4 processo(s) criminal(is) via Tesserati. Assuntos: DIREITO PENAL|CRIMES PREVISTOS NA LEGISLACAO EXTRAVAGANTE|CR; DIREITO PENAL|CRIMES PRATICADOS POR FUNCIONARIOS PUBLICOS CO; DIREITO PENAL|CRIMES PRATICADOS POR FUNCIONARIOS PUBLICOS CO. Fonte: base consolidada de tribunais brasileiros.",
       "source": "Tesserati — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 518.666.922-91",
-      "decisao_recomendada": "REPROVAÇÃO — 4 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 4 processo(s) criminal(is) confirmado(s) via Tesserati.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — TALES TORRICELLI DE SOUSA COSTA E SILVA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=TALES%20TORRICELLI%20DE%20SOUSA%20COSTA%20E%20SILVA&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 04951031442 não retornou processos criminais. Total retornado: 2. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 04951031442 confirmado na API — sem processos criminais"
+      "match": "CPF 04951031442 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Tesserati — Mídias Negativas — TALES TORRICELLI DE SOUSA COSTA E SILVA",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "url": "https://www.escavador.com/busca?entidade=pessoas&q=TALES%20TORRICELLI%20DE%20SOUSA%20COSTA%20E%20SILVA",
       "snippet": "1 mídia(s) negativa(s) identificada(s) para TALES TORRICELLI DE SOUSA COSTA E SILVA via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/eleicoes/2024/candidatos-pb/brejo-do-cruz/prefeito/dr-tales-45/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01",
       "source": "Tesserati — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
-      "match": "Nome TALES TORRICELLI DE SOUSA COSTA E SILVA"
+      "match": "Nome TALES TORRICELLI DE SOUSA COSTA E SILVA",
+      "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Tesserati Mídias Negativas"
     },
     {
       "title": "Processos criminais (6 encontrados) — FRANCISCO MENDES CAMPOS",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=FRANCISCO%20MENDES%20CAMPOS&tb=processos",
       "snippet": "FRANCISCO MENDES CAMPOS tem 31 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 52641058472 — 6 processo(s) sem polo passivo crítico"
+      "match": "CPF 52641058472 — 6 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Tesserati — Processos criminais (8) — FRANCISCO MENDES CAMPOS",
-      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "url": "https://www.jusbrasil.com.br/busca?q=FRANCISCO%20MENDES%20CAMPOS&tb=processos",
       "snippet": "FRANCISCO MENDES CAMPOS tem 8 processo(s) criminal(is) via Tesserati. Assuntos: 05.20.10 - CRIMES CONTRA A ORDEM TRIBUTARIA (ART. 1 AO 3 DA ; CALUNIA; CRIMES DE RESPONSABILIDADE. Fonte: base consolidada de tribunais brasileiros.",
       "source": "Tesserati — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 52641058472",
-      "decisao_recomendada": "REPROVAÇÃO — 8 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 8 processo(s) criminal(is) confirmado(s) via Tesserati.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
     },
     {
       "title": "Processo criminal — MARMUTHE DE SOUZA CAVALCANTI (PEP_SOCIO)",
@@ -3237,13 +3291,14 @@
     },
     {
       "title": "Tesserati — Processos criminais (2) — MARMUTHE DE SOUZA CAVALCANTI",
-      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "url": "https://www.jusbrasil.com.br/busca?q=MARMUTHE%20DE%20SOUZA%20CAVALCANTI&tb=processos",
       "snippet": "MARMUTHE DE SOUZA CAVALCANTI tem 2 processo(s) criminal(is) via Tesserati. Assuntos: CALUNIA; DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.",
       "source": "Tesserati — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 89512073404",
-      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
     },
     {
       "title": "Prefeito Tales Torricelli — Mandato Ativo Confirmado (Portal Oficial Prefeitura de Brejo do Cruz)",
@@ -3357,21 +3412,23 @@
   "bda5cef7-6c02-48f5-9f09-7c0c7656f842": [
     {
       "title": "JusBrasil API: nenhum processo criminal — DIOGO SCHMITZ",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=DIOGO%20SCHMITZ&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 001.199.040-63 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 001.199.040-63 confirmado na API — sem processos criminais"
+      "match": "CPF 001.199.040-63 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — MARLENE WALBER SCHMITZ",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=MARLENE%20WALBER%20SCHMITZ&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 16113101053 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 16113101053 confirmado na API — sem processos criminais"
+      "match": "CPF 16113101053 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "M1 — Confirmação de mandato PEP: MARLENE WALBER SCHMITZ | Secretário Executivo",
@@ -3458,110 +3515,121 @@
   "4e85ce9b-cbf9-4be1-a5ff-f86ae35fdceb": [
     {
       "title": "JusBrasil API: nenhum processo criminal — DAVID ELVIS DE OLIVEIRA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=DAVID%20ELVIS%20DE%20OLIVEIRA&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 058.328.656-93 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 058.328.656-93 confirmado na API — sem processos criminais"
+      "match": "CPF 058.328.656-93 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Processos criminais (1 encontrados) — MAYKE KEWIN DE OLIVEIRA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=MAYKE%20KEWIN%20DE%20OLIVEIRA&tb=processos",
       "snippet": "MAYKE KEWIN DE OLIVEIRA tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 08920888698 — 1 processo(s) sem polo passivo crítico"
+      "match": "CPF 08920888698 — 1 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Tesserati — Processos criminais (1) — MAYKE KEWIN DE OLIVEIRA",
-      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "url": "https://www.jusbrasil.com.br/busca?q=MAYKE%20KEWIN%20DE%20OLIVEIRA&tb=processos",
       "snippet": "MAYKE KEWIN DE OLIVEIRA tem 1 processo(s) criminal(is) via Tesserati. Assuntos: PENAL > CRIMES CONTRA A HONRA > CALUNIA. Fonte: base consolidada de tribunais brasileiros.",
       "source": "Tesserati — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 08920888698",
-      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Tesserati.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
     }
   ],
   "1b97283a-e7c8-4dc9-bb91-097c0d29dbe0": [
     {
       "title": "Processos criminais (9 encontrados) — RAILTON DA SILVA PAIVA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=RAILTON%20DA%20SILVA%20PAIVA&tb=processos",
       "snippet": "RAILTON DA SILVA PAIVA tem 9 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 188.155.808-83 — 9 processo(s) sem polo passivo crítico"
+      "match": "CPF 188.155.808-83 — 9 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Tesserati — Processos criminais (2) — Railton Da Silva Paiva",
-      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "url": "https://www.jusbrasil.com.br/busca?q=Railton%20Da%20Silva%20Paiva&tb=processos",
       "snippet": "Railton Da Silva Paiva tem 2 processo(s) criminal(is) via Tesserati. Assuntos: DIREITO PENAL (287) - CRIMES CONTRA A FE PUBLICA (3523) - FA; CITACAO. Fonte: base consolidada de tribunais brasileiros.",
       "source": "Tesserati — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 188.155.808-83",
-      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — RANILDA DA SILVA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=RANILDA%20DA%20SILVA&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 10824935896 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 10824935896 confirmado na API — sem processos criminais"
+      "match": "CPF 10824935896 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     }
   ],
   "4328697c-0e2b-4646-af09-24b291854691": [
     {
       "title": "JusBrasil API: nenhum processo criminal — LIVIA MARIA PIRES PEIXOTO CALLOU",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=LIVIA%20MARIA%20PIRES%20PEIXOTO%20CALLOU&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 001.984.973-77 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 001.984.973-77 confirmado na API — sem processos criminais"
+      "match": "CPF 001.984.973-77 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — LIVIA MARIA PIRES PEIXOTO CALLOU",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=LIVIA%20MARIA%20PIRES%20PEIXOTO%20CALLOU&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 00198497377 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 00198497377 confirmado na API — sem processos criminais"
+      "match": "CPF 00198497377 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     }
   ],
   "d44a2e76-c078-4afd-9649-ca1ded222775": [
     {
       "title": "JusBrasil API: nenhum processo criminal — CLAUDIO AMARAL DE SOUZA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=CLAUDIO%20AMARAL%20DE%20SOUZA&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 545.502.891-04 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 545.502.891-04 confirmado na API — sem processos criminais"
+      "match": "CPF 545.502.891-04 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Tesserati — Mídias Negativas — Claudio Amaral De Souza",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "url": "https://www.escavador.com/busca?entidade=pessoas&q=Claudio%20Amaral%20De%20Souza",
       "snippet": "2 mídia(s) negativa(s) identificada(s) para Claudio Amaral De Souza via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/eleicoes/2024/candidatos-mg/diogo-de-vasconcelos/prefeito/joao-claudio-25/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": ",
       "source": "Tesserati — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
-      "match": "Nome Claudio Amaral De Souza"
+      "match": "Nome Claudio Amaral De Souza",
+      "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Tesserati Mídias Negativas"
     },
     {
       "title": "Processos criminais (1 encontrados) — LUIZ ANTONIO AMARAL DE SOUZA",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=LUIZ%20ANTONIO%20AMARAL%20DE%20SOUZA&tb=processos",
       "snippet": "LUIZ ANTONIO AMARAL DE SOUZA tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 56984251168 — 1 processo(s) sem polo passivo crítico"
+      "match": "CPF 56984251168 — 1 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "MP — Inquérito/Investigação criminal — LUIZ ANTONIO AMARAL DE SOUZA",
@@ -3574,13 +3642,14 @@
     },
     {
       "title": "Tesserati — Processos criminais (1) — LUIZ ANTONIO AMARAL DE SOUZA              ",
-      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "url": "https://www.jusbrasil.com.br/busca?q=LUIZ%20ANTONIO%20AMARAL%20DE%20SOUZA&tb=processos",
       "snippet": "LUIZ ANTONIO AMARAL DE SOUZA               tem 1 processo(s) criminal(is) via Tesserati. Assuntos: INQUERITO POLICIAL MILITAR. Fonte: base consolidada de tribunais brasileiros.",
       "source": "Tesserati — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 56984251168",
-      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Tesserati.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
     },
     {
       "title": "M1 — Confirmação de mandato PEP: LUIZ ANTONIO AMARAL DE SOUZA — cargo/município não identificados",
@@ -3676,21 +3745,23 @@
   "5902e757-0f2e-43e5-871f-1970907c0a39": [
     {
       "title": "Processos criminais (1 encontrados) — JOSE ADAILTON CARNEIRO FILHO",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=JOSE%20ADAILTON%20CARNEIRO%20FILHO&tb=processos",
       "snippet": "JOSE ADAILTON CARNEIRO FILHO tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
       "source": "JusBrasil Background Check API",
       "risk_indicator": "medio",
       "tipo": "processo",
-      "match": "CPF 037.260.771-38 — 1 processo(s) sem polo passivo crítico"
+      "match": "CPF 037.260.771-38 — 1 processo(s) sem polo passivo crítico",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — RAQUEL MACIEL CARNEIRO",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=RAQUEL%20MACIEL%20CARNEIRO&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 01067576100 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 01067576100 confirmado na API — sem processos criminais"
+      "match": "CPF 01067576100 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "M1 — Confirmação de mandato PEP: RAQUEL MACIEL CARNEIRO (TSE/portais públicos)",
@@ -3760,12 +3831,13 @@
   "46868788-c75e-496e-856d-a0981cc42271": [
     {
       "title": "JusBrasil API: nenhum processo criminal — MIGUEL DE HOLANDA VITAL",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=MIGUEL%20DE%20HOLANDA%20VITAL&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 609.473.732-68 não retornou processos criminais. Total retornado: 2. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 609.473.732-68 confirmado na API — sem processos criminais"
+      "match": "CPF 609.473.732-68 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "MP — Inquérito/Investigação criminal — MIGUEL DE HOLANDA VITAL",
@@ -3778,12 +3850,13 @@
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — MIGUEL DE HOLANDA VITAL",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=MIGUEL%20DE%20HOLANDA%20VITAL&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 60947373268 não retornou processos criminais. Total retornado: 2. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 60947373268 confirmado na API — sem processos criminais"
+      "match": "CPF 60947373268 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Perfil profissional ZoomInfo — Miguel de Holanda Vital: vínculos com ARSAM e Prefeitura de Manaus",
@@ -3861,21 +3934,23 @@
   "5c4f15e8-ca8f-4452-a77d-7cd558a3aafe": [
     {
       "title": "JusBrasil API: nenhum processo criminal — OSCAR FERREIRA MENDES NETO",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=OSCAR%20FERREIRA%20MENDES%20NETO&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 031.321.341-04 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 031.321.341-04 confirmado na API — sem processos criminais"
+      "match": "CPF 031.321.341-04 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — OSCAR FERREIRA MENDES NETO",
-      "url": "https://www.jusbrasil.com.br/processos/",
+      "url": "https://www.jusbrasil.com.br/busca?q=OSCAR%20FERREIRA%20MENDES%20NETO&tb=processos",
       "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 03132134104 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "CPF 03132134104 confirmado na API — sem processos criminais"
+      "match": "CPF 03132134104 confirmado na API — sem processos criminais",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
       "title": "Comitê financeiro 'ELEICAO 2024 OSCAR FERREIRA MENDES NETO VEREADOR' — CNPJ ativo em Inhumas-GO",
@@ -3981,13 +4056,14 @@
     },
     {
       "title": "Tesserati — Processos criminais (2) — Fabio Gigli Rabechini",
-      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "url": "https://www.jusbrasil.com.br/busca?q=Fabio%20Gigli%20Rabechini&tb=processos",
       "snippet": "Fabio Gigli Rabechini tem 2 processo(s) criminal(is) via Tesserati. Assuntos: FURTO QUALIFICADO; CRIMES ELEITORAIS. Fonte: base consolidada de tribunais brasileiros.",
       "source": "Tesserati — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 306.920.718-90",
-      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
     },
     {
       "title": "Processo criminal — FABIO GIGLI RABECHINI (PEP_MAE)",
@@ -4010,13 +4086,14 @@
     },
     {
       "title": "Tesserati — Processos criminais (2) — FABIO GIGLI RABECHINI",
-      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "url": "https://www.jusbrasil.com.br/busca?q=FABIO%20GIGLI%20RABECHINI&tb=processos",
       "snippet": "FABIO GIGLI RABECHINI tem 2 processo(s) criminal(is) via Tesserati. Assuntos: FURTO QUALIFICADO; CRIMES ELEITORAIS. Fonte: base consolidada de tribunais brasileiros.",
       "source": "Tesserati — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 30692071890",
-      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
     },
     {
       "title": "Página oficial do Vereador Pavão da Academia (FABIO GIGLI RABECHINI) — Câmara Municipal de Monte Mor",
