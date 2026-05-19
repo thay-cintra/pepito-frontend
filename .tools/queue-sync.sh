@@ -56,5 +56,10 @@ PYEOF
   echo "[3/3] generate-pld-risk-scores.py ..."
   python pepito-frontend/.tools/generate-pld-risk-scores.py
 
+  echo "[upload] Sincronizando JSONs para GCS (pepito-data-stage) ..."
+  DATA="$ROOT/pepito-frontend/src/data"
+  gsutil cp "$DATA/registration-queue-real.json" gs://pepito-data-stage/registration-queue-real.json
+  gsutil cp "$DATA/analises-salvas.json"         gs://pepito-data-stage/analises-salvas.json 2>/dev/null || true
+
   echo "=== $(date -Iseconds) queue-sync done ==="
 } >> "$LOG" 2>&1
