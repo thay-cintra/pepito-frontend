@@ -300,7 +300,10 @@ app.post("/api/refresh", requireAuth, (req, res) => {
   res.status(202).json({ ok: true, message: "Refresh + rebuild iniciados." });
 });
 
-// ── Arquivos estáticos (auth obrigatória, exceto /login) ────────────────────
+// ── Arquivos estáticos ───────────────────────────────────────────────────────
+// Assets (JS/CSS/imagens) são públicos — necessários para renderizar /login
+app.use("/assets", express.static(path.join(DIST, "assets")));
+// Demais arquivos estáticos exigem auth
 app.use(requireAuth, express.static(DIST));
 
 // SPA fallback (React Router)
