@@ -1,0 +1,30 @@
+labels:
+  platform: linux/amd64
+
+variables:
+  - &backend_options
+    kubernetes:
+      serviceAccountName: "cora-woodpecker-sa"
+      securityContext:
+        privileged: true
+
+steps:
+  # Busca a tag rodando em stage e promove para produção
+  argo-update-prod:
+    image: img.cora.tools/quay/argoproj/argocd:v2.14.3
+    environment:
+      ARGOCD_SERVER:
+        from_secret: argocd_server
+      ARGOCD_AUTH_TOKEN:
+        from_secret: argocd_token
+    commands:
+      - "STAGE_TAG=$(argocd --grpc-web --insecure app get front-pepito-stage -o json | grep -o 'front-pepito:[^\"]*' | head -1 | sed 's/.*://')"
+      - "if [ -z \"$STAGE_TAG\" ]; then echo 'ERRO: tag de stage nao encontrada' && exit 1; fi"
+      - "echo \"Promovendo tag $STAGE_TAG para producao\""
+      - "argocd --grpc-web --insecure app set front-pepito-production --plugin-env HELM_ARGS=\"--set global.image.tag=$STAGE_TAG\""
+    backend_options:
+      <<: *backend_options
+
+when:
+  - event: deployment
+    evaluate: 'CI_PIPELINE_DEPLOY_TARGET contains "production"'

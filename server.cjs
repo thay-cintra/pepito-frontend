@@ -19,6 +19,43 @@ const https       = require("https");
 const http        = require("http");
 const { spawn }   = require("child_process");
 
+// ── GCS (quando GCS_BUCKET_NAME está definido) ───────────────────────────────
+const GCS_BUCKET_NAME = process.env.GCS_BUCKET_NAME || "";
+let gcsBucket = null;
+if (GCS_BUCKET_NAME) {
+  try {
+    const { Storage } = require("@google-cloud/storage");
+    gcsBucket = new Storage().bucket(GCS_BUCKET_NAME);
+  } catch (e) {
+    console.warn("[gcs] @google-cloud/storage não disponível — usando filesystem:", e.message);
+  }
+}
+
+async function readDataFile(localPath, gcsObject, fallback) {
+  if (gcsBucket) {
+    try {
+      const [contents] = await gcsBucket.file(gcsObject).download();
+      return JSON.parse(contents.toString("utf8"));
+    } catch (e) {
+      if (e.code === 404) return fallback;
+      throw e;
+    }
+  }
+  try {
+    const raw = fs.existsSync(localPath) ? fs.readFileSync(localPath, "utf8") : null;
+    return raw ? JSON.parse(raw) : fallback;
+  } catch { return fallback; }
+}
+
+async function writeDataFile(localPath, gcsObject, data) {
+  const json = JSON.stringify(data, null, 2);
+  if (gcsBucket) {
+    await gcsBucket.file(gcsObject).save(json, { contentType: "application/json" });
+    return;
+  }
+  fs.writeFileSync(localPath, json);
+}
+
 const PORT           = parseInt(process.env.PORT || "4173", 10);
 const APP_URL        = (process.env.APP_URL || `http://localhost:${PORT}`).replace(/\/$/, "");
 const CLIENT_ID      = process.env.GOOGLE_CLIENT_ID || "";
@@ -174,6 +211,9 @@ app.get("/auth/logout", (req, res) => {
   res.redirect("/login");
 });
 
+// Health check (pública — usada por readiness/liveness probes)
+app.get("/health", (req, res) => res.json({ ok: true }));
+
 // Página de login (pública — servida pelo SPA, sem auth guard)
 app.get("/login", (req, res) => {
   res.sendFile(path.join(DIST, "index.html"));
@@ -183,33 +223,29 @@ app.get("/login", (req, res) => {
 
 let refreshRunning = false;
 
-app.get("/api/analises", requireAuth, (req, res) => {
+app.get("/api/analises", requireAuth, async (req, res) => {
   try {
-    const raw  = fs.existsSync(ANALISES_FILE) ? fs.readFileSync(ANALISES_FILE, "utf8") : "{}";
-    const data = JSON.parse(raw);
+    const data = await readDataFile(ANALISES_FILE, "analises-salvas.json", { analises: [], exclusoes: [] });
     res.json({ analises: data.analises ?? [], exclusoes: data.exclusoes ?? [] });
   } catch { res.json({ analises: [], exclusoes: [] }); }
 });
 
-app.post("/api/analises", requireAuth, (req, res) => {
+app.post("/api/analises", requireAuth, async (req, res) => {
   try {
-    const existing = fs.existsSync(ANALISES_FILE)
-      ? JSON.parse(fs.readFileSync(ANALISES_FILE, "utf8"))
-      : { analises: [], exclusoes: [] };
+    const existing = await readDataFile(ANALISES_FILE, "analises-salvas.json", { analises: [], exclusoes: [] });
     existing.analises  = req.body.analises  ?? existing.analises;
     existing.exclusoes = req.body.exclusoes ?? existing.exclusoes;
     existing._meta     = { ultima_atualizacao: new Date().toISOString(), by: req.user.email };
-    fs.writeFileSync(ANALISES_FILE, JSON.stringify(existing, null, 2));
+    await writeDataFile(ANALISES_FILE, "analises-salvas.json", existing);
     res.json({ ok: true });
   } catch (e) { res.status(500).json({ error: String(e) }); }
 });
 
 // ── Fila PLD — serve JSON em tempo real (sem rebuild) ───────────────────────
-app.get("/api/queue", requireAuth, (req, res) => {
+app.get("/api/queue", requireAuth, async (req, res) => {
   try {
-    const raw = fs.existsSync(QUEUE_FILE) ? fs.readFileSync(QUEUE_FILE, "utf8") : '{"_meta":{},"items":[]}';
-    res.setHeader("Content-Type", "application/json");
-    res.send(raw);
+    const data = await readDataFile(QUEUE_FILE, "registration-queue-real.json", { _meta: {}, items: [] });
+    res.json(data);
   } catch (e) { res.status(500).json({ error: String(e) }); }
 });
 

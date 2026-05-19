@@ -1,0 +1,84 @@
+global:
+  name: "front-pepito"
+  squad: "compliance"
+  namespace: "cora"
+  version: ""
+  image:
+    registry: img.cora.tools
+    repo: cora/front-pepito
+    tag: ""
+  environment: "stage"
+  runtime: "node"
+  modules:
+    api:
+      enabled: true
+    secrets:
+      enabled: true
+    buckets:
+      enabled: true
+
+api:
+  replicas: 1
+  reloadSecretType: "restart"
+  readinessProbe:
+    enabled: true
+    failureThreshold: 5
+    initialDelaySeconds: 10
+    periodSeconds: 5
+    timeoutSeconds: 5
+    httpGet:
+      enabled: true
+      path: "/health"
+      scheme: "HTTP"
+      port: 4173
+  livenessProbe:
+    enabled: true
+    failureThreshold: 15
+    initialDelaySeconds: 10
+    periodSeconds: 5
+    timeoutSeconds: 5
+    httpGet:
+      enabled: true
+      path: "/health"
+      scheme: "HTTP"
+      port: 4173
+  resources:
+    limits:
+      cpu: 300m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+  service:
+    port: 4173
+  deployStrategy:
+    mode: "rolling"
+  autoscale:
+    enabled: false
+  env:
+    - name: NODE_ENV
+      value: production
+    - name: PORT
+      value: "4173"
+    - name: APP_URL
+      value: https://pepito.stage.cora.team
+    - name: LOCAL_MODE
+      value: "false"
+    - name: GCS_BUCKET_NAME
+      value: pepito-data-stage
+    - name: GOOGLE_APPLICATION_CREDENTIALS
+      value: /secrets/gcp.json
+    - name: GOOGLE_CLIENT_ID
+      value: "427199299421-ncd1mlop89l6i64mbq06qci17krh8657.apps.googleusercontent.com"
+
+secrets:
+  secrets:
+    - name: GOOGLE_CLIENT_SECRET
+    - name: JWT_SECRET
+
+buckets:
+  projectId: "cora-stage"
+  buckets:
+    - name: pepito-data-stage
+      location: US-CENTRAL1
+      storageClass: STANDARD

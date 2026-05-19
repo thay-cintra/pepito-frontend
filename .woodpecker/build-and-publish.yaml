@@ -1,0 +1,47 @@
+labels:
+  platform: linux/amd64
+
+variables:
+  - &backend_options
+    kubernetes:
+      serviceAccountName: "cora-woodpecker-sa"
+      securityContext:
+        privileged: true
+
+when:
+  - branch: [main]
+    event: [push, manual]
+
+steps:
+  docker:
+    image: img.cora.tools/dockerhub/woodpeckerci/plugin-docker-buildx:6.0.3
+    privileged: true
+    settings:
+      registry: img.cora.tools
+      repo: img.cora.tools/cora/front-pepito
+      cache: true
+      dockerfile: Dockerfile
+      tags:
+        - 1.${CI_PIPELINE_NUMBER}.${CI_COMMIT_SHA:0:7}
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+    backend_options:
+      <<: *backend_options
+
+  argo-update-stage:
+    image: img.cora.tools/quay/argoproj/argocd:v2.14.3
+    environment:
+      ARGOCD_SERVER:
+        from_secret: argocd_server
+      ARGOCD_AUTH_TOKEN:
+        from_secret: argocd_token
+    commands:
+      - TAG="1.${CI_PIPELINE_NUMBER}.${CI_COMMIT_SHA:0:7}"
+      - echo "Atualizando front-pepito-stage para tag $TAG"
+      - argocd --grpc-web --insecure app set front-pepito-stage --plugin-env HELM_ARGS="--set global.image.tag=$TAG"
+    backend_options:
+      <<: *backend_options
+    depends_on:
+      - docker

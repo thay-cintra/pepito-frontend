@@ -1,0 +1,28 @@
+labels:
+  platform: linux/amd64
+
+variables:
+  - &trivy_cache_vol "woodpecker-cache:/root/.cache"
+  - &backend_options
+    kubernetes:
+      labels:
+        env: ci
+        squad: devops
+      serviceAccountName: "cora-woodpecker-sa"
+      securityContext:
+        privileged: true
+
+when:
+  - event: pull_request
+
+steps:
+  scan-vuln:
+    image: img.cora.tools/dockerhub/woodpeckerci/plugin-trivy
+    volumes:
+      - *trivy_cache_vol
+    settings:
+      severity: "MEDIUM,HIGH,CRITICAL"
+      skip-dirs: "vendor,node_modules"
+      dir: "."
+    backend_options:
+      <<: *backend_options

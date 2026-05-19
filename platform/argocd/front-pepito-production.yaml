@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: front-pepito-production
+  labels:
+    env: production
+  annotations:
+    notifications.argoproj.io/subscribe.on-sync-succeeded.slack: devops_incidents
+    notifications.argoproj.io/subscribe.on-sync-succeeded.grafana: argocd
+spec:
+  project: cora-production
+  source:
+    repoURL: "https://github.com/corabank/front-pepito.git"
+    path: platform/kubernetes
+    targetRevision: main
+    plugin:
+      name: argocd-apps-plugin
+      env:
+        - name: CHART_APPS_VERSION
+          value: 1.4.8
+        - name: VALUES_FILE
+          value: values-prod.yaml
+        - name: HELM_ARGS
+          value: "--set global.image.tag=latest"
+  destination:
+    namespace: cora
+    name: PROD-US
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+      - RespectIgnoreDifferences=true
