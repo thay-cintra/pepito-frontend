@@ -3,13 +3,13 @@
     "descricao": "Scores de probabilidade de lavagem de dinheiro por draft_id. Modelo baseado em análise de 399 contas históricas com risk_business.status='PLD'. 9 fatores de risco com pesos derivados de frequência histórica.",
     "modelo_versao": "1.0",
     "universo_historico": 399,
-    "gerado_em": "2026-05-12T19:18:54Z",
-    "total_casos": 55,
+    "gerado_em": "2026-05-19T17:34:39Z",
+    "total_casos": 71,
     "distribuicao": {
-      "medio": 25,
-      "alto": 25,
-      "critico": 2,
-      "baixo": 3
+      "medio": 37,
+      "alto": 29,
+      "critico": 3,
+      "baixo": 2
     },
     "fatores_pesos": {
       "score_high": 25,
@@ -26,6 +26,759 @@
     }
   },
   "scores": {
+    "75a0e9ef-e74c-40ab-a328-e78f1a66436d": {
+      "probabilidade": 24.4,
+      "nivel": "medio",
+      "score_modelo": 30,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_medio",
+          "label": "Score PLD 985 (médio-alto)",
+          "nivel": "medio"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — PAI: titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (VILA RICA-MT) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "PAI",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "45437f70-99ee-429a-ae62-6917471a1e96": {
+      "probabilidade": 46.3,
+      "nivel": "alto",
+      "score_modelo": 57,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1020 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (VEREADOR): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (CAMACÃ-BA) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "medio"
+        },
+        {
+          "id": "cnae_regulado",
+          "label": "CNAE regulamentado — Planos de saúde: obrigatório verificar autorização de funcionamento no ANS antes de aprovar. Operar sem registro é crime (art. 16 da Lei 7.492/86). Consultar: https://www.ans.gov.br/operadoras/cadastro-de-operadoras",
+          "nivel": "alto",
+          "orgao_url": "https://www.ans.gov.br/operadoras/cadastro-de-operadoras"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "SOCIO",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "9eb3e2a5-b370-4ee9-8229-fbfbb6ff16e6": {
+      "probabilidade": 35.0,
+      "nivel": "medio",
+      "score_modelo": 43,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1005 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (PENHA-SC) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "9684c039-c672-4ce6-a379-8463648488c1": {
+      "probabilidade": 39.0,
+      "nivel": "medio",
+      "score_modelo": 48,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1105 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (SECRETÁRIO EXECUTIVO ADJU): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        },
+        {
+          "id": "municipio_fronteira",
+          "label": "Município de fronteira internacional (MANAUS): Circular BACEN 4.001 classifica como zona de risco elevado para LD/FT. Zona de fronteira facilita tráfico de drogas/armas, contrabando e doleiros. Exige Diligência Reforçada e monitoramento contínuo.",
+          "nivel": "alto"
+        }
+      ],
+      "pep_cargo": "SECRETÁRIO EXECUTIVO ADJUNTO DO GAB. DA VICE-GOVERNADORIA",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "bf714cc0-afff-4bfa-983f-2d599c02c43a": {
+      "probabilidade": 46.3,
+      "nivel": "alto",
+      "score_modelo": 57,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_medio",
+          "label": "Score PLD 990 (médio-alto)",
+          "nivel": "medio"
+        },
+        {
+          "id": "cnae_risco",
+          "label": "CNAE alto risco (47.23-7-00 - Comércio varejista de bebid)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (VEREADOR): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "alto"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (CATUJI-MG) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "alto"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "8e7aa5c6-e053-4f10-bdf3-eb3fea73e8a4": {
+      "probabilidade": 22.0,
+      "nivel": "medio",
+      "score_modelo": 27,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_medio",
+          "label": "Score PLD 990 (médio-alto)",
+          "nivel": "medio"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (VEREADOR): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "SOCIO",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "968733ba-2878-4e33-bca7-8aa07f122671": {
+      "probabilidade": 33.3,
+      "nivel": "medio",
+      "score_modelo": 41,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1005 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (PREFEITO) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "empresa_nova",
+          "label": "Empresa nova (0 meses)",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "PREFEITO",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "70a94c61-c31f-4085-9c82-5b49500a51c9": {
+      "probabilidade": 26.8,
+      "nivel": "medio",
+      "score_modelo": 33,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1035 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — SOCIO: titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "SOCIO",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "a8e187e9-157f-42dc-a6fe-4145da4bb97d": {
+      "probabilidade": 56.9,
+      "nivel": "alto",
+      "score_modelo": 70,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1005 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "cnae_risco",
+          "label": "CNAE alto risco (43.99-1-03 - Obras de alvenaria)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (VEREADOR): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "alto"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (ACAJUTIBA-BA) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "alto"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "618e0434-3278-4d0b-abc5-4c8c1510a633": {
+      "probabilidade": 46.3,
+      "nivel": "alto",
+      "score_modelo": 57,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1666 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        },
+        {
+          "id": "proc_jud",
+          "label": "Processos judiciais ao onboarding",
+          "nivel": "alto"
+        },
+        {
+          "id": "midia_neg",
+          "label": "Mídias negativas identificadas",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "",
+      "pep_vinculo": "MAE",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "fa9f9805-6ed6-46bf-8f71-a6a3b2e1274b": {
+      "probabilidade": 22.0,
+      "nivel": "medio",
+      "score_modelo": 27,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_medio",
+          "label": "Score PLD 985 (médio-alto)",
+          "nivel": "medio"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (VEREADOR): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "9436d91b-26c7-4ac7-a78c-c4a81b2e8925": {
+      "probabilidade": 63.4,
+      "nivel": "critico",
+      "score_modelo": 78,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1546 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "cnae_risco",
+          "label": "CNAE alto risco (47.41-5-00 - Comércio varejista de tinta)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado () — SOBRINHO(A): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        },
+        {
+          "id": "proc_jud",
+          "label": "Processos judiciais ao onboarding",
+          "nivel": "alto"
+        },
+        {
+          "id": "empresa_nova",
+          "label": "Empresa nova (1 meses)",
+          "nivel": "medio"
+        },
+        {
+          "id": "midia_neg",
+          "label": "Mídias negativas identificadas",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "",
+      "pep_vinculo": "SOBRINHO(A)",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "78da340c-bf29-4d5e-9a50-a78970612281": {
+      "probabilidade": 37.4,
+      "nivel": "medio",
+      "score_modelo": 46,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1406 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado () — vínculo: titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "empresa_nova",
+          "label": "Empresa nova (1 meses)",
+          "nivel": "medio"
+        },
+        {
+          "id": "midia_neg",
+          "label": "Mídias negativas identificadas",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "",
+      "pep_vinculo": "",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "403e5a47-aece-4780-bffa-a035e3e5db36": {
+      "probabilidade": 24.4,
+      "nivel": "medio",
+      "score_modelo": 30,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_medio",
+          "label": "Score PLD 985 (médio-alto)",
+          "nivel": "medio"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — SOCIO: titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (QUEBRANGULO-AL) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "SOCIO",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "b8d4214e-5f7f-4840-91a2-6ce92815682a": {
+      "probabilidade": 35.0,
+      "nivel": "medio",
+      "score_modelo": 43,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1105 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (PREFEITO) — FILHA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Prefeito ativo (GUARAÍ-TO) + eleições 2026: risco de uso da empresa para captar recursos de campanha via contratos municipais, emendas ou repasses públicos. Candidatura à reeleição cria incentivo a buscar fontes extraoficiais de financiamento.",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "PREFEITO",
+      "pep_vinculo": "FILHA(O)",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "c2540038-443f-416c-933c-c3bc1f6809fa": {
+      "probabilidade": 40.7,
+      "nivel": "alto",
+      "score_modelo": 50,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1501 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (ADMINISTRADOR) — SOBRINHA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "proc_jud",
+          "label": "Processos judiciais ao onboarding",
+          "nivel": "alto"
+        },
+        {
+          "id": "midia_neg",
+          "label": "Mídias negativas identificadas",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "ADMINISTRADOR",
+      "pep_vinculo": "SOBRINHA(O)",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "a197edd5-3c45-4d6e-9ec7-ea3b697b1350": {
+      "probabilidade": 39.0,
+      "nivel": "medio",
+      "score_modelo": 48,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1005 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "sus_name",
+          "label": "Nome em lista suspeita (SUS_NAME)",
+          "nivel": "alto"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (VARGEÃO-SC) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "alto"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "35095a1b-2e1a-45c5-a00d-c28e77ad0d88": {
+      "probabilidade": 47.2,
+      "nivel": "alto",
+      "score_modelo": 58,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1005 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (VEREADOR): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        },
+        {
+          "id": "empresa_nova",
+          "label": "Empresa nova (4 meses)",
+          "nivel": "medio"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (ICÓ-CE) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "2bf9f6bc-dd0f-4889-8762-4c6c365df624": {
+      "probabilidade": 40.7,
+      "nivel": "alto",
+      "score_modelo": 50,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1040 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (VEREADOR): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (SANHARÓ-PE) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "MAE",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "161cba7c-9195-4fcb-b232-7af941ea5fe5": {
+      "probabilidade": 26.8,
+      "nivel": "medio",
+      "score_modelo": 33,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1040 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "empresa_nova",
+          "label": "Empresa nova (0 meses)",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "",
+      "pep_vinculo": "",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "3d245bfc-7e1f-42a0-8fe8-a98ee3dd9240": {
+      "probabilidade": 33.3,
+      "nivel": "medio",
+      "score_modelo": 41,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1005 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — SOCIO: titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "empresa_nova",
+          "label": "Empresa nova (3 meses)",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "SOCIO",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "ea66560e-b689-42a7-b273-3bffe468bc24": {
+      "probabilidade": 46.3,
+      "nivel": "alto",
+      "score_modelo": 57,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 2042 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        },
+        {
+          "id": "proc_jud",
+          "label": "Processos judiciais ao onboarding",
+          "nivel": "alto"
+        },
+        {
+          "id": "midia_neg",
+          "label": "Mídias negativas identificadas",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "",
+      "pep_vinculo": "MAE",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "7f7b2d88-b298-40b0-9116-33329371e241": {
+      "probabilidade": 40.7,
+      "nivel": "alto",
+      "score_modelo": 50,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_medio",
+          "label": "Score PLD 985 (médio-alto)",
+          "nivel": "medio"
+        },
+        {
+          "id": "cnae_risco",
+          "label": "CNAE alto risco (47.63-6-01 - Comércio varejista de brinq)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (ESPERANÇA-PB) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "alto"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "c7c6c4fb-03bb-4301-9afe-3cc08e7003f1": {
+      "probabilidade": 24.4,
+      "nivel": "medio",
+      "score_modelo": 30,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1471 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "midia_neg",
+          "label": "Mídias negativas identificadas",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "",
+      "pep_vinculo": "",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "d24cab31-6499-48b8-8065-8134e187d6b6": {
+      "probabilidade": 35.0,
+      "nivel": "medio",
+      "score_modelo": 43,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1005 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — FILHA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (TELÊMACO BORBA-PR) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "FILHA(O)",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "6c9f2512-5c32-4519-9f6c-c00375057cd2": {
+      "probabilidade": 59.3,
+      "nivel": "alto",
+      "score_modelo": 73,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1421 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "cnae_risco",
+          "label": "CNAE alto risco (79.11-2-00 - Agências de viagens)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "alto"
+        },
+        {
+          "id": "empresa_nova",
+          "label": "Empresa nova (1 meses)",
+          "nivel": "medio"
+        },
+        {
+          "id": "midia_neg",
+          "label": "Mídias negativas identificadas",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "3b819c23-6078-46d0-b32d-e8d34ebe83a5": {
+      "probabilidade": 35.0,
+      "nivel": "medio",
+      "score_modelo": 43,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1005 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — FILHA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (PRADOS-MG) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "FILHA(O)",
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
     "b3d0c120-553f-4853-acd1-5d5276acb33f": {
       "probabilidade": 22.0,
       "nivel": "medio",
@@ -45,7 +798,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "d049239f-86d8-4c8e-a71e-b858069e0549": {
       "probabilidade": 40.7,
@@ -71,7 +824,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "db422ba2-b152-4eaa-bdd0-2fcca7427c3e": {
       "probabilidade": 33.3,
@@ -97,7 +850,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "872984c6-67ba-4cc6-9e5a-1ac50ec05c54": {
       "probabilidade": 40.7,
@@ -123,7 +876,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "164515b6-a72c-4b6d-869e-91c4420a78cc": {
       "probabilidade": 39.0,
@@ -149,7 +902,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "df2e347d-07cb-41f5-b06e-a99d18d06aca": {
       "probabilidade": 20.3,
@@ -165,7 +918,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "d1998ed2-2031-445c-84ab-46945283688f": {
       "probabilidade": 47.2,
@@ -196,7 +949,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "0a75159b-8eaa-47c3-8063-0318864e4f5d": {
       "probabilidade": 35.0,
@@ -222,7 +975,33 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
+    },
+    "98d18296-4331-42ee-ab88-ca03ddaf7e0f": {
+      "probabilidade": 40.7,
+      "nivel": "alto",
+      "score_modelo": 50,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1005 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (VEREADOR): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (SERRA GRANDE-PB) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "MAE",
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "382b983f-130d-4517-947f-4bce83f7cdca": {
       "probabilidade": 56.9,
@@ -253,7 +1032,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOBRINHA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "fa9b536e-9f53-449a-ab23-b00fd4faf696": {
       "probabilidade": 26.8,
@@ -274,7 +1053,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "0fd2f314-2659-437a-8a99-af16bf235307": {
       "probabilidade": 41.5,
@@ -305,7 +1084,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "0f397f16-399a-4806-b543-4f9f8194f9bb": {
       "probabilidade": 40.7,
@@ -331,7 +1110,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "79dbd02b-2e0c-4873-b3a4-6d583dbcc2b6": {
       "probabilidade": 32.5,
@@ -352,7 +1131,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "21efc2d9-9569-4f15-89f0-0c924f756812": {
       "probabilidade": 33.3,
@@ -378,7 +1157,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "CONJUGE",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "8e2aa4a0-62e7-4b69-a904-dd84530536ad": {
       "probabilidade": 61.0,
@@ -419,12 +1198,12 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMAO",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "d44a2e76-c078-4afd-9649-ca1ded222775": {
-      "probabilidade": 47.2,
-      "nivel": "alto",
-      "score_modelo": 58,
+      "probabilidade": 26.8,
+      "nivel": "medio",
+      "score_modelo": 33,
       "score_max": 123,
       "fatores": [
         {
@@ -433,34 +1212,19 @@
           "nivel": "alto"
         },
         {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado () — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "baixo"
-        },
-        {
-          "id": "proc_jud",
-          "label": "Processos judiciais ao onboarding",
-          "nivel": "alto"
-        },
-        {
           "id": "empresa_nova",
-          "label": "Empresa nova (0 meses)",
-          "nivel": "medio"
-        },
-        {
-          "id": "midia_neg",
-          "label": "Mídias negativas identificadas",
+          "label": "Empresa nova (1 meses)",
           "nivel": "medio"
         }
       ],
       "pep_cargo": "",
-      "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "pep_vinculo": "",
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "5902e757-0f2e-43e5-871f-1970907c0a39": {
-      "probabilidade": 33.3,
+      "probabilidade": 26.8,
       "nivel": "medio",
-      "score_modelo": 41,
+      "score_modelo": 33,
       "score_max": 123,
       "fatores": [
         {
@@ -469,19 +1233,14 @@
           "nivel": "alto"
         },
         {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado () — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "baixo"
-        },
-        {
           "id": "empresa_nova",
-          "label": "Empresa nova (1 meses)",
+          "label": "Empresa nova (2 meses)",
           "nivel": "medio"
         }
       ],
       "pep_cargo": "",
-      "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "pep_vinculo": "",
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "322d112b-db2b-4a9d-bb71-7fcfb465c2e7": {
       "probabilidade": 16.3,
@@ -502,28 +1261,23 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "de413fa2-1845-4b36-841e-4635a225e4c8": {
-      "probabilidade": 26.8,
+      "probabilidade": 20.3,
       "nivel": "medio",
-      "score_modelo": 33,
+      "score_modelo": 25,
       "score_max": 123,
       "fatores": [
         {
           "id": "score_high",
           "label": "Score PLD 1055 (HIGH)",
           "nivel": "alto"
-        },
-        {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado () — FILHA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "baixo"
         }
       ],
       "pep_cargo": "",
-      "pep_vinculo": "FILHA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "pep_vinculo": "",
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "a81da2e3-03d4-488e-99ed-5f4d1333bf73": {
       "probabilidade": 41.5,
@@ -543,7 +1297,7 @@
         },
         {
           "id": "empresa_nova",
-          "label": "Empresa nova (0 meses)",
+          "label": "Empresa nova (1 meses)",
           "nivel": "medio"
         },
         {
@@ -554,7 +1308,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "70f186e7-06b0-461a-838c-87eeb32bbe3c": {
       "probabilidade": 57.7,
@@ -590,7 +1344,7 @@
       ],
       "pep_cargo": "PREFEITO",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "61744580-b3a8-42fe-965b-71bcd4bee556": {
       "probabilidade": 40.7,
@@ -621,7 +1375,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "280812fe-b3a1-49ae-b971-287e31bed78e": {
       "probabilidade": 40.7,
@@ -647,7 +1401,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "708f2a4d-ac7d-432c-be49-dd214dc64ee6": {
       "probabilidade": 41.5,
@@ -678,7 +1432,7 @@
       ],
       "pep_cargo": "REITOR DA UEA",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "46868788-c75e-496e-856d-a0981cc42271": {
       "probabilidade": 39.0,
@@ -704,7 +1458,7 @@
       ],
       "pep_cargo": "Diretor-Pres. da Ag. Reg. dos Serv. Púb. Concedidos do AM",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "1ca3b300-3b61-4935-9b04-672d5ecf0279": {
       "probabilidade": 41.5,
@@ -724,7 +1478,7 @@
         },
         {
           "id": "empresa_nova",
-          "label": "Empresa nova (0 meses)",
+          "label": "Empresa nova (1 meses)",
           "nivel": "medio"
         },
         {
@@ -735,7 +1489,7 @@
       ],
       "pep_cargo": "SECRETARIO ESPECIAL",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "6ffe6e0b-fe5f-4560-966f-b512b1faed3a": {
       "probabilidade": 40.7,
@@ -766,7 +1520,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "719f82b4-c6d0-4f1f-b7ca-44e636b5b57e": {
       "probabilidade": 99.0,
@@ -782,7 +1536,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "50ba7308-5250-49f3-8029-e5336b151ebb": {
       "probabilidade": 47.2,
@@ -813,7 +1567,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "0c50f90b-3517-4fe8-becc-5bca8c7a1923": {
       "probabilidade": 40.7,
@@ -839,7 +1593,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "5c4f15e8-ca8f-4452-a77d-7cd558a3aafe": {
       "probabilidade": 30.1,
@@ -865,7 +1619,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "2ff2601a-2b0f-42fe-8c98-235f9492b1a3": {
       "probabilidade": 40.7,
@@ -891,7 +1645,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "7b612586-cdea-4222-a4d0-157a83ca316c": {
       "probabilidade": 46.3,
@@ -922,7 +1676,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "d40bbad8-2c38-4713-aadd-5f5d2a066a1c": {
       "probabilidade": 35.0,
@@ -948,7 +1702,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "FILHA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "23e03df6-f24d-413a-b06c-e926918e8bbc": {
       "probabilidade": 33.3,
@@ -974,7 +1728,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "16b74030-5a91-4929-8b99-753a535736a3": {
       "probabilidade": 35.0,
@@ -1000,7 +1754,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "bda5cef7-6c02-48f5-9f09-7c0c7656f842": {
       "probabilidade": 16.3,
@@ -1021,116 +1775,7 @@
       ],
       "pep_cargo": "SECRETARIO EXECUTIVO",
       "pep_vinculo": "FILHA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
-    },
-    "2569031f-eab9-4816-89d9-c49226c48ace": {
-      "probabilidade": 41.5,
-      "nivel": "alto",
-      "score_modelo": 51,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_high",
-          "label": "Score PLD 1005 (HIGH)",
-          "nivel": "alto"
-        },
-        {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado (VEREADOR) — SOCIO: titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "baixo"
-        },
-        {
-          "id": "empresa_nova",
-          "label": "Empresa nova (2 meses)",
-          "nivel": "medio"
-        },
-        {
-          "id": "eleitoral_2026",
-          "label": "PEP Vereador ativo (PIMENTEIRAS-PI) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
-          "nivel": "medio"
-        }
-      ],
-      "pep_cargo": "VEREADOR",
-      "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-05-12T19:18:54Z"
-    },
-    "99e40577-fd25-49e6-87a3-d642f11eef69": {
-      "probabilidade": 35.0,
-      "nivel": "medio",
-      "score_modelo": 43,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_high",
-          "label": "Score PLD 1005 (HIGH)",
-          "nivel": "alto"
-        },
-        {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado (PREFEITO) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "baixo"
-        },
-        {
-          "id": "eleitoral_2026",
-          "label": "PEP Prefeito ativo (CAJURU-SP) + eleições 2026: risco de uso da empresa para captar recursos de campanha via contratos municipais, emendas ou repasses públicos. Candidatura à reeleição cria incentivo a buscar fontes extraoficiais de financiamento.",
-          "nivel": "medio"
-        }
-      ],
-      "pep_cargo": "PREFEITO",
-      "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
-    },
-    "672b5137-cc4f-4d12-b265-8fecac548303": {
-      "probabilidade": 33.3,
-      "nivel": "medio",
-      "score_modelo": 41,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_high",
-          "label": "Score PLD 1005 (HIGH)",
-          "nivel": "alto"
-        },
-        {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "baixo"
-        },
-        {
-          "id": "empresa_nova",
-          "label": "Empresa nova (1 meses)",
-          "nivel": "medio"
-        }
-      ],
-      "pep_cargo": "VEREADOR",
-      "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
-    },
-    "4e85ce9b-cbf9-4be1-a5ff-f86ae35fdceb": {
-      "probabilidade": 35.0,
-      "nivel": "medio",
-      "score_modelo": 43,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_high",
-          "label": "Score PLD 1425 (HIGH)",
-          "nivel": "alto"
-        },
-        {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "baixo"
-        },
-        {
-          "id": "eleitoral_2026",
-          "label": "PEP Vereador ativo (AREADO-MG) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
-          "nivel": "medio"
-        }
-      ],
-      "pep_cargo": "VEREADOR",
-      "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "1b97283a-e7c8-4dc9-bb91-097c0d29dbe0": {
       "probabilidade": 41.5,
@@ -1161,111 +1806,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
-    },
-    "ac873b5c-9783-4a79-b169-c23942c39518": {
-      "probabilidade": 24.4,
-      "nivel": "medio",
-      "score_modelo": 30,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_medio",
-          "label": "Score PLD 985 (médio-alto)",
-          "nivel": "medio"
-        },
-        {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "baixo"
-        },
-        {
-          "id": "eleitoral_2026",
-          "label": "PEP Vereador ativo (CAPELA-AL) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
-          "nivel": "medio"
-        }
-      ],
-      "pep_cargo": "VEREADOR",
-      "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
-    },
-    "4bca8825-d5ff-4251-8b86-fc38cf9bbbee": {
-      "probabilidade": 16.3,
-      "nivel": "baixo",
-      "score_modelo": 20,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_medio",
-          "label": "Score PLD 985 (médio-alto)",
-          "nivel": "medio"
-        },
-        {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado (VEREADOR) — FILHA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "baixo"
-        }
-      ],
-      "pep_cargo": "VEREADOR",
-      "pep_vinculo": "FILHA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
-    },
-    "4556104e-cb9a-49e9-ace2-87933ce979ba": {
-      "probabilidade": 56.9,
-      "nivel": "alto",
-      "score_modelo": 70,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_high",
-          "label": "Score PLD 1000 (HIGH)",
-          "nivel": "alto"
-        },
-        {
-          "id": "cnae_risco",
-          "label": "CNAE alto risco (79.11-2-00 - Agências de viagens)",
-          "nivel": "alto"
-        },
-        {
-          "id": "pep_titular",
-          "label": "PEP titular (VEREADOR): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "alto"
-        },
-        {
-          "id": "eleitoral_2026",
-          "label": "PEP Vereador ativo (TAPURAH-MT) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
-          "nivel": "alto"
-        }
-      ],
-      "pep_cargo": "VEREADOR",
-      "pep_vinculo": "MAE",
-      "gerado_em": "2026-05-12T19:18:54Z"
-    },
-    "39418459-0314-410d-8c26-23d69dea3561": {
-      "probabilidade": 35.0,
-      "nivel": "medio",
-      "score_modelo": 43,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_high",
-          "label": "Score PLD 1315 (HIGH)",
-          "nivel": "alto"
-        },
-        {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado (VEREADOR) — SOCIO: titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "baixo"
-        },
-        {
-          "id": "eleitoral_2026",
-          "label": "PEP Vereador ativo (BELEM-PA) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
-          "nivel": "medio"
-        }
-      ],
-      "pep_cargo": "VEREADOR",
-      "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "e1baa8ff-aa5f-4190-9c5c-0c74c22d2ae1": {
       "probabilidade": 20.3,
@@ -1281,116 +1822,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-05-12T19:18:54Z"
-    },
-    "c5c809f0-9f53-4f0e-ad0e-d0c9946b0ec7": {
-      "probabilidade": 40.7,
-      "nivel": "alto",
-      "score_modelo": 50,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_high",
-          "label": "Score PLD 1120 (HIGH)",
-          "nivel": "alto"
-        },
-        {
-          "id": "pep_titular",
-          "label": "PEP titular (VEREADOR): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "medio"
-        },
-        {
-          "id": "eleitoral_2026",
-          "label": "PEP Vereador ativo (BOM PROGRESSO-RS) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
-          "nivel": "medio"
-        }
-      ],
-      "pep_cargo": "VEREADOR",
-      "pep_vinculo": "MAE",
-      "gerado_em": "2026-05-12T19:18:54Z"
-    },
-    "386e9d78-c517-4dee-8317-ae24c3ebab76": {
-      "probabilidade": 40.7,
-      "nivel": "alto",
-      "score_modelo": 50,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_high",
-          "label": "Score PLD 1040 (HIGH)",
-          "nivel": "alto"
-        },
-        {
-          "id": "pep_titular",
-          "label": "PEP titular (VEREADOR): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "medio"
-        },
-        {
-          "id": "eleitoral_2026",
-          "label": "PEP Vereador ativo (RIBEIRÃO CORRENTE-SP) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
-          "nivel": "medio"
-        }
-      ],
-      "pep_cargo": "VEREADOR",
-      "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
-    },
-    "20fbe3e7-9521-4c81-bab7-0e7238d42ebf": {
-      "probabilidade": 51.2,
-      "nivel": "alto",
-      "score_modelo": 63,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_high",
-          "label": "Score PLD 1000 (HIGH)",
-          "nivel": "alto"
-        },
-        {
-          "id": "cnae_risco",
-          "label": "CNAE alto risco (94.91-0-00 - Atividades de organizações )",
-          "nivel": "alto"
-        },
-        {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "medio"
-        },
-        {
-          "id": "eleitoral_2026",
-          "label": "PEP Vereador ativo (PIRAMBU-SE) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
-          "nivel": "alto"
-        }
-      ],
-      "pep_cargo": "VEREADOR",
-      "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
-    },
-    "f2a4b186-aa2b-4825-b1e0-b92a837e902a": {
-      "probabilidade": 35.0,
-      "nivel": "medio",
-      "score_modelo": 43,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_high",
-          "label": "Score PLD 1025 (HIGH)",
-          "nivel": "alto"
-        },
-        {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado (VEREADOR) — SOCIO: titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "baixo"
-        },
-        {
-          "id": "eleitoral_2026",
-          "label": "PEP Vereador ativo (VISCONDE DO RIO BRANCO-MG) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
-          "nivel": "medio"
-        }
-      ],
-      "pep_cargo": "VEREADOR",
-      "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "b884e1da-2492-4c80-ad16-e242ba63f31d": {
       "probabilidade": 26.8,
@@ -1411,12 +1843,12 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "7a8eecd4-48c5-4f4f-ae3b-f935d7d08f7b": {
-      "probabilidade": 52.8,
-      "nivel": "alto",
-      "score_modelo": 65,
+      "probabilidade": 26.8,
+      "nivel": "medio",
+      "score_modelo": 33,
       "score_max": 123,
       "fatores": [
         {
@@ -1425,29 +1857,14 @@
           "nivel": "alto"
         },
         {
-          "id": "pep_titular",
-          "label": "PEP titular (): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "medio"
-        },
-        {
-          "id": "proc_jud",
-          "label": "Processos judiciais ao onboarding",
-          "nivel": "alto"
-        },
-        {
           "id": "empresa_nova",
           "label": "Empresa nova (4 meses)",
-          "nivel": "medio"
-        },
-        {
-          "id": "midia_neg",
-          "label": "Mídias negativas identificadas",
           "nivel": "medio"
         }
       ],
       "pep_cargo": "",
-      "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "pep_vinculo": "",
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "48db5d63-9f01-42e2-b7df-e04e4710ff41": {
       "probabilidade": 20.3,
@@ -1463,7 +1880,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     },
     "4328697c-0e2b-4646-af09-24b291854691": {
       "probabilidade": 39.0,
@@ -1483,13 +1900,13 @@
         },
         {
           "id": "empresa_nova",
-          "label": "Empresa nova (3 meses)",
+          "label": "Empresa nova (4 meses)",
           "nivel": "medio"
         }
       ],
       "pep_cargo": "ADMINISTRADOR",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-05-12T19:18:54Z"
+      "gerado_em": "2026-05-19T17:34:39Z"
     }
   }
 }
