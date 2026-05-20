@@ -101,9 +101,10 @@
     "generated_at": "2026-05-12T16:09:29Z"
   },
   "70f186e7-06b0-461a-838c-87eeb32bbe3c": {
-    "text": "Trata-se de empresa cujo titular, Marcus Soares Medina, possui relacionamento de sócio com o PEP Antonio Carlos Freire de Abreu (ex-Prefeito de Jacaraci/BA, mandato encerrado em 31/12/2024), sendo a KABRU PARTICIPACOES LTDA (CNPJ 66.401.071/0001-04) atuante no segmento de outras sociedades de participação, exceto holdings, com sede em Olinda/PE. Em análises reputacionais realizadas com combinação de nome completo do PEP, município, cargo e período de mandato, consultando fontes como imprensa local, TRE, MP estadual, TCE, Câmara Municipal, Polícia Federal/Civil e DOU, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP relacionado. Não temos objeções ao início do relacionamento pelo fluxo PLD padrão. Recomendação: APROVAÇÃO.",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-05-12T16:09:36Z"
+    "text": "Trata-se de empresa cujo titular, Marcus Soares Medina, é sócio do PEP Antonio Carlos Freire de Abreu (ex-Prefeito de Jacaraci/BA, mandato encerrado em 31/12/2024, dentro da carência de 5 anos). A KABRU PARTICIPACOES LTDA (CNPJ 66.401.071/0001-04, holding, Olinda/PE) foi constituída em 22/04/2026 (8 dias). Não foram identificados desabonos. Empresa em município diferente do mandato do PEP e sem atividade confirmada. Recomenda-se MONITORAMENTO dado o vínculo societário direto com ex-Prefeito em carência PEP ativa e a constituição muito recente da empresa.",
+    "model": "manual-revisao-2026-05-20",
+    "generated_at": "2026-05-20T00:00:00Z",
+    "decisao": "monitoramento"
   },
   "61744580-b3a8-42fe-965b-71bcd4bee556": {
     "text": "Trata-se de empresa cujo titular, Adriane Ribeiro Padovan, é irmã do PEP Adenildo de Jesus Padovan (Vereador de Uruguaiana/RS, com mandato vigente de 01/01/2021 a 31/12/2024), atuando no segmento de promoção de vendas (CNPJ 35.862.068/0001-64). Em análises reputacionais, não foram identificadas mídias ou processos desabonadores relativos à empresa, à sua titular ou ao PEP vinculado, tendo sido consultadas fontes como imprensa local, TRE, MP estadual, TCE, Câmara Municipal de Uruguaiana, Polícia Federal/Civil e DOU. Considerando a ausência de desabonos relevantes sob a ótica de Prevenção à Lavagem de Dinheiro e a atividade da empresa sem aparente correlação com o mandato do PEP, não temos objeções ao início do relacionamento; contudo, em razão do vínculo familiar com PEP de mandato ativo, não temos objeções ao início do relacionamento.",
@@ -116,9 +117,10 @@
     "generated_at": "2026-05-12T16:09:46Z"
   },
   "708f2a4d-ac7d-432c-be49-dd214dc64ee6": {
-    "text": "Trata-se de empresa cujo titular, Roberto Alfonso Villacrez Flores, possui relacionamento de sócio com o PEP Lázaro de Araújo de Almeida (Prefeito de Fonte Boa/AM, com mandato vigente de 01/01/2025 a 31/12/2029), atuando a RAV SERVIÇOS MÉDICOS LTDA (CNPJ 66.197.923/0001-93) no segmento de atendimento em pronto-socorro e unidades hospitalares para urgências, em Maués/AM. Em análises reputacionais realizadas com varredura em fontes regionais e setoriais (imprensa local, blogs estaduais, TRE, MP/AM, TCE/AM, Câmara Municipal, Polícia Federal/Civil e DOU), não foram identificadas mídias ou processos desabonadores relativos à empresa, ao seu titular ou ao PEP vinculado. Considerando a ausência de desabonos relevantes sob a ótica de Prevenção à Lavagem de Dinheiro, não há objeções ao início do relacionamento; contudo, dado o mandato ativo do PEP e a natureza do CNAE — setor de saúde com potencial de contratações públicas —, não temos objeções ao início do relacionamento.",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-05-12T16:09:52Z"
+    "text": "Decisão: CADASTRO REPROVADO\nEmpresa: RAV SERVICOS MEDICOS LTDA — CNPJ 66.197.923/0001-93\n\nTrata-se de empresa cujo titular, Roberto Alfonso Villacrez Flores, possui o PEP Lázaro de Araújo de Almeida (Prefeito ativo de Fonte Boa/AM, mandato 01/01/2025–31/12/2029) como sócio direto na empresa. A RAV foi constituída em abril de 2026 (19 dias à época da análise), atuando em pronto-socorro — setor altamente vulnerável a contratos públicos de saúde. Um Prefeito em exercício com participação societária direta em empresa do setor de saúde configura Conflito de Interesses absoluto, independentemente do município sede da empresa, dado que Prefeitos controlam a Secretaria Municipal de Saúde e podem influenciar contratações inter-municipais e estaduais. Somos desfavoráveis ao início do relacionamento.",
+    "model": "manual-revisao-2026-05-20",
+    "generated_at": "2026-05-20T00:00:00Z",
+    "decisao": "reprovado"
   },
   "46868788-c75e-496e-856d-a0981cc42271": {
     "text": "Trata-se de empresa cujo titular é o próprio PEP Miguel de Holanda Vital (Diretor-Presidente da ARSAM – Agência Reguladora dos Serviços Públicos Concedidos do Estado do Amazonas), com mandato vigente até 01/01/2030, atuando em comércio atacadista de materiais de construção em geral (São Paulo/SP). Em análises reputacionais, não foram identificadas mídias desabonadores para o CPF ou CNPJ nas fontes consultadas; contudo, consta registro do Ministério Público do Amazonas (MP-AM) em procedimento de natureza judicial envolvendo o titular, com situação \"Dev\", o que demanda atenção reforçada dado o cargo regulatório de alto relevo exercido concomitantemente. Considerando o mandato ativo em órgão regulador estadual de ampla competência, a abertura recente da PJ (novembro de 2025), a atividade de construção civil — setor historicamente sensível sob a ótica de lavagem de dinheiro — e o registro no MP-AM ainda sem desfecho conclusivo, sugerimos MONITORAMENTO REFORÇADO, com solicitação de esclarecimentos ao cliente sobre a natureza do procedimento junto ao MP-AM e acompanhamento periódico de eventuais desdobramentos processuais e reputacionais.",
@@ -166,9 +168,10 @@
     "generated_at": "2026-05-12T16:10:50Z"
   },
   "d40bbad8-2c38-4713-aadd-5f5d2a066a1c": {
-    "text": "Trata-se de empresa cujo titular, Magno Jardel Gomes De Freitas, é filho da PEP Maria Elsa Vieira Gomes (Vereadora de Quiterianópolis/CE, com mandato vigente de 01/01/2021 a 31/12/2024), atuando no segmento de minimercados, mercearias e armazéns. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores relativos à empresa, ao seu titular ou à PEP, tanto nas fontes automatizadas quanto nas consultas ao JusBrasil Background Check. Não temos objeções ao início do relacionamento pelo fluxo PLD padrão.",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-05-12T16:10:55Z"
+    "text": "Decisão: CADASTRO REPROVADO\nEmpresa: GOMES DE FREITAS VAREJO LTDA — CNPJ 52.621.431/0001-79\n\nTrata-se de empresa cujo titular, Magno Jardel Gomes De Freitas, é filho da PEP Maria Elsa Vieira Gomes, atualmente Secretária Municipal de Turismo de Quiterianópolis/CE. Em pesquisas externas, a empresa figura como fornecedora/recebedora ativa de verbas da Prefeitura de Quiterianópolis, com orçamentos vinculados à administração municipal. O vínculo entre o alto escalão do Executivo municipal (mãe no cargo de Secretária) e a empresa recebendo recursos do exato município configura Conflito de Interesses absoluto, tipologia clássica de favorecimento e potencial desvio de verbas públicas. Somos desfavoráveis ao início do relacionamento.",
+    "model": "manual-revisao-2026-05-20",
+    "generated_at": "2026-05-20T00:00:00Z",
+    "decisao": "reprovado"
   },
   "1b97283a-e7c8-4dc9-bb91-097c0d29dbe0": {
     "text": "Trata-se de empresa cujo titular, Railton Da Silva Paiva, é irmão da PEP Ranilda Da Silva (Vereadora de Olho D'Água do Borges/RN, mandato 01/01/2021 a 31/12/2024), atuando no comércio varejista de materiais de construção em geral. Em análises reputacionais, não foram identificadas mídias desabonadores para a PJ ou para o owner via pipeline interno; contudo, fontes externas (Tesserati e JusBrasil) apontam 2 processos criminais e 9 registros criminais, respectivamente, em nome de Railton Da Silva Paiva, com assuntos relacionados a Crimes contra a Fé Pública, embora sem confirmação de configuração como réu nas tipificações encontradas. Considerando a existência de processos criminais em aberto envolvendo o próprio titular da empresa, ainda que sem confirmação formal de réu, aliada ao vínculo de irmão com PEP de mandato recentemente encerrado no mesmo município de atuação da PJ, sugerimos REPROVAÇÃO, com solicitação de documentação complementar que esclareça a natureza e o status dos processos identificados antes de eventual revisão da recomendação.",
@@ -218,9 +221,10 @@
     "generated_at": "2026-05-19T15:29:08Z"
   },
   "9684c039-c672-4ce6-a379-8463648488c1": {
-    "text": "Trata-se de empresa cujo titular é o próprio PEP ANTONIO LUCIO DE OLIVEIRA MAIA (Secretário(a) em GOVERNADORIA), à frente da PJ ANTONIO LUCIO DE OLIVEIRA MAIA SOCIEDADE INDIVIDUAL DE ADVOCACIA (CNPJ 62.381.304/0001-01, atuando em Serviços advocatícios). Em análises reputacionais realizadas com combinação de nome completo, município, cargo e período de mandato, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao titular. Considerando a ausência de desabonos relevantes sob a ótica de PLD, não temos objeções ao início do relacionamento.",
-    "model": "heuristic-v2",
-    "generated_at": "2026-05-19T15:29:08Z"
+    "text": "Trata-se de empresa cujo titular, Antonio Lucio de Oliveira Maia, é ele próprio PEP — Secretário do Gabinete da Governadoria do Amazonas — à frente de sociedade individual de advocacia em Manaus/AM (CNPJ 62.381.304/0001-01, constituída em agosto de 2025). Adicionalmente, quatro irmãs do titular exercem o cargo de Secretário Executivo Adjunto do Gabinete da Vice-Governadoria/AM, com mandato desde 2017 e sem data fim informada. A combinação de titular PEP ativo no alto escalão estadual com escritório de advocacia próprio configura risco elevado de conflito de interesses — escritórios de advogados frequentemente prestam serviços a órgãos públicos, e o acesso privilegiado a informações e processos governamentais pelo próprio titular é fator de sensibilidade materializado. Recomenda-se MONITORAMENTO REFORÇADO com verificação de contratos de prestação de serviços jurídicos a órgãos públicos estaduais ou municipais do Amazonas.",
+    "model": "manual-revisao-2026-05-20",
+    "generated_at": "2026-05-20T00:00:00Z",
+    "decisao": "monitoramento"
   },
   "bf714cc0-afff-4bfa-983f-2d599c02c43a": {
     "text": "Trata-se de empresa cujo titular é o próprio PEP Jhone Pereira De Jesus (Vereador(a) em MG), à frente da PJ JHONE PEREIRA DE JESUS 09943711604 (CNPJ 37.147.943/0001-51, atuando em Comércio varejista de bebidas). Em análises reputacionais realizadas com combinação de nome completo, município, cargo e período de mandato, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao titular. Considerando a ausência de desabonos relevantes sob a ótica de PLD, não temos objeções ao início do relacionamento.",
@@ -233,9 +237,10 @@
     "generated_at": "2026-05-19T15:29:08Z"
   },
   "968733ba-2878-4e33-bca7-8aa07f122671": {
-    "text": "Trata-se de empresa cujo titular Paulo Henrique Arruda Nolêto possui relacionamento de irmão/irmã com o PEP PEDRO HENRIQUE ARRUDA NOLETO (Prefeito(a) em TO), sendo a PH SERVICOS MEDICOS LTDA (CNPJ 66.769.353/0001-69, atuante em Atividade médica ambulatorial com recursos para realização de exames complementares). Em análises reputacionais realizadas com combinação de nome completo, município, cargo e período de mandato, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou à PEP relacionada. Considerando a ausência de desabonos relevantes sob a ótica de PLD, não temos objeções ao início do relacionamento.",
-    "model": "heuristic-v2",
-    "generated_at": "2026-05-19T15:29:08Z"
+    "text": "Trata-se de empresa cujo titular, Paulo Henrique Arruda Noleto, é irmão do PEP Pedro Henrique Arruda Noleto (Prefeito ativo de Porto Alegre do Tocantins-TO, mandato 01/01/2025–31/12/2029), atuando no segmento de atividade médica ambulatorial em Dianópolis/TO. A empresa foi constituída em 13/05/2026 (0 dias à época da análise). Não foram identificados desabonos diretos para o titular ou para a PJ. O vínculo com Prefeito ativo em município distinto e a constituição da empresa no mesmo dia da análise configuram risco estrutural relevante no setor de saúde — vulnerável a contratos públicos municipais e estaduais. Ausente evidência confirmada de contratos com o município governado pelo familiar, não há base para reprovação imediata; recomenda-se MONITORAMENTO com acompanhamento das movimentações e verificação de contratos com Porto Alegre do Tocantins.",
+    "model": "manual-revisao-2026-05-20",
+    "generated_at": "2026-05-20T00:00:00Z",
+    "decisao": "monitoramento"
   },
   "70a94c61-c31f-4085-9c82-5b49500a51c9": {
     "text": "Trata-se de empresa cujo titular Soliane Cristina De Abreu Miguel Lara possui relacionamento de sócio com o PEP LUIZ GONZAGA DE ABREU (Estreito colaborador de PEP em MG), sendo a DR5 - MEDICINA INTEGRADA DO TRABALHO LTDA (CNPJ 44.839.061/0001-12, atuante em Preparação de documentos e serviços especializados de apoio administrativo não especificados anteriormente). Em análises reputacionais realizadas com combinação de nome completo, município, cargo e período de mandato, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou à PEP relacionada. Considerando a ausência de desabonos relevantes sob a ótica de PLD, não temos objeções ao início do relacionamento.",
@@ -273,9 +278,10 @@
     "generated_at": "2026-05-19T15:29:08Z"
   },
   "b8d4214e-5f7f-4840-91a2-6ce92815682a": {
-    "text": "Trata-se de empresa cujo titular Henrique Coelho Nunes possui relacionamento de filho/filha com o PEP MARIA DE FATIMA COELHO NUNES (Prefeito(a) em TO), sendo a HCN CLINICA MEDICA LTDA (CNPJ 55.743.665/0001-87, atuante em Atividades de atendimento hospitalar, exceto pronto-socorro e unidades para atendimento a urgências). Em análises reputacionais realizadas com combinação de nome completo, município, cargo e período de mandato, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou à PEP relacionada. Considerando a ausência de desabonos relevantes sob a ótica de PLD, não temos objeções ao início do relacionamento.",
-    "model": "heuristic-v2",
-    "generated_at": "2026-05-19T15:29:08Z"
+    "text": "Decisão: CADASTRO REPROVADO\nEmpresa: HCN CLINICA MEDICA LTDA — CNPJ 55.743.665/0001-87\n\nTrata-se de empresa cujo titular, Henrique Coelho Nunes, é filho(a) da PEP Maria de Fátima Coelho Nunes, ex-Prefeita de Guaraí-TO (mandato 01/01/2021–31/12/2024, carência ativa até 31/12/2029). A clínica médica está estabelecida no exato município governado pela mãe, e foi constituída em julho de 2024, ainda dentro do período do mandato. Empresas de saúde em municípios pequenos figuram sistematicamente como fornecedoras da Prefeitura via contratos da Secretaria Municipal de Saúde. O padrão é estruturalmente idêntico ao caso de empresa recebendo verbas municipais enquanto familiar ocupa o alto escalão do Executivo local — Conflito de Interesses absoluto. Somos desfavoráveis ao início do relacionamento.",
+    "model": "manual-revisao-2026-05-20",
+    "generated_at": "2026-05-20T00:00:00Z",
+    "decisao": "reprovado"
   },
   "c2540038-443f-416c-933c-c3bc1f6809fa": {
     "text": "Trata-se de empresa cujo titular DANILLO DOS SANTOS SILVA possui relacionamento de sobrinho/sobrinha com o PEP SAMUEL BATISTA DOS SANTOS (ADMINISTRADOR em GO), sendo a SANTOS EVIDENCE CONSULTING LTDA (CNPJ 14.650.442/0001-98, atuante em Gestão e administração da propriedade imobiliária). Em análises reputacionais, foram identificados sinais a validar: {\"TipoMidia\":\"Desabonadora\",\"Descricao\":\"Acusado, agressão, Investigado\",\"Quantidade\":1}. Considerando os sinais identificados, sugerimos análise aprofundada antes de qualquer deliberação.",
