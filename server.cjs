@@ -338,11 +338,78 @@ function startServer() {
   if (tlsAvailable) {
     const tlsOptions = { key: fs.readFileSync(KEY_FILE), cert: fs.readFileSync(CERT_FILE) };
     https.createServer(tlsOptions, app).listen(PORT, "0.0.0.0", onListen);
-    // Redireciona HTTP → HTTPS na porta PORT+1
+
+    // Servidor HTTP auxiliar: serve rootCA.pem + página de instalação; redireciona o resto para HTTPS
     const httpPort = PORT + 1;
+    const ROOT_CA_FILE = path.join(__dirname, "certs", "rootCA.pem");
+    const rootCaExists = fs.existsSync(ROOT_CA_FILE);
+
+    const certInstallHtml = (host) => {
+      const httpsHost = host.replace(`:${httpPort}`, `:${PORT}`);
+      const caUrl = `http://${host}/rootCA.pem`;
+      return `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Instalar Certificado — Pepito</title>
+<style>
+  body{font-family:system-ui,sans-serif;max-width:680px;margin:60px auto;padding:0 24px;color:#1a1a1a}
+  h1{font-size:1.4rem;color:#c0392b}
+  h2{font-size:1rem;margin-top:2rem}
+  pre{background:#f4f4f4;border:1px solid #ddd;border-radius:6px;padding:14px;overflow-x:auto;font-size:.85rem;cursor:pointer}
+  pre:hover{background:#eaf0fb}
+  .tag{display:inline-block;background:#e8f5e9;color:#2e7d32;border-radius:4px;padding:2px 8px;font-size:.8rem;font-weight:600;margin-bottom:.5rem}
+  .btn{display:inline-block;background:#2563eb;color:#fff;border-radius:6px;padding:10px 20px;text-decoration:none;font-weight:600;margin-top:1rem}
+  .note{font-size:.85rem;color:#555;margin-top:.5rem}
+  footer{margin-top:3rem;font-size:.8rem;color:#999}
+</style>
+</head>
+<body>
+<h1>⚠️ Instale o certificado da Cora para acessar o Pepito</h1>
+<p>O Pepito usa HTTPS com um certificado interno da Cora. Você precisa instalar o certificado raiz <strong>uma única vez</strong> — depois disso o aviso de "conexão não privada" some para sempre.</p>
+
+${rootCaExists ? `<a class="btn" href="/rootCA.pem" download="rootCA.pem">⬇ Baixar rootCA.pem</a>` : `<p><em>Arquivo rootCA.pem não encontrado no servidor.</em></p>`}
+
+<h2><span class="tag">macOS</span> Terminal (1 comando)</h2>
+<pre onclick="navigator.clipboard.writeText(this.innerText)">sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/Downloads/rootCA.pem</pre>
+<p class="note">Clique para copiar. Feche e reabra o browser após executar.</p>
+
+<h2><span class="tag">Windows</span> PowerShell como Administrador</h2>
+<pre onclick="navigator.clipboard.writeText(this.innerText)">Import-Certificate -FilePath "$env:USERPROFILE\\Downloads\\rootCA.pem" -CertStoreLocation Cert:\\LocalMachine\\Root</pre>
+<p class="note">Clique para copiar. Reinicie o Chrome/Edge após executar.</p>
+
+<h2><span class="tag">Chrome / Edge</span> Alternativa visual</h2>
+<ol>
+  <li>Abra <code>chrome://settings/security</code> (ou Edge: <code>edge://settings/privacy</code>)</li>
+  <li>Clique em <strong>Gerenciar certificados</strong> → aba <strong>Autoridades</strong></li>
+  <li>Clique em <strong>Importar</strong> e selecione o <code>rootCA.pem</code> baixado</li>
+  <li>Marque <em>"Confiar nesse certificado para identificar sites"</em> → OK</li>
+</ol>
+
+<h2>Após instalar</h2>
+<p>Acesse: <a href="https://${httpsHost}">https://${httpsHost}</a></p>
+
+<footer>Certificado gerado com mkcert — válido até ago/2028 — uso interno Cora</footer>
+</body>
+</html>`;
+    };
+
     http.createServer((req, res) => {
-      const host = (req.headers.host || "").replace(`:${httpPort}`, `:${PORT}`);
-      res.writeHead(301, { Location: `https://${host}${req.url}` });
+      const host = req.headers.host || `localhost:${httpPort}`;
+      if (req.url === "/rootCA.pem" && rootCaExists) {
+        res.writeHead(200, {
+          "Content-Type": "application/x-pem-file",
+          "Content-Disposition": 'attachment; filename="rootCA.pem"',
+        });
+        return fs.createReadStream(ROOT_CA_FILE).pipe(res);
+      }
+      if (req.url === "/install-cert" || req.url === "/") {
+        res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+        return res.end(certInstallHtml(host));
+      }
+      const httpsHost = host.replace(`:${httpPort}`, `:${PORT}`);
+      res.writeHead(301, { Location: `https://${httpsHost}${req.url}` });
       res.end();
     }).listen(httpPort, "0.0.0.0");
   } else {
@@ -362,8 +429,8 @@ function startServer() {
         console.log(`   ${name.padEnd(14)} ${proto}://${address}:${PORT}  ${label}`);
       }
       if (tlsAvailable) {
-        console.log(`\n   ⚠️  Analistas precisam instalar o certificado CA uma única vez.`);
-        console.log(`      Arquivo: certs/rootCA.pem  (copie de: ${path.join(path.dirname(CERT_FILE), "../..")})`);
+        const httpPort = PORT + 1;
+        console.log(`\n   ⚠️  Analistas com aviso de certificado: acesse http://<IP>:${httpPort}/install-cert`);
       }
     } else {
       console.log(`   MODO:          Produção (SSO Google @${ALLOWED_DOMAIN})`);
