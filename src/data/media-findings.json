@@ -384,18 +384,20 @@
       "url": "https://www.tse.jus.br/comunicacao/noticias/2025/Abril/quatro-municipios-realizam-eleicoes-suplementares-neste-domingo-6",
       "snippet": "A Justiça Eleitoral cassou o registro do prefeito eleito em Ruy Barbosa (BA) nas Eleições 2024. Eleição suplementar para prefeito e vice realizada em 06/04/2025. TRE-BA indeferiu candidatura de José Bonifácio Marques Dourado por irregularidades na prestação de contas de 2016.",
       "source": "Tribunal Superior Eleitoral (TSE)",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "M7 — Contexto regional de instabilidade política grave no município-sede do PEP. Cassação de prefeito eleito por irregularidades em prestação de contas. Ambiente político de alto risco de governança municipal elevado para o período de vínculo do PEP."
+      "match": "M7 — Contexto regional de instabilidade política grave no município-sede do PEP. Cassação de prefeito eleito por irregularidades em prestação de contas. Ambiente político de alto risco de governança municipal elevado para o período de vínculo do PEP.",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     },
     {
       "title": "Contexto Regional — TRE-BA confirma cassação do prefeito de Ruy Barbosa-BA por prestação de contas irregulares",
       "url": "https://ubatanoticias.com.br/presidente-do-tre-ba-confirma-eleicao-suplementar-em-ruy-barbosa-para-abril-de-2025/",
       "snippet": "O presidente do TRE-BA reafirmou a cassação do ex-prefeito Bonifácio (MDB) por prestação de contas irregulares no município de Ruy Barbosa. O presidente da Câmara de Vereadores assumiu interinamente o cargo até novas eleições.",
       "source": "Ubatã Notícias / TRE-BA",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "M7 — Cassação de chefe do Executivo municipal no mesmo município do PEP (vereador). Presidente da Câmara assumiu cargo de prefeito interino — reforça atenção ao papel da Câmara Municipal no período de crise. Risco elevado de governança para contratos e licitações municipais do período."
+      "match": "M7 — Cassação de chefe do Executivo municipal no mesmo município do PEP (vereador). Presidente da Câmara assumiu cargo de prefeito interino — reforça atenção ao papel da Câmara Municipal no período de crise. Risco elevado de governança para contratos e licitações municipais do período.",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     },
     {
       "title": "Contexto Regional — Eleição suplementar em Ruy Barbosa-BA: Eridan de Bonifácio (MDB) eleita prefeita em 06/04/2025",
@@ -411,9 +413,10 @@
       "url": "https://www.bahianoticias.com.br/tags/ruy-barbosa",
       "snippet": "Vereador com dez mandatos renuncia à presidência da mesa da Câmara de Ruy Barbosa durante crise política. 'A saída do vereador com dez mandatos na cidade ocorre em um momento de diversas controvérsias e investigações envolvendo sua gestão e conduta.'",
       "source": "Bahia Notícias",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "M7 — Câmara Municipal de Ruy Barbosa-BA sob investigações e controvérsias internas no período 2024-2025. Ambiente legislativo municipal de risco elevado. Contexto relevante para avaliação do PEP vereador no mesmo município."
+      "match": "M7 — Câmara Municipal de Ruy Barbosa-BA sob investigações e controvérsias internas no período 2024-2025. Ambiente legislativo municipal de risco elevado. Contexto relevante para avaliação do PEP vereador no mesmo município.",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     },
     {
       "title": "Identificação cadastral OWNER — CNPJ 33.278.692/0001-93: Empresa 'Plano Saf' (Funerária), Levi Neves Carvalho, Mundo Novo-BA",
@@ -1349,27 +1352,30 @@
       "url": "https://www.portalviggo.com/noticia/2498/belem/cidades/vereadores-de-belem-disparam-criticas-e-citam-operacao-da-pf-contra-gestao-edmilson-rodrigues.html",
       "snippet": "Em outubro de 2025, a PF deflagrou a Operação Óbolo de Caronte, apurando desvios em contratos de saneamento em Belém de ~R$ 153 mi. Contratos ligados à antiga Secretaria Municipal de Saneamento (Sesan). Empresas investigadas firmaram contratos milionários com o poder público entre 2020–2024.",
       "source": "Portal Viggo — Belém/PA (portalviggo.com)",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "M7 — Operação policial federal recente em Belém envolvendo contratos públicos municipais de saneamento. Não há vinculação direta ao PEP ou ao owner identificada, mas contexto de risco regional elevado para o setor público municipal de Belém."
+      "match": "M7 — Operação policial federal recente em Belém envolvendo contratos públicos municipais de saneamento. Não há vinculação direta ao PEP ou ao owner identificada, mas contexto de risco regional elevado para o setor público municipal de Belém.",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     },
     {
       "title": "Contexto Regional — PF investiga extorsão eleitoral em Belém (Operação Blecado, nov/2024): facção cobrava taxas de candidatos",
       "url": "https://www.oliberal.com/politica/policia-federal-investiga-extorsao-nas-eleicoes-de-2024-em-belem-1.891060",
       "snippet": "PF investiga facção criminosa que cobrava taxas para permitir atuação de candidatos nos bairros do Guamá e Parque Verde em Belém. Parte do valor era destinada a suspeita de lavagem de dinheiro. Operação denominada 'Blecado'.",
       "source": "O Liberal — Belém/PA (oliberal.com)",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "M7 — Contexto de risco eleitoral e criminal em Belém durante as eleições de 2024 (mesmo pleito em que o PEP foi reeleito). Sem vinculação direta ao PEP ou owner, mas ambiente regional de risco médio."
+      "match": "M7 — Contexto de risco eleitoral e criminal em Belém durante as eleições de 2024 (mesmo pleito em que o PEP foi reeleito). Sem vinculação direta ao PEP ou owner, mas ambiente regional de risco médio.",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     },
     {
       "title": "Contexto Regional — Belém: Pará é estado com maior presença de grupos criminosos na Amazônia (CV em 57 municípios)",
       "url": "https://www.terra.com.br/noticias/brasil/como-o-comando-vermelho-dominou-belem-que-recebera-operacao-das-forcas-armadas-para-a-cop30,1189a432a14cd2ce2e953b5e8ebcf9acrx3knf8g.html",
       "snippet": "Segundo Cartografias da Violência na Amazônia 2024, o Pará é o estado com maior presença de grupos criminosos, em 73 municípios — em 57 deles, o Comando Vermelho é a facção dominante, incluindo a Região Metropolitana de Belém.",
       "source": "Terra/BBC News Brasil (nov/2025)",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "M7 — Contexto de risco regional: Belém-PA classificada como área de alta presença de crime organizado. Fator de risco ambiental para avaliação PLD, sem vínculo direto com os sujeitos pesquisados."
+      "match": "M7 — Contexto de risco regional: Belém-PA classificada como área de alta presença de crime organizado. Fator de risco ambiental para avaliação PLD, sem vínculo direto com os sujeitos pesquisados.",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     }
   ],
   "e1baa8ff-aa5f-4190-9c5c-0c74c22d2ae1": [
@@ -1925,27 +1931,30 @@
       "url": "https://www.tse.jus.br/comunicacao/noticias/2025/Setembro/confira-o-resultado-da-eleicao-de-domingo-14-em-sales-oliveira-sp",
       "snippet": "O novo pleito foi convocado após o Tribunal Superior Eleitoral (TSE) indeferir o registro de candidatura do prefeito eleito em 2024, Fábio Godoy Graton, por improbidade administrativa.",
       "source": "Tribunal Superior Eleitoral (TSE) — tse.jus.br",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "M7 — Contexto regional de risco elevado: o município de Sales Oliveira realizou eleição suplementar em setembro/2025 após anulação dos votos do prefeito eleito por improbidade administrativa. Ambiente institucional local marcado por litígios eleitorais ativos. Não há menção direta à PEP Claudia Paganini nem ao owner Silvio Paganini Junior."
+      "match": "M7 — Contexto regional de risco elevado: o município de Sales Oliveira realizou eleição suplementar em setembro/2025 após anulação dos votos do prefeito eleito por improbidade administrativa. Ambiente institucional local marcado por litígios eleitorais ativos. Não há menção direta à PEP Claudia Paganini nem ao owner Silvio Paganini Junior.",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     },
     {
       "title": "CONTEXTO REGIONAL — Fraude licitatória atribuída ao ex-prefeito de Sales Oliveira Fábio Godoy Graton (MP Eleitoral)",
       "url": "https://verdadeon.com.br/portal/2025/07/17/votos-de-prefeito-de-sales-oliveira-sao-anulados-pelo-tre-sp-novas-eleicoes-em-breve",
       "snippet": "Segundo o Ministério Público, em conluio com terceiros, Graton incorreu em fraude licitória que visava a contratação de serviços profissionais para a realização de um concurso público.",
       "source": "VerdadeOn — verdadeon.com.br",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "M7 — Contexto de risco municipal: ex-prefeito (gestão 2013-2016, reeleito 2024) condenado por fraude licitatória e improbidade administrativa, inelegível pelo TSE. PEP Claudia Paganini atuou como vereadora durante parte desse período, fato que requer atenção ao histórico legislativo. Não há menção direta a ela no caso."
+      "match": "M7 — Contexto de risco municipal: ex-prefeito (gestão 2013-2016, reeleito 2024) condenado por fraude licitatória e improbidade administrativa, inelegível pelo TSE. PEP Claudia Paganini atuou como vereadora durante parte desse período, fato que requer atenção ao histórico legislativo. Não há menção direta a ela no caso.",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     },
     {
       "title": "CONTEXTO REGIONAL — Eleição suplementar em Sales Oliveira: TRE-SP confirma indeferimento por ato doloso de improbidade administrativa",
       "url": "https://www.tre-sp.jus.br/comunicacao/noticias/2025/Julho/sales-oliveira-tera-novas-eleicoes-para-prefeito-e-vice-prefeito-em-14-de-setembro",
       "snippet": "A decisão confirmou o acórdão do Tribunal Regional Eleitoral de São Paulo (TRE-SP) que reconheceu a inelegibilidade do candidato eleito em consequência da condenação por ato doloso de improbidade administrativa.",
       "source": "Tribunal Regional Eleitoral de São Paulo (TRE-SP) — tre-sp.jus.br",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "M7 — Reforça o contexto regional de integridade comprometida no Executivo municipal. Eleição suplementar realizada em set/2025. Vereadores da Câmara (incluindo o período de mandato da PEP) coexistiram com gestão municipal posteriormente reconhecida como ímproba."
+      "match": "M7 — Reforça o contexto regional de integridade comprometida no Executivo municipal. Eleição suplementar realizada em set/2025. Vereadores da Câmara (incluindo o período de mandato da PEP) coexistiram com gestão municipal posteriormente reconhecida como ímproba.",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     },
     {
       "title": "PORTAL DA TRANSPARÊNCIA — Município de Sales Oliveira: R$ 176,2 milhões recebidos do Governo Federal",
@@ -3404,9 +3413,10 @@
       "url": "https://www.gazetadopovo.com.br/eleicoes/2024/joao-pessoa-pb/resultado-2-turno-eleicoes-joao-pessoa-cicero-lucena-reeleito/",
       "snippet": "A PF prendeu temporariamente a primeira-dama de João Pessoa, Lauremília Lucena, no âmbito da Operação Território Livre, que investiga suspeitas de aliciamento violento de eleitores e atuação de organização criminosa nas eleições municipais de 2024.",
       "source": "Gazeta do Povo (out/2024)",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "M7 — Contexto regional João Pessoa: ambiente de risco elevado com operação policial eleitoral na cidade sede do owner em 2024"
+      "match": "M7 — Contexto regional João Pessoa: ambiente de risco elevado com operação policial eleitoral na cidade sede do owner em 2024",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     }
   ],
   "bda5cef7-6c02-48f5-9f09-7c0c7656f842": [
@@ -3489,18 +3499,20 @@
       "url": "https://www.gov.br/pf/pt-br/assuntos/noticias/2026/02/pf-deflagra-2a-fase-de-operacao-que-apura-crimes-relacionados-as-enchentes-de-2024-no-rs",
       "snippet": "A Polícia Federal deflagrou em fev/2026 a 2ª fase da Operação Lamaçal investigando fraudes em licitações da Prefeitura de Lajeado/RS pós-enchentes 2024. As diligências incluíram mandados de busca e apreensão e prisões temporárias cumpridos em Salvador do Sul, entre outros municípios gaúchos. Investigados respondem por fraude em licitação, contratação ilegal, corrupção ativa/passiva, associação criminosa e lavagem de dinheiro. Nenhum vínculo nominativo a Diogo Schmitz ou Marlene Walber Schmitz foi identificado — tratado como risco regional de contexto.",
       "source": "Polícia Federal (gov.br) — fev/2026 | CNN Brasil | Gazeta do Povo",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Salvador do Sul/RS — município-alvo da Operação Lamaçal (PF, fev/2026) | risco de contexto regional sem vínculo nominativo confirmado aos investigados do caso"
+      "match": "Salvador do Sul/RS — município-alvo da Operação Lamaçal (PF, fev/2026) | risco de contexto regional sem vínculo nominativo confirmado aos investigados do caso",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     },
     {
       "title": "M7b — CONTEXTO REGIONAL: Prefeitura de Salvador do Sul recebeu R$ 124,6 mi em recursos federais | Portal da Transparência",
       "url": "https://portaldatransparencia.gov.br/transferencias/detalhe/pessoa-juridica/87860763000190",
       "snippet": "Segundo o Portal da Transparência federal, a Prefeitura Municipal de Salvador do Sul (RS) figura como favorecida de recursos do Governo Federal no total de R$ 124.658.063,09. O elevado volume de repasses federais para um município de pequeno porte amplia o contexto de atenção PLD, especialmente diante da Operação Lamaçal que atingiu o município em fev/2026.",
       "source": "portaldatransparencia.gov.br — Prefeitura de Salvador do Sul/RS",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Prefeitura Municipal Salvador do Sul/RS | CNPJ 87.860.763/0001-90 | R$ 124,6 mi recebidos do Governo Federal — contexto de risco regional elevado"
+      "match": "Prefeitura Municipal Salvador do Sul/RS | CNPJ 87.860.763/0001-90 | R$ 124,6 mi recebidos do Governo Federal — contexto de risco regional elevado",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     },
     {
       "title": "M1b — ATENÇÃO PEP: Município PEP não informado (campo 'None') — impossibilidade de validação de mandato",
@@ -3719,27 +3731,30 @@
       "url": "https://www.cenariomt.com.br/mato-grosso/mato-grosso-teia-de-corrupcao-na-camara-municipal-de-cuiaba-desmantelada-por-operacao-policial/",
       "snippet": "A Operação Perfídia, conduzida pela Polícia Civil de MT (Deccor), revelou esquema de propina na Câmara Municipal de Cuiabá envolvendo vereadores (Chico 2000/PL e Sargento Joelson/PSB) e empresa do setor de construção civil (HB20 Construções), com afastamento cautelar de parlamentares. O esquema envolvia negociação de votos para aprovação de projeto de lei que viabilizaria pagamento à construtora por obras públicas. Investigação deflagrada em 2024 e com nova fase em julho/2025. Contexto regional de alto risco para empresas com vínculos com entes públicos municipais em Cuiabá.",
       "source": "CenárioMT / FTN Brasil",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Cuiabá/MT — Operação Perfídia (Câmara Municipal, 2024-2025); contexto regional de risco elevado para contratos municipais"
+      "match": "Cuiabá/MT — Operação Perfídia (Câmara Municipal, 2024-2025); contexto regional de risco elevado para contratos municipais",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     },
     {
       "title": "M7 — Contexto regional Cuiabá/MT: 18 operações policiais por corrupção na Prefeitura de Cuiabá (Operação Iterum, 2023)",
       "url": "https://www.rdnews.com.br/executivo/a-18-operacao-policial-por-corrupcao-na-prefeitura-revolta-cuiaba-diz-fabio-garcia/182487",
       "snippet": "A Polícia Federal deflagrou a Operação Iterum em outubro/2023, investigando desvio de R$ 13 milhões em recursos federais destinados à saúde do município de Cuiabá — a 18ª operação policial registrada apenas na gestão Emanuel Pinheiro (MDB). Alvos investigados por corrupção, lavagem de capitais e fraude em licitação. Irregularidades em contrato de serviços de tecnologia (2017-2022). Cuiabá figura como município com histórico sistêmico de operações anticorrupção, elevando o risco ambiental para empresas e pessoas físicas com relações comerciais com a administração municipal.",
       "source": "RDNEWS / O Bom da Notícia",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Cuiabá/MT — Operação Iterum (PF, 2023); 18 operações por corrupção municipal; contexto sistêmico de risco"
+      "match": "Cuiabá/MT — Operação Iterum (PF, 2023); 18 operações por corrupção municipal; contexto sistêmico de risco",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     },
     {
       "title": "M7 — Contexto regional Cuiabá/MT: Operação Athena — esquema na Empresa Cuiabana de Saúde Pública (2024)",
       "url": "https://primeirapagina.com.br/seguranca/diretor-e-servidores-da-saude-de-cuiaba-sao-afastados-em-nova-operacao-contra-esquema-criminoso/",
       "snippet": "A Operação Athena (Deccor/PCMT, setembro 2024 e 2ª fase em agosto/2025) investigou esquema criminoso na Empresa Cuiabana de Saúde Pública entre 2021-2024, com afastamento de ex-secretários e ex-diretor, bloqueio de R$ 3,9 milhões, mandados de busca e sequestro de bens. Investigados incluem ex-servidores e empresários com contratos suspeitos sem licitação prévia, com indícios de empresas de fachada em endereços residenciais. Contexto relevante para owner sediado em Cuiabá/MT com potencial de contratos públicos.",
       "source": "Primeira Página / CenárioMT / MinutoMT",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Cuiabá/MT — Operação Athena (Deccor, 2024-2025); empresas de TI investigadas por contratos sem licitação com a Prefeitura"
+      "match": "Cuiabá/MT — Operação Athena (Deccor, 2024-2025); empresas de TI investigadas por contratos sem licitação com a Prefeitura",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     }
   ],
   "5902e757-0f2e-43e5-871f-1970907c0a39": [
@@ -3872,18 +3887,20 @@
       "url": "https://www.ssp.am.gov.br/operacao-erga-omnes-policia-civil-do-amazonas-desarticula-organizacao-criminosa-envolvida-com-trafico-de-drogas-lavagem-de-dinheiro-e-corrupcao/",
       "snippet": "A Polícia Civil do AM deflagrou a Operação Erga Omnes (fev/2026) desarticulando organização com 'ramificações dentro da administração pública', envolvendo servidores do TJAM, Secretaria de Segurança, Assembleia Legislativa e Prefeitura de Manaus. Não há menção nominal a Miguel de Holanda Vital ou à ARSAM.",
       "source": "SSP-AM (portal oficial)",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "M7 — Contexto regional: operação policial recente (2026) no Amazonas com envolvimento de servidores públicos de diversas esferas. Não há vínculo nominal direto com o PEP, mas eleva o risco ambiental institucional do estado onde a ARSAM opera."
+      "match": "M7 — Contexto regional: operação policial recente (2026) no Amazonas com envolvimento de servidores públicos de diversas esferas. Não há vínculo nominal direto com o PEP, mas eleva o risco ambiental institucional do estado onde a ARSAM opera.",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     },
     {
       "title": "Contexto Regional AM — Operação Erga Omnes: ex-assessores parlamentares e servidores de Manaus presos por tráfico e lavagem",
       "url": "https://noticias-do-brasil.news/crime/crime-justica/polcia-mira-ncleo-poltico-do-comando-vermelho-no-am.html",
       "snippet": "Investigados incluem Izaldir Moreno Barros (TJAM), Adriana Almeida Lima (ex-secretária de gabinete da ALE-AM) e Anabela Cardoso Freitas (investigadora da PC e membro de comissão de licitação da Prefeitura de Manaus). Movimento financeiro suspeito de R$ 70 milhões em 4 anos.",
       "source": "Notícias do Brasil News",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "M7 — Contexto regional: presença de membro de comissão de licitação da Prefeitura de Manaus entre os investigados reforça risco ambiental para contratos públicos no AM. Sem vínculo com o PEP ou CNPJ investigados."
+      "match": "M7 — Contexto regional: presença de membro de comissão de licitação da Prefeitura de Manaus entre os investigados reforça risco ambiental para contratos públicos no AM. Sem vínculo com o PEP ou CNPJ investigados.",
+      "url_nota": " [rebaixado: contexto regional sem vínculo direto com owner/PEP/CNPJ]"
     },
     {
       "title": "M1 — Confirmação de mandato PEP: sem evidência de mandato ativo como Diretor-Presidente da ARSAM em fontes públicas rastreáveis",
