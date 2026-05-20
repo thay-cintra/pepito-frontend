@@ -43,10 +43,10 @@
   },
   "bda5cef7-6c02-48f5-9f09-7c0c7656f842": {
     "text": "Decisão: CADASTRO APROVADO\nCNPJ: 34.728.869/0001-79 — DIOGO SCHMITZ\n\nO analista recomenda aprovação com base na ausência de desabonos — concordo parcialmente, porém o desfecho adequado é monitoramento reforçado, dado o vínculo PEP ativo. Diogo Schmitz é filho de Marlene Walber Schmitz, Secretária Executiva do RS (mandato 01/01/2023–01/01/2030); a empresa, constituída em 2019, é pré-existente ao mandato, e atua em organização de eventos — setor de baixo risco direto para corrupção pública. Os achados M7/M7b referem-se a contexto regional genérico (Operação Lamaçal/Lajeado e repasses federais a Salvador do Sul) sem qualquer vínculo nominal ao owner ou ao PEP, não configurando achado adverso material; a confirmação formal do mandato de Marlene não foi localizada em fontes públicas, o que exige atenção continuada. Ausência total de sanções CEIS/CGU, processos judiciais ou mídia adversa nominais para a empresa, seu titular ou o PEP.\n\nRecomendo a APROVAÇÃO do cadastro. O caso segue fluxo PLD padrão de derivação PEP, conforme Circular BACEN 3.978/2020.978/2020.",
-    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação com base na ausência de desabonos — concordo parcialmente, porém o desfecho adequado é monitoramento reforçado, dado o vínculo PEP ativo. Diogo Schmitz é filho de Marlene Walber Schmitz, Secretária Executiva do RS (mandato 01/01/2023–01/01/2030); a ",
-    "decisao": "aprovado",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-05-12T16:11:04Z"
+    "resumo": "MONITORAMENTO — Filho de Secretário Executivo PEP ativo; empresa estabelecida; sem desabonos. Órgão do PEP não identificado; monitorar contratos com entes públicos.",
+    "decisao": "monitoramento",
+    "model": "manual-revisao-2026-05-20",
+    "generated_at": "2026-05-20T00:00:00Z"
   },
   "2569031f-eab9-4816-89d9-c49226c48ace": {
     "text": "Decisão: CADASTRO REPROVADO\nCNPJ: 65.610.465/0001-00 — RAIMUNDO N M MOREIRA\n\nO analista recomenda reprovação — concordo e reforço. O owner Raimundo Nonato Marreiros Moreira possui vínculo societário com José de Oliveira Neto, ex-vereador de Pimenteiras/PI (mandato 2021–2024), e acumula, ele próprio, histórico de condenações na Justiça Federal, TCU e TCE por improbidade administrativa, peculato e desvio de verbas públicas, com sentenças que determinaram devolução de valores milionários ao erário — além de 7 processos criminais confirmados via Tesserati e registro de procedimento no MPF (crimes contra as telecomunicações, arquivado). A empresa foi constituída em março/2026, após o término do mandato do PEP, o que não mitiga o risco dado o perfil do próprio titular.\n\nDiante de achados factuais concretos — condenações por corrupção, processos criminais ativos e histórico reiterado de irregularidades na gestão pública —, recomendo a NÃO APROVAÇÃO do relacionamento comercial, por incompatibilidade com o apetite de risco da instituição, conforme Circular BACEN 3.978/2020.",
@@ -161,11 +161,11 @@
     "generated_at": "2026-05-19T10:00:00Z"
   },
   "70f186e7-06b0-461a-838c-87eeb32bbe3c": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 66.401.071/0001-04 — KABRU PARTICIPACOES LTDA\nTitular: Marcus Soares Medina — sócio do PEP Antonio Carlos Freire de Abreu (ex-Prefeito de Jacaraci/BA, mandato encerrado em 31/12/2024)\n\nO analista recomenda aprovação — concordo. A diligência com fontes como imprensa local, TRE, MP estadual, TCE, Câmara Municipal, Polícia Federal/Civil e DOU não identificou mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP relacionado. O mandato do ex-Prefeito encerrou-se em 31/12/2024, reduzindo o risco de conflito de interesse ativo. Empresa de participações em Olinda/PE sem achados adversos concretos.\n\nRecomendo a APROVAÇÃO do cadastro. O caso segue fluxo PLD padrão de derivação PEP, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — Ausência de desabonos. Sócio de ex-Prefeito de Jacaraci/BA com mandato encerrado; sem achados adversos.",
-    "decisao": "aprovado",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-05-19T10:00:00Z"
+    "text": "Decisão: MONITORAMENTO\nEmpresa: KABRU PARTICIPACOES LTDA\n\nSócio do ex-Prefeito de Jacaraci/BA (dentro da carência PEP). Holding constituída 8 dias antes da análise em município diferente. Sem desabonos confirmados. Monitoramento ordinário; verificar atividades da holding ao longo do relacionamento.",
+    "resumo": "MONITORAMENTO — Sócio direto de ex-Prefeito (carência PEP ativa); holding nova; sem desabonos confirmados.",
+    "decisao": "monitoramento",
+    "model": "manual-revisao-2026-05-20",
+    "generated_at": "2026-05-20T00:00:00Z"
   },
   "61744580-b3a8-42fe-965b-71bcd4bee556": {
     "text": "Decisão: CADASTRO APROVADO\nCNPJ: 35.862.068/0001-64 — Adriane Ribeiro Padovan\nIrmã do PEP Adenildo de Jesus Padovan (Vereador de Uruguaiana/RS, mandato 01/01/2021–31/12/2024)\n\nO analista recomenda aprovação — concordo. A diligência consultando imprensa local, TRE, MP estadual, TCE, Câmara Municipal de Uruguaiana, Polícia Federal/Civil e DOU não identificou mídias ou processos desabonadores relativos à empresa de promoção de vendas, à sua titular ou ao PEP vinculado. A atividade não apresenta correlação evidente com o mandato legislativo do PEP. Ausência de sanções CEIS/CGU, processos criminais ou contratos públicos irregulares. Mandato encerrado em 31/12/2024.\n\nRecomendo a APROVAÇÃO do cadastro. O caso segue fluxo PLD padrão de derivação PEP, conforme Circular BACEN 3.978/2020.",
@@ -231,11 +231,11 @@
     "generated_at": "2026-05-19T10:00:00Z"
   },
   "d40bbad8-2c38-4713-aadd-5f5d2a066a1c": {
-    "text": "Decisão: CADASTRO APROVADO\nTitular: Magno Jardel Gomes De Freitas — filho da PEP Maria Elsa Vieira Gomes (Vereadora de Quiterianópolis/CE, mandato 01/01/2021–31/12/2024)\n\nO analista recomenda aprovação — concordo. A diligência tanto nas fontes automatizadas quanto via JusBrasil Background Check não identificou mídias ou processos desabonadores relativos à empresa de minimercado/mercearia, ao seu titular ou à PEP vinculada. Ausência de sanções CEIS/CGU, processos criminais, contratos públicos irregulares ou mídia adversa confirmada. Atividade comercial varejista de baixo risco intrínseco. Mandato da PEP encerrado em 31/12/2024.\n\nRecomendo a APROVAÇÃO do cadastro. O caso segue fluxo PLD padrão de derivação PEP, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — Ausência total de desabonos. Filho de ex-Vereadora de Quiterianópolis/CE; mandato encerrado; sem achados adversos.",
-    "decisao": "aprovado",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-05-19T10:00:00Z"
+    "text": "Decisão: CADASTRO REPROVADO\nEmpresa: GOMES DE FREITAS VAREJO LTDA\n\nTitular filho da Secretária Municipal de Turismo de Quiterianópolis/CE. Empresa figura como fornecedora ativa da Prefeitura do mesmo município — Conflito de Interesses absoluto. Somos desfavoráveis ao início do relacionamento.",
+    "resumo": "REPROVAR — Filho de Secretária Municipal + empresa recebe verbas da mesma Prefeitura → Conflito de Interesses absoluto.",
+    "decisao": "reprovado",
+    "model": "manual-revisao-2026-05-20",
+    "generated_at": "2026-05-20T00:00:00Z"
   },
   "1b97283a-e7c8-4dc9-bb91-097c0d29dbe0": {
     "text": "Decisão: CADASTRO REPROVADO\nCNPJ: RAILTON DA SILVA PAIVA — ME de materiais de construção, Olho d'Água do Borges/RN\n\nCadastro rejeitado pelo time de PLD. Trata-se de firma individual (ME) recém-constituída em março de 2026, atuante no comércio de materiais de construção, com sede no exato município onde a irmã do titular, Ranilda da Silva, exerce o cargo de Secretária Municipal de Finanças e Administração. A convergência de três fatores materializa Conflito de Interesses absoluto: (1) empresa aberta no período pós-eleitoral, portanto constituída após a irmã assumir o cargo que controla o cofre municipal; (2) setor de materiais de construção — historicamente o mais vulnerável a fraudes licitatórias e superfaturamento em contratos públicos municipais; (3) subordinação geográfica direta ao ente cujas finanças são geridas pela familiar PEP. A estrutura configura fortíssimo risco de uso da empresa como fachada ou intermediária para direcionamento de verbas públicas e triangulação financeira.\n\nRecomendo a NÃO APROVAÇÃO do relacionamento comercial, por incompatibilidade com o apetite de risco da instituição, conforme Circular BACEN 3.978/2020.",
