@@ -64,6 +64,8 @@ api:
       value: https://pepito.stage.cora.team
     - name: LOCAL_MODE
       value: "false"
+    - name: SSO_DOMAIN
+      value: "cora.com.br"
     - name: GCS_BUCKET_NAME
       value: pepito-data-stage
     - name: GOOGLE_APPLICATION_CREDENTIALS

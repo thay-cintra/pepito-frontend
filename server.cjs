@@ -61,9 +61,10 @@ const APP_URL        = (process.env.APP_URL || `http://localhost:${PORT}`).repla
 const CLIENT_ID      = process.env.GOOGLE_CLIENT_ID || "";
 const CLIENT_SECRET  = process.env.GOOGLE_CLIENT_SECRET || "";
 const JWT_SECRET     = process.env.JWT_SECRET || crypto.randomBytes(32).toString("hex");
-const ALLOWED_DOMAIN = "cora.com.br";
+const ALLOWED_DOMAIN = process.env.SSO_DOMAIN || "cora.com.br";
 // LOCAL_MODE=true → sem SSO, acesso direto pela VPN/rede interna
-const LOCAL_MODE     = process.env.LOCAL_MODE === "true";
+// Nunca permitido em NODE_ENV=production (proteção contra misconfiguration)
+const LOCAL_MODE = process.env.LOCAL_MODE === "true" && process.env.NODE_ENV !== "production";
 
 const DIST          = path.join(__dirname, "dist");
 const ANALISES_FILE = path.join(__dirname, "src", "data", "analises-salvas.json");
