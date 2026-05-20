@@ -224,11 +224,11 @@
     "generated_at": "2026-05-19T10:00:00Z"
   },
   "7b612586-cdea-4222-a4d0-157a83ca316c": {
-    "text": "Decisão: CADASTRO APROVADO\nTitular: Luciano Santos Costa — próprio PEP (Vereador de Ribeirão Cascalheira/MT, mandato 01/01/2021–31/12/2024)\n\nO analista recomenda reprovação — divergência: aprovar. Os registros identificados no JusBrasil Background Check são processos da espécie Habeas Corpus com tipificação de perda de função pública, nos quais o titular figura como polo passivo — todos com status arquivado. Habeas Corpus arquivados sobre perda de função pública não constituem processo criminal ativo ou condenação: são instrumentos processuais ordinários, frequentemente utilizados em disputas político-administrativas, e seu arquivamento indica que a pretensão não prosperou. Não há processo criminal ativo com o titular no polo passivo como réu, sanções CEIS/CGU, mídia adversa confirmada ou contratos públicos irregulares. Aplicando o princípio de que processo arquivado sem condenação não configura achado desabonador, não há fator impeditivo materializado.\n\nRecomendo a APROVAÇÃO do cadastro. O caso segue fluxo PLD padrão de derivação PEP, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — Divergência com analista: processos Habeas Corpus arquivados não configuram desabono; ausência de processo criminal ativo ou condenação.",
-    "decisao": "aprovado",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-05-19T10:00:00Z"
+    "text": "Decisão: CADASTRO REPROVADO\nEmpresa: LIDER COMERCIO DE BEBIDAS & GAS LTDA — CNPJ 27.320.765/0001-65\n\nTrata-se de empresa consolidada cujo titular, Luciano Santos Costa, é ele próprio PEP e ocupa atualmente o cargo de Presidente da Câmara Municipal de Ribeirão Cascalheira/MT — a mais alta posição no Legislativo municipal. Em pesquisas externas aprofundadas, o Ministério Público do Estado de Mato Grosso (MPMT) apresentou denúncia criminal formal contra o titular ao final de 2025, acusando-o da prática contumaz de peculato (22 ocorrências) e falsidade ideológica (17 ocorrências), mediante fraudes sistemáticas em diárias da Câmara Municipal. Trata-se de ação penal ativa — não de Habeas Corpus arquivado, que não configura desabono. A denúncia formal do MP constitui processo criminal ativo com o titular no polo passivo como réu por crime contra a administração pública, o que, combinado com o mandato ativo na presidência do Legislativo, configura risco de integridade e reputação inaceitável para início de relacionamento. Somos desfavoráveis ao início do relacionamento.",
+    "resumo": "REPROVAR — Presidente da Câmara com denúncia criminal ativa do MPMT por peculato (22x) e falsidade ideológica (17x). Ação penal em curso ≠ HC arquivado.",
+    "decisao": "reprovado",
+    "model": "manual-revisao-2026-05-20",
+    "generated_at": "2026-05-20T00:00:00Z"
   },
   "d40bbad8-2c38-4713-aadd-5f5d2a066a1c": {
     "text": "Decisão: CADASTRO REPROVADO\nEmpresa: GOMES DE FREITAS VAREJO LTDA\n\nTitular filho da Secretária Municipal de Turismo de Quiterianópolis/CE. Empresa figura como fornecedora ativa da Prefeitura do mesmo município — Conflito de Interesses absoluto. Somos desfavoráveis ao início do relacionamento.",
