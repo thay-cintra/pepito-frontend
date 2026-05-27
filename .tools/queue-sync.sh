@@ -13,6 +13,29 @@ LOG="$ROOT/pepito-frontend/.tools/queue-sync.log"
   cd "$ROOT"
   source "$ROOT/.venv/bin/activate"
 
+  # Exporta AWS_*/CORALAGO_* do .env ANTES de qualquer chamada coralago/boto3 —
+  # sem isso, o spawn sem TTY cai em getpass e aborta com EOFError.
+  if [ -f "$ROOT/.env" ]; then
+    set -a
+    eval "$(grep -E '^(AWS_|CORALAGO_|LITELLM|LLM_)' "$ROOT/.env" | sed 's/\r$//')"
+    set +a
+  fi
+  if [ -z "${AWS_ACCESS_KEY_ID:-}" ]; then
+    echo "[FATAL] AWS_ACCESS_KEY_ID ausente no ambiente. Rode 'aws sso login' (ou atualize .env) e tente de novo."
+    exit 87
+  fi
+
+  # Fail-fast em credenciais inválidas/expiradas — evita o loop getpass→EOFError
+  # do coralago quando rodando sem TTY (spawn pelo servidor).
+  echo "[0/3] Validando credenciais AWS (sts)..."
+  if ! python -c "import boto3,sys; \
+b=boto3.client('sts'); \
+ident=b.get_caller_identity(); \
+print('  identity:', ident.get('Arn'))" 2>&1; then
+    echo "[FATAL] Credenciais AWS inválidas ou expiradas. Renove (.env / aws sso login) e tente novamente."
+    exit 88
+  fi
+
   echo "[1/3] build-real-queue.py — pulling Athena ..."
   python pepito-frontend/.tools/build-real-queue.py
 
@@ -56,10 +79,22 @@ PYEOF
   echo "[3/3] generate-pld-risk-scores.py ..."
   python pepito-frontend/.tools/generate-pld-risk-scores.py
 
+  echo "[4/4] gerando sugestões IA para casos novos (Liderança + Analista) ..."
+  if [ -n "${LITELLM_API_KEY:-}" ] && [ -n "${LITELLM_BASE_URL:-}" ]; then
+    python pepito-frontend/.tools/generate-sugestao-lideranca.py || echo "  aviso: gerador Liderança falhou"
+    python pepito-frontend/.tools/generate-sugestao-parecer.py    || echo "  aviso: gerador Analista falhou"
+  else
+    echo "  LITELLM_API_KEY/BASE_URL ausentes — pulando geração de sugestões IA"
+  fi
+
   echo "[upload] Sincronizando JSONs para GCS (pepito-data-stage) ..."
   DATA="$ROOT/pepito-frontend/src/data"
-  gsutil cp "$DATA/registration-queue-real.json" gs://pepito-data-stage/registration-queue-real.json
-  gsutil cp "$DATA/analises-salvas.json"         gs://pepito-data-stage/analises-salvas.json 2>/dev/null || true
+  if command -v gsutil >/dev/null 2>&1; then
+    gsutil cp "$DATA/registration-queue-real.json" gs://pepito-data-stage/registration-queue-real.json || echo "[upload] aviso: falha registration-queue-real.json"
+    gsutil cp "$DATA/analises-salvas.json"         gs://pepito-data-stage/analises-salvas.json 2>/dev/null || true
+  else
+    echo "[upload] gsutil não disponível — pulando upload para GCS (dados locais íntegros)."
+  fi
 
   echo "=== $(date -Iseconds) queue-sync done ==="
 } >> "$LOG" 2>&1

@@ -635,7 +635,29 @@ function pepStatusFromLocal(s: StatusAnalise): "aprovado" | "reprovado" {
 
 function PepHistorySection({ analises }: { analises: Analise[] }) {
   const meta = PEP_HISTORY._meta;
-  const items = PEP_HISTORY.items;
+
+  // Universo efetivo = snapshot Athena + análises concluídas localmente no Pepito
+  // que ainda não estão no snapshot (assim o "Total analisado" cresce conforme
+  // a operação decide novos casos, em vez de ficar travado no número do snapshot).
+  const items = React.useMemo<PepHistoryItem[]>(() => {
+    const snapshotIds = new Set(PEP_HISTORY.items.map((it) => it.draft_membership_id));
+    const sintéticos: PepHistoryItem[] = analises
+      .filter((a) => a.camadaStatus === "concluido")
+      .filter((a) => !a.draftId || !snapshotIds.has(a.draftId))
+      .map((a) => ({
+        draft_membership_id: a.draftId || `local:${a.id}`,
+        status_pepito: pepStatusFromLocal(a.status),
+        tipo_pep: a.cliente.tipoPep === "titular" ? "titular" : "relacionado",
+        ds_vinculo: a.cliente.tipoPep === "relacionado" ? (a.cliente.grauParentesco || a.cliente.tipoVinculo || null) : null,
+        raw_status: "LOCAL_PEPITO",
+        motivo: "PLD_SCORE",
+        motivo_label: "Análise local Pepito",
+        decision_at: a.concludedAt || a.createdAt,
+        pld_entered_at: a.createdAt,
+        competencia_at: a.concludedAt || a.createdAt,
+      }));
+    return [...PEP_HISTORY.items, ...sintéticos];
+  }, [analises]);
 
   const [filtro, setFiltro] = React.useState<"todos" | "aprovado" | "reprovado" | "em_andamento">("todos");
   const [tipoPepFiltro, setTipoPepFiltro] = React.useState<"todos" | "titular" | "relacionado">("todos");
@@ -777,7 +799,7 @@ function PepHistorySection({ analises }: { analises: Analise[] }) {
           <code className="bg-muted px-1 rounded">dumps.registration_draft_membership_registration_status</code>{" "}
           + <code className="bg-muted px-1 rounded">squad_core.registration_notebook_output</code> (pep_pf).{" "}
           Casos com status final <code>WAITING_EMAIL_RESPONSE</code> ficam fora (não estão na fila PLD).{" "}
-          Atualização automática 1×/dia. Último snapshot: {fetchedAtFmt}.
+          Snapshot Athena atualizado 1×/dia (último: {fetchedAtFmt}) e somado às análises concluídas localmente no Pepito que ainda não constam no snapshot.
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-5">

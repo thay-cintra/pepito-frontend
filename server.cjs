@@ -19,6 +19,20 @@ const https       = require("https");
 const http        = require("http");
 const { spawn }   = require("child_process");
 
+// ── Git auto-push: persiste analises-salvas.json no GitHub após cada escrita ──
+let gitPushPending = false;
+function scheduleGitPush(userEmail) {
+  if (gitPushPending) return;
+  gitPushPending = true;
+  setTimeout(() => {
+    gitPushPending = false;
+    const ts  = new Date().toISOString().replace("T", " ").slice(0, 16);
+    const msg = `auto: salva análises ${ts} [${userEmail}]`;
+    const cmd = `cd "${__dirname}" && git add src/data/analises-salvas.json && git diff --cached --quiet || git commit -m "${msg}" && git push corabank HEAD 2>&1`;
+    spawn("/bin/bash", ["-c", cmd], { detached: true, stdio: "pipe" }).unref();
+  }, 3000); // debounce 3 s para agrupar saves simultâneos
+}
+
 // ── GCS (quando GCS_BUCKET_NAME está definido) ───────────────────────────────
 const GCS_BUCKET_NAME = process.env.GCS_BUCKET_NAME || "";
 let gcsBucket = null;
@@ -62,6 +76,11 @@ const CLIENT_ID      = process.env.GOOGLE_CLIENT_ID || "";
 const CLIENT_SECRET  = process.env.GOOGLE_CLIENT_SECRET || "";
 const JWT_SECRET     = process.env.JWT_SECRET || crypto.randomBytes(32).toString("hex");
 const ALLOWED_DOMAIN = process.env.SSO_DOMAIN || "cora.com.br";
+// Emails autorizados a disparar sincronização com Athena (consumo de LLM/Athena).
+// Default: apenas thay@cora.com.br. Configurável via SYNC_ATHENA_OWNERS (csv).
+const SYNC_OWNERS = (process.env.SYNC_ATHENA_OWNERS || "thay@cora.com.br")
+  .split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
+const isSyncOwner = (email) => SYNC_OWNERS.includes((email || "").toLowerCase());
 // LOCAL_MODE=true → sem SSO, acesso direto pela VPN/rede interna
 // Nunca permitido em NODE_ENV=production (proteção contra misconfiguration)
 const LOCAL_MODE = process.env.LOCAL_MODE === "true" && process.env.NODE_ENV !== "production";
@@ -199,10 +218,15 @@ app.get("/auth/google/callback", async (req, res) => {
 // Em LOCAL_MODE retorna usuário genérico para o frontend não exibir tela de login
 app.get("/auth/me", (req, res) => {
   if (LOCAL_MODE) {
-    return res.json({ email: "local@cora.com.br", name: "Acesso Local (VPN)", picture: "" });
+    return res.json({ email: "local@cora.com.br", name: "Acesso Local (VPN)", picture: "", canSync: isSyncOwner("local@cora.com.br") });
   }
   requireAuth(req, res, () => {
-    res.json({ email: req.user.email, name: req.user.name, picture: req.user.picture });
+    res.json({
+      email: req.user.email,
+      name: req.user.name,
+      picture: req.user.picture,
+      canSync: isSyncOwner(req.user.email),
+    });
   });
 });
 
@@ -234,11 +258,25 @@ app.get("/api/analises", requireAuth, async (req, res) => {
 app.post("/api/analises", requireAuth, async (req, res) => {
   try {
     const existing = await readDataFile(ANALISES_FILE, "analises-salvas.json", { analises: [], exclusoes: [] });
-    existing.analises  = req.body.analises  ?? existing.analises;
-    existing.exclusoes = req.body.exclusoes ?? existing.exclusoes;
+    // Merge por ID — evita que um analista sobrescreva análises de outros
+    // ausentes no seu localStorage. Mais recente (createdAt/concludedAt) vence
+    // quando o mesmo ID aparece dos dois lados.
+    const mergeById = (a = [], b = [], tsKey) => {
+      const map = new Map();
+      const ts = (x) => new Date(x.concludedAt || x[tsKey] || x.createdAt || 0).getTime();
+      for (const item of [...(a || []), ...(b || [])]) {
+        if (!item || !item.id) continue;
+        const prev = map.get(item.id);
+        if (!prev || ts(item) >= ts(prev)) map.set(item.id, item);
+      }
+      return Array.from(map.values());
+    };
+    existing.analises  = mergeById(existing.analises,  req.body.analises  || [], "createdAt");
+    existing.exclusoes = mergeById(existing.exclusoes, req.body.exclusoes || [], "dataExclusao");
     existing._meta     = { ultima_atualizacao: new Date().toISOString(), by: req.user.email };
     await writeDataFile(ANALISES_FILE, "analises-salvas.json", existing);
-    res.json({ ok: true });
+    scheduleGitPush(req.user.email);
+    res.json({ ok: true, analises_total: existing.analises.length, exclusoes_total: existing.exclusoes.length });
   } catch (e) { res.status(500).json({ error: String(e) }); }
 });
 
@@ -251,30 +289,63 @@ app.get("/api/queue", requireAuth, async (req, res) => {
 });
 
 let queueSyncRunning = false;
+let queueSyncLastExit = null;          // null=nunca rodou, 0=ok, !=0=falhou
+let queueSyncLastFinishedAt = null;    // ISO timestamp da última conclusão
+let queueSyncLastErrorTail = "";       // últimas linhas do log em caso de erro
 const QUEUE_SYNC_LOG = path.join(__dirname, ".tools", "queue-sync.log");
+
+function readLogTail(file, n = 8) {
+  try {
+    if (!fs.existsSync(file)) return [];
+    const lines = fs.readFileSync(file, "utf8").trim().split("\n").filter((l) => l.trim());
+    return lines.slice(-n);
+  } catch { return []; }
+}
 
 // Sincronização rápida com Athena (só build-real-queue.py, sem AI e sem rebuild)
 app.get("/api/queue/sync", requireAuth, (req, res) => {
-  let lastLine = "";
-  try {
-    const log = fs.existsSync(QUEUE_SYNC_LOG)
-      ? fs.readFileSync(QUEUE_SYNC_LOG, "utf8").trim().split("\n")
-      : [];
-    lastLine = log.filter((l) => l.trim()).slice(-1)[0] ?? "";
-  } catch { /* ignore */ }
-  res.json({ running: queueSyncRunning, lastLine });
+  const tail = readLogTail(QUEUE_SYNC_LOG, 1);
+  res.json({
+    running: queueSyncRunning,
+    lastLine: tail[0] || "",
+    lastExit: queueSyncLastExit,
+    lastFinishedAt: queueSyncLastFinishedAt,
+    lastErrorTail: queueSyncLastErrorTail,
+  });
 });
 
 app.post("/api/queue/sync", requireAuth, (req, res) => {
+  if (!isSyncOwner(req.user?.email)) {
+    console.warn(`[queue/sync] Acesso negado para ${req.user?.email}`);
+    return res.status(403).json({ error: "Apenas usuários autorizados podem disparar sincronização." });
+  }
   if (queueSyncRunning) return res.status(409).json({ error: "Sincronização já em andamento." });
   queueSyncRunning = true;
+  queueSyncLastErrorTail = "";
   console.log(`[queue/sync] Iniciado por ${req.user?.email}`);
   const proc = spawn("/bin/bash", [QUEUE_SYNC_SH], {
     detached: true, stdio: "ignore",
     env: { ...process.env, PATH: `/bin:/usr/bin:/usr/local/bin:${process.env.PATH ?? ""}` },
   });
   proc.unref();
-  proc.on("close", () => { queueSyncRunning = false; });
+  proc.on("close", (code) => {
+    queueSyncRunning = false;
+    queueSyncLastExit = code;
+    queueSyncLastFinishedAt = new Date().toISOString();
+    if (code !== 0) {
+      queueSyncLastErrorTail = readLogTail(QUEUE_SYNC_LOG, 12).join(" | ");
+      console.warn(`[queue/sync] Falhou (exit=${code}). Últimas linhas: ${queueSyncLastErrorTail}`);
+    } else {
+      console.log(`[queue/sync] Concluído com sucesso.`);
+    }
+  });
+  proc.on("error", (err) => {
+    queueSyncRunning = false;
+    queueSyncLastExit = -1;
+    queueSyncLastFinishedAt = new Date().toISOString();
+    queueSyncLastErrorTail = String(err);
+    console.error(`[queue/sync] Erro ao spawnar: ${err}`);
+  });
   res.status(202).json({ ok: true });
 });
 

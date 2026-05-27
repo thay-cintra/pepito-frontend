@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/components/ui/toast";
 import { getQueueSnapshotMeta, refreshQueueFromServer, QUEUE_UPDATED_EVENT } from "@/lib/registration-queue";
+import { getAuthUser } from "@/lib/auth";
 
 const POLL_INTERVAL_MS = 90_000; // auto-refresh da fila a cada 90 segundos
 
@@ -15,6 +16,13 @@ export function QueueRefreshHeader({ onRefresh }: { onRefresh?: () => void }) {
   const [syncState, setSyncState] = useState<SyncState>("idle");
   const [lastLine, setLastLine] = useState("");
   const [novosDetectados, setNovosDetectados] = useState(0);
+  const [canSync, setCanSync] = useState(false);
+
+  useEffect(() => {
+    let mounted = true;
+    void getAuthUser().then((u) => { if (mounted) setCanSync(!!u?.canSync); });
+    return () => { mounted = false; };
+  }, []);
   const syncPollRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const autoPollRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -77,7 +85,18 @@ export function QueueRefreshHeader({ onRefresh }: { onRefresh?: () => void }) {
           if (d.lastLine) setLastLine(d.lastLine);
           if (!d.running) {
             stopSyncPolling();
-            // Após sincronização, relê a fila atualizada
+            if (d.lastExit !== 0 && d.lastExit !== null) {
+              // Sync rodou mas falhou — não substituir os números pelos antigos sem avisar
+              setSyncState("error");
+              const detail = d.lastErrorTail || d.lastLine || "Verifique credenciais AWS/Athena (.env).";
+              toast({
+                variant: "destructive",
+                title: `Sincronização falhou (exit ${d.lastExit})`,
+                description: detail.slice(0, 300),
+              });
+              return;
+            }
+            // Após sincronização bem-sucedida, relê a fila atualizada
             const { total, novos } = await refreshQueueFromServer();
             setMeta(getQueueSnapshotMeta());
             setSyncState("done");
@@ -133,17 +152,20 @@ export function QueueRefreshHeader({ onRefresh }: { onRefresh?: () => void }) {
         <RefreshCw className="h-3 w-3" /> Atualizar
       </Button>
 
-      {/* Sincronizar: consulta Athena via Python e atualiza o JSON */}
-      <Button
-        variant="outline" size="sm"
-        onClick={handleSincronizarAthena}
-        disabled={syncState === "running"}
-        className="h-7 text-xs"
-        title="Consulta o Athena agora e atualiza a fila sem precisar reiniciar o servidor"
-      >
-        <Zap className={`h-3 w-3 ${syncState === "running" ? "animate-pulse" : ""}`} />
-        {syncState === "running" ? "Sincronizando…" : "Sincronizar Athena"}
-      </Button>
+      {/* Sincronizar: consulta Athena via Python e atualiza o JSON.
+          Restrito a usuários autorizados (canSync). */}
+      {canSync && (
+        <Button
+          variant="outline" size="sm"
+          onClick={handleSincronizarAthena}
+          disabled={syncState === "running"}
+          className="h-7 text-xs"
+          title="Consulta o Athena agora e atualiza a fila sem precisar reiniciar o servidor"
+        >
+          <Zap className={`h-3 w-3 ${syncState === "running" ? "animate-pulse" : ""}`} />
+          {syncState === "running" ? "Sincronizando…" : "Sincronizar Athena"}
+        </Button>
+      )}
     </div>
   );
 }

@@ -42,13 +42,18 @@ const VALID_STATUS: RegistrationStatus[] = ["DOUBLE_CHECK", "IN_ANALYSIS"];
  *   status IN ('DOUBLE_CHECK','IN_ANALYSIS')
  *   AND sub_status = 'PLD_SCORE'
  *   AND person_type = 'OWNER'
+ *   AND não foi movido para WAITING_EMAIL_RESPONSE no audit_real
+ *     (o Scooto/Retool já solicitou complementação ao cliente → fila viva exclui)
  */
 function passesPLDFilters(c: RegistrationCase): boolean {
-  return (
-    VALID_STATUS.includes(c.status) &&
-    c.sub_status === "PLD_SCORE" &&
-    c.person_type === "OWNER"
-  );
+  if (!VALID_STATUS.includes(c.status)) return false;
+  if (c.sub_status !== "PLD_SCORE") return false;
+  if (c.person_type !== "OWNER") return false;
+
+  const audit = (c as unknown as { audit_real?: Array<{ new_status?: string }> }).audit_real || [];
+  if (audit.some((a) => a?.new_status === "WAITING_EMAIL_RESPONSE")) return false;
+
+  return true;
 }
 
 function readTaken(): Record<string, string> {

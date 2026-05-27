@@ -2,6 +2,8 @@ export interface AuthUser {
   email: string;
   name: string;
   picture: string;
+  /** Permissão para disparar "Sincronizar Athena" (consumo de LLM/Athena). */
+  canSync?: boolean;
 }
 
 let _cache: AuthUser | null | undefined = undefined; // undefined = não verificado ainda
