@@ -168,8 +168,15 @@ def main():
     items = payload["items"] if isinstance(payload, dict) else payload
     findings_all = json.loads(FINDINGS_PATH.read_text(encoding="utf-8"))
 
-    # Apaga cache para regenerar tudo
+    # Preserva tudo o que já existe — só gera para casos NOVOS sem sugestão.
+    # Revisões manuais (model=manual-*) ficam intactas; demais entradas também,
+    # para evitar regenerar 46 prompts a cada sincronização (custo elevado de LLM).
     sugestoes = {}
+    if OUT_PATH.exists():
+        try:
+            sugestoes = json.loads(OUT_PATH.read_text(encoding="utf-8"))
+        except Exception:
+            sugestoes = {}
 
     analistas = [c for c in items if c.get("bucket") == "CHECK_ANALISTA"]
     print(f"Total ANALISTA: {len(analistas)}")
@@ -177,6 +184,11 @@ def main():
 
     for i, c in enumerate(analistas, 1):
         did = c["draft_id"]
+        # Preserva sugestão existente — não regenerar para economizar tokens
+        existing = sugestoes.get(did)
+        if isinstance(existing, dict) and existing.get("text"):
+            print(f"  [{i}/{len(analistas)}] {c['full_name_pf']:42s} → preservado")
+            continue
         f = findings_all.get(did) or []
         if not isinstance(f, list):
             f = []
