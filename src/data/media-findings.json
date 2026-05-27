@@ -2613,7 +2613,7 @@
       "url": "https://pesquisatextual.trt4.jus.br/pesquisas/rest/download/acordao/pje/rfYkWDI9lDqOyDhlrQ3dfw",
       "snippet": "Acórdão do TRT4 aponta que EDVINO DOMINGOS ZAGONEL integra grupo econômico composto por múltiplas reclamadas (setor de transporte rodoviário e imobiliário), ao lado de Teodoro Pedrotti e Neri Carlos Dal Pozzo. O documento registra que 'o grupo empresarial está se desfazendo de seu patrimônio, redirecionando os seus bens' para outra empresa do grupo, configurando solidariedade trabalhista reconhecida judicialmente.",
       "source": "TRT4 — acórdão público (pesquisatextual.trt4.jus.br)",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "pep",
       "match": "EDVINO DOMINGOS ZAGONEL — sócio de fato em grupo econômico multissetorial; dilapidação patrimonial reconhecida pelo TRT4"
     },
@@ -2622,7 +2622,7 @@
       "url": "https://www.jusbrasil.com.br/processos/nome/198544473/edz",
       "snippet": "JusBrasil indexa 126 processos associados ao nome E. D. Z., com EDVINO DOMINGOS ZAGONEL como parte mais recorrente, predominantemente no TRT4 (trabalhistas) e TJRS. Volume expressivo indica litigiosidade elevada, consistente com o perfil de grupo econômico com passivo trabalhista relevante.",
       "source": "JusBrasil — índice processual público",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "pep",
       "match": "EDVINO DOMINGOS ZAGONEL — 126 processos indexados, majoritariamente TRT4/TJRS; ATENÇÃO: não repetir busca judicial (já coberta pela API JusBrasil)"
     },
