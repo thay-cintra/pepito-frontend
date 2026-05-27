@@ -49,10 +49,6 @@ function passesPLDFilters(c: RegistrationCase): boolean {
   if (!VALID_STATUS.includes(c.status)) return false;
   if (c.sub_status !== "PLD_SCORE") return false;
   if (c.person_type !== "OWNER") return false;
-
-  const audit = (c as unknown as { audit_real?: Array<{ new_status?: string }> }).audit_real || [];
-  if (audit.some((a) => a?.new_status === "WAITING_EMAIL_RESPONSE")) return false;
-
   return true;
 }
 
