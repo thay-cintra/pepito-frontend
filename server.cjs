@@ -133,6 +133,14 @@ function requireAuth(req, res, next) {
     return res.redirect("/login");
   }
   req.user = user;
+  // Renovação automática: se o token expira em < 2h, emite um novo (sliding window)
+  const ttl = (user.exp || 0) - Math.floor(Date.now() / 1000);
+  if (ttl < 2 * 3600) {
+    const renewed = signJwt({ email: user.email, name: user.name, picture: user.picture,
+      exp: Math.floor(Date.now() / 1000) + 8 * 3600 });
+    res.cookie(COOKIE_NAME, renewed, { httpOnly: true, secure: APP_URL.startsWith("https"),
+      sameSite: "lax", maxAge: 8 * 3600 * 1000 });
+  }
   next();
 }
 

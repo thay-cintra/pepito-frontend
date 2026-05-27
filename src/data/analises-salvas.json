@@ -9139,7 +9139,7 @@
           "fonte": "JusBrasil",
           "resumo": "20 processos identificados — JusBrasil — 20 processos no JusBrasil predominantemente em TRE-PB (eleitoral) e TRT13 (trabalhista). Sem matéria de improbidade ou crimes contra a administração pública. [Match: 100% — nome completo confirmado por contexto profissional]",
           "tipo": "processo",
-          "risco": "medio",
+          "risco": "baixo",
           "link": "https://www.jusbrasil.com.br/processos/nome/110961876/cicero-roberto-mendonca-de-souza",
           "similaridade_nome": "100%",
           "pendente_verificacao": false
@@ -10985,7 +10985,7 @@
           "fonte": "JusBrasil — índice processual público",
           "resumo": "M4 — Volume processual elevado: 126 processos vinculados a EDVINO DOMINGOS ZAGONEL (TRT4/TJRS) — JusBrasil indexa 126 processos associados ao nome E. D. Z., com EDVINO DOMINGOS ZAGONEL como parte mais recorrente, predominantemente no TRT4 (trabalhistas) e TJRS. Volume expressivo indica litigiosidade elevada, consistente com o perfil de grupo econômico com passivo trabalhista relevante. [Match: EDVINO DOMINGOS ZAGONEL — 126 processos indexados, majoritariamente TRT4/TJRS; ATENÇÃO: não repetir busca judicial (já coberta pela API JusBrasil)]",
           "tipo": "pep",
-          "risco": "medio",
+          "risco": "baixo",
           "link": "https://www.jusbrasil.com.br/processos/nome/198544473/edz",
           "similaridade_nome": "100%",
           "pendente_verificacao": false
@@ -17342,7 +17342,7 @@
           "fonte": "Tesserati — ProcessoTribunalJustica",
           "resumo": "Tesserati — Processos criminais (7) — Raimundo Nonato Marreiros Moreira — Raimundo Nonato Marreiros Moreira tem 7 processo(s) criminal(is) via Tesserati. Assuntos: DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DESOBEDIENCIA A DECISAO JUDICIAL. Fonte: base consolidada de tribunais brasileiros. [Match: CPF 227.202.433-53]",
           "tipo": "processo",
-          "risco": "alto",
+          "risco": "baixo",
           "link": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
           "similaridade_nome": "100%",
           "pendente_verificacao": false
@@ -18192,7 +18192,7 @@
           "fonte": "Tesserati — ProcessoTribunalJustica",
           "resumo": "Tesserati — Processos criminais (7) — Raimundo Nonato Marreiros Moreira — Raimundo Nonato Marreiros Moreira tem 7 processo(s) criminal(is) via Tesserati. Assuntos: DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DESOBEDIENCIA A DECISAO JUDICIAL. Fonte: base consolidada de tribunais brasileiros. [Match: CPF 227.202.433-53]",
           "tipo": "processo",
-          "risco": "alto",
+          "risco": "baixo",
           "link": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
           "similaridade_nome": "100%",
           "pendente_verificacao": false
@@ -18692,7 +18692,7 @@
           "fonte": "Tesserati — ProcessoTribunalJustica",
           "resumo": "Tesserati — Processos criminais (7) — Raimundo Nonato Marreiros Moreira — Raimundo Nonato Marreiros Moreira tem 7 processo(s) criminal(is) via Tesserati. Assuntos: DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DESOBEDIENCIA A DECISAO JUDICIAL. Fonte: base consolidada de tribunais brasileiros. [Match: CPF 227.202.433-53]",
           "tipo": "processo",
-          "risco": "alto",
+          "risco": "baixo",
           "link": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
           "similaridade_nome": "100%",
           "pendente_verificacao": false
@@ -19192,7 +19192,7 @@
           "fonte": "Tesserati — ProcessoTribunalJustica",
           "resumo": "Tesserati — Processos criminais (7) — Raimundo Nonato Marreiros Moreira — Raimundo Nonato Marreiros Moreira tem 7 processo(s) criminal(is) via Tesserati. Assuntos: DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DESOBEDIENCIA A DECISAO JUDICIAL. Fonte: base consolidada de tribunais brasileiros. [Match: CPF 227.202.433-53]",
           "tipo": "processo",
-          "risco": "alto",
+          "risco": "baixo",
           "link": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
           "similaridade_nome": "100%",
           "pendente_verificacao": false
@@ -19692,7 +19692,7 @@
           "fonte": "Tesserati — ProcessoTribunalJustica",
           "resumo": "Tesserati — Processos criminais (7) — Raimundo Nonato Marreiros Moreira — Raimundo Nonato Marreiros Moreira tem 7 processo(s) criminal(is) via Tesserati. Assuntos: DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DESOBEDIENCIA A DECISAO JUDICIAL. Fonte: base consolidada de tribunais brasileiros. [Match: CPF 227.202.433-53]",
           "tipo": "processo",
-          "risco": "alto",
+          "risco": "baixo",
           "link": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
           "similaridade_nome": "100%",
           "pendente_verificacao": false

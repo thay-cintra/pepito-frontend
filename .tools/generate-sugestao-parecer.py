@@ -142,7 +142,7 @@ PIPELINE INTERNO:
 Redija a sugestão em UM parágrafo (3-4 frases), texto fluido sem redundâncias, mencionando explicitamente o tipo de vínculo na 1ª frase."""
 
 
-def gerar(case: dict, findings: list, max_retries: int = 3) -> str:
+def gerar(case: dict, findings: list, max_retries: int = 5) -> str:
     prompt = montar_user_prompt(case, findings)
     for attempt in range(max_retries):
         try:
@@ -159,7 +159,8 @@ def gerar(case: dict, findings: list, max_retries: int = 3) -> str:
         except Exception as e:
             if attempt == max_retries - 1:
                 raise
-            time.sleep(2)
+            wait = 2 ** (attempt + 1)  # 2s, 4s, 8s, 16s
+            time.sleep(wait)
     return ""
 
 
