@@ -386,6 +386,14 @@ def main():
                 ) or ev.get("text")  # qualquer evento com comentário
             ],
         })
+        # Excluir casos já decididos pela liderança (têm "Decisão:" no webhook).
+        # Esses itens ainda aparecem no Athena (status IN_ANALYSIS) mas foram
+        # processados — "Decisão:" é registrado pelo time no Retool após decisão.
+        item = out[-1]
+        decisao_texts = [w.get("text", "") or "" for w in item.get("webhook_historico", [])]
+        if any(t.startswith("Decisão:") or t.startswith("Decisao:") for t in decisao_texts):
+            out.pop()
+            print(f"  [excluído — decisão já registrada] {item.get('full_name_pf','?')}")
 
     print(f"=== Distribuição por bucket ===")
     from collections import Counter
