@@ -20,7 +20,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { ResultadoCard } from "@/components/ResultadoCard";
 import { HistoricoComentarios } from "@/components/HistoricoComentarios";
 import { useToast } from "@/components/ui/toast";
-import { storage } from "@/lib/storage";
+import { storage, timer } from "@/lib/storage";
 import {
   pesquisarFontesPublicas,
   reanalisarResultado,
@@ -47,8 +47,17 @@ export function NovaAnalise() {
   const [decisao, setDecisao] = useState<StatusAnalise>("aprovado");
   const [observacoesPesquisa, setObservacoesPesquisa] = useState("");
   const [pesquisando, setPesquisando] = useState(false);
-  const [tInicio] = useState(Date.now());
+  // Timer Check Liderança — persistente por analiseId. Inicia no primeiro
+  // acesso ("Decidir na Mesa") e limpa quando a decisão final é gravada.
+  const timerKey = id ? `lideranca:${id}` : null;
+  const [tInicio, setTInicio] = useState<number>(() =>
+    timerKey ? timer.startOrGet(timerKey) : Date.now(),
+  );
   const [agora, setAgora] = useState(Date.now());
+
+  useEffect(() => {
+    if (timerKey) setTInicio(timer.startOrGet(timerKey));
+  }, [timerKey]);
 
   useEffect(() => {
     const t = setInterval(() => setAgora(Date.now()), 1000);
@@ -62,8 +71,25 @@ export function NovaAnalise() {
       setAnalise(a);
       setResultados(a.resultadosPesquisa);
       setAnaliseGeral(a.analiseGeral || "");
-      setParecerCompleto(a.parecerCompleto);
       setDecisao(a.status);
+
+      // Auto-preenche o parecer final se ainda não foi redigido.
+      // Prioridade: sugestão IA da Mesa → template gerado pelo motor local.
+      if (a.parecerCompleto && a.parecerCompleto.trim().length > 0) {
+        setParecerCompleto(a.parecerCompleto);
+      } else {
+        const sugLid = a.draftId ? getSugestaoLideranca(a.draftId) : null;
+        const parecerGerado = sugLid?.text ?? gerarParecerLideranca({
+          cliente: a.cliente,
+          status: a.status,
+          resultados: a.resultadosPesquisa,
+          analiseConsolidada: a.analiseConsolidadaLideranca || "",
+          parecerPrimeiraCamada: a.parecerPrimeiraCamada,
+        });
+        setParecerCompleto(parecerGerado);
+        // Persiste para que aberturas subsequentes não regenerem
+        storage.saveAnalise({ ...a, parecerCompleto: parecerGerado });
+      }
     }
   }, [id]);
 
@@ -162,6 +188,8 @@ export function NovaAnalise() {
       concludedAt: new Date().toISOString(),
     };
     storage.saveAnalise(final);
+    // Para o cronômetro do Check Liderança — duração consolidada na Analise.
+    if (timerKey) timer.clear(timerKey);
     toast({
       variant: "success",
       title: "Decisão registrada",
@@ -366,16 +394,14 @@ export function NovaAnalise() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
-              {analise?.draftId && (
-                <SugestaoDecisaoIA
-                  draftId={analise.draftId}
-                  analise={analise}
-                  onUsarTexto={(texto, d) => {
-                    setParecerCompleto(texto);
-                    if (d) setDecisao(d);
-                  }}
-                />
-              )}
+              <SugestaoDecisaoIA
+                draftId={analise.draftId ?? ""}
+                analise={analise}
+                onUsarTexto={(texto, d) => {
+                  setParecerCompleto(texto);
+                  if (d) setDecisao(d);
+                }}
+              />
               <div>
                 <Label htmlFor="dec">Categoria</Label>
                 <Select id="dec" value={decisao} onChange={(e) => setDecisao(e.target.value as StatusAnalise)}>
@@ -455,7 +481,9 @@ function SugestaoDecisaoIA({
     (c) => c.acao === "ENVIAR_LIDERANCA_PLD" && c.text
   ) ?? comentariosAnalista[0];
 
-  if (!sugLid && !comentarioAnalista) return null;
+  // Fallback: usa o parecer da 1ª camada como base quando não há template da Mesa
+  const parecerBase = analise.parecerPrimeiraCamada;
+  if (!sugLid && !comentarioAnalista && !parecerBase) return null;
 
   const cfg = sugLid ? DECISAO_CONFIG[sugLid.decisao] : DECISAO_CONFIG.monitoramento;
 
@@ -501,6 +529,25 @@ function SugestaoDecisaoIA({
               </p>
             </div>
           )}
+        </div>
+      )}
+
+      {/* ── Parecer da 1ª camada — fallback quando não há comentário via webhook ── */}
+      {!comentarioAnalista && parecerBase && (
+        <div className="rounded-lg border border-border/60 bg-muted/30 p-3">
+          <p className="text-[10px] uppercase tracking-wide text-muted-foreground font-semibold mb-1.5">
+            📋 Parecer do analista (1ª camada)
+          </p>
+          <p className="text-[11px] leading-relaxed text-foreground/80 line-clamp-4">
+            {parecerBase}
+          </p>
+          <button
+            type="button"
+            className="text-[10px] text-primary hover:underline mt-1"
+            onClick={() => onUsarTexto(parecerBase)}
+          >
+            Usar como base →
+          </button>
         </div>
       )}
 
