@@ -15,6 +15,22 @@ const KEY_ANALISES = "pepito.analises";
 
 const EMAILS_ANALISTA = ["jeniffer@cora.com.br", "lucasfeller@cora.com.br", "m.matos@cora.com.br"];
 
+/** Extrai o email do analista que enviou para a Liderança a partir do histórico. */
+function extrairEmailAnalista(c: RegistrationCase): string | undefined {
+  const webhook = (c as unknown as { webhook_historico?: Array<{ user_email: string; acao: string }> })
+    .webhook_historico ?? [];
+  const envio = webhook.find(
+    (h) => EMAILS_ANALISTA.includes(h.user_email) && h.acao === "ENVIAR_LIDERANCA_PLD"
+  );
+  if (envio) return envio.user_email;
+
+  const historico = c.historico_comentarios ?? [];
+  const comentario = historico
+    .filter((h) => EMAILS_ANALISTA.includes(h.user_email))
+    .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())[0];
+  return comentario?.user_email;
+}
+
 /** Extrai o parecer real do analista a partir do histórico do webhook. */
 function extrairParecerAnalista(c: RegistrationCase): string {
   // Fonte primária: webhook_historico (ação ENVIAR_LIDERANCA_PLD do analista)
@@ -92,13 +108,55 @@ function readExcludedDraftIds(bucket: CheckBucket): Set<string> {
   }
 }
 
+/**
+ * Promove para CHECK_LIDERANCA cases derivados pelo analista via Pepito
+ * (clique em "Enviar à Mesa de Decisão" em /primeira-camada). Filtro
+ * estrito: SÓ promove Analises com `draftId` populado — protege contra o
+ * ruído histórico de IA que gravava `draftId=undefined`.
+ *
+ * Sem isso, casos saem do CHECK_ANALISTA (via readExcludedDraftIds) mas não
+ * entram em lugar nenhum porque o Retool ainda tem bucket=CHECK_ANALISTA até
+ * o próximo sync. Bug reportado em 2026-05-28 (draft 45437f70).
+ */
+function readDerivadosPepito(): Set<string> {
+  try {
+    const raw = localStorage.getItem(KEY_ANALISES);
+    if (!raw) return new Set();
+    const analises: Array<{ camadaStatus: string; draftId?: string }> = JSON.parse(raw);
+    return new Set(
+      analises
+        .filter((a) => !!a.draftId && a.camadaStatus === "aguardando_segunda")
+        .map((a) => a.draftId!),
+    );
+  } catch {
+    return new Set();
+  }
+}
+
 export function listByBucket(bucket: CheckBucket): RegistrationCase[] {
+  // Fonte primária: campo `bucket` do snapshot Retool (CHECK_LIDERANCA quando
+  // o analista disparou ENVIAR_LIDERANCA_PLD no Retool).
+  // Fonte secundária: derivações Pepito locais com draftId — promovidas para
+  // CHECK_LIDERANCA mesmo que o Retool ainda mostre CHECK_ANALISTA. Sem isso,
+  // o caso some entre as duas filas.
   const excluidos = readExcludedDraftIds(bucket);
-  return REGISTRATION_QUEUE.filter(
-    (c) => passesPLDFilters(c) && c.bucket === bucket && !excluidos.has(c.draft_id),
+  const derivadosPepito = readDerivadosPepito();
+  return REGISTRATION_QUEUE.filter((c) => {
+    if (!passesPLDFilters(c)) return false;
+    if (excluidos.has(c.draft_id)) return false;
+    const bucketEfetivo: CheckBucket = derivadosPepito.has(c.draft_id)
+      ? "CHECK_LIDERANCA"
+      : c.bucket;
+    return bucketEfetivo === bucket;
+  }).map((c) =>
+    derivadosPepito.has(c.draft_id) && c.bucket !== "CHECK_LIDERANCA"
+      ? { ...c, bucket: "CHECK_LIDERANCA" as const }
+      : c,
   ).sort(
+    // Mesma ordem do Retool: modified_at desc — quem foi mexido por último vai pro topo.
     (a, b) =>
-      new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
+      new Date(b.modified_at || b.created_at).getTime() -
+      new Date(a.modified_at || a.created_at).getTime(),
   );
 }
 
@@ -195,7 +253,8 @@ export function synthesizeAnalise(c: RegistrationCase): Analise {
     recomendacao: statusLabel(c.recomendacao_sugerida),
     parecerCompleto: "",
     camadaStatus: "aguardando_segunda",
-    duracaoPrimeiraCamada: 0, // investigação feita pelo pipeline KYC, não pela 1ª camada manual
+    duracaoPrimeiraCamada: 0,
+    analistaEmail: extrairEmailAnalista(c),
     historicoComentarios: c.historico_comentarios.map((h) => ({
       timestamp: h.timestamp,
       user_email: h.user_email,

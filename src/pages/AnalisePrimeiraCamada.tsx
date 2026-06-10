@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   Building2,
@@ -21,10 +21,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Dialog } from "@/components/ui/dialog";
 import { ResultadoCard } from "@/components/ResultadoCard";
 import { useToast } from "@/components/ui/toast";
-import { storage } from "@/lib/storage";
+import { storage, timer } from "@/lib/storage";
+import { getAuthUser } from "@/lib/auth";
 import { pesquisarFontesPublicas, reanalisarResultado, consultarCredilink, type CredilinkResultado } from "@/lib/mock-ai";
 import { clienteVazio } from "@/lib/cliente-default";
-import { getRegistrationCase, markTaken } from "@/lib/registration-queue";
+import { getRegistrationCase, markTaken, QUEUE_UPDATED_EVENT } from "@/lib/registration-queue";
 import { inferCargoOrgao, inferTipoPep, getSugestaoParecer } from "@/data/registration-enrich";
 import { formatCNPJ, formatCPF, formatDuration, uid } from "@/lib/utils";
 import type { Analise, ClienteData, ResultadoPesquisa, Socio, StatusAnalise } from "@/types/kyc";
@@ -51,7 +52,24 @@ export function AnalisePrimeiraCamada() {
   const [credilinkConsultando, setCredilinkConsultando] = useState(false);
   const [credilinkResultado, setCredilinkResultado] = useState<CredilinkResultado | null>(null);
   const [showOcr, setShowOcr] = useState(false);
-  const [tInicio] = useState<number>(Date.now());
+  const [analistaEmail, setAnalistaEmail] = useState<string>("");
+
+  useEffect(() => {
+    getAuthUser().then((u) => { if (u?.email) setAnalistaEmail(u.email); });
+  }, []);
+
+  // Timer Check Analista — persistente em localStorage por draftId (ou editId).
+  // Inicia no primeiro acesso (click em "Revisar e enviar" → navega prá cá) e
+  // sobrevive a reload, navegação, fechar/abrir aba. Limpo quando o analista
+  // clica "Enviar à Mesa".
+  const timerKey = editId
+    ? `analista:edit:${editId}`
+    : prefillDraftId
+      ? `analista:${prefillDraftId}`
+      : null;
+  const [tInicio, setTInicio] = useState<number>(() =>
+    timerKey ? timer.startOrGet(timerKey) : Date.now(),
+  );
   const [agora, setAgora] = useState<number>(Date.now());
 
   useEffect(() => {
@@ -59,7 +77,16 @@ export function AnalisePrimeiraCamada() {
     return () => clearInterval(t);
   }, []);
 
+  // Quando o draftId for resolvido depois do mount (ex.: edit existing), garante
+  // que o cronômetro reflita a chave correta.
   useEffect(() => {
+    if (timerKey) setTInicio(timer.startOrGet(timerKey));
+  }, [timerKey]);
+
+  // Carrega dados do caso quando a fila estiver disponível. Roda na montagem
+  // e novamente quando a fila for atualizada (QUEUE_UPDATED_EVENT) — cobre o
+  // cenário de hard refresh onde REGISTRATION_QUEUE ainda está vazia no mount.
+  const carregarCaso = useCallback(() => {
     if (editId) {
       const a = storage.getAnalise(editId);
       if (a) {
@@ -71,9 +98,10 @@ export function AnalisePrimeiraCamada() {
       }
       return;
     }
-    if (prefillDraftId) {
-      const caso = getRegistrationCase(prefillDraftId);
-      if (caso) {
+    if (!prefillDraftId) return;
+    const caso = getRegistrationCase(prefillDraftId);
+    if (!caso || draftIdOrigem === caso.draft_id) return; // já carregado
+    if (caso) {
         const cargoOrgao = inferCargoOrgao(caso);
         const tipoPep = inferTipoPep(caso);
         setDraftIdOrigem(caso.draft_id);
@@ -105,7 +133,7 @@ export function AnalisePrimeiraCamada() {
         setResultados(caso.resultados_pesquisa);
         setAnaliseGeral(caso.analise_geral);
         // Prioriza sugestão LLM concisa (estilo Josinalva) sobre o template heurístico
-        const sugestaoLlm = getSugestaoParecer(caso.draft_id);
+        const sugestaoLlm = getSugestaoParecer(caso.draft_id, caso);
         setParecerPrimeiraCamada(sugestaoLlm ?? caso.parecer_sugerido);
         setStatusSugerido(caso.recomendacao_sugerida);
         toast({
@@ -116,9 +144,13 @@ export function AnalisePrimeiraCamada() {
             : `${caso.rf_nome_oficial} — ${caso.resultados_pesquisa.length} fontes mapeadas.`,
         });
       }
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [editId, prefillDraftId]);
+  }, [editId, prefillDraftId, draftIdOrigem]);
+
+  useEffect(() => {
+    carregarCaso();
+    window.addEventListener(QUEUE_UPDATED_EVENT, carregarCaso);
+    return () => window.removeEventListener(QUEUE_UPDATED_EVENT, carregarCaso);
+  }, [carregarCaso]);
 
   const decorrido = Math.floor((agora - tInicio) / 1000);
 
@@ -218,6 +250,8 @@ export function AnalisePrimeiraCamada() {
     const a = montarAnalise("aguardando_segunda");
     storage.saveAnalise(a);
     if (draftIdOrigem) markTaken(draftIdOrigem, a.id);
+    // Para o cronômetro do Check Analista — duração já gravada na Analise.
+    if (timerKey) timer.clear(timerKey);
     toast({
       variant: "success",
       title: "Enviado à Mesa de Decisão",
@@ -232,6 +266,10 @@ export function AnalisePrimeiraCamada() {
     return {
       id,
       data: existente?.data ?? new Date().toISOString(),
+      // Preserva o vínculo com o caso original da fila PLD — sem isso a Liderança
+      // não consegue ligar a Analise ao draft_id no Retool e o caso "some" da
+      // Fila de Revisão depois do envio.
+      draftId: existente?.draftId ?? draftIdOrigem ?? undefined,
       cliente,
       parecerPrimeiraCamada,
       resultadosPesquisa: resultados,
@@ -243,6 +281,7 @@ export function AnalisePrimeiraCamada() {
       camadaStatus,
       duracaoPrimeiraCamada: decorrido,
       duracaoSegundos: existente?.duracaoSegundos,
+      analistaEmail: existente?.analistaEmail ?? (analistaEmail || undefined),
       createdAt: existente?.createdAt ?? new Date().toISOString(),
     };
   }

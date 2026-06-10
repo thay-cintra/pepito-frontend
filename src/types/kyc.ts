@@ -135,6 +135,8 @@ export interface Analise {
   camadaStatus: CamadaStatus;
   duracaoPrimeiraCamada?: number;
   duracaoSegundos?: number;
+  /** Email do analista que fez a 1ª camada no Pepito. */
+  analistaEmail?: string;
   createdAt: string;
   /** ISO timestamp da Decisão Final (camadaStatus = "concluido"). */
   concludedAt?: string;
