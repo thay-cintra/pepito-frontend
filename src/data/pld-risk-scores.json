@@ -1010,19 +1010,24 @@
       "gerado_em": "2026-06-11T14:08:21Z"
     },
     "7714f59f-d991-4598-8d6b-ed7adaa0d219": {
-      "probabilidade": 99.0,
-      "nivel": "critico",
-      "score_modelo": 123,
+      "probabilidade": 18.0,
+      "nivel": "baixo",
+      "score_modelo": 22,
       "score_max": 123,
       "fatores": [
         {
-          "id": "cnae_proibida",
-          "label": "🚫 CNAE PROIBIDA — Rejeição automática pela política Cora. Leiloeiros independentes — 8299-7/04. Regra: cnae_allowed=False → sub_status COMPLIANCE_CNAE_ALLOWED. Não iniciar relacionamento comercial.",
-          "nivel": "alto"
+          "id": "pep_ex_titular",
+          "label": "PEP titular — ex-vereador com mandato encerrado em 31/12/2024. Risco residual coberto pelo monitoramento PLD contínuo.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "cnae_baixo_risco",
+          "label": "CNAE 82.99-7-07 — Salas de acesso à internet. Atividade de baixo risco conforme política Cora.",
+          "nivel": "baixo"
         }
       ],
-      "pep_cargo": "",
-      "pep_vinculo": "",
+      "pep_cargo": "Vereador (ex, mandato encerrado 31/12/2024)",
+      "pep_vinculo": "titular",
       "gerado_em": "2026-06-11T14:08:21Z"
     },
     "4ca04cd4-65b6-4501-ad2f-8be52ae6d41d": {
@@ -1525,15 +1530,15 @@
       "gerado_em": "2026-06-11T14:08:21Z"
     },
     "719f82b4-c6d0-4f1f-b7ca-44e636b5b57e": {
-      "probabilidade": 99.0,
-      "nivel": "critico",
-      "score_modelo": 123,
+      "probabilidade": 8.0,
+      "nivel": "baixo",
+      "score_modelo": 10,
       "score_max": 123,
       "fatores": [
         {
-          "id": "cnae_proibida",
-          "label": "🚫 CNAE PROIBIDA — Rejeição automática pela política Cora. Comércio varejista de armas e munições — 4789-0/09. Regra: cnae_allowed=False → sub_status COMPLIANCE_CNAE_ALLOWED. Não iniciar relacionamento comercial.",
-          "nivel": "alto"
+          "id": "cnae_baixo_risco",
+          "label": "CNAE 47.89-0-04 — Comércio varejista de animais vivos e artigos para animação de estimação. Atividade de baixo risco conforme política Cora.",
+          "nivel": "baixo"
         }
       ],
       "pep_cargo": "",
