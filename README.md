@@ -19,6 +19,9 @@
 | Persistência | `localStorage` + `src/data/analises-salvas.json` (backup em disco) |
 | Fonte de dados | Snapshot JSON da fila PLD do Retool/Athena |
 | Deploy | Docker + Kubernetes (ArgoCD) — ver `platform/` |
+| **Proteção de dados** | **Integrity Guard** — backup automático 2x por dia |
+| **Monitoramento** | **Supervisor Agent** — 7 verificações 2x por dia + Slack |
+| **Alertas** | **Slack Webhook** — Alertas por nível de risco (🔴🟠🟡🔵) |
 
 ---
 
@@ -160,6 +163,74 @@ src/
     analises-salvas.json         — Backup das análises (gerado automaticamente)
     pareceres-llm.json           — Sugestões de parecer por draft_id
 server.cjs                    — Express: HTTPS, SSO Google, /api/analises
+
+.tools/
+  supervisor-agent.py          — Monitoramento (7 verificações)
+  integrity-guard.py           — Proteção de pareceres (backup + auto-restore)
+  full-guard-schedule.sh       — Orquestrador (Integrity + Supervisor)
+  supervisor-schedule.sh       — Scheduler do Supervisor
+  recover-sugestoes-lideranca.py — Recovery de pareceres perdidos
+  
+  backups/pareceres/           — Backups automáticos (2x por dia)
+    ├── pareceres-sugestao.json.*.backup
+    ├── pareceres-real.json.*.backup
+    ├── pareceres-lideranca.json.*.backup
+    ├── analises-salvas.json.*.backup
+    └── manifest.json
+  
+  Documentação:
+    SUPERVISOR.md              — Referência técnica completa
+    SUPERVISOR-SETUP.md        — Setup rápido (5 minutos)
+    SLACK-CONFIG.md            — Configuração Slack passo-a-passo
+    SLACK-ALERTAS-SETUP.md     — Status de alertas
+    ADD-CRON.md                — Como adicionar ao crontab
+    INCIDENT-REPORT.md         — Histórico de incidentes
+    DEPLOYMENT-SUMMARY.md      — Resumo do deployment
+    CRON-SETUP.sh              — Script para setup de cron
+```
+
+---
+
+## Ferramentas & Scripts de Proteção
+
+### Supervisor Agent (`.tools/supervisor-agent.py`)
+
+Monitora **7 componentes críticos** da aplicação, 2x por dia (6h e 14h).
+
+| Verificação | Descrição | Status |
+|---|---|---|
+| Servidor Node | Porta 4173 respondendo | 🔴 CRÍTICO |
+| Fila PLD | /api/queue com dados | 🔴 CRÍTICO |
+| Build dist/ | index.html presente | 🔴 CRÍTICO |
+| Pareceres | Integridade JSON | 🟠 ALTO |
+| Análises | Arquivo íntegro | 🟠 ALTO |
+| Git | Sem mudanças pendentes | 🔵 BAIXO |
+| TypeScript | Sem erros de tipo | 🟠 ALTO |
+
+**Alertas:** Enviados ao Slack por nível (🔴🟠🟡🔵)
+
+### Integrity Guard (`.tools/integrity-guard.py`)
+
+Protege contra **exclusão acidental de pareceres**, 2x por dia (6h e 14h).
+
+| Proteção | Como funciona |
+|---|---|
+| Backup | Cria snapshot de todos os pareceres |
+| Detecção | Identifica deletions e encolhimento |
+| Auto-restore | Restaura automaticamente de backup |
+| Alertas | Notifica Slack se houver violação |
+| Histórico | Mantém registro em `.tools/backups/pareceres/` |
+
+**Garantia:** Nenhum parecer é perdido permanentemente.
+
+### Full Guard Schedule (`.tools/full-guard-schedule.sh`)
+
+Orquestra Integrity Guard + Supervisor em uma única execução.
+
+```
+Full Guard = Integrity Guard (3-5s) + Supervisor Agent (5-10s)
+Total: ~15 segundos por execução
+Frequência: 2x por dia (6h e 14h)
 ```
 
 ---
@@ -266,6 +337,87 @@ O resultado da última execução é salvo em `.tools/supervisor-last-report.jso
 |---|---|---|
 | GET | `/api/supervisor/status` | Status atual + último relatório |
 | POST | `/api/supervisor/run` | Dispara supervisor manualmente |
+
+---
+
+## Full Guard — Proteção + Monitoramento
+
+O **Full Guard** combina dois sistemas de proteção que executam automaticamente **2x por dia** (6h e 14h) para garantir integridade e disponibilidade da aplicação.
+
+```
+Full Guard Schedule
+├─ 1. Integrity Guard (3-5s)        — Proteção de dados
+│   ├─ Backup automático de pareceres
+│   ├─ Detecção de deletions
+│   ├─ Auto-restauração
+│   └─ Alertas Slack
+│
+└─ 2. Supervisor Agent (5-10s)      — Monitoramento de saúde
+    ├─ 7 verificações críticas
+    ├─ Alertas por nível de risco
+    └─ Logs estruturados
+```
+
+### Integrity Guard — Proteção de Pareceres
+
+**Arquivo:** `.tools/integrity-guard.py`
+
+**Responsabilidade:** Garantir que pareceres nunca sejam perdidos.
+
+**Proteções:**
+- ✅ Backup automático 2x por dia (6h e 14h)
+- ✅ Detecção de deletions acidentais
+- ✅ Detecção de encolhimento > 50%
+- ✅ Auto-restauração de backups
+- ✅ Alertas Slack imediatos
+- ✅ Histórico completo em `.tools/backups/pareceres/`
+
+**Arquivos protegidos:**
+| Arquivo | Descrição | Criticidade |
+|---------|-----------|-------------|
+| `pareceres-sugestao.json` | Sugestões IA do parecer analista | 🔴 CRÍTICO |
+| `pareceres-real.json` | Parecer real do analista | 🔴 CRÍTICO |
+| `pareceres-lideranca.json` | Decisão da liderança | 🔴 CRÍTICO |
+| `analises-salvas.json` | Análises salvas (backup) | 🔴 CRÍTICO |
+
+**Execução:**
+```bash
+# Via cron (automático 2x por dia)
+0 6 * * * full-guard-schedule.sh
+0 14 * * * full-guard-schedule.sh
+
+# Manualmente (teste)
+python3 .tools/integrity-guard.py
+```
+
+**Alertas Slack:**
+```
+⚠️ Integrity Guard Alert
+🔴 DELETADOS: pareceres-sugestao.json
+[Auto-restaurado do backup]
+```
+
+**Logs:**
+```bash
+# Ver execuções
+tail -f /Users/thay/Projetos Thay/pepito-frontend/.tools/full-guard.log
+
+# Verificar integridade
+cat /Users/thay/Projetos Thay/pepito-frontend/.tools/integrity.log
+```
+
+### Agendamento automático (Cron)
+
+```bash
+# Full Guard executa 2x por dia
+CRON_TZ=America/Sao_Paulo
+0 6 * * * NODE_ENV=development /Users/thay/Projetos\ Thay/pepito-frontend/.tools/full-guard-schedule.sh
+0 14 * * * NODE_ENV=development /Users/thay/Projetos\ Thay/pepito-frontend/.tools/full-guard-schedule.sh
+```
+
+**Horários:**
+- 🕐 **06:00** — Verificação matinal
+- 🕮 **14:00** — Verificação à tarde
 
 ---
 
@@ -451,3 +603,81 @@ Antes de enviar para CHECK_LIDERANCA:
 7. ✓ Tempo de 1ª camada registrado (`duracaoPrimeiraCamada > 0`)
 
 **Resultado:** impossível enviar análise incompleta.
+
+---
+
+## Verificar Status do Full Guard
+
+### Logs em tempo real
+```bash
+# Ver execuções do Full Guard
+tail -f /Users/thay/Projetos\ Thay/pepito-frontend/.tools/full-guard.log
+
+# Ver histórico de integridade
+tail -f /Users/thay/Projetos\ Thay/pepito-frontend/.tools/integrity.log
+
+# Ver relatórios do Supervisor
+tail -f /Users/thay/Projetos\ Thay/pepito-frontend/.tools/supervisor.log
+```
+
+### Backups de pareceres
+```bash
+# Listar backups
+ls -lh /Users/thay/Projetos\ Thay/pepito-frontend/.tools/backups/pareceres/
+
+# Ver manifest de integridade
+cat /Users/thay/Projetos\ Thay/pepito-frontend/.tools/backups/pareceres/manifest.json
+```
+
+### Testar manualmente
+```bash
+# Executar Full Guard agora (sem esperar cron)
+cd /Users/thay/Projetos\ Thay/pepito-frontend
+NODE_ENV=development bash .tools/full-guard-schedule.sh
+```
+
+### Crontab
+```bash
+# Confirmar agendamento
+crontab -l | grep "Full Guard" -A 2
+
+# Próximas execuções
+crontab -l | grep "^0 [0-9]"
+```
+
+---
+
+## Garantias de Operação
+
+| Garantia | Como é feita | Verificação |
+|----------|-------------|-------------|
+| **Pareceres nunca são perdidos** | Backup automático 2x por dia + auto-restore | Ver `.tools/backups/pareceres/` |
+| **Bugs são detectados automaticamente** | Supervisor verifica 7 componentes 2x por dia | Ver `.tools/supervisor.log` |
+| **Alertas chegam em tempo real** | Slack webhook integrado | Verificar canal Slack |
+| **Histórico é preservado** | Logs estruturados + manifests | Ver `.tools/integrity.log` |
+
+---
+
+## Troubleshooting
+
+### Nenhum alerta no Slack?
+1. Verificar webhook em `.env`: `grep SLACK_WEBHOOK /Users/thay/Projetos\ Thay/.env`
+2. Verificar crontab: `crontab -l | grep "Full Guard"`
+3. Testar manualmente: `bash full-guard-schedule.sh`
+4. Ver logs: `tail -20 full-guard.log`
+
+### Parecer foi deletado?
+1. Integrity Guard detecta automaticamente
+2. Auto-restaura do backup mais recente
+3. Alerta enviado ao Slack
+4. Consultar histórico: `cat .tools/integrity.log`
+
+### Cron não está rodando?
+1. Confirmar agendamento: `crontab -l`
+2. Verificar logs: `tail -50 full-guard.log`
+3. Re-agendar se necessário: `.tools/ADD-CRON.md`
+
+---
+
+**Última atualização:** 2026-07-01  
+**Status:** ✅ Production Ready
