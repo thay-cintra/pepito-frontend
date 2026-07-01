@@ -177,15 +177,185 @@ server.cjs                    — Express: HTTPS, SSO Google, /api/analises
 
 ---
 
-## Variáveis de ambiente
+## Governança
 
-| Variável | Padrão | Descrição |
+### Processo de aprovação em duas camadas
+
+O Pepito implementa o fluxo regulamentado pela Circular BCB nº 4.001/2020:
+
+1. **CHECK_ANALISTA (1ª Camada)** — Análise técnica obrigatória
+   - **Responsabilidade:** 3 analistas de Compliance
+   - **Atribuição:** automática via snapshot da fila Retool (`bucket = CHECK_ANALISTA`)
+   - **Entrega:** parecer técnico + status sugerido + resultados de pesquisa
+   - **SLA:** não regulado; prioridade por score PLD e data
+
+2. **CHECK_LIDERANÇA (2ª Camada)** — Decisão final da Mesa
+   - **Responsabilidade:** Liderança de Compliance (responsável final)
+   - **Entrada:** apenas casos derivados via Pepito (`camadaStatus = aguardando_segunda`) + escalações manuais no Retool (`ENVIAR_LIDERANCA_PLD`)
+   - **Saída:** decisão em uma de 4 categorias regulamentares:
+     - **CADASTRO APROVADO** — prosseguimento normal
+     - **CADASTRO REPROVADO** — cliente rejeitado
+     - **CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO** — aprovação condicionada
+     - **FALSO POSITIVO — CADASTRO APROVADO** — score PLD cancelado
+   - **Rastreabilidade:** comentários e decisões persistidos em `webhook_historico` (Retool) e `historicoComentarios` (Pepito)
+
+### Fonte de verdade para buckets
+
+| Fonte | Precedência | Quando usar |
 |---|---|---|
-| `VITE_SSO_ATIVO` | `false` | Se `true`, exige Google SSO `@cora.com.br` |
-| `LOCAL_MODE` | `false` | Desativa SSO no servidor Express (modo VPN) |
-| `GOOGLE_CLIENT_ID` | — | OAuth2 Client ID (produção) |
-| `GOOGLE_CLIENT_SECRET` | — | OAuth2 Client Secret (produção) |
-| `SESSION_SECRET` | — | Secret para cookie de sessão |
-| `GCS_BUCKET` | — | Bucket GCS para persistência distribuída (opcional) |
+| `webhook_historico` (Retool) | 1ª | Ação `ENVIAR_LIDERANCA_PLD` = escalação confirmada pela mesa |
+| Status Athena (`DOUBLE_CHECK`) | 2ª | Fallback: casos em revisão dupla |
+| Derivação Pepito (`derivadosPepito`) | 3ª | Casos trabalhados localmente que sobem automaticamente |
+| `registration-queue-real.json` | Última | Default = `CHECK_ANALISTA` |
 
-Em desenvolvimento Vite (`npm run dev`), nenhuma variável é obrigatória.
+**Regra crítica:** Nunca promover para CHECK_LIDERANCA via estado local (`Analise.camadaStatus`). Apenas via webhook do Retool ou status DOUBLE_CHECK do Athena.
+
+### Auditoria e trilha de mudanças
+
+- **Cronômetro por camada:** `duracaoPrimeiraCamada` (analista) e `duracaoSegundos` (liderança) registram esforço real
+- **Email do analista:** salvo em cada análise para rastreabilidade da 1ª camada
+- **Histórico de comentários:** todos os pareceres, observações e mudanças persistem em `historicoComentarios`
+- **Exclusões:** registradas em `pepito.exclusoes` com motivo, data e responsável
+- **Git audit:** `analises-salvas.json` sincronizado com GitHub via auto-push (commit atribuído a `req.user.email`)
+
+---
+
+## Guardrails
+
+### Validações obrigatórias
+
+#### 1. Filtros de elegibilidade da fila PLD
+
+Antes de incluir um caso na fila, `passesPLDFilters()` valida:
+
+```typescript
+if (!VALID_STATUS.includes(c.status)) return false;              // IN_ANALYSIS ou DOUBLE_CHECK
+if (c.sub_status !== "PLD_SCORE") return false;                 // Fila viva (não preliminar)
+if (c.person_type !== "OWNER") return false;                    // Apenas proprietários
+```
+
+**Impacto:** Casos que não atendem critérios regulamentares nunca entram na fila Pepito.
+
+#### 2. Deduplicação por draft_id
+
+Múltiplas análises do mesmo draft são consolidadas por `latestByDraftId()`:
+
+- Apenas a análise mais recente (`updatedAt` ou `createdAt`) é considerada
+- Estados antigos (ex: `aguardando_segunda` desatualizado) não afetam a fila
+- **Benefício:** evita cases duplicados na UI
+
+#### 3. Status de conclusão auto-exclusão
+
+Casos com `camadaStatus` em estado terminal são removidos da fila ativa:
+
+```typescript
+if (a.camadaStatus === "concluido") result.add(draftId);                  // Excluir conclusões
+if (bucket === "CHECK_LIDERANCA" && a.camadaStatus === "devolvido") ...  // Devolvidos voltam a ANALISTA
+```
+
+**Proteção:** impossível revisar um caso já decidido ou editá-lo após conclusão.
+
+#### 4. Persistência com fallback
+
+Dados de análise persistem em **dois níveis**:
+
+1. **localStorage** (sessão ativa do browser)
+2. **src/data/analises-salvas.json** (backup em disco, sincronizado com GitHub)
+
+Na recarga da página, o app restaura:
+```
+localStorage vazio? → lê analises-salvas.json do servidor → restaura estado anterior
+```
+
+**Proteção:** perda de conexão não resulta em perda de dados.
+
+#### 5. Atribuição de analista obrigatória
+
+Antes de enviar para CHECK_LIDERANCA, o sistema valida:
+
+```typescript
+analistaEmail = extrairEmailAnalista(case) || analistaEmail_fallback
+```
+
+**Proteção:** toda análise tem proprietário rastreável.
+
+#### 6. Credilink + PEP validation
+
+Queries ao Credilink + conferência manual:
+
+- Se Credilink retorna vazio em `token_pf_cred` → sinaliza falso positivo
+- PEP insuficiente (Professor, Administrador, "apenas relacionado") → marcar como FP
+- **Proteção:** evitar reprovações indevidas por dados incompletos
+
+### Limites operacionais
+
+| Limite | Valor | Razão |
+|---|---|---|
+| Análises simultâneas por analista | 1 | evitar divisão de atenção; só 1 caso aberto por sessão |
+| Histórico de comentários | 50+ linhas | documentar toda deliberação; não há limite de tamanho |
+| Tempo máximo de análise (1ª camada) | Não regulado | cronômetro é informativo, não impõe deadline |
+| Cache de queue em memória | ~5 minutos | refresh automático via `QUEUE_UPDATED_EVENT` ao mudar dados |
+| Tamanho máximo do bundle | 640 kB gzip | com staticGzip no server.cjs; acima = timeout 30s para analistas |
+
+### Proteções contra erros comuns
+
+#### Problema: Draft aparece/desaparece da fila
+
+**Guardrail:** Endpoint `/api/queue/debug/:draftId` para diagnosticar.
+
+Causas e mitigações:
+- Status `devolvido` em localStorage → remover entrada
+- Status `concluido` → mudar para `aguardando_segunda`
+- Bucket mismatch → verificar webhook Retool para `ENVIAR_LIDERANCA_PLD`
+
+#### Problema: Sugestão IA contradiz parecer do analista
+
+**Guardrail:** Mesa lê **sempre** o comentário do analista (`ENVIAR_LIDERANCA_PLD`), nunca apenas o `status` sugerido.
+
+Validação em código:
+```typescript
+// Fonte primária: webhook_historico com ação real ENVIAR_LIDERANCA_PLD
+const envio = webhook.find(h => h.acao === "ENVIAR_LIDERANCA_PLD" && h.text?.trim());
+return envio?.text || parecer_sugerido;  // Comentário real > sugestão IA
+```
+
+#### Problema: Falsos positivos por nome fuzzy
+
+**Guardrail:** Match por CNPJ/CPF apenas (exato), **nunca** fuzzy por nome.
+
+Exemplo bloqueado:
+- "João Silva LTDA" ≠ "João Silvério LTDA" (mesmo que 95% similar)
+- Requer CNPJ ou CPF idêntico
+
+#### Problema: Processo civil/trabalhista com badge alto
+
+**Guardrail:** Classificação de natureza antes de rodar analytics.
+
+Badge alto (crítico) reservado para:
+- Criminal (AML, fraude, tráfico)
+- Penal (estelionato, falsidade)
+- Eleitoral (crime + crime)
+
+Civil/TRT → badge baixo
+
+#### Problema: PEP com mandato expirado marcado como "ex"
+
+**Guardrail:** Data fim do mandato comparada com data atual (via `data_fim` e `data_fim_carencia`).
+
+Ainda "ativo" se:
+- `data_fim_carencia` > hoje (carência de 3-5 anos pós-mandato)
+- OU `data_fim` > hoje (mandato ainda em exercício)
+
+### Cascata de validação (checklist)
+
+Antes de enviar para CHECK_LIDERANCA:
+
+1. ✓ Draft passa em `passesPLDFilters` (status, sub_status, person_type)
+2. ✓ `analistaEmail` preenchido (rastreabilidade)
+3. ✓ Parecer técnico não vazio (mínimo 30 caracteres)
+4. ✓ Status sugerido é um de: APROVADO, REPROVADO, MONITORAMENTO, FP
+5. ✓ Sem conflito de interesses (PEP não pode ser analista do próprio caso)
+6. ✓ Credilink consultado (token_pf_cred, token_pj_cred preenchidos ou ausência justificada)
+7. ✓ Tempo de 1ª camada registrado (`duracaoPrimeiraCamada > 0`)
+
+**Resultado:** impossível enviar análise incompleta.
