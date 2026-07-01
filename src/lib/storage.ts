@@ -138,3 +138,24 @@ export const storage = {
     );
   },
 };
+
+const TIMER_PREFIX = "pepito.timer.";
+
+export const timer = {
+  startOrGet(key: string): number {
+    const existing = localStorage.getItem(TIMER_PREFIX + key);
+    if (existing) return parseInt(existing, 10);
+    const now = Date.now();
+    localStorage.setItem(TIMER_PREFIX + key, String(now));
+    return now;
+  },
+
+  get(key: string): number | null {
+    const val = localStorage.getItem(TIMER_PREFIX + key);
+    return val ? parseInt(val, 10) : null;
+  },
+
+  clear(key: string): void {
+    localStorage.removeItem(TIMER_PREFIX + key);
+  },
+};

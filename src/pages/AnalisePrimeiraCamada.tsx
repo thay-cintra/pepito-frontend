@@ -133,7 +133,7 @@ export function AnalisePrimeiraCamada() {
         setResultados(caso.resultados_pesquisa);
         setAnaliseGeral(caso.analise_geral);
         // Prioriza sugestão LLM concisa (estilo Josinalva) sobre o template heurístico
-        const sugestaoLlm = getSugestaoParecer(caso.draft_id, caso);
+        const sugestaoLlm = getSugestaoParecer(caso.draft_id);
         setParecerPrimeiraCamada(sugestaoLlm ?? caso.parecer_sugerido);
         setStatusSugerido(caso.recomendacao_sugerida);
         toast({
