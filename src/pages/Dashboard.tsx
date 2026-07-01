@@ -26,7 +26,6 @@ import {
   XCircle,
   Clock,
   RefreshCw,
-  Users,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -193,53 +192,10 @@ export function Dashboard() {
     return Object.values(buckets).slice(-10);
   }, [concluidas]);
 
-  /** Agrupa análises por analista (1ª camada) usando:
-   *  1. campo `analistaEmail` (casos Pepito-native)
-   *  2. fallback: email de analista no historicoComentarios (casos Retool) */
-  const porAnalista = useMemo(() => {
-    const map: Record<string, { total: number; aprovado: number; monitoramento: number; reprovado: number; falso_positivo: number }> = {};
-    const ANALISTA_EMAILS = new Set(["jeniffer@cora.com.br", "lucasfeller@cora.com.br", "m.matos@cora.com.br"]);
-
-    const getEmail = (a: Analise): string | null => {
-      if (a.analistaEmail) return a.analistaEmail;
-      const hc = a.historicoComentarios ?? [];
-      const envio = hc.find(
-        (h) => ANALISTA_EMAILS.has(h.user_email) &&
-          (h.tipo === "acao" || h.tipo === "parecer") &&
-          h.text?.includes("ENVIAR_LIDERANCA_PLD")
-      );
-      if (envio) return envio.user_email;
-      const qualquer = hc.find((h) => ANALISTA_EMAILS.has(h.user_email));
-      return qualquer?.user_email ?? null;
-    };
-
-    analises.forEach((a) => {
-      const email = getEmail(a);
-      if (!email) return;
-      const nome = email.split("@")[0];
-      map[nome] ||= { total: 0, aprovado: 0, monitoramento: 0, reprovado: 0, falso_positivo: 0 };
-      map[nome].total += 1;
-      map[nome][a.status] += 1;
-    });
-
-    return Object.entries(map)
-      .map(([nome, v]) => ({ nome, ...v }))
-      .sort((a, b) => b.total - a.total);
-  }, [analises]);
-
   const metricas = useMemo(() => {
     const aguardando = analises.filter((a) => a.camadaStatus === "aguardando_segunda").length;
     const rascunho = analises.filter((a) => a.camadaStatus === "rascunho").length;
-
-    // Tempo médio Check Analista = SOMENTE Analises Pepito (timer real do
-    // momento "Revisar e enviar" até "Enviar à Mesa"). Não usamos os casos
-    // do Retool porque `created_at` é quando o cadastro entrou na fila, NÃO
-    // quando o analista começou — incluir isso fazia a média estourar para
-    // ~14 dias por causa do tempo parado em fila.
-    const dur1 = analises
-      .filter((a) => a.camadaStatus === "aguardando_segunda" || a.camadaStatus === "concluido")
-      .map((a) => a.duracaoPrimeiraCamada || 0)
-      .filter((n) => n > 0);
+    const dur1 = concluidas.map((a) => a.duracaoPrimeiraCamada || 0).filter(Boolean);
     const dur2 = concluidas.map((a) => a.duracaoSegundos || 0).filter(Boolean);
     const avg = (xs: number[]) => (xs.length ? Math.round(xs.reduce((a, b) => a + b, 0) / xs.length) : 0);
 
@@ -255,7 +211,6 @@ export function Dashboard() {
       aguardando,
       rascunho,
       avgPrimeira: avg(dur1),
-      avgPrimeiraN: dur1.length,
       avgSegunda: avg(dur2),
       byStatus,
       pct,
@@ -346,12 +301,8 @@ export function Dashboard() {
         <KPI label="Concluídas (acumulado)" value={metricas.concluidas} variant="success" />
         <KPI label="Aguardando 2ª" value={metricas.aguardando} variant="warning" />
         <KPI label="Rascunhos" value={metricas.rascunho} variant="muted" />
-        <KPI
-          label="Tempo médio Check Analista"
-          value={formatDuration(metricas.avgPrimeira)}
-          subtitle={`${metricas.avgPrimeiraN} análise${metricas.avgPrimeiraN === 1 ? "" : "s"}`}
-        />
-        <KPI label="Tempo médio Check Liderança" value={formatDuration(metricas.avgSegunda)} />
+        <KPI label="Tempo médio 1ª" value={formatDuration(metricas.avgPrimeira)} />
+        <KPI label="Tempo médio 2ª" value={formatDuration(metricas.avgSegunda)} />
       </div>
       {/* Status breakdown — reflete o filtro ativo (período/status/busca) */}
       <div>
@@ -425,48 +376,6 @@ export function Dashboard() {
         </Card>
       </div>
 
-      {/* Análises por Analista (1ª Camada) */}
-      {porAnalista.length > 0 && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Users className="h-4 w-4" /> Análises por Analista (1ª Camada)
-            </CardTitle>
-            <CardDescription>
-              Baseado no comentário de envio à Liderança. Inclui todos os status.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b text-muted-foreground text-xs uppercase tracking-wide">
-                    <th className="text-left py-2 pr-4">Analista</th>
-                    <th className="text-right py-2 px-3">Total</th>
-                    <th className="text-right py-2 px-3 text-green-600">Aprovado</th>
-                    <th className="text-right py-2 px-3 text-yellow-600">Monit.</th>
-                    <th className="text-right py-2 px-3 text-red-600">Reprovado</th>
-                    <th className="text-right py-2 px-3 text-blue-600">Falso+</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {porAnalista.map((row) => (
-                    <tr key={row.nome} className="border-b last:border-0 hover:bg-muted/40">
-                      <td className="py-2 pr-4 font-medium">{row.nome}</td>
-                      <td className="text-right py-2 px-3 font-bold">{row.total}</td>
-                      <td className="text-right py-2 px-3 text-green-600">{row.aprovado || "—"}</td>
-                      <td className="text-right py-2 px-3 text-yellow-600">{row.monitoramento || "—"}</td>
-                      <td className="text-right py-2 px-3 text-red-600">{row.reprovado || "—"}</td>
-                      <td className="text-right py-2 px-3 text-blue-600">{row.falso_positivo || "—"}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
       {/* Filtros */}
       <Card>
         <CardHeader>
@@ -529,9 +438,7 @@ export function Dashboard() {
                     <Th>Razão Social</Th>
                     <Th>PEP</Th>
                     <Th>Status</Th>
-                    <Th>Check Analista</Th>
-                    <Th>Check Liderança</Th>
-                    <Th>Tempo médio de análise</Th>
+                    <Th>Tempo total</Th>
                     <Th align="right">Ações</Th>
                   </tr>
                 </thead>
@@ -547,13 +454,7 @@ export function Dashboard() {
                       <Td>
                         <StatusBadge status={a.status} />
                       </Td>
-                      <Td className="font-mono text-xs">
-                        {a.duracaoPrimeiraCamada ? formatDuration(a.duracaoPrimeiraCamada) : "—"}
-                      </Td>
-                      <Td className="font-mono text-xs">
-                        {a.duracaoSegundos ? formatDuration(a.duracaoSegundos) : "—"}
-                      </Td>
-                      <Td className="font-mono text-xs font-semibold">
+                      <Td>
                         {formatDuration((a.duracaoPrimeiraCamada || 0) + (a.duracaoSegundos || 0))}
                       </Td>
                       <Td align="right">
@@ -654,13 +555,11 @@ function KPI({
   label,
   value,
   pct,
-  subtitle,
   variant = "default",
 }: {
   label: string;
   value: string | number;
   pct?: number;
-  subtitle?: string;
   variant?: "default" | "success" | "warning" | "muted" | "danger";
 }) {
   const colors: Record<string, string> = {
@@ -680,9 +579,6 @@ function KPI({
             <span className="text-sm font-normal text-muted-foreground ml-1.5">({pct}%)</span>
           )}
         </p>
-        {subtitle && (
-          <p className="text-[10px] text-muted-foreground mt-0.5">{subtitle}</p>
-        )}
       </CardContent>
     </Card>
   );
@@ -740,29 +636,12 @@ function pepStatusFromLocal(s: StatusAnalise): "aprovado" | "reprovado" {
 function PepHistorySection({ analises }: { analises: Analise[] }) {
   const meta = PEP_HISTORY._meta;
 
-  // Carrega análises do servidor (persistidas em analises-salvas.json via git-push).
-  // Garante que casos decididos em outras sessões (ou por outros analistas) também
-  // entrem no mapa de overrides, zerando o "em andamento" residual.
-  const [serverAnalises, setServerAnalises] = React.useState<Analise[]>([]);
-  React.useEffect(() => {
-    fetch("/api/analises")
-      .then((r) => (r.ok ? r.json() : { analises: [] }))
-      .then((d) => setServerAnalises(Array.isArray(d.analises) ? d.analises : []))
-      .catch(() => {});
-  }, []);
-
-  // Conjunto completo: localStorage + servidor, sem duplicatas (mesmo id).
-  const allAnalises = React.useMemo(() => {
-    const localIds = new Set(analises.map((a) => a.id));
-    return [...analises, ...serverAnalises.filter((a) => !localIds.has(a.id))];
-  }, [analises, serverAnalises]);
-
   // Universo efetivo = snapshot Athena + análises concluídas localmente no Pepito
   // que ainda não estão no snapshot (assim o "Total analisado" cresce conforme
   // a operação decide novos casos, em vez de ficar travado no número do snapshot).
   const items = React.useMemo<PepHistoryItem[]>(() => {
     const snapshotIds = new Set(PEP_HISTORY.items.map((it) => it.draft_membership_id));
-    const sintéticos: PepHistoryItem[] = allAnalises
+    const sintéticos: PepHistoryItem[] = analises
       .filter((a) => a.camadaStatus === "concluido")
       .filter((a) => !a.draftId || !snapshotIds.has(a.draftId))
       .map((a) => ({
@@ -778,7 +657,7 @@ function PepHistorySection({ analises }: { analises: Analise[] }) {
         competencia_at: a.concludedAt || a.createdAt,
       }));
     return [...PEP_HISTORY.items, ...sintéticos];
-  }, [allAnalises]);
+  }, [analises]);
 
   const [filtro, setFiltro] = React.useState<"todos" | "aprovado" | "reprovado" | "em_andamento">("todos");
   const [tipoPepFiltro, setTipoPepFiltro] = React.useState<"todos" | "titular" | "relacionado">("todos");
@@ -786,26 +665,21 @@ function PepHistorySection({ analises }: { analises: Analise[] }) {
   const [dataDe, setDataDe] = React.useState<string>("");
   const [dataAte, setDataAte] = React.useState<string>("");
 
-  // Mapa de overrides: draft_membership_id → { status, concludedAt }.
-  // Casos concluídos no Pepito (localStorage + servidor) sobrepõem o snapshot Athena.
-  // concludedAt é usado como data de referência para filtros mensais — garante que o
-  // caso seja contado no mês em que foi ANALISADO, não quando entrou na fila PLD.
+  // Mapa de overrides: draft_membership_id → status decidido localmente no Pepito.
+  // Casos concluídos localmente sobrepõem o "em_andamento" do snapshot Athena.
   const localOverrides = React.useMemo(() => {
-    const map = new Map<string, { status: "aprovado" | "reprovado"; concludedAt: string }>();
-    for (const a of allAnalises) {
+    const map = new Map<string, "aprovado" | "reprovado">();
+    for (const a of analises) {
       if (a.camadaStatus === "concluido" && a.draftId) {
-        map.set(a.draftId, {
-          status: pepStatusFromLocal(a.status),
-          concludedAt: a.concludedAt || a.createdAt,
-        });
+        map.set(a.draftId, pepStatusFromLocal(a.status));
       }
     }
     return map;
-  }, [allAnalises]);
+  }, [analises]);
 
   /** Resolve o status efetivo de um item: local tem prioridade sobre Athena. */
   const statusEfetivo = React.useCallback(
-    (it: PepHistoryItem): string => localOverrides.get(it.draft_membership_id)?.status ?? it.status_pepito,
+    (it: PepHistoryItem): string => localOverrides.get(it.draft_membership_id) ?? it.status_pepito,
     [localOverrides],
   );
 
@@ -818,12 +692,12 @@ function PepHistorySection({ analises }: { analises: Analise[] }) {
       if (tipoPepFiltro !== "todos" && it.tipo_pep !== tipoPepFiltro) return false;
       if (vinculoFiltro !== "todos" && (it.ds_vinculo || "—") !== vinculoFiltro) return false;
       if (deTs !== null || ateTs !== null) {
-        // Prioridade de data: 1) concludedAt do Pepito (quando foi ANALISADO)
-        // 2) competencia_at da planilha de controle 3) decision_at 4) pld_entered_at
-        // Isso garante que um caso analisado em Maio seja contado em Maio,
-        // mesmo que tenha entrado na fila em Abril.
-        const override = localOverrides.get(it.draft_membership_id);
-        const dateRef = override?.concludedAt || it.competencia_at || it.decision_at || it.pld_entered_at;
+        // Prioridade de data para filtro:
+        // 1. competencia_at: mês de competência da planilha (mais preciso para o comitê)
+        // 2. pld_entered_at: quando entrou na fila PLD no Athena
+        // 3. decision_at: fallback
+        // Ordena por quando foi ANALISADO/DECIDIDO, não por quando entrou na fila
+        const dateRef = it.competencia_at || it.decision_at || it.pld_entered_at;
         if (!dateRef) return false;
         const ts = new Date(dateRef).getTime();
         if (Number.isNaN(ts)) return false;
@@ -1095,11 +969,9 @@ function PepHistorySection({ analises }: { analises: Analise[] }) {
                 {filtrados.map((it) => (
                   <tr key={it.draft_membership_id} className="border-t hover:bg-muted/20">
                     <Td className="text-xs">
-                      {(() => {
-                        const override = localOverrides.get(it.draft_membership_id);
-                        const d = override?.concludedAt || it.competencia_at || it.decision_at || it.pld_entered_at;
-                        return d ? new Date(d).toLocaleDateString("pt-BR") : "—";
-                      })()}
+                      {(it.competencia_at || it.decision_at || it.pld_entered_at)
+                        ? new Date(it.competencia_at || it.decision_at || it.pld_entered_at!).toLocaleDateString("pt-BR")
+                        : "—"}
                     </Td>
                     <Td>
                       {(() => {
