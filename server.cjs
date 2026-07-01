@@ -380,6 +380,56 @@ app.post("/api/refresh", requireAuth, (req, res) => {
   res.status(202).json({ ok: true, message: "Refresh + rebuild iniciados." });
 });
 
+// ── Supervisor Agent — Monitoramento diário ────────────────────────────────
+let supervisorRunning = false;
+const SUPERVISOR_LOG = path.join(__dirname, ".tools", "supervisor.log");
+const SUPERVISOR_REPORT = path.join(__dirname, ".tools", "supervisor-last-report.json");
+const SUPERVISOR_SH = path.join(__dirname, ".tools", "supervisor-schedule.sh");
+
+app.get("/api/supervisor/status", requireAuth, (req, res) => {
+  const tail = readLogTail(SUPERVISOR_LOG, 1);
+  let lastReport = null;
+  try {
+    if (fs.existsSync(SUPERVISOR_REPORT)) {
+      lastReport = JSON.parse(fs.readFileSync(SUPERVISOR_REPORT, "utf8"));
+    }
+  } catch { /* ignore */ }
+
+  res.json({
+    running: supervisorRunning,
+    lastLine: tail[0] || "",
+    lastReport,
+  });
+});
+
+app.post("/api/supervisor/run", requireAuth, (req, res) => {
+  if (!isSyncOwner(req.user?.email)) {
+    console.warn(`[supervisor] Acesso negado para ${req.user?.email}`);
+    return res.status(403).json({ error: "Apenas usuários autorizados podem disparar o supervisor." });
+  }
+
+  if (supervisorRunning) {
+    return res.status(409).json({ error: "Supervisor já em andamento." });
+  }
+
+  supervisorRunning = true;
+  console.log(`[supervisor] Iniciado por ${req.user?.email}`);
+
+  const proc = spawn("/bin/bash", [SUPERVISOR_SH], {
+    detached: true,
+    stdio: "ignore",
+    env: { ...process.env, PATH: `/bin:/usr/bin:/usr/local/bin:${process.env.PATH ?? ""}` },
+  });
+
+  proc.unref();
+  proc.on("close", (code) => {
+    supervisorRunning = false;
+    console.log(`[supervisor] Concluído (exit=${code})`);
+  });
+
+  res.status(202).json({ ok: true, message: "Supervisor iniciado." });
+});
+
 // ── Arquivos estáticos ───────────────────────────────────────────────────────
 // Assets (JS/CSS/imagens) são públicos — necessários para renderizar /login
 app.use("/assets", express.static(path.join(DIST, "assets")));

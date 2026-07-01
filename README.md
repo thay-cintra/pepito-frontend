@@ -177,6 +177,98 @@ server.cjs                    — Express: HTTPS, SSO Google, /api/analises
 
 ---
 
+## Supervisor Agent — Monitoramento automático
+
+O **Supervisor Agent** é um agente inteligente que monitora a saúde da aplicação Pepito diariamente, detectando bugs, erros, melhorias e alertando o time via Slack.
+
+### Verificações automáticas
+
+| Verificação | Descrição | Nível crítico |
+|---|---|---|
+| **Servidor Node** | /api/health — conectividade Express | 🔴 MUITO ALTO |
+| **Fila PLD** | /api/queue — dados válidos e não vazio | 🔴 MUITO ALTO |
+| **Build dist/** | Arquivo index.html presente e recente | 🔴 MUITO ALTO |
+| **analises-salvas.json** | Integridade do arquivo + tamanho | 🟠 ALTO |
+| **registration-queue-real.json** | Integridade da fila (Athena snapshot) | 🟠 ALTO |
+| **Git status** | Mudanças não commitadas | 🔵 BAIXO |
+| **TypeScript** | npm typecheck (opcional) | 🟠 ALTO |
+
+### Níveis de alerta
+
+- **🔴 MUITO ALTO:** Aplicação down, dados corrompidos, perda crítica
+- **🟠 ALTO:** Funcionalidade quebrada, erro em fluxo crítico
+- **🟡 MÉDIO:** Bug menor, performance degradada, dados inconsistentes
+- **🔵 BAIXO:** Sugestão de melhoria, warning, otimização
+
+### Executar manualmente
+
+```bash
+# Via API (requer autenticação)
+curl -X POST https://192-168-201-67.sslip.io:4173/api/supervisor/run \
+  -H "Authorization: Bearer <token>"
+
+# Via CLI direto
+python3 .tools/supervisor-agent.py
+```
+
+### Agendar execução diária (cron)
+
+```bash
+# Adicionar ao crontab (executa 6h da manhã todos os dias)
+0 6 * * * cd /Users/thay/Projetos\ Thay/pepito-frontend && ./.tools/supervisor-schedule.sh
+
+# Ver próximas execuções agendadas
+crontab -l
+```
+
+### Integrar com Slack
+
+1. **Criar webhook no Slack:**
+   - Ir para: https://api.slack.com/apps
+   - Create New App → From Scratch
+   - Incoming Webhooks → Add New Webhook to Workspace
+   - Copiar URL do webhook
+
+2. **Adicionar ao `.env`:**
+   ```bash
+   SLACK_WEBHOOK_URL=https://hooks.slack.com/services/T.../B.../...
+   ```
+
+3. **Receber alertas:**
+   - Supervisor envia blocos formatados para canal
+   - Alertas agrupados por nível de risco
+   - Timestamp e componente identificado
+
+### Último relatório
+
+O resultado da última execução é salvo em `.tools/supervisor-last-report.json`:
+
+```json
+{
+  "timestamp": "2026-07-01T10:35:53.122995",
+  "checks_executados": 6,
+  "checks_falhados": 0,
+  "alertas": [
+    {
+      "nivel": "🔵 BAIXO",
+      "titulo": "Mudanças não commitadas",
+      "descricao": "2 arquivo(s) modificado(s) sem commit.",
+      "componente": "Git Repository",
+      "timestamp": "2026-07-01T10:35:53.122995"
+    }
+  ]
+}
+```
+
+### API Endpoints
+
+| Método | Endpoint | Descrição |
+|---|---|---|
+| GET | `/api/supervisor/status` | Status atual + último relatório |
+| POST | `/api/supervisor/run` | Dispara supervisor manualmente |
+
+---
+
 ## Governança
 
 ### Processo de aprovação em duas camadas
