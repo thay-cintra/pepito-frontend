@@ -556,7 +556,10 @@ def enviar_para_slack(resultado: dict, webhook_url: str):
     payload = {"blocks": blocks}
 
     try:
-        response = requests.post(webhook_url, json=payload, timeout=10)
+        # Em desenvolvimento (LOCAL_MODE), desabilita verificação SSL
+        verify_ssl = os.getenv("NODE_ENV", "").lower() != "development"
+
+        response = requests.post(webhook_url, json=payload, timeout=10, verify=verify_ssl)
         if response.status_code == 200:
             print(f"✓ Alertas enviados para Slack ({len(resultado['alertas'])} alertas)")
         else:
