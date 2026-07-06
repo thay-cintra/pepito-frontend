@@ -1,14 +1,35 @@
 {
-  "timestamp": "2026-07-01T10:35:55.916308",
+  "timestamp": "2026-07-06T10:57:36.389233",
   "checks_executados": 6,
-  "checks_falhados": 0,
+  "checks_falhados": 1,
   "alertas": [
+    {
+      "nivel": "🔴 MUITO ALTO",
+      "titulo": "Servidor Node não responde",
+      "descricao": "Aplicação Pepito está offline ou retornando erro HTTP.",
+      "componente": "Servidor Express",
+      "timestamp": "2026-07-06T10:57:35.198478"
+    },
+    {
+      "nivel": "🟡 MÉDIO",
+      "titulo": "Fila PLD vazia",
+      "descricao": "Nenhum caso retornado de registration-queue-real.json.",
+      "componente": "API PLD Queue",
+      "timestamp": "2026-07-06T10:57:36.352979"
+    },
+    {
+      "nivel": "🟡 MÉDIO",
+      "titulo": "Build desatualizado",
+      "descricao": "dist/ foi buildado há 121 horas. Atualizações recentes podem não estar visíveis.",
+      "componente": "Build System",
+      "timestamp": "2026-07-06T10:57:36.353204"
+    },
     {
       "nivel": "🔵 BAIXO",
       "titulo": "Mudanças não commitadas",
-      "descricao": "3 arquivo(s) modificado(s) sem commit.",
+      "descricao": "5 arquivo(s) modificado(s) sem commit.",
       "componente": "Git Repository",
-      "timestamp": "2026-07-01T10:35:55.916253"
+      "timestamp": "2026-07-06T10:57:36.389195"
     }
   ]
 }
