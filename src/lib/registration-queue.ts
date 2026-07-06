@@ -42,16 +42,18 @@ const VALID_STATUS: RegistrationStatus[] = ["DOUBLE_CHECK", "IN_ANALYSIS"];
  *   status IN ('DOUBLE_CHECK','IN_ANALYSIS')
  *   AND sub_status = 'PLD_SCORE'
  *   AND person_type = 'OWNER'
- *   AND não foi movido para WAITING_EMAIL_RESPONSE no audit_real
- *     (o Scooto/Retool já solicitou complementação ao cliente → fila viva exclui)
+ *
+ * O campo `status` já é a fonte viva (mesma usada pelo Retool): um caso que
+ * voltou de WAITING_EMAIL_RESPONSE para IN_ANALYSIS/DOUBLE_CHECK já está de
+ * volta à fila ativa. NÃO filtrar por ocorrência histórica em `audit_real` —
+ * esse histórico é cumulativo e nunca "esquece" uma transição antiga, o que
+ * mantinha casos já resolvidos permanentemente fora da fila (divergência
+ * com a contagem do Retool).
  */
 function passesPLDFilters(c: RegistrationCase): boolean {
   if (!VALID_STATUS.includes(c.status)) return false;
   if (c.sub_status !== "PLD_SCORE") return false;
   if (c.person_type !== "OWNER") return false;
-
-  const audit = (c as unknown as { audit_real?: Array<{ new_status?: string }> }).audit_real || [];
-  if (audit.some((a) => a?.new_status === "WAITING_EMAIL_RESPONSE")) return false;
 
   return true;
 }
