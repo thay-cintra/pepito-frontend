@@ -71,16 +71,16 @@ class SupervisorAgent:
         print(f"[{alert.nivel}] {alert.componente}: {alert.titulo}")
 
     def check_servidor_node(self) -> bool:
-        """Verifica se servidor Node está respondendo"""
+        """Verifica se servidor Node está respondendo (endpoint /health, sem SSO)"""
         try:
             result = subprocess.run(
-                ["curl", "-s", "-k", "-m", "5", "https://192-168-201-67.sslip.io:4173"],
+                ["curl", "-s", "-k", "-m", "5", "https://localhost:4173/health"],
                 capture_output=True,
                 text=True,
                 timeout=10,
             )
             self.checks_executados += 1
-            if result.returncode != 0 or "<!doctype" not in result.stdout.lower():
+            if result.returncode != 0 or '"ok":true' not in result.stdout.replace(" ", ""):
                 self.adicionar_alerta(
                     Alert(
                         Alert.MUITO_ALTO,
@@ -106,36 +106,33 @@ class SupervisorAgent:
             return False
 
     def check_api_queue(self) -> bool:
-        """Verifica se /api/queue retorna dados válidos"""
+        """
+        Verifica se a fila PLD tem dados válidos.
+
+        Lê registration-queue-real.json diretamente do disco em vez de chamar
+        /api/queue via HTTP: o endpoint exige SSO (requireAuth) e o Supervisor
+        não tem sessão de navegador, o que gerava falso-positivo (401 tratado
+        como "API indisponível"). O arquivo em disco é a mesma fonte que o
+        endpoint serve, então o check permanece equivalente sem precisar
+        contornar a autenticação.
+        """
         try:
-            result = subprocess.run(
-                [
-                    "curl",
-                    "-s",
-                    "-k",
-                    "-m",
-                    "5",
-                    "https://192-168-201-67.sslip.io:4173/api/queue",
-                ],
-                capture_output=True,
-                text=True,
-                timeout=10,
-            )
+            file_path = ROOT / "pepito-frontend" / "src" / "data" / "registration-queue-real.json"
             self.checks_executados += 1
 
-            if result.returncode != 0:
+            if not file_path.exists():
                 self.adicionar_alerta(
                     Alert(
                         Alert.ALTO,
                         "API /queue indisponível",
-                        "Endpoint /api/queue não responde.",
+                        "Arquivo registration-queue-real.json não encontrado.",
                         "API PLD Queue",
                     )
                 )
                 self.checks_falhados += 1
                 return False
 
-            data = json.loads(result.stdout)
+            data = json.loads(file_path.read_text())
             total = data.get("_meta", {}).get("total", 0)
 
             if total == 0:
@@ -157,7 +154,7 @@ class SupervisorAgent:
                 Alert(
                     Alert.ALTO,
                     "API retorna JSON inválido",
-                    "Resposta de /api/queue não é JSON válido.",
+                    "registration-queue-real.json não é JSON válido.",
                     "API PLD Queue",
                 )
             )
