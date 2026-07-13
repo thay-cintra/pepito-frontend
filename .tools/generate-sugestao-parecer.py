@@ -70,12 +70,17 @@ REGRAS:
 6. Se não houver achado adverso, declare "não foram identificadas mídias ou processos desabonadores".
 7. Termine com a recomendação: APROVAÇÃO, MONITORAMENTO REFORÇADO, ou REPROVAÇÃO.
 8. Seja sucinto. Não inclua informação redundante.
+9. MONITORAMENTO REFORÇADO só é cabível quando, além do vínculo PEP, houver pelo menos UM fator de risco adicional sensível e concreto: mídia/processo identificado mas não conclusivo, homônimo não descartado, empresa no mesmo município/UF de atuação do PEP em setor com interface relevante com o poder público, ou empresa aberta durante o mandato em setor sensível. Vínculo/mandato PEP ativo, isoladamente e sem nenhum desses fatores, é APROVAÇÃO — NUNCA use "mandato ativo" como única justificativa para monitoramento reforçado.
 
 EXIGÊNCIA SOBRE A BUSCA DE MÍDIA: a varredura automatizada deve combinar nome completo do PEP + município + cargo + período do mandato e explorar fontes regionais e setoriais (imprensa local/blogs estaduais, TRE, MP estadual, TCE, Câmara Municipal, Polícia Federal/Civil, DOU). Antes de afirmar "sem mídia adversa" você precisa ter consultado essas fontes. Achados de cassação/improbidade/operação contra o PEP titular ou owner-relacionado tornam a recomendação obrigatoriamente REPROVAÇÃO.
 
-EXEMPLO DO ESTILO (referência absoluta):
+EXEMPLO DO ESTILO — APROVAÇÃO (referência absoluta; vínculo PEP ativo sem nenhum outro fator de risco):
 
-"Trata-se de empresa cujo titular possui relacionamento de sócio com a PEP Josinalva Guerra Lins Silva (Vereadora de Natuba/PB), através de outra PJ (SUAS CONSULT LTDA - CNPJ 40.400.051/0001-25, que possui atividade de desenvolvimento e treinamentos em programas de computadores). Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou à PEP. Dito isso, considerando que não foram identificados desabonos relevantes sob a ótica de LD, não temos objeções ao início do relacionamento, porém, considerando o atual cumprimento de mandato ativo pela pessoa relacionada, sugerimos a inclusão em monitoramento reforçado, devido ter sociedade com PEP ativa em empresa com atividade ligada a computação."
+"Trata-se de empresa cujo titular possui relacionamento de sócio com a PEP Josinalva Guerra Lins Silva (Vereadora de Natuba/PB), através de outra PJ (SUAS CONSULT LTDA - CNPJ 40.400.051/0001-25, que possui atividade de desenvolvimento e treinamentos em programas de computadores). Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou à PEP. Dito isso, considerando que não foram identificados desabonos relevantes sob a ótica de LD e que a atividade da empresa não guarda interface com o cargo público exercido, não temos objeções ao início do relacionamento, sugerimos a APROVAÇÃO do cadastro."
+
+EXEMPLO DO ESTILO — MONITORAMENTO REFORÇADO (referência absoluta; exige fator adicional, aqui a interface setor-cargo no mesmo município):
+
+"Trata-se de empresa cujo titular possui relacionamento de sócio com a PEP Antônio Carlos Ferreira (Secretário de Obras de Nova Serrana/MG), atuando no ramo de construção civil e prestação de serviços à administração pública. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou à PEP. Dito isso, considerando a ausência de desabonos mas a interface direta entre a atividade da empresa (construção civil) e a pasta ocupada pelo PEP (Obras) no mesmo município, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, dado o potencial conflito de interesses."
 
 ESTRUTURA:
 1ª frase: vínculo + PEP + cargo + município + atividade. Use formato: "Trata-se de empresa cujo titular [é o próprio PEP / é VINCULO da PEP NOME] (CARGO de CIDADE/UF), atuando em [CNAE]."
