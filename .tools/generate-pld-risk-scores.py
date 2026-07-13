@@ -41,48 +41,59 @@ MAX_SCORE = sum(PESOS.values())  # 115
 # ── CNAEs PROIBIDAS — Rejeição Automática (Manual KYC Cora) ─────────────────
 # Fonte: Manual KYC, regra cnae_allowed → COMPLIANCE_CNAE_ALLOWED
 # Ação: REJEIÇÃO imediata — não iniciar relacionamento comercial
+# CNAES_PROIBIDAS_CORA guarda o código EXATO de 7 dígitos (classe + subclasse).
+# Antes comparávamos por prefixo de 4/5 dígitos (classe, sem subclasse), o que
+# confundia subclasses distintas da mesma classe — ex.: 4789-0/09 (armas) casava
+# com 4789-0/07 (escritório), majorando risco indevidamente. Ver bug CNAE cruzado.
 CNAES_PROIBIDAS_CORA = {
-    "08932",   # Extração de gemas (pedras preciosas e semipreciosas)
-    "32116",   # Lapidação de gemas / joalheria / ourivesaria / cunhagem
-    "46494",   # Comércio atacadista de jóias, relógios e bijuterias, pedras preciosas
-    "46893",   # Comércio atacadista de produtos da extração mineral, exceto combustíveis
-    "84116",   # Administração pública em geral
-    "94928",   # Atividades de organizações políticas
-    "47890",   # Comércio varejista de armas e munições
-    "25501",   # Fabricação de equipamento bélico / armas de fogo e munições
-    "33112",   # Manutenção de tanques, reservatórios metálicos e caldeiras
-    "05003",   # Extração de carvão mineral
-    "06000",   # Extração de petróleo e gás natural
-    "07227",   # Extração de minério de estanho
-    "07235",   # Extração de minério de manganês
-    "07243",   # Extração de minério de metais preciosos
-    "07251",   # Extração de minerais radioativos
-    "07294",   # Extração de minérios de nióbio, titânio, tungstênio, níquel, cobre, etc.
-    "46877",   # Comércio atacadista de resíduos e sucatas (metálicos e não metálicos)
-    "82997",   # Leiloeiros independentes
-    "92003",   # Exploração de jogos de azar e apostas não especificados
+    "0893200",   # Extração de gemas (pedras preciosas e semipreciosas) — 0893-2/00
+    "4649410",   # Comércio atacadista de jóias, relógios e bijuterias — 4649-4/10
+    "4689301",   # Comércio atacadista de produtos da extração mineral — 4689-3/01
+    "8411600",   # Administração pública em geral — 8411-6/00
+    "9492800",   # Atividades de organizações políticas — 9492-8/00
+    "4789009",   # Comércio varejista de armas e munições — 4789-0/09
+    "3311200",   # Manutenção de tanques, reservatórios metálicos e caldeiras — 3311-2/00
+    "0500301",   # Extração de carvão mineral — 0500-3/01
+    "0600001",   # Extração de petróleo e gás natural — 0600-0/01
+    "0722701",   # Extração de minério de estanho — 0722-7/01
+    "0723501",   # Extração de minério de manganês — 0723-5/01
+    "0724301",   # Extração de minério de metais preciosos — 0724-3/01
+    "0725100",   # Extração de minerais radioativos — 0725-1/00
+    "4687702",   # Comércio atacadista de resíduos e sucatas metálicos — 4687-7/02
+    "4687703",   # Comércio atacadista de resíduos e sucatas não metálicos — 4687-7/03
+    "8299704",   # Leiloeiros independentes — 8299-7/04
+    "9200399",   # Exploração de jogos de azar e apostas — 9200-3/99
+}
+
+# Classes (4 dígitos) cujas descrições cobrem TODAS as subclasses (wildcard "/0x"
+# ou "/xx" na fonte) — aqui, e só aqui, o match por classe é intencional.
+CNAES_PROIBIDAS_CLASSE = {
+    "3211",   # Lapidação de gemas / joalheria / ourivesaria / cunhagem — 3211-6/0x
+    "2550",   # Fabricação de equipamento bélico / armas de fogo e munições — 2550-1/0x
+    "0729",   # Extração de minérios de nióbio, titânio, tungstênio, níquel, cobre etc. — 0729-4/xx
 }
 
 CNAES_PROIBIDAS_DESCRICAO = {
-    "08932": "Extração de gemas (pedras preciosas e semipreciosas) — 0893-2/00",
-    "32116": "Lapidação de gemas / Joalheria / Ourivesaria / Cunhagem — 3211-6/0x",
-    "46494": "Comércio atacadista de jóias, relógios e pedras preciosas — 4649-4/10",
-    "46893": "Comércio atacadista de produtos da extração mineral — 4689-3/01",
-    "84116": "Administração pública em geral — 8411-6/00",
-    "94928": "Atividades de organizações políticas — 9492-8/00",
-    "47890": "Comércio varejista de armas e munições — 4789-0/09",
-    "25501": "Fabricação de equipamento bélico / Armas de fogo e munições — 2550-1/0x",
-    "33112": "Manutenção de tanques, reservatórios metálicos e caldeiras — 3311-2/00",
-    "05003": "Extração de carvão mineral — 0500-3/01",
-    "06000": "Extração de petróleo e gás natural — 0600-0/01",
-    "07227": "Extração de minério de estanho — 0722-7/01",
-    "07235": "Extração de minério de manganês — 0723-5/01",
-    "07243": "Extração de minério de metais preciosos — 0724-3/01",
-    "07251": "Extração de minerais radioativos — 0725-1/00",
-    "07294": "Extração de minérios (nióbio, titânio, tungstênio, níquel, cobre, chumbo, zinco) — 0729-4/xx",
-    "46877": "Comércio atacadista de resíduos e sucatas (metálicos e não metálicos) — 4687-7/02 e 03",
-    "82997": "Leiloeiros independentes — 8299-7/04",
-    "92003": "Exploração de jogos de azar e apostas — 9200-3/99",
+    "0893200": "Extração de gemas (pedras preciosas e semipreciosas) — 0893-2/00",
+    "3211": "Lapidação de gemas / Joalheria / Ourivesaria / Cunhagem — 3211-6/0x",
+    "4649410": "Comércio atacadista de jóias, relógios e pedras preciosas — 4649-4/10",
+    "4689301": "Comércio atacadista de produtos da extração mineral — 4689-3/01",
+    "8411600": "Administração pública em geral — 8411-6/00",
+    "9492800": "Atividades de organizações políticas — 9492-8/00",
+    "4789009": "Comércio varejista de armas e munições — 4789-0/09",
+    "2550": "Fabricação de equipamento bélico / Armas de fogo e munições — 2550-1/0x",
+    "3311200": "Manutenção de tanques, reservatórios metálicos e caldeiras — 3311-2/00",
+    "0500301": "Extração de carvão mineral — 0500-3/01",
+    "0600001": "Extração de petróleo e gás natural — 0600-0/01",
+    "0722701": "Extração de minério de estanho — 0722-7/01",
+    "0723501": "Extração de minério de manganês — 0723-5/01",
+    "0724301": "Extração de minério de metais preciosos — 0724-3/01",
+    "0725100": "Extração de minerais radioativos — 0725-1/00",
+    "0729": "Extração de minérios (nióbio, titânio, tungstênio, níquel, cobre, chumbo, zinco) — 0729-4/xx",
+    "4687702": "Comércio atacadista de resíduos e sucatas metálicos — 4687-7/02",
+    "4687703": "Comércio atacadista de resíduos e sucatas não metálicos — 4687-7/03",
+    "8299704": "Leiloeiros independentes — 8299-7/04",
+    "9200399": "Exploração de jogos de azar e apostas — 9200-3/99",
 }
 
 # CNAEs de risco elevado validados contra a tabela Cora (score ≥ 20).
@@ -156,10 +167,13 @@ CNAE_COMB = {
     "4784",           # Comércio varejista de GLP — "COM VAREJISTA DE GÁS LIQUEFEITO" (score 20)
 }
 
-# Carvão vegetal e lenha têm score 2415 na tabela Cora
-CNAES_PROIBIDAS_CORA.update({
-    "46929",  # Comércio atacadista de carvão vegetal e lenha (L3 planilha)
-    "47291",  # Comércio varejista de carvão vegetal e lenha (L4 planilha)
+# Carvão vegetal e lenha têm score 2415 na tabela Cora.
+# Subclasse exata não confirmada na planilha (L3/L4) — mantido como match de
+# classe (4 dígitos) até validação com o time de Compliance, e não como código
+# exato de 7 dígitos (que exigiria confirmar a subclasse certa).
+CNAES_PROIBIDAS_CLASSE.update({
+    "4692",  # Comércio atacadista de carvão vegetal e lenha (L3 planilha)
+    "4729",  # Comércio varejista de carvão vegetal e lenha (L4 planilha)
 })
 
 # Cargos PEP de maior risco (controle de recursos públicos)
@@ -243,7 +257,6 @@ def calcular_score(case: dict) -> dict:
     eval_reason = case.get("evaluation_reason", "") or ""
 
     cp4, cp7 = extract_cnae_prefix(cnae_raw)
-    cp5 = cp7[:5]  # prefixo 5 dígitos para match com CNAES_PROIBIDAS_CORA
 
     sp = 0
     fatores = []
@@ -251,9 +264,11 @@ def calcular_score(case: dict) -> dict:
     # 0. CNAE proibida (Manual KYC Cora — rejeição automática)
     # Verificação ANTES de qualquer outro fator — caso com CNAE proibida deve ser
     # reprovado independentemente dos demais fatores.
-    if cp5 in CNAES_PROIBIDAS_CORA or cp4 in {c[:4] for c in CNAES_PROIBIDAS_CORA}:
-        # Confirmar match exato
-        matched = next((c for c in CNAES_PROIBIDAS_CORA if cp7.startswith(c) or cp5 == c), None)
+    # Match por código EXATO de 7 dígitos (classe+subclasse) — nunca por prefixo —
+    # exceto para as classes em CNAES_PROIBIDAS_CLASSE, cuja descrição cobre
+    # explicitamente todas as subclasses da classe (wildcard "/0x"/"xx" na fonte).
+    if cp7 in CNAES_PROIBIDAS_CORA or cp4 in CNAES_PROIBIDAS_CLASSE:
+        matched = cp7 if cp7 in CNAES_PROIBIDAS_CORA else cp4
         if matched:
             sp += MAX_SCORE  # score máximo → probabilidade 99%
             desc = CNAES_PROIBIDAS_DESCRICAO.get(matched, cnae_raw)

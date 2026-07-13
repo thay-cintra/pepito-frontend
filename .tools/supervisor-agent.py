@@ -361,6 +361,108 @@ class SupervisorAgent:
             )
             return False
 
+    def check_cobertura_pareceres_sugestao(self) -> bool:
+        """
+        Verifica se todo draft_id da fila tem Parecer Sugestão IA gerado
+        (pareceres-sugestao.json p/ CHECK_ANALISTA, pareceres-lideranca.json
+        p/ CHECK_LIDERANCA). Cobre falha silenciosa dos geradores de sugestão
+        e bundle desatualizado sem os pareceres mais recentes.
+        """
+        try:
+            data_dir = ROOT / "pepito-frontend" / "src" / "data"
+            self.checks_executados += 1
+
+            queue = json.loads((data_dir / "registration-queue-real.json").read_text())
+            items = queue.get("items", [])
+            sugestao = json.loads((data_dir / "pareceres-sugestao.json").read_text())
+            lideranca = json.loads((data_dir / "pareceres-lideranca.json").read_text())
+
+            faltando_analista = [
+                i["draft_id"] for i in items
+                if i.get("bucket") == "CHECK_ANALISTA"
+                and not (sugestao.get(i["draft_id"]) or {}).get("text")
+            ]
+            faltando_lideranca = [
+                i["draft_id"] for i in items
+                if i.get("bucket") == "CHECK_LIDERANCA"
+                and not (lideranca.get(i["draft_id"]) or {}).get("text")
+            ]
+
+            if faltando_analista or faltando_lideranca:
+                self.adicionar_alerta(
+                    Alert(
+                        Alert.ALTO,
+                        "Parecer Sugestão IA ausente em casos da fila",
+                        f"CHECK_ANALISTA sem sugestão: {len(faltando_analista)} "
+                        f"({faltando_analista[:5]}). CHECK_LIDERANCA sem sugestão: "
+                        f"{len(faltando_lideranca)} ({faltando_lideranca[:5]}). "
+                        "Rodar generate-sugestao-parecer.py / generate-sugestao-lideranca.py.",
+                        "Parecer Sugestão IA",
+                    )
+                )
+                self.checks_falhados += 1
+                return False
+
+            return True
+        except Exception as e:
+            self.checks_executados += 1
+            self.checks_falhados += 1
+            self.adicionar_alerta(
+                Alert(
+                    Alert.MÉDIO,
+                    "Erro ao verificar cobertura de Parecer Sugestão IA",
+                    f"Erro: {str(e)}",
+                    "Parecer Sugestão IA",
+                )
+            )
+            return False
+
+    def check_taxa_monitoramento_reforcado(self) -> bool:
+        """
+        Detecta derivação excessiva para Monitoramento Reforçado em
+        CHECK_LIDERANCA — sinal de que o critério de negócio está usando
+        PEP/vínculo ativo isoladamente em vez de exigir achado materializado
+        (mídia/processo/achado externo de risco alto).
+        """
+        try:
+            data_dir = ROOT / "pepito-frontend" / "src" / "data"
+            self.checks_executados += 1
+
+            lideranca = json.loads((data_dir / "pareceres-lideranca.json").read_text())
+            total = [v for v in lideranca.values() if v.get("text")]
+            if not total:
+                return True
+
+            reforcado = [v for v in total if "MONITORAMENTO REFORÇADO" in (v.get("text") or "").upper()]
+            taxa = len(reforcado) / len(total)
+
+            if taxa > 0.7:
+                self.adicionar_alerta(
+                    Alert(
+                        Alert.MÉDIO,
+                        "Taxa anômala de Monitoramento Reforçado em CHECK_LIDERANCA",
+                        f"{len(reforcado)}/{len(total)} ({taxa:.0%}) dos pareceres de liderança "
+                        "sugerem Monitoramento Reforçado — revisar se o critério exige achado "
+                        "materializado (mídia/processo/achado externo), não apenas vínculo PEP ativo.",
+                        "Regra de Negócio — Monitoramento Reforçado",
+                    )
+                )
+                return False
+
+            return True
+        except Exception as e:
+            self.checks_executados += 1
+            self.checks_falhados += 1
+            self.adicionar_alerta(
+                Alert(
+                    Alert.MÉDIO,
+                    "Erro ao verificar taxa de Monitoramento Reforçado",
+                    f"Erro: {str(e)}",
+                    "Regra de Negócio — Monitoramento Reforçado",
+                )
+            )
+            return False
+
     def check_git_status(self) -> bool:
         """Verifica estado do repositório Git"""
         try:
@@ -475,6 +577,8 @@ class SupervisorAgent:
         self.check_arquivo_build()
         self.check_analises_salvas()
         self.check_registration_queue_real()
+        self.check_cobertura_pareceres_sugestao()
+        self.check_taxa_monitoramento_reforcado()
         self.check_git_status()
         # self.check_typescript_errors()  # Opcional — comentado para não bloquear se npm não disponível
 
@@ -553,14 +657,21 @@ def enviar_para_slack(resultado: dict, webhook_url: str):
     payload = {"blocks": blocks}
 
     try:
-        # Em desenvolvimento (LOCAL_MODE), desabilita verificação SSL
-        verify_ssl = os.getenv("NODE_ENV", "").lower() != "development"
-
-        response = requests.post(webhook_url, json=payload, timeout=10, verify=verify_ssl)
-        if response.status_code == 200:
+        import json as _json
+        import subprocess
+        _payload = _json.dumps(payload)
+        _bundle = os.path.expanduser("~/.cora_cacert.pem")
+        _cmd = ["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}",
+                "-X", "POST", "-H", "Content-Type: application/json",
+                "-d", _payload]
+        if os.path.exists(_bundle):
+            _cmd += ["--cacert", _bundle]
+        _cmd.append(webhook_url)
+        _result = subprocess.run(_cmd, capture_output=True, text=True, timeout=15)
+        if _result.stdout.strip() == "200":
             print(f"✓ Alertas enviados para Slack ({len(resultado['alertas'])} alertas)")
         else:
-            print(f"✗ Erro ao enviar para Slack: {response.status_code}")
+            print(f"✗ Erro ao enviar para Slack: HTTP {_result.stdout.strip()}")
     except Exception as e:
         print(f"✗ Erro ao enviar para Slack: {str(e)}")
 

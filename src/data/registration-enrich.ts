@@ -633,8 +633,10 @@ export function gerarParecerAnalista(c: Raw): string {
     frase3 = `Recomendamos suspender a decisão até validação de identidade. Em caso de confirmação de homônimo, sugerimos APROVAÇÃO COM MONITORAMENTO REFORÇADO.`;
   } else if (altoExterno && c.bucket === "CHECK_LIDERANCA") {
     frase3 = `Considerando o conjunto de evidências e o apetite de risco da instituição, sugerimos a NÃO APROVAÇÃO do relacionamento, conforme Circular BACEN 3.978/2020.`;
-  } else if (altoExterno || c.bucket === "CHECK_LIDERANCA") {
-    frase3 = `Dito isso, considerando o ${altoExterno ? "achado externo de risco alto" : "score PLD elevado"} e o ${tipoPep === "titular" ? "exercício direto de mandato pelo titular" : "vínculo ativo com PEP em mandato"}, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão semestral, conforme Circular BACEN 3.978/2020.`;
+  } else if (altoExterno || (c.bucket === "CHECK_LIDERANCA" && algumSinal)) {
+    // Monitoramento Reforçado exige achado materializado (mídia/processo/achado externo) —
+    // estar em CHECK_LIDERANCA (PEP/vínculo ativo) isoladamente não é fator suficiente.
+    frase3 = `Dito isso, considerando o ${altoExterno ? "achado externo de risco alto" : "sinal reputacional identificado"} e o ${tipoPep === "titular" ? "exercício direto de mandato pelo titular" : "vínculo ativo com PEP em mandato"}, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão semestral, conforme Circular BACEN 3.978/2020.`;
   } else {
     frase3 = `Considerando que não foram identificados desabonos relevantes sob a ótica de LD, não temos objeções ao início do relacionamento. O cadastro segue fluxo PLD padrão de derivação PEP, conforme Circular BACEN 3.978/2020.`;
   }

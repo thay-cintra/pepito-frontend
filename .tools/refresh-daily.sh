@@ -72,8 +72,12 @@ PYEOF
   echo "[5/5] generate-sugestao-lideranca.py — LIDERANCA pareceres ..."
   python pepito-frontend/.tools/generate-sugestao-lideranca.py
 
-  echo "[6/6] generate-pld-risk-scores.py — scores de probabilidade de LD ..."
+  echo "[6/7] generate-pld-risk-scores.py — scores de probabilidade de LD ..."
   python pepito-frontend/.tools/generate-pld-risk-scores.py
+
+  echo "[7/7] npm run build — dist/ importa os JSONs em build-time; sem rebuildar,"
+  echo "  casos/pareceres sincronizados hoje continuam invisíveis no app publicado."
+  (cd pepito-frontend && npm run build)
 
   echo "[upload] Sincronizando JSONs para GCS (pepito-data-stage) ..."
   DATA="$ROOT/pepito-frontend/src/data"
