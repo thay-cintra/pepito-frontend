@@ -13,9 +13,16 @@
 
 ### Configurar no `.env`
 
+**Use a chave dedicada, não `SLACK_WEBHOOK_URL` genérica** — o `.env` raiz do
+monorepo repete essa chave para vários projetos (midiamonitor_pld, Morning
+Call PLD, Giro PCC/CV), e `python-dotenv` fica com o último valor do arquivo.
+Usar a genérica já mandou o relatório do Supervisor para o canal errado
+(#midias-adversas) em vez de #pepito-supervisor. Ver detalhes em
+[SUPERVISOR.md](./SUPERVISOR.md#integração-slack).
+
 ```bash
-# Adicionar ao arquivo .env na raiz do projeto:
-SLACK_WEBHOOK_URL=https://hooks.slack.com/services/T.../B.../IqlW4xFDY472DGHXqN0Eji5B
+# Adicionar ao arquivo .env na RAIZ DO MONOREPO (não no .env do pepito-frontend):
+SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR=https://hooks.slack.com/services/T.../B.../IqlW4xFDY472DGHXqN0Eji5B
 ```
 
 Salve e recarregue o servidor:
@@ -149,8 +156,8 @@ if nivel == "🔵 BAIXO":
 ### "Webhook URL inválida"
 
 ```bash
-# Verificar que a URL está correta
-echo $SLACK_WEBHOOK_URL
+# Verificar que a URL está correta (variável DEDICADA, não a genérica)
+echo $SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR
 # Deve começar com: https://hooks.slack.com/services/
 ```
 

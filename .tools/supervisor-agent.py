@@ -463,6 +463,135 @@ class SupervisorAgent:
             )
             return False
 
+    def check_novos_casos_lideranca(self) -> bool:
+        """
+        Alerta quando um novo caso passa a aparecer em bucket=CHECK_LIDERANCA
+        desde a última execução do supervisor. Cobre o gap detectado em
+        2026-07-15 (caso c974b32f): o analista deriva um caso à Mesa, o
+        Retool/sync promove o bucket, mas nenhum canal notifica a Liderança —
+        o caso só é visto se alguém abrir a Fila de Revisão manualmente.
+
+        Estado persistido em .tools/supervisor-state-lideranca.json (lista
+        de draft_id já vistos). Primeira execução apenas grava o baseline
+        (não dispara alerta para o histórico inteiro).
+        """
+        try:
+            data_dir = ROOT / "pepito-frontend" / "src" / "data"
+            state_path = ROOT / "pepito-frontend" / ".tools" / "supervisor-state-lideranca.json"
+            self.checks_executados += 1
+
+            queue = json.loads((data_dir / "registration-queue-real.json").read_text())
+            items = queue.get("items", [])
+
+            atuais = {
+                i["draft_id"]: i
+                for i in items
+                if i.get("bucket") == "CHECK_LIDERANCA"
+                and i.get("status") in ("DOUBLE_CHECK", "IN_ANALYSIS")
+                and i.get("sub_status") == "PLD_SCORE"
+                and i.get("person_type") == "OWNER"
+            }
+
+            if state_path.exists():
+                vistos = set(json.loads(state_path.read_text()).get("draft_ids", []))
+            else:
+                vistos = None  # primeira execução — sem baseline para comparar
+
+            state_path.write_text(json.dumps({
+                "draft_ids": sorted(atuais.keys()),
+                "atualizado_em": datetime.now().isoformat(),
+            }, indent=2, ensure_ascii=False))
+
+            if vistos is None:
+                return True
+
+            novos = [draft_id for draft_id in atuais if draft_id not in vistos]
+            if novos:
+                linhas = []
+                for draft_id in novos[:10]:
+                    c = atuais[draft_id]
+                    linhas.append(
+                        f"• {c.get('rf_nome_oficial') or c.get('full_name_pf')} "
+                        f"(CNPJ {c.get('cnpj')}, score {c.get('score_pld')}) — draft {draft_id}"
+                    )
+                self.adicionar_alerta(
+                    Alert(
+                        Alert.MÉDIO,
+                        f"{len(novos)} novo(s) caso(s) escalado(s) para CHECK_LIDERANCA",
+                        "Caso(s) derivado(s) pelo analista ou promovido(s) pelo Retool desde a "
+                        "última verificação. Conferir Fila de Revisão:\n" + "\n".join(linhas),
+                        "Fila de Revisão — Liderança",
+                    )
+                )
+                return False
+
+            return True
+        except Exception as e:
+            self.checks_executados += 1
+            self.checks_falhados += 1
+            self.adicionar_alerta(
+                Alert(
+                    Alert.MÉDIO,
+                    "Erro ao verificar novos casos em CHECK_LIDERANCA",
+                    f"Erro: {str(e)}",
+                    "Fila de Revisão — Liderança",
+                )
+            )
+            return False
+
+    def check_consistencia_bucket_lideranca(self) -> bool:
+        """
+        Reimplementa os mesmos filtros de passesPLDFilters()
+        (pepito-frontend/src/lib/registration-queue.ts) para detectar
+        itens marcados bucket=CHECK_LIDERANCA no Retool que NÃO passariam
+        nos filtros da Fila de Revisão do frontend — ou seja, casos que a
+        Liderança acha que escalou mas que nunca aparecerão na tela.
+        """
+        try:
+            data_dir = ROOT / "pepito-frontend" / "src" / "data"
+            self.checks_executados += 1
+
+            queue = json.loads((data_dir / "registration-queue-real.json").read_text())
+            items = queue.get("items", [])
+
+            marcados_lideranca = [i for i in items if i.get("bucket") == "CHECK_LIDERANCA"]
+            invisiveis = [
+                i["draft_id"] for i in marcados_lideranca
+                if not (
+                    i.get("status") in ("DOUBLE_CHECK", "IN_ANALYSIS")
+                    and i.get("sub_status") == "PLD_SCORE"
+                    and i.get("person_type") == "OWNER"
+                )
+            ]
+
+            if invisiveis:
+                self.adicionar_alerta(
+                    Alert(
+                        Alert.ALTO,
+                        "Casos em CHECK_LIDERANCA invisíveis na Fila de Revisão",
+                        f"{len(invisiveis)} caso(s) com bucket=CHECK_LIDERANCA não passam nos "
+                        f"filtros do frontend (status/sub_status/person_type): {invisiveis[:5]}. "
+                        "A Liderança acredita que o caso foi escalado mas ele nunca renderiza.",
+                        "Fila de Revisão — Liderança",
+                    )
+                )
+                self.checks_falhados += 1
+                return False
+
+            return True
+        except Exception as e:
+            self.checks_executados += 1
+            self.checks_falhados += 1
+            self.adicionar_alerta(
+                Alert(
+                    Alert.MÉDIO,
+                    "Erro ao verificar consistência do bucket CHECK_LIDERANCA",
+                    f"Erro: {str(e)}",
+                    "Fila de Revisão — Liderança",
+                )
+            )
+            return False
+
     def check_git_status(self) -> bool:
         """Verifica estado do repositório Git"""
         try:
@@ -579,6 +708,8 @@ class SupervisorAgent:
         self.check_registration_queue_real()
         self.check_cobertura_pareceres_sugestao()
         self.check_taxa_monitoramento_reforcado()
+        self.check_novos_casos_lideranca()
+        self.check_consistencia_bucket_lideranca()
         self.check_git_status()
         # self.check_typescript_errors()  # Opcional — comentado para não bloquear se npm não disponível
 
@@ -680,8 +811,14 @@ def main():
     supervisor = SupervisorAgent()
     resultado = supervisor.executar_todas_verificacoes()
 
-    # Envia para Slack se webhook configurada
-    webhook_url = os.getenv("SLACK_WEBHOOK_URL", "")
+    # Envia para Slack se webhook configurada.
+    # IMPORTANTE: usar a variável dedicada, não a genérica SLACK_WEBHOOK_URL —
+    # o .env raiz tem essa chave repetida em vários blocos (midiamonitor_pld,
+    # morning-call, pepito-supervisor, giro PCC/CV) e dotenv mantém o último
+    # valor parseado no arquivo, que hoje pertence ao bloco do Giro PCC/CV
+    # (canal #midias-adversas). Usar a genérica aqui envia o relatório do
+    # Pepito Supervisor para o canal errado. Bug real: 2026-07-15.
+    webhook_url = os.getenv("SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR", "")
     if webhook_url:
         enviar_para_slack(resultado, webhook_url)
 

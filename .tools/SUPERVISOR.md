@@ -171,7 +171,35 @@ curl: (7) Failed to connect to 192-168-201-67.sslip.io port 4173: Connection ref
 
 ---
 
-### 6. `check_git_status()` — 🔵 BAIXO
+### 6. `check_novos_casos_lideranca()` — 🟡 MÉDIO
+
+**O quê:** Detecta quando um novo caso passa a aparecer com `bucket=CHECK_LIDERANCA` desde a última execução do Supervisor, e alerta no Slack com CNPJ/razão social/score.
+
+**Por quê existe:** Em 2026-07-15, o caso `c974b32f` (CENTRAL DAS ORGANIZACOES ASSOCIATIVAS DO MUNICIPIO DE PENTECOSTE) foi derivado/sincronizado para `CHECK_LIDERANCA` e ninguém foi notificado — a Liderança só descobre um caso escalado se abrir a Fila de Revisão manualmente. Este check fecha esse gap.
+
+**Como:**
+- Lê `registration-queue-real.json`, filtra os itens que passariam em `passesPLDFilters()` do frontend (status ∈ {DOUBLE_CHECK, IN_ANALYSIS}, sub_status=PLD_SCORE, person_type=OWNER) **e** bucket=CHECK_LIDERANCA
+- Compara com o baseline salvo em `.tools/supervisor-state-lideranca.json` (lista de `draft_id` vistos na última execução)
+- `draft_id`s novos → alerta MÉDIO listando até 10 casos
+- Primeira execução (sem baseline) apenas grava o estado inicial, sem alertar sobre o histórico inteiro
+
+**Falha se:** houver ≥1 caso novo em CHECK_LIDERANCA desde a última verificação.
+
+**Estado:** `.tools/supervisor-state-lideranca.json` — não versionar mudanças manuais nesse arquivo, ele é gerenciado pelo próprio Supervisor.
+
+---
+
+### 7. `check_consistencia_bucket_lideranca()` — 🟠 ALTO
+
+**O quê:** Reimplementa em Python os mesmos filtros de `passesPLDFilters()` ([registration-queue.ts](../src/lib/registration-queue.ts)) e verifica se todo item com `bucket=CHECK_LIDERANCA` no snapshot também passaria nesses filtros no frontend.
+
+**Por quê existe:** O bucket é atribuído manualmente no Retool, sem coluna discriminadora no Athena. Se um item for marcado `CHECK_LIDERANCA` mas tiver `status`/`sub_status`/`person_type` fora do esperado, ele nunca aparece na tela — a Liderança acredita que o caso foi escalado, mas ele é invisível. Este check detecta essa divergência antes que vire reclamação.
+
+**Falha se:** houver ≥1 caso com bucket=CHECK_LIDERANCA que não passa nos filtros do frontend.
+
+---
+
+### 8. `check_git_status()` — 🔵 BAIXO
 
 **O quê:** Verifica se há mudanças não commitadas
 
@@ -191,7 +219,7 @@ curl: (7) Failed to connect to 192-168-201-67.sslip.io port 4173: Connection ref
 
 ---
 
-### 7. `check_typescript_errors()` — 🟠 ALTO (Opcional)
+### 9. `check_typescript_errors()` — 🟠 ALTO (Opcional)
 
 **O quê:** Executa `npm run typecheck` para detectar erros de tipo
 
@@ -222,10 +250,22 @@ curl: (7) Failed to connect to 192-168-201-67.sslip.io port 4173: Connection ref
 
 ### Webhook URL
 
-Configurar variável de ambiente `.env`:
+**⚠️ NUNCA usar a chave genérica `SLACK_WEBHOOK_URL`.** O `.env` na raiz do
+monorepo (`/Users/thay/Projetos Thay/.env`) tem essa mesma chave repetida em
+múltiplos blocos (midiamonitor_pld, Morning Call PLD, Pepito Supervisor, Giro
+PCC/CV) — cada bloco é um Slack App diferente para um canal diferente.
+`python-dotenv` fica com o **último valor parseado no arquivo**, que hoje é o
+bloco do Giro PCC/CV (canal `#midias-adversas`). Usar a chave genérica manda
+o relatório do Supervisor para o canal errado — foi o que aconteceu em
+2026-07-15.
+
+Usar sempre a variável dedicada:
 ```bash
-SLACK_WEBHOOK_URL=https://hooks.slack.com/services/T.../B.../...
+SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR=https://hooks.slack.com/services/T.../B.../...
 ```
+`supervisor-agent.py` (`main()`) lê especificamente essa chave. Se o webhook
+do canal `#pepito-supervisor` for rotacionado, atualizar **esta** variável no
+`.env` raiz — não a `SLACK_WEBHOOK_URL` genérica.
 
 ### Formato de mensagem
 
@@ -336,9 +376,9 @@ urllib3.disable_warnings()  # Desabilita warning (não recomendado em prod)
 
 ### "Webhook URL não configurada"
 
-**Causa:** `SLACK_WEBHOOK_URL` não está em `.env`
+**Causa:** `SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR` não está no `.env` raiz do monorepo
 
-**Solução:** Adicionar variável `.env` e recarregar
+**Solução:** Adicionar a variável dedicada (não a `SLACK_WEBHOOK_URL` genérica — ver seção "Integração Slack" acima) e recarregar
 
 ### "Arquivo não encontrado"
 

@@ -300,10 +300,13 @@ crontab -l
    - Incoming Webhooks → Add New Webhook to Workspace
    - Copiar URL do webhook
 
-2. **Adicionar ao `.env`:**
+2. **Adicionar ao `.env` (raiz do monorepo, variável DEDICADA):**
    ```bash
-   SLACK_WEBHOOK_URL=https://hooks.slack.com/services/T.../B.../...
+   SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR=https://hooks.slack.com/services/T.../B.../...
    ```
+   Não usar `SLACK_WEBHOOK_URL` genérica — essa chave é compartilhada com outros
+   projetos no `.env` raiz e aponta para o último bloco parseado no arquivo
+   (hoje, o canal do Giro PCC/CV). Ver [SUPERVISOR.md](.tools/SUPERVISOR.md#integração-slack).
 
 3. **Receber alertas:**
    - Supervisor envia blocos formatados para canal
