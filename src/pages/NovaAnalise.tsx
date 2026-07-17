@@ -71,24 +71,45 @@ export function NovaAnalise() {
       setAnalise(a);
       setResultados(a.resultadosPesquisa);
       setAnaliseGeral(a.analiseGeral || "");
-      setDecisao(a.status);
 
       // Auto-preenche o parecer final se ainda não foi redigido.
       // Prioridade: sugestão IA da Mesa → template gerado pelo motor local.
+      // A categoria (decisao) SEMPRE acompanha a mesma fonte do parecer exibido —
+      // nunca usar a.status isolado quando há sugestão IA, para não desalinhar
+      // "Categoria"/badge do texto do parecer (ex: parecer diz "Diligência
+      // Reforçada" mas Categoria ficava em "Aprovado").
       if (a.parecerCompleto && a.parecerCompleto.trim().length > 0) {
+        // Auto-cura de análises já salvas com o desalinhamento: se o parecer
+        // persistido é EXATAMENTE o texto original da sugestão IA (nunca editado
+        // pelo analista) mas a categoria salva diverge da decisão da sugestão,
+        // corrige a categoria — nunca sobrescreve um parecer editado manualmente.
+        const sugLid = a.draftId ? getSugestaoLideranca(a.draftId) : null;
+        if (sugLid && a.parecerCompleto === sugLid.text && a.status !== sugLid.decisao) {
+          setDecisao(sugLid.decisao);
+          storage.saveAnalise({ ...a, status: sugLid.decisao, recomendacao: statusLabel(sugLid.decisao) });
+        } else {
+          setDecisao(a.status);
+        }
         setParecerCompleto(a.parecerCompleto);
       } else {
         const sugLid = a.draftId ? getSugestaoLideranca(a.draftId) : null;
+        const decisaoInicial = sugLid?.decisao ?? a.status;
         const parecerGerado = sugLid?.text ?? gerarParecerLideranca({
           cliente: a.cliente,
-          status: a.status,
+          status: decisaoInicial,
           resultados: a.resultadosPesquisa,
           analiseConsolidada: a.analiseConsolidadaLideranca || "",
           parecerPrimeiraCamada: a.parecerPrimeiraCamada,
         });
+        setDecisao(decisaoInicial);
         setParecerCompleto(parecerGerado);
-        // Persiste para que aberturas subsequentes não regenerem
-        storage.saveAnalise({ ...a, parecerCompleto: parecerGerado });
+        // Persiste (parecer + categoria juntos) para que aberturas subsequentes não regenerem
+        storage.saveAnalise({
+          ...a,
+          status: decisaoInicial,
+          recomendacao: statusLabel(decisaoInicial),
+          parecerCompleto: parecerGerado,
+        });
       }
     }
   }, [id]);
