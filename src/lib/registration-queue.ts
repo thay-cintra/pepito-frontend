@@ -98,10 +98,22 @@ function readExcludedDraftIds(bucket: CheckBucket): Set<string> {
   }
 }
 
+/** Casos CHECK_ANALISTA sem nenhum PEP vinculado (pep_pf vazio) são falso
+ *  positivo da fila PLD — o motivo de entrada na fila não tem relação com PEP
+ *  e não deve ser analisado manualmente. Não se aplica a CHECK_LIDERANCA, que
+ *  já passou por triagem prévia. */
+function semPepVinculado(c: RegistrationCase): boolean {
+  return inferCargoOrgao(c).cargo === "(sem PEP titular vinculado)";
+}
+
 export function listByBucket(bucket: CheckBucket): RegistrationCase[] {
   const excluidos = readExcludedDraftIds(bucket);
   return REGISTRATION_QUEUE.filter(
-    (c) => passesPLDFilters(c) && c.bucket === bucket && !excluidos.has(c.draft_id),
+    (c) =>
+      passesPLDFilters(c) &&
+      c.bucket === bucket &&
+      !excluidos.has(c.draft_id) &&
+      (bucket !== "CHECK_ANALISTA" || !semPepVinculado(c)),
   ).sort(
     (a, b) =>
       new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
