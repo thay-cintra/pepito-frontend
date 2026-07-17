@@ -20,7 +20,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/toast";
 import { formatDate } from "@/lib/utils";
-import { storage } from "@/lib/storage";
+import { storage, isQuotaExceeded } from "@/lib/storage";
 import { synthesizeAnalise, markTaken } from "@/lib/registration-queue";
 import type { RegistrationCase } from "@/types/registration";
 import { inferCargoOrgao, inferTipoPep, getSugestaoParecer, getSugestaoLideranca, vinculoLabel, getPldRiskScore } from "@/data/registration-enrich";
@@ -66,13 +66,13 @@ export function RegistrationCaseCard({ caso }: Props) {
         });
         navigate(`/nova-analise?id=${analise.id}`);
       } catch (e) {
+        console.error(e);
         toast({
           variant: "destructive",
           title: "Não foi possível abrir o caso",
-          description:
-            e instanceof DOMException && e.name === "QuotaExceededError"
-              ? "Armazenamento do navegador cheio. Libere espaço (ver instruções com o time) e tente de novo."
-              : "Erro inesperado ao carregar o caso na Mesa. Tente novamente ou avise o time.",
+          description: isQuotaExceeded(e)
+            ? "Armazenamento do navegador cheio. Libere espaço (ver instruções com o time) e tente de novo."
+            : "Erro inesperado ao carregar o caso na Mesa. Tente novamente ou avise o time.",
         });
       }
     } else {

@@ -43,7 +43,7 @@ function evictOldestConcluded(analises: Analise[], n: number): Analise[] {
   return analises.filter((a) => !idsRemover.has(a.id));
 }
 
-function isQuotaExceeded(e: unknown): boolean {
+export function isQuotaExceeded(e: unknown): boolean {
   return e instanceof DOMException &&
     (e.name === "QuotaExceededError" || e.name === "NS_ERROR_DOM_QUOTA_REACHED");
 }

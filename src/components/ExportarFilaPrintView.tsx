@@ -83,11 +83,11 @@ function CasoPrintSection({ caso, isLast }: { caso: RegistrationCase; isLast: bo
       </p>
 
       <h3 className="font-semibold mt-4 mb-1">Dados cadastrais (PJ)</h3>
-      <p className="text-sm">CNAE: {caso.cnae}</p>
-      <p className="text-sm">Constituição: {caso.data_constituicao}</p>
+      <p className="text-sm">CNAE: {caso.cnae || "—"}</p>
+      <p className="text-sm">Constituição: {caso.data_constituicao || "—"}</p>
       <p className="text-sm">Porte: {caso.porte || "—"}</p>
       <p className="text-sm">Faturamento presumido: {faturamento}</p>
-      <p className="text-sm">Endereço comercial: {caso.endereco_comercial}</p>
+      <p className="text-sm">Endereço comercial: {caso.endereco_comercial || "—"}</p>
 
       <h3 className="font-semibold mt-4 mb-1">Score PLD</h3>
       <p className="text-sm">
