@@ -123,8 +123,7 @@ export function RegistrationCaseCard({ caso }: Props) {
               <span>draft {caso.draft_id}</span>
             </div>
           </div>
-          {/* Indicador de risco de LD */}
-          {riskScore && <PldRiskIndicator score={riskScore} cnae={caso.cnae} />}
+          {/* Indicador de risco de LD — oculto temporariamente (modelo ainda inefetivo, ajustes pendentes) */}
         </div>
       </CardHeader>
       <CardContent className="space-y-3">
