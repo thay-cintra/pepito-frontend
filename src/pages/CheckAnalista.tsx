@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { Users, Filter, Search, Sparkles } from "lucide-react";
+import { Users, Filter, Search, Sparkles, Printer } from "lucide-react";
 import { QueueRefreshHeader } from "@/components/QueueRefreshHeader";
+import { Button } from "@/components/ui/button";
+import { ExportarFilaPrintView } from "@/components/ExportarFilaPrintView";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -113,7 +115,18 @@ export function CheckAnalista() {
             antes de encaminhar à Mesa.
           </p>
         </div>
-        <QueueRefreshHeader onRefresh={() => setRefreshKey((k) => k + 1)} />
+        <div className="flex items-center gap-2">
+          <QueueRefreshHeader onRefresh={() => setRefreshKey((k) => k + 1)} />
+          <Button
+            variant="outline"
+            size="sm"
+            className="h-7 text-xs"
+            onClick={() => window.print()}
+            title="Gera um PDF com os casos filtrados na tela, para consulta offline caso a VPN/aplicação fique fora do ar"
+          >
+            <Printer className="h-3 w-3" /> Exportar PDF (fallback)
+          </Button>
+        </div>
       </div>
 
       {/* Resumo */}
@@ -223,6 +236,15 @@ export function CheckAnalista() {
           ))}
         </div>
       )}
+
+      <ExportarFilaPrintView
+        casos={filtrados}
+        filtros={{
+          status: statusFiltro,
+          decisao: DECISAO_LABEL[decisaoFiltro],
+          busca,
+        }}
+      />
     </div>
   );
 }
