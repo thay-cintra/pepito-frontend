@@ -31,6 +31,38 @@ function write<T>(key: string, value: T[]): void {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
+/** Remove do array as `n` análises concluídas mais antigas (por concludedAt/createdAt).
+ *  Usado como auto-recuperação quando o localStorage estoura a quota — análises
+ *  concluídas já foram persistidas em disco via persistToDisk em saves anteriores,
+ *  então removê-las do cache local não perde trabalho em andamento. */
+function evictOldestConcluded(analises: Analise[], n: number): Analise[] {
+  const concluidas = analises
+    .filter((a) => a.camadaStatus === "concluido")
+    .sort((a, b) => new Date(a.concludedAt || a.createdAt).getTime() - new Date(b.concludedAt || b.createdAt).getTime());
+  const idsRemover = new Set(concluidas.slice(0, n).map((a) => a.id));
+  return analises.filter((a) => !idsRemover.has(a.id));
+}
+
+function isQuotaExceeded(e: unknown): boolean {
+  return e instanceof DOMException &&
+    (e.name === "QuotaExceededError" || e.name === "NS_ERROR_DOM_QUOTA_REACHED");
+}
+
+/** Grava `analises` no localStorage. Se a quota estourar, tenta liberar espaço
+ *  removendo as análises concluídas mais antigas (já seguras em disco) e regrava
+ *  uma única vez. Se ainda assim falhar, propaga o erro para o chamador tratar
+ *  (nunca falha silenciosamente). */
+function writeAnalisesComRecuperacao(analises: Analise[]): void {
+  try {
+    write(KEY_ANALISES, analises);
+  } catch (e) {
+    if (!isQuotaExceeded(e)) throw e;
+    const reduzido = evictOldestConcluded(analises, 20);
+    if (reduzido.length === analises.length) throw e; // nada para liberar
+    write(KEY_ANALISES, reduzido); // se ainda estourar aqui, propaga para o chamador
+  }
+}
+
 /** Persiste analises + exclusoes no arquivo local src/data/analises-salvas.json
  *  via API do plugin Vite. Fire-and-forget — nunca bloqueia a UI. */
 async function persistToDisk(): Promise<void> {
@@ -103,7 +135,7 @@ export const storage = {
     const idx = all.findIndex((x) => x.id === a.id);
     if (idx >= 0) all[idx] = a;
     else all.push(a);
-    write(KEY_ANALISES, all);
+    writeAnalisesComRecuperacao(all); // lança se a quota estourar mesmo após liberar espaço
     bumpVersion();
     // Persiste no arquivo local em background
     void persistToDisk();

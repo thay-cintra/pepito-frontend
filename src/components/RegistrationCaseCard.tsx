@@ -55,15 +55,26 @@ export function RegistrationCaseCard({ caso }: Props) {
 
   const handleAbrir = () => {
     if (caso.bucket === "CHECK_LIDERANCA") {
-      const analise = synthesizeAnalise(caso);
-      storage.saveAnalise(analise);
-      markTaken(caso.draft_id, analise.id);
-      toast({
-        variant: "success",
-        title: "Caso carregado na Mesa de Decisão",
-        description: `${caso.rf_nome_oficial} · investigação pré-concluída`,
-      });
-      navigate(`/nova-analise?id=${analise.id}`);
+      try {
+        const analise = synthesizeAnalise(caso);
+        storage.saveAnalise(analise);
+        markTaken(caso.draft_id, analise.id);
+        toast({
+          variant: "success",
+          title: "Caso carregado na Mesa de Decisão",
+          description: `${caso.rf_nome_oficial} · investigação pré-concluída`,
+        });
+        navigate(`/nova-analise?id=${analise.id}`);
+      } catch (e) {
+        toast({
+          variant: "destructive",
+          title: "Não foi possível abrir o caso",
+          description:
+            e instanceof DOMException && e.name === "QuotaExceededError"
+              ? "Armazenamento do navegador cheio. Libere espaço (ver instruções com o time) e tente de novo."
+              : "Erro inesperado ao carregar o caso na Mesa. Tente novamente ou avise o time.",
+        });
+      }
     } else {
       navigate(`/primeira-camada?prefill=${caso.draft_id}`);
     }
