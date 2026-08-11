@@ -310,7 +310,8 @@ function readLogTail(file, n = 8) {
   } catch { return []; }
 }
 
-// Sincronização rápida com Athena (só build-real-queue.py, sem AI e sem rebuild)
+// Sincronização rápida com Athena — inclui geração de sugestões IA e rebuild
+// (npm run build) ao final; ver queue-sync.sh para o pipeline completo.
 app.get("/api/queue/sync", requireAuth, (req, res) => {
   const tail = readLogTail(QUEUE_SYNC_LOG, 1);
   res.json({

@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
-# queue-sync.sh — Sincronização rápida com Athena (sem pareceres AI, sem rebuild)
+# queue-sync.sh — Sincronização rápida com Athena + geração de sugestões IA
 # Disparado pelo botão "Sincronizar Athena" na interface.
-# Tempo típico: ~15-30 segundos vs ~5 min do refresh completo.
+# Inclui rebuild (ver passo [5/5]) — sem isso, pareceres-sugestao.json/
+# pareceres-lideranca.json são import estático em registration-enrich.ts,
+# embutidos no bundle em build-time; o app publicado continua servindo o
+# snapshot antigo e "novos casos" aparecem sem Sugestão de parecer IA
+# mesmo depois da geração ter rodado com sucesso (recorrência 2026-08-06 → 08-10).
 set -euo pipefail
 
 ROOT="/Users/thay/Projetos Thay"
@@ -86,6 +90,10 @@ PYEOF
   else
     echo "  LITELLM_API_KEY/BASE_URL ausentes — pulando geração de sugestões IA"
   fi
+
+  echo "[5/5] npm run build — dist/ importa os JSONs em build-time; sem rebuildar,"
+  echo "  casos/pareceres sincronizados agora continuam invisíveis no app publicado."
+  (cd pepito-frontend && npm run build)
 
   echo "[upload] Sincronizando JSONs para GCS (pepito-data-stage) ..."
   DATA="$ROOT/pepito-frontend/src/data"
