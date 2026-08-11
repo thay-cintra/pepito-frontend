@@ -608,8 +608,9 @@ Civil/TRT → badge baixo
 
 Se voltar a acontecer:
 1. Comparar timestamp de `dist/assets/index-*.js` vs `src/data/pareceres-{sugestao,lideranca}.json` — bundle mais antigo é o sintoma.
-2. Verificar se algum script novo de geração de dados foi adicionado sem o passo `npm run build` ao final.
-3. `npm run build` + reiniciar o serviço (`launchctl kickstart -k gui/$(id -u)/com.cora.pepito.server` ou `kill` do PID em `lsof -nP -iTCP:4173 -sTCP:LISTEN` — launchd reergue automaticamente).
+2. Ver o final de `.tools/queue-sync.log`/`.tools/refresh-daily.log` — se o `npm run build` não rodou (ou falhou com `npm: command not found`), o script abortou antes de terminar. **`queue-sync.sh` é spawnado por `server.cjs` com PATH mínimo (sem Homebrew, sem `.tools/node/bin`) — testar `npm run build` manualmente no terminal NÃO reproduz esse ambiente**; simular com `env -i PATH="/bin:/usr/bin:/usr/local/bin" bash -c '...'`.
+3. Verificar se algum script novo de geração de dados (ou chamada a `node`/`npm`/`npx`) foi adicionado sem PATH explícito ou caminho absoluto.
+4. `npm run build` + reiniciar o serviço (`launchctl kickstart -k gui/$(id -u)/com.cora.pepito.server` ou `kill` do PID em `lsof -nP -iTCP:4173 -sTCP:LISTEN` — launchd reergue automaticamente).
 
 #### Problema: PEP com mandato expirado marcado como "ex"
 
