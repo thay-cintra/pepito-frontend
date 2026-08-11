@@ -167,10 +167,23 @@ server.cjs                    — Express: HTTPS, SSO Google, /api/analises
 .tools/
   supervisor-agent.py          — Monitoramento (7 verificações)
   integrity-guard.py           — Proteção de pareceres (backup + auto-restore)
-  full-guard-schedule.sh       — Orquestrador (Integrity + Supervisor)
+  full-guard-schedule.sh       — Orquestrador (Integrity + Supervisor), cron 6h/14h
   supervisor-schedule.sh       — Scheduler do Supervisor
   recover-sugestoes-lideranca.py — Recovery de pareceres perdidos
-  
+
+  Pipeline de dados (Athena → JSONs → bundle):
+    build-real-queue.py         — Puxa fila real do Athena (registration-queue-real.json)
+    generate-sugestao-parecer.py    — Gera Sugestão IA (ANALISTA) via LiteLLM
+    generate-sugestao-lideranca.py  — Gera Sugestão IA (LIDERANÇA) via LiteLLM
+    generate-pld-risk-scores.py — Score de risco LD (pld-risk-scores.json)
+    fetch-media-findings.py     — Pesquisa obrigatória de mídia + JusBrasil
+    build-pep-history.py        — Análises históricas de PEP
+    refresh-daily.sh            — Pipeline completo (~5min) + `npm run build`, via LaunchAgent com.cora.pepito.refresh
+    queue-sync.sh                — Pipeline rápido (~1-3min), disparado pelo botão
+                                    "Sincronizar Athena" (`POST /api/queue/sync`);
+                                    também termina com `npm run build` — ver
+                                    INCIDENT-REPORT-2026-08-10-SUGESTAO-IA-AUSENTE.md
+
   backups/pareceres/           — Backups automáticos (2x por dia)
     ├── pareceres-sugestao.json.*.backup
     ├── pareceres-real.json.*.backup
@@ -184,7 +197,9 @@ server.cjs                    — Express: HTTPS, SSO Google, /api/analises
     SLACK-CONFIG.md            — Configuração Slack passo-a-passo
     SLACK-ALERTAS-SETUP.md     — Status de alertas
     ADD-CRON.md                — Como adicionar ao crontab
-    INCIDENT-REPORT.md         — Histórico de incidentes
+    INCIDENT-REPORT.md         — Histórico de incidentes (2026-07-01)
+    INCIDENT-REPORT-2026-07-13-4BUGS.md — 4 bugs (Sugestão IA/Monitoramento/CNAE/Supervisor)
+    INCIDENT-REPORT-2026-08-10-SUGESTAO-IA-AUSENTE.md — Sugestão IA ausente (build-time import sem rebuild)
     DEPLOYMENT-SUMMARY.md      — Resumo do deployment
     CRON-SETUP.sh              — Script para setup de cron
 ```
@@ -585,6 +600,17 @@ Badge alto (crítico) reservado para:
 
 Civil/TRT → badge baixo
 
+#### Problema: Sugestão IA ausente para casos novos
+
+**Guardrail:** todo pipeline que regenera `pareceres-sugestao.json`/`pareceres-lideranca.json` (`refresh-daily.sh`, `queue-sync.sh`) termina com `npm run build`.
+
+**Causa raiz:** `registration-enrich.ts` importa esses JSONs estaticamente — o Vite embute o conteúdo no bundle **em build-time**. Regenerar o arquivo-fonte no disco não é suficiente; sem rebuild, o app publicado continua servindo o snapshot antigo e casos com `draft_id` novo não têm sugestão para renderizar (ver `INCIDENT-REPORT-2026-07-13-4BUGS.md` e `INCIDENT-REPORT-2026-08-10-SUGESTAO-IA-AUSENTE.md`).
+
+Se voltar a acontecer:
+1. Comparar timestamp de `dist/assets/index-*.js` vs `src/data/pareceres-{sugestao,lideranca}.json` — bundle mais antigo é o sintoma.
+2. Verificar se algum script novo de geração de dados foi adicionado sem o passo `npm run build` ao final.
+3. `npm run build` + reiniciar o serviço (`launchctl kickstart -k gui/$(id -u)/com.cora.pepito.server` ou `kill` do PID em `lsof -nP -iTCP:4173 -sTCP:LISTEN` — launchd reergue automaticamente).
+
 #### Problema: PEP com mandato expirado marcado como "ex"
 
 **Guardrail:** Data fim do mandato comparada com data atual (via `data_fim` e `data_fim_carencia`).
@@ -682,5 +708,5 @@ crontab -l | grep "^0 [0-9]"
 
 ---
 
-**Última atualização:** 2026-07-01  
+**Última atualização:** 2026-08-11  
 **Status:** ✅ Production Ready
