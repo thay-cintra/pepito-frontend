@@ -14,6 +14,12 @@ LOG="$ROOT/pepito-frontend/.tools/refresh-daily.log"
   echo "=== $(date -Iseconds) refresh start ==="
   cd "$ROOT"
 
+  # Garante node/npm no PATH independente de quem disparou o script (launchd
+  # tipicamente dá PATH mínimo, sem Homebrew nem o Node portável do projeto) —
+  # sem isto, o passo [7/7] (npm run build) falha com "npm: command not found"
+  # e o script aborta em set -e (mesmo bug visto em queue-sync.sh, 2026-08-11).
+  export PATH="$ROOT/pepito-frontend/.tools/node/bin:$PATH"
+
   # Ativa venv (coralago + openai + dotenv vivem aqui)
   # shellcheck disable=SC1091
   source "$ROOT/.venv/bin/activate"

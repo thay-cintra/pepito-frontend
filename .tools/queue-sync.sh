@@ -15,6 +15,14 @@ LOG="$ROOT/pepito-frontend/.tools/queue-sync.log"
   echo ""
   echo "=== $(date -Iseconds) queue-sync start ==="
   cd "$ROOT"
+
+  # Este script é spawnado por server.cjs (launchd → node → child_process.spawn)
+  # com PATH mínimo hardcoded ("/bin:/usr/bin:/usr/local/bin:$PATH"), que NÃO
+  # inclui node/npm (nem Homebrew nem o Node portável do projeto). Sem isto, o
+  # passo [5/5] (npm run build) falha com "npm: command not found" e o script
+  # aborta silenciosamente em set -e — visto em 2026-08-11.
+  export PATH="$ROOT/pepito-frontend/.tools/node/bin:$PATH"
+
   source "$ROOT/.venv/bin/activate"
 
   # Exporta AWS_*/CORALAGO_* do .env ANTES de qualquer chamada coralago/boto3 —
