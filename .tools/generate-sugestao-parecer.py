@@ -59,6 +59,59 @@ def vinculo_natural(ds: str | None) -> str:
     return VINCULO_LABEL.get(ds.strip().upper(), ds.lower())
 
 
+def _parse_data_br(s: str | None):
+    """Parseia dd/mm/yyyy (formato usado pela Credilink em pep_pf)."""
+    if not s:
+        return None
+    try:
+        from datetime import datetime
+        return datetime.strptime(s.strip(), "%d/%m/%Y")
+    except (ValueError, AttributeError):
+        return None
+
+
+def _status_mandato_label(p: dict) -> str:
+    """Espelha statusMandato() de src/data/registration-enrich.ts — usado para
+    dar ao LLM o status já calculado, em vez de deixá-lo inferir 'hoje' sozinho."""
+    from datetime import datetime
+    fim = _parse_data_br(p.get("data_fim"))
+    if not fim:
+        return "vigência não informada"
+    hoje = datetime.now()
+    if hoje <= fim:
+        return f"ATIVO até {p.get('data_fim')}"
+    carencia = _parse_data_br(p.get("data_fim_carencia"))
+    if carencia and hoje <= carencia:
+        return f"encerrado em {p.get('data_fim')} — em carência PLD até {p.get('data_fim_carencia')}"
+    return f"encerrado em {p.get('data_fim')} (fora do período de carência)"
+
+
+def _registro_pep_principal(pep_pf: list) -> dict:
+    """Entre múltiplos registros pep_pf (reeleição gera 1 registro por
+    mandato), escolhe o mandato ATIVO agora; senão o de data_fim mais
+    recente. O campo `tipo` (T/R) da Credilink NÃO indica recência — o
+    mandato vigente pode vir com tipo "R" e um encerrado com tipo "T".
+    Espelha registroPepPrincipal() de src/data/registration-enrich.ts.
+    Ver .tools/INCIDENT-REPORT-2026-08-12-MANDATO-PEP.md."""
+    if not pep_pf:
+        return {}
+    from datetime import datetime
+    hoje = datetime.now()
+    com_meta = []
+    for p in pep_pf:
+        inicio = _parse_data_br(p.get("data_inicio"))
+        fim = _parse_data_br(p.get("data_fim"))
+        ativo_agora = fim is not None and hoje <= fim and (inicio is None or hoje >= inicio)
+        com_meta.append((p, fim, ativo_agora))
+    ativos = sorted((x for x in com_meta if x[2]), key=lambda x: x[1], reverse=True)
+    if ativos:
+        return ativos[0][0]
+    com_fim = sorted((x for x in com_meta if x[1] is not None), key=lambda x: x[1], reverse=True)
+    if com_fim:
+        return com_fim[0][0]
+    return next((p for p in pep_pf if p.get("tipo") == "T"), pep_pf[0])
+
+
 SYSTEM_PROMPT = """Você é um analista de Compliance/PLD da Cora. Redija UMA sugestão de parecer em UM PARÁGRAFO único, no estilo do exemplo abaixo.
 
 REGRAS:
@@ -92,13 +145,14 @@ Retorne APENAS o parágrafo do parecer, sem nada antes ou depois."""
 
 def montar_user_prompt(case: dict, findings: list) -> str:
     pep = case.get("pep_pf") or []
-    pep_titular = next((p for p in pep if p.get("tipo") == "T"), pep[0] if pep else {})
+    pep_titular = _registro_pep_principal(pep)
     nome_pep = pep_titular.get("nome_titular") or "(não informado)"
     cargo_real = pep_titular.get("cargo_formal") or pep_titular.get("perfil") or "cargo não informado"
     orgao = pep_titular.get("orgao") or case.get("uf", "")
     vinculo = vinculo_natural(pep_titular.get("ds_vinculo"))
     data_inicio = pep_titular.get("data_inicio") or ""
     data_fim = pep_titular.get("data_fim") or ""
+    status_mandato = _status_mandato_label(pep_titular) if pep_titular else "vigência não informada"
 
     cpf_owner = (case.get("cpf") or "").replace(".", "").replace("-", "")
     cpf_pep = (pep_titular.get("cpf_titular") or "").replace(".", "").replace("-", "")
@@ -136,6 +190,7 @@ VINCULAÇÃO PEP (Credilink):
 - Cargo formal: {cargo_real}
 - Órgão/Município: {orgao}
 - Mandato: {data_inicio} → {data_fim}
+- Status do mandato (já calculado, não infira sozinho): {status_mandato}
 {f'- Tipo de vínculo (DSVINCULO): {vinculo}' if not is_titular and vinculo else ''}
 
 ACHADOS RELEVANTES: {findings_summary or '(nenhum achado externo material)'}
