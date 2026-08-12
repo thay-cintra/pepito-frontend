@@ -38,12 +38,34 @@ No caso `d309057d-dd08-4d81-b81b-dc775d35144b` (titular Ronaldo Ramos Dias, irm�
 
 ---
 
+## Bug 3 — Sugestão de Parecer IA gerada com o mandato errado (varredura completa)
+
+**Escopo:** a pedido do analista, varredura de **todos** os casos vivos (CHECK_ANALISTA + CHECK_LIDERANCA) em busca do mesmo padrão do Bug 1 (`pep_pf` com múltiplos registros de mandato onde a heurística antiga escolhia o expirado). Resultado: **20 casos afetados** de 44 com `pep_pf` multi-registro — 17 CHECK_ANALISTA + 3 CHECK_LIDERANCA (incluindo o próprio `d309057d`). Todos com o mesmo padrão: mandato 2021-2024/2020-2024 (`tipo: "T"`, hoje em carência) escolhido no lugar do mandato 2025-2028 (`tipo: "R"`, ativo).
+
+**Causa raiz:** `.tools/generate-sugestao-parecer.py` e `.tools/generate-sugestao-lideranca.py` (os scripts Python que geram a Sugestão IA via LLM) têm a **mesma linha buggy** que o `inferCargoOrgao()` original: `pep_titular = next((p for p in pep if p.get("tipo") == "T"), pep[0] if pep else {})`. O prompt enviado ao LLM incluía "Mandato: {data_inicio} → {data_fim}" com as datas do registro errado — em `generate-sugestao-lideranca.py` isso é mais grave ainda, pois o prompt também pede ao LLM para "calcular idade [da empresa] vs mandato do PEP" (detecção de "empresa aberta durante o mandato", um fator agravante de MONITORAMENTO REFORÇADO) — com o mandato errado, esse cálculo podia mascarar um red flag real.
+
+**Fix:**
+- `_registro_pep_principal()` — porta Python de `registroPepPrincipal()` (TS), adicionada nos dois scripts.
+- `_status_mandato_label()` — porta Python de `statusMandato()`; o status (ATIVO/carência/encerrado) agora é **calculado deterministicamente e passado pronto ao LLM** no prompt ("Status do mandato (já calculado, não infira sozinho)"), em vez de depender do LLM inferir "hoje" sozinho a partir de datas cruas.
+- Validado que ambas as portas Python produzem resultado idêntico ao TS para o `pep_pf` real do `d309057d` (registro `tipo: "R"`, 2025-2028, escolhido; status "ATIVO até 31/12/2028").
+
+**Regeneração dos 20 casos afetados:**
+- Backup de `pareceres-sugestao.json`/`pareceres-lideranca.json` antes de qualquer alteração (`.tools/backups/pareceres/*.pre-mandato-fix-20260812_144346.backup`).
+- CHECK_ANALISTA (17): `generate-sugestao-parecer.py` preserva qualquer entrada com `text` (evita custo de LLM); removidas as 17 entradas afetadas de `pareceres-sugestao.json` e reexecutado o script — regenerou exatamente essas 17, preservou as ~70 demais.
+- CHECK_LIDERANCA (3 + resto): `generate-sugestao-lideranca.py`, por design (não alterado aqui), **regenera todas as entradas não-manuais a cada execução** (não tem skip-por-já-existir) — rodado uma vez, regenerou as 19 CHECK_LIDERANCA vivas, incluindo as 3 afetadas. Isso NÃO é uma mudança de comportamento minha — é como o script já funcionava; sinalizado como ineficiência pré-existente no follow-up.
+- Confirmado o texto do caso original (`d309057d`) agora cita corretamente "Elias Ramos Dias, Vereador ativo pelo município de São Vicente de Minas/MG (mandato 01/01/2025–31/12/2028)".
+
+**Arquivos:** `.tools/generate-sugestao-parecer.py`, `.tools/generate-sugestao-lideranca.py`, `src/data/pareceres-sugestao.json`, `src/data/pareceres-lideranca.json`
+
+---
+
 ## Verificação
 
 - Lógica de `statusMandato`/`registroPepPrincipal` replicada em Node e testada contra o `pep_pf` real do draft `d309057d...`: registro 2025-2028 (`tipo: "R"`) corretamente identificado como `ativo` e escolhido como principal; registro 2021-2024 (`tipo: "T"`) corretamente identificado como `carencia`.
 - `npm run build` — OK, sem erros de TypeScript.
 - Strings novas confirmadas no bundle compilado via grep direto (`mandato ATIVO`, `em carência PLD`, `Confirmar mandato/candidaturas`, badges do card).
 - Servidor reiniciado, bundle novo no ar.
+- Varredura completa pós-fix na fila viva (107 casos): 20/20 casos afetados regenerados hoje com o mandato correto; 0 casos (de 88 CHECK_ANALISTA + 19 CHECK_LIDERANCA) sem Sugestão IA.
 
 ---
 
@@ -64,7 +86,10 @@ No caso `d309057d-dd08-4d81-b81b-dc775d35144b` (titular Ronaldo Ramos Dias, irm�
 | `statusMandato`/`registroPepPrincipal` em `registration-enrich.ts` | Claude | ✅ Done |
 | Badge de mandato no `RegistrationCaseCard.tsx` | Claude | ✅ Done |
 | `pendente: true` no card TSE | Claude | ✅ Done |
+| Mesmo fix (`_registro_pep_principal`/`_status_mandato_label`) portado para `generate-sugestao-parecer.py` e `generate-sugestao-lideranca.py` | Claude | ✅ Done |
+| Regeneração dos 20 casos afetados (17 ANALISTA + 3 LIDERANCA) | Claude | ✅ Done |
 | Expor status de mandato também em `NovaAnalise.tsx` (hoje só mostra `cargoPep` como texto puro, sem período/status — fica correto via `resultados_pesquisa` mas não no resumo de cabeçalho) | Thay | ⏳ TODO (fora do escopo deste fix — requer tocar `ClienteData`/`synthesizeAnalise`) |
+| `generate-sugestao-lideranca.py` regenera TODAS as sugestões não-manuais a cada execução (sem skip-por-já-existir) — custo/tempo de LLM desnecessário quando nada relacionado a mandato mudou | Thay | ⏳ TODO (pré-existente, fora do escopo deste fix) |
 
 ---
 
