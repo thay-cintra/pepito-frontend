@@ -146,6 +146,20 @@ export function RegistrationCaseCard({ caso }: Props) {
             <span className="font-mono">CPF sócio: {caso.cpf}</span>
             <span>·</span>
             <span>{cargoOrgao.cargo}{cargoOrgao.orgao && cargoOrgao.orgao !== caso.uf ? ` em ${cargoOrgao.orgao}` : ""}</span>
+            {cargoOrgao.statusMandato !== "indeterminado" && (
+              <Badge
+                variant={
+                  cargoOrgao.statusMandato === "ativo" ? "success" :
+                  cargoOrgao.statusMandato === "carencia" ? "warning" : "muted"
+                }
+                className="text-[10px]"
+                title={`Registro mais atual entre ${caso.pep_pf?.length ?? 0} vínculo(s) PEP na base — ver Resultados da Pesquisa para todos.`}
+              >
+                {cargoOrgao.statusMandato === "ativo" ? "🟢 Mandato ativo" :
+                 cargoOrgao.statusMandato === "carencia" ? "🟡 Em carência PLD" : "⚪ Mandato encerrado"}
+                {cargoOrgao.dataFim ? ` (até ${cargoOrgao.dataFim})` : ""}
+              </Badge>
+            )}
             {tipoPep === "relacionado" && (
               <>
                 <span>·</span>

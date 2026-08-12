@@ -195,10 +195,70 @@ function toResultado(
     risco: hint.risco,
     link: link.url,
     similaridade_nome: "100%",
-    // Pendente APENAS quando há risco alto e o pipeline interno apontou sinal —
-    // o link em si é uma busca pública direta, não precisa de "pendente".
+    // toResultado() sempre monta um DEEP-LINK de busca (URL pré-preenchida),
+    // nunca um achado já verificado — nada aqui foi de fato confirmado. Use
+    // `pendente: true` sempre que o resumo afirmar algo (ex.: risco alto,
+    // "confirmar mandato X") em vez de reportar ausência de sinal ("nada
+    // identificado"); sem isso o card fica visualmente idêntico a um achado
+    // real da base própria (ex.: Base PEP unificada), mascarando que ninguém
+    // verificou a fonte ainda (caso real: draft d309057d, 2026-08-11).
     pendente_verificacao: hint.pendente ?? false,
   };
+}
+
+/** Parseia data no formato dd/mm/yyyy usado pela Credilink em pep_pf. */
+function parseDataBr(s: string | null | undefined): Date | null {
+  if (!s) return null;
+  const m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(s.trim());
+  if (!m) return null;
+  const d = new Date(Number(m[3]), Number(m[2]) - 1, Number(m[1]));
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+
+export type MandatoStatus = "ativo" | "carencia" | "encerrado" | "indeterminado";
+
+/**
+ * Status do mandato de UM registro pep_pf, comparando hoje com data_fim/
+ * data_fim_carencia. "Carência" (3-5 anos pós-mandato) ainda conta como PEP
+ * para fins de PLD/FT — ver README §Proteções contra erros comuns.
+ */
+export function statusMandato(p: PepPfItem): { status: MandatoStatus; label: string } {
+  const fim = parseDataBr(p.data_fim);
+  if (!fim) return { status: "indeterminado", label: "vigência não informada" };
+  const hoje = new Date();
+  if (hoje <= fim) return { status: "ativo", label: `mandato ATIVO até ${p.data_fim}` };
+  const carencia = parseDataBr(p.data_fim_carencia);
+  if (carencia && hoje <= carencia) {
+    return { status: "carencia", label: `mandato encerrado em ${p.data_fim} — em carência PLD até ${p.data_fim_carencia}` };
+  }
+  return { status: "encerrado", label: `mandato encerrado em ${p.data_fim} (fora do período de carência)` };
+}
+
+/**
+ * Entre múltiplos registros pep_pf (ex.: reeleição gera um registro por
+ * mandato), escolhe o mais relevante: o mandato ATIVO agora, se houver;
+ * senão o de data_fim mais recente. O campo `tipo` (T/R) da Credilink NÃO
+ * indica recência — o mandato vigente pode vir com `tipo: "R"` e um mandato
+ * já encerrado com `tipo: "T"` (caso real: draft d309057d, Vereador
+ * reeleito em SÃO VICENTE DE MINAS-MG, 2026-08-11).
+ */
+function registroPepPrincipal(entradas: PepPfItem[]): PepPfItem | undefined {
+  if (!entradas.length) return undefined;
+  const comMeta = entradas.map((p) => {
+    const inicio = parseDataBr(p.data_inicio);
+    const fim = parseDataBr(p.data_fim);
+    const hoje = new Date();
+    const ativoAgora = !!fim && hoje <= fim && (!inicio || hoje >= inicio);
+    return { p, fim, ativoAgora };
+  });
+  const ativos = comMeta.filter((x) => x.ativoAgora)
+    .sort((a, b) => (b.fim?.getTime() ?? 0) - (a.fim?.getTime() ?? 0));
+  if (ativos.length) return ativos[0].p;
+  const comFim = comMeta.filter((x) => x.fim)
+    .sort((a, b) => b.fim!.getTime() - a.fim!.getTime());
+  if (comFim.length) return comFim[0].p;
+  // Sem datas parseáveis em nenhum registro — mantém heurística antiga.
+  return entradas.find((p) => p.tipo === "T") || entradas[0];
 }
 
 /** PEP titular vs relacionado: TITULAR se o owner é o próprio PEP; RELACIONADO se o owner é vínculo. */
@@ -210,7 +270,7 @@ export function inferTipoPep(c: Raw): "titular" | "relacionado" {
   return isOwnerTitular ? "titular" : "relacionado";
 }
 
-/** Cargo + Órgão derivados do primeiro PEP titular vinculado (Credilink). */
+/** Cargo + Órgão derivados do registro PEP mais atual vinculado (Credilink). */
 export function inferCargoOrgao(c: Raw): {
   cargo: string;
   orgao: string;
@@ -220,9 +280,10 @@ export function inferCargoOrgao(c: Raw): {
   vinculo: string;
   dataInicio: string;
   dataFim: string;
+  statusMandato: MandatoStatus;
+  statusMandatoLabel: string;
 } {
-  const titulares = (c.pep_pf || []).filter((p) => p.tipo === "T");
-  const principal: PepPfItem | undefined = titulares[0] || c.pep_pf?.[0];
+  const principal = registroPepPrincipal(c.pep_pf || []);
   if (!principal) {
     return {
       cargo: "(sem PEP titular vinculado)",
@@ -233,6 +294,8 @@ export function inferCargoOrgao(c: Raw): {
       vinculo: "",
       dataInicio: "",
       dataFim: "",
+      statusMandato: "indeterminado",
+      statusMandatoLabel: "",
     };
   }
   // Cargo formal vem da Credilink (Descrição_Função). Fallback para perfilPepLabel.
@@ -240,6 +303,7 @@ export function inferCargoOrgao(c: Raw): {
     ? principal.cargo_formal.charAt(0).toUpperCase() + principal.cargo_formal.slice(1).toLowerCase()
     : perfilPepLabel(principal.perfil);
   const orgaoLabel = principal.orgao || `(consultar TSE/${principal.uf || c.uf})`;
+  const { status, label } = statusMandato(principal);
   return {
     cargo,
     orgao: orgaoLabel,
@@ -249,6 +313,8 @@ export function inferCargoOrgao(c: Raw): {
     vinculo: principal.ds_vinculo || "",
     dataInicio: principal.data_inicio || "",
     dataFim: principal.data_fim || "",
+    statusMandato: status,
+    statusMandatoLabel: label,
   };
 }
 
@@ -328,18 +394,26 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
   });
 
   // ===== PEP — informação REAL da base unificada =====
+  // OBS: `tipo` (T/R) da Credilink não indica qual registro é o vigente —
+  // em reeleição, o mandato ATIVO pode vir com tipo "R" e o encerrado com
+  // tipo "T". O status de mandato abaixo vem de comparar data_fim/
+  // data_fim_carencia com hoje (statusMandato), não do campo `tipo`.
   if (c.pep_pf && c.pep_pf.length > 0) {
     c.pep_pf.forEach((p, i) => {
       const tipoLabel = p.tipo === "T" ? "Titular" : p.tipo === "R" ? "Relacionado" : `Tipo ${p.tipo}`;
       const cargoLabel = perfilPepLabel(p.perfil);
-      const isOwnerTitular = (p.tipo === "T") &&
-        (p.cpf_titular || "").replace(/\D/g, "") === (c.cpf || "").replace(/\D/g, "");
+      const isOwnerTitular = (p.cpf_titular || "").replace(/\D/g, "") === (c.cpf || "").replace(/\D/g, "");
+      const { status: statusM, label: statusLabel } = statusMandato(p);
+      const statusEmoji = statusM === "ativo" ? "🟢" : statusM === "carencia" ? "🟡" : statusM === "encerrado" ? "⚪" : "";
+      const periodo = p.data_inicio || p.data_fim ? ` — mandato ${p.data_inicio || "?"}–${p.data_fim || "?"}` : "";
       r.push({
         id: uid(),
         fonte: `Base PEP unificada (registro #${i + 1})`,
         resumo: `${tipoLabel}: ${p.nome_titular} — ${cargoLabel}` +
                 (p.uf ? ` (${p.uf})` : "") +
                 (p.orgao ? ` em ${p.orgao}` : "") +
+                periodo +
+                (statusLabel ? `. ${statusEmoji} ${statusLabel.charAt(0).toUpperCase()}${statusLabel.slice(1)}` : "") +
                 (isOwnerTitular ? `. ⚠️ O próprio owner é o PEP.` : `. Owner é vínculo do PEP titular.`),
         tipo: "pep",
         risco: "alto",
@@ -349,11 +423,14 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
   }
 
   // ===== Eleitoral =====
+  // Deep-link de busca — nada foi verificado automaticamente aqui, por isso
+  // `pendente: true` (badge "Pendente verificação"), diferente dos registros
+  // "Base PEP unificada" acima, que são dado real já confirmado na base.
   const tseCand = get("TSE — Divulgação de Candidaturas");
   if (tseCand) {
     r.push(toResultado(tseCand, {
-      tipo: "pep", risco: "alto",
-      resumo: `Validar mandato/candidaturas de ${cargoOrgao.nomePEP} no TSE — bens declarados, partido, ${c.uf}.`,
+      tipo: "pep", risco: "alto", pendente: true,
+      resumo: `Confirmar mandato/candidaturas de ${cargoOrgao.nomePEP} no TSE — bens declarados, partido, ${c.uf}. Link de busca; analista deve abrir e conferir manualmente (não verificado automaticamente).`,
     }));
   }
 
