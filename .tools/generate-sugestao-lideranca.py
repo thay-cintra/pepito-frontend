@@ -44,15 +44,28 @@ def _get_parecer_analista(draft_id: str) -> str:
     entry = _PARECERES_REAL_CACHE.get(draft_id, {})
     comentarios = entry.get("comentarios", [])
     # Prioriza ENVIAR_LIDERANCA_PLD, depois qualquer comentário
+    #
+    # LIMITE GENEROSO (4000/2000, não 600/400): o corte anterior de 600 chars
+    # cortava o parecer da analista NO MEIO da frase, antes de qualquer achado
+    # concreto — o texto do analista segue o padrão "vínculo/PEP primeiro,
+    # achados reputacionais depois", então truncar em 600 chars descartava
+    # sistematicamente o achado (número de processo, artigo do CP, etc.) e
+    # entregava ao LLM só o preâmbulo. Caso real: draft c0270b8a (2026-08-12)
+    # — parecer de 1540 chars citando processo ativo de tentativa de
+    # homicídio (verificado via JusBrasil consulta pro); o corte em 600
+    # eliminava a citação inteira, e o LLM concluiu "dados não sustentam
+    # reprovação" sem nunca ter recebido o achado. Levantamento: 54/168
+    # (32%) dos pareceres ENVIAR_LIDERANCA_PLD já excediam 600 chars — não
+    # era caso isolado. Novo limite (4000) cobre com folga o maior parecer
+    # real observado (1540 chars); ver INCIDENT-REPORT-2026-08-12-MANDATO-PEP.md.
     for c in comentarios:
         if c.get("acao") == "ENVIAR_LIDERANCA_PLD" and c.get("text"):
             text = c["text"]
-            # Trunca para não sobrecarregar o contexto
-            return text[:600] + ("…" if len(text) > 600 else "")
+            return text[:4000] + ("…" if len(text) > 4000 else "")
     for c in comentarios:
         if c.get("text"):
             text = c["text"]
-            return text[:400] + ("…" if len(text) > 400 else "")
+            return text[:2000] + ("…" if len(text) > 2000 else "")
     return ""
 
 
@@ -149,6 +162,8 @@ SYSTEM_PROMPT = """Você é o Líder de Compliance/PLD da Cora na Mesa de Decis�
 REGRAS DE DECISÃO:
 (1) APROVADO — vínculo PEP sem achado adverso e sem fator de risco adicional sensível. É o DESFECHO PADRÃO quando não há evidência material nem fator agravante — vínculo/mandato PEP ativo, isoladamente, NUNCA é motivo suficiente para nada além de aprovação.
 (2) REPROVADO — achado factual concreto: processo criminal ativo, mídia adversa confirmada, sanção CEIS/CGU, contrato público via inexigibilidade com ente do PEP. Não reprovar apenas por suspeita estrutural.
+
+PESO DO PARECER DO ANALISTA (regra crítica, violada em caso real — draft c0270b8a, 2026-08-12): os campos automatizados internos (processosjudiciais_pf/pj, mídia) são uma varredura superficial por nome/CNPJ e frequentemente NÃO capturam o que a pesquisa manual do analista encontrou — "processos judiciais não encontrados" nesses campos NÃO significa que o achado do analista é inválido. Se o parecer do analista citar um achado ESPECÍFICO E VERIFICÁVEL (número de processo, tribunal, artigo do Código Penal, data, natureza do crime), trate-o como achado factual concreto para fins da regra (2)/(3) — NUNCA escreva "os dados fornecidos não sustentam esse desfecho" só porque os campos automatizados vieram vazios. Só desconsidere um achado citado pelo analista se houver razão concreta para duvidar dele no material fornecido (ex.: o próprio analista relata homônimo não confirmado, ou processo textualmente arquivado/extinto sem repercussão). Na dúvida sobre a gravidade, sinalize a divergência para o revisor humano em vez de descartar o achado.
 (3) MONITORAMENTO REFORÇADO — exige, além do vínculo PEP, pelo menos UM fator de risco adicional sensível e concreto: (a) mídia ou processo identificado mas não conclusivo/insuficiente para reprovação; (b) homônimo não descartado; (c) empresa no mesmo município/UF de atuação do PEP E em setor com interface relevante com o poder público; (d) empresa aberta durante o mandato do PEP em setor sensível. NUNCA é o desfecho default só por o vínculo/mandato estar ativo — na ausência desses fatores, a resposta correta é APROVADO.
 (4) FALSO POSITIVO — PEP não confirmado ou erro de cadastro.
 
