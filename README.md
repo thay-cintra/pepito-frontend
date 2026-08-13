@@ -210,19 +210,20 @@ server.cjs                    — Express: HTTPS, SSO Google, /api/analises
 
 ### Supervisor Agent (`.tools/supervisor-agent.py`)
 
-Monitora **7 componentes críticos** da aplicação, 2x por dia (6h e 14h).
+Monitora **10 verificações** da aplicação, 2x por dia (6h e 14h) — lista completa em `executar_todas_verificacoes()`. Destaques:
 
 | Verificação | Descrição | Status |
 |---|---|---|
 | Servidor Node | Porta 4173 respondendo | 🔴 CRÍTICO |
 | Fila PLD | /api/queue com dados | 🔴 CRÍTICO |
-| Build dist/ | index.html presente | 🔴 CRÍTICO |
+| Build dist/ | index.html presente e buildado há <24h | 🔴 CRÍTICO |
+| **Sugestão IA — cobertura** | Todo `draft_id` da fila tem parecer **no JSON-fonte E presente no bundle publicado** (`dist/assets/index-*.js`) — pega tanto falha de geração quanto build desatardo sem os pareceres mais recentes | 🟠 ALTO |
 | Pareceres | Integridade JSON | 🟠 ALTO |
 | Análises | Arquivo íntegro | 🟠 ALTO |
 | Git | Sem mudanças pendentes | 🔵 BAIXO |
 | TypeScript | Sem erros de tipo | 🟠 ALTO |
 
-**Alertas:** Enviados ao Slack por nível (🔴🟠🟡🔵)
+**Alertas:** Enviados ao Slack (canal `#pepito-supervisor`, via `SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR`) por nível (🔴🟠🟡🔵)
 
 ### Integrity Guard (`.tools/integrity-guard.py`)
 
@@ -709,5 +710,5 @@ crontab -l | grep "^0 [0-9]"
 
 ---
 
-**Última atualização:** 2026-08-11  
+**Última atualização:** 2026-08-13  
 **Status:** ✅ Production Ready
