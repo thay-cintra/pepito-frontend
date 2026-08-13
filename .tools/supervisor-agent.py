@@ -363,10 +363,21 @@ class SupervisorAgent:
 
     def check_cobertura_pareceres_sugestao(self) -> bool:
         """
-        Verifica se todo draft_id da fila tem Parecer Sugestão IA gerado
-        (pareceres-sugestao.json p/ CHECK_ANALISTA, pareceres-lideranca.json
-        p/ CHECK_LIDERANCA). Cobre falha silenciosa dos geradores de sugestão
-        e bundle desatualizado sem os pareceres mais recentes.
+        Verifica se todo draft_id da fila tem Parecer Sugestão IA (a) no
+        JSON-fonte E (b) efetivamente presente no bundle publicado (dist/).
+
+        Cobre duas causas distintas, já vistas em produção (ver
+        INCIDENT-REPORT-2026-08-10-SUGESTAO-IA-AUSENTE.md e
+        INCIDENT-REPORT-2026-08-12-*.md):
+          1. Falha silenciosa do gerador — draft_id sem `text` no JSON.
+          2. Bundle desatualizado — o JSON TEM o texto (geração OK), mas o
+             dist/ atual foi buildado ANTES dessa geração; como
+             registration-enrich.ts importa esses JSONs estaticamente
+             (embutidos em build-time), o draft_id fica ausente do bundle
+             até o próximo `npm run build`. Esta é a causa mais comum e a
+             que o check antigo (só olhava o JSON) nunca detectava — caso
+             real: draft 038b2ffa (2026-08-13), reportado pelo analista
+             antes do supervisor ter percebido.
         """
         try:
             data_dir = ROOT / "pepito-frontend" / "src" / "data"
@@ -377,32 +388,63 @@ class SupervisorAgent:
             sugestao = json.loads((data_dir / "pareceres-sugestao.json").read_text())
             lideranca = json.loads((data_dir / "pareceres-lideranca.json").read_text())
 
-            faltando_analista = [
-                i["draft_id"] for i in items
-                if i.get("bucket") == "CHECK_ANALISTA"
-                and not (sugestao.get(i["draft_id"]) or {}).get("text")
+            analista_ids = [i["draft_id"] for i in items if i.get("bucket") == "CHECK_ANALISTA"]
+            lideranca_ids = [i["draft_id"] for i in items if i.get("bucket") == "CHECK_LIDERANCA"]
+
+            faltando_dados_analista = [
+                did for did in analista_ids if not (sugestao.get(did) or {}).get("text")
             ]
-            faltando_lideranca = [
-                i["draft_id"] for i in items
-                if i.get("bucket") == "CHECK_LIDERANCA"
-                and not (lideranca.get(i["draft_id"]) or {}).get("text")
+            faltando_dados_lideranca = [
+                did for did in lideranca_ids if not (lideranca.get(did) or {}).get("text")
             ]
 
-            if faltando_analista or faltando_lideranca:
+            if faltando_dados_analista or faltando_dados_lideranca:
                 self.adicionar_alerta(
                     Alert(
                         Alert.ALTO,
-                        "Parecer Sugestão IA ausente em casos da fila",
-                        f"CHECK_ANALISTA sem sugestão: {len(faltando_analista)} "
-                        f"({faltando_analista[:5]}). CHECK_LIDERANCA sem sugestão: "
-                        f"{len(faltando_lideranca)} ({faltando_lideranca[:5]}). "
+                        "Parecer Sugestão IA ausente no JSON-fonte",
+                        f"CHECK_ANALISTA sem sugestão: {len(faltando_dados_analista)} "
+                        f"({faltando_dados_analista[:5]}). CHECK_LIDERANCA sem sugestão: "
+                        f"{len(faltando_dados_lideranca)} ({faltando_dados_lideranca[:5]}). "
                         "Rodar generate-sugestao-parecer.py / generate-sugestao-lideranca.py.",
                         "Parecer Sugestão IA",
                     )
                 )
                 self.checks_falhados += 1
-                return False
 
+            # Passo 2: dos que TÊM dado no JSON, quantos NÃO chegaram ao bundle?
+            faltando_bundle: list[str] = []
+            assets_dir = ROOT / "pepito-frontend" / "dist" / "assets"
+            bundles = sorted(
+                assets_dir.glob("index-*.js"),
+                key=lambda p: p.stat().st_mtime,
+                reverse=True,
+            ) if assets_dir.exists() else []
+
+            if bundles:
+                bundle_text = bundles[0].read_text(encoding="utf-8", errors="ignore")
+                ids_com_dado = (
+                    [did for did in analista_ids if (sugestao.get(did) or {}).get("text")]
+                    + [did for did in lideranca_ids if (lideranca.get(did) or {}).get("text")]
+                )
+                faltando_bundle = [did for did in ids_com_dado if did not in bundle_text]
+
+            if faltando_bundle:
+                self.adicionar_alerta(
+                    Alert(
+                        Alert.ALTO,
+                        "Parecer Sugestão IA gerada mas ausente do bundle publicado",
+                        f"{len(faltando_bundle)} caso(s) já têm sugestão no JSON, mas o "
+                        f"bundle atual (dist/) foi buildado antes dessa geração — "
+                        f"invisível no app publicado até novo build: {faltando_bundle[:5]}. "
+                        "Rodar `npm run build` + reiniciar o servidor.",
+                        "Parecer Sugestão IA",
+                    )
+                )
+                self.checks_falhados += 1
+
+            if faltando_dados_analista or faltando_dados_lideranca or faltando_bundle:
+                return False
             return True
         except Exception as e:
             self.checks_executados += 1
