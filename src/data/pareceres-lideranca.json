@@ -29,8 +29,8 @@
   },
   "bda5cef7-6c02-48f5-9f09-7c0c7656f842": {
     "text": "Decisão: CADASTRO APROVADO\nCNPJ: 34.728.869/0001-79 — DIOGO SCHMITZ\n\nO analista recomenda aprovação com base na ausência de desabonos — concordo parcialmente, porém o desfecho adequado é monitoramento reforçado, dado o vínculo PEP ativo. Diogo Schmitz é filho de Marlene Walber Schmitz, Secretária Executiva do RS (mandato 01/01/2023–01/01/2030); a empresa, constituída em 2019, é pré-existente ao mandato, e atua em organização de eventos — setor de baixo risco direto para corrupção pública. Os achados M7/M7b referem-se a contexto regional genérico (Operação Lamaçal/Lajeado e repasses federais a Salvador do Sul) sem qualquer vínculo nominal ao owner ou ao PEP, não configurando achado adverso material; a confirmação formal do mandato de Marlene não foi localizada em fontes públicas, o que exige atenção continuada. Ausência total de sanções CEIS/CGU, processos judiciais ou mídia adversa nominais para a empresa, seu titular ou o PEP.\n\nRecomendo a APROVAÇÃO do cadastro. O caso segue fluxo PLD padrão de derivação PEP, conforme Circular BACEN 3.978/2020.978/2020.",
-    "resumo": "MONITORAMENTO — Filho de Secretário Executivo PEP ativo; empresa estabelecida; sem desabonos. Órgão do PEP não identificado; monitorar contratos com entes públicos.",
-    "decisao": "monitoramento",
+    "resumo": "APROVAR — O analista recomenda aprovação com base na ausência de desabonos — concordo parcialmente, porém o desfecho adequado é monitoramento reforçado, dado o vínculo PEP ativo. Diogo Schmitz é filho de Marlene Walber Schmitz, Secretária Executiva do RS (mandato 01/01/2023–01/01/2030); a ",
+    "decisao": "aprovado",
     "model": "manual-revisao-2026-05-20",
     "generated_at": "2026-05-20T00:00:00Z"
   },
@@ -183,8 +183,8 @@
   },
   "1a38bc16-bd1e-42f5-9e4d-f011dc08850f": {
     "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 33.374.865/0001-77 — ESPACO LUGAR DE FALA LTDA\n\nO analista recomenda aprovação — concordo parcialmente, mas elevo para monitoramento reforçado em razão do mandato ativo do próprio titular como PEP.\nUállafe de Oliveira Silva é o owner e PEP titular, exercendo mandato ativo de Vereador em Tanguá/RJ (01/01/2025–31/12/2029); a empresa foi constituída em 2019, sendo preexistente ao mandato. A mídia adversa identificada pelo pipeline (Correio Braziliense, 2026-01-05) refere-se a declaração de Nikolas Rodrigues sobre \"lugar de fala\" — o match é coincidência de expressão com a razão social, sem qualquer relação com o titular ou a empresa; descartado como falso positivo. Ausência total de processos, sanções ou mídia adversa real para o titular ou a PJ; atividade de psicologia/psicanálise não apresenta interface relevante com o cargo público, mitigando risco de conflito de interesses.\nRecomendo APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica durante a vigência do mandato, conforme Circular BACEN 3.978/2020.",
-    "resumo": "FALSO POSITIVO — O analista recomenda aprovação — concordo parcialmente, mas elevo para monitoramento reforçado em razão do mandato ativo do próprio titular como PEP.",
-    "decisao": "falso_positivo",
+    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação — concordo parcialmente, mas elevo para monitoramento reforçado em razão do mandato ativo do próprio titular como PEP.",
+    "decisao": "monitoramento",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-08-13T13:48:53Z"
   },

@@ -413,7 +413,24 @@ def gerar(case: dict, findings: list, max_retries: int = 3) -> str:
 
 
 def detect_decisao(text: str) -> str:
-    t = text.upper()
+    """Extrai a decisão a partir da linha "Decisão: ..." do template (ver
+    FORMATO no SYSTEM_PROMPT) — NUNCA faz keyword-match no corpo inteiro do
+    texto, porque o corpo pode citar as mesmas palavras se referindo a um
+    achado específico, não à decisão do caso. Bug real: draft 1a38bc16
+    (2026-08-13) tinha "Decisão: CADASTRO APROVADO SOB MONITORAMENTO
+    REFORÇADO" mas foi classificado como "falso_positivo" porque o corpo
+    dizia "...descartado como falso positivo" sobre uma notícia irrelevante
+    (match de frase genérica) — nada a ver com a decisão do caso.
+    """
+    linha_decisao = ""
+    for linha in text.split("\n"):
+        cabecalho = linha.strip().upper()
+        if cabecalho.startswith("DECISÃO:") or cabecalho.startswith("DECISAO:"):
+            linha_decisao = cabecalho
+            break
+    # Fallback pro texto inteiro só se o template não tiver sido seguido
+    # (não deveria acontecer, mas não queremos um caso sem decisão nenhuma).
+    t = linha_decisao or text.upper()
     if "FALSO POSITIVO" in t:
         return "falso_positivo"
     if "REPROVADO" in t and "APROVADO SOB" not in t:
