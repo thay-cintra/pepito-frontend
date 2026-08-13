@@ -157,6 +157,88 @@ def _registro_pep_principal(pep_pf: list) -> dict:
     return next((p for p in pep_pf if p.get("tipo") == "T"), pep_pf[0])
 
 
+def _resumir_campo_pipeline(raw, max_itens: int = 3) -> str:
+    """Resume pj_midianegativas/pf_midianegativas/processosjudiciais_pj/pf —
+    campos JSON estruturados do pipeline Credilink/midiamonitor — em texto
+    legível para o prompt do LLM.
+
+    Substitui o truncamento bruto por caractere (`campo[:120]`), que cortava
+    o JSON no meio e escondia achados reais mesmo quando existiam. Casos
+    reais que motivaram o fix (2026-08-12):
+      - PEP Carla Suzi Emerenciano: notícia de CONDENAÇÃO por facilitar
+        contratação de parente (nepotismo/improbidade) — 100% invisível ao
+        LLM porque o JSON de mídia (1979 chars) era cortado em 120.
+      - Titular Fábio Callado Castelo Branco: agregado "Desabonadora" com
+        38 ocorrências incluindo Corrupção/Criminal/Prisão/Improbidade
+        Administrativa — também cortado antes de qualquer conteúdo útil.
+      - Titular Marcos Antônio dos Santos: notícias mencionavam tráfico/PCC
+        associadas ao nome — investigação via JusBrasil consulta pro
+        confirmou 0 processos para o CPF real (homônimo comum, PB vs. BA).
+        Por isso o resumo preserva o sinal de `risco_homonimo` do próprio
+        pipeline — a IA precisa VER o achado E o alerta de homônimo juntos,
+        não nenhum dos dois.
+    Ver .tools/INCIDENT-REPORT-2026-08-12-TRUNCAMENTO-CAMPOS-PIPELINE.md.
+    """
+    t = (raw or "").strip().strip('"')
+    if not t:
+        return "(sem)"
+    low = t.lower()
+    if "não encontrad" in low or "nao encontrad" in low:
+        return "nada encontrado"
+    try:
+        parsed = json.loads(t)
+    except Exception:
+        return t[:800] + ("…" if len(t) > 800 else "")
+
+    if isinstance(parsed, dict) and "noticias" in parsed:
+        homonimo = (parsed.get("consulta", {}) or {}).get("risco_homonimo", {}) or {}
+        noticias = parsed.get("noticias") or []
+        ordem_risco = {"Alto": 0, "Médio": 1, "Baixo": 2}
+        noticias_ord = sorted(
+            noticias,
+            key=lambda n: (
+                ordem_risco.get((n.get("analise") or {}).get("nivel_risco"), 3),
+                -((n.get("analise") or {}).get("confianca", 0)),
+            ),
+        )
+        partes = []
+        if homonimo.get("nivel") and homonimo.get("nivel") != "BAIXO":
+            partes.append(f"[risco homônimo {homonimo['nivel']}: {', '.join(homonimo.get('motivos', []))}]")
+        for n in noticias_ord[:max_itens]:
+            a = n.get("analise") or {}
+            partes.append(
+                f"\"{n.get('titulo','')}\" ({(n.get('fonte') or {}).get('nome','')}, {(n.get('data_publicacao') or '')[:10]}) "
+                f"— match {a.get('match_type','')}, confiança {a.get('confianca','')}%, "
+                f"risco {a.get('nivel_risco','')}, menção {a.get('tipo_mencao','')}: "
+                f"{(n.get('resumo') or '')[:200]}"
+            )
+        return " | ".join(partes) if partes else "sem menções confirmadas"
+
+    if isinstance(parsed, dict) and "TipoMidia" in parsed:
+        return f"{parsed.get('TipoMidia')}: {parsed.get('Descricao','')} (Quantidade: {parsed.get('Quantidade','?')})"
+
+    if isinstance(parsed, dict) and "QuantidadeTotal" in parsed:
+        campos = {k: v for k, v in parsed.items() if k not in ("Partes",) and v}
+        return "; ".join(f"{k}: {v}" for k, v in campos.items())
+
+    if isinstance(parsed, list):
+        def _score(p):
+            status_ativo = 0 if str(p.get("Status", "")).upper() == "ATIVO" else 1
+            tipo = f"{p.get('Tipo','')} {p.get('Assunto','')}".upper()
+            eh_civel_trab = any(k in tipo for k in ("CIVEL", "TRABALHISTA", "FAZENDA"))
+            return (status_ativo, 0 if not eh_civel_trab else 1)
+        procs_ord = sorted(parsed, key=_score)
+        itens = [
+            f"{p.get('Numero','')} ({p.get('Tribunal','')}, {p.get('Tipo') or 'natureza não informada'}): "
+            f"{p.get('Assunto','')} — {p.get('Status','')}"
+            for p in procs_ord[:max_itens]
+        ]
+        sufixo = f" (+{len(parsed) - max_itens} outro(s))" if len(parsed) > max_itens else ""
+        return "; ".join(itens) + sufixo
+
+    return t[:800] + ("…" if len(t) > 800 else "")
+
+
 SYSTEM_PROMPT = """Você é o Líder de Compliance/PLD da Cora na Mesa de Decisão (2ª Camada). O analista já fez a diligência — seu papel é validar ou divergir da recomendação dele com base nos fatos que ele levantou.
 
 REGRAS DE DECISÃO:
@@ -164,6 +246,8 @@ REGRAS DE DECISÃO:
 (2) REPROVADO — achado factual concreto: processo criminal ativo, mídia adversa confirmada, sanção CEIS/CGU, contrato público via inexigibilidade com ente do PEP. Não reprovar apenas por suspeita estrutural.
 
 PESO DO PARECER DO ANALISTA (regra crítica, violada em caso real — draft c0270b8a, 2026-08-12): os campos automatizados internos (processosjudiciais_pf/pj, mídia) são uma varredura superficial por nome/CNPJ e frequentemente NÃO capturam o que a pesquisa manual do analista encontrou — "processos judiciais não encontrados" nesses campos NÃO significa que o achado do analista é inválido. Se o parecer do analista citar um achado ESPECÍFICO E VERIFICÁVEL (número de processo, tribunal, artigo do Código Penal, data, natureza do crime), trate-o como achado factual concreto para fins da regra (2)/(3) — NUNCA escreva "os dados fornecidos não sustentam esse desfecho" só porque os campos automatizados vieram vazios. Só desconsidere um achado citado pelo analista se houver razão concreta para duvidar dele no material fornecido (ex.: o próprio analista relata homônimo não confirmado, ou processo textualmente arquivado/extinto sem repercussão). Na dúvida sobre a gravidade, sinalize a divergência para o revisor humano em vez de descartar o achado.
+
+ACHADO DO PIPELINE INTERNO (mídia/processos abaixo, quando o analista não repetiu o mesmo achado no parecer): NUNCA é "nada identificado" por padrão — os campos já vêm resumidos com o achado mais relevante, quando existe. Se vier preenchido com conteúdo concreto, CITE-O explicitamente. Se vier com "[risco homônimo ALTO/MEDIO: ...]", trate como NÃO CONFIRMADO — mencione a suspeita e a necessidade de confirmação de identidade, mas NÃO escale para REPROVAÇÃO só por isso (nome comum ≠ pessoa confirmada). Achado nível "Alto" sem alerta de homônimo, especialmente citando Corrupção/Criminal/Prisão/Improbidade/Homicídio/Tráfico, é achado factual concreto para fins da regra (2)/(3).
 (3) MONITORAMENTO REFORÇADO — exige, além do vínculo PEP, pelo menos UM fator de risco adicional sensível e concreto: (a) mídia ou processo identificado mas não conclusivo/insuficiente para reprovação; (b) homônimo não descartado; (c) empresa no mesmo município/UF de atuação do PEP E em setor com interface relevante com o poder público; (d) empresa aberta durante o mandato do PEP em setor sensível. NUNCA é o desfecho default só por o vínculo/mandato estar ativo — na ausência desses fatores, a resposta correta é APROVADO.
 (4) FALSO POSITIVO — PEP não confirmado ou erro de cadastro.
 
@@ -259,10 +343,10 @@ def montar_user_prompt(case: dict, findings: list) -> str:
             for f in sorted_f
         )
 
-    pj_midia = (case.get("pj_midianegativas") or "").replace('"', "").strip()
-    pf_midia = (case.get("pf_midianegativas") or "").replace('"', "").strip()
-    pj_proc = (case.get("processosjudiciais_pj") or "").replace('"', "").strip()
-    pf_proc = (case.get("processosjudiciais_pf") or "").replace('"', "").strip()
+    pj_midia = _resumir_campo_pipeline(case.get("pj_midianegativas"))
+    pf_midia = _resumir_campo_pipeline(case.get("pf_midianegativas"))
+    pj_proc = _resumir_campo_pipeline(case.get("processosjudiciais_pj"))
+    pf_proc = _resumir_campo_pipeline(case.get("processosjudiciais_pf"))
 
     cnae_clean = case.get("cnae", "").split(" - ")[-1] if " - " in case.get("cnae", "") else case.get("cnae", "")
 
@@ -289,8 +373,10 @@ ACHADOS EXTERNOS:
 {findings_summary or '  (nenhum achado externo material)'}
 
 PIPELINE INTERNO:
-- Mídia adversa PJ/PF: {pj_midia[:120] or '(sem)'} / {pf_midia[:120] or '(sem)'}
-- Processos PJ/PF: {pj_proc[:120] or '(sem)'} / {pf_proc[:120] or '(sem)'}
+- Mídia adversa PJ: {pj_midia}
+- Mídia adversa PF: {pf_midia}
+- Processos PJ: {pj_proc}
+- Processos PF: {pf_proc}
 
 PARECER DO ANALISTA (insumo da 1ª Camada):
 {_get_parecer_analista(case.get('draft_id', '')) or '(sem parecer do analista disponível)'}
