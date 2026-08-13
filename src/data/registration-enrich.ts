@@ -145,14 +145,27 @@ function extrairResumoParecer(texto: string, decisao: StatusAnalise): string {
 
 /**
  * Detecta a decisão sugerida pela IA a partir do texto do rascunho do
- * ANALISTA (estilo Josinalva). Reproduz a heurística aplicada na geração:
- * busca por verbos finais e expressões-chave do parecer.
+ * ANALISTA (estilo Josinalva). O template pede a recomendação na frase
+ * final ("Considerando [...], sugerimos [...]") — busca só nela, nunca no
+ * texto inteiro: uma palavra-chave usada no corpo em outro sentido (ex.:
+ * "recomendação de que os dados do PEP sejam complementados... para fins
+ * de monitoramento contínuo" não é "Monitoramento Reforçado"; "descartado
+ * como falso positivo" sobre um achado de mídia não é o desfecho do caso)
+ * pode colidir com a busca ingênua no texto todo e inverter a decisão real.
+ * Bug real: draft 036e1466 (2026-08-13) — frase final dizia claramente
+ * "sugerindo a APROVAÇÃO", mas `t.includes("MONITORAMENTO")` (fallback
+ * solto que anulava o regex mais preciso logo antes dele) classificava
+ * como monitoramento por causa de "monitoramento contínuo" alhures no
+ * texto. Mesma causa raiz do bug em detect_decisao() (Python, Liderança) —
+ * ver .tools/generate-sugestao-lideranca.py e
+ * INCIDENT-REPORT-2026-08-12-TRUNCAMENTO-CAMPOS-PIPELINE.md.
  */
 function decisaoFromTextoAnalista(text: string): StatusAnalise {
-  const t = text.toUpperCase();
+  const frases = text.split(/(?<=[.!?])\s+/).filter(Boolean);
+  const t = (frases[frases.length - 1] || text).toUpperCase();
   if (t.includes("FALSO POSITIVO")) return "falso_positivo";
   if (/(N[ÃA]O\s+APROVA|REPROVA|N[ÃA]O\s+TEMOS\s+OBJE.*REPROVA|RECUSA)/.test(t)) return "reprovado";
-  if (/MONITORAMENTO\s+REFOR/.test(t) || t.includes("MONITORAMENTO")) return "monitoramento";
+  if (/MONITORAMENTO\s+REFOR/.test(t)) return "monitoramento";
   if (t.includes("APROVA")) return "aprovado";
   return "monitoramento";
 }
