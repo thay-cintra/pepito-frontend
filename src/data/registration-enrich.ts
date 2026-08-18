@@ -159,6 +159,19 @@ function extrairResumoParecer(texto: string, decisao: StatusAnalise): string {
  * texto. Mesma causa raiz do bug em detect_decisao() (Python, Liderança) —
  * ver .tools/generate-sugestao-lideranca.py e
  * INCIDENT-REPORT-2026-08-12-TRUNCAMENTO-CAMPOS-PIPELINE.md.
+ *
+ * NOTA: quando a frase final não conclui em nenhuma das 3 recomendações
+ * exigidas pelo SYSTEM_PROMPT (APROVAÇÃO / MONITORAMENTO REFORÇADO /
+ * REPROVAÇÃO) — ex.: drafts 719f82b4/e59f5e1a, cuja frase final pede
+ * diligência complementar por dados do PEP incompletos em vez de decidir —
+ * o texto está fora do contrato do prompt. Cair no fallback estrutural
+ * (`recomendacaoSugerida`) foi avaliado e descartado: para esses 2 casos
+ * ele decide "falso_positivo" (porque o `pep_pf` estruturado está vazio),
+ * o que contradiz o próprio texto da IA (que registra um vínculo PEP via
+ * Credilink só com dados incompletos) — pior que o default atual. Mantido
+ * "monitoramento" como default conservador enquanto isso não é resolvido
+ * na origem (regenerar o parecer / SYSTEM_PROMPT sem contemplar esse
+ * cenário); ver INCIDENT-REPORT-2026-08-18-SUGESTAO-SEM-DECISAO.md.
  */
 function decisaoFromTextoAnalista(text: string): StatusAnalise {
   const frases = text.split(/(?<=[.!?])\s+/).filter(Boolean);
@@ -166,7 +179,12 @@ function decisaoFromTextoAnalista(text: string): StatusAnalise {
   if (t.includes("FALSO POSITIVO")) return "falso_positivo";
   if (/(N[ÃA]O\s+APROVA|REPROVA|N[ÃA]O\s+TEMOS\s+OBJE.*REPROVA|RECUSA)/.test(t)) return "reprovado";
   if (/MONITORAMENTO\s+REFOR/.test(t)) return "monitoramento";
-  if (t.includes("APROVA")) return "aprovado";
+  // "Não temos objeções"/"sem objeções" é o mesmo desfecho de APROVAÇÃO no
+  // estilo do template (ver EXEMPLO no SYSTEM_PROMPT), mesmo quando a frase
+  // final não chega a repetir a palavra "APROVA" por extenso. Bug real:
+  // draft f2a4b186 — "...não temos objeções ao início do relacionamento."
+  // caía no default "monitoramento" por não conter "APROVA".
+  if (t.includes("APROVA") || /N[ÃA]O\s+TEMOS\s+OBJE|SEM\s+OBJE[ÇC][ÃA]O/.test(t)) return "aprovado";
   return "monitoramento";
 }
 
