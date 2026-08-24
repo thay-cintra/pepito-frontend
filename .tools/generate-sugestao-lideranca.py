@@ -70,19 +70,39 @@ def _get_parecer_analista(draft_id: str) -> str:
 
 
 def _gerar_resumo(texto: str, decisao: str) -> str:
-    """Extrai 1-2 frases centrais do parecer como resumo sucinto."""
+    """Extrai 1-2 frases centrais do parecer como resumo sucinto.
+
+    Corta na fronteira de frase (". "), nunca no meio de uma palavra/número.
+    Bug real (2026-08-24): o corte bruto `body[0][:280]` cortava sempre em
+    280 chars exatos sem olhar pra onde caía — "...durante o mandato at"
+    (ativo), "...constituída em 201" (2013), "...Processo n.º
+    5208402-18.2025.8.13." (faltava ".0024)") — sem "…" indicando corte,
+    parecendo texto corrompido pra quem revisa. Mesma lógica de fronteira de
+    frase já existe no lado TypeScript (`extrairResumoParecer` em
+    registration-enrich.ts, resolvido antes) — replicada aqui. Ver
+    INCIDENT-REPORT-2026-08-24-RESUMO-TRUNCADO.md.
+    """
     lines = [l.strip() for l in texto.split("\n") if l.strip()]
     body = [l for l in lines if not l.startswith("Decisão:") and not l.startswith("CNPJ:")]
-    if not body:
-        return ""
-    first = body[0][:280]
     labels = {
         "reprovado": "REPROVAR",
         "monitoramento": "APROVAR com Diligência Reforçada",
         "aprovado": "APROVAR",
         "falso_positivo": "FALSO POSITIVO",
     }
-    return f"{labels.get(decisao, 'REVISAR')} — {first}"
+    if not body:
+        return ""
+    prefixo = labels.get(decisao, "REVISAR")
+
+    paragrafo = body[0]
+    first_dot = paragrafo.find(". ")
+    if 20 < first_dot < 200:
+        frase_curta = paragrafo[: first_dot + 1]
+    else:
+        frase_curta = paragrafo[:180]
+    if not frase_curta.endswith("."):
+        frase_curta += "…"
+    return f"{prefixo} — {frase_curta}"
 
 client = OpenAI(
     api_key=os.environ["LITELLM_API_KEY"],
