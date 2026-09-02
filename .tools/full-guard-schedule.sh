@@ -13,11 +13,18 @@ LOG="${ROOT}/pepito-frontend/.tools/full-guard.log"
 
   cd "${ROOT}/pepito-frontend"
 
-  # Carrega variáveis de ambiente
+  # Carrega variáveis de ambiente — parser defensivo, NÃO usa `source`.
+  # O .env raiz recebe blocos de credenciais AWS SSO injetados por outra
+  # ferramenta, incluindo cabeçalhos estilo INI ("[perfil]") que não são
+  # bash válido. Sob `set -e`, `source` nessas linhas abortava o script
+  # inteiro antes de rodar Integrity Guard/Supervisor (silencioso desde
+  # 16/07 — só aparecia como "command not found" no log). Só processa
+  # linhas KEY=VALUE (com ou sem "export"); ignora o resto.
   if [ -f "${ROOT}/.env" ]; then
-    set -a
-    source "${ROOT}/.env"
-    set +a
+    while IFS= read -r line || [ -n "$line" ]; do
+      [[ "$line" =~ ^[[:space:]]*(export[[:space:]]+)?([A-Za-z_][A-Za-z0-9_]*)=(.*)$ ]] || continue
+      export "${BASH_REMATCH[2]}=${BASH_REMATCH[3]}"
+    done < "${ROOT}/.env"
   fi
 
   # Ativa venv se existir

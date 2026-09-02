@@ -261,7 +261,15 @@ class IntegrityGuard:
             from dotenv import load_dotenv
 
             load_dotenv(Path("/Users/thay/Projetos Thay/.env"))
-            webhook_url = os.getenv("SLACK_WEBHOOK_URL", "")
+            # IMPORTANTE: usar a variável dedicada, não a genérica SLACK_WEBHOOK_URL —
+            # o .env raiz tem essa chave repetida em vários blocos (midiamonitor_pld,
+            # morning-call, pepito-supervisor, giro PCC/CV) e dotenv mantém o último
+            # valor parseado no arquivo, que hoje pertence ao bloco do Giro PCC/CV
+            # (canal #midias-adversas). Usar a genérica aqui envia o alerta de
+            # integridade de pareceres para o canal errado. Mesmo bug já corrigido
+            # no Supervisor Agent em 2026-07-15; propagado para cá em 2026-08-06
+            # depois que o alerta de hoje foi parar em #midias-adversas.
+            webhook_url = os.getenv("SLACK_WEBHOOK_URL_PEPITO_INTEGRITY", "")
 
             if not webhook_url:
                 return
