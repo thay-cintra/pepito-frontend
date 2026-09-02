@@ -80,6 +80,29 @@ export function getComentariosReais(draftId: string): RealComentario[] {
   return [];
 }
 
+/**
+ * E-mail do analista que fez a 1ª camada, recuperado do comentário de parecer
+ * real do Retool — usado como fallback para `Analise.analistaEmail`, que
+ * ficou vazio em todo o histórico anterior à captura desse campo (só passou
+ * a ser preenchido nas análises criadas depois da mudança).
+ * Prioriza o comentário de envio à Mesa (ENVIAR_LIDERANCA_PLD, o parecer que
+ * o analista redige ao concluir a 1ª camada); na ausência dele, cai para o
+ * primeiro comentário do tipo "parecer" e, por último, o comentário mais
+ * antigo do caso.
+ */
+export function getAnalistaInicial(draftId: string): string | undefined {
+  const comentarios = getComentariosReais(draftId);
+  if (comentarios.length === 0) return undefined;
+  const envio = comentarios.find((c) => c.acao === "ENVIAR_LIDERANCA_PLD" && c.user_email);
+  if (envio) return envio.user_email;
+  const parecer = comentarios.find((c) => c.tipo === "parecer" && c.user_email);
+  if (parecer) return parecer.user_email;
+  const maisAntigo = [...comentarios]
+    .filter((c) => c.user_email)
+    .sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime())[0];
+  return maisAntigo?.user_email;
+}
+
 const PARECERES_SUGESTAO = pareceresSugestaoRaw as Record<string, { text?: string; model?: string; generated_at?: string }>;
 
 /**

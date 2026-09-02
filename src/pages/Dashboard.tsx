@@ -47,6 +47,7 @@ import type { Analise, StatusAnalise } from "@/types/kyc";
 import { STATUS_LABELS, StatusBadge } from "@/components/RiscoBadge";
 import { Badge } from "@/components/ui/badge";
 import pepHistoryRaw from "@/data/pep-history.json";
+import { getAnalistaInicial } from "@/data/registration-enrich";
 
 interface PepHistoryItem {
   draft_membership_id: string;
@@ -155,7 +156,7 @@ export function Dashboard() {
   const filtradas = useMemo(() => {
     return concluidas.filter((a) => {
       if (filtro !== "todos" && a.status !== filtro) return false;
-      if (busca && !`${a.cliente.razaoSocial} ${a.cliente.cnpj}`.toLowerCase().includes(busca.toLowerCase()))
+      if (busca && !`${a.cliente.razaoSocial} ${a.cliente.cnpj} ${a.draftId || ""}`.toLowerCase().includes(busca.toLowerCase()))
         return false;
       // Filtra pela data da DECISÃO FINAL (concludedAt), não pela data de abertura (createdAt)
       const dataDecisao = a.concludedAt || a.createdAt;
@@ -220,6 +221,7 @@ export function Dashboard() {
   const handleExportarCSV = () => {
     const header = [
       "id",
+      "draft_id",
       "data",
       "cnpj",
       "razao_social",
@@ -227,12 +229,14 @@ export function Dashboard() {
       "nome_pep",
       "cargo",
       "orgao",
+      "analista_email",
       "status",
       "duracao_primeira_s",
       "duracao_segunda_s",
     ];
     const rows = filtradas.map((a) => [
       a.id,
+      a.draftId ?? "",
       a.createdAt,
       a.cliente.cnpj,
       `"${a.cliente.razaoSocial.replace(/"/g, '""')}"`,
@@ -240,6 +244,7 @@ export function Dashboard() {
       `"${(a.cliente.nomePessoaVinculada || a.cliente.nomeResponsavel).replace(/"/g, '""')}"`,
       `"${(a.cliente.cargoPep || "").replace(/"/g, '""')}"`,
       `"${(a.cliente.orgaoPublico || "").replace(/"/g, '""')}"`,
+      analistaDe(a) ?? "",
       a.status,
       a.duracaoPrimeiraCamada ?? "",
       a.duracaoSegundos ?? "",
@@ -411,7 +416,7 @@ export function Dashboard() {
               <Input
                 value={busca}
                 onChange={(e) => setBusca(e.target.value)}
-                placeholder="CNPJ ou razão social"
+                placeholder="CNPJ, razão social ou Draft ID"
               />
             </div>
           </div>
@@ -434,9 +439,11 @@ export function Dashboard() {
                 <thead className="bg-muted/40 text-xs uppercase tracking-wide text-muted-foreground">
                   <tr>
                     <Th>Data decisão</Th>
+                    <Th>Draft ID</Th>
                     <Th>CNPJ</Th>
                     <Th>Razão Social</Th>
                     <Th>PEP</Th>
+                    <Th>Analista</Th>
                     <Th>Status</Th>
                     <Th>Tempo total</Th>
                     <Th align="right">Ações</Th>
@@ -446,10 +453,16 @@ export function Dashboard() {
                   {filtradas.map((a) => (
                     <tr key={a.id} className="border-t hover:bg-muted/20">
                       <Td>{formatDate(a.concludedAt || a.createdAt)}</Td>
+                      <Td className="font-mono text-[11px] text-muted-foreground max-w-[110px] truncate" title={a.draftId || undefined}>
+                        {a.draftId || "—"}
+                      </Td>
                       <Td className="font-mono text-xs">{a.cliente.cnpj}</Td>
                       <Td className="max-w-[260px] truncate">{a.cliente.razaoSocial}</Td>
                       <Td className="max-w-[200px] truncate">
                         {a.cliente.nomePessoaVinculada || a.cliente.nomeResponsavel}
+                      </Td>
+                      <Td className="max-w-[160px] truncate" title={analistaDe(a) || undefined}>
+                        {analistaDe(a)?.split("@")[0] || "—"}
                       </Td>
                       <Td>
                         <StatusBadge status={a.status} />
@@ -595,14 +608,17 @@ function Td({
   children,
   align,
   className,
+  title,
 }: {
   children: React.ReactNode;
   align?: "right";
   className?: string;
+  title?: string;
 }) {
   return (
     <td
       className={`px-4 py-2 ${align === "right" ? "text-right" : "text-left"} ${className ?? ""}`}
+      title={title}
     >
       {children}
     </td>
@@ -615,6 +631,15 @@ function Empty() {
       <p className="text-sm">Sem análises concluídas para exibir.</p>
     </div>
   );
+}
+
+/**
+ * E-mail do analista da 1ª camada. `analistaEmail` só existe em análises
+ * criadas depois da captura desse campo — para o histórico anterior, cai
+ * para o comentário de parecer real do Retool (ENVIAR_LIDERANCA_PLD).
+ */
+function analistaDe(a: Analise): string | undefined {
+  return a.analistaEmail || (a.draftId ? getAnalistaInicial(a.draftId) : undefined);
 }
 
 function download(content: string, filename: string, type: string) {

@@ -210,7 +210,7 @@ export function CheckAnalista() {
               <Input
                 value={busca}
                 onChange={(e) => setBusca(e.target.value)}
-                placeholder="CNPJ, CPF, razão social, sócio, UF, CNAE..."
+                placeholder="CNPJ, CPF, razão social, Draft ID, UF, CNAE..."
               />
             </div>
           </div>
