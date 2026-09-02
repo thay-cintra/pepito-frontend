@@ -237,6 +237,16 @@ export function NovaAnalise() {
         </div>
       </div>
 
+      {analise.draftId && (
+        <div className="rounded-md border border-primary/30 bg-secondary/40 p-3 flex flex-wrap items-center gap-3 text-sm">
+          <span className="font-medium">Caso da fila PLD do Retool</span>
+          <span className="text-muted-foreground">draft_id:</span>
+          <code className="font-mono text-xs bg-background px-2 py-0.5 rounded border">
+            {analise.draftId}
+          </code>
+        </div>
+      )}
+
       {/* Resumo do cadastro */}
       <Card>
         <CardHeader>
@@ -440,7 +450,8 @@ export function NovaAnalise() {
                 <Sparkles className="h-4 w-4" /> Gerar template de parecer
               </Button>
               <Textarea
-                rows={14}
+                rows={28}
+                className="min-h-[520px]"
                 value={parecerCompleto}
                 onChange={(e) => setParecerCompleto(e.target.value)}
                 placeholder="Redija aqui o parecer final (Markdown). Você pode usar a sugestão IA como base ou gerar template."

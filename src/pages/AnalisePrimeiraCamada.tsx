@@ -95,6 +95,10 @@ export function AnalisePrimeiraCamada() {
         setResultados(a.resultadosPesquisa);
         setAnaliseGeral(a.analiseGeral || "");
         setStatusSugerido(a.status);
+        // Mantém o draft_id visível ao reabrir um caso já vinculado à fila PLD
+        // do Retool — sem isso o banner "Caso da fila PLD" some ao reabrir um
+        // rascunho salvo (a.draftId só era lido a partir do param ?prefill=).
+        if (a.draftId) setDraftIdOrigem(a.draftId);
       }
       return;
     }
