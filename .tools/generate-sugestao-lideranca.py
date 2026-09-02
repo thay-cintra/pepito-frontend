@@ -284,6 +284,7 @@ CNPJ: [CNPJ] — [Razão Social]
 
 OBRIGATÓRIO: Use o PARECER DO ANALISTA como ponto de partida. Não repita o que ele disse — apenas valide, complemente ou divirja.
 PROIBIDO: Repetir dados do caso que o analista já descreveu (CNPJ, nome, cargo PEP, vínculo). Máximo 5 linhas.
+PROIBIDO: Citar a numeração/lettering interna das REGRAS DE DECISÃO deste prompt (ex.: "regra (2)/(3)", "nos termos da regra (3)(c)(d)", "item (d)"). Essa numeração é só um guia de raciocínio para você — o texto final é lido pelo analista/liderança e deve descrever o fator de risco em linguagem natural (ex.: "configura fator agravante concreto para o risco de conflito de interesses"), nunca remeter a uma regra interna do sistema.
 
 EXEMPLOS REAIS DA LIDERANÇA (use como referência absoluta):
 
@@ -405,9 +406,26 @@ ESCOLHA o desfecho apropriado e redija o parecer no formato exato dos exemplos d
 Use o parecer do analista como insumo adicional — se o analista identificou achados concretos (processos criminais, contratos públicos, mídias adversas), considere-os na sua decisão."""
 
 
+def _parece_completo(text: str) -> bool:
+    """Heurística de sanidade: um parecer completo sempre termina com a
+    recomendação final em frase fechada (ponto/aspas/exclamação/interrogação).
+    Detecta o caso real (draft 7aa133b6, 2026-09-01) em que a resposta foi
+    cortada no meio da frase — sem isso o corte silencioso vai direto para o
+    JSON e é auto-preenchido no parecer da Mesa como se estivesse completo."""
+    t = text.rstrip()
+    return bool(t) and t.endswith((".", '"', "!", "?", "”", ")"))
+
+
 def gerar(case: dict, findings: list, max_retries: int = 3) -> str:
     prompt = montar_user_prompt(case, findings)
+    # Casos com 2+ achados factuais detalhados (números de processo, tribunal,
+    # datas) consomem bem mais tokens de saída — 400 truncou o draft 7aa133b6
+    # antes do parágrafo de recomendação final. Escalona o orçamento a cada
+    # tentativa em vez de repetir o mesmo limite que já truncou.
+    token_budgets = [700, 1000, 1300]
+    last_text = ""
     for attempt in range(max_retries):
+        max_tokens = token_budgets[min(attempt, len(token_budgets) - 1)]
         try:
             r = client.chat.completions.create(
                 model=MODEL,
@@ -415,21 +433,37 @@ def gerar(case: dict, findings: list, max_retries: int = 3) -> str:
                     {"role": "system", "content": SYSTEM_PROMPT},
                     {"role": "user", "content": prompt},
                 ],
-                max_tokens=400,
+                max_tokens=max_tokens,
                 temperature=0.3,
             )
-            text = r.choices[0].message.content.strip()
+            choice = r.choices[0]
+            text = choice.message.content.strip()
             # Remove eventuais blocos ``` Markdown
             if text.startswith("```"):
                 text = text.split("\n", 1)[1] if "\n" in text else text[3:]
             if text.endswith("```"):
                 text = text.rsplit("```", 1)[0].rstrip()
-            return text.strip()
+            text = text.strip()
+            last_text = text
+            truncado_pelo_modelo = getattr(choice, "finish_reason", None) == "length"
+            if truncado_pelo_modelo or not _parece_completo(text):
+                print(
+                    f"     ⚠️  resposta parece truncada (finish_reason={getattr(choice, 'finish_reason', '?')}, "
+                    f"max_tokens={max_tokens}) — tentando de novo com orçamento maior."
+                )
+                continue
+            return text
         except Exception as e:
             if attempt == max_retries - 1:
                 raise
             time.sleep(2)
-    return ""
+    # Esgotou as tentativas sem produzir um texto que termine em frase fechada
+    # — melhor falhar alto (o caller já loga e segue pro próximo item) do que
+    # persistir silenciosamente um parecer cortado no meio da frase.
+    raise RuntimeError(
+        f"parecer Liderança truncado após {max_retries} tentativas (draft {case.get('draft_id')}): "
+        f"{last_text[-120:]!r}"
+    )
 
 
 def detect_decisao(text: str) -> str:

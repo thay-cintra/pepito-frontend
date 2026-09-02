@@ -206,7 +206,8 @@ REGRAS:
 7. Termine com a recomendação: APROVAÇÃO, MONITORAMENTO REFORÇADO, ou REPROVAÇÃO.
 8. Seja sucinto. Não inclua informação redundante.
 9. MONITORAMENTO REFORÇADO só é cabível quando, além do vínculo PEP, houver pelo menos UM fator de risco adicional sensível e concreto: mídia/processo identificado mas não conclusivo, homônimo não descartado, empresa no mesmo município/UF de atuação do PEP em setor com interface relevante com o poder público, ou empresa aberta durante o mandato em setor sensível. Vínculo/mandato PEP ativo, isoladamente e sem nenhum desses fatores, é APROVAÇÃO — NUNCA use "mandato ativo" como única justificativa para monitoramento reforçado.
-10. ACHADO DO PIPELINE INTERNO (mídia negativa / processos) NUNCA é "nada identificado" por padrão — os campos "Mídia adversa"/"Processos" abaixo já vêm resumidos com o(s) achado(s) mais relevante(s), quando existem. Se vier preenchido com um achado concreto, CITE-O explicitamente na 2ª frase — nunca escreva "não foram identificadas mídias ou processos desabonadores" quando o campo trouxer conteúdo. Se o achado vier acompanhado de "[risco homônimo ALTO/MEDIO: ...]", trate como NÃO CONFIRMADO — mencione a suspeita e a necessidade de confirmação de identidade pelo analista, mas NÃO escale automaticamente para REPROVAÇÃO só por isso (nome comum ≠ pessoa confirmada; ver regra sobre match exato). Achado com nível "Alto" e SEM alerta de homônimo, especialmente citando Corrupção/Criminal/Prisão/Improbidade/Homicídio/Tráfico, é achado factual concreto para fins da regra 9 (mínimo monitoramento reforçado) ou REPROVAÇÃO se confirmado e grave.
+10. ACHADO DO PIPELINE INTERNO (mídia negativa / processos) NUNCA é "nada identificado" por padrão — os campos "Mídia adversa"/"Processos" abaixo já vêm resumidos com o(s) achado(s) mais relevante(s), quando existem. Se vier preenchido com um achado concreto, CITE-O explicitamente na 2ª frase — nunca escreva "não foram identificadas mídias ou processos desabonadores" quando o campo trouxer conteúdo. Se o achado vier acompanhado de "[risco homônimo ALTO/MEDIO: ...]", trate como NÃO CONFIRMADO — mencione a suspeita e a necessidade de confirmação de identidade pelo analista, mas NÃO escale automaticamente para REPROVAÇÃO só por isso (nome comum ≠ pessoa confirmada; ver regra sobre match exato). Achado com nível "Alto" e SEM alerta de homônimo, especialmente citando Corrupção/Criminal/Prisão/Improbidade/Homicídio/Tráfico, é achado factual concreto que basta para justificar, no mínimo, monitoramento reforçado (ou REPROVAÇÃO se confirmado e grave).
+11. PROIBIDO citar a numeração destas REGRAS no texto do parecer (ex.: "regra 9", "item 9", "nos termos da regra"). Essas regras são só um guia de raciocínio interno — descreva o fator de risco em linguagem natural, nunca remetendo a uma regra interna do sistema.
 
 EXIGÊNCIA SOBRE A BUSCA DE MÍDIA: a varredura automatizada deve combinar nome completo do PEP + município + cargo + período do mandato e explorar fontes regionais e setoriais (imprensa local/blogs estaduais, TRE, MP estadual, TCE, Câmara Municipal, Polícia Federal/Civil, DOU). Antes de afirmar "sem mídia adversa" você precisa ter consultado essas fontes. Achados de cassação/improbidade/operação contra o PEP titular ou owner-relacionado tornam a recomendação obrigatoriamente REPROVAÇÃO.
 
@@ -287,9 +288,24 @@ PIPELINE INTERNO:
 Redija a sugestão em UM parágrafo (3-4 frases), texto fluido sem redundâncias, mencionando explicitamente o tipo de vínculo na 1ª frase."""
 
 
+def _parece_completo(text: str) -> bool:
+    """Mesma heurística de sanidade usada em generate-sugestao-lideranca.py —
+    detecta o caso real (draft 5397f71c, 2026-08-12) em que a resposta foi
+    cortada no meio da frase ('...caso descartado, o') e persistida sem
+    checagem no pareceres-sugestao.json."""
+    t = text.rstrip()
+    return bool(t) and t.endswith((".", '"', "!", "?", "”", ")"))
+
+
 def gerar(case: dict, findings: list, max_retries: int = 5) -> str:
     prompt = montar_user_prompt(case, findings)
+    # Casos com achado de mídia detalhado (fonte, data, natureza do delito)
+    # consomem mais tokens de saída do que o parágrafo padrão de 3-4 frases —
+    # 400 truncou o draft 5397f71c antes da recomendação final.
+    token_budgets = [500, 800, 1100]
+    last_text = ""
     for attempt in range(max_retries):
+        max_tokens = token_budgets[min(attempt, len(token_budgets) - 1)]
         try:
             r = client.chat.completions.create(
                 model=MODEL,
@@ -297,16 +313,29 @@ def gerar(case: dict, findings: list, max_retries: int = 5) -> str:
                     {"role": "system", "content": SYSTEM_PROMPT},
                     {"role": "user", "content": prompt},
                 ],
-                max_tokens=400,
+                max_tokens=max_tokens,
                 temperature=0.3,
             )
-            return r.choices[0].message.content.strip().replace("\n\n", " ").replace("\n", " ")
+            choice = r.choices[0]
+            text = choice.message.content.strip().replace("\n\n", " ").replace("\n", " ")
+            last_text = text
+            truncado_pelo_modelo = getattr(choice, "finish_reason", None) == "length"
+            if truncado_pelo_modelo or not _parece_completo(text):
+                print(
+                    f"     ⚠️  resposta parece truncada (finish_reason={getattr(choice, 'finish_reason', '?')}, "
+                    f"max_tokens={max_tokens}) — tentando de novo com orçamento maior."
+                )
+                continue
+            return text
         except Exception as e:
             if attempt == max_retries - 1:
                 raise
             wait = 2 ** (attempt + 1)  # 2s, 4s, 8s, 16s
             time.sleep(wait)
-    return ""
+    raise RuntimeError(
+        f"sugestão de parecer truncada após {max_retries} tentativas (draft {case.get('draft_id')}): "
+        f"{last_text[-120:]!r}"
+    )
 
 
 def main():
