@@ -1,14 +1,21 @@
 {
-  "timestamp": "2026-07-06T14:03:34.275320",
-  "checks_executados": 6,
+  "timestamp": "2026-09-02T14:00:02.972459",
+  "checks_executados": 10,
   "checks_falhados": 0,
   "alertas": [
     {
+      "nivel": "🟡 MÉDIO",
+      "titulo": "11 novo(s) caso(s) escalado(s) para CHECK_LIDERANCA",
+      "descricao": "Caso(s) derivado(s) pelo analista ou promovido(s) pelo Retool desde a última verificação. Conferir Fila de Revisão:\n• FLAVIO OTAVIO PEDROSO RIBEIRO - ASSESSORIA (CNPJ 68.726.438/0001-95, score 1040) — draft 185f8a15-d5bf-4c44-bea7-07c576f91d00\n• CECCHI & ALVES CONSULTORIA EDUCACIONAL LTDA (CNPJ 12.607.590/0001-02, score 985) — draft a8dc91c6-d84a-4385-84a0-be1c38e0ec45\n• 68.554.271 ARIANE PORTO FREITAS (CNPJ 68.554.271/0001-22, score 1005) — draft 3764d101-48f1-4395-8948-975d3f37a68a\n• MASTERS MIX LTDA (CNPJ 56.086.071/0001-03, score 985) — draft c4e85a13-f7cb-45fe-82d9-91ada039ddc1\n• FARIAS NETO CONSTRUCOES E SERVICOS LTDA (CNPJ 64.884.157/0001-00, score 1020) — draft c4332ba8-1778-4354-b3eb-c842318a15b9\n• 66.155.990 JAMILY DE SOUZA DO NASCIMENTO (CNPJ 66.155.990/0001-45, score 1065) — draft 7aa133b6-3689-46ae-9348-4b5382a9acb0\n• GIDEON SANTOS QUEIROZ 15956452765 (CNPJ 30.864.709/0001-04, score 985) — draft 71a5b5d8-4363-4950-a3ab-d7e816f1003e\n• J. DAMASCENO FILGUEIRAS NETO LTDA (CNPJ 54.669.867/0001-63, score 1065) — draft 0293e756-fc74-461e-a527-03a7baeb4498\n• 49.837.419 SOLANGE REIS DE SOUZA (CNPJ 49.837.419/0001-91, score 985) — draft 58219291-634f-48e4-b049-7712426d478f\n• MARCOS A DOS SANTOS (CNPJ 62.398.558/0001-24, score 1386) — draft 13ddfe7a-82cd-48a5-baf1-23318f38aa08",
+      "componente": "Fila de Revisão — Liderança",
+      "timestamp": "2026-09-02T14:00:02.644095"
+    },
+    {
       "nivel": "🔵 BAIXO",
       "titulo": "Mudanças não commitadas",
-      "descricao": "7 arquivo(s) modificado(s) sem commit.",
+      "descricao": "125 arquivo(s) modificado(s) sem commit.",
       "componente": "Git Repository",
-      "timestamp": "2026-07-06T14:03:34.275275"
+      "timestamp": "2026-09-02T14:00:02.972316"
     }
   ]
 }
