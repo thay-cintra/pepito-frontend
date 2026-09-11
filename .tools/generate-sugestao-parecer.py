@@ -31,6 +31,7 @@ MODEL = os.environ.get("LLM_MODEL", "anthropic-claude-sonnet-4-6")
 
 VINCULO_LABEL = {
     "IRMA(O)": "irmão",
+    "IRMAO": "irmão",
     "PAI": "pai",
     "MAE": "mãe",
     "FILHA(O)": "filho/filha",
@@ -50,7 +51,15 @@ VINCULO_LABEL = {
     "PADRASTO": "padrasto",
     "MADRASTA": "madrasta",
     "ENTEADA(O)": "enteado/enteada",
+    "SOCIO": "sócio",
+    "PARENTE": "parente",
 }
+
+# ds_vinculo cujo relacionamento é SOCIETÁRIO (não familiar) — a Credilink
+# nunca informa em qual empresa titular e PEP são sócios (nem CNPJ, nem
+# situação cadastral), então o prompt precisa ser instruído a não inventar
+# essa empresa e sinalizar a lacuna. Ver REGRA 12 do SYSTEM_PROMPT.
+VINCULOS_SOCIETARIOS = {"SOCIO"}
 
 
 def vinculo_natural(ds: str | None) -> str:
@@ -208,12 +217,13 @@ REGRAS:
 9. MONITORAMENTO REFORÇADO só é cabível quando, além do vínculo PEP, houver pelo menos UM fator de risco adicional sensível e concreto: mídia/processo identificado mas não conclusivo, homônimo não descartado, empresa no mesmo município/UF de atuação do PEP em setor com interface relevante com o poder público, ou empresa aberta durante o mandato em setor sensível. Vínculo/mandato PEP ativo, isoladamente e sem nenhum desses fatores, é APROVAÇÃO — NUNCA use "mandato ativo" como única justificativa para monitoramento reforçado.
 10. ACHADO DO PIPELINE INTERNO (mídia negativa / processos) NUNCA é "nada identificado" por padrão — os campos "Mídia adversa"/"Processos" abaixo já vêm resumidos com o(s) achado(s) mais relevante(s), quando existem. Se vier preenchido com um achado concreto, CITE-O explicitamente na 2ª frase — nunca escreva "não foram identificadas mídias ou processos desabonadores" quando o campo trouxer conteúdo. Se o achado vier acompanhado de "[risco homônimo ALTO/MEDIO: ...]", trate como NÃO CONFIRMADO — mencione a suspeita e a necessidade de confirmação de identidade pelo analista, mas NÃO escale automaticamente para REPROVAÇÃO só por isso (nome comum ≠ pessoa confirmada; ver regra sobre match exato). Achado com nível "Alto" e SEM alerta de homônimo, especialmente citando Corrupção/Criminal/Prisão/Improbidade/Homicídio/Tráfico, é achado factual concreto que basta para justificar, no mínimo, monitoramento reforçado (ou REPROVAÇÃO se confirmado e grave).
 11. PROIBIDO citar a numeração destas REGRAS no texto do parecer (ex.: "regra 9", "item 9", "nos termos da regra"). Essas regras são só um guia de raciocínio interno — descreva o fator de risco em linguagem natural, nunca remetendo a uma regra interna do sistema.
+12. VÍNCULO SOCIETÁRIO (sócio/representante em outra empresa) SEM EMPRESA IDENTIFICADA: a Credilink não informa em qual empresa titular e PEP são sócios, nem o CNPJ nem a situação cadastral dela — e essa empresa PODE OU NÃO ser a mesma que está sendo cadastrada agora. Quando o vínculo for de sócio e os dados abaixo não trouxerem o nome/CNPJ dessa empresa em comum (ver linha "Vínculo SÓCIO" em VINCULAÇÃO PEP), NUNCA presuma que é a mesma PJ do cadastro nem invente nome/CNPJ de uma terceira empresa. Declare explicitamente essa lacuna (empresa em comum não identificada) e recomende validação manual — inclusive confirmar se essa empresa está ativa ou baixada na Receita Federal — antes de concluir a análise de risco desse vínculo.
 
 EXIGÊNCIA SOBRE A BUSCA DE MÍDIA: a varredura automatizada deve combinar nome completo do PEP + município + cargo + período do mandato e explorar fontes regionais e setoriais (imprensa local/blogs estaduais, TRE, MP estadual, TCE, Câmara Municipal, Polícia Federal/Civil, DOU). Antes de afirmar "sem mídia adversa" você precisa ter consultado essas fontes. Achados de cassação/improbidade/operação contra o PEP titular ou owner-relacionado tornam a recomendação obrigatoriamente REPROVAÇÃO.
 
 EXEMPLO DO ESTILO — APROVAÇÃO (referência absoluta; vínculo PEP ativo sem nenhum outro fator de risco):
 
-"Trata-se de empresa cujo titular possui relacionamento de sócio com a PEP Josinalva Guerra Lins Silva (Vereadora de Natuba/PB), através de outra PJ (SUAS CONSULT LTDA - CNPJ 40.400.051/0001-25, que possui atividade de desenvolvimento e treinamentos em programas de computadores). Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou à PEP. Dito isso, considerando que não foram identificados desabonos relevantes sob a ótica de LD e que a atividade da empresa não guarda interface com o cargo público exercido, não temos objeções ao início do relacionamento, sugerimos a APROVAÇÃO do cadastro."
+"Trata-se de empresa cujo titular possui relacionamento de sócio com a PEP Josinalva Guerra Lins Silva (Vereadora de Natuba/PB); os dados disponíveis não identificam em qual empresa titular e PEP são sócios, nem sua situação cadastral, cabendo validação manual desse vínculo. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou à PEP. Dito isso, considerando que não foram identificados desabonos relevantes sob a ótica de LD e que a atividade da empresa não guarda interface com o cargo público exercido, não temos objeções ao início do relacionamento, sugerimos a APROVAÇÃO do cadastro, condicionada à validação do vínculo societário indicado."
 
 EXEMPLO DO ESTILO — MONITORAMENTO REFORÇADO (referência absoluta; exige fator adicional, aqui a interface setor-cargo no mesmo município):
 
@@ -234,6 +244,7 @@ def montar_user_prompt(case: dict, findings: list) -> str:
     cargo_real = pep_titular.get("cargo_formal") or pep_titular.get("perfil") or "cargo não informado"
     orgao = pep_titular.get("orgao") or case.get("uf", "")
     vinculo = vinculo_natural(pep_titular.get("ds_vinculo"))
+    is_vinculo_societario = (pep_titular.get("ds_vinculo") or "").strip().upper() in VINCULOS_SOCIETARIOS
     data_inicio = pep_titular.get("data_inicio") or ""
     data_fim = pep_titular.get("data_fim") or ""
     status_mandato = _status_mandato_label(pep_titular) if pep_titular else "vigência não informada"
@@ -276,6 +287,7 @@ VINCULAÇÃO PEP (Credilink):
 - Mandato: {data_inicio} → {data_fim}
 - Status do mandato (já calculado, não infira sozinho): {status_mandato}
 {f'- Tipo de vínculo (DSVINCULO): {vinculo}' if not is_titular and vinculo else ''}
+{'- ⚠️ Vínculo SÓCIO: a Credilink NÃO informa em qual empresa titular e PEP são sócios, nem CNPJ nem situação cadastral — NÃO presuma que é a mesma PJ do cadastro nem invente outra empresa (ver REGRA 12). Declare essa lacuna e recomende validar manualmente (inclusive se a empresa está ativa ou baixada).' if is_vinculo_societario else ''}
 
 ACHADOS RELEVANTES: {findings_summary or '(nenhum achado externo material)'}
 

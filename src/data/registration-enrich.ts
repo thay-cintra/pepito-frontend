@@ -722,6 +722,16 @@ export function gerarParecerSugerido(c: Raw): string {
     ? `Owner ${c.full_name_pf} é o PEP titular (${cargoOrgao.cargo}).`
     : `Owner ${c.full_name_pf} é vínculo de PEP titular: ${cargoOrgao.nomePEP}${cpfPepInfo} (${cargoOrgao.cargo}).`;
 
+  // Vínculo SOCIETÁRIO (sócio/representante em outra empresa): a Credilink
+  // não informa em qual empresa titular e PEP são sócios, nem CNPJ nem
+  // situação cadastral — essa empresa pode ou não ser a mesma do cadastro.
+  // Sem esse dado não dá pra aferir o risco real do vínculo, então o
+  // parecer precisa sinalizar a lacuna e a necessidade de validação manual
+  // (empresa ativa ou baixada) em vez de ficar silencioso a respeito.
+  const vinculoSocietario = tipoPep === "relacionado" && cargoOrgao.vinculo.trim().toUpperCase() === "SOCIO"
+    ? ` ⚠️ Vínculo societário (sócio) sem identificação da empresa em comum entre titular e PEP — validar manualmente qual é essa empresa e se está ativa ou baixada na Receita Federal.`
+    : "";
+
   const meio = `Score PLD ${c.score_pld}. CNAE "${c.cnae}", PJ ${c.rf_nome_oficial} (${c.uf}/${c.cidade}). Reason: ${c.evaluation_reason}.`;
 
   let fim: string;
@@ -735,7 +745,7 @@ export function gerarParecerSugerido(c: Raw): string {
     fim = `Sem sinais materiais. Sugestão preliminar: APROVAÇÃO (fluxo PLD padrão para PEP).`;
   }
 
-  return [inicio, meio, fim].join(" ");
+  return [inicio + vinculoSocietario, meio, fim].join(" ");
 }
 
 /**

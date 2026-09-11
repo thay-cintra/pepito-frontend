@@ -111,11 +111,18 @@ client = OpenAI(
 MODEL = os.environ.get("LLM_MODEL", "anthropic-claude-sonnet-4-6")
 
 VINCULO_LABEL = {
-    "IRMA(O)": "irmão", "PAI": "pai", "MAE": "mãe", "FILHO": "filho", "FILHA": "filha",
+    "IRMA(O)": "irmão", "IRMAO": "irmão", "PAI": "pai", "MAE": "mãe", "FILHO": "filho", "FILHA": "filha",
     "FILHA(O)": "filho/filha", "CONJUGE": "cônjuge", "TIA(O)": "tio/tia",
     "SOBRINHA(O)": "sobrinho/sobrinha", "PRIMA(O)": "primo/prima",
     "AVO": "avô/avó", "NETA(O)": "neto/neta",
+    "SOCIO": "sócio", "PARENTE": "parente",
 }
+
+# ds_vinculo cujo relacionamento é SOCIETÁRIO (não familiar) — a Credilink
+# nunca informa em qual empresa titular e PEP são sócios (nem CNPJ, nem
+# situação cadastral), então o prompt precisa ser instruído a não presumir
+# que é a mesma PJ do cadastro nem inventar essa empresa.
+VINCULOS_SOCIETARIOS = {"SOCIO"}
 
 
 def vinculo_natural(ds: str | None) -> str:
@@ -268,7 +275,7 @@ REGRAS DE DECISÃO:
 PESO DO PARECER DO ANALISTA (regra crítica, violada em caso real — draft c0270b8a, 2026-08-12): os campos automatizados internos (processosjudiciais_pf/pj, mídia) são uma varredura superficial por nome/CNPJ e frequentemente NÃO capturam o que a pesquisa manual do analista encontrou — "processos judiciais não encontrados" nesses campos NÃO significa que o achado do analista é inválido. Se o parecer do analista citar um achado ESPECÍFICO E VERIFICÁVEL (número de processo, tribunal, artigo do Código Penal, data, natureza do crime), trate-o como achado factual concreto para fins da regra (2)/(3) — NUNCA escreva "os dados fornecidos não sustentam esse desfecho" só porque os campos automatizados vieram vazios. Só desconsidere um achado citado pelo analista se houver razão concreta para duvidar dele no material fornecido (ex.: o próprio analista relata homônimo não confirmado, ou processo textualmente arquivado/extinto sem repercussão). Na dúvida sobre a gravidade, sinalize a divergência para o revisor humano em vez de descartar o achado.
 
 ACHADO DO PIPELINE INTERNO (mídia/processos abaixo, quando o analista não repetiu o mesmo achado no parecer): NUNCA é "nada identificado" por padrão — os campos já vêm resumidos com o achado mais relevante, quando existe. Se vier preenchido com conteúdo concreto, CITE-O explicitamente. Se vier com "[risco homônimo ALTO/MEDIO: ...]", trate como NÃO CONFIRMADO — mencione a suspeita e a necessidade de confirmação de identidade, mas NÃO escale para REPROVAÇÃO só por isso (nome comum ≠ pessoa confirmada). Achado nível "Alto" sem alerta de homônimo, especialmente citando Corrupção/Criminal/Prisão/Improbidade/Homicídio/Tráfico, é achado factual concreto para fins da regra (2)/(3).
-(3) MONITORAMENTO REFORÇADO — exige, além do vínculo PEP, pelo menos UM fator de risco adicional sensível e concreto: (a) mídia ou processo identificado mas não conclusivo/insuficiente para reprovação; (b) homônimo não descartado; (c) empresa no mesmo município/UF de atuação do PEP E em setor com interface relevante com o poder público; (d) empresa aberta durante o mandato do PEP em setor sensível. NUNCA é o desfecho default só por o vínculo/mandato estar ativo — na ausência desses fatores, a resposta correta é APROVADO.
+(3) MONITORAMENTO REFORÇADO — exige, além do vínculo PEP, pelo menos UM fator de risco adicional sensível e concreto: (a) mídia ou processo identificado mas não conclusivo/insuficiente para reprovação; (b) homônimo não descartado; (c) empresa no mesmo município/UF de atuação do PEP E em setor com interface relevante com o poder público; (d) empresa aberta durante o mandato do PEP em setor sensível; (e) vínculo SÓCIO em que a empresa em comum entre titular e PEP não foi identificada pelos dados (nem CNPJ nem situação cadastral) — trate como fator de risco adicional pendente de validação, cite explicitamente a lacuna e recomende confirmar se essa empresa está ativa ou baixada na Receita Federal antes da decisão final. Se o parecer do analista já esclareceu qual é essa empresa e sua situação, use o que ele já validou em vez de reabrir a pendência. NUNCA é o desfecho default só por o vínculo/mandato estar ativo — na ausência desses fatores, a resposta correta é APROVADO.
 (4) FALSO POSITIVO — PEP não confirmado ou erro de cadastro.
 
 FORMATO — MÁXIMO 5 LINHAS NO TOTAL:
@@ -321,6 +328,7 @@ REGRAS:
 - SEMPRE cite o cargo formal real do PEP (extraído de Descrição_Função).
 - Use os achados externos (mídia/processos) quando houver, indicando fonte.
 - NÃO invente fatos. Se não há mídia adversa, declare "ausência total de sanções, processos por improbidade ou mídia adversa".
+- VÍNCULO SÓCIO sem empresa em comum identificada nos dados (ver "⚠️ Vínculo SÓCIO" abaixo, quando presente): NÃO presuma que é a mesma PJ do cadastro nem invente nome/CNPJ de outra empresa. Sinalize essa lacuna explicitamente. Independentemente da decisão (mesmo se APROVADO por ausência de outros fatores), a FRASE FINAL de recomendação SEMPRE deve condicionar a aprovação à validação do CNPJ e da situação cadastral (ativa ou baixada) dessa empresa em comum — nunca feche a recomendação como aprovação incondicional quando essa lacuna existir, a menos que o parecer do analista já tenha esclarecido qual é a empresa e sua situação.
 - Termine com a recomendação no parágrafo final.
 - Retorne APENAS o texto formatado, sem nada antes ou depois.
 
@@ -344,6 +352,7 @@ def montar_user_prompt(case: dict, findings: list) -> str:
     cargo = pep_titular.get("cargo_formal") or pep_titular.get("perfil") or "cargo não informado"
     orgao = pep_titular.get("orgao") or case.get("uf", "")
     vinculo = vinculo_natural(pep_titular.get("ds_vinculo"))
+    is_vinculo_societario = (pep_titular.get("ds_vinculo") or "").strip().upper() in VINCULOS_SOCIETARIOS
     data_inicio = pep_titular.get("data_inicio") or ""
     data_fim = pep_titular.get("data_fim") or ""
     status_mandato = _status_mandato_label(pep_titular) if pep_titular else "vigência não informada"
@@ -389,6 +398,7 @@ VINCULAÇÃO PEP (Credilink):
 - Fim mandato: {data_fim}
 - Status do mandato (já calculado, não infira sozinho): {status_mandato}
 {f'- Tipo de vínculo: {vinculo}' if not is_titular and vinculo else ''}
+{'- ⚠️ Vínculo SÓCIO: a Credilink NÃO informa em qual empresa titular e PEP são sócios, nem CNPJ nem situação cadastral — NÃO presuma que é a mesma PJ do cadastro nem invente outra empresa. Sinalize essa lacuna e recomende validar (ativa/baixada) antes da decisão, salvo se o parecer do analista abaixo já esclareceu isso.' if is_vinculo_societario else ''}
 
 ACHADOS EXTERNOS:
 {findings_summary or '  (nenhum achado externo material)'}
