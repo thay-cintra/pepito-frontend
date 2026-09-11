@@ -248,14 +248,16 @@ function toResultado(
     tipo: hint.tipo,
     risco: hint.risco,
     link: link.url,
-    similaridade_nome: "100%",
-    // toResultado() sempre monta um DEEP-LINK de busca (URL pré-preenchida),
-    // nunca um achado já verificado — nada aqui foi de fato confirmado. Use
-    // `pendente: true` sempre que o resumo afirmar algo (ex.: risco alto,
-    // "confirmar mandato X") em vez de reportar ausência de sinal ("nada
-    // identificado"); sem isso o card fica visualmente idêntico a um achado
-    // real da base própria (ex.: Base PEP unificada), mascarando que ninguém
-    // verificou a fonte ainda (caso real: draft d309057d, 2026-08-11).
+    // Sem similaridade_nome: toResultado() sempre monta um DEEP-LINK de busca
+    // (URL pré-preenchida), nunca um achado já verificado — nada aqui foi de
+    // fato confirmado, então não existe "% de similaridade" a reportar. Um
+    // badge "Similaridade: 100%" aqui passaria a falsa impressão de match
+    // positivo mesmo quando o resumo diz "nada identificado" (apontado por
+    // thay@cora.com.br, 2026-09-11). Use `pendente: true` sempre que o resumo
+    // afirmar algo (ex.: risco alto, "confirmar mandato X") em vez de
+    // reportar ausência de sinal — isso já sinaliza "não verificado ainda"
+    // sem precisar de badge de similaridade (caso real: draft d309057d,
+    // 2026-08-11).
     pendente_verificacao: hint.pendente ?? false,
   };
 }
@@ -499,7 +501,7 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
       resumo: `Sinais de mídia negativa ${sinalMidiaPj ? "PJ" : ""}${sinalMidiaPj && sinalMidiaPf ? " e " : ""}${sinalMidiaPf ? "PF" : ""} encontrados na busca interna. Validar conteúdo: ${clean(c.pf_midianegativas || c.pj_midianegativas).slice(0, 200)}`,
       tipo: "midia",
       risco: "alto",
-      similaridade_nome: "100%",
+      similaridade_nome: "100%", // achado real do pipeline pré-apurado
     });
   } else {
     r.push({
@@ -508,7 +510,8 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
       resumo: `Pipeline interno: ${clean(c.pf_midianegativas || c.pj_midianegativas) || "sem mídia adversa material"}.`,
       tipo: "midia",
       risco: "baixo",
-      similaridade_nome: "100%",
+      // Sem similaridade_nome: nada foi encontrado — badge de "match" aqui
+      // seria enganoso.
     });
   }
 
@@ -541,7 +544,7 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
       resumo: `Sinais de processos judiciais (${sinalProcPj ? "PJ " : ""}${sinalProcPf ? "PF" : ""}). Conteúdo: ${clean(c.processosjudiciais_pf || c.processosjudiciais_pj).slice(0, 200)}`,
       tipo: "processo",
       risco: "alto",
-      similaridade_nome: "100%",
+      similaridade_nome: "100%", // achado real do pipeline pré-apurado
     });
   } else {
     r.push({
@@ -550,7 +553,8 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
       resumo: `Pipeline: ${clean(c.processosjudiciais_pf || c.processosjudiciais_pj) || "sem processos materiais"}.`,
       tipo: "processo",
       risco: "baixo",
-      similaridade_nome: "100%",
+      // Sem similaridade_nome: nada foi encontrado — badge de "match" aqui
+      // seria enganoso.
     });
   }
 

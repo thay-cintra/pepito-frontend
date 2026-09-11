@@ -83,7 +83,7 @@ export async function pesquisarFontesPublicas(
       tipo: "pep",
       risco: "baixo",
       pendente_verificacao: true,
-      similaridade_nome: "0%",
+      // Sem similaridade_nome: não houve match — badge de "%" seria enganoso.
     });
   }
 
@@ -107,7 +107,7 @@ export async function pesquisarFontesPublicas(
       tipo: "midia",
       risco: "baixo",
       link: `https://g1.globo.com/busca/?q=${encodeURIComponent(nomePep)}`,
-      similaridade_nome: "100%",
+      // Sem similaridade_nome: nada foi encontrado.
     });
   }
 
@@ -126,7 +126,8 @@ export async function pesquisarFontesPublicas(
       tipo: "midia",
       risco: regionalRisco,
       link: `https://www.google.com/search?q=${encodeURIComponent(queryRegional + " cassação OR improbidade OR operação")}`,
-      similaridade_nome: "98%",
+      // Similaridade só faz sentido quando algo foi de fato localizado.
+      ...(regionalRisco === "alto" ? { similaridade_nome: "98%" } : {}),
     });
   }
 
@@ -139,7 +140,7 @@ export async function pesquisarFontesPublicas(
       tipo: "governo",
       risco: "baixo",
       link: `https://www.google.com/search?q=TRE+${pepRecord.uf}+${encodeURIComponent(nomePep)}+cassa%C3%A7%C3%A3o`,
-      similaridade_nome: "100%",
+      // Sem similaridade_nome: nada foi encontrado.
     });
   }
 
@@ -152,7 +153,7 @@ export async function pesquisarFontesPublicas(
       tipo: "governo",
       risco: "baixo",
       link: `https://www.google.com/search?q=mp${(pepRecord.uf || "").toLowerCase()}+${encodeURIComponent(nomePep)}+improbidade`,
-      similaridade_nome: "100%",
+      // Sem similaridade_nome: nada foi encontrado.
     });
   }
 
@@ -165,7 +166,7 @@ export async function pesquisarFontesPublicas(
       tipo: "governo",
       risco: "baixo",
       link: `https://www.google.com/search?q=${encodeURIComponent("câmara " + pepRecord.orgao + " " + nomePep)}`,
-      similaridade_nome: "100%",
+      // Sem similaridade_nome: nada foi encontrado.
     });
   }
 
@@ -177,7 +178,7 @@ export async function pesquisarFontesPublicas(
     tipo: "processo",
     risco: r() > 0.85 ? "alto" : "baixo",
     link: `https://www.google.com/search?q=${encodeURIComponent("operação policial " + nomePep)}`,
-    similaridade_nome: "98%",
+    // Sem similaridade_nome: nada foi encontrado ("sem citações").
   });
 
   // Processos
@@ -203,7 +204,7 @@ export async function pesquisarFontesPublicas(
         tipo: "processo",
         risco: "baixo",
         link: `https://www.jusbrasil.com.br/busca?q=${encodeURIComponent(docTitular)}`,
-        similaridade_nome: "100%",
+        // Sem similaridade_nome: nada foi encontrado.
       });
     }
   } else {
@@ -214,7 +215,7 @@ export async function pesquisarFontesPublicas(
       tipo: "processo",
       risco: "baixo",
       link: `https://www.cnj.jus.br/improbidade_adm/consultar_requerido.php`,
-      similaridade_nome: "100%",
+      // Sem similaridade_nome: nada foi encontrado.
     });
   }
 
@@ -226,7 +227,7 @@ export async function pesquisarFontesPublicas(
     tipo: "governo",
     risco: "baixo",
     link: `https://portaldatransparencia.gov.br/sancoes/consulta?cadastro=&cpfCnpj=${cliente.cnpj.replace(/\D/g, "")}`,
-    similaridade_nome: "100%",
+    // Sem similaridade_nome: nada foi encontrado.
   });
 
   // Endereço
@@ -237,7 +238,7 @@ export async function pesquisarFontesPublicas(
     tipo: "endereco",
     risco: "baixo",
     link: `https://casadosdados.com.br/solucao/cnpj/${cliente.cnpj.replace(/\D/g, "")}`,
-    similaridade_nome: "100%",
+    // Sem similaridade_nome: nada foi encontrado.
   });
 
   // QSA — sócios mockados (reproduzíveis)
@@ -256,7 +257,7 @@ export async function pesquisarFontesPublicas(
     tipo: "societario",
     risco: qsa.length >= 3 ? "medio" : "baixo",
     link: `https://brasilapi.com.br/api/cnpj/v1/${cliente.cnpj.replace(/\D/g, "")}`,
-    similaridade_nome: "100%",
+    // Sem similaridade_nome: listagem de QSA, não é um "match" de identidade.
   });
 
   // TCE — se PEP estadual
@@ -268,7 +269,7 @@ export async function pesquisarFontesPublicas(
       tipo: "governo",
       risco: "baixo",
       link: `https://www.google.com/search?q=TCE+${pepRecord.uf}+${encodeURIComponent(nomePep)}`,
-      similaridade_nome: "100%",
+      // Sem similaridade_nome: nada foi encontrado.
     });
   }
 
@@ -279,7 +280,7 @@ export async function pesquisarFontesPublicas(
       resumo: `Direcionamento prioritário: "${observacoesAnalista.trim().slice(0, 200)}".`,
       tipo: "midia",
       risco: "medio",
-      similaridade_nome: "100%",
+      // Sem similaridade_nome: é uma nota do analista, não um match de fonte.
     });
   }
 
