@@ -24,6 +24,8 @@ export interface VerifyLinksParams {
   cidade: string;
   cargoPep: string;
   orgaoPublico: string;
+  /** CPF do PEP identificado (Credilink), quando o owner é vínculo (não o próprio titular). */
+  cpfPep?: string;
 }
 
 export type LinkCategoria =
@@ -100,6 +102,7 @@ const PUBLISHERS: Array<{ name: string; url: string }> = [
 export function buildVerifyLinks(p: VerifyLinksParams): VerifyLink[] {
   const cnpj = digitsOnly(p.cnpj);
   const cpf = digitsOnly(p.cpf);
+  const cpfPep = digitsOnly(p.cpfPep || "");
   const name = p.fullNamePf;
   const nameQ = encodeURIComponent(name);
   const uf = p.uf.toUpperCase();
@@ -166,12 +169,28 @@ export function buildVerifyLinks(p: VerifyLinksParams): VerifyLink[] {
     url: `https://www.cnj.jus.br/improbidade_adm/consultar_requerido.php`,
     descricao: "Cadastro Nacional de Improbidade. Consultar por nome/CPF.",
   });
+  // JusBrasil: busca por documento (CPF/CNPJ), não por nome — nome tem alta
+  // taxa de homônimo; CPF/CNPJ é o identificador que de fato desambigua.
   links.push({
-    fonte: "JusBrasil — busca por nome",
+    fonte: "JusBrasil — busca por CPF",
     categoria: "Justiça",
-    url: `https://www.jusbrasil.com.br/busca?q=${nameQ}`,
-    descricao: "Processos, decisões e jurisprudência citando o nome.",
+    url: `https://www.jusbrasil.com.br/busca?q=${cpf}`,
+    descricao: "Processos, decisões e jurisprudência citando o CPF do titular.",
   });
+  links.push({
+    fonte: "JusBrasil — busca por CNPJ",
+    categoria: "Justiça",
+    url: `https://www.jusbrasil.com.br/busca?q=${cnpj}`,
+    descricao: "Processos, decisões e jurisprudência citando o CNPJ da empresa.",
+  });
+  if (cpfPep && cpfPep !== cpf) {
+    links.push({
+      fonte: "JusBrasil — busca por CPF do PEP",
+      categoria: "Justiça",
+      url: `https://www.jusbrasil.com.br/busca?q=${cpfPep}`,
+      descricao: "Processos, decisões e jurisprudência citando o CPF do PEP identificado (Credilink).",
+    });
+  }
   links.push({
     fonte: "Escavador — perfil pessoa",
     categoria: "Justiça",

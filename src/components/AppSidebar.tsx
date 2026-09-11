@@ -15,7 +15,7 @@ import { getAuthUser, logout, type AuthUser } from "@/lib/auth";
 const items = [
   { to: "/primeira-camada", label: "1ª Camada", icon: ClipboardList, hint: "Cadastro & análise inicial" },
   { to: "/check-analista", label: "Check Analista", icon: Users, hint: "Fila PLD — 1ª linha" },
-  { to: "/fila-revisao", label: "Fila de Revisão", icon: Inbox, hint: "CHECK_LIDERANÇA + 2ª camada" },
+  { to: "/fila-revisao", label: "Fila de Revisão", icon: Inbox, hint: "CHECK_LIDERANÇA + 2ª camada", restrito: true },
   { to: "/nova-analise", label: "2ª Camada (Mesa)", icon: Gavel, hint: "Decisão da liderança" },
   { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard, hint: "Histórico & métricas" },
 ];
@@ -23,6 +23,12 @@ const items = [
 export function AppSidebar() {
   const [user, setUser] = useState<AuthUser | null>(null);
   useEffect(() => { getAuthUser().then((u) => setUser(u)); }, []);
+  // Em dev sem SSO (getAuthUser() retorna null por ausência de /auth/me) libera
+  // tudo, para não travar o desenvolvimento local. Com SSO, só quem o backend
+  // marcou como canReviewLideranca vê "Fila de Revisão".
+  const ssoAtivo = !!import.meta.env.VITE_SSO_ATIVO;
+  const podeRevisar = ssoAtivo ? !!user?.canReviewLideranca : true;
+  const visibleItems = items.filter((it) => !it.restrito || podeRevisar);
   return (
     <aside className="w-64 shrink-0 border-r bg-card flex flex-col">
       <div className="p-5 border-b">
@@ -38,7 +44,7 @@ export function AppSidebar() {
       </div>
 
       <nav className="flex-1 p-3 space-y-1">
-        {items.map((it) => (
+        {visibleItems.map((it) => (
           <NavLink
             key={it.to}
             to={it.to}

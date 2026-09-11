@@ -181,16 +181,31 @@ export async function pesquisarFontesPublicas(
   });
 
   // Processos
+  // Busca por documento (CPF do titular + CPF do PEP quando vínculo, e CNPJ),
+  // não por nome — evita falso-positivo/negativo por homônimo.
+  const docTitular = cliente.cpfResponsavel || cliente.cnpj;
+  const docPep = cliente.tipoPep === "relacionado" ? cliente.cpfPepTitular : "";
   if (r() > 0.6) {
     resultados.push({
       id: uid(),
       fonte: "JusBrasil",
-      resumo: `Localizado processo cível envolvendo ${nomePep}; matéria sem condenação transitada em julgado.`,
+      resumo: `Localizado processo cível envolvendo ${nomePep} (CPF/CNPJ consultado: ${docPep || docTitular}); matéria sem condenação transitada em julgado.`,
       tipo: "processo",
       risco: "medio",
-      link: `https://www.jusbrasil.com.br/busca?q=${encodeURIComponent(nomePep)}`,
+      link: `https://www.jusbrasil.com.br/busca?q=${encodeURIComponent(docPep || docTitular)}`,
       similaridade_nome: "97%",
     });
+    if (docPep && docPep !== docTitular) {
+      resultados.push({
+        id: uid(),
+        fonte: "JusBrasil — CPF do titular",
+        resumo: `Consulta adicional pelo CPF do titular ${cliente.nomeResponsavel} (${docTitular}); sem condenação transitada em julgado.`,
+        tipo: "processo",
+        risco: "baixo",
+        link: `https://www.jusbrasil.com.br/busca?q=${encodeURIComponent(docTitular)}`,
+        similaridade_nome: "100%",
+      });
+    }
   } else {
     resultados.push({
       id: uid(),

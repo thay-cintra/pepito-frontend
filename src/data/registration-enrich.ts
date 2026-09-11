@@ -424,6 +424,7 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
     cidade: c.cidade,
     cargoPep: cargoOrgao.cargo,
     orgaoPublico: cargoOrgao.orgao,
+    cpfPep: cargoOrgao.cpfTitular,
   });
   const get = (fonte: string) => links.find((l) => l.fonte === fonte);
 
@@ -553,8 +554,8 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
     });
   }
 
-  // CNJ + JusBrasil + Escavador + TJ-{UF} + MP-{UF} + TCU + MPF
-  ["CNJ — Improbidade Administrativa", "JusBrasil — busca por nome",
+  // CNJ + JusBrasil (CPF do titular + CNPJ da empresa) + Escavador + TJ-{UF} + MP-{UF} + TCU + MPF
+  ["CNJ — Improbidade Administrativa", "JusBrasil — busca por CPF", "JusBrasil — busca por CNPJ",
    "Escavador — perfil pessoa", "TCU — Acórdãos", "MPF — Processos e investigações",
    `TJ-${c.uf} — consulta processual`, `MP-${c.uf} — Ministério Público`].forEach((nome) => {
     const link = get(nome);
@@ -571,6 +572,20 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
       }));
     }
   });
+
+  // JusBrasil — CPF do PEP identificado via Credilink (quando o owner é
+  // vínculo, não o próprio titular). Busca separada da do owner acima.
+  const jusBrasilPep = get("JusBrasil — busca por CPF do PEP");
+  if (jusBrasilPep) {
+    const jaTemAchadoPep = Array.from(findingSources).some((s) => s.includes("jusbrasil"));
+    if (!jaTemAchadoPep) {
+      r.push(toResultado(jusBrasilPep, {
+        tipo: "processo",
+        risco: "baixo",
+        resumo: `Nada identificado sobre ${cargoOrgao.nomePEP} (CPF do PEP ${cargoOrgao.cpfTitular}) em JusBrasil. Link aberto para validação manual se necessário.`,
+      }));
+    }
+  }
 
   // ===== Sanções =====
   ["Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)",

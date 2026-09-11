@@ -5,8 +5,6 @@ import {
   User2,
   Search,
   Save,
-  Plus,
-  Trash2,
   ScanText,
   Clock,
   ArrowRight,
@@ -28,7 +26,7 @@ import { clienteVazio } from "@/lib/cliente-default";
 import { getRegistrationCase, markTaken, QUEUE_UPDATED_EVENT } from "@/lib/registration-queue";
 import { inferCargoOrgao, inferTipoPep, getSugestaoParecer } from "@/data/registration-enrich";
 import { formatCNPJ, formatCPF, formatDuration, uid } from "@/lib/utils";
-import type { Analise, ClienteData, ResultadoPesquisa, Socio, StatusAnalise } from "@/types/kyc";
+import type { Analise, ClienteData, ResultadoPesquisa, StatusAnalise } from "@/types/kyc";
 import { STATUS_LABELS, StatusBadge } from "@/components/RiscoBadge";
 import { statusLabel } from "@/lib/parecer";
 
@@ -177,12 +175,6 @@ export function AnalisePrimeiraCamada() {
     setCredilinkResultado(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cliente.cpfPepTitular, cliente.credilinkNumeroToken]);
-
-  const addSocio = () =>
-    update({ socios: [...cliente.socios, { nome: "", cpf: "", participacao: "" }] });
-  const updateSocio = (i: number, patch: Partial<Socio>) =>
-    update({ socios: cliente.socios.map((s, idx) => (idx === i ? { ...s, ...patch } : s)) });
-  const removeSocio = (i: number) => update({ socios: cliente.socios.filter((_, idx) => idx !== i) });
 
   const podeFinalizarPrimeira = useMemo(
     () => cliente.cnpj && cliente.razaoSocial && parecerPrimeiraCamada.trim().length > 10,
@@ -582,50 +574,6 @@ export function AnalisePrimeiraCamada() {
               </CardContent>
             </Card>
           )}
-
-          <Card>
-            <CardHeader>
-              <div className="flex items-center justify-between">
-                <div>
-                  <CardTitle>Quadro Societário</CardTitle>
-                  <CardDescription>Adicione os sócios. Será cruzado com QSA da Receita.</CardDescription>
-                </div>
-                <Button variant="outline" size="sm" onClick={addSocio}>
-                  <Plus className="h-4 w-4" /> Sócio
-                </Button>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              {cliente.socios.length === 0 ? (
-                <p className="text-sm text-muted-foreground italic">
-                  Nenhum sócio cadastrado. A pesquisa preencherá automaticamente via BrasilAPI (mock).
-                </p>
-              ) : (
-                cliente.socios.map((s, i) => (
-                  <div key={i} className="grid grid-cols-1 md:grid-cols-[1fr_200px_120px_auto] gap-2">
-                    <Input
-                      placeholder="Nome"
-                      value={s.nome}
-                      onChange={(e) => updateSocio(i, { nome: e.target.value })}
-                    />
-                    <Input
-                      placeholder="CPF"
-                      value={s.cpf}
-                      onChange={(e) => updateSocio(i, { cpf: formatCPF(e.target.value) })}
-                    />
-                    <Input
-                      placeholder="%"
-                      value={s.participacao}
-                      onChange={(e) => updateSocio(i, { participacao: e.target.value })}
-                    />
-                    <Button variant="ghost" size="icon" onClick={() => removeSocio(i)}>
-                      <Trash2 className="h-4 w-4 text-destructive" />
-                    </Button>
-                  </div>
-                ))
-              )}
-            </CardContent>
-          </Card>
 
           <Card>
             <CardHeader>

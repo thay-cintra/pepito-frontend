@@ -67,6 +67,10 @@ function AppInner() {
   // Em dev mode local (user === null, sem SSO configurado) deixa passar direto
   const ssoAtivo = !!import.meta.env.VITE_SSO_ATIVO;
   const autenticado = ssoAtivo ? user !== null : true;
+  // Fila de Revisão (CHECK_LIDERANCA): restrita à liderança (thay/lucasfeller).
+  // Com SSO ativo, vale o que o backend informou em canReviewLideranca; sem
+  // SSO (dev local), libera para não travar o desenvolvimento.
+  const podeRevisar = ssoAtivo ? !!user?.canReviewLideranca : true;
 
   if (!pronto) {
     return (
@@ -86,7 +90,7 @@ function AppInner() {
         <Route index element={<Navigate to="/dashboard" replace />} />
         <Route path="primeira-camada" element={<AnalisePrimeiraCamada />} />
         <Route path="check-analista" element={<CheckAnalista />} />
-        <Route path="fila-revisao" element={<FilaRevisao />} />
+        <Route path="fila-revisao" element={podeRevisar ? <FilaRevisao /> : <Navigate to="/dashboard" replace />} />
         <Route path="nova-analise" element={<NovaAnalise />} />
         <Route path="novo-caso-manual" element={<NovoCasoManual />} />
         <Route path="dashboard" element={<Dashboard />} />

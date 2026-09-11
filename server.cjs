@@ -81,6 +81,12 @@ const ALLOWED_DOMAIN = process.env.SSO_DOMAIN || "cora.com.br";
 const SYNC_OWNERS = (process.env.SYNC_ATHENA_OWNERS || "thay@cora.com.br")
   .split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
 const isSyncOwner = (email) => SYNC_OWNERS.includes((email || "").toLowerCase());
+// Emails autorizados a ver a Fila de Revisão (bucket CHECK_LIDERANCA — decisão de liderança).
+// Default: thay@cora.com.br (titular) e lucasfeller@cora.com.br (backup, analista sênior).
+// Configurável via REVIEW_QUEUE_OWNERS (csv).
+const REVIEW_QUEUE_OWNERS = (process.env.REVIEW_QUEUE_OWNERS || "thay@cora.com.br,lucasfeller@cora.com.br")
+  .split(",").map((s) => s.trim().toLowerCase()).filter(Boolean);
+const isReviewOwner = (email) => REVIEW_QUEUE_OWNERS.includes((email || "").toLowerCase());
 // LOCAL_MODE=true → sem SSO, acesso direto pela VPN/rede interna
 // Nunca permitido em NODE_ENV=production (proteção contra misconfiguration)
 const LOCAL_MODE = process.env.LOCAL_MODE === "true" && process.env.NODE_ENV !== "production";
@@ -226,7 +232,11 @@ app.get("/auth/google/callback", async (req, res) => {
 // Em LOCAL_MODE retorna usuário genérico para o frontend não exibir tela de login
 app.get("/auth/me", (req, res) => {
   if (LOCAL_MODE) {
-    return res.json({ email: "local@cora.com.br", name: "Acesso Local (VPN)", picture: "", canSync: isSyncOwner("local@cora.com.br") });
+    return res.json({
+      email: "local@cora.com.br", name: "Acesso Local (VPN)", picture: "",
+      canSync: isSyncOwner("local@cora.com.br"),
+      canReviewLideranca: isReviewOwner("local@cora.com.br"),
+    });
   }
   requireAuth(req, res, () => {
     res.json({
@@ -234,6 +244,7 @@ app.get("/auth/me", (req, res) => {
       name: req.user.name,
       picture: req.user.picture,
       canSync: isSyncOwner(req.user.email),
+      canReviewLideranca: isReviewOwner(req.user.email),
     });
   });
 });
@@ -289,10 +300,17 @@ app.post("/api/analises", requireAuth, async (req, res) => {
 });
 
 // ── Fila PLD — serve JSON em tempo real (sem rebuild) ───────────────────────
+// Casos do bucket CHECK_LIDERANCA (Fila de Revisão) são removidos da resposta
+// para quem não está em REVIEW_QUEUE_OWNERS — restrição de dado no backend,
+// não só de UI (esconder o menu/rota não impede chamar a API direto).
 app.get("/api/queue", requireAuth, async (req, res) => {
   try {
     const data = await readDataFile(QUEUE_FILE, "registration-queue-real.json", { _meta: {}, items: [] });
-    res.json(data);
+    if (isReviewOwner(req.user?.email)) return res.json(data);
+
+    const stripLideranca = (arr) => (arr || []).filter((c) => c?.bucket !== "CHECK_LIDERANCA");
+    if (Array.isArray(data)) return res.json(stripLideranca(data));
+    res.json({ ...data, items: stripLideranca(data.items) });
   } catch (e) { res.status(500).json({ error: String(e) }); }
 });
 

@@ -4,6 +4,8 @@ export interface AuthUser {
   picture: string;
   /** Permissão para disparar "Sincronizar Athena" (consumo de LLM/Athena). */
   canSync?: boolean;
+  /** Permissão para acessar a Fila de Revisão (bucket CHECK_LIDERANCA). */
+  canReviewLideranca?: boolean;
 }
 
 let _cache: AuthUser | null | undefined = undefined; // undefined = não verificado ainda
