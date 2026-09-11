@@ -554,8 +554,10 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
     });
   }
 
-  // CNJ + JusBrasil (CPF do titular + CNPJ da empresa) + Escavador + TJ-{UF} + MP-{UF} + TCU + MPF
-  ["CNJ — Improbidade Administrativa", "JusBrasil — busca por CPF", "JusBrasil — busca por CNPJ",
+  // CNJ + JusBrasil (CPF do titular) + Escavador + TJ-{UF} + MP-{UF} + TCU + MPF
+  // — todas fontes de busca por NOME/CPF da pessoa física. JusBrasil por CNPJ
+  // e por CPF do PEP têm resumo próprio (empresa/PEP, não o titular) logo abaixo.
+  ["CNJ — Improbidade Administrativa", "JusBrasil — busca por CPF",
    "Escavador — perfil pessoa", "TCU — Acórdãos", "MPF — Processos e investigações",
    `TJ-${c.uf} — consulta processual`, `MP-${c.uf} — Ministério Público`].forEach((nome) => {
     const link = get(nome);
@@ -573,18 +575,27 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
     }
   });
 
+  const jaTemAchadoJusBrasil = Array.from(findingSources).some((s) => s.includes("jusbrasil"));
+
+  // JusBrasil — CNPJ da empresa (pessoa jurídica em análise, não o titular).
+  const jusBrasilCnpj = get("JusBrasil — busca por CNPJ");
+  if (jusBrasilCnpj && !jaTemAchadoJusBrasil) {
+    r.push(toResultado(jusBrasilCnpj, {
+      tipo: "processo",
+      risco: "baixo",
+      resumo: `Nada identificado sobre ${c.rf_nome_oficial} (CNPJ ${c.cnpj}) em JusBrasil. Link aberto para validação manual se necessário.`,
+    }));
+  }
+
   // JusBrasil — CPF do PEP identificado via Credilink (quando o owner é
   // vínculo, não o próprio titular). Busca separada da do owner acima.
   const jusBrasilPep = get("JusBrasil — busca por CPF do PEP");
-  if (jusBrasilPep) {
-    const jaTemAchadoPep = Array.from(findingSources).some((s) => s.includes("jusbrasil"));
-    if (!jaTemAchadoPep) {
-      r.push(toResultado(jusBrasilPep, {
-        tipo: "processo",
-        risco: "baixo",
-        resumo: `Nada identificado sobre ${cargoOrgao.nomePEP} (CPF do PEP ${cargoOrgao.cpfTitular}) em JusBrasil. Link aberto para validação manual se necessário.`,
-      }));
-    }
+  if (jusBrasilPep && !jaTemAchadoJusBrasil) {
+    r.push(toResultado(jusBrasilPep, {
+      tipo: "processo",
+      risco: "baixo",
+      resumo: `Nada identificado sobre ${cargoOrgao.nomePEP} (CPF do PEP ${cargoOrgao.cpfTitular}) em JusBrasil. Link aberto para validação manual se necessário.`,
+    }));
   }
 
   // ===== Sanções =====
