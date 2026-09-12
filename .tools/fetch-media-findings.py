@@ -669,12 +669,48 @@ Retorne APENAS o array JSON dos findings:
 """
 
 
+def _parse_websearch_findings_text(text: str) -> list[dict]:
+    """Extrai findings do texto do modelo sem aceitar falha silenciosa."""
+    raw_excerpt = text[:200]
+    start = text.find("[")
+    if start == -1:
+        raise ValueError(
+            "WebSearch retornou resposta sem JSON reconhecível "
+            "(possível budget/erro silencioso), "
+            f"texto bruto (200 chars): {raw_excerpt!r}"
+        )
+
+    try:
+        parsed, _ = json.JSONDecoder().raw_decode(text[start:])
+    except json.JSONDecodeError as e:
+        raise ValueError(
+            "WebSearch retornou resposta sem JSON reconhecível "
+            f"({e}; possível budget/erro silencioso), "
+            f"texto bruto (200 chars): {raw_excerpt!r}"
+        ) from e
+
+    if not isinstance(parsed, list) or not all(isinstance(f, dict) for f in parsed):
+        raise ValueError(
+            "WebSearch retornou JSON válido mas não é list[dict], "
+            f"texto bruto (200 chars): {raw_excerpt!r}"
+        )
+    if not parsed:
+        raise ValueError(
+            "WebSearch retornou lista de findings vazia "
+            "(possível budget/erro silencioso), "
+            f"texto bruto (200 chars): {raw_excerpt!r}"
+        )
+    return parsed
+
+
 def pesquisar_caso_web(case: dict, findings_jusbrasil: list[dict]) -> list[dict]:
     """WebSearch para mídia adversa, PEP e Portal da Transparência."""
     if not WEB_SEARCH_AVAILABLE or claude is None:
+        print("      WebSearch não executado: cliente/chave indisponível")
         return []
     pep_list = case.get("pep_pf") or []
     if not pep_list:
+        print("      WebSearch não executado: pep_pf vazio")
         return []
 
     pep = pep_list[0]
@@ -767,10 +803,7 @@ Retorne o array JSON com todos os findings."""
                 )
 
             text = "".join(getattr(b, "text", "") for b in response.content).strip()
-            if text.startswith("["):
-                return json.loads(text)
-            m = re.search(r"\[.*\]", text, re.DOTALL)
-            return json.loads(m.group(0)) if m else []
+            return _parse_websearch_findings_text(text)
 
         except Exception as e:
             print(f"      WebSearch tentativa {attempt + 1} falhou: {e}")
@@ -933,24 +966,50 @@ def main():
         print("✓ Nenhum caso para pesquisar.")
         return
 
+    # Antes, `findings` só era gravado em disco DEPOIS do loop inteiro
+    # terminar — uma exceção em QUALQUER caso no meio da batelada (ex.: bug
+    # de parse do WebSearch, ver pesquisar_caso_web() acima) derrubava o
+    # script e jogava fora TODO o trabalho já feito pros casos anteriores,
+    # mesmo já tendo consumido chamadas reais (pagas) de JusBrasil/Credilink/
+    # WebSearch pra eles (achado real: batelada de 63 casos, 2026-09-12,
+    # crash no caso 37/63 perdeu os 36 anteriores). Agora: grava
+    # incrementalmente após CADA caso, e um erro isolado num caso vira log +
+    # skip (draft_id fica de fora do findings, tentado de novo na próxima
+    # run) em vez de derrubar o processo inteiro.
     pesquisados = 0
+    falhas: list[str] = []
     for i, case in enumerate(alvos, 1):
         nome = case.get("full_name_pf", case["draft_id"][:8])
         print(f"  [{i}/{len(alvos)}] {nome:<45}")
-        result = pesquisar_caso(case)
+        try:
+            result = pesquisar_caso(case)
+            if not isinstance(result, list) or not all(isinstance(f, dict) for f in result):
+                raise ValueError(f"pesquisar_caso() retornou tipo inesperado: {type(result)}")
+        except Exception as e:
+            print(f"     ✗ ERRO — caso pulado (fica sem cobertura, tenta de novo na próxima run): {e}")
+            falhas.append(case["draft_id"])
+            continue
+
         findings[case["draft_id"]] = result
         pesquisados += 1
 
         altos = [f for f in result if f.get("risk_indicator") == "alto"]
         print(f"     ✓ {len(result)} finding(s) | {len(altos)} alto(s)")
 
+        # Grava incrementalmente (escrita atômica via arquivo temporário +
+        # os.replace) — cada caso já consumiu API real, não vale a pena
+        # arriscar perder o resultado por causa de um crash num caso seguinte.
+        tmp_path = FINDINGS_PATH.with_suffix(f".tmp{os.getpid()}")
+        with open(tmp_path, "w", encoding="utf-8") as f:
+            json.dump(findings, f, ensure_ascii=False, indent=2)
+        os.replace(tmp_path, FINDINGS_PATH)
+
         if i < len(alvos):
             time.sleep(3)
 
-    with open(FINDINGS_PATH, "w", encoding="utf-8") as f:
-        json.dump(findings, f, ensure_ascii=False, indent=2)
-
-    print(f"\n✓ media-findings.json atualizado — {pesquisados} caso(s) pesquisado(s)")
+    print(f"\n✓ media-findings.json atualizado — {pesquisados}/{len(alvos)} caso(s) pesquisado(s) com sucesso")
+    if falhas:
+        print(f"⚠️  {len(falhas)} caso(s) falharam e ficaram sem cobertura (tentar de novo na próxima run): {falhas}")
 
 
 if __name__ == "__main__":

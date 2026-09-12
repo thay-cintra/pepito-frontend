@@ -99,7 +99,13 @@ PYEOF
   # (achado real: draft 98deb27d, 2026-09-11). Modo padrão (sem --force) só
   # processa draft_ids ainda ausentes de media-findings.json — nunca reprocessa
   # o que já foi coberto, então o custo de quota cresce só com o backlog novo.
-  # ATENÇÃO: cota JusBrasil está em 312/325 (96%) — ver jusbrasil-usage.json;
+  # ATENÇÃO: cota JusBrasil ESGOTADA — 325/325 do limite operacional (325 de
+  # 500 contratuais; 175 reservadas à parte pra monitoramento), confirmado em
+  # 2026-09-12 via .tools/jusbrasil-usage.json (valor "312/325" citado aqui
+  # antes estava desatualizado). Rodar este passo agora só produz achado real
+  # de Credilink (antecedentes/mídias/processos) + WebSearch; a parte
+  # JusBrasil cai no placeholder abaixo pra QUALQUER caso novo até a cota
+  # renovar/ser ampliada;
   # quando estourar, os casos excedentes recebem o placeholder de "verificação
   # manual necessária" (_FINDING_LIMITE_ATINGIDO), não um erro.
   echo "[4/6] fetch-media-findings.py — dupla-verificação JusBrasil/Tesserati/WebSearch (casos novos) ..."

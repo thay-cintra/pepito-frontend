@@ -168,20 +168,25 @@ export function RegistrationCaseCard({ caso }: Props) {
           </div>
         ) : (
           <>
+            {/* Rótulos revisados (thay@cora.com.br, 2026-09-12): os dois
+                badges antigos repetiam a palavra "Credilink", dando a
+                entender que era a mesma checagem duas vezes — na verdade
+                são módulos DIFERENTES da Credilink (Compliance/PEP vs.
+                antecedentes-mídias-processos usado junto com JusBrasil). */}
             <div className="flex flex-wrap items-center gap-1.5">
               <Badge variant={consultaStatus.credilinkPepOk ? "success" : "destructive"} className="text-[10px]">
                 <ShieldCheck className="h-3 w-3 mr-1" />
-                Credilink {tipoPep === "titular" ? "(titular)" : "(PEP)"}: {consultaStatus.credilinkPepOk ? "OK" : "pendente"}
+                Credilink Compliance ({tipoPep === "titular" ? "titular" : "PEP"}): {consultaStatus.credilinkPepOk ? "OK" : "pendente"}
               </Badge>
               <Badge variant={consultaStatus.jusbrasilOk ? "success" : "destructive"} className="text-[10px]">
                 <ShieldCheck className="h-3 w-3 mr-1" />
-                JusBrasil/Credilink: {consultaStatus.jusbrasilOk ? "OK" : "pendente"}
+                Diligência reputacional (JusBrasil + Credilink): {consultaStatus.jusbrasilOk ? "OK" : "pendente"}
               </Badge>
             </div>
             {!consultaStatus.tudoOk && (
               <div className="rounded-md border border-amber-300 dark:border-amber-700 bg-amber-50/50 dark:bg-amber-950/20 p-2 text-[11px] text-amber-800 dark:text-amber-300 space-y-0.5">
-                {!consultaStatus.credilinkPepOk && <p>⚠️ Credilink: {consultaStatus.credilinkPepMotivo}</p>}
-                {!consultaStatus.jusbrasilOk && <p>⚠️ JusBrasil/Credilink: {consultaStatus.jusbrasilMotivo}</p>}
+                {!consultaStatus.credilinkPepOk && <p>⚠️ Compliance: {consultaStatus.credilinkPepMotivo}</p>}
+                {!consultaStatus.jusbrasilOk && <p>⚠️ Diligência reputacional: {consultaStatus.jusbrasilMotivo}</p>}
               </div>
             )}
           </>

@@ -6072,5 +6072,2453 @@
       "tipo": "midia",
       "match": "Município de Breves-PA não apresentou registros de operações policiais, investigações ou escândalos de corrupção municipal nos últimos 2 anos nas fontes pesquisadas."
     }
+  ],
+  "6037eecd-e795-4e5e-93b9-20af82920bee": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 712.013.007-20 (BRUNO DAUSTER MAGALHAES E SILVA, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (2) — BRUNO DAUSTER MAGALHAES E SILVA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "BRUNO DAUSTER MAGALHAES E SILVA tem 2 processo(s) criminal(is) via Credilink. Assuntos: INTIMACAO; DIREITO PROCESSUAL PENAL (1209) - OBJETOS DE CARTAS PRECATOR. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 712.013.007-20",
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (24) — BRUNO DAUSTER MAGALHAES E SILVA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "BRUNO DAUSTER MAGALHAES E SILVA tem 24 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: COMPETENCIA TRIBUTARIA; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; ISS/ IMPOSTO SOBRE SERVICOS. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 712.013.007-20"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — BRUNO DAUSTER MAGALHAES E SILVA",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para BRUNO DAUSTER MAGALHAES E SILVA via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.bnews.com.br/noticias/politica/bruno-dauster-toma-decisao-sobre-caso-dos-respiradores.html\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome BRUNO DAUSTER MAGALHAES E SILVA"
+    }
+  ],
+  "2c2c34ef-36f3-4f92-a7d0-dea3e73b4386": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 789.047.655-87 (Anderson Pinheiro Santos, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Erro de Consulta Credilink (ProcessoTribunalJustica)",
+      "url": "https://api.tesserati.com.br",
+      "snippet": "Falha ao consultar ProcessoTribunalJustica na Credilink para Anderson Pinheiro Santos (CPF 789.047.655-87): exceção em api/ProcessoTribunalJustica: HTTPSConnectionPool(host='api.tesserati.com.br', port=443): Read timed out. (read timeout=20). NÃO é resultado negativo.",
+      "source": "Sistema Pepito — Erro de Consulta Credilink",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — falha técnica em ProcessoTribunalJustica"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Anderson Pinheiro Santos",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "9 mídia(s) negativa(s) identificada(s) para Anderson Pinheiro Santos via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/rj/regiao-dos-lagos/noticia/2026/05/18/suspeito-de-matar-o-proprio-pai-e-ocultar-o-corpo-em-cisterna-e-preso-em-sao-pedro-da-aldeia-no-rj.ghtml\", \"snippet",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Anderson Pinheiro Santos"
+    }
+  ],
+  "8fb890bf-57a7-4b09-8617-c1a24089c6a9": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 015.546.435-38 (Rodrigo Sales Rios, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — Rodrigo Sales Rios",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Rodrigo Sales Rios tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 0219010701 | PAGAMENTO (DIREITO CIVIL), PAGAMENTO, ADIMPLEME. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 015.546.435-38"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 16510739534 (SOLANGE MARGARIDA PRADO SALES RIBEIRO, pep_neta(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "M1 — TSE: Candidatura de SOLANGE MARGARIDA PRADO SALES RIBEIRO",
+      "url": "https://divulgacandcontas.tse.jus.br/",
+      "snippet": "Busca executada no portal TSE — Divulgação de Candidaturas e nos dados abertos do TSE (candidatos-2026). Nenhum registro de candidatura ou mandato ativo encontrado para 'SOLANGE MARGARIDA PRADO SALES RIBEIRO'. Cargo PEP e município não informados no caso (campos 'None'), impossibilitando confirmação de mandato específico. Ausência de registro é resultado válido.",
+      "source": "TSE — Divulgação de Candidaturas",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "nenhum registro encontrado"
+    },
+    {
+      "title": "M2 — Mídia adversa PEP: SOLANGE MARGARIDA PRADO SALES RIBEIRO — corrupção/improbidade/cassação/investigação/operação policial",
+      "url": "https://www.google.com/search?q=%22SOLANGE+MARGARIDA+PRADO+SALES+RIBEIRO%22+%22corrup%C3%A7%C3%A3o%22+OR+%22improbidade%22+OR+%22cassa%C3%A7%C3%A3o%22+OR+%22investiga%C3%A7%C3%A3o%22+OR+%22opera%C3%A7%C3%A3o+policial%22",
+      "snippet": "Busca executada com termos de mídia adversa de alta criticidade. Nenhum resultado retornado vinculado a 'SOLANGE MARGARIDA PRADO SALES RIBEIRO' em contexto de corrupção, improbidade administrativa, cassação de mandato, investigação criminal ou operação policial. Resultados retornados são homônimos ou casos não relacionados (Gabriela Prado, Aguinaldo Ribeiro, etc.).",
+      "source": "Pesquisa Web — Mídia Adversa (M2)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "nenhum achado adverso"
+    },
+    {
+      "title": "M3 — Portal da Transparência: SOLANGE MARGARIDA PRADO SALES RIBEIRO — contratos federais",
+      "url": "https://portaldatransparencia.gov.br/",
+      "snippet": "Busca executada com o nome completo do PEP no Portal da Transparência Federal. Nenhum resultado direto retornado para 'SOLANGE MARGARIDA PRADO SALES RIBEIRO' em contratos, sanções (CEIS/CNEP) ou transferências federais. Município PEP não informado ('None'), o que limita cruzamento geográfico. Ausência de registro é resultado válido.",
+      "source": "Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "nenhum registro encontrado"
+    },
+    {
+      "title": "M4 — Licitação/contrato público: SOLANGE MARGARIDA PRADO SALES RIBEIRO",
+      "url": "https://www.google.com/search?q=%22SOLANGE+MARGARIDA+PRADO+SALES+RIBEIRO%22+%22licita%C3%A7%C3%A3o%22+OR+%22contrato%22+OR+%22dispensa%22+OR+%22inexigibilidade%22",
+      "snippet": "Busca executada com termos de contratação pública. Nenhum resultado vinculando 'SOLANGE MARGARIDA PRADO SALES RIBEIRO' a processos licitatórios, contratos com dispensa ou inexigibilidade. Resultados retornados são genéricos sobre legislação de licitação (Lei 14.133/2021), sem relação com o sujeito do caso.",
+      "source": "Pesquisa Web — Contratos/Licitações (M4)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "nenhum achado"
+    },
+    {
+      "title": "M5 — Mídia adversa OWNER: Rodrigo Sales Rios / ITUVERAVA-SP — fraude/investigação/licitação",
+      "url": "https://www.google.com/search?q=%22Rodrigo+Sales+Rios%22+ITUVERAVA+fraude+OR+investiga%C3%A7%C3%A3o+OR+%22contrato+p%C3%BAblico%22+OR+licita%C3%A7%C3%A3o",
+      "snippet": "Busca executada para o titular Rodrigo Sales Rios em Ituverava-SP com termos de mídia adversa. Nenhum resultado retornado vinculando o nome a fraudes, investigações criminais, contratos públicos irregulares ou processos licitatórios suspeitos. Resultados irrelevantes ao caso (reportagens sobre fraudes médicas em outros estados e países).",
+      "source": "Pesquisa Web — Mídia Adversa Owner (M5)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "nenhum achado adverso"
+    },
+    {
+      "title": "M6 — Portal da Transparência: CNPJ 49.233.058/0001-74 (R N RIOS SERVICOS MEDICOS LTDA) — contratos federais",
+      "url": "https://portaldatransparencia.gov.br/pessoa-juridica/49233058000174",
+      "snippet": "Busca executada com o CNPJ 49.233.058/0001-74 no Portal da Transparência Federal. A busca via site:portaldatransparencia.gov.br não retornou registros de contratos federais, transferências, sanções (CEIS/CNEP/CEPIM) ou impedimentos para a empresa R N RIOS SERVICOS MEDICOS LTDA. Ausência de contrato federal é resultado válido para empresa de serviços médicos de pequeno porte em município do interior de SP.",
+      "source": "Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "nenhum registro encontrado"
+    },
+    {
+      "title": "M7 — Contexto regional: ITUVERAVA-SP — operação policial/corrupção municipal (2024-2025)",
+      "url": "https://www.google.com/search?q=ITUVERAVA+SP+%22opera%C3%A7%C3%A3o+policial%22+OR+%22corrup%C3%A7%C3%A3o+municipal%22+2024+OR+2025",
+      "snippet": "Busca executada para identificar operações policiais ou escândalos de corrupção municipal em Ituverava-SP nos últimos dois anos. Nenhum resultado relacionado a Ituverava-SP em contexto de operação policial ou corrupção municipal retornado. Resultados são de outros municípios (Campo Grande/MS, Baixada Santista/SP, etc.), sem conexão com a cidade do owner/empresa.",
+      "source": "Pesquisa Web — Contexto Regional (M7)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "nenhum achado em Ituverava-SP"
+    },
+    {
+      "title": "M8 — Mídia adversa EMPRESA: R N RIOS SERVICOS MEDICOS LTDA / CNPJ 49.233.058/0001-74 — fraude/investigação/processo",
+      "url": "https://www.google.com/search?q=%22R+N+RIOS+SERVICOS+MEDICOS%22+OR+%2249.233.058%2F0001-74%22+fraude+OR+investiga%C3%A7%C3%A3o+OR+processo+OR+not%C3%ADcia",
+      "snippet": "Busca executada especificamente para a pessoa jurídica R N RIOS SERVICOS MEDICOS LTDA e seu CNPJ. Nenhum resultado retornado vinculando a razão social ou o CNPJ a fraudes, investigações, notícias adversas ou processos de destaque em mídia aberta. Resultados retornados são de casos de fraude médica internacionais (EUA) ou de outras empresas brasileiras, sem conexão com a empresa do caso.",
+      "source": "Pesquisa Web — Mídia Adversa Empresa (M8)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "nenhum achado adverso"
+    },
+    {
+      "title": "M9 — Processos da empresa: R N RIOS SERVICOS MEDICOS LTDA / CNPJ 49.233.058/0001-74 — JusBrasil / Escavador",
+      "url": "https://www.escavador.com/",
+      "snippet": "Busca executada nos sites JusBrasil e Escavador para a razão social 'R N RIOS SERVICOS MEDICOS LTDA' e CNPJ 49.233.058/0001-74. Nenhum resultado direto retornado para a empresa. O Escavador retornou páginas de outras empresas de serviços médicos ('L C R Mota', 'R. Abreu', 'Rio Medical') sem qualquer relação com o CNPJ do caso. Nota: processos judiciais já cobertos pela API JusBrasil (3 findings, sem risco alto).",
+      "source": "Pesquisa Web — JusBrasil/Escavador Empresa (M9)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "nenhum registro encontrado"
+    },
+    {
+      "title": "M10 — TCE-SP: SOLANGE MARGARIDA PRADO SALES RIBEIRO — julgamento de contas/reprovação",
+      "url": "https://www.tce.sp.gov.br/",
+      "snippet": "Busca executada no TCE-SP (site:tce.sp.gov.br e busca interna) para o nome completo do PEP. Nenhum resultado retornado vinculando 'SOLANGE MARGARIDA PRADO SALES RIBEIRO' a processos de prestação de contas, julgamentos, reprovações ou sanções do Tribunal de Contas do Estado de São Paulo. Resultados retornados são de outros responsáveis em processos de saúde e terceiro setor no TCE-SP.",
+      "source": "TCE-SP — busca interna",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "nenhum registro encontrado"
+    },
+    {
+      "title": "M11 — Câmara/ALE-SP: SOLANGE MARGARIDA PRADO SALES RIBEIRO — atas/processos disciplinares",
+      "url": "https://www.al.sp.gov.br/",
+      "snippet": "Busca executada para 'SOLANGE MARGARIDA PRADO SALES RIBEIRO' em Câmara Municipal e Assembleia Legislativa de SP. Nenhum resultado retornado vinculando o PEP a atas parlamentares, processos disciplinares, comissões de inquérito ou qualquer registro em portais legislativos do Estado de SP. Município PEP não informado ('None'), o que impede buscas municipais específicas.",
+      "source": "Câmara/ALE-SP — Portal de Transparência",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "nenhum registro encontrado"
+    },
+    {
+      "title": "M12 — Diário Oficial da União: SOLANGE MARGARIDA PRADO SALES RIBEIRO / R N RIOS SERVICOS MEDICOS LTDA",
+      "url": "https://www.in.gov.br/servicos/diario-oficial-da-uniao",
+      "snippet": "Busca executada no DOU para o nome do PEP e a razão social da empresa. Nenhum resultado retornado vinculando 'SOLANGE MARGARIDA PRADO SALES RIBEIRO' ou 'R N RIOS SERVICOS MEDICOS LTDA' a publicações oficiais no Diário Oficial da União (nomeações, exonerações, contratos, sanções ou outros atos federais). Resultados retornados são de outros servidores e editais sem relação com o caso.",
+      "source": "Diário Oficial da União (DOU)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "nenhum registro encontrado"
+    },
+    {
+      "title": "M13 — CGU Servidores Federais: SOLANGE MARGARIDA PRADO SALES RIBEIRO — vínculo com cargo público federal",
+      "url": "https://portaldatransparencia.gov.br/servidores/consulta",
+      "snippet": "Busca executada para verificar vínculo de 'SOLANGE MARGARIDA PRADO SALES RIBEIRO' com cargo público federal na base CGU/Portal da Transparência. Nenhum resultado retornado confirmando cadastro como servidora federal ativa, aposentada ou pensionista. O Escavador retornou referência a 'Susana Solange Ribeiro do Prado Moreno' como professora municipal — nome parcialmente similar, mas distinto e sem relação confirmada com o PEP do caso (não marcado como homônimo concreto).",
+      "source": "CGU — Servidores Federais",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "nenhum registro encontrado — possível nome similar em rede Escavador (Susana Solange Ribeiro do Prado Moreno, professora municipal), sem identidade confirmada"
+    }
+  ],
+  "8de9af0d-cd6a-484d-9387-b88479d1b76d": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 007.544.534-48 (Jerberson Ramos Carneiro De Lima, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (6) — Jerberson Ramos Carneiro De Lima",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Jerberson Ramos Carneiro De Lima tem 6 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO TRIBUTARIO (14) - DIVIDA ATIVA (EXECUCAO FISCAL) (60; FATO GERADOR/INCIDENCIA; FATO GERADOR/INCIDENCIA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 007.544.534-48"
+    }
+  ],
+  "5a1bd3af-71da-4191-9485-6e586632e999": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 004.499.103-77 (Vinícius Melão Veloso Cerqueira, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (1) — Vinícius Melão Veloso Cerqueira",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Vinícius Melão Veloso Cerqueira tem 1 processo(s) criminal(is) via Credilink. Assuntos: OITIVA. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 004.499.103-77",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (9) — Vinícius Melão Veloso Cerqueira",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Vinícius Melão Veloso Cerqueira tem 9 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: LIMINAR ALIENACAO FIDUCIARIA BUSCA E APREENSAO; DEFEITO, NULIDADE OU ANULACAO ASSISTENCIA JUDICIARIA GRATUIT; DIREITO CIVIL - COISAS - PROPRIEDADE - CONDOMINIO EM EDIFICI. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 004.499.103-77"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 30663997372 (IELVA MARIA MELAO VELOSO CERQUEIRA, pep_filha(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (1) — IELVA MARIA MELAO VELOSO CERQUEIRA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "IELVA MARIA MELAO VELOSO CERQUEIRA tem 1 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL - CRIMES CONTRA A HONRA - CALUNIA DIREITO PENA. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 30663997372",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    }
+  ],
+  "30b944d2-41fa-4bd9-96f3-8e4c4739db88": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 025.889.015-06 (Raimundo Cardoso Dos Santos Junior, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — Raimundo Cardoso Dos Santos Junior",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Raimundo Cardoso Dos Santos Junior tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: REPETICAO DO INDEBITO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 025.889.015-06"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Raimundo Cardoso Dos Santos Junior",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "2 mídia(s) negativa(s) identificada(s) para Raimundo Cardoso Dos Santos Junior via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://conjur.com.br/2023-mai-05/stf-analisa-250-denuncias-envolvidos-atos-golpistas/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01T00:00:00\", \"",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Raimundo Cardoso Dos Santos Junior"
+    },
+    {
+      "title": "M1 — TSE Eleições 2024: Junior Cardoso (Raimundo Cardoso Dos Santos Junior) — Candidatura a Vereador em Milagres-BA",
+      "url": "https://www.tribunapr.com.br/eleicoes/2024/candidatos/ba/milagres/vereador/junior-cardoso-uniao-44222/",
+      "snippet": "Raimundo Cardoso Dos Santos Junior, nome de urna 'Junior Cardoso' (nº 44222), candidatou-se a Vereador em Milagres-BA nas Eleições 2024 pelo partido UNIÃO BRASIL. Nascido em Salvador (BA) em 17/07/1986, 38 anos, empresário, ensino médio completo, solteiro. Candidatura deferida como regular pela Justiça Eleitoral, com dados e documentação completos. Site O Tempo o lista como 'vereador eleito de Milagres em 2024'. PEP confirmado como ativo no mandato 2025–2028.",
+      "source": "TSE — Divulgação de Candidaturas",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "RAIMUNDO CARDOSO DOS SANTOS JUNIOR — vereador eleito Milagres-BA, UNIÃO BRASIL, mandato 2025–2028 confirmado via dados TSE"
+    },
+    {
+      "title": "M2 — Mídia adversa PEP: busca por corrupção, improbidade, cassação ou operação policial",
+      "url": "https://www.google.com/search?q=%22RAIMUNDO+CARDOSO+DOS+SANTOS+JUNIOR%22+%22MILAGRES%22+corrup%C3%A7%C3%A3o+OR+improbidade+OR+cassa%C3%A7%C3%A3o+OR+investiga%C3%A7%C3%A3o",
+      "snippet": "Nenhuma ocorrência de mídia adversa localizada associando 'RAIMUNDO CARDOSO DOS SANTOS JUNIOR' a corrupção, improbidade administrativa, cassação de mandato ou operação policial. Resultados retornados são de outras pessoas com nomes semelhantes (ex.: Newton Cardoso Jr./MG, Raimundo Soares Cutrim/MA), sem qualquer conexão com o PEP investigado em Milagres-BA.",
+      "source": "Pesquisa Web — Mídia Adversa (M2)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum achado adverso identificado para RAIMUNDO CARDOSO DOS SANTOS JUNIOR / Milagres-BA"
+    },
+    {
+      "title": "M3 — Portal da Transparência Federal: contratos/sanções do PEP (RAIMUNDO CARDOSO DOS SANTOS JUNIOR) — Milagres-BA",
+      "url": "https://portaldatransparencia.gov.br/",
+      "snippet": "Busca no Portal da Transparência federal com os termos 'RAIMUNDO CARDOSO DOS SANTOS JUNIOR' e 'MILAGRES' não retornou registros diretos de contratos, sanções CEIS/CNEP ou impedimentos CEPIM em nome do PEP pessoa física. Portal da Transparência confirmado acessível, sem dados de sanção federal em nome do titular.",
+      "source": "Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Nenhum contrato federal, sanção CEIS/CNEP ou impedimento CEPIM localizado para RAIMUNDO CARDOSO DOS SANTOS JUNIOR"
+    },
+    {
+      "title": "M4 — Licitações e contratos públicos: PEP em Milagres-BA",
+      "url": "https://www.milagres.ba.gov.br/site/contaspublicas",
+      "snippet": "Portal de contas públicas da Prefeitura Municipal de Milagres-BA localizado e acessível. Não foram encontrados registros de contratos ou licitações firmados diretamente com 'RAIMUNDO CARDOSO DOS SANTOS JUNIOR' no município. Resultados de contratações do portal envolvem outros fornecedores (ex.: 'Raimundo da Silva dos Santos', Contrato 0081/2019). Nenhuma dispensa ou inexigibilidade em nome do PEP ou da empresa ARGGOS COMUNICACAO VISUAL identificada na pesquisa.",
+      "source": "Pesquisa Web — Licitações Municipais (M4)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Nenhum contrato ou licitação localizado em nome do PEP ou da ARGGOS COMUNICACAO VISUAL no portal municipal de Milagres-BA"
+    },
+    {
+      "title": "M5 — Mídia adversa do owner/titular (pessoa física): Raimundo Cardoso Dos Santos Junior — Milagres-BA",
+      "url": "https://www.google.com/search?q=%22Raimundo+Cardoso+Dos+Santos+Junior%22+%22MILAGRES%22+fraude+OR+investiga%C3%A7%C3%A3o+OR+%22contrato+p%C3%BAblico%22+OR+licita%C3%A7%C3%A3o",
+      "snippet": "Busca específica para o owner/titular pessoa física em Milagres-BA combinada com termos de risco (fraude, investigação, contrato público, licitação) não retornou resultados adversos. Nenhuma notícia ou publicação associando o titular a irregularidades em contratos públicos ou investigações foi localizada.",
+      "source": "Pesquisa Web — Mídia Adversa Owner (M5)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhuma mídia adversa localizada para o owner Raimundo Cardoso Dos Santos Junior em Milagres-BA"
+    },
+    {
+      "title": "M6 — Portal da Transparência Federal: contratos federais da empresa ARGGOS COMUNICACAO VISUAL (CNPJ 58.354.141/0001-92)",
+      "url": "https://portaldatransparencia.gov.br/pessoa-juridica/5835414100019",
+      "snippet": "Busca no Portal da Transparência com CNPJ 58.354.141/0001-92 (ARGGOS COMUNICACAO VISUAL LTDA) não retornou contratos federais, sanções CEIS/CNEP ou impedimentos CEPIM. A empresa possui CNPJ de abertura recente e não figura como fornecedora em bases federais consultadas. Nenhum registro de sanção ou contrato público federal localizado.",
+      "source": "Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "CNPJ 58.354.141/0001-92 / ARGGOS COMUNICACAO VISUAL LTDA — nenhum contrato federal, sanção ou impedimento identificado"
+    },
+    {
+      "title": "M7 — Contexto regional: operações policiais e corrupção municipal em Milagres-BA (2024–2026)",
+      "url": "https://pretonobranco.org/2026/01/05/mp-da-bahia-deflagrou-quase-100-operacoes-contra-o-crime-em-2025/",
+      "snippet": "Relatório do MPBA indica 92 operações deflagradas em 2025 na Bahia contra crime organizado (corrupção, lavagem de dinheiro, tráfico). Operações de corrupção associada a agentes públicos foram registradas em 2024 e 2025, mas nenhuma operação específica envolvendo o município de Milagres-BA ou os investigados (PEP ou empresa) foi localizada. O contexto estadual aponta aumento de fiscalização, sem evidência de operação direcionada a Milagres.",
+      "source": "Pesquisa Web — Contexto Regional Bahia (M7)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhuma operação policial ou escândalo de corrupção municipal localizado especificamente em Milagres-BA nos últimos 2 anos"
+    },
+    {
+      "title": "M8 — Mídia adversa da empresa ARGGOS COMUNICACAO VISUAL LTDA (CNPJ 58.354.141/0001-92)",
+      "url": "https://www.google.com/search?q=%22ARGGOS+COMUNICACAO+VISUAL%22+CNPJ+58354141+fraude+OR+investiga%C3%A7%C3%A3o+OR+processo+OR+not%C3%ADcia",
+      "snippet": "Busca combinando razão social 'ARGGOS COMUNICACAO VISUAL' e CNPJ 58.354.141 com termos de risco (fraude, investigação, processo, notícia) não retornou qualquer resultado. A empresa não possui presença midiática identificável e não aparece em notícias adversas. Empresa de comunicação visual de pequeno porte localizada em Milagres-BA, sem registro público de litígios ou irregularidades.",
+      "source": "Pesquisa Web — Mídia Adversa Empresa (M8)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "ARGGOS COMUNICACAO VISUAL LTDA — nenhuma mídia adversa localizada"
+    },
+    {
+      "title": "M9 — JusBrasil / Escavador: processos da empresa ARGGOS COMUNICACAO VISUAL LTDA",
+      "url": "https://www.escavador.com/nomes/arggos-comunicacao-visual-ltda",
+      "snippet": "Busca no Escavador e JusBrasil pela razão social 'ARGGOS COMUNICACAO VISUAL LTDA' e CNPJ 58.354.141/0001-92 não retornou resultados diretos. A empresa não aparece indexada em bases de processos públicos pesquisadas. Resultados retornados pelo Escavador referem-se a outras empresas de comunicação visual sem relação com o caso (Image Comunicacao Visual, Triângulo, etc.).",
+      "source": "Escavador / JusBrasil — Processos Empresa (M9)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "ARGGOS COMUNICACAO VISUAL LTDA — nenhum processo localizado em JusBrasil ou Escavador"
+    },
+    {
+      "title": "M10 — TCE-BA: julgamento de contas de RAIMUNDO CARDOSO DOS SANTOS JUNIOR",
+      "url": "https://www.tce.ba.gov.br/",
+      "snippet": "Busca no TCE-BA com o nome 'RAIMUNDO CARDOSO DOS SANTOS JUNIOR' e município 'Milagres' não retornou julgamentos de contas, reprovações ou multas. Resultados obtidos referem-se a TCE-MG e TCE-MA (outros entes), com menções a Milagres do Maranhão e gestores sem relação com o PEP investigado. Nenhum processo ou decisão do TCE-BA localizado envolvendo o PEP.",
+      "source": "TCE-BA — busca interna",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "RAIMUNDO CARDOSO DOS SANTOS JUNIOR — nenhum julgamento de contas ou reprovação no TCE-BA localizado"
+    },
+    {
+      "title": "M11 — Câmara/ALE-BA: atas e processos disciplinares envolvendo RAIMUNDO CARDOSO DOS SANTOS JUNIOR",
+      "url": "https://www.camarademilagres.ba.gov.br/",
+      "snippet": "Busca por atas, processos disciplinares ou registros da Câmara Municipal de Milagres-BA e da Assembleia Legislativa da Bahia envolvendo 'RAIMUNDO CARDOSO DOS SANTOS JUNIOR' não retornou resultados. Portal da Câmara Municipal de Milagres-BA e ALE-BA não apresentam menções ao PEP em contextos adversos. Mandato de vereador confirmado pelo TSE para o período 2025–2028.",
+      "source": "Câmara/ALE-BA — Portal de Transparência",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "RAIMUNDO CARDOSO DOS SANTOS JUNIOR — nenhum processo disciplinar ou ata adversa localizada na Câmara de Milagres ou ALE-BA"
+    },
+    {
+      "title": "M12 — Diário Oficial da União (DOU): RAIMUNDO CARDOSO DOS SANTOS JUNIOR / ARGGOS COMUNICACAO VISUAL",
+      "url": "https://www.in.gov.br/servicos/diario-oficial-da-uniao",
+      "snippet": "Busca no DOU (via pesquisa web indexada) por 'RAIMUNDO CARDOSO' e 'ARGGOS COMUNICACAO VISUAL' não retornou atos oficiais federais — nomeações, sanções, contratos, portarias ou qualquer publicação vinculando o PEP ou a empresa ao âmbito federal. Ausência de publicações no DOU é consistente com o perfil de vereador municipal sem vínculos federais identificados.",
+      "source": "Diário Oficial da União (DOU)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "RAIMUNDO CARDOSO DOS SANTOS JUNIOR / ARGGOS COMUNICACAO VISUAL — nenhuma publicação no DOU localizada"
+    },
+    {
+      "title": "M13 — CGU Servidores Federais: vínculo de RAIMUNDO CARDOSO DOS SANTOS JUNIOR com cargo público federal",
+      "url": "https://portaldatransparencia.gov.br/servidores/visao-geral",
+      "snippet": "Busca na base CGU de servidores federais com o nome 'RAIMUNDO CARDOSO DOS SANTOS JUNIOR' não retornou vínculos com cargos públicos federais. O perfil do PEP no TSE o declara como 'empresário', sem indicação de função pública federal. Nenhum vínculo com Poder Executivo Federal localizado.",
+      "source": "CGU — Servidores Federais",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "RAIMUNDO CARDOSO DOS SANTOS JUNIOR — nenhum vínculo com cargo público federal localizado na base CGU"
+    }
+  ],
+  "7d76fbda-ea77-4091-b3f9-51652b8a8839": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 004.967.595-82 (Edmar Bastos Miranda, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 05168131530 (VANDERLEI BASTOS MIRANDA, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (1) — VANDERLEI BASTOS MIRANDA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "VANDERLEI BASTOS MIRANDA tem 1 processo(s) criminal(is) via Credilink. Assuntos: INJURIA. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 05168131530",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    }
+  ],
+  "3f6ddbb9-7896-4775-ba0b-eb2bca2f69a8": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 307.866.978-57 (Paulo sergio santos Pinheiro, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Paulo sergio santos Pinheiro",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "9 mídia(s) negativa(s) identificada(s) para Paulo sergio santos Pinheiro via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=506844&amp;ori=1\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01T00:00:00\", \"so",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Paulo sergio santos Pinheiro"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 29134252835 (ALZEMAR SANTOS PINHEIRO, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — ALZEMAR SANTOS PINHEIRO",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "ALZEMAR SANTOS PINHEIRO tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: IPTU/ IMPOSTO PREDIAL E TERRITORIAL URBANO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 29134252835"
+    },
+    {
+      "title": "M1 — ALZEMAR SANTOS PINHEIRO confirmado como Vereador ativo na Câmara Municipal de Gavião Peixoto-SP (MDB, 2021–2024)",
+      "url": "https://camaragaviaopeixoto.sp.gov.br/index2.php?pag=T1RjPU9EZz1PVFU9T0dFPU9EWT1PR0k9T1RZPU9XST0%3D&idver=1&tpBusca=indicacao",
+      "snippet": "Perfil oficial da Câmara Municipal de Gavião Peixoto lista Alzemar Santos Pinheiro (nome parlamentar 'Coca', MDB, 106 votos) com cargos na Mesa Diretora 2021-2022 (Vice-Presidente e 2º Secretário), membro de comissões de Finanças e Orçamento, Justiça e Redação, e Relator de Obras. Sessão Extraordinária registrada em 28/11/2024, confirmando atividade recente.",
+      "source": "TSE — Divulgação de Candidaturas",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Mandato de vereador confirmado no portal oficial da Câmara Municipal de Gavião Peixoto-SP; registro histórico também para legislatura 2017-2018 (PHS, 148 votos) e candidatura 2008 (TSE). Cargo atual: VEREADOR, MDB, Gavião Peixoto-SP. Sem cassação ou afastamento detectado."
+    },
+    {
+      "title": "M2 — Mídia adversa ALZEMAR SANTOS PINHEIRO: nenhuma ocorrência de corrupção, improbidade, cassação ou operação policial encontrada",
+      "url": "https://www.camaragaviaopeixoto.sp.gov.br/index2.php?pag=T1RjPU9EZz1PVFU9T0dFPU9EWT1PR0k9T1RZPU9XST0%3D&idver=1&tpBusca=indicacao",
+      "snippet": "Pesquisa combinando o nome 'ALZEMAR SANTOS PINHEIRO' com termos 'corrupção', 'improbidade', 'cassação', 'investigação' e 'operação policial' não retornou resultados adversos. Todas as referências encontradas remetem ao seu perfil legislativo na Câmara Municipal de Gavião Peixoto-SP, sem qualquer notícia negativa de mídia.",
+      "source": "Pesquisa de mídia adversa — Google/Web",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Nenhuma mídia adversa encontrada para ALZEMAR SANTOS PINHEIRO. Ausência de achado é resultado válido da busca executada."
+    },
+    {
+      "title": "M3 — Portal da Transparência Federal: sem contratos federais encontrados para ALZEMAR SANTOS PINHEIRO / Gavião Peixoto-SP",
+      "url": "https://portaldatransparencia.gov.br/",
+      "snippet": "Busca no Portal da Transparência com nome do PEP e município não retornou contratos, convênios ou repasses federais vinculados diretamente a ALZEMAR SANTOS PINHEIRO. O portal não indexa resultados nominais para vereadores municipais de pequeno porte sem repasse federal direto.",
+      "source": "Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Nada encontrado para o PEP no Portal da Transparência Federal. Ausência de contratos federais diretos com ALZEMAR SANTOS PINHEIRO em Gavião Peixoto-SP."
+    },
+    {
+      "title": "M4 — Licitações e contratos municipais: sem achados de irregularidades para ALZEMAR SANTOS PINHEIRO em Gavião Peixoto-SP",
+      "url": "https://diario.gaviaopeixoto.sp.gov.br/",
+      "snippet": "Pesquisa por licitação, contrato, dispensa ou inexigibilidade vinculados ao nome do PEP não retornou achados. O Diário Oficial Eletrônico da Prefeitura Municipal de Gavião Peixoto está disponível online, mas a busca não identificou contratos ou dispensas em nome de ALZEMAR SANTOS PINHEIRO ou de empresa associada.",
+      "source": "Pesquisa de mídia adversa — Google/Web",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Nenhum contrato público, dispensa ou inexigibilidade encontrados em nome do PEP ou de empresa a ele vinculada em Gavião Peixoto-SP."
+    },
+    {
+      "title": "M5 — Mídia adversa OWNER Paulo Sergio Santos Pinheiro / Trancoso-BA: nenhuma ocorrência adversa encontrada",
+      "url": "https://portaldatransparencia.gov.br/",
+      "snippet": "Pesquisa combinando 'Paulo sergio santos Pinheiro', 'TRANCOSO' com termos 'fraude', 'investigação', 'contrato público' e 'licitação' não retornou resultados adversos. Não foram encontradas notícias, processos ou registros de mídia negativa para o titular no município de Trancoso-BA.",
+      "source": "Pesquisa de mídia adversa — Google/Web",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhuma mídia adversa encontrada para Paulo Sergio Santos Pinheiro em Trancoso-BA. Ausência de achado é resultado válido da busca executada."
+    },
+    {
+      "title": "M6 — Portal da Transparência Federal: sem contratos federais encontrados para CNPJ 45.765.688/0001-39",
+      "url": "https://portaldatransparencia.gov.br/",
+      "snippet": "Busca pelo CNPJ 45.765.688/0001-39 (empresa '45.765.688 PAULO SERGIO SANTOS PINHEIRO') no Portal da Transparência não retornou contratos, convênios, repasses, CEIS, CNEP ou CEPIM vinculados a este CNPJ. A empresa não figura como fornecedora ou beneficiária de recursos federais nos sistemas consultados.",
+      "source": "Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "CNPJ 45.765.688/0001-39 não encontrado em contratos federais, sanções (CEIS/CNEP) ou impedimentos (CEPIM) no Portal da Transparência."
+    },
+    {
+      "title": "M7 — Contexto regional: sem operações policiais ou corrupção municipal em Gavião Peixoto-SP ou Trancoso-BA (2024-2025)",
+      "url": "https://jornalgrandebahia.com.br/2025/01/mpba-intensifica-combate-ao-crime-organizado-com-75-operacoes-em-2024/",
+      "snippet": "Pesquisa de operações policiais e corrupção municipal nos municípios de Gavião Peixoto-SP e Trancoso-BA nos últimos 2 anos não retornou ocorrências diretamente relacionadas a esses municípios. Operações do MPBA em 2024 atingiram outras cidades baianas (Salvador, Feira de Santana), sem menção a Trancoso. Nenhuma operação mapeada em Gavião Peixoto-SP.",
+      "source": "Pesquisa de mídia adversa — Google/Web",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhuma operação policial ou escândalo de corrupção municipal localizado especificamente em Gavião Peixoto-SP ou Trancoso-BA nos últimos 2 anos."
+    },
+    {
+      "title": "M8 — Mídia adversa da EMPRESA '45.765.688 PAULO SERGIO SANTOS PINHEIRO' (CNPJ 45.765.688/0001-39): nenhuma ocorrência adversa encontrada",
+      "url": "https://portaldatransparencia.gov.br/",
+      "snippet": "Pesquisa combinando a razão social '45.765.688 PAULO SERGIO SANTOS PINHEIRO' e o CNPJ 45.765.688/0001-39 com termos 'fraude', 'investigação', 'processo' e 'notícia' não retornou resultados adversos. A empresa não aparece em notícias negativas de mídia ou publicações de órgãos de controle.",
+      "source": "Pesquisa de mídia adversa — Google/Web",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhuma mídia adversa encontrada para a pessoa jurídica CNPJ 45.765.688/0001-39 ('45.765.688 PAULO SERGIO SANTOS PINHEIRO'). Ausência de achado é resultado válido da busca executada."
+    },
+    {
+      "title": "M9 — Processos da empresa CNPJ 45.765.688/0001-39 em Jusbrasil/Escavador: sem achados de processos da PJ",
+      "url": "https://www.jusbrasil.com.br/",
+      "snippet": "Busca pelo CNPJ 45765688000139 e pela razão social '45.765.688 PAULO SERGIO SANTOS PINHEIRO' nos portais Jusbrasil e Escavador não retornou processos judiciais indexados para esta pessoa jurídica. Nota: processos do titular pessoa física já foram cobertos pela API JusBrasil prévia (4 findings retornados).",
+      "source": "Pesquisa de mídia adversa — Google/Web",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum processo judicial público encontrado para a pessoa jurídica CNPJ 45.765.688/0001-39 nas plataformas Jusbrasil e Escavador via pesquisa web. Processos do titular PF já apurados previamente via API."
+    },
+    {
+      "title": "M10 — TCE-BA: sem julgamentos de contas ou reprovações encontradas para ALZEMAR SANTOS PINHEIRO",
+      "url": "https://www.tce.ba.gov.br/",
+      "snippet": "Pesquisa no TCE-BA com o nome 'ALZEMAR SANTOS PINHEIRO' não retornou acórdãos, julgamentos de contas irregulares, multas ou reprovações. O PEP é vereador municipal em Gavião Peixoto-SP (UF SP), não em município baiano, o que reduz a probabilidade de processos no TCE-BA. Busca executada sem achados relevantes.",
+      "source": "TCE-BA — busca interna",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Nada encontrado para ALZEMAR SANTOS PINHEIRO no TCE-BA. O PEP exerce mandato em SP, tornando TCE-BA competência improvável. Ausência de achado é resultado válido."
+    },
+    {
+      "title": "M11 — Câmara/ALE-BA: sem processos disciplinares ou atas adversas para ALZEMAR SANTOS PINHEIRO",
+      "url": "https://www.camaragaviaopeixoto.sp.gov.br/",
+      "snippet": "Pesquisa por processos disciplinares ou atas da Câmara Municipal de Gavião Peixoto-SP e da ALE-BA para o nome 'ALZEMAR SANTOS PINHEIRO' não retornou ocorrências adversas. O portal da Câmara Municipal de Gavião Peixoto confirma mandatos regulares (2017-2018 e 2021-2024) sem registros de cassação ou processo disciplinar.",
+      "source": "Câmara/ALE-BA — Portal de Transparência",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Nenhum processo disciplinar, cassação ou infração funcional encontrada para ALZEMAR SANTOS PINHEIRO na Câmara Municipal de Gavião Peixoto-SP ou na ALE-BA. Mandatos legislativos confirmados como regulares."
+    },
+    {
+      "title": "M12 — Diário Oficial da União: sem atos oficiais federais encontrados para ALZEMAR SANTOS PINHEIRO ou '45.765.688 PAULO SERGIO SANTOS PINHEIRO'",
+      "url": "https://www.in.gov.br/servicos/diario-oficial-da-uniao",
+      "snippet": "Pesquisa no Diário Oficial da União combinando o nome do PEP e da razão social da empresa não retornou publicações de atos oficiais, sanções, nomeações, demissões ou qualquer registro federal relevante para as partes investigadas. A ausência é esperada dado o nível municipal do cargo do PEP.",
+      "source": "Diário Oficial da União (DOU)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Nenhum ato oficial federal publicado no DOU encontrado para ALZEMAR SANTOS PINHEIRO ou para a empresa CNPJ 45.765.688/0001-39. Ausência de achado é resultado válido da busca executada."
+    },
+    {
+      "title": "M13 — CGU Servidores Federais: ALZEMAR SANTOS PINHEIRO não encontrado como servidor federal",
+      "url": "https://portaldatransparencia.gov.br/servidores/consulta",
+      "snippet": "Pesquisa combinando 'ALZEMAR SANTOS PINHEIRO' com 'CGU' e 'servidor federal' não retornou registros de vínculo com cargo público federal. O PEP exerce mandato eletivo como vereador municipal em Gavião Peixoto-SP, não havendo evidência de acumulação com cargo federal ou de investigação pela CGU.",
+      "source": "CGU — Servidores Federais",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "ALZEMAR SANTOS PINHEIRO não identificado como servidor federal na base CGU. Ausência de vínculo federal confirmada. Resultado válido da busca executada."
+    }
+  ],
+  "a0068ae9-06a7-4d78-bf1f-d8bf3cc66b09": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 037.590.581-24 (Max Alexandre Oliveira Maximiano, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 03759060102 (MAYCOW DOUGLAS DE OLIVEIRA MAXIMIANO, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (1) — MAYCOW DOUGLAS DE OLIVEIRA MAXIMIANO",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "MAYCOW DOUGLAS DE OLIVEIRA MAXIMIANO tem 1 processo(s) criminal(is) via Credilink. Assuntos: 3435 - DIREITO PENAL -> CRIMES CONTRA O PATRIMONIO -> RECEPT. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 03759060102",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    }
+  ],
+  "f381d957-fdc8-4aae-a597-3ffd31a7c997": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 857.005.841-15 (Elenira Tatiana Lemos Vieira, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (12) — Elenira Tatiana Lemos Vieira",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Elenira Tatiana Lemos Vieira tem 12 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 6226 - DIREITO DO CONSUMIDOR -> RESPONSABILIDADE DO FORNECED; 6226 - DIREITO DO CONSUMIDOR -> RESPONSABILIDADE DO FORNECED; 4980 - DIREITO CIVIL -> OBRIGACOES -> ESPECIES DE TITULOS DE. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 857.005.841-15"
+    }
+  ],
+  "d9fa6c94-de3a-4a22-b530-aefa457815f3": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 003.746.432-96 (Siezio Rolim De Oliveira, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 22146369353 (JOAQUIM CALDAS ROLIM DE OLIVEIRA, pep_parente).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (4) — JOAQUIM CALDAS ROLIM DE OLIVEIRA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "JOAQUIM CALDAS ROLIM DE OLIVEIRA tem 4 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIVIDA ATIVA; DIREITO CIVIL - COISAS - POSSE - ESBULHO / TURBACAO / AMEACA; DIREITO PREVIDENCIARIO|PEDIDOS GENERICOS RELATIVOS AOS BENEF. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 22146369353"
+    }
+  ],
+  "e454e72f-634b-45df-b18d-5f95064592b4": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 041.706.935-90 (Pericles Da Silva David, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (3) — Pericles Da Silva David",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Pericles Da Silva David tem 3 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ALIENACAO FIDUCIARIA; ALIENACAO FIDUCIARIA; DIVIDA ATIVA NAO-TRIBUTARIA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 041.706.935-90"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 06286298509 (EDSON DAVID JUNIOR, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — EDSON DAVID JUNIOR",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "29 mídia(s) negativa(s) identificada(s) para EDSON DAVID JUNIOR via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/es/espirito-santo/noticia/2026/09/05/caso-david-correa-do-vasco-ex-agente-que-era-chefe-do-trafico-foi-preso-dentro-do-apartamento-de-luxo-do-jogador-no-e",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome EDSON DAVID JUNIOR"
+    }
+  ],
+  "affe9cb3-5bad-40c9-8119-3991eb312bd5": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 650.470.951-34 (Marco Aurelio Ribeiro, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (5) — Marco Aurelio Ribeiro",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Marco Aurelio Ribeiro tem 5 processo(s) criminal(is) via Credilink. Assuntos: CORRUPCAO PASSIVA; CORRUPCAO ATIVA; CRIMES CONTRA A FLORA. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 650.470.951-34",
+      "decisao_recomendada": "REPROVAÇÃO — 5 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (10) — Marco Aurelio Ribeiro",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Marco Aurelio Ribeiro tem 10 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: EXECUCAO DE TITULO EXTRAJUDICIAL; LIQUIDACAO / CUMPRIMENTO / EXECUCAO; AMBIENTAL. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 650.470.951-34"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Marco Aurelio Ribeiro",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "12 mídia(s) negativa(s) identificada(s) para Marco Aurelio Ribeiro via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://defatoonline.com.br/na-globo-lula-defende-lulinha-e-admite-erro-de-marco-aurelio-ribeiro-o-marcola-seu-ex-chefe-de-gabinete/\", \"snippet\": null, \"photo_url\": null, \"pub",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Marco Aurelio Ribeiro"
+    }
+  ],
+  "40e1ddfe-4d41-4ca7-976f-14d26aa896b7": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 103.864.948-00 (Solange Andrian Almeida De Macedo, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — Solange Andrian Almeida De Macedo",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Solange Andrian Almeida De Macedo tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 02190323 | LOCACAO DE IMOVEL, ESPECIES DE CONTRATOS, OBRIGAC. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 103.864.948-00"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 04466596816 (WAGNER MINUTTI                            , pep_titular).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — WAGNER MINUTTI                            ",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "WAGNER MINUTTI                             tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ACIDENTE DE TRANSITO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 04466596816"
+    }
+  ],
+  "aee57ba2-92d1-4f72-b892-238af96e902f": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 058.483.566-37 (Jonathas Scarpioni Do Lago, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (19) — Jonathas Scarpioni Do Lago",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Jonathas Scarpioni Do Lago tem 19 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: CIVIL > OBRIGACOES > ESPECIES DE TITULOS DE CREDITO > CEDULA; CIVIL > OBRIGACOES > ESPECIES DE TITULOS DE CREDITO > CEDULA; CIVIL > OBRIGACOES > ESPECIES DE TITULOS DE CREDITO > CEDULA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 058.483.566-37"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 06910065638 (HELIO RIBEIRO DO LAGO JUNIOR, pep_irmao).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (3) — HELIO RIBEIRO DO LAGO JUNIOR",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "HELIO RIBEIRO DO LAGO JUNIOR tem 3 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO TRIBUTARIO (14) - TAXAS (5956) - MUNICIPAIS (5972; DIREITO TRIBUTARIO (14) - CONTRIBUICOES (6031) - CONTRIBUICO; CIVIL > OBRIGACOES > ESPECIES DE CONTRATOS > CONTRATOS BANCA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 06910065638"
+    }
+  ],
+  "c189cbde-50b2-4935-ab4c-e563e829a194": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 751.287.994-68 (Wanira De Holanda Brasil, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Wanira De Holanda Brasil",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "2 mídia(s) negativa(s) identificada(s) para Wanira De Holanda Brasil via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.trf5.jus.br/index.php/noticias/leitura-de-noticias?/id=323813\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01T00:00:00\", \"source_url\": ",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Wanira De Holanda Brasil"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 08359144451 (ANDREZZA BRASIL SOUTO BEZERRA, pep_socio).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (4) — ANDREZZA BRASIL SOUTO BEZERRA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "ANDREZZA BRASIL SOUTO BEZERRA tem 4 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE TITULO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 08359144451"
+    }
+  ],
+  "80dfda06-79df-4429-ae77-fc90f280f142": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 007.221.790-14 (Douglas Lourenço De Faria, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (1) — Douglas Lourenço De Faria",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Douglas Lourenço De Faria tem 1 processo(s) criminal(is) via Credilink. Assuntos: CRIMES DE TRANSITO :: COMPETENCIA DE JUIZADO ESPECIAL CRIME . Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 007.221.790-14",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (6) — Douglas Lourenço De Faria",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Douglas Lourenço De Faria tem 6 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: GUARDA, RELACOES DE PARENTESCO, FAMILIA, DIREITO CIVIL; INADIMPLEMENTO :: COMPETENCIA DO JUIZADO ESPECIAL CIVEL; ACIDENTE DE TRANSITO :: COMPETENCIA DO JUIZADO ESPECIAL CIVE. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 007.221.790-14"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 00722167008 (TIAGO LOURENCO DE FARIA GODINHO, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — TIAGO LOURENCO DE FARIA GODINHO",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "TIAGO LOURENCO DE FARIA GODINHO tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: INDENIZACAO POR DANO MORAL, RESPONSABILIDADE CIVIL, DIREITO . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 00722167008"
+    }
+  ],
+  "523539b5-afe7-45e3-8e20-1abbad0495b6": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 089.894.034-64 (Felipe André Rodrigues De Arruda, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (3) — Felipe André Rodrigues De Arruda",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Felipe André Rodrigues De Arruda tem 3 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ACIDENTE DE TRANSITO; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; ACIDENTE DE TRANSITO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 089.894.034-64"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 88068269487 (FRANCISCO DOUGLAS RODRIGUES DE ARRUDA, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (1) — FRANCISCO DOUGLAS RODRIGUES DE ARRUDA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "FRANCISCO DOUGLAS RODRIGUES DE ARRUDA tem 1 processo(s) criminal(is) via Credilink. Assuntos: ACAO PENAL - CRIME ELEITORAL - PEDIDO DE CONDENACAO CRIMINAL. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 88068269487",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    }
+  ],
+  "47136df2-a5ae-4abf-a311-43f6c1ba6ecb": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 038.841.375-14 (Cledson Dos Santos Silva, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (2) — Cledson Dos Santos Silva",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Cledson Dos Santos Silva tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ABONO DA LEI 8.178/91; GRATIFICACAO NATALINA/13 SALARIO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 038.841.375-14"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Cledson Dos Santos Silva",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "7 mídia(s) negativa(s) identificada(s) para Cledson Dos Santos Silva via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/ma/maranhao/regiao-tocantina/noticia/2026/08/30/homem-e-condenado-a-20-anos-de-prisao-por-matar-dono-de-bar-dentro-do-proprio-estabelecimento-em-imperatri",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Cledson Dos Santos Silva"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 05800913501 (TARCIO DOS SANTOS SILVA, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (1) — TARCIO DOS SANTOS SILVA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "TARCIO DOS SANTOS SILVA tem 1 processo(s) criminal(is) via Credilink. Assuntos: LEVE. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 05800913501",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    }
+  ],
+  "8d19dffb-10c0-42d3-9876-395b6086c990": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 040.384.985-30 (Josimar Santos Santiago Da Silva, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (2) — Josimar Santos Santiago Da Silva",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Josimar Santos Santiago Da Silva tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ISONOMIA/EQUIVALENCIA SALARIAL; PAGAMENTO ATRASADO / CORRECAO MONETARIA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 040.384.985-30"
+    }
+  ],
+  "4ee79154-b223-4d5a-a9dc-133d1dd7b776": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 005.344.415-99 (Edilson Da Rocha Silva, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (2) — Edilson Da Rocha Silva",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Edilson Da Rocha Silva tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ALIENACAO FIDUCIARIA; ALIENACAO FIDUCIARIA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 005.344.415-99"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Edilson Da Rocha Silva",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "8 mídia(s) negativa(s) identificada(s) para Edilson Da Rocha Silva via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.tjma.jus.br/midia/cgj/noticia/509335/sao-luis-tera-53-acusados-no-banco-dos-reus-em-marco\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Edilson Da Rocha Silva"
+    }
+  ],
+  "b24a6d43-1985-4f2f-b412-226c47f296d5": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 257.888.335-15 (ortencio cordeiro Souza, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (8) — ortencio cordeiro Souza",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "ortencio cordeiro Souza tem 8 processo(s) criminal(is) via Credilink. Assuntos: DIFAMACAO  CRIMES CONTRA A HONRA  DIREITO PENAL; DIFAMACAO; CALUNIA  CRIMES CONTRA A HONRA  DIREITO PENAL. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 257.888.335-15",
+      "decisao_recomendada": "REPROVAÇÃO — 8 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (18) — ortencio cordeiro Souza",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "ortencio cordeiro Souza tem 18 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ALIMENTOS; FIXACAO; INADIMPLEMENTO  OBRIGACOES  DIREITO CIVIL. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 257.888.335-15"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 08393856760 (RICARDO ALMEIDA NUNES DA SILVA, pep_socio).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (10) — RICARDO ALMEIDA NUNES DA SILVA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "RICARDO ALMEIDA NUNES DA SILVA tem 10 processo(s) criminal(is) via Credilink. Assuntos: DIREITO ELEITORAL (11428) | CRIMES ELEITORAIS (11429) | CRIM; DIREITO PENAL (287) - CRIMES PRATICADOS POR FUNCIONARIOS PUB; CALUNIA. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 08393856760",
+      "decisao_recomendada": "REPROVAÇÃO — 10 processo(s) criminal(is) confirmado(s) via Credilink."
+    }
+  ],
+  "13a03b51-5446-43f1-9792-75e41cd232c6": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 027.838.298-35 (Marcelo Da Costa Almeida, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (5) — Marcelo Da Costa Almeida",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Marcelo Da Costa Almeida tem 5 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 0312 | DIVIDA ATIVA, DIREITO TRIBUTARIO; INEXECUCAO E RESCISAO - CONTRATOS - LICITACOES - DIREITO ADM; 040119 | APOSENTADORIA POR TEMPO DE CONTRIBUICAO (ART. 55/6). Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 027.838.298-35"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Marcelo Da Costa Almeida",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "17 mídia(s) negativa(s) identificada(s) para Marcelo Da Costa Almeida via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://noticias.stf.jus.br/postsnoticias/stf-autoriza-buscas-contra-deputado-investigado-por-fraudes-em-licitacoes-no-rio-de-janeiro/\", \"snippet\": null, \"photo_url\": null, \"p",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Marcelo Da Costa Almeida"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 03369991861 (CARLOS EDUARDO DA COSTA ALMEIDA, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (2) — CARLOS EDUARDO DA COSTA ALMEIDA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "CARLOS EDUARDO DA COSTA ALMEIDA tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO TRIBUTARIO (14) - CONTRIBUICOES (6031) - CONTRIBUICO; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO|. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 03369991861"
+    }
+  ],
+  "9dc3eed5-c854-47dc-8139-bd79da999697": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 031.360.391-06 (Adilson Tavares Oliveira, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    }
+  ],
+  "a480f71d-1fbf-42ba-b1dc-c414c454d41d": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 839.835.899-87 (Lucimar Cella, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Erro de Consulta Credilink (ProcessoTribunalJustica)",
+      "url": "https://api.tesserati.com.br",
+      "snippet": "Falha ao consultar ProcessoTribunalJustica na Credilink para Lucimar Cella (CPF 839.835.899-87): exceção em api/ProcessoTribunalJustica: HTTPSConnectionPool(host='api.tesserati.com.br', port=443): Read timed out. (read timeout=20). NÃO é resultado negativo.",
+      "source": "Sistema Pepito — Erro de Consulta Credilink",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — falha técnica em ProcessoTribunalJustica"
+    }
+  ],
+  "0d547b73-06c0-4e9c-9fa6-7594f9f151a7": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 289.142.498-08 (João Batista Turibio, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (27) — João Batista Turibio",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "João Batista Turibio tem 27 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: PROCESSUAL CIVIL > LIQUIDACAO / CUMPRIMENTO / EXECUCAO > OBR; DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE TITULO; CIVIL > OBRIGACOES > INADIMPLEMENTO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 289.142.498-08"
+    }
+  ],
+  "502fc65e-1ce7-422b-9ad7-bb83ef657f6b": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 361.708.618-78 (William Julio De Oliveira, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — William Julio De Oliveira",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "3 mídia(s) negativa(s) identificada(s) para William Julio De Oliveira via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.cut.org.br/noticias/atos-golpistas-veja-quem-vai-continuar-preso-e-quem-vai-ser-solto-com-tornozelei-1333\", \"snippet\": null, \"photo_url\": null, \"published_datetime",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome William Julio De Oliveira"
+    }
+  ],
+  "33864c75-0861-44b7-ab34-565d5c051530": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 349.709.913-91 (Sádia Gonçalves De Castro, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (5) — Sádia Gonçalves De Castro",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Sádia Gonçalves De Castro tem 5 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 349.709.913-91"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 18341160315 (MARGARETE DE CASTRO COELHO, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (2) — MARGARETE DE CASTRO COELHO",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "MARGARETE DE CASTRO COELHO tem 2 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL (287) - CRIMES PREVISTOS NA LEGISLACAO EXTRAVA; DIREITO PENAL (287) - CRIMES PREVISTOS NA LEGISLACAO EXTRAVA. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 18341160315",
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 34232907300 (CARMELITA DE CASTRO SILVA, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (4) — CARMELITA DE CASTRO SILVA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "CARMELITA DE CASTRO SILVA tem 4 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL - CRIMES CONTRA A HONRA - DIFAMACAO DIREITO PE; DIREITO PENAL - CRIMES CONTRA A HONRA - DIFAMACAO DIREITO PE; DIREITO PENAL - CRIMES CONTRA A HONRA - CALUNIA DIREITO PENA. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 34232907300",
+      "decisao_recomendada": "REPROVAÇÃO — 4 processo(s) criminal(is) confirmado(s) via Credilink."
+    }
+  ],
+  "df5805d6-6cdd-46b4-b0b2-46e4c2667835": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 148.490.158-40 (Reinaldo Dos Santos, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (2) — Reinaldo Dos Santos",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Reinaldo Dos Santos tem 2 processo(s) criminal(is) via Credilink. Assuntos: PECULATO; DIREITO PENAL - CRIMES PRATICADOS POR FUNCIONARIOS PUBLICOS . Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 148.490.158-40",
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — Reinaldo Dos Santos",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Reinaldo Dos Santos tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO PROCESSUAL CIVIL E DO TRABALHO - LIQUIDACAO / CUMPRI. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 148.490.158-40"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Reinaldo Dos Santos",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "15 mídia(s) negativa(s) identificada(s) para Reinaldo Dos Santos via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/pr/parana/noticia/2026/08/13/agressao-rececpcionista-hotel-juri-curitiba.ghtml\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Reinaldo Dos Santos"
+    }
+  ],
+  "85d8df98-5898-4e61-8013-9a718d5ad826": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 042.308.614-60 (PLINIO FABRÍCIO GREGÓRIO DA SILVA, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (3) — PLINIO FABRÍCIO GREGÓRIO DA SILVA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "PLINIO FABRÍCIO GREGÓRIO DA SILVA tem 3 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO TRIBUTARIO (14) - CONTRIBUICOES (6031) - CONTRIBUICO; DIREITO TRIBUTARIO (14) - CONTRIBUICOES (6031) - CONTRIBUICO; DIREITO TRIBUTARIO (14) - CONTRIBUICOES (6031) - CONTRIBUICO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 042.308.614-60"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 08402876404 (REGINALDO GREGORIO DA SILVA, pep_sobrinha(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (9) — REGINALDO GREGORIO DA SILVA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "REGINALDO GREGORIO DA SILVA tem 9 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE CONTRA; OBRIGACAO DE FAZER / NAO FAZER; . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 08402876404"
+    }
+  ],
+  "e3665740-c963-464d-8eae-794867b22828": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 505.094.808-88 (Emerson Raimundo Filho, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (4) — Emerson Raimundo Filho",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Emerson Raimundo Filho tem 4 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: CHEQUE; ALIENACAO FIDUCIARIA; 02190408 | CHEQUE, ESPECIES DE TITULOS DE CREDITO, OBRIGACOE. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 505.094.808-88"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Emerson Raimundo Filho",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "2 mídia(s) negativa(s) identificada(s) para Emerson Raimundo Filho via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://atarde.com.br/bahia/bahiasalvador/ravengar-filhos-neto-e-ex-esposa-sao-presos-em-operacao-da-policia-civil-845268\", \"snippet\": null, \"photo_url\": null, \"published_date",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Emerson Raimundo Filho"
+    }
+  ],
+  "349012d9-de4b-4c05-aa94-c0c8bbc53319": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 055.746.548-65 (Marco Aurelio de Almeida Rosa, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (4) — Marco Aurelio de Almeida Rosa",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Marco Aurelio de Almeida Rosa tem 4 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: IPTU/ IMPOSTO PREDIAL E TERRITORIAL URBANO; DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE CONTRA; DIREITO CIVIL (899) - RESPONSABILIDADE CIVIL (10431) - INDEN. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 055.746.548-65"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Marco Aurelio de Almeida Rosa",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "6 mídia(s) negativa(s) identificada(s) para Marco Aurelio de Almeida Rosa via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://noticias.stf.jus.br/postsnoticias/atos-antidemocraticos-stf-aceita-denuncias-contra-mais-245-pessoas-envolvidas/\", \"snippet\": null, \"photo_url\": null, \"published_datet",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Marco Aurelio de Almeida Rosa"
+    }
+  ],
+  "c392aa13-8052-4b84-8c54-fb818bd949a0": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 723.818.411-72 (Daniel Bruno Alves Nunes, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (1) — Daniel Bruno Alves Nunes",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Daniel Bruno Alves Nunes tem 1 processo(s) criminal(is) via Credilink. Assuntos: CONTRAVENCOES PENAIS (DIREITO PENAL). Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 723.818.411-72",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (3) — Daniel Bruno Alves Nunes",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Daniel Bruno Alves Nunes tem 3 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE CONTRA; DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE TITULO; DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE CONTRA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 723.818.411-72"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Daniel Bruno Alves Nunes",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "2 mídia(s) negativa(s) identificada(s) para Daniel Bruno Alves Nunes via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://cbn.globo.com/podcasts/fim-de-expediente/entrevista/2024/04/05/fred-bruno-relata-perda-de-seguidores-ao-se-posicionar-contra-robinho-e-daniel-alves-condenados-por-estu",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Daniel Bruno Alves Nunes"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 49356712115 (WAGNO ALVES NUNES, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (1) — WAGNO ALVES NUNES",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "WAGNO ALVES NUNES tem 1 processo(s) criminal(is) via Credilink. Assuntos: 10948 - DIREITO CIVIL -> FAMILIA -> VIOLENCIA DOMESTICA CONT. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 49356712115",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    }
+  ],
+  "9714d345-717e-499d-a0d5-2c8b8ac9aa00": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 034.487.986-06 (Vanderlúcio Pereira, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — Vanderlúcio Pereira",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Vanderlúcio Pereira tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: PROCESSUAL CIVIL > LIQUIDACAO / CUMPRIMENTO / EXECUCAO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 034.487.986-06"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Vanderlúcio Pereira",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para Vanderlúcio Pereira via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.opovo.com.br/noticias/politica/2022/06/07/prefeitura-de-juazeiro-do-norte-e-acusada-de-usar-ar-condicionado-para-refrescar-cavalos-mp-apura-o-caso.html\", \"snippet\"",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Vanderlúcio Pereira"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 00802850669 (VANDERLEI DA CONSOLACAO PEREIRA, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    }
+  ],
+  "9a0883b0-0ea7-43b0-9830-97902e811156": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 004.510.503-04 (Edivando De Lima Dias, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (2) — Edivando De Lima Dias",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Edivando De Lima Dias tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 10011 - IMPROBIDADE ADMINISTRATIVA; VIOLACAO AOS PRINCIPIOS ADMINISTRATIVOS. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 004.510.503-04"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Edivando De Lima Dias",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "4 mídia(s) negativa(s) identificada(s) para Edivando De Lima Dias via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.hojemais.com.br/aracatuba/noticia/justica/juri-condena-irmaos-acusados-de-matar-pai-do-exprefeito-de-mirandopolis\", \"snippet\": null, \"photo_url\": null, \"published_",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Edivando De Lima Dias"
+    }
+  ],
+  "c285c0b9-6ea6-47cb-a77e-108075d18ac8": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 482.230.509-00 (Alan Rodrigues De Araujo, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — Alan Rodrigues De Araujo",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Alan Rodrigues De Araujo tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: LOCACAO DE IMOVEL  ESPECIES DE CONTRATOS  OBRIGACOES  DIREIT. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 482.230.509-00"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Alan Rodrigues De Araujo",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "10 mídia(s) negativa(s) identificada(s) para Alan Rodrigues De Araujo via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/rr/roraima/noticia/2026/08/26/delegado-e-investigador-do-am-sao-presos-em-operacao-que-investiga-roubo-de-800-mil-e-ouro-em-roraima.ghtml\", \"snippet\": nul",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Alan Rodrigues De Araujo"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 51400073987 (LAAN CARDEC RODRIGUES DE ARAUJO, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (28) — LAAN CARDEC RODRIGUES DE ARAUJO",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "LAAN CARDEC RODRIGUES DE ARAUJO tem 28 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: CEDULA DE CREDITO BANCARIO; CAUSAS SUPERVENIENTES A SENTENCA; . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 51400073987"
+    }
+  ],
+  "7dd231fa-7139-4702-a00c-164342816695": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 275.498.598-09 (Francisco Marciel Da Costa, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (3) — Francisco Marciel Da Costa",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Francisco Marciel Da Costa tem 3 processo(s) criminal(is) via Credilink. Assuntos: ; ; . Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 275.498.598-09",
+      "decisao_recomendada": "REPROVAÇÃO — 3 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (4) — Francisco Marciel Da Costa",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Francisco Marciel Da Costa tem 4 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ACIDENTE DE TRANSITO; DIREITO PROCESSUAL CIVIL E DO TRABALHO (8826) - LIQUIDACAO /; DIREITO CIVIL (899) - RESPONSABILIDADE CIVIL (10431) - INDEN. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 275.498.598-09"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Francisco Marciel Da Costa",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "4 mídia(s) negativa(s) identificada(s) para Francisco Marciel Da Costa via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/df/distrito-federal/noticia/2025/12/10/saiba-quais-sao-os-crimes-dos-sete-foragidos-do-df-que-estao-na-lista-de-mais-perigosos-do-pais.ghtml\", \"snippet\": ",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Francisco Marciel Da Costa"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 00929849400 (MARCEL ALEXANDRE DA COSTA, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (3) — MARCEL ALEXANDRE DA COSTA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "MARCEL ALEXANDRE DA COSTA tem 3 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO CIVIL (899) - OBRIGACOES (7681) - INADIMPLEMENTO (76; RESCISAO INDIRETA; DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE CONTRA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 00929849400"
+    }
+  ],
+  "bd2f5845-ac96-4cfa-abb1-98085d75a039": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 049.146.374-05 (Samuel Oliveira Fernades, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (6) — Samuel Oliveira Fernades",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Samuel Oliveira Fernades tem 6 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO TRIBUTARIO (14) - CONTRIBUICOES (6031) - CONTRIBUICO; HORAS EXTRAS; AVISO PREVIO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 049.146.374-05"
+    }
+  ],
+  "e8effd87-62c2-47d7-8733-b1028db0ee1c": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 062.601.239-22 (Everaldo José Vieira, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (2) — Everaldo José Vieira",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Everaldo José Vieira tem 2 processo(s) criminal(is) via Credilink. Assuntos: 5560 - DECORRENTE DE VIOLENCIA DOMESTICA; 3633 - CRIMES DO SISTEMA NACIONAL DE ARMAS. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 062.601.239-22",
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — Everaldo José Vieira",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Everaldo José Vieira tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: AUXILIO-DOENCA ACIDENTARIO, BENEFICIOS EM ESPECIE, DIREITO P. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 062.601.239-22"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Everaldo José Vieira",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "5 mídia(s) negativa(s) identificada(s) para Everaldo José Vieira via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.radiocatedraljf.com.br/post/em-meio-%C3%A0-trag%C3%A9dia-solidariedade-entra-em-cena-e-arquidiocese-de-jf-se-mobiliza-para-ajudar-v%C3%ADtimas\", \"snippet\": null, \"",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Everaldo José Vieira"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 28129689820 (EDICARLOS VIEIRA, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — EDICARLOS VIEIRA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "EDICARLOS VIEIRA tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: OBRIGACOES. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 28129689820"
+    }
+  ],
+  "e047ff01-9541-46c5-951e-0848a641f308": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 132.317.657-81 (Ana leticia Santos De sousa, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (2) — Ana leticia Santos De sousa",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Ana leticia Santos De sousa tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: COBRANCA DE QUANTIA INDEVIDA E/OU REPETICAO DE INDEBITO - CD; INDENIZACAO POR DANO MORAL - OUTRAS / INDENIZACAO POR DANO M. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 132.317.657-81"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Ana leticia Santos De sousa",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "2 mídia(s) negativa(s) identificada(s) para Ana leticia Santos De sousa via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://conjur.com.br/2023-mai-05/stf-analisa-250-denuncias-envolvidos-atos-golpistas/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01T00:00:00\", \"",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Ana leticia Santos De sousa"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 05438873755 (LUIZ GUSTAVO DOS SANTOS DANTAS            , pep_sobrinha(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (1) — LUIZ GUSTAVO DOS SANTOS DANTAS            ",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "LUIZ GUSTAVO DOS SANTOS DANTAS             tem 1 processo(s) criminal(is) via Credilink. Assuntos: CALUNIA (ART. 138 - CP). Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 05438873755",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    }
+  ],
+  "0239c46e-20f5-404f-8c66-3df728391728": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 012.945.966-67 (Cleiton De Freitas Silveira, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (11) — Cleiton De Freitas Silveira",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Cleiton De Freitas Silveira tem 11 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL (287) - CRIMES PREVISTOS NA LEGISLACAO EXTRAVA; DIREITO PROCESSUAL PENAL (1209) - PRISAO EM FLAGRANTE (7929; DIREITO PENAL (287) - CRIMES PREVISTOS NA LEGISLACAO EXTRAVA. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 012.945.966-67",
+      "decisao_recomendada": "REPROVAÇÃO — 11 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — Cleiton De Freitas Silveira",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Cleiton De Freitas Silveira tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: RESPONSABILIDADE CIVIL < DIREITO CIVIL. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 012.945.966-67"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Cleiton De Freitas Silveira",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para Cleiton De Freitas Silveira via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://diariogaucho.clicrbs.com.br/policia/noticia/2022/03/pm-e-indiciado-por-homicidio-no-caso-de-policial-rodoviario-aposentado-morto-durante-abordagem-em-torres-23236649.h",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Cleiton De Freitas Silveira"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 82486964649 (SINOMAR BARBOSA DE MORAIS, pep_socio).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (9) — SINOMAR BARBOSA DE MORAIS",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "SINOMAR BARBOSA DE MORAIS tem 9 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: PROCESSUAL CIVIL > LIQUIDACAO / CUMPRIMENTO / EXECUCAO > EFE; PROCESSUAL CIVIL > OBJETOS DE CARTAS PRECATORIAS/DE ORDEM > ; DIREITO PROCESSUAL CIVIL E DO TRABALHO (8826) - OBJETOS DE C. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 82486964649"
+    }
+  ],
+  "7bbe3eae-04b0-4d54-93ce-01a9b2141ea2": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 120.547.667-98 (Dimerson de Oliveira Xavier, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (2) — Dimerson de Oliveira Xavier",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Dimerson de Oliveira Xavier tem 2 processo(s) criminal(is) via Credilink. Assuntos: AMEACA (ART. 147 - CP) N/F VIOLENCIA DOMESTICA CONTRA A MULH; AMEACA (ART. 147 - CP). Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 120.547.667-98",
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (2) — Dimerson de Oliveira Xavier",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Dimerson de Oliveira Xavier tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO PROCESSUAL CIVIL E DO TRABALHO (8826) - OBJETOS DE C; DIREITO PROCESSUAL CIVIL E DO TRABALHO (8826) - OBJETOS DE C. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 120.547.667-98"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 90456971149 (DAVIDSON CAMPOS DE OLIVEIRA               , pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (4) — DAVIDSON CAMPOS DE OLIVEIRA               ",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "DAVIDSON CAMPOS DE OLIVEIRA                tem 4 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: IPTU/ IMPOSTO PREDIAL E TERRITORIAL URBANO; DIREITO CIVIL (899) - COISAS (10432) - PROPRIEDADE (10448) -; PROCESSUAL CIVIL > ATOS PROCESSUAIS. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 90456971149"
+    }
+  ],
+  "abfe2c80-ff61-4292-af8b-d3decccefd11": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 064.179.945-46 (Jefferson Lima Viana, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (3) — Jefferson Lima Viana",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Jefferson Lima Viana tem 3 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO ELEITORAL (11428) | ELEICOES (11583) | TRANSGRESSOES; ALIENACAO FIDUCIARIA; DIREITO ELEITORAL (11428) | ELEICOES (11583) | TRANSGRESSOES. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 064.179.945-46"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Jefferson Lima Viana",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para Jefferson Lima Viana via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://elimarcortes.com.br/2018/02/19/escrivao-de-policia-preso-pela-federa/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01T00:00:00\", \"source_ur",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Jefferson Lima Viana"
+    }
+  ],
+  "7e4ccffd-17cb-4bcd-8998-c67c83334e01": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 350.816.006-87 (Sandra Marchiori Da Silva Rodrigues, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 71078665168 (SAMANTHA MARCHIORI RODRIGUES RIBEIRO, pep_mae).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    }
+  ],
+  "6ab15739-413b-4db1-8e82-f733eb781ac5": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 394.552.518-76 (Wagner Almeida De Oliveira, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Wagner Almeida De Oliveira",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "6 mídia(s) negativa(s) identificada(s) para Wagner Almeida De Oliveira via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/sp/piracicaba-regiao/noticia/2026/03/26/de-gerentes-da-caixa-a-falsificadores-de-documentos-quem-e-quem-no-esquema-de-fraudes-bancarias.ghtml\", \"snippet\":",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Wagner Almeida De Oliveira"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 88214370787 (EDUARDO ALVES BARBOSA, pep_sobrinha(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (5) — EDUARDO ALVES BARBOSA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "EDUARDO ALVES BARBOSA tem 5 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 6048 - CONTRIBUICOES PREVIDENCIARIAS; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO DE IMAGEM. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 88214370787"
+    }
+  ],
+  "4e568c65-cb0b-4bfd-9267-76ca1a47d27c": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 036.602.946-08 (Fabiana Lopes Alvim Góes, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (8) — Fabiana Lopes Alvim Góes",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Fabiana Lopes Alvim Góes tem 8 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ; DIREITO CIVIL (899) - COISAS (10432) - POSSE (10444) - ESBUL; 6101 - AUXILIODOENCA PREVIDENCIARIO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 036.602.946-08"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 99869268668 (LUIS CLAUDIO LOPES ALVIM, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (1) — LUIS CLAUDIO LOPES ALVIM",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "LUIS CLAUDIO LOPES ALVIM tem 1 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL (287) - CRIMES CONTRA O PATRIMONIO (3415) - AP. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 99869268668",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    }
+  ],
+  "785b402a-e759-4e38-8695-639059a9a5b9": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 312.949.168-66 (Marcela Cavenatti avelino, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (22) — Marcela Cavenatti avelino",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Marcela Cavenatti avelino tem 22 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: VAGA DE GARAGEM; DEFEITO, NULIDADE OU ANULACAO; DISPENSA / RESCISAO DO CONTRATO DE TRABALHO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 312.949.168-66"
+    }
+  ],
+  "e59f5e1a-2ff5-414e-8be6-2955d0bab3ed": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 769.896.401-97 (Elvis De Souza Santos, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (2) — Elvis De Souza Santos",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Elvis De Souza Santos tem 2 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PROCESSUAL PENAL (1209) - PRISAO PREVENTIVA (4355; DIREITO PENAL (287) - CRIMES PRATICADOS POR FUNCIONARIOS PUB. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 769.896.401-97",
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (12) — Elvis De Souza Santos",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Elvis De Souza Santos tem 12 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO ELEITORAL (11428) | ELEICOES (11583) | PROPAGANDA PO; DIREITO TRIBUTARIO (14) - IMPOSTOS (5916) - IPTU/ IMPOSTO PR; DIREITO TRIBUTARIO (14) - IMPOSTOS (5916) - IPTU/ IMPOSTO PR. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 769.896.401-97"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Elvis De Souza Santos",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "6 mídia(s) negativa(s) identificada(s) para Elvis De Souza Santos via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.mpgo.mp.br/portal/noticia/justica-afasta-vereador-de-valparaiso-de-goias-denunciado-pelo-mp-e-determina-bloqueio-de-bens\", \"snippet\": null, \"photo_url\": null, \"pub",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Elvis De Souza Santos"
+    }
+  ],
+  "2f5d198e-d80e-4866-af6e-7c5e0a99a286": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 839.835.899-87 (Lucimar Cella, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Erro de Consulta Credilink (ProcessoTribunalJustica)",
+      "url": "https://api.tesserati.com.br",
+      "snippet": "Falha ao consultar ProcessoTribunalJustica na Credilink para Lucimar Cella (CPF 839.835.899-87): exceção em api/ProcessoTribunalJustica: HTTPSConnectionPool(host='api.tesserati.com.br', port=443): Read timed out. (read timeout=20). NÃO é resultado negativo.",
+      "source": "Sistema Pepito — Erro de Consulta Credilink",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — falha técnica em ProcessoTribunalJustica"
+    }
+  ],
+  "b922a2b7-13c3-4738-a640-b886adb5b5ba": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 888.713.986-53 (Rodrigo Fernandes Moreira, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Rodrigo Fernandes Moreira",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "8 mídia(s) negativa(s) identificada(s) para Rodrigo Fernandes Moreira via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://cbn.globo.com/rio-de-janeiro/noticia/2025/11/04/megaoperacao-prendeu-quatro-dos-69-integrantes-do-cv-denunciados-pelo-mp-veja-a-lista-completa.ghtml\", \"snippet\": null,",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Rodrigo Fernandes Moreira"
+    }
+  ],
+  "3142b9ba-efb8-4d5a-9e7e-fcd1d74b6725": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 509.509.674-91 (Jose Alves Tavares Correia Neto, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (49) — Jose Alves Tavares Correia Neto",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Jose Alves Tavares Correia Neto tem 49 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIVIDA ATIVA (EXECUCAO FISCAL); ESTAGIO; DIREITO TRIBUTARIO|DIVIDA ATIVA|. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 509.509.674-91"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Jose Alves Tavares Correia Neto",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para Jose Alves Tavares Correia Neto via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://sindpolalagoas.com.br/noticia/juridico-do-sindpol-publica-lista-de-policiais-civis-que-deverao-enviar-documentos-2/\", \"snippet\": null, \"photo_url\": null, \"published_da",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Jose Alves Tavares Correia Neto"
+    }
+  ],
+  "7261ef7d-8cd3-4843-92bb-77c73dbcdc74": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 217.289.468-08 (Maria Giovana Luchiari Pisoni Duarte Fortunato, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (1) — Maria Giovana Luchiari Pisoni Duarte Fortunato",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Maria Giovana Luchiari Pisoni Duarte Fortunato tem 1 processo(s) criminal(is) via Credilink. Assuntos: CALUNIA. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 217.289.468-08",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (6) — Maria Giovana Luchiari Pisoni Duarte Fortunato",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Maria Giovana Luchiari Pisoni Duarte Fortunato tem 6 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: VIOLACAO AOS PRINCIPIOS ADMINISTRATIVOS; VIOLACAO AOS PRINCIPIOS ADMINISTRATIVOS; DIREITO ELEITORAL (11428) | ELEICOES (11583) | PROPAGANDA PO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 217.289.468-08"
+    }
+  ],
+  "86746d70-d87e-4d63-9a2a-b4cb95936df1": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 763.069.331-15 (Humberto Echeverrias Hasegawa, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (3) — Humberto Echeverrias Hasegawa",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Humberto Echeverrias Hasegawa tem 3 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: SUBSIDIOS; GRATIFICACAO NATALINA/13 SALARIO; DEFEITO, NULIDADE OU ANULACAO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 763.069.331-15"
+    }
+  ],
+  "281ca852-a543-44c8-836e-5e305a6c7dfb": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 286.799.328-84 (Karina Justo Anize, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (2) — Karina Justo Anize",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Karina Justo Anize tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: PROFESSORES; PROFESSORES. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 286.799.328-84"
+    }
+  ],
+  "4d30f7cc-70af-4acc-a59b-d94470f4b736": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 891.526.465-72 (Edson José Correia, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Edson José Correia",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "4 mídia(s) negativa(s) identificada(s) para Edson José Correia via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.gazetaweb.com/noticias/maceio/dmtt-de-maceio-notifica-mais-de-14-mil-condutores-por-multas-veja-se-voce-esta-na-lista-923493\", \"snippet\": null, \"photo_url\": null, ",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Edson José Correia"
+    }
+  ],
+  "3a5dd7ee-5b37-4b66-bb19-a50c556f49aa": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 133.358.552-72 (Paulo Roberto Miranda Acácio De Lima, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (6) — Paulo Roberto Miranda Acácio De Lima",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Paulo Roberto Miranda Acácio De Lima tem 6 processo(s) criminal(is) via Credilink. Assuntos: CRIMES CONTRA A FLORA; INTIMACAO; INTIMACAO. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 133.358.552-72",
+      "decisao_recomendada": "REPROVAÇÃO — 6 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (5) — Paulo Roberto Miranda Acácio De Lima",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Paulo Roberto Miranda Acácio De Lima tem 5 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DEPOSITO/DIFERENCAS; OBRIGACOES; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 133.358.552-72"
+    }
+  ],
+  "d0b1c912-b0e3-41bd-ad39-e631c8abd6e9": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 756.676.901-44 (Matheus De Oliveira Pires, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — Matheus De Oliveira Pires",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Matheus De Oliveira Pires tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: AVISO PREVIO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 756.676.901-44"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Matheus De Oliveira Pires",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "9 mídia(s) negativa(s) identificada(s) para Matheus De Oliveira Pires via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/ac/acre/noticia/2026/02/18/justica-mantem-prisao-temporaria-de-jogadores-suspeitos-de-estupro-coletivo-em-alojamento-do-vasco-ac.ghtml\", \"snippet\": null, ",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Matheus De Oliveira Pires"
+    }
+  ],
+  "0401a07e-14c2-4738-97dd-04ad76192660": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 136.943.278-00 (Adriano Wagner Lourenço, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (6) — Adriano Wagner Lourenço",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Adriano Wagner Lourenço tem 6 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ; CHEQUE; CHEQUE. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 136.943.278-00"
+    }
+  ],
+  "ac762768-a56d-4b3e-9f93-7d580a9edf4c": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 403.047.873-53 (Cicero Neco Mirais, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (4) — Cicero Neco Mirais",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Cicero Neco Mirais tem 4 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL (287) - CRIMES PREVISTOS NA LEGISLACAO EXTRAVA; DIREITO PENAL (287) - CRIMES PRATICADOS POR FUNCIONARIOS PUB; DIREITO PENAL (287) - CRIMES PRATICADOS POR FUNCIONARIOS PUB. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 403.047.873-53",
+      "decisao_recomendada": "REPROVAÇÃO — 4 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (46) — Cicero Neco Mirais",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Cicero Neco Mirais tem 46 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: EFEITO SUSPENSIVO / IMPUGNACAO / EMBARGOS A EXECUCAO; DIREITO TRIBUTARIO (14) - IMPOSTOS (5916) - IRPF/IMPOSTO DE ; DIREITO TRIBUTARIO (14) - IMPOSTOS (5916) - IRPF/IMPOSTO DE . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 403.047.873-53"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Cicero Neco Mirais",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "4 mídia(s) negativa(s) identificada(s) para Cicero Neco Mirais via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/ma/maranhao/noticia/2025/07/11/ex-prefeito-e-ex-secretario-de-estreito-devem-devolver-mais-r-182-mil-aos-cofres-municipais.ghtml\", \"snippet\": null, \"photo",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Cicero Neco Mirais"
+    }
+  ],
+  "401922c4-6835-4860-ac8b-aad233686503": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 602.419.963-50 (Gildon Lazaro Orlando Da Silva, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos criminais (1) — Gildon Lazaro Orlando Da Silva",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Gildon Lazaro Orlando Da Silva tem 1 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL (287) - CRIMES PREVISTOS NA LEGISLACAO EXTRAVA. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 602.419.963-50",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (3) — Gildon Lazaro Orlando Da Silva",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Gildon Lazaro Orlando Da Silva tem 3 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO PROCESSUAL CIVIL E DO TRABALHO (8826) - LIQUIDACAO /; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 602.419.963-50"
+    }
+  ],
+  "161cba7c-9195-4fcb-b232-7af941ea5fe5": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 151.210.948-76 (Luciano Aparecido Polegatto, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (12) — Luciano Aparecido Polegatto",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Luciano Aparecido Polegatto tem 12 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ESPECIES DE CONTRATOS; INDENIZACAO POR DANO MORAL; GARANTIAS CONSTITUCIONAIS. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 151.210.948-76"
+    }
+  ],
+  "719f82b4-c6d0-4f1f-b7ca-44e636b5b57e": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 532.702.155-68 (Ginaldo Batista De Oliveira, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — Ginaldo Batista De Oliveira",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Ginaldo Batista De Oliveira tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO CIVIL|OBRIGACOES|ESPECIES DE CONTRATOS|ALIENACAO FID. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 532.702.155-68"
+    }
+  ],
+  "27569b17-5b49-48b5-91e0-d527157867d9": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 593.104.722-00 (Mercia Aparecida Silva Guedes Santos, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (10) — Mercia Aparecida Silva Guedes Santos",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Mercia Aparecida Silva Guedes Santos tem 10 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: PAGAMENTO; CEDULA DE CREDITO RURAL; RESCISAO INDIRETA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 593.104.722-00"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 65997867234 (GISLAINE DA SILVA GUEDES DE QUEIROZ, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    }
   ]
 }
