@@ -24,7 +24,7 @@ import { getAuthUser } from "@/lib/auth";
 import { pesquisarFontesPublicas, reanalisarResultado, consultarCredilink, type CredilinkResultado } from "@/lib/mock-ai";
 import { clienteVazio } from "@/lib/cliente-default";
 import { getRegistrationCase, markTaken, QUEUE_UPDATED_EVENT } from "@/lib/registration-queue";
-import { inferCargoOrgao, inferTipoPep, getSugestaoParecer } from "@/data/registration-enrich";
+import { inferCargoOrgao, inferTipoPep, getSugestaoParecer, getConsultaStatus } from "@/data/registration-enrich";
 import { formatCNPJ, formatCPF, formatDuration, uid } from "@/lib/utils";
 import type { Analise, ClienteData, ResultadoPesquisa, StatusAnalise } from "@/types/kyc";
 import { STATUS_LABELS, StatusBadge } from "@/components/RiscoBadge";
@@ -51,6 +51,10 @@ export function AnalisePrimeiraCamada() {
   const [credilinkResultado, setCredilinkResultado] = useState<CredilinkResultado | null>(null);
   const [showOcr, setShowOcr] = useState(false);
   const [analistaEmail, setAnalistaEmail] = useState<string>("");
+  // Guardrail (thay@cora.com.br, 2026-09-11): caso só vai pra Fila de
+  // Liderança com consulta real (JusBrasil/Credilink) OU com o analista
+  // confirmando manualmente que verificou a pendência.
+  const [checkVerificacaoManual, setCheckVerificacaoManual] = useState(false);
 
   useEffect(() => {
     getAuthUser().then((u) => { if (u?.email) setAnalistaEmail(u.email); });
@@ -188,12 +192,38 @@ export function AnalisePrimeiraCamada() {
     [cliente, parecerPrimeiraCamada],
   );
 
+  // Guardrail: só para caso real (draftIdOrigem) — caso manual não tem
+  // pipeline real pra checar. tudoOk quando JusBrasil e Credilink (do PEP,
+  // se relacionado) foram de fato consultados, sem placeholder/erro.
+  const consultaStatus = useMemo(
+    () =>
+      draftIdOrigem
+        ? getConsultaStatus({ draft_id: draftIdOrigem }, cliente.tipoPep, cliente.cpfPepTitular || "")
+        : null,
+    [draftIdOrigem, cliente.tipoPep, cliente.cpfPepTitular],
+  );
+  const precisaCheckManual = !!consultaStatus && !consultaStatus.tudoOk;
+  const podeEnviarMesa = podeFinalizarPrimeira && (!precisaCheckManual || checkVerificacaoManual);
+
   const handlePesquisar = async () => {
     if (!cliente.cnpj || !cliente.razaoSocial) {
       toast({
         variant: "destructive",
         title: "Cadastro incompleto",
         description: "Preencha pelo menos CNPJ e Razão Social antes de pesquisar.",
+      });
+      return;
+    }
+    // Caso real (carregado da Fila PLD): resultados já vieram do pipeline
+    // real (Ghost/Credilink/JusBrasil/Tesserati/WebSearch). pesquisarFontesPublicas()
+    // é uma SIMULAÇÃO determinística (mock-ai.ts) — rodá-la aqui substituiria
+    // achados reais por conteúdo fictício sem o analista perceber (achado
+    // Codex, 2026-09-11). Só permitido para caso 100% manual (sem draft_id).
+    if (draftIdOrigem) {
+      toast({
+        variant: "destructive",
+        title: "Pesquisa manual desabilitada para este caso",
+        description: "Os resultados já vieram do pipeline real (Ghost/Credilink/JusBrasil/Tesserati). Pesquisar de novo aqui rodaria uma SIMULAÇÃO e substituiria os achados reais.",
       });
       return;
     }
@@ -247,6 +277,17 @@ export function AnalisePrimeiraCamada() {
         variant: "destructive",
         title: "Falta o parecer",
         description: "Preencha o parecer técnico (mín. 10 caracteres) antes de enviar à Mesa.",
+      });
+      return;
+    }
+    // Guardrail: caso só vai pra Fila de Liderança com consulta real
+    // (JusBrasil/Credilink), nunca mock/placeholder — a menos que o analista
+    // confirme manualmente ter verificado a pendência (thay@cora.com.br, 2026-09-11).
+    if (precisaCheckManual && !checkVerificacaoManual) {
+      toast({
+        variant: "destructive",
+        title: "Consulta pendente — verificação manual necessária",
+        description: "Marque o check de verificação manual (abaixo do parecer) antes de enviar à Mesa.",
       });
       return;
     }
@@ -649,24 +690,31 @@ export function AnalisePrimeiraCamada() {
                 <Search className="h-5 w-5 text-primary" /> Pesquisa em Fontes Públicas
               </CardTitle>
               <CardDescription>
-                Aciona o gateway de IA + n8n para varrer mídia, processos, sanções e QSA.
+                {draftIdOrigem
+                  ? "Resultados carregados do pipeline real (Ghost/Credilink/JusBrasil/Tesserati/WebSearch) — não sobrescrever."
+                  : "SIMULAÇÃO — gera dados determinísticos de exemplo, não consulta nenhuma fonte real (só para caso manual sem draft_id)."}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-3">
               <Textarea
                 value={observacoesPesquisa}
                 onChange={(e) => setObservacoesPesquisa(e.target.value)}
-                placeholder='Direcionamentos opcionais para a IA — ex.: "verificar processo TJ-SP n. 0012345-67"'
+                placeholder='Direcionamentos opcionais — ex.: "verificar processo TJ-SP n. 0012345-67"'
                 rows={2}
+                disabled={!!draftIdOrigem}
               />
-              <Button onClick={handlePesquisar} disabled={pesquisando} className="w-full">
+              <Button onClick={handlePesquisar} disabled={pesquisando || !!draftIdOrigem} className="w-full">
                 {pesquisando ? (
                   <>
-                    <Search className="h-4 w-4 animate-pulse" /> Pesquisando...
+                    <Search className="h-4 w-4 animate-pulse" /> Pesquisando (simulação)...
+                  </>
+                ) : draftIdOrigem ? (
+                  <>
+                    <Search className="h-4 w-4" /> Pesquisa desabilitada (caso real)
                   </>
                 ) : (
                   <>
-                    <Search className="h-4 w-4" /> Pesquisar Fontes Públicas
+                    <Search className="h-4 w-4" /> Pesquisar Fontes Públicas (simulação)
                   </>
                 )}
               </Button>
@@ -706,11 +754,34 @@ export function AnalisePrimeiraCamada() {
             </CardContent>
           </Card>
 
+          {precisaCheckManual && consultaStatus && (
+            <div className="rounded-md border border-amber-300 dark:border-amber-700 bg-amber-50/50 dark:bg-amber-950/20 p-3 space-y-2 text-xs">
+              <p className="font-semibold text-amber-800 dark:text-amber-300">
+                ⚠️ Consulta real pendente — não é possível confirmar que JusBrasil/Credilink foram checados de fato para este caso.
+              </p>
+              <ul className="list-disc list-inside space-y-1 text-amber-800 dark:text-amber-300">
+                {!consultaStatus.jusbrasilOk && <li>JusBrasil/Tesserati: {consultaStatus.jusbrasilMotivo}</li>}
+                {!consultaStatus.credilinkPepOk && <li>Credilink (PEP): {consultaStatus.credilinkPepMotivo}</li>}
+              </ul>
+              <label className="flex items-start gap-2 pt-1 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={checkVerificacaoManual}
+                  onChange={(e) => setCheckVerificacaoManual(e.target.checked)}
+                  className="mt-0.5"
+                />
+                <span className="text-amber-900 dark:text-amber-200">
+                  Verifiquei manualmente o(s) item(ns) acima (JusBrasil/Credilink diretamente na fonte) e confirmo
+                  que posso enviar este caso à Mesa de Decisão mesmo sem a consulta automática registrada.
+                </span>
+              </label>
+            </div>
+          )}
           <div className="flex flex-col gap-2 sticky bottom-0">
             <Button variant="outline" onClick={handleSalvarRascunho}>
               <Save className="h-4 w-4" /> Salvar rascunho
             </Button>
-            <Button onClick={handleEnviarMesa} disabled={!podeFinalizarPrimeira}>
+            <Button onClick={handleEnviarMesa} disabled={!podeEnviarMesa}>
               Enviar à Mesa de Decisão <ArrowRight className="h-4 w-4" />
             </Button>
             <p className="text-[11px] text-muted-foreground text-center">

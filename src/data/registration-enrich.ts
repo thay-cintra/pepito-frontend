@@ -21,6 +21,7 @@ import pareceresRealRaw from "./pareceres-real.json";
 import pareceresSugestaoRaw from "./pareceres-sugestao.json";
 import pareceresLiderancaRaw from "./pareceres-lideranca.json";
 import pldRiskScoresRaw from "./pld-risk-scores.json";
+import credilinkPepConsultasRaw from "./credilink-pep-consultas.json";
 
 interface MediaFinding {
   title: string;
@@ -39,6 +40,75 @@ function getFindingsFor(draftId: string): MediaFinding[] {
   const v = MEDIA_FINDINGS[draftId];
   if (Array.isArray(v)) return v;
   return [];
+}
+
+interface CredilinkPepConsulta {
+  cpf: string;
+  nome: string;
+  consultado_em: string;
+  pep?: unknown;
+  token_compliance?: string;
+  compliance?: unknown;
+  [erro: `erro_${string}`]: unknown;
+}
+
+const CREDILINK_PEP_CONSULTAS = credilinkPepConsultasRaw as Record<string, CredilinkPepConsulta>;
+
+/** Guardrail (thay@cora.com.br, 2026-09-11): um caso só pode ir pra Fila de
+ * Liderança se JusBrasil e Credilink tiverem sido de fato consultados —
+ * nunca mock, nunca placeholder de cota estourada. Ver
+ * .tools/INCIDENT-REPORT-2026-09-11-CREDILINK-PEP-NAO-CONSULTADO.md. */
+export interface ConsultaStatus {
+  jusbrasilOk: boolean;
+  jusbrasilMotivo: string;
+  credilinkPepOk: boolean;
+  credilinkPepMotivo: string;
+  tudoOk: boolean;
+}
+
+export function getConsultaStatus(
+  c: Pick<RegistrationCase, "draft_id">,
+  tipoPep: "titular" | "relacionado",
+  cpfPepTitular: string,
+): ConsultaStatus {
+  const findings = getFindingsFor(c.draft_id);
+  let jusbrasilOk = true;
+  let jusbrasilMotivo = "";
+  if (findings.length === 0) {
+    jusbrasilOk = false;
+    jusbrasilMotivo = "Nunca consultado (sem dupla-verificação JusBrasil/Tesserati/WebSearch registrada para este caso).";
+  } else if (findings.some((f) => f.source.includes("Controle de Quota"))) {
+    jusbrasilOk = false;
+    jusbrasilMotivo = "Cota do JusBrasil esgotada no momento da consulta — verificação manual necessária (ver achado 'VERIFICAÇÃO MANUAL NECESSÁRIA').";
+  } else if (findings.some((f) => f.source.includes("Erro de Consulta"))) {
+    jusbrasilOk = false;
+    jusbrasilMotivo = "Consulta JusBrasil/Tesserati falhou tecnicamente (ver achado 'Erro de Consulta') — não é resultado negativo, precisa reconsultar ou verificar manualmente.";
+  }
+
+  let credilinkPepOk = true;
+  let credilinkPepMotivo = "";
+  if (tipoPep === "relacionado") {
+    const cpfDigits = (cpfPepTitular || "").replace(/\D/g, "");
+    const entry = cpfDigits ? CREDILINK_PEP_CONSULTAS[cpfDigits] : undefined;
+    if (!entry) {
+      credilinkPepOk = false;
+      credilinkPepMotivo = "PEP relacionado ainda não foi consultado individualmente na Credilink (só o titular da conta tem consulta registrada).";
+    } else {
+      const erros = Object.keys(entry).filter((k) => k.startsWith("erro"));
+      if (erros.length > 0) {
+        credilinkPepOk = false;
+        credilinkPepMotivo = `Consulta Credilink do PEP falhou (${erros.join(", ")}) — necessário reconsultar ou verificar manualmente.`;
+      }
+    }
+  }
+
+  return {
+    jusbrasilOk,
+    jusbrasilMotivo,
+    credilinkPepOk,
+    credilinkPepMotivo,
+    tudoOk: jusbrasilOk && credilinkPepOk,
+  };
 }
 
 interface ParecerLlm {
@@ -258,7 +328,13 @@ function toResultado(
     // reportar ausência de sinal — isso já sinaliza "não verificado ainda"
     // sem precisar de badge de similaridade (caso real: draft d309057d,
     // 2026-08-11).
-    pendente_verificacao: hint.pendente ?? false,
+    // Default true (não false): TODO toResultado() é um deep-link nunca
+    // aberto automaticamente — mesmo quando o resumo diz "nada identificado",
+    // isso não foi de fato verificado, só o link foi gerado. Antes só a TSE
+    // (abaixo) tinha esse badge; as ~15 outras fontes (mídia, CNJ, JusBrasil,
+    // Escavador, TCU, MPF, TJ, MP, sanções, TCE, ALE, DOU) apareciam como se
+    // fossem achado confirmado (achado Codex, 2026-09-11).
+    pendente_verificacao: hint.pendente ?? true,
   };
 }
 
@@ -437,6 +513,12 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
   findings.forEach((f) => {
     const matchInfo = f.match ? ` [Match: ${f.match}]` : "";
     const homo = f.homonimo_alerta ? ` [⚠️ HOMÔNIMO: ${f.homonimo_alerta}]` : "";
+    // Placeholder de cota JusBrasil estourada (_FINDING_LIMITE_ATINGIDO em
+    // fetch-media-findings.py) explicitamente NÃO é uma consulta real — sem
+    // esse tratamento ele herdava similaridade_nome:"100%" e
+    // pendente_verificacao:false igual a um achado de verdade, disfarçando
+    // "não consultamos" como "consultamos e confirmamos" (achado Codex, 2026-09-11).
+    const isPlaceholderCota = f.source.includes("Controle de Quota") || f.source.includes("Erro de Consulta");
     r.push({
       id: uid(),
       fonte: f.source,
@@ -444,9 +526,12 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
       tipo: (f.tipo as ResultadoPesquisa["tipo"]) || "midia",
       risco: f.risk_indicator,
       link: f.url,
-      // Similaridade 100% APENAS quando há match explícito sem alerta de homônimo
-      similaridade_nome: f.homonimo_alerta ? "verificar identidade" : "100%",
-      pendente_verificacao: !!f.homonimo_alerta,
+      // Similaridade 100% APENAS quando há match explícito sem alerta de
+      // homônimo E não é o placeholder de cota estourada.
+      ...(isPlaceholderCota
+        ? {}
+        : { similaridade_nome: f.homonimo_alerta ? "verificar identidade" : "100%" }),
+      pendente_verificacao: isPlaceholderCota || !!f.homonimo_alerta,
     });
   });
 

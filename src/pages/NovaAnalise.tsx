@@ -150,6 +150,19 @@ export function NovaAnalise() {
   }
 
   const handleRepescaisar = async () => {
+    // pesquisarFontesPublicas() é SIMULAÇÃO determinística (mock-ai.ts), não
+    // consulta nenhuma fonte real. Caso vindo da Fila PLD (analise.draftId
+    // setado) já tem resultadosPesquisa reais (Ghost/Credilink/JusBrasil/
+    // Tesserati/WebSearch) — "Repesquisar" aqui substituiria por dado
+    // fictício sem o analista perceber (achado Codex, 2026-09-11).
+    if (analise?.draftId) {
+      toast({
+        variant: "destructive",
+        title: "Repesquisa desabilitada para este caso",
+        description: "Os resultados já vieram do pipeline real. Repesquisar aqui rodaria uma SIMULAÇÃO e substituiria os achados reais.",
+      });
+      return;
+    }
     setPesquisando(true);
     try {
       const out = await pesquisarFontesPublicas({
@@ -160,7 +173,7 @@ export function NovaAnalise() {
       setAnaliseGeral(out.analiseGeral);
       toast({
         variant: "success",
-        title: "Pesquisa atualizada",
+        title: "Pesquisa atualizada (simulação)",
         description: `${out.resultados.length} apontamentos.`,
       });
     } finally {
@@ -391,9 +404,15 @@ export function NovaAnalise() {
                     {altos} de risco alto, {medios} de risco médio.
                   </CardDescription>
                 </div>
-                <Button variant="outline" size="sm" onClick={handleRepescaisar} disabled={pesquisando}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleRepescaisar}
+                  disabled={pesquisando || !!analise?.draftId}
+                  title={analise?.draftId ? "Desabilitado: este caso já tem resultados reais do pipeline" : "Simulação — não consulta fonte real"}
+                >
                   <Search className={pesquisando ? "h-4 w-4 animate-pulse" : "h-4 w-4"} />
-                  {pesquisando ? "Repesquisando..." : "Repesquisar"}
+                  {pesquisando ? "Repesquisando (simulação)..." : analise?.draftId ? "Repesquisa desabilitada (caso real)" : "Repesquisar (simulação)"}
                 </Button>
               </div>
             </CardHeader>

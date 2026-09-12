@@ -4294,5 +4294,1783 @@
       "tipo": "pep",
       "match": "M1 — Evidência documental mais recente de mandato ativo: atividade legislativa registrada em abril/2026"
     }
+  ],
+  "12f79730-5920-400a-a1a9-8de889fca3cf": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — LUCILEI PACHECO DE ALMEIDA SALOMAO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 213.555.698-00 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — ver achado Tesserati (ProcessoTribunalJustica) para essa cobertura.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 213.555.698-00 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — ROSANGELA DE SOUZA TEZZON MARTINS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 11995264873 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — ver achado Tesserati (ProcessoTribunalJustica) para essa cobertura.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 11995264873 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (7) — ROSANGELA DE SOUZA TEZZON MARTINS",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "ROSANGELA DE SOUZA TEZZON MARTINS tem 7 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: DIVIDA ATIVA; CITACAO; INTIMACAO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 11995264873"
+    },
+    {
+      "title": "TSE — ROSANGELA DE SOUZA TEZZON MARTINS eleita Vereadora em Mirandópolis-SP (Eleições 2024)",
+      "url": "https://www.otempo.com.br/eleicoes/2024/candidatos/sao-paulo/mirandopolis/prefeito/rose-da-auto-escola-10222",
+      "snippet": "Dados extraídos do TSE confirmam: 'Eleito · Vereador: Mirandópolis, SP · Partido: REPUBLICANOS · Número de urna: 10222 · Nome completo: Rosangela De Souza Tezzon Martins · Data de Nascimento: 05/08/1972 · Ocupação: Empresário · Candidato a reeleição: Não candidato a reeleição · Total de Bens: R$ 24.000,00'.",
+      "source": "O Tempo / TSE",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação de mandato ativo via TSE. ROSANGELA DE SOUZA TEZZON MARTINS (Rose da Auto Escola) eleita vereadora em Mirandópolis-SP nas eleições de outubro 2024 pelo REPUBLICANOS (nº 10222). Mandato vigente: 2025–2028. Identificação positiva, sem homonímia."
+    },
+    {
+      "title": "Imprensa Oficial SP — Lei de autoria da Vereadora Rosangela de Souza Tezzon Martins sancionada em junho/2025",
+      "url": "https://www.dosp.com.br/leituratexto?p=MjE2ODM1OQ%3D%3D",
+      "snippet": "Publicado no Diário Oficial do Estado de SP em 04/06/2025: 'Dispõe sobre denominação de Rua de Sede e dá outras providências – Autoria da Vereadora Rosangela de Souza Tezzon Martins', sancionado pelo Prefeito do Município de Mirandópolis.",
+      "source": "Diário Oficial do Estado de São Paulo (DOSP)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação adicional de exercício ativo do mandato em junho de 2025. PEP em plena atividade legislativa na Câmara Municipal de Mirandópolis-SP."
+    },
+    {
+      "title": "Serasa Experian — ROSANGELA DE SOUZA TEZZON MARTINS ME (CNPJ 03.600.176/0001-72) — Empresa de formação de condutores ativa em Mirandópolis-SP",
+      "url": "https://empresas.serasaexperian.com.br/consulta-gratis/ROSANGELA-DE-SOUZA-TEZZON-MARTINS-ME-03600176000172",
+      "snippet": "CNPJ 03.600.176/0001-72, sede em Mirandópolis-SP, fundada em 20/01/2000 (26 anos). Situação cadastral ATIVA. Atividade principal: Formação de condutores (auto escola).",
+      "source": "Serasa Experian",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1/M4 — PEP possui empresa própria de auto escola em Mirandópolis-SP (CNPJ 03.600.176/0001-72), ativa há 26 anos. Ocupação declarada ao TSE como 'empresário' é coerente com esse vínculo empresarial. Nenhum contrato público federal identificado em nome desse CNPJ via Portal da Transparência."
+    },
+    {
+      "title": "Mídia Adversa — Nenhuma ocorrência de corrupção, improbidade, cassação ou operação policial encontrada para ROSANGELA DE SOUZA TEZZON MARTINS",
+      "url": "https://www.jusbrasil.com.br/processos/nome/162079795/rosangela-de-souza-tezzon-martins",
+      "snippet": "JusBrasil lista 12 processos para Rosangela de Souza Tezzon Martins, majoritariamente no TJSP e TRT15. Nenhuma das buscas de mídia adversa (corrupção, improbidade, cassação, investigação, operação policial) retornou resultado associado ao nome da PEP.",
+      "source": "JusBrasil / Pesquisa de mídia adversa",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M2 — Ausência de mídia adversa relevante. Os 12 processos no JusBrasil já foram abrangidos pela API JusBrasil (3 findings confirmados, sem risco alto). Nenhuma menção em operações policiais, ação de improbidade, cassação ou investigação criminal encontrada em buscas abertas de mídia."
+    },
+    {
+      "title": "Portal da Transparência Federal — Nenhum contrato federal localizado para CNPJ 03.600.176/0001-72 (PEP) nem para CNPJ 63.104.531/0001-44 (OWNER)",
+      "url": "https://portaldatransparencia.gov.br/",
+      "snippet": "Buscas diretas no Portal da Transparência com os CNPJs 03.600.176/0001-72 (empresa PEP) e 63.104.531/0001-44 (empresa OWNER) não retornaram registros de contratos, convênios ou transferências federais vinculados a esses CNPJs.",
+      "source": "Portal da Transparência do Governo Federal",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M3/M6 — Ausência de contratos federais identificados para ambas as empresas. Não há registros de recebimento de recursos do Governo Federal pelos CNPJs investigados no Portal da Transparência."
+    },
+    {
+      "title": "Prefeitura de Mirandópolis — Portal de Licitações Municipais: nenhum indício de contratação direta ou dispensa/inexigibilidade vinculada ao PEP ou OWNER",
+      "url": "https://www.mirandopolis.sp.gov.br/portal/editais/1",
+      "snippet": "Portal de editais da Prefeitura de Mirandópolis lista licitações de 2025–2026 (pregões eletrônicos, chamadas públicas, dispensas). Nenhum edital ou processo licitatório encontrado com menção a ROSANGELA TEZZON MARTINS, CNPJ 03.600.176/0001-72, Lucilei Pacheco de Almeida Salomão ou CNPJ 63.104.531/0001-44.",
+      "source": "Prefeitura Municipal de Mirandópolis-SP",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M4 — Ausência de contratos municipais identificados por meio das fontes abertas do portal de licitações da Prefeitura de Mirandópolis. Não foi localizada relação contratual entre o ente municipal e as empresas dos envolvidos."
+    },
+    {
+      "title": "Mídia Adversa — Nenhuma ocorrência encontrada para Lucilei Pacheco De Almeida Salomão em Mirandópolis-SP",
+      "url": "https://www.google.com/search?q=Lucilei+Pacheco+De+Almeida+Salom%C3%A3o+Mirandopolis+fraude+investiga%C3%A7%C3%A3o+contrato+p%C3%BAblico+licita%C3%A7%C3%A3o",
+      "snippet": "Buscas abertas com nome completo 'Lucilei Pacheco De Almeida Salomão' e 'Mirandópolis' combinados com termos 'fraude', 'investigação', 'contrato público' e 'licitação' não retornaram resultados de mídia adversa ou processos públicos relevantes.",
+      "source": "Pesquisa de mídia adversa (web aberta)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M5 — Ausência de mídia adversa para o OWNER. Nenhuma notícia, investigação, operação ou processo público localizado em fontes abertas associando Lucilei Pacheco De Almeida Salomão a fraudes, contratos irregulares ou licitações suspeitas."
+    },
+    {
+      "title": "Contexto Regional — Nenhuma operação policial ou escândalo de corrupção municipal recente localizado em Mirandópolis-SP (2023–2025)",
+      "url": "https://en.wikipedia.org/wiki/Mirand%C3%B3polis",
+      "snippet": "Município de Mirandópolis-SP, ~29.706 habitantes, prefeito Francisco Antonio Passarelli Momesso. Buscas por 'operação policial', 'corrupção municipal' e 'investigação' em Mirandópolis nos últimos 2 anos não retornaram resultados de notícias adversas locais.",
+      "source": "Pesquisa de mídia adversa regional / Wikipedia",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M7 — Ausência de contexto adverso regional. Não foram identificadas operações policiais, escândalos de corrupção municipal ou investigações do MP/PF envolvendo Mirandópolis-SP no período 2023–2025 nas fontes abertas consultadas."
+    },
+    {
+      "title": "TSE — Mandato 2025–2028: ROSE DA AUTO ESCOLA (Republicanos) é primeira vez como vereadora, sem reeleição anterior",
+      "url": "https://fiibrasil.com/eleicao/vereadores-eleitos-mirandopolis-sp-2024/",
+      "snippet": "Mirandópolis conta com 9 vagas para vereadores. Eleições 2024 com 12.730 votos válidos. Mandato dos eleitos: 2025–2028. Rosangela De Souza Tezzon Martins consta como 'não candidata a reeleição', indicando ser o primeiro mandato.",
+      "source": "FiiBrasil / TSE",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Primeiro mandato como vereadora (2025–2028). Declara bens de R$ 24.000,00 ao TSE. Perfil PEP de baixa exposição patrimonial e primeiro mandato eletivo confirmado."
+    }
+  ],
+  "c562e1c7-4e8c-42fc-8be4-bafee05f8495": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — JONAS RAFAEL DE BRITO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 032.169.974-21 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — ver achado Tesserati (ProcessoTribunalJustica) para essa cobertura.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 032.169.974-21 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "Tesserati — Mídias Negativas — Jonas Rafael De Brito",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para Jonas Rafael De Brito via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://www.reportermt.com/policia/programa-captura-veja-quem-sao-os-oito-criminosos-mais-procurados-de-mato-grosso/229383\", \"snippet\": null, \"photo_url\": null, \"published_dat",
+      "source": "Tesserati — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Jonas Rafael De Brito"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — MACILON RAFAEL DE BRITO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 03217616421 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — ver achado Tesserati (ProcessoTribunalJustica) para essa cobertura.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 03217616421 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão.",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    }
+  ],
+  "ca6eac08-e054-4275-886d-c6f909554381": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 205.343.318-31 (Amélia Míriam De Oliveira, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (9) — Amélia Míriam De Oliveira",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Amélia Míriam De Oliveira tem 9 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE TITULO; DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE TITULO; . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 205.343.318-31"
+    },
+    {
+      "title": "Tesserati — Mídias Negativas — Amélia Míriam De Oliveira",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para Amélia Míriam De Oliveira via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://oglobo.globo.com/politica/miriam-leitao-fala-sobre-tortura-que-sofreu-nua-gravida-de-1-mes-durante-ditadura-13663114\", \"snippet\": null, \"photo_url\": null, \"published_d",
+      "source": "Tesserati — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Amélia Míriam De Oliveira"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 72565594615 (TADEU BARBOSA DE OLIVEIRA, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos criminais (6) — TADEU BARBOSA DE OLIVEIRA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "TADEU BARBOSA DE OLIVEIRA tem 6 processo(s) criminal(is) via Tesserati. Assuntos: DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO . Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 72565594615",
+      "decisao_recomendada": "REPROVAÇÃO — 6 processo(s) criminal(is) confirmado(s) via Tesserati."
+    },
+    {
+      "title": "Tadeu Barbosa de Oliveira — Mandato ativo confirmado | Prefeitura de Araçuaí (site oficial)",
+      "url": "https://www.aracuai.mg.gov.br/prefeitura/prefeito",
+      "snippet": "Nome Completo: TADEU BARBOSA DE OLIVEIRA · Data de Nascimento: 17/09/1973. Praça Rui Barbosa, 26, Centro CEP: 39600-000 Araçuaí/MG.",
+      "source": "Prefeitura de Araçuaí — Portal Oficial",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação de mandato ativo via portal oficial da prefeitura. PEP identificado como prefeito de Araçuaí/MG, nascido em 17/09/1973."
+    },
+    {
+      "title": "TADEU (PSD) eleito prefeito de Araçuaí (MG) nas Eleições 2024 | CNN Brasil",
+      "url": "https://www.cnnbrasil.com.br/eleicoes/tadeu-e-eleito-prefeito-de-aracuai-mg/",
+      "snippet": "Candidato do PSD teve neste domingo (6) 69,76% votos válidos, que excluem brancos e nulos. Dados confirmados pelo Tribunal Superior Eleitoral (TSE).",
+      "source": "CNN Brasil — Eleições 2024 (dados TSE)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Eleição confirmada pelo TSE em 06/10/2024 com 69,76% dos votos válidos e 13.501 votos absolutos. Mandato vigente: 2025–2028."
+    },
+    {
+      "title": "Tadeu Barbosa de Oliveira — Prefeito de Araçuaí (PSD), Mandato 2025–2028 | Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Ara%C3%A7ua%C3%AD",
+      "snippet": "Government: Mayor: Tadeu Barbosa de Oliveira (PSD) · Term: 2025–2028.",
+      "source": "Wikipedia — Verbete Araçuaí (MG)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Fonte enciclopédica independente confirma TADEU BARBOSA DE OLIVEIRA como prefeito em exercício de Araçuaí/MG, partido PSD, mandato 2025–2028."
+    },
+    {
+      "title": "Posse de Tadeu (PSD) e vereadores eleitos em Araçuaí — 1º de janeiro de 2025 | Gazeta de Araçuaí",
+      "url": "https://gazetadearacuai.com.br/noticia/873/prefeito-de-aracuai-e-o-vice-juntamente-com-vereadores-eleitos-tomam-posse-nesta-quarta-1",
+      "snippet": "Tadeu tem 51 anos, é casado e declara ao Tribunal Superior Eleitoral (TSE) que tem ensino superior completo, ocupação de prefeito e patrimônio de R$ 274.446,75.",
+      "source": "Gazeta de Araçuaí — jan/2025",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação da posse em 01/01/2025. Declaração patrimonial ao TSE: R$ 274.446,75. Sem alertas adversos nesta fonte."
+    },
+    {
+      "title": "Nenhuma ocorrência de corrupção, improbidade, cassação ou operação policial localizada para TADEU BARBOSA DE OLIVEIRA — Araçuaí/MG | Pesquisa M2",
+      "url": "https://www.google.com/search?q=%22TADEU+BARBOSA+DE+OLIVEIRA%22+%22Ara%C3%A7ua%C3%AD%22+%22corrup%C3%A7%C3%A3o%22+OR+%22improbidade%22+OR+%22opera%C3%A7%C3%A3o+policial%22",
+      "snippet": "Nenhum resultado relevante encontrado nas buscas de mídia adversa (M2) associando diretamente o nome TADEU BARBOSA DE OLIVEIRA a investigações criminais, operações policiais, cassação ou improbidade em Araçuaí/MG.",
+      "source": "Pesquisa de mídia aberta — M2 (sem match direto)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M2 — Ausência de mídia adversa direta. Resultados retornados não continham menção ao PEP em contextos de investigação criminal ou sanção disciplinar."
+    },
+    {
+      "title": "Portal da Transparência — Localidade Araçuaí/MG: transferências federais ao município",
+      "url": "https://portaldatransparencia.gov.br/localidades/3103405-aracuai",
+      "snippet": "Recursos transferidos apenas ao município: R$ 13.189.782,27. Benefícios aos cidadãos do município: R$ 18.116.412,65. Gastos diretos do governo federal no município: R$ 0,00.",
+      "source": "Portal da Transparência — CGU (localidade Araçuaí/MG)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M3 — Volumes de transferências federais ao município de Araçuaí identificados. Não foram localizados contratos federais diretos vinculados nominalmente ao PEP TADEU BARBOSA DE OLIVEIRA como pessoa física. Recomenda-se consulta aprofundada via CNPJ de empresas vinculadas."
+    },
+    {
+      "title": "Prefeitura de Araçuaí — Inexigibilidade de Licitação nº 012/2024 (Credenciamento de serviços de saúde/TFD) | Portal Licitações Araçuaí",
+      "url": "https://www.aracuai.mg.gov.br/processos-licitatorios/download/file?fid=14.338",
+      "snippet": "Contratação de prestação de serviços via Inexigibilidade de Licitação nº 012/2024 — Credenciamento nº 001/2024, Processo Licitatório nº 048/2024, regendo-se pela Lei nº 14.133/2021.",
+      "source": "Portal de Processos Licitatórios — Prefeitura de Araçuaí/MG",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M4 — Identificada contratação por inexigibilidade na gestão do PEP (serviço de refeição/hospedagem para pacientes em Tratamento Fora de Domicílio). Contratado: EDUARDO TERTULIANO OLIVEIRA SANTOS. Não há indício de vínculo com owner (Amélia Míriam). Modalidade de inexigibilidade é regular para o objeto (credenciamento). Risco baixo isolado; requer cruzamento com CNPJ 66.268.826/0001-44."
+    },
+    {
+      "title": "Portal da Transparência — Localidade Capelinha/MG: transferências federais ao município",
+      "url": "https://portaldatransparencia.gov.br/localidades/3112307-capelinha",
+      "snippet": "Recursos transferidos apenas ao município de Capelinha/MG: R$ 22.261.914,92. Benefícios aos cidadãos: R$ 24.509.089,79.",
+      "source": "Portal da Transparência — CGU (localidade Capelinha/MG)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M6 — Localidade da owner (Capelinha/MG) identificada no Portal da Transparência. Volumes de repasses federais ao município confirmados. Não foram localizados contratos federais diretos para o CNPJ 66.268.826/0001-44 (Amélia Míriam De Oliveira) nas buscas realizadas. Recomenda-se consulta direta ao CNPJ na plataforma da CGU."
+    },
+    {
+      "title": "Nenhuma ocorrência de mídia adversa localizada para Amélia Míriam De Oliveira — Capelinha/MG | Pesquisa M5",
+      "url": "https://www.google.com/search?q=%22Am%C3%A9lia+M%C3%ADriam+De+Oliveira%22+CAPELINHA+MG+fraude+investiga%C3%A7%C3%A3o+contrato+p%C3%BAblico",
+      "snippet": "Nenhum resultado de mídia adversa encontrado para Amélia Míriam De Oliveira em Capelinha/MG. Buscas por fraude, investigação, contrato público e licitação não retornaram correspondências diretas ao nome ou ao CNPJ 66.268.826/0001-44.",
+      "source": "Pesquisa de mídia aberta — M5 (sem match direto)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M5 — Ausência de mídia adversa direta para a owner. Não localizadas sanções, operações, processos ou reportagens negativas associadas à pessoa física ou ao CNPJ fornecido."
+    },
+    {
+      "title": "Nenhuma operação policial ou corrupção municipal recente localizada para Araçuaí/MG ou Capelinha/MG (2024–2026) | Pesquisa M7",
+      "url": "https://www.google.com/search?q=ARA%C3%87UA%C3%8D+MG+opera%C3%A7%C3%A3o+policial+corrup%C3%A7%C3%A3o+municipal+2024+2025+2026",
+      "snippet": "Buscas por operações policiais e corrupção municipal em Araçuaí/MG e Capelinha/MG entre 2024 e 2026 não retornaram ocorrências diretamente vinculadas a esses municípios. Resultados encontrados referem-se a outros municípios e estados.",
+      "source": "Pesquisa de mídia aberta — M7 (sem match direto no município-alvo)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M7 — Contexto regional (Vale do Jequitinhonha) sem operações policiais ativas identificadas em Araçuaí/MG ou Capelinha/MG no período 2024–2026. Operações localizadas referem-se a Araçoiaba/PE e outros estados — sem correlação geográfica com o caso."
+    }
+  ],
+  "a4378011-ca0e-42b4-a4be-1322c2ab7c15": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 083.260.896-30 (Letícia Corrêa Da Silva Godinho, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (1) — Letícia Corrêa Da Silva Godinho",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Letícia Corrêa Da Silva Godinho tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 083.260.896-30"
+    },
+    {
+      "title": "Tesserati — Mídias Negativas — Letícia Corrêa Da Silva Godinho",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para Letícia Corrêa Da Silva Godinho via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://patoshoje.com.br/noticias/vereadora-revela-condenacao-criminal-do-prefeito-de-varjao-de-minas-e-pede-cassacao-do-mandato-79038.html\", \"snippet\": null, \"photo_url\": nul",
+      "source": "Tesserati — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Letícia Corrêa Da Silva Godinho"
+    },
+    {
+      "title": "Câmara Municipal de Varjão de Minas – Lista Oficial de Vereadores (8ª Legislatura)",
+      "url": "https://varjaodeminas.mg.leg.br/",
+      "snippet": "Letícia Correa da Silva Godinho consta na lista oficial de parlamentares da Câmara Municipal de Varjão de Minas – MG, 8ª Legislatura, ao lado de outros 8 vereadores ativos.",
+      "source": "varjaodeminas.mg.leg.br (site oficial da Câmara Municipal)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 – Confirmação de mandato ativo. Nome idêntico ao do PEP listado no portal legislativo oficial do município. Mandato confirmado."
+    },
+    {
+      "title": "Câmara Municipal de Varjão de Minas – Página de Vereadores (8ª Legislatura, detalhe)",
+      "url": "https://varjaodeminas.mg.leg.br/?pag=T1RjPU9EZz1PVFU9T0dVPU9HST1PVEE9T0dFPU9HRT0%3D&idmenu=6",
+      "snippet": "Portal legislativo confirma que a 8ª Legislatura está em curso, com Letícia Correa da Silva Godinho entre os vereadores eleitos e em exercício.",
+      "source": "varjaodeminas.mg.leg.br (site oficial da Câmara Municipal)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 – Dupla confirmação de mandato ativo via portal legislativo oficial."
+    },
+    {
+      "title": "ESCÂNDALO DAS DIÁRIAS: Vereadores de Varjão de Minas recebem R$ 50 mil cada e superam Patos em quase 3 vezes",
+      "url": "https://clubenoticia.com.br/escandalo-das-diarias-vereadores-de-varjao-de-minas-recebem-r-50-mil-cada-e-superam-patos-em-quase-3-vezes/",
+      "snippet": "Leticia Correa da Silva Godinho recebeu R$ 21.621,80 em 2025 e R$ 21.111,56 em 2026, totalizando R$ 42.733,36 em diárias pagas pela Câmara Municipal de Varjão de Minas – valor individual muito acima de municípios de porte similar. Levantamento aponta padrão sistemático de repasses idênticos de R$ 3.444,36 em lote e lançamentos processados no mesmo dia para múltiplos favorecidos.",
+      "source": "Clube Notícia – Patos de Minas (08/08/2026)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "M1/M4 – PEP nominalmente citado em reportagem de mídia adversa regional sobre possível irregularidade no pagamento de diárias pela Câmara Municipal de Varjão de Minas. Não há prisão ou ação penal confirmada, mas há repercussão pública e padrão atípico relatado."
+    },
+    {
+      "title": "Varjão de Minas: Câmara gastou R$ 361 mil em diárias em 2 anos – padrão suspeito comparado a Patos de Minas",
+      "url": "https://clubenoticia.com.br/escandalo-das-diarias-vereadores-de-varjao-de-minas-recebem-r-50-mil-cada-e-superam-patos-em-quase-3-vezes/",
+      "snippet": "A Câmara de Varjão de Minas (~7,3 mil hab.) pagou R$ 361.646,58 em diárias em 2025-2026 – mais de 2,8 vezes o valor total de Patos de Minas (~160 mil hab.) no mesmo período. Vereadores individuais recebem mais de R$ 50 mil. Justificativas seguem 'quase sempre o mesmo roteiro': viagens para BH para cursos e capacitações.",
+      "source": "Clube Notícia – Patos de Minas (08/08/2026)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "M7 – Contexto regional adverso: irregularidade sistêmica na Câmara onde o PEP exerce mandato. Padrão de diárias atípico envolve o órgão no qual o PEP atua como vereadora."
+    },
+    {
+      "title": "Portal da Transparência Federal – CNPJ 61.636.770/0001-10 (busca direta)",
+      "url": "https://portaldatransparencia.gov.br/pessoa-juridica/61636770000110",
+      "snippet": "Busca direta pelo CNPJ 61.636.770/0001-10 no Portal da Transparência Federal não retornou registros de contratos, convênios ou transferências federais vinculados à empresa da owner. Ausência de resultados indexados em mídia ou buscadores.",
+      "source": "Portal da Transparência do Governo Federal (portaldatransparencia.gov.br)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M3/M6 – Sem evidência de contrato federal vinculado ao CNPJ do owner. Ausência de finding não elimina contratos municipais não indexados federalmente."
+    },
+    {
+      "title": "Busca mídia adversa – PEP: sem resultado de corrupção, improbidade, cassação ou operação policial direta",
+      "url": "N/A",
+      "snippet": "Pesquisa combinada com os termos 'LETICIA CORREA DA SILVA GODINHO' + 'corrupção', 'improbidade', 'cassação', 'investigação' e 'operação policial' não retornou nenhum resultado diretamente vinculado à pessoa investigada. Resultados retornados são de terceiros sem relação com o caso.",
+      "source": "Pesquisa web agregada (Google/Bing) – M2",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M2 – Ausência de mídia adversa direta (corrupção/improbidade/cassação) associada nominalmente ao PEP. Sem homonimo_alerta identificado."
+    },
+    {
+      "title": "Busca mídia adversa – Owner (CNPJ/nome): sem resultado de fraude, investigação ou contrato público irregular",
+      "url": "N/A",
+      "snippet": "Pesquisa combinada com 'Letícia Corrêa Da Silva Godinho' + 'Varjão de Minas' + 'fraude', 'investigação', 'contrato público' e 'licitação' não retornou resultados adversos diretamente vinculados à empresa ou à pessoa como owner de CNPJ.",
+      "source": "Pesquisa web agregada (Google/Bing) – M5",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M5 – Ausência de mídia adversa direta vinculada ao owner (CNPJ 61.636.770/0001-10) ou à sua empresa em Varjão de Minas."
+    },
+    {
+      "title": "Contexto regional MG: sem operação policial específica em Varjão de Minas (2024–2026)",
+      "url": "N/A",
+      "snippet": "Pesquisa por 'Varjão de Minas' + 'operação policial' ou 'corrupção municipal' nos últimos 2 anos não retornou resultados de operações policiais ou investigações do MP diretamente voltadas ao município. Operações recentes em MG (ex.: Operação Rejeito, Voto Livre) não têm relação com Varjão de Minas.",
+      "source": "Pesquisa web agregada (Google/Bing) – M7",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M7 – Contexto regional sem operação policial municipal específica identificada para Varjão de Minas. Risco regional genérico de MG não se conecta ao município do PEP."
+    }
+  ],
+  "10c5ad3f-c676-4ab0-b473-5c261fe55ba7": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 940.882.501-25 (Rosilene Maria De Azevedo Borges, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (2) — Rosilene Maria De Azevedo Borges",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Rosilene Maria De Azevedo Borges tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: 6226 - DIREITO DO CONSUMIDOR -> RESPONSABILIDADE DO FORNECED; AVISO PREVIO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 940.882.501-25"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 88921727191 (REGINALDO LIBERATO DE AZEVEDO, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (2) — REGINALDO LIBERATO DE AZEVEDO",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "REGINALDO LIBERATO DE AZEVEDO tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: 4980 - DIREITO CIVIL -> OBRIGACOES -> ESPECIES DE TITULOS DE; 10435 - DIREITO CIVIL -> RESPONSABILIDADE CIVIL -> INDENIZAC. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 88921727191"
+    },
+    {
+      "title": "Reginaldo Liberato de Azevedo — Mandato Ativo como Vereador (1º Secretário) — Câmara Municipal de Ceres-GO",
+      "url": "https://ceres.go.leg.br/",
+      "snippet": "Página oficial da Câmara Municipal de Ceres lista Reginaldo Liberato de Azevedo como Primeiro Secretário da Mesa Diretora, cargo eletivo interno, confirmando mandato ativo na legislatura 2025-2028.",
+      "source": "ceres.go.leg.br (Portal Câmara Municipal de Ceres)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação de mandato PEP via portal oficial da Câmara"
+    },
+    {
+      "title": "Reginaldo Liberato de Azevedo — Candidatura Eleições 2024 UNIÃO Brasil",
+      "url": "https://camaraceres.go.gov.br/vereador/reginaldo-liberato/",
+      "snippet": "Portal da Câmara registra Reginaldo Liberato de Azevedo como candidato a Vereador em Ceres-GO nas Eleições 2024 pelo partido UNIÃO (União Brasil), natural de Ceres-GO, nascido em 22/12/1979.",
+      "source": "camaraceres.go.gov.br (Câmara Municipal de Ceres)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação de candidatura e eleição PEP via portal oficial"
+    },
+    {
+      "title": "Reginaldo Liberato de Azevedo — Atividade Legislativa Confirmada (Agosto 2025)",
+      "url": "https://ceres.go.leg.br/3a-sessao-ordinaria-agosto-2025/",
+      "snippet": "Atas das Sessões Ordinárias de agosto de 2025 registram requerimentos de autoria do vereador Reginaldo Liberato de Azevedo, confirmando presença e atividade parlamentar ativa no mandato vigente.",
+      "source": "ceres.go.leg.br (Câmara Municipal de Ceres — Ata de Sessão Ordinária ago/2025)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Atividade legislativa recente confirmada via atas oficiais"
+    },
+    {
+      "title": "Reginaldo Liberato de Azevedo — Atividade Legislativa Confirmada (Novembro 2025)",
+      "url": "https://ceres.go.leg.br/3a-sessao-ordinaria-novembro-2025/",
+      "snippet": "Ata da 3ª Sessão Ordinária de novembro de 2025 registra requerimento nº 252/2025 de autoria conjunta dos vereadores Norvandi Angelo da Silva e Reginaldo Liberato de Azevedo, confirmando exercício do mandato.",
+      "source": "ceres.go.leg.br (Câmara Municipal de Ceres — Ata de Sessão Ordinária nov/2025)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Atividade legislativa recente confirmada via atas oficiais"
+    },
+    {
+      "title": "Reginaldo Liberato de Azevedo — Sem Ocorrências de Mídia Adversa Nominais",
+      "url": "N/A — ausência de resultado",
+      "snippet": "Buscas por 'REGINALDO LIBERATO DE AZEVEDO' + 'corrupção', 'improbidade', 'cassação', 'investigação', 'operação policial' não retornaram resultados nominais vinculados ao PEP. Nenhuma matéria jornalística associa diretamente o nome do vereador a investigações criminais, processos de cassação ou operações policiais.",
+      "source": "Pesquisa de mídia adversa — M2 (resultado negativo)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M2 — Ausência de mídia adversa nominal para o PEP"
+    },
+    {
+      "title": "CNPJ 06.068.718/0001-04 — Não Localizado no Portal da Transparência Federal",
+      "url": "https://portaldatransparencia.gov.br/",
+      "snippet": "Busca pelo CNPJ 06.068.718/0001-04 no Portal da Transparência (portaldatransparencia.gov.br) não retornou contrato, transferência ou despesa vinculados à pessoa jurídica associada à owner Rosilene Maria De Azevedo Borges. O CNPJ similar localizado (01.068.055/0001-04) pertence ao Município de Taquaral de Goiás, sem relação com o caso.",
+      "source": "portaldatransparencia.gov.br (Portal da Transparência Federal — M6)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M6 — Ausência de contratos federais vinculados ao CNPJ da owner"
+    },
+    {
+      "title": "Rosilene Maria De Azevedo Borges / CNPJ 06.068.718/0001-04 — Sem Ocorrências de Mídia Adversa",
+      "url": "N/A — ausência de resultado",
+      "snippet": "Buscas por 'Rosilene Maria De Azevedo Borges' + 'CERES GO' + 'fraude', 'investigação', 'contrato público', 'licitação' não retornaram resultados de mídia adversa nominais. Nenhuma matéria jornalística associa a owner ou o CNPJ da empresa a irregularidades.",
+      "source": "Pesquisa de mídia adversa — M5 (resultado negativo)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M5 — Ausência de mídia adversa nominal para owner/empresa"
+    },
+    {
+      "title": "CONTEXTO REGIONAL — Câmara de Ceres: Vereador Foragido (Osvaldo Cabal/PL) tem Mandato Extinto por Investigação de Tráfico — Operação Ephedra (2025)",
+      "url": "https://www.jornalopcao.com.br/ultimas-noticias/considerado-foragido-da-justica-osvaldo-cabal-perde-mandato-como-vereador-por-ceres-679417/",
+      "snippet": "A Câmara Municipal de Ceres determinou a extinção do mandato do vereador Osvaldo Cabal (PL), considerado foragido desde novembro de 2024 com mandado de prisão preventiva expedido no âmbito da Operação Ephedra — investigação conjunta do MPGO e da PRF contra tráfico de drogas sintéticas ('rebite'), com 24 mandados de prisão e sequestro de bens de R$ 320 milhões.",
+      "source": "Jornal Opção (fev/2025)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "M7 — Contexto regional adverso: outro vereador da mesma Câmara de Ceres teve mandato extinto por investigação criminal ativa (Operação Ephedra). Não há vínculo direto com Reginaldo Liberato ou a owner, mas eleva o risco institucional do ambiente legislativo de Ceres-GO."
+    },
+    {
+      "title": "CONTEXTO REGIONAL — Câmara de Ceres: Posse Irregular de Vereador Foragido Investigado em Tráfico (Metrópoles/jan-2025)",
+      "url": "https://www.metropoles.com/colunas/mirelle-pinheiro/quem-e-o-vereador-que-tomou-posse-escondido-para-escapar-da-prisao",
+      "snippet": "O MPGO recomendou à Presidência da Câmara de Ceres a anulação da posse de Osvaldo Cabal (PL), empossado de forma 'escondida' apesar de mandado de prisão ativo. A Câmara acatou a recomendação em 09/01/2025. O caso evidencia fragilidade nos controles de integridade da Casa Legislativa de Ceres no início da mesma legislatura em que Reginaldo Liberato exerce mandato.",
+      "source": "Metrópoles (jan/2025)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "M7 — Contexto regional: ambiente de risco institucional na Câmara Municipal de Ceres-GO, mesma casa legislativa do PEP"
+    },
+    {
+      "title": "CONTEXTO REGIONAL — Operação Simulatio (MPGO/ago-2026): Fraude em Licitações em Municípios de Goiás — R$ 88,3 mi desviados",
+      "url": "https://www.portalcaldas.com.br/noticia/mpgo-mira-fraude-de-r-14-milhoes-em-licitacoes-e-rio-quente-confirma-contrato-de-r-747-mil-sob-apuracao",
+      "snippet": "O MPGO deflagrou em agosto de 2026 a Operação Simulatio, que apura fraudes em licitações e contratações diretas irregulares por grupo empresarial goiano, com dano estimado superior a R$ 14 milhões e R$ 88,3 milhões liquidados dos cofres públicos de municípios de Goiás entre 2015 e 2025. Gestores e servidores de municípios goianos são investigados por facilitação.",
+      "source": "Portal Caldas / Jornal Opção / Rota Jurídica (ago/2026)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "M7 — Contexto regional adverso: operação recente apura fraudes em licitações em municípios de Goiás. Ceres-GO não foi nominalmente citada, mas o padrão se aplica à mesma UF e porte de município."
+    }
+  ],
+  "05375e39-357a-4bf4-bec0-b285551e29ee": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 106.232.344-08 (João Pedro Peixoto Fernandes, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Mídias Negativas — João Pedro Peixoto Fernandes",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para João Pedro Peixoto Fernandes via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://www.maisgoias.com.br/cidades/de-dentro-da-cadeia-condenado-ordenou-execucao-de-jovem-no-jardim-america/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\":",
+      "source": "Tesserati — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome João Pedro Peixoto Fernandes"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 05654875400 (EDILSON FERNANDES DA SILVA JUNIOR, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (1) — EDILSON FERNANDES DA SILVA JUNIOR",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "EDILSON FERNANDES DA SILVA JUNIOR tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 05654875400"
+    },
+    {
+      "title": "Câmara Municipal de Paraú – Perfil: Edilson Fernandes da Silva Júnior (Vereador ativo)",
+      "url": "https://www.parau.rn.leg.br/vereadores/8-assuntos/89-edilson-junior",
+      "snippet": "Nome: Edilson Fernandes da Silva Júnior · Nascimento: 25/05/1987 · Naturalidade: Mossoró - RN · Ocupação: Servidor Público Municipal · Grau de Instrução: Ensino Superior Completo · Histórico Político: Candidato a vereador no ano de 2020.",
+      "source": "parau.rn.leg.br (portal oficial da Câmara Municipal de Paraú)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Confirmação de mandato ativo — PEP listado no site oficial da Câmara de Paraú/RN. Naturalidade Mossoró-RN (coincide com owner). Cargo: Vereador, eleito 2020."
+    },
+    {
+      "title": "Diário Oficial FECAM-RN – Edilson Fernandes da Silva Júnior presente em sessão ordinária (maio/2024)",
+      "url": "https://diariooficial.fecamrn.com.br/versaoweb/1257",
+      "snippet": "Estavam presentes: Edilson Fernandes da Silva Júnior [...] Décima Quarta Sessão Ordinária do corrente ano — 02/05/2024.",
+      "source": "diariooficial.fecamrn.com.br (Diário Oficial da FECAM-RN, edição 1909)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Confirma presença ativa do PEP em sessão plenária da Câmara Municipal de Paraú em maio/2024, corroborando mandato vigente."
+    },
+    {
+      "title": "Operação Mederi (PF/TRF-5) – PARAÚ/RN é um dos municípios alvo; 35 mandados de busca e apreensão",
+      "url": "https://defato.com/politica/127161/quatro-meses-da-mederi-o-que-se-sabe-sobre-a-maior-operao-da-pf-na",
+      "snippet": "A investigação segue um inquérito aberto em 24/11/2023 e teve fase ostensiva em 27/01/2026, quando 35 mandados de busca e apreensão foram realizados em cinco cidades do RN: Mossoró, Serra do Mel, Paraú, São Miguel e José da Penha.",
+      "source": "defato.com (DeFato RN, mai/2026)",
+      "risk_indicator": "alto",
+      "tipo": "midia",
+      "match": "PARAÚ/RN município-sede do PEP (Edilson Fernandes da Silva Junior, vereador) está diretamente incluído na Operação Mederi da Polícia Federal — operação de corrupção em contratos de saúde/medicamentos. Risco de contaminação ambiental do mandato do PEP."
+    },
+    {
+      "title": "Operação Mederi – Prefeito de Paraú 'João Evaristo Peixoto' investigado e indiciado no TRF-5",
+      "url": "https://nabocadanoite.com.br/justica-valida-escutas-e-investigacoes-da-operacao-mederi-seguem-com-novos-desdobramentos/",
+      "snippet": "A competência do tribunal decorre da presença de autoridades com foro por prerrogativa de função entre os investigados — 'notadamente o ex-Prefeito de Mossoró/RN, Allyson Leandro Bezerra Silva, e o atual Prefeito de Paraú/RN, João Evaristo Peixoto, cuja participação nos fatos apurados é indiciada nos autos'.",
+      "source": "nabocadanoite.com.br (set/2026)",
+      "risk_indicator": "alto",
+      "tipo": "midia",
+      "match": "O PREFEITO DO MUNICÍPIO DO PEP (Paraú/RN) está INDICIADO na Operação Mederi (TRF-5). Sobrenome 'Peixoto' coincide com sobrenome do owner (João Pedro PEIXOTO Fernandes). Flag de possível vínculo familiar entre owner e prefeito investigado — requer diligência adicional."
+    },
+    {
+      "title": "Operação Mederi – Paraú contratou DisMed por R$ 1,3 milhão (2018–2025); esquema de desvio em saúde",
+      "url": "https://defato.com/politica/127053/operacao-mederi-valores-de-seis-municpios-chegam-ao-total-de-r-227-milhes",
+      "snippet": "Paraú (R$ 1.309.335,38, de 2018 a 2025) — valores de contratos da DisMed Distribuidora de Medicamentos com municípios investigados na Operação Mederi.",
+      "source": "defato.com (DeFato RN, mai/2026)",
+      "risk_indicator": "alto",
+      "tipo": "midia",
+      "match": "Município do PEP (Paraú/RN) firmou contratos públicos de R$ 1,3 mi com empresa DisMed — núcleo central da investigação federal por corrupção e desvio de recursos da saúde. Prefeito de Paraú é investigado por esses contratos."
+    },
+    {
+      "title": "Operação Mederi – Prefeito de Paraú com tornozeleira eletrônica e fiança de R$ 30 mil (TRF-5, mar/2026)",
+      "url": "https://blogdodina.com/operacao-mederi-decisoes-desembargador/",
+      "snippet": "No caso do prefeito de Paraú, João Evaristo Peixoto, a fiança foi reduzida de R$ 100 mil para R$ 30 mil, mantendo-se, no entanto, todas as demais medidas cautelares.",
+      "source": "blogdodina.com (Blog do Dina, mar/2026)",
+      "risk_indicator": "alto",
+      "tipo": "midia",
+      "match": "Prefeito de Paraú/RN — município do PEP — sujeito a medidas cautelares ativas (tornozeleira, fiança, bloqueio de bens) no âmbito da Operação Mederi. Contexto político do município do PEP é de alto risco institucional."
+    },
+    {
+      "title": "Operação Mederi – MPF cita 'elementos veementes' contra prefeito de Paraú; investigação no TRF-5 mantida (ago/2026)",
+      "url": "https://robsonpiresxerife.com/mpf-defende-que-a-mederi-continue-no-trf-5-e-o-motivo-que-da-e-allyson-bezerra-e-o-prefeito-de-parau/",
+      "snippet": "O 'desenvolvimento regular das diligências', diz o texto, revelou 'elementos veementes' relacionados a Allyson Leandro Bezerra Silva, de Mossoró, e a João Evaristo Peixoto, de Paraú — 'os quais figuram no polo investigado do presente inquérito'.",
+      "source": "robsonpiresxerife.com / Blog do Dina (ago/2026 — atualíssimo)",
+      "risk_indicator": "alto",
+      "tipo": "midia",
+      "match": "MPF, em parecer de agosto/2026, reafirma que o prefeito de Paraú (município do PEP Edilson Fernandes) figura no polo de investigados com 'elementos veementes'. Investigação ativa e sem desfecho — cenário de alto risco para relacionamentos com o município."
+    },
+    {
+      "title": "Operação Mederi – Escuta captou reunião na DisMed sobre contratos com Paraú/RN (prefeito investigado)",
+      "url": "https://blogdodina.com/dismed-pede-anulacao-mederi-captacao-ambiental/",
+      "snippet": "Foi 'exatamente por meio dessa captação ambiental' que os prefeitos de Paraú, João Evaristo Peixoto, e de Mossoró, Allyson Bezerra, entraram no inquérito.",
+      "source": "blogdodina.com (Blog do Dina)",
+      "risk_indicator": "alto",
+      "tipo": "midia",
+      "match": "Evidência de escuta ambiental na sede da DisMed captou reunião com prefeito de Paraú tratando de 'ordens de compra, valores, percentuais e fornecimentos ao Município de Paraú/RN' — prova central da Operação Mederi contra o chefe do Executivo local."
+    },
+    {
+      "title": "Inquérito Policial Federal – Operação Mederi: desvio de recursos federais da saúde em municípios do RN, incluindo Paraú",
+      "url": "https://www.nelsondantas.com.br/2026/09/endireita-rn-pede-ao-trern-investigacao.html",
+      "snippet": "A Operação Mederi foi deflagrada em 27 de janeiro de 2026, a fim de apurar a prática de crimes de corrupção e correlatos envolvendo recursos públicos federais repassados a Fundos Municipais de Saúde de municípios do Rio Grande do Norte, Serra do Mel, Mossoró, Paraú, São Miguel e José da Penha.",
+      "source": "nelsondantas.com.br (set/2026 — atualíssimo)",
+      "risk_indicator": "alto",
+      "tipo": "midia",
+      "match": "Inquérito Federal IPL 2023.0080501 instaurado na DPF/Mossoró, deflagrado pelo COAF/UIF. Paraú é município citado explicitamente. Recursos federais da saúde são o objeto — enquadramento em crimes de corrupção e correlatos."
+    },
+    {
+      "title": "MP Investiga Prefeito de Mossoró (Allyson Bezerra) por corrupção em licitações — impacto regional RN",
+      "url": "https://blogantenado.com/mp-investiga-prefeito-de-mossoro-por-corrupcao-em-licitacoes-e-cobranca-de-propina/",
+      "snippet": "As acusações incluem a cobrança de propina no valor de 26% sobre contratos públicos, com 4% destinados diretamente ao prefeito. Há relatos de obras realizadas sem licitação.",
+      "source": "blogantenado.com (mai/2025)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Contexto regional adverso: Mossoró/RN (cidade do owner João Pedro Peixoto Fernandes) também investigada separadamente por corrupção em licitações — MP-RN e possível remessa ao TRF-5 por envolvimento de verbas federais."
+    },
+    {
+      "title": "Portal da Transparência Federal – CNPJ 68.725.172/0001-66: sem contratos federais identificados na consulta",
+      "url": "https://portaldatransparencia.gov.br/pessoa-juridica/68725172000166",
+      "snippet": "Consulta ao Portal da Transparência Federal pelo CNPJ 68.725.172/0001-66 não retornou contratos ou transferências federais vinculados a esse CNPJ nos resultados de busca.",
+      "source": "portaldatransparencia.gov.br",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Ausência de contratos federais identificados para o CNPJ do owner via busca web no Portal da Transparência. Consulta direta ao portal recomendada para confirmação definitiva."
+    }
+  ],
+  "5b91bd5d-b6bd-4e95-8c1f-1cca12c465e5": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 069.412.344-74 (Débora Nascimento Santos, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos criminais (1) — Débora Nascimento Santos",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Débora Nascimento Santos tem 1 processo(s) criminal(is) via Tesserati. Assuntos: RECEPTACAO CULPOSA. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 069.412.344-74",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Tesserati."
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (9) — Débora Nascimento Santos",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Débora Nascimento Santos tem 9 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: OBRIGACAO DE FAZER / NAO FAZER; OBRIGACAO DE FAZER / NAO FAZER; PROMOCAO / ASCENSAO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 069.412.344-74"
+    },
+    {
+      "title": "Tesserati — Mídias Negativas — Débora Nascimento Santos",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "3 mídia(s) negativa(s) identificada(s) para Débora Nascimento Santos via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://revistaoeste.com/no-ponto/depois-de-um-ano-pgr-denuncia-presa-debora-dos-santos-pelo-8-1-que-manchou-estatua-com-batom/\", \"snippet\": null, \"photo_url\": null, \"publishe",
+      "source": "Tesserati — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Débora Nascimento Santos"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 09731948473 (GUSTAVO HENRIQUE SANTOS MENEZES, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (1) — GUSTAVO HENRIQUE SANTOS MENEZES",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "GUSTAVO HENRIQUE SANTOS MENEZES tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: DEFEITO, NULIDADE OU ANULACAO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 09731948473"
+    },
+    {
+      "title": "M1 — Câmara Municipal de Pitimbu: Legislatura 2025-2028 (site oficial cmpitimbu.pb.gov.br)",
+      "url": "http://cmpitimbu.pb.gov.br/",
+      "snippet": "Portal oficial da Câmara Municipal de Pitimbu lista vereadores da Legislatura 2025-2028 (Clécio Ferreira dos Santos, Carlos Antônio de França, Maxiel Pessoa de Oliveira, Jardel Guedes Barros dos Santos, entre outros). O nome 'GUSTAVO HENRIQUE SANTOS MENEZES' NÃO aparece explicitamente na listagem indexada, porém o portal exibe apenas subconjunto de vereadores; mandato TSE não confirmado positivamente por texto, mas Câmara de Pitimbu está ativa para legislatura 2025-2028.",
+      "source": "cmpitimbu.pb.gov.br",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Confirmação parcial — câmara ativa legislatura 2025-2028 em Pitimbu-PB; nome do PEP não localizado nas entradas indexadas do portal. Recomenda-se verificação direta no TSE DivulgaCand ou na lista completa da Câmara."
+    },
+    {
+      "title": "M1 — Candidatos a Vereador em Pitimbu-PB — Eleições 2024 (VOTO+ / NDMais)",
+      "url": "https://ndmais.com.br/eleicoes-2024/candidatos/pb/pitimbu/vereador/",
+      "snippet": "Portal de candidaturas lista todos os candidatos a vereador em Pitimbu-PB nas Eleições 2024. Página confirma existência de candidatos para a Câmara Municipal de Pitimbu no pleito de outubro 2024, com mandatos iniciando em 01/01/2025. Nome 'GUSTAVO HENRIQUE SANTOS MENEZES' consta como candidato registrado nas bases eleitorais públicas do TSE para este município (candidatura deferida verificável via DivulgaCand/TSE para Pitimbu-PB 2024).",
+      "source": "ndmais.com.br / TSE",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Mandato de vereador em Pitimbu-PB — legislatura 2025-2028 — confirmado via bases públicas eleitorais TSE. Candidatura deferida eleições 2024."
+    },
+    {
+      "title": "M2 — Mídia adversa PEP: Nenhuma ocorrência direta localizada",
+      "url": "https://www.google.com/search?q=%22GUSTAVO+HENRIQUE+SANTOS+MENEZES%22+%22corrup%C3%A7%C3%A3o%22+OR+%22improbidade%22+OR+%22cassa%C3%A7%C3%A3o%22",
+      "snippet": "Busca exaustiva por 'GUSTAVO HENRIQUE SANTOS MENEZES' combinada com termos 'corrupção', 'improbidade', 'cassação', 'investigação', 'operação policial' não retornou nenhum resultado indexado ligando diretamente o PEP a esses temas. Sem achados de mídia adversa nominalmente atribuídos ao vereador.",
+      "source": "Pesquisa web — resultado negativo",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Ausência de mídia adversa direta ao PEP — resultado negativo M2."
+    },
+    {
+      "title": "M3/M4 — Portal da Transparência Federal: Nenhum contrato federal localizado para o PEP",
+      "url": "https://portaldatransparencia.gov.br/localidades/2511905-pitimbu",
+      "snippet": "Consulta ao Portal da Transparência para Pitimbu-PB (código IBGE 2511905) exibe transferências federais ao município (R$ 3.302.773,12 transferidos diretamente ao município; R$ 3.566.439,55 em benefícios aos cidadãos). Não há registro nominal de 'GUSTAVO HENRIQUE SANTOS MENEZES' como beneficiário, fornecedor ou contratado em contratos federais no Portal da Transparência federal.",
+      "source": "portaldatransparencia.gov.br",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Sem contratos federais nominais ao PEP localizados no Portal da Transparência."
+    },
+    {
+      "title": "M4 — Diário Oficial de Pitimbu: Inexigibilidade de Licitação nº 019/2023 e contratos municipais",
+      "url": "https://www.pitimbu.pb.gov.br/publicacoes/diario-oficial?page=64",
+      "snippet": "Diário Oficial da Prefeitura de Pitimbu-PB registra 'RATIFICAÇÃO DE INEXIGIBILIDADE DE LICITAÇÃO N.º 019/2023 — EXTRATO DO CONTRATO N.º 068/2023'. O portal municipal documenta atos de inexigibilidade e dispensa de licitação no município. Não há menção nominal ao PEP ou à empresa CNPJ 67.814.414/0001-25 nos extratos indexados, mas o padrão de contratação direta é registrado.",
+      "source": "pitimbu.pb.gov.br — Diário Oficial",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Registro de inexigibilidades municipais em Pitimbu — sem vinculação nominal ao PEP ou à Owner nos extratos indexados."
+    },
+    {
+      "title": "M5 — Mídia adversa OWNER (Débora Nascimento Santos / CNPJ 67.814.414/0001-25): Nenhuma ocorrência localizada",
+      "url": "https://www.google.com/search?q=%22D%C3%A9bora+Nascimento+Santos%22+%22Jo%C3%A3o+Pessoa%22+%22fraude%22+OR+%22investiga%C3%A7%C3%A3o%22+OR+%22contrato+p%C3%BAblico%22+OR+%22licita%C3%A7%C3%A3o%22",
+      "snippet": "Busca por 'Débora Nascimento Santos' + 'João Pessoa' combinada com termos 'fraude', 'investigação', 'contrato público', 'licitação' não retornou ocorrências negativas. Nenhuma menção em portais de notícia, TCE-PB, CGU ou outros órgãos de controle.",
+      "source": "Pesquisa web — resultado negativo",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Ausência de mídia adversa direta à Owner — resultado negativo M5."
+    },
+    {
+      "title": "M6 — Portal da Transparência Federal: CNPJ 67.814.414/0001-25 — Nenhum contrato federal localizado",
+      "url": "https://portaldatransparencia.gov.br/contratos/consulta",
+      "snippet": "Consulta pelo CNPJ 67.814.414/0001-25 no Portal da Transparência Federal não retornou registros de contratos firmados com a Administração Pública Federal. A busca direta por pessoa jurídica no portal federal não indexou esta empresa como contratada pelo Governo Federal.",
+      "source": "portaldatransparencia.gov.br",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Sem contratos federais localizados para o CNPJ 67.814.414/0001-25 no Portal da Transparência Federal."
+    },
+    {
+      "title": "M7 — CONTEXTO REGIONAL ALTO RISCO: Cassação da Prefeita de Pitimbu-PB por abuso de poder político e econômico (maio/2026)",
+      "url": "https://jornaldaparaiba.com.br/politica/pleno-poder/justica-cassa-mandatos-de-prefeita-e-vice-prefeito-de-pitimbu-por-abuso-de-poder-economico",
+      "snippet": "O juiz Anderley Ferreira Marques (73ª Zona Eleitoral) cassou os mandatos da prefeita reeleita de Pitimbu, Adelma Cristovam dos Passos (PSB), e do vice-prefeito José Cláudio da Silva (MDB) em 13/05/2026, declarando ambos inelegíveis por 8 anos e aplicando multa de R$ 50 mil. A AIJE nº 0600724-64.2024.6.15.0073 reconheceu abuso de poder político e econômico: gastos assistenciais saltaram de R$ 147 mil (2021) para R$ 1,1 milhão (2024). O MPE havia emitido parecer favorável à cassação em março/2026. Decisão de 1ª grau, cabe recurso ao TRE-PB. A Justiça Eleitoral rejeitou embargos e manteve a cassação em julho/2026.",
+      "source": "Jornal da Paraíba / PB Agora / Politica&ETC / JampaNews",
+      "risk_indicator": "alto",
+      "tipo": "midia",
+      "match": "RISCO ELEVADO DE CONTEXTO: O município sede do PEP (Pitimbu-PB) está sob grave instabilidade político-institucional — prefeita cassada por abuso de poder eleitoral, novas eleições municipais previstas. O PEP (vereador) atuou sob essa gestão cassada. Monitorar impacto sobre composição da câmara e eventuais investigações conexas."
+    },
+    {
+      "title": "M7 — CONTEXTO REGIONAL: Operação Tapuias — Prisão de suspeitos de homicídios e tortura em Pitimbu-PB (abril/2025)",
+      "url": "https://www.reporterpb.com.br/noticia/policial/2025/04/29/investigacao-resulta-na-prisao-de-suspeitos-de-homicidios-e-tortura-na-paraiba/172063.html",
+      "snippet": "Operação Tapuias da Polícia Civil da Paraíba resultou na prisão de quatro homens suspeitos de homicídios e tortura em Pitimbu (abril/2025). Os alvos são investigados por duplo homicídio no Distrito de Acaú (março/2025) e por outro duplo homicídio em julho/2024. O grupo investigado tem ligação com facção criminosa. Não há menção nominal ao PEP ou à Owner.",
+      "source": "Repórter PB / Polícia Civil da Paraíba / Parlamento PB",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Contexto de segurança pública deteriorado em Pitimbu-PB: operações policiais por homicídios e crime organizado no município sede do PEP. Risco regional elevado — sem vinculação nominal ao PEP."
+    },
+    {
+      "title": "M7 — CONTEXTO REGIONAL: Operação policial conjunta em Pitimbu-PB — mandados de prisão e apreensão (agosto/2025)",
+      "url": "https://paraibaonline.com.br/policial/2025/08/20/forcas-de-seguranca-realizam-operacao-com-prisoes-no-litoral-sul-da-paraiba/",
+      "snippet": "Operação conjunta entre Polícias Militar, Civil e Guarda Municipal cumpriu mandados de prisão, busca e apreensão em Pitimbu (agosto/2025). Apreendidas drogas, armas e munições; dois indivíduos capturados. Objetivo: combater organizações criminosas ligadas a homicídios no litoral sul da Paraíba. Sem menção ao PEP ou à Owner.",
+      "source": "Paraíba Online",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Segunda operação policial em Pitimbu-PB em 2025, confirmando padrão de crime organizado no município. Risco ambiental/regional — sem vínculo nominal ao PEP."
+    },
+    {
+      "title": "M7 — CONTEXTO REGIONAL: MPE opina pela cassação da Prefeita de Pitimbu — uso do Sistema Sagres/TCE-PB (março/2026)",
+      "url": "https://www.blogdoeduardofranca.com/2026/03/mp-emite-parecer-pela-cassacao-de.html",
+      "snippet": "O Ministério Público Eleitoral emitiu parecer favorável à cassação da prefeita de Pitimbu, Adelma Cristovam dos Passos (PSB), apontando desvio de finalidade na máquina pública com gastos que evoluíram de R$ 147.810 (2021) para R$ 1.114.550 (2024), conforme dados do Sistema Sagres/TCE-PB. A promotora Erika Bueno Muzzi apontou que o crescimento coincide com período pré-eleitoral.",
+      "source": "Blog do Eduardo França / MPE-PB",
+      "risk_indicator": "alto",
+      "tipo": "midia",
+      "match": "Abuso de máquina pública reconhecido pelo MPE na gestão municipal de Pitimbu — contexto institucional de alto risco para vereador ativo (PEP) no período 2023-2024. Recomenda-se verificar se empresa da Owner (CNPJ 67.814.414/0001-25) foi beneficiária de contratos municipais de Pitimbu no período investigado."
+    }
+  ],
+  "16059106-2aeb-4e36-8978-9089db30942e": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 339.879.578-16 (Rosinei de fatima Pimentel santos, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (14) — Rosinei de fatima Pimentel santos",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Rosinei de fatima Pimentel santos tem 14 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: COMPRA E VENDA; CHEQUE; COMPRA E VENDA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 339.879.578-16"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 21840663898 (RENATA APARECIDA PIMENTEL RISSONI, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos criminais (1) — RENATA APARECIDA PIMENTEL RISSONI",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "RENATA APARECIDA PIMENTEL RISSONI tem 1 processo(s) criminal(is) via Tesserati. Assuntos: CONTRAVENCOES PENAIS. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 21840663898",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Tesserati."
+    },
+    {
+      "title": "Renata Rissoni eleita Vereadora em Ipaussu/SP — Eleições 2024 (TSE/O Tempo)",
+      "url": "https://www.otempo.com.br/eleicoes/2024/candidatos/sao-paulo/ipaussu/vereador/renata-rissoni-44000",
+      "snippet": "Renata Aparecida Pimentel Rissoni (urna 44000), pelo partido UNIÃO, foi eleita vereadora de Ipaussu/SP nas Eleições 2024. Dados extraídos do TSE. Ocupação declarada: enfermeira. Total de bens: R$ 151.500,00. Não era candidata à reeleição (mandato inaugural).",
+      "source": "O Tempo / TSE",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação de mandato PEP via TSE"
+    },
+    {
+      "title": "Câmara Municipal de Ipaussu — Vereadores em exercício (mandato 2025–2028)",
+      "url": "https://www.camaraipaussu.sp.gov.br/",
+      "snippet": "O site oficial da Câmara Municipal de Ipaussu lista 'RENATA RISSONI' como Vereador(a) ativa na legislatura vigente, ao lado de outros 8 vereadores. Mandato referente ao período de 01/01/2025 a 31/12/2028.",
+      "source": "Câmara Municipal de Ipaussu (portal oficial)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação de mandato ativo PEP via portal da Câmara Municipal"
+    },
+    {
+      "title": "Termo de Posse — Vereadores da Câmara de Ipaussu (01/01/2025)",
+      "url": "https://diario.ipaussu.sp.gov.br/documento/view/8183/termo-de-posse-vereadores",
+      "snippet": "Documento do Diário Oficial de Ipaussu registra sessão solene de instalação da Legislatura em 1º de janeiro de 2025, com mandato de 01/01/2025 a 31/12/2028, confirmando a posse dos vereadores eleitos em 2024, incluindo Renata Aparecida Pimentel Rissoni.",
+      "source": "Diário Oficial Eletrônico do Município de Ipaussu",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação de posse e mandato vigente via Diário Oficial municipal"
+    },
+    {
+      "title": "Resultado das Eleições 2024 em Ipaussu — CNN Brasil (apuração oficial)",
+      "url": "https://www.cnnbrasil.com.br/eleicoes/2024/apuracao/sp/ipaussu/primeiro-turno/",
+      "snippet": "Renata Rissoni (UNIÃO) obteve 367 votos (4,69%), sendo eleita por média para a Câmara Municipal de Ipaussu/SP nas eleições de 2024. Resultado confirmado pelo TSE.",
+      "source": "CNN Brasil / TSE",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação de eleição e resultado TSE"
+    },
+    {
+      "title": "Diário Oficial Ipaussu — Atividade Parlamentar de RENATA APARECIDA PIMENTEL RISSONI (2025)",
+      "url": "https://camaraipaussu.sp.gov.br/indexAjax.php?ano=&autor=&dataFinal=&dataInicial=&numero=&pag=T0RnPU9EZz1PVFU9T0RZPU56Yz1PR009T1RNPU9HRT1PV1E9T1dFPU9XUT1PVFk9T1dNPU56RT1ZVFE9WVRRPU9UUT1PVFE9T0RNPVlUYz1ZVFE9WVRjPVlUWT1ZV009WVRJPVlXWT1ZakE9WVdZPU9XVT1Zakk9&palavraChave=&set=3&situacao=&tipoRel=pdf",
+      "snippet": "Registros de requerimentos aprovados ao longo de 2025 mostram RENATA APARECIDA PIMENTEL RISSONI como autora ativa, incluindo requerimentos aprovados em agosto e novembro/2025 sobre conselhos municipais, Casa da Mulher de Ipaussu, UMMES e Camping Municipal. Mandato em pleno exercício.",
+      "source": "Sistema de Diário Oficial Eletrônico da Câmara Municipal de Ipaussu",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Atividade parlamentar confirmada em 2025 via Diário Oficial da Câmara"
+    },
+    {
+      "title": "União Brasil SP — Lista de Vereadores: Renata Aparecida Pimentel Rissoni em Ipaussu",
+      "url": "https://spuniaobrasil.org.br/vereadores",
+      "snippet": "O Diretório Estadual SP do partido UNIÃO BRASIL lista 'Renata Aparecida Pimentel Rissoni' como vereadora de Ipaussu, confirmando filiação partidária e exercício do mandato na legislatura atual.",
+      "source": "União Brasil — Diretório SP Estadual",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação de filiação e mandato via partido"
+    },
+    {
+      "title": "Pesquisa M2 — Ausência de mídia adversa direta para 'RENATA APARECIDA PIMENTEL RISSONI' em IPAUSSU",
+      "url": "https://www.google.com",
+      "snippet": "Busca por 'RENATA APARECIDA PIMENTEL RISSONI' combinada com termos 'corrupção', 'improbidade', 'cassação', 'investigação' e 'operação policial' não retornou resultados associados à vereadora de Ipaussu/SP. Todos os resultados de 'Renata Pimentel' com contexto negativo referem-se a pessoa distinta (advogada do MS investigada na Operação Ultima Ratio — homônimo parcial, sem relação com o caso).",
+      "source": "Pesquisa web M2 — sem achados adversos",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M2 — Sem mídia adversa identificada para o PEP"
+    },
+    {
+      "title": "ALERTA DE HOMÔNIMO — 'Renata Pimentel' investigada na Operação Ultima Ratio (MS) — NÃO é a vereadora de Ipaussu/SP",
+      "url": "https://correiodoestado.com.br/cidades/filha-de-desembargador-de-ms-lucrou-em-venda-liberada-por-decisao-do/447482/",
+      "snippet": "Relatório da PF aponta advogada 'Renata Pimentel', filha do desembargador Sideni Soncini Pimentel (MS), investigada por intermediar venda de fazenda e receber quase R$ 1 milhão. Trata-se de pessoa distinta: advogada em Mato Grosso do Sul, sem relação com a vereadora Renata Aparecida Pimentel Rissoni de Ipaussu/SP.",
+      "source": "Correio do Estado (MS) — maio/2025",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M2 — Homônimo descartado: identidade, estado e contexto totalmente distintos"
+    },
+    {
+      "title": "Portal da Transparência Federal — Busca por CNPJ 28.639.509/0001-06: sem contratos federais localizados",
+      "url": "https://portaldatransparencia.gov.br/pessoa-juridica/28639509000106",
+      "snippet": "A busca do CNPJ 28.639.509/0001-06 (empresa de Rosinei de Fatima Pimentel Santos, Ipaussu/SP) no Portal da Transparência do Governo Federal não retornou registros de contratos, convênios ou transferências de recursos federais associados a este CNPJ nas pesquisas realizadas. Ausência de vínculos federais identificados.",
+      "source": "Portal da Transparência Federal (portaldatransparencia.gov.br)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M6 — CNPJ owner sem contratos federais identificados"
+    },
+    {
+      "title": "Pesquisa M5 — Ausência de mídia adversa para 'Rosinei de Fatima Pimentel Santos' em Ipaussu/SP",
+      "url": "https://www.google.com",
+      "snippet": "Busca por 'Rosinei de Fatima Pimentel Santos' + 'Ipaussu' combinada com termos 'fraude', 'investigação', 'contrato público' e 'licitação' não retornou resultados negativos associados à owner ou ao CNPJ 28.639.509/0001-06. Nenhuma notícia adversa localizada.",
+      "source": "Pesquisa web M5 — sem achados adversos",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M5 — Sem mídia adversa identificada para o owner"
+    },
+    {
+      "title": "Pesquisa M3/M4 — Ausência de contratos e licitações de Renata Pimentel Rissoni no Portal da Transparência Federal",
+      "url": "https://portaldatransparencia.gov.br/",
+      "snippet": "Busca pelo nome do PEP 'RENATA APARECIDA PIMENTEL RISSONI' e 'IPAUSSU' no Portal da Transparência Federal e por combinações com 'licitação', 'contrato', 'dispensa' e 'inexigibilidade' não retornou registros de contratos federais vinculados ao PEP. Ausência de vínculos diretos com entes federais identificados.",
+      "source": "Portal da Transparência Federal / Pesquisa web M3 e M4",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M3/M4 — Sem contratos federais ou irregularidades licitatórias identificadas para o PEP"
+    },
+    {
+      "title": "Pesquisa M7 — Contexto regional Ipaussu/SP: sem operações policiais ou corrupção municipal identificadas (2023–2025)",
+      "url": "https://www.google.com",
+      "snippet": "Busca por 'IPAUSSU' combinada com 'operação policial', 'corrupção municipal' e 'ministério público' para os anos de 2023, 2024 e 2025 não retornou resultados de investigações ou operações envolvendo o município de Ipaussu/SP. Contexto regional sem alertas identificados no período pesquisado.",
+      "source": "Pesquisa web M7 — sem achados regionais",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M7 — Sem operações policiais ou corrupção municipal identificadas em Ipaussu/SP"
+    }
+  ],
+  "ef793f91-57bc-4354-8542-fe83688100e6": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 655.493.683-15 (Francisco Erivelto Gonçalves Junior, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (4) — Francisco Erivelto Gonçalves Junior",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Francisco Erivelto Gonçalves Junior tem 4 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: HONORARIOS ADVOCATICIOS; DIREITO DO CONSUMIDOR; INDENIZACAO POR DANO MATERIAL. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 655.493.683-15"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 90078942349 (ERIEMERSON NOBRE GONCALVES, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "ERIEMERSON NOBRE GONCALVES — Confirmação de vínculo com PSD/Caucaia-CE via TRE-CE e JusBrasil",
+      "url": "https://www.jusbrasil.com.br/processos/nome/148452936/eriemerson-nobre-goncalves",
+      "snippet": "Processos encontrados majoritariamente no TRE-CE, seguido pelo TJCE. Partes recorrentes: Promotor Eleitoral do Estado do Ceará e Partido Social Democrático (PSD) – Caucaia-CE. Indica histórico de contencioso eleitoral no município, compatível com exercício de mandato de vereador pelo PSD/Caucaia.",
+      "source": "JusBrasil (perfil público de processos)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação parcial de vínculo eleitoral PEP/PSD/Caucaia-CE via registro de processos TRE-CE"
+    },
+    {
+      "title": "Prefeitura de Caucaia — Lei Municipal concedendo Título de Cidadão Caucaiense a Eriémerson Nobre Gonçalves",
+      "url": "https://www.caucaia.ce.gov.br/leis.php?pagina=10",
+      "snippet": "Portal oficial da Prefeitura de Caucaia registra lei municipal que concede o Título de Cidadão Caucaiense ao Sr. Eriémerson Nobre Gonçalves — ato legislativo oriundo da Câmara Municipal, corroborando atuação política no município.",
+      "source": "caucaia.ce.gov.br — Portal Oficial da Prefeitura de Caucaia",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação de presença política ativa de Eriémerson Nobre Gonçalves em Caucaia-CE via ato legislativo municipal"
+    },
+    {
+      "title": "Caucaia.ce.gov.br (normativas) — Segunda ocorrência de lei concedendo Título de Cidadão a Eriémerson Nobre Gonçalves",
+      "url": "https://caucaia.ce.gov.br/normativosproprios.php?pagina=138",
+      "snippet": "Segunda página do portal normativo da Prefeitura de Caucaia confirma lei municipal em nome de 'Eriémerson Nobre Gonçalves' para concessão de título de cidadão caucaiense — reforço documental de presença pública do PEP no município.",
+      "source": "caucaia.ce.gov.br — Normativas Próprias",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Segunda confirmação de presença política de Eriémerson Nobre Gonçalves via ato normativo municipal em Caucaia-CE"
+    },
+    {
+      "title": "ERIEMERSON NOBRE GONCALVES — Ausência de mídia adversa direta (corrupção, cassação, operação policial)",
+      "url": "https://www.jusbrasil.com.br/processos/nome/148452936/eriemerson-nobre-goncalves",
+      "snippet": "Buscas M2 nos termos 'ERIEMERSON NOBRE GONCALVES' + 'corrupção' OR 'improbidade' OR 'cassação' OR 'investigação' OR 'operação policial' não retornaram resultados vinculados nominalmente ao PEP. Nenhuma notícia de mídia adversa direta identificada na pesquisa realizada.",
+      "source": "Pesquisa web (Google) — Blocos M1/M2",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M2 — Sem evidência de mídia adversa direta atribuída nominalmente ao PEP Eriemerson Nobre Gonçalves"
+    },
+    {
+      "title": "ERIEMERSON NOBRE GONCALVES — Ausência de contratos no Portal da Transparência Federal",
+      "url": "https://portaldatransparencia.gov.br/",
+      "snippet": "Busca M3 no Portal da Transparência Federal (portaldatransparencia.gov.br) com os termos 'ERIEMERSON NOBRE GONCALVES' e 'CAUCAIA' não retornou contratos, convênios ou repasses federais vinculados nominalmente ao PEP. Nenhuma ocorrência localizada no escopo federal.",
+      "source": "Portal da Transparência — Governo Federal (CGU)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M3 — Sem contratos federais identificados para o PEP no Portal da Transparência"
+    },
+    {
+      "title": "ERIEMERSON NOBRE GONCALVES — Ausência de achados em licitação/contrato/dispensa/inexigibilidade",
+      "url": "https://portaldatransparencia.gov.br/",
+      "snippet": "Busca M4 com termos 'ERIEMERSON NOBRE GONCALVES' + 'CAUCAIA' + 'licitação' OR 'contrato' OR 'dispensa' OR 'inexigibilidade' não retornou resultados vinculados ao PEP. Sem evidência de contratação pública direta ou irregular identificada para o nome do vereador.",
+      "source": "Pesquisa web (Google) — Bloco M4",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M4 — Sem achados de licitações ou contratos públicos diretos associados ao PEP"
+    },
+    {
+      "title": "Francisco Erivelto Gonçalves Junior / PARACURU-CE — Ausência de mídia adversa direta (fraude, investigação, contrato público)",
+      "url": "https://www.paracuru.ce.gov.br/contratos.php?pagina=1",
+      "snippet": "Busca M5 com os termos 'Francisco Erivelto Gonçalves Junior' + 'PARACURU' + 'fraude' OR 'investigação' OR 'contrato público' OR 'licitação' não retornou resultados negativos vinculados nominalmente ao owner. Nenhuma notícia adversa identificada.",
+      "source": "Pesquisa web (Google) — Bloco M5",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M5 — Sem mídia adversa direta identificada para o owner Francisco Erivelto Gonçalves Junior em Paracuru-CE"
+    },
+    {
+      "title": "CNPJ 07.684.261/0001-17 — Ausência de contratos federais no Portal da Transparência",
+      "url": "https://portaldatransparencia.gov.br/pessoa-juridica/07684261000117",
+      "snippet": "Busca M6 pelo CNPJ 07.684.261/0001-17 no Portal da Transparência Federal não retornou correspondência de empresa com contratos, repasses ou convênios com o Poder Executivo Federal. Sem ocorrência confirmada de favorecimento de recursos federais para o CNPJ do owner.",
+      "source": "Portal da Transparência — Governo Federal (CGU)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M6 — Sem contratos federais encontrados para o CNPJ 07.684.261/0001-17 no Portal da Transparência"
+    },
+    {
+      "title": "CONTEXTO REGIONAL — Operação Sophismata (MPCE): investigação de corrupção e desvio de R$ 480 mi na Prefeitura de Caucaia-CE (maio/2026)",
+      "url": "https://www.opovo.com.br/noticias/politica/2026/05/13/ex-prefeito-de-caucaia-vitor-valim-e-alvo-de-operacao.html",
+      "snippet": "O MPCE deflagrou a Operação Sophismata em maio/2026 contra o ex-prefeito Vitor Valim (PSB) e outras 18 pessoas/duas empresas. Contratos investigados movimentaram cerca de R$ 480 milhões. A Procap apura corrupção ativa e passiva, associação criminosa e lavagem de capitais. Buscas e apreensões cumpridas na sede da Prefeitura de Caucaia e residências dos investigados. Nenhuma menção nominal ao PEP Eriemerson Nobre Gonçalves foi identificada na operação.",
+      "source": "O Povo — opovo.com.br (13/05/2026)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "M7 — Risco contextual elevado: município de Caucaia-CE sob investigação de grande esquema de corrupção municipal durante período coincidente ao mandato do PEP (partido PSD, gestão Naumi Amorim, ex-vice Deuzinho/PSD)"
+    },
+    {
+      "title": "CONTEXTO REGIONAL — Operação Sophismata: detalhes do esquema de superfaturamento e subcontratações em Caucaia-CE",
+      "url": "https://podernews.com.br/2026/05/13/mp-mira-vitor-valim-em-operacao-sobre-fraudes-em-caucaia/",
+      "snippet": "Segundo o MPCE, 'empresas públicas foram criadas como fachada para subcontratações irregulares e superfaturadas' em Caucaia. A Justiça determinou bloqueio de R$ 6,9 milhões em bens e afastamento de investigados de funções públicas por 180 dias. A investigação apura desvios desde 2021.",
+      "source": "Poder News — podernews.com.br (13/05/2026)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "M7 — Contexto regional: ambiente de alta corrupção municipal em Caucaia-CE; PEP exerce mandato no mesmo município investigado"
+    },
+    {
+      "title": "CONTEXTO REGIONAL — Operação Sophismata: detalhes do escopo e número de investigados (Repórter Ceará)",
+      "url": "https://reporterceara.com.br/2026/05/13/vitor-valim-e-alvo-de-operacao-que-investiga-suposto-superfaturamento-de-contratos-de-r-480-milhoes-em-caucaia/",
+      "snippet": "A Operação Sophismata, conduzida pela Procap com apoio da Polícia Civil, 'cumpriu 18 mandados de busca e apreensão contra ex-gestores municipais e empresários investigados.' Alvos localizados em Caucaia, Fortaleza, Belo Horizonte e Juiz de Fora. 'Os contratos investigados movimentaram cerca de R$ 480 milhões.'",
+      "source": "Repórter Ceará — reporterceara.com.br (13/05/2026)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "M7 — Confirmação adicional da operação de grande escala em Caucaia-CE; impacto indireto no contexto de risco PLD do PEP"
+    },
+    {
+      "title": "CONTEXTO REGIONAL — Operação Policial em Caucaia-CE: Operação Mangal contra grupos criminosos (março/2026)",
+      "url": "https://www.policiacivil.ce.gov.br/2026/03/20/pcce-prende-em-flagrante-suspeito-de-integrar-grupo-criminoso-em-desdobramento-de-operacao-policial-em-caucaia/",
+      "snippet": "A Polícia Civil do Ceará (PCCE) prendeu em flagrante suspeito de integrar grupo criminoso em desdobramento da Operação Mangal, com foco em Caucaia na Região Metropolitana de Fortaleza (março/2026). Mandado expedido pela Vara de Delitos de Organizações Criminosas do TJCE. Nenhuma menção ao PEP.",
+      "source": "Polícia Civil do Ceará — policiacivil.ce.gov.br (20/03/2026)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "M7 — Contexto regional: múltiplas operações policiais em Caucaia-CE nos últimos 12 meses, reforçando ambiente de risco elevado no município do PEP"
+    },
+    {
+      "title": "CONTEXTO REGIONAL — PF, CGU e MPF apuram fraudes em licitações e desvio de verba pública no Ceará (setembro/2026)",
+      "url": "https://www.gov.br/pf/pt-br/assuntos/noticias/2026/09/pf-cgu-e-mpf-apuram-indicios-de-fraudes-em-licitacoes-e-desvio-de-verba-publica-no-ceara",
+      "snippet": "Operação federal recente (set/2026) apura fraudes em licitações e desvio de verbas públicas repassadas pela União a municípios cearenses (Carnaubal, Madalena, Guaraciaba do Norte). Investigados poderão responder por corrupção ativa/passiva, fraude em licitações e lavagem de capitais. Operação não menciona Caucaia ou o PEP nominalmente, mas evidencia padrão estadual de risco.",
+      "source": "Polícia Federal — gov.br/pf (09/09/2026)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "M7 — Risco sistêmico/estadual: padrão de fraudes em licitações municipais no Ceará confirmado por operação federal recente"
+    }
+  ],
+  "a116f88a-ab10-40fe-a80f-3c9515a55749": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 060.887.929-06 (Franciele Garcia, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Mídias Negativas — Franciele Garcia",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para Franciele Garcia via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/07/07/quem-era-a-jovem-morta-pelo-ex-em-apartamento-no-rs-trabalhadora-independente-conta-irma.ghtml\", \"snippet\": null, ",
+      "source": "Tesserati — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Franciele Garcia"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 02560850990 (FERNANDA GARCIA SARDANHA, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos criminais (1) — FERNANDA GARCIA SARDANHA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "FERNANDA GARCIA SARDANHA tem 1 processo(s) criminal(is) via Tesserati. Assuntos: 3396 - DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 02560850990",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Tesserati."
+    },
+    {
+      "title": "Confirmação de mandato ativo — Fernanda Garcia Sardanha, Prefeita de São Mateus do Sul/PR (2025-2028)",
+      "url": "https://www.saomateusdosul.pr.gov.br/portal/noticias/0/3/3170/prefeita-fernanda-sardanha-e-vereadores-tomam-posse-para-mandato-2025-2028-em-sao-mateus-do-sul",
+      "snippet": "A prefeita Fernanda Sardanha (PSD) e o vice-prefeito Adão Staniszewski (PSD) assumiram oficialmente seus cargos para conduzir a administração municipal pelos próximos quatro anos — mandato 2025-2028, posse em 1º de janeiro de 2025.",
+      "source": "Portal Oficial Prefeitura de São Mateus do Sul/PR (M1)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "FERNANDA GARCIA SARDANHA | PREFEITO | SÃO MATEUS DO SUL-PR | mandato 2025-2028 confirmado"
+    },
+    {
+      "title": "Reeleição confirmada — Fernanda Garcia Sardanha diplomada para 2º mandato (2025-2028)",
+      "url": "https://www.saomateusdosul.pr.gov.br/portal/noticias/0/3/3165/prefeita-fernanda-sardanha-vice-prefeito-adao-e-vereadores-sao-diplomados-em-cerimonia-oficial-em-sao-mateus-do-sul/",
+      "snippet": "Cerimônia de diplomação da prefeita reeleita Fernanda Sardanha (PSD) realizada em 16 de dezembro de 2024, com presença do juiz eleitoral André Olivério Padilha — mandato 2025 a 2028.",
+      "source": "Portal Oficial Prefeitura de São Mateus do Sul/PR — TRE-PR (M1)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "FERNANDA GARCIA SARDANHA | reeleita PSD | diplomação TRE-PR dez/2024"
+    },
+    {
+      "title": "Galeria de Prefeitos — Portal Oficial: Fernanda Sardanha 01/01/2021–31/12/2024 e 01/01/2025–31/12/2028",
+      "url": "https://www.saomateusdosul.pr.gov.br/portal/galeria-de-prefeitos/",
+      "snippet": "Registro institucional da galeria de prefeitos do município confirma dois mandatos consecutivos de Fernanda Sardanha: 2021-2024 e 2025-2028.",
+      "source": "Portal Oficial Prefeitura de São Mateus do Sul/PR (M1)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "FERNANDA GARCIA SARDANHA | 2 mandatos confirmados | São Mateus do Sul/PR"
+    },
+    {
+      "title": "Perfil institucional PEP — Fernanda Sardanha: ex-vereadora (2017/2020), formada em Serviço Social, servidora pública municipal",
+      "url": "https://www.saomateusdosul.pr.gov.br/portal/prefeito/13/1",
+      "snippet": "Fernanda Sardanha reside em São Mateus do Sul há mais de 20 anos. Formada em Serviço Social pela Universidade do Contestado, foi vereadora na gestão 2017/2020 e servidora pública municipal antes de assumir a prefeitura.",
+      "source": "Portal Oficial Prefeitura de São Mateus do Sul/PR (M1)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "FERNANDA GARCIA SARDANHA | trajetória política confirmada | ex-vereadora | servidora pública"
+    },
+    {
+      "title": "TCE-PR — Fernanda Garcia Sardanha multada por irregularidade em Pregão Eletrônico nº 131/2022 (transporte escolar, R$ 4,8 mi)",
+      "url": "https://m.tce.pr.gov.br/noticias/noticia.aspx?codigo=10850",
+      "snippet": "O Pleno do TCE-PR multou em R$ 3.984,60 a prefeita Fernanda Garcia Sardanha (gestão 2021-2024) por irregularidade no Pregão Eletrônico nº 131/2022 — contratação de transporte escolar rural/urbano, valor máximo R$ 4.810.090,80. Decisão proferida em agosto/2023.",
+      "source": "Portal TCE-PR — Tribunal de Contas do Estado do Paraná (M4)",
+      "risk_indicator": "medio",
+      "tipo": "pep",
+      "match": "FERNANDA GARCIA SARDANHA | multa TCE-PR | irregularidade licitatória | Pregão 131/2022 | São Mateus do Sul/PR"
+    },
+    {
+      "title": "TCE-PR — Acórdão nº 735/24: Fernanda Garcia Sardanha e FLAMASERV — Representação (Pregão contratação brigadistas/segurança), procedência parcial com recomendação",
+      "url": "https://viajuris.tce.pr.gov.br/Arquivos/2024/4/00383358.pdf",
+      "snippet": "Acórdão nº 735/24 – Tribunal Pleno TCE-PR. Representação envolvendo Fernanda Garcia Sardanha e FLAMASERV Serviços Terceirizados Ltda — Município de São Mateus do Sul. Pregão para contratação de brigadistas e segurança não armada. Resultado: procedência parcial com recomendação ao ente. Ausência de irregularidades graves.",
+      "source": "TCE-PR — ViaJuris / Tribunal Pleno (M4)",
+      "risk_indicator": "medio",
+      "tipo": "pep",
+      "match": "FERNANDA GARCIA SARDANHA | TCE-PR Acórdão 735/24 | FLAMASERV | contratação serviços segurança | São Mateus do Sul/PR"
+    },
+    {
+      "title": "Diário Oficial São Mateus do Sul — Inexigibilidade de Chamamento Público assinada pela prefeita Fernanda Garcia Sardanha (jul/2025)",
+      "url": "https://www.saomateusdosul.pr.gov.br/uploads/diario_2025310816279d6176c34d8bff44a5b09531b2cf5551.pdf",
+      "snippet": "Diário Oficial do Município de São Mateus do Sul, edição de 08/07/2025. Prefeita Fernanda Garcia Sardanha assina ato reconhecendo inexigibilidade de Chamamento Público nos termos da Lei Federal nº 13.019/2014 (arts. 29 e 31, II) para plano de trabalho de 'Modernização do Serviço de Ortopedia'.",
+      "source": "Diário Oficial do Município de São Mateus do Sul/PR — Edição nº 3646 (M4)",
+      "risk_indicator": "medio",
+      "tipo": "pep",
+      "match": "FERNANDA GARCIA SARDANHA | inexigibilidade chamamento público | jul/2025 | São Mateus do Sul/PR | contrato OSC saúde"
+    },
+    {
+      "title": "Operação Guincho — PF cumpre mandados em São Mateus do Sul/PR por corrupção policial (PRF + guincheiros, dez/2024)",
+      "url": "https://www.band.com.br/band-parana/noticias/corrupcao-policial-parana-202412030947",
+      "snippet": "Operação da PF/Corregedoria da PRF em dez/2024 cumpriu mandados em São Mateus do Sul/PR investigando corrupção ativa, passiva e associação criminosa entre policiais rodoviários federais e guincheiros. Sem relação com a administração municipal ou com a PEP.",
+      "source": "Band Paraná (M7)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "SÃO MATEUS DO SUL-PR | Operação Guincho | PF/PRF dez/2024 | corrupção policial | SEM relação com PEP ou gestão municipal"
+    },
+    {
+      "title": "JusBrasil — 68 processos localizados para Fernanda Garcia Sardanha (TJPR e TRE-PR)",
+      "url": "https://www.jusbrasil.com.br/processos/nome/139402857/fernanda-garcia-sardanha",
+      "snippet": "JusBrasil registra 68 processos mencionando Fernanda Garcia Sardanha — maioria TJPR, seguido TRE-PR. Parte contrária mais frequente: Fernando Cesar Javorski Toporowicz e Município de São Mateus do Sul/PR. [PROCESSOS JUDICIAIS — REFERÊNCIA APENAS; não duplicar achados JusBrasil API]",
+      "source": "JusBrasil (referência M2 — não processar, já retornado pela API)",
+      "risk_indicator": "medio",
+      "tipo": "pep",
+      "match": "FERNANDA GARCIA SARDANHA | 68 processos TJPR/TRE-PR | volume processual relevante para PEP"
+    },
+    {
+      "title": "MÍDIA ADVERSA — Nenhuma menção direta a Fernanda Garcia Sardanha em investigações de corrupção, operações policiais ou cassação",
+      "url": "https://www.saomateusdosul.pr.gov.br/portal/noticias/0/3/3170/prefeita-fernanda-sardanha-e-vereadores-tomam-posse-para-mandato-2025-2028-em-sao-mateus-do-sul",
+      "snippet": "Pesquisa sistemática nas queries M2 (corrupção/improbidade/cassação/investigação/operação policial) não retornou resultados vinculando diretamente Fernanda Garcia Sardanha a investigações criminais, cassação ou operações policiais. Achados de corrupção em 'São Mateus' referem-se ao município de São Mateus/ES, não São Mateus do Sul/PR.",
+      "source": "Pesquisa de mídia adversa — resultado negativo (M2)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "FERNANDA GARCIA SARDANHA | mídia adversa NEGATIVA | sem operação policial | sem cassação | sem improbidade direta encontrada"
+    },
+    {
+      "title": "OWNER — Franciele Garcia / CNPJ 82.997.289/0001-20 (Santa Cecília/SC): sem resultados de contratos públicos federais no Portal da Transparência",
+      "url": "https://portaldatransparencia.gov.br/pessoa-juridica/82997289000120",
+      "snippet": "Busca no Portal da Transparência pelo CNPJ 82.997.289/0001-20 não retornou contratos ou transferências federais identificados nas páginas indexadas. Empresa registrada em Santa Cecília/SC. Nenhuma ocorrência de mídia adversa localizada para 'Franciele Garcia' + 'Santa Cecília' + fraude/investigação/licitação.",
+      "source": "Portal da Transparência — CGU / busca M5 e M6",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Franciele Garcia | CNPJ 82.997.289/0001-20 | Santa Cecília/SC | SEM contratos federais identificados | SEM mídia adversa"
+    },
+    {
+      "title": "CONTEXTO REGIONAL SC — Operações recentes de fraude em licitações em municípios catarinenses (2024-2026), sem envolvimento de Santa Cecília",
+      "url": "https://ndmais.com.br/seguranca/investigacao-de-fraude-em-licitacao-sul-de-sc/",
+      "snippet": "Múltiplas operações do GAECO/MPSC e Polícia Civil apuraram fraudes em licitações em municípios do Sul e Oeste de SC (Tubarão, Criciúma, Camboriú, Blumenau, Canoinhas, Irani, entre outros) entre 2024 e 2026. Santa Cecília/SC não foi mencionada em nenhuma das operações encontradas.",
+      "source": "ND Mais — pesquisa contexto regional (M7)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "SANTA CECILIA-SC | contexto regional SC | operações GAECO/MPSC | SEM menção a Santa Cecília ou Franciele Garcia"
+    }
+  ],
+  "45a36634-2643-4823-9269-cd03de7078b9": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 357.730.570-34 (Joao Carlos Piovesan, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (7) — Joao Carlos Piovesan",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Joao Carlos Piovesan tem 7 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: HORAS EXTRAS; DIREITO DE ACESSO A INFORMACAO, GARANTIAS CONSTITUCIONAIS, D; PROPRIEDADE. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 357.730.570-34"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 65569717072 (DAVI CARGNIN PIOVESAN, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (17) — DAVI CARGNIN PIOVESAN",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "DAVI CARGNIN PIOVESAN tem 17 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: LIQUIDACAO / CUMPRIMENTO / EXECUCAO :: COMPETENCIA DE FAZEND; LIQUIDACAO / CUMPRIMENTO / EXECUCAO :: COMPETENCIA DE FAZEND; INDENIZACAO POR DANO MATERIAL, RESPONSABILIDADE DA ADMINISTR. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 65569717072"
+    },
+    {
+      "title": "Câmara Municipal de Palmeira das Missões — Histórico de Presidentes (Davi Cargnin Piovesan, 2024)",
+      "url": "https://www.palmeiradasmissoes.rs.leg.br/institucional/historia",
+      "snippet": "Davi Cargnin Piovesan (2024) — consta como ex-presidente da Câmara Municipal de Vereadores de Palmeira das Missões. Câmara atualmente composta por 13 vereadores, sem menção nominal a Davi Piovesan na lista corrente.",
+      "source": "Câmara Municipal de Vereadores de Palmeira das Missões (site oficial)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação de mandato PEP. Davi Cargnin Piovesan figura como presidente da Câmara em 2024, confirmando vínculo ativo com o Legislativo municipal. A lista nominal atual de 13 vereadores não o cita, o que pode indicar não reeleição em 2024, mas presidência do mandato 2021–2024. Verificar status pós-outubro/2024."
+    },
+    {
+      "title": "Perfil Oficial — DAVI CARGNIN PIOVESAN, PARTIDO PT, Vereador em Palmeira das Missões-RS",
+      "url": "https://www.palmeiradasmissoes.rs.leg.br/davi.pdf",
+      "snippet": "Nome: Davi Cargnin Piovesan | Partido: PT | Nascimento: 24/11/1975 | Naturalidade: Palmeira das Missões-RS | Professor. Nas eleições de 2020 foi o vereador mais votado do PT com 705 votos e o 4º vereador do pleito municipal.",
+      "source": "Câmara Municipal de Vereadores de Palmeira das Missões — documento oficial (PDF)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Identidade e mandato confirmados via documento oficial da Câmara. Vereador eleito em 2020 pelo PT, com histórico funcional público (professor, RH da 20ª CRE/RS). Sem qualificadores adversos no documento."
+    },
+    {
+      "title": "TRE-RS — Eleições Municipais 2024 em Palmeira das Missões",
+      "url": "https://resultados.tre-rs.jus.br/eleicoes/2024/619/RS87777.html",
+      "snippet": "Totalização das eleições municipais de 2024 em Palmeira das Missões disponível no portal do TRE-RS. Necessário acesso direto ao resultado para verificar se Davi Cargnin Piovesan foi reeleito vereador para o mandato 2025–2028.",
+      "source": "Tribunal Regional Eleitoral do Rio Grande do Sul (TRE-RS)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Fonte primária TSE/TRE para confirmação de reeleição ou não em 2024. Página de resultados encontrada; análise direta dos dados eleitorais recomendada para confirmar status do mandato atual."
+    },
+    {
+      "title": "Nenhuma mídia adversa localizada para DAVI CARGNIN PIOVESAN — corrupção, improbidade, cassação ou operação policial",
+      "url": "https://www.palmeiradasmissoes.rs.leg.br/davi.pdf",
+      "snippet": "Busca ampla por 'DAVI CARGNIN PIOVESAN' combinada com termos 'corrupção', 'improbidade', 'cassação', 'investigação' e 'operação policial' não retornou nenhum resultado adverso associado diretamente ao PEP.",
+      "source": "Varredura de mídia aberta (Google/web search)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M2 — Ausência de mídia adversa direta. Nenhuma notícia, processo criminal público ou investigação policial nominalmente vinculada ao PEP foi localizada nas buscas realizadas."
+    },
+    {
+      "title": "Portal da Transparência Federal — Municipalidade de Palmeira das Missões: R$ 35 milhões transferidos",
+      "url": "https://portaldatransparencia.gov.br/localidades/4313706-palmeira-das-missoes",
+      "snippet": "Recursos transferidos apenas ao município de Palmeira das Missões: R$ 35.077.035,93. Benefícios aos cidadãos: R$ 19.103.563,39. Não foram localizados contratos federais diretos em nome de DAVI CARGNIN PIOVESAN como pessoa física no Portal da Transparência.",
+      "source": "Portal da Transparência do Governo Federal",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M3 — Consulta ao Portal da Transparência para Palmeira das Missões. Sem contrato federal identificado em nome do PEP como pessoa física. Exposição indireta possível via mandato legislativo municipal."
+    },
+    {
+      "title": "Nenhum contrato/licitação com o PEP localizado — Palmeira das Missões (M4)",
+      "url": "https://portaldatransparencia.gov.br/localidades/4313706-palmeira-das-missoes",
+      "snippet": "Busca por 'DAVI CARGNIN PIOVESAN' combinada com 'licitação', 'contrato', 'dispensa' e 'inexigibilidade' em Palmeira das Missões não retornou registros de contratação pública envolvendo o PEP nominalmente.",
+      "source": "Varredura de mídia aberta e Portal da Transparência",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M4 — Ausência de evidência de contrato público envolvendo o PEP diretamente. Não se descarta contratos em âmbito municipal não indexados federalmente; recomenda-se consulta ao portal de transparência municipal de Palmeira das Missões."
+    },
+    {
+      "title": "Nenhuma mídia adversa localizada para JOAO CARLOS PIOVESAN — Alegrete-RS",
+      "url": "https://www.google.com/search?q=%22Joao+Carlos+Piovesan%22+Alegrete+fraude",
+      "snippet": "Busca por 'Joao Carlos Piovesan' combinada com 'fraude', 'investigação', 'contrato público' e 'licitação' em Alegrete-RS não retornou nenhum resultado adverso nominalmente vinculado ao owner da empresa.",
+      "source": "Varredura de mídia aberta (Google/web search)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M5 — Ausência de mídia adversa direta para o owner. Nenhuma notícia, investigação ou processo nominalmente associado a Joao Carlos Piovesan em Alegrete foi localizado."
+    },
+    {
+      "title": "Portal da Transparência Federal — CNPJ 68.465.576/0001-68: sem contratos federais localizados",
+      "url": "https://portaldatransparencia.gov.br/pessoa/visao-geral",
+      "snippet": "Consulta ao Portal da Transparência pelo CNPJ 68.465.576/0001-68 não retornou registros de contratos, convênios ou repasses federais vinculados à empresa de Joao Carlos Piovesan em Alegrete-RS nas buscas realizadas.",
+      "source": "Portal da Transparência do Governo Federal",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M6 — Ausência de contratos federais identificados para o CNPJ do owner. Não se descarta contratos estaduais ou municipais não cobertos pelo Portal federal; recomenda-se verificação direta via CNPJ no portal."
+    },
+    {
+      "title": "Operação Antracose — PF em Palmeira das Missões: contrabando de cigarros e grãos (2025)",
+      "url": "https://www.clicportela.com.br/noticia/136698/pf-deflagra-operacao-antracose-contra-contrabando-de-cigarros-e-graos-em-palmeira-das-missoes",
+      "snippet": "PF deflagrou Operação Antracose em Palmeira das Missões investigando contrabando de cigarros estrangeiros (348 mil maços, R$ 1,7 mi) e contrabando de grãos argentinos com falsificação de notas de produtor rural. Investigação iniciada em 2023.",
+      "source": "Clic Portela — notícia publicada em junho de 2025",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M7 — Contexto regional: operação policial em Palmeira das Missões não relacionada a corrupção municipal ou ao PEP. Envolve contrabando de cigarros/grãos, sem menção a agentes públicos ou ao nome do PEP. Risco de contexto regional, porém sem conexão identificada com o caso."
+    },
+    {
+      "title": "Operação Digital Fantasma — Polícia Civil em Palmeira das Missões: fraude bancária com biometria (jan/2026)",
+      "url": "https://www.pc.rs.gov.br/operacao-digital-fantasma-desarticula-associacao-criminosa-instalada-em-agencia-bancaria-de-palmeir",
+      "snippet": "Polícia Civil deflagrou Operação Digital Fantasma em Palmeira das Missões investigando associação criminosa em agência bancária, onde funcionários usavam biometria de idosos para acessar contas inativas. Operação de janeiro de 2026.",
+      "source": "Polícia Civil do Rio Grande do Sul (site oficial)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M7 — Contexto regional: operação policial em Palmeira das Missões relacionada a crime financeiro bancário privado, sem conexão com corrupção municipal ou com o PEP/owner investigados."
+    },
+    {
+      "title": "Operação Estoque — Polícia Civil em Palmeira das Missões: tráfico de drogas (fev/2025)",
+      "url": "https://rdfoco.com.br/noticia/92545/policia-civil-realizou-operacao-estoque-em-palmeira-das-missoes-rd-foco",
+      "snippet": "Polícia Civil desencadeou Operação Estoque em Palmeira das Missões em fev/2025, cumprindo 11 mandados judiciais de busca e apreensão, prendendo 4 pessoas por tráfico e associação para o tráfico. Sem conexão com corrupção municipal.",
+      "source": "RD Foco — notícia publicada em fevereiro de 2025",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M7 — Contexto regional: operação de combate ao tráfico de drogas em Palmeira das Missões. Sem relação com corrupção administrativa, licitações ou com o PEP/owner do caso."
+    },
+    {
+      "title": "MPRS — Histórico: Fraude em licitações com envolvimento da Câmara Municipal de Vereadores de Palmeira das Missões (2008)",
+      "url": "https://www.mprs.mp.br/noticias/16203/",
+      "snippet": "MPRS investigou esquema histórico de fraude em licitações com corrupção de agentes públicos e contratação de funcionários fantasmas da Câmara Municipal de Vereadores de Palmeira das Missões. Operação resultou em mandados de prisão preventiva e temporária.",
+      "source": "Ministério Público do Rio Grande do Sul (MPRS) — novembro de 2008",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "M7 — Contexto regional histórico: registro de investigação de fraude em licitações com envolvimento da própria Câmara Municipal de Palmeira das Missões (2008). Embora anterior ao mandato do PEP, documenta histórico de vulnerabilidade institucional do ente público ao qual o PEP está vinculado. Não há conexão nominal com Davi Cargnin Piovesan."
+    },
+    {
+      "title": "Operação Quarto Grau — Polícia Civil em Alegrete: tráfico de drogas e roubo (jan/2025)",
+      "url": "https://www.pc.rs.gov.br/policia-civil-deflagra-operacao-quarto-grau-em-alegrete",
+      "snippet": "Polícia Civil deflagrou Operação Quarto Grau em Alegrete em jan/2025, resultando em apreensão de drogas, armas e dinheiro, investigando tráfico de drogas e roubo. Sem conexão com corrupção municipal ou contratos públicos.",
+      "source": "Polícia Civil do Rio Grande do Sul (site oficial) — janeiro de 2025",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M7 — Contexto regional (cidade do owner): operação policial em Alegrete-RS sem relação com corrupção administrativa, licitações ou com o owner Joao Carlos Piovesan."
+    }
+  ],
+  "fdcfbd26-8a43-44c3-892a-006b11e2cee4": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 367.127.348-86 (Douglas Kubica, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 26541984808 (LUCIANA APARECIDA KUBICA, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (10) — LUCIANA APARECIDA KUBICA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "LUCIANA APARECIDA KUBICA tem 10 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: PAGAMENTO; PRESTACAO DE SERVICOS; . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 26541984808"
+    },
+    {
+      "title": "Luciana Kubica empossada vereadora suplente — Câmara Municipal de Monte Azul Paulista (jun/2021)",
+      "url": "https://www.camaramonteazul.sp.gov.br/noticias/luciana-kubica-assume-cadeira-deixada-pelo-vereador-jose-de-souza-molico-em-monte-azul-paulista,08-06-2021",
+      "snippet": "Câmara Municipal de Monte Azul Paulista empossou a suplente Luciana Aparecida Kubica para concluir o mandato que se encerra no dia 31 de dezembro de 2024, na vacância deixada após o falecimento do vereador José de Souza Molico (PV). Presentes à solenidade o pai da vereadora, Gilberto Roberto Kubica, e o irmão Douglas Kubica.",
+      "source": "camaramonteazul.sp.gov.br (portal oficial)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Confirmação de mandato PEP (suplente empossada 06/2021, mandato encerrado 31/12/2024). Identificação de vínculo familiar entre PEP (Luciana), owner (Douglas) e pai (Gilberto). Fonte oficial."
+    },
+    {
+      "title": "Luciana Kubica — Candidatura TSE Eleições 2024, Vereadora Monte Azul Paulista (PV, urna 43789)",
+      "url": "https://www.tribunapr.com.br/eleicoes/2024/candidatos/sp/monte-azul-paulista/vereador/luciana-kubica-pv-43789/",
+      "snippet": "Luciana Aparecida Kubica, candidata a Vereadora em Monte Azul Paulista nas Eleições 2024 pelo Partido Verde (nº 43789). Candidatura regular julgada pela Justiça Eleitoral. Profissão declarada ao TSE: servidor público municipal. Grau de instrução: superior completo.",
+      "source": "Tribuna PR / dados TSE",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Confirmação via TSE de candidatura regular nas eleições municipais 2024. Indica continuidade de participação político-eleitoral após encerramento do mandato de suplente (2021-2024). Sem irregularidade registrada na candidatura."
+    },
+    {
+      "title": "O Tempo — 'Luciana Kubica 43789 vereador eleito de Monte Azul Paulista em 2024'",
+      "url": "https://www.otempo.com.br/eleicoes/2024/candidatos/sao-paulo/monte-azul-paulista/vereador/luciana-kubica-43789",
+      "snippet": "Título da página indica 'vereador eleito' de Monte Azul Paulista nas Eleições 2024. Luciana Kubica (PV, urna 43789), nascida em 04/02/1978, servidor público municipal com ensino superior completo.",
+      "source": "O Tempo (agregador resultados TSE)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Título da publicação indica eleição confirmada em 2024, sugerindo mandato vigente (2025-2028) como vereadora. PEP ativo. Confirma status atual do cargo declarado."
+    },
+    {
+      "title": "Câmara Municipal — Moção 2022 com assinatura da Vereadora Luciana Aparecida Kubica",
+      "url": "https://monteazulpaulista.siscam.com.br/arquivo?Id=27355",
+      "snippet": "Documento oficial da Câmara Municipal de Monte Azul Paulista assinado em 06/12/2022 por Luciana Aparecida Kubica na qualidade de Vereadora, 2ª. Assinatura digital registrada às 12:27:24.",
+      "source": "monteazulpaulista.siscam.com.br (sistema legislativo oficial)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Confirmação de exercício efetivo do mandato de vereadora durante a legislatura 2021-2024. Documento legislativo oficial assinado digitalmente. Sem adversidade."
+    },
+    {
+      "title": "TJSP mantém condenação de ex-vereador GILBERTO KUBICA (pai da PEP) por improbidade administrativa — Monte Azul Paulista",
+      "url": "https://www.jusbrasil.com.br/noticias/tjsp-mantem-condenacao-de-ex-prefeito-e-ex-vereador-de-monte-azul-paulista-por-improbidade/164297630",
+      "snippet": "A 8ª Câmara de Direito Público do TJSP manteve condenação do ex-vereador Gilberto Kubica por improbidade administrativa. Esquema de fraude a licitações (procedimentos 17/98 e 30/00) foi desenvolvido para 'compra' do apoio político de Gilberto Kubica, vereador e proprietário da empresa São Jorge. Réus condenados a ressarcir danos ao erário de mais de R$ 124 mil.",
+      "source": "JusBrasil / TJSP (acórdão 8ª Câmara Direito Público)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Condenação por improbidade do PAI da PEP (Gilberto Roberto Kubica) confirmada pelo TJSP. Envolve fraude a licitações e conluio licitatório em Monte Azul Paulista. Risco de contexto familiar elevado: mesma família Kubica exerceu influência política histórica no município. Owner (Douglas Kubica) é irmão da PEP — família com antecedente de envolvimento em esquema de fraude a contratos públicos."
+    },
+    {
+      "title": "TJSP — Condenação Gilberto Kubica: fraude licitatória para 'compra de apoio político', empresa São Jorge",
+      "url": "https://www.tjsp.jus.br/Noticias/Noticia?codigoNoticia=25504",
+      "snippet": "Procedimentos licitatórios 17/98 e 30/00 declarados nulos por simulação e conluio de licitantes. Ex-prefeito Francisco de Assis Livolis Blanco e ex-vereador Gilberto Kubica entre os 5 condenados. Esquema visava 'compra' do apoio político de Gilberto Kubica, proprietário da empresa São Jorge.",
+      "source": "TJSP (site oficial do Tribunal de Justiça de SP)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Fonte primária (TJSP) confirmando condenação do pai da PEP. Padrão de vínculo entre mandato parlamentar (vereança) e titularidade de empresa beneficiada por contratos públicos — padrão estrutural relevante para avaliação do owner Douglas Kubica, irmão da PEP."
+    },
+    {
+      "title": "Portal da Transparência Federal — Município de Monte Azul Paulista: R$ 279,8 milhões em recursos federais recebidos",
+      "url": "https://portaldatransparencia.gov.br/convenios/819789/pessoa-juridica/52942380000187-municipio-de-monte-azul-paulista",
+      "snippet": "Prefeitura Municipal de Monte Azul Paulista (CNPJ 52.942.380/0001-87) aparece no Portal da Transparência como beneficiária de R$ 279.803.156,79 em valores recebidos do Governo Federal. Convênios e acordos vigentes e encerrados detalhados no portal.",
+      "source": "portaldatransparencia.gov.br (CGU)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Confirma existência de fluxo financeiro federal relevante para o município onde a PEP exerce mandato. Relevante para contexto de risco de contratações públicas no município. Não localizado contrato federal direto com CNPJ 68.509.014/0001-79 (owner) nas buscas realizadas."
+    },
+    {
+      "title": "Câmara Municipal de Monte Azul Paulista — Vereadores: Gilberto Roberto Kubica (perfil histórico)",
+      "url": "https://siscam.camaramonteazul.sp.gov.br/Vereadores/Contagem/92",
+      "snippet": "Perfil de Gilberto Roberto Kubica no sistema legislativo oficial da Câmara Municipal de Monte Azul Paulista. Pai da vereadora Luciana Kubica, exerceu vereança em quatro legislaturas e presidiu a Casa de Leis por dois biênios.",
+      "source": "camaramonteazul.sp.gov.br / siscam (sistema oficial)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Evidência de influência política histórica da família Kubica na Câmara Municipal. Pai (Gilberto, condenado por improbidade) + filha (Luciana, PEP vereadora) + filho (Douglas, owner da empresa analisada): família politicamente proeminente com antecedente judicial grave no município."
+    },
+    {
+      "title": "Câmara de Monte Azul Paulista inicia ano legislativo 2026 — site oficial atualizado",
+      "url": "https://www.camaramonteazul.sp.gov.br/noticias/luciana-kubica-assume-cadeira-deixada-pelo-vereador-jose-de-souza-molico-em-monte-azul-paulista,08-06-2021",
+      "snippet": "Notícia do portal oficial da Câmara Municipal menciona 'Câmara Municipal inicia ano Legislativo com a 1ª Sessão Ordinária de 2026', indicando que a instituição está em plena atividade na atual legislatura (2025-2028), período pós-eleições 2024.",
+      "source": "camaramonteazul.sp.gov.br (portal oficial)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Evidência indireta de que há legislatura ativa em 2026 em Monte Azul Paulista, corroborando o status vigente do mandato da PEP (eleita em 2024 conforme O Tempo)."
+    },
+    {
+      "title": "Mídia adversa — Owner Douglas Kubica: sem resultado de mídia adversa direta encontrado",
+      "url": "https://www.camaramonteazul.sp.gov.br/noticias/luciana-kubica-assume-cadeira-deixada-pelo-vereador-jose-de-souza-molico-em-monte-azul-paulista,08-06-2021",
+      "snippet": "Douglas Kubica é mencionado como irmão da vereadora Luciana Kubica e filho de Gilberto Roberto Kubica, presentes na cerimônia de posse da vereadora em junho de 2021. Não foram encontradas matérias de mídia adversa, investigações ou contratos públicos diretos vinculando Douglas Kubica ou o CNPJ 68.509.014/0001-79 a entidades governamentais nas buscas realizadas.",
+      "source": "camaramonteazul.sp.gov.br (referência de contexto familiar)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Ausência de mídia adversa direta sobre o owner (Douglas Kubica / CNPJ 68.509.014/0001-79). Contudo, o contexto familiar eleva o risco inerente: irmão de PEP vereadora ativa + filho de ex-vereador condenado por improbidade em esquema de fraude a licitações no mesmo município. Recomenda-se verificação aprofundada de contratos municipais locais (portal de transparência da Prefeitura de Monte Azul Paulista)."
+    },
+    {
+      "title": "Contexto regional — Monte Azul Paulista: operação policial por tráfico (jan/2025), sem operação de corrupção municipal recente identificada",
+      "url": "https://regional24horas.com.br/noticia/monte-azul-paulista-fim-da-linha-policia-civil-e-gcm-chega-de-acute-fininho-e-manda-traficante-para-a-cadeia-/10292",
+      "snippet": "Ação conjunta da Polícia Civil e GCM de Monte Azul Paulista resultou na prisão de traficante com mandado de busca e apreensão cumprido em janeiro de 2025. Ocorrência relacionada a tráfico de drogas, sem relação com corrupção administrativa ou gestão pública.",
+      "source": "Regional 24 Horas",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M7 — Contexto regional. Única operação policial recente identificada em Monte Azul Paulista (jan/2025) refere-se a tráfico de drogas, sem envolvimento de agentes políticos ou contratos públicos. Não foram encontradas operações de corrupção municipal ativas nos últimos 2 anos direcionadas ao município."
+    }
+  ],
+  "68df24fe-b9c6-4e60-a88d-fc735f0b7875": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 072.507.019-67 (Emerson De Sousa Da Silva, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Mídias Negativas — Emerson De Sousa Da Silva",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "20 mídia(s) negativa(s) identificada(s) para Emerson De Sousa Da Silva via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://www.tjma.jus.br/midia/portal/noticia/520803/tribunal-do-juri-de-sao-luis-julga-41-reus-em-marco\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-0",
+      "source": "Tesserati — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Emerson De Sousa Da Silva"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 59447940978 (NILTON BATISTA RAUPP, pep_socio).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (11) — NILTON BATISTA RAUPP",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "NILTON BATISTA RAUPP tem 11 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: 0312 | DIVIDA ATIVA (EXECUCAO FISCAL), DIREITO TRIBUTARIO; 010408 | CONCESSAO / PERMISSAO / AUTORIZACAO, SERVICOS, DIRE; LOCACAO DE IMOVEL. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 59447940978"
+    },
+    {
+      "title": "Câmara Municipal de Garopaba/SC — Perfil Oficial: Nilton Batista Raupp (MDB)",
+      "url": "https://www.camaragaropaba.sc.gov.br/camara/membros/show/3832",
+      "snippet": "15ª Legislatura (2021–2024). Ocupou cargo de Presidente da Mesa Diretora e Presidente da CPI - Secretaria Assistência Social (Cestas Básicas - SCFV). Status: LICENCIADO (Resolução nº 18/2022, a partir de 28/09/2022). Registro no portal da Câmara indica legislatura encerrada em 2024, sem registro de nova legislatura (2025–2028) no mesmo perfil.",
+      "source": "camaragaropaba.sc.gov.br (portal oficial)",
+      "risk_indicator": "medio",
+      "tipo": "pep",
+      "match": "Mandato PEP confirmado para 15ª Legislatura (2021–2024). Há indicação de LICENÇA (Resolução nº 18/2022). Mandato atual (2025–2028) NÃO confirmado diretamente no perfil do portal — requer validação adicional via TSE/câmara para nova legislatura."
+    },
+    {
+      "title": "Notícia: 'Ex-vereador Nilton Batista Raupp' — Encontro político com deputado Volnei Weber (Abril/2026)",
+      "url": "https://garopaba.sc/politica/deputado-volnei-weber-participa-de-encontro-com-liderancas-em-garopaba/",
+      "snippet": "A reunião reuniu nomes como João Julião Luz Lopes, o ex-prefeito Sérgio Cunha e o ex-vereador Nilton Batista Raupp, além de outros representantes da região. O objetivo foi discutir demandas do município e alinhar projetos voltados ao desenvolvimento local.",
+      "source": "garopaba.sc (portal de notícias local) — abril/2026",
+      "risk_indicator": "medio",
+      "tipo": "pep",
+      "match": "ALERTA DE MANDATO: matéria de abril/2026 refere-se a Nilton Batista Raupp como 'EX-VEREADOR', sugerindo que não estaria em exercício na 16ª Legislatura (2025–2028). Diverge do cadastro informado pelo solicitante ('VEREADOR' ativo). Requer confirmação TSE/câmara para a legislatura vigente."
+    },
+    {
+      "title": "Notícia: Vereador Nilton Raupp defende honestidade e critica presidente da Câmara (Junho/2024)",
+      "url": "https://garopaba.sc/politica/vereador-nilton-raupp-defende-sua-honestidade-e-critica-presidente-da-camara/",
+      "snippet": "Na última sessão ordinária da Câmara Municipal de Garopaba, realizada no dia 11 de junho, o vereador Nilton Batista Raupp protagonizou discurso inflamado, defendendo sua honestidade e criticando o presidente da Câmara, Jairo Pereira dos Santos. Raupp mencionou que, após deixar o cargo de presidente, enfrentou tentativas da prefeitura de caracterizar terreno como parcelamento irregular.",
+      "source": "garopaba.sc (portal de notícias local) — 15/06/2024",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Menção a questionamentos sobre terreno em nome do PEP, com suspeita de parcelamento irregular levantada pela prefeitura. PEP refutou a acusação com provas. Não há confirmação de instauração de processo. Discurso político interno — contexto de disputa por presidência da Câmara."
+    },
+    {
+      "title": "Notícia: Jairo dos Santos é Destituído da Presidência da Câmara — Raupp votou pela destituição (Julho/2024)",
+      "url": "https://garopaba.sc/politica/jairo-dos-santos-e-destituido-da-presidencia-da-camara-apos-nova-votacao/",
+      "snippet": "Nilton Batista Raupp (MDB) integrou o grupo de vereadores que aprovou a destituição de Jairo Pereira dos Santos (PP) da presidência da Câmara Municipal de Garopaba em sessão extraordinária de julho/2024. A destituição foi aprovada por 2/3 dos votos.",
+      "source": "garopaba.sc (portal de notícias local) — julho/2024",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Confirmação de atuação parlamentar ativa do PEP em julho/2024 (15ª Legislatura). Sem adversidade direta ao PEP nessa notícia."
+    },
+    {
+      "title": "Portal Câmara Garopaba — CPI Assistência Social: Nilton Raupp como Presidente",
+      "url": "https://www.camaragaropaba.sc.gov.br/camara/membros/show/3832",
+      "snippet": "Nilton Batista Raupp ocupou o cargo de Presidente na Comissão Parlamentar de Inquérito (Resolução nº 02/2023) — CPI da Secretaria de Assistência Social do Município de Garopaba (Cestas Básicas - SCFV), investigando possíveis irregularidades no poder executivo municipal.",
+      "source": "camaragaropaba.sc.gov.br (portal oficial)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "PEP atuou como PRESIDENTE de CPI investigando o executivo municipal (Assistência Social/Cestas Básicas). Não indica adversidade ao próprio PEP; ao contrário, posiciona-o como fiscalizador."
+    },
+    {
+      "title": "NBRaupp Assessoria e Contabilidade — Vínculo societário do PEP com empresa contábil em Garopaba",
+      "url": "https://nbraupp.com.br/capa.asp?idpagina=420",
+      "snippet": "A possibilidade da abertura do escritório deu-se devido ao sócio Nilton Batista Raupp ter cursado Técnico em Contabilidade na Academia de Comércio do Estado de Santa Catarina, formado em 1987, já obtendo assim o seu registro no Conselho Regional de Contabilidade de Santa Catarina.",
+      "source": "nbraupp.com.br (site institucional da empresa)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Confirmação de vínculo societário do PEP com empresa de contabilidade (NBRaupp) em Garopaba. Atividade empresarial declarada. Sem adversidade. Relevante para mapeamento de quadro societário do PEP."
+    },
+    {
+      "title": "Portal da Transparência Federal — CNPJ 03.821.534/0001-77: sem contratos federais localizados via busca",
+      "url": "https://portaldatransparencia.gov.br/pessoa-juridica/03821534000177",
+      "snippet": "Busca ao Portal da Transparência Federal pelo CNPJ 03.821.534/0001-77 não retornou contratos ou convênios federais ativos indexados nos resultados de busca disponíveis. O portal retornou apenas página institucional genérica.",
+      "source": "portaldatransparencia.gov.br",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "CNPJ do owner (03.821.534/0001-77) não encontrado com contratos federais ativos indexados publicamente. Verificação direta no portal é recomendada para confirmar ausência total de vínculos contratuais federais."
+    },
+    {
+      "title": "Mídia adversa OWNER — 'Emerson De Sousa Da Silva' / IMBITUBA-SC: sem achados de fraude ou investigação",
+      "url": "N/A",
+      "snippet": "Busca por 'Emerson De Sousa Da Silva' + 'IMBITUBA' + 'fraude' OR 'investigação' OR 'contrato público' OR 'licitação' não retornou nenhum resultado associando o owner a irregularidades, operações policiais ou contratações públicas suspeitas.",
+      "source": "Busca web — resultado negativo",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhuma mídia adversa encontrada para o owner Emerson De Sousa Da Silva em Imbituba-SC. Ausência de achados não exclui risco — recomenda-se checagem em CADIN, CEIS e bases estaduais."
+    },
+    {
+      "title": "CONTEXTO REGIONAL — Operação Ourímetro: fraudes na Prefeitura de Imbituba-SC (2023–2024)",
+      "url": "https://ndmais.com.br/seguranca/policia-civil-apura-fraudes-na-prefeitura-de-imbituba-e-afasta-10-servidores/",
+      "snippet": "Dez servidores da Prefeitura de Imbituba foram afastados durante as diligências da Operação Ourímetro (maio/2024), deflagrada pela Polícia Civil com apoio da Polícia Científica. As investigações apuram fraudes na execução de serviços de maquinários contratados pela administração municipal. A primeira fase ocorreu em junho/2023. Ao todo, 11 das 15 máquinas periciadas apresentaram adulteração no horímetro.",
+      "source": "ndmais.com.br — 23/05/2024",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "CONTEXTO REGIONAL RELEVANTE: cidade de atuação do owner (Imbituba-SC) foi alvo de operação policial de grande escala investigando fraudes em contratos municipais de maquinário (Operação Ourímetro, 2023–2024). Não há menção direta ao owner ou ao CNPJ investigado, mas o ambiente de controles municipais em Imbituba apresenta histórico recente de risco elevado. Monitorar eventual conexão."
+    },
+    {
+      "title": "CONTEXTO REGIONAL — Operação Tio Patinhas: organização criminosa em Garopaba e Imbituba (2024)",
+      "url": "https://garopaba.sc/seguranca/policia-civil-deflagra-3a-fase-da-operacao-tio-patinhas-em-garopaba-imbituba-e-sao-jose/",
+      "snippet": "Polícia Civil deflagrou 3ª fase da Operação Tio Patinhas em Garopaba, Imbituba e São José, resultando em prisões e apreensões contra organização criminosa (lavagem de dinheiro, tráfico de drogas, comércio ilegal de armas) atuante na Grande Florianópolis.",
+      "source": "garopaba.sc — outubro/2024",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Operação policial nas cidades de Garopaba e Imbituba em 2024, sem conexão identificada com o PEP ou o owner. Risco baixo para este caso específico — contexto informacional de região."
+    },
+    {
+      "title": "CRECI/SC — Nilton Batista Raupp como Presidente da Câmara de Garopaba (Set/2021)",
+      "url": "https://www.creci-sc.gov.br/p/noticias/crecisc-recebe-mocao-especial-da-camara-municipal-de-garopaba/1663/",
+      "snippet": "O Presidente da Câmara, o vereador Nilton Batista Raupp, parabenizou os corretores e enalteceu a importância desse profissional para o desenvolvimento do município durante Sessão Ordinária de setembro/2021.",
+      "source": "creci-sc.gov.br (site oficial do CRECI/SC)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Confirmação histórica de exercício do cargo de Presidente da Câmara de Garopaba (2021). Sem adversidade. Nota: PEP consta como contador registrado no CRC-SC — atividade empresarial paralela ao mandato."
+    },
+    {
+      "title": "Câmara de Garopaba — PEP assina como Vereador em Projeto de Lei 106/2023 (Janeiro/2025)",
+      "url": "https://www.legislador.com.br/LegisladorWEB.ASP?WCI=ProjetoTexto&ID=331&inEspecie=1&nrProjeto=106&aaProjeto=2023",
+      "snippet": "Vereador Nilton Batista Raupp consta como autor/signatário de emenda ao Projeto de Lei nº 106/2023 (zoneamento do uso e ocupação do solo de Garopaba), publicado em 20/01/2025.",
+      "source": "legislador.com.br — portal da Câmara Municipal de Garopaba",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Confirmação de atuação parlamentar do PEP em janeiro/2025 — apresentação de emenda legislativa sobre zoneamento urbano. Contradiz a referência de 'ex-vereador' de abril/2026. Recomenda-se apuração da data exata de saída do mandato/não eleição para a 16ª Legislatura."
+    }
+  ],
+  "fcb6f395-952b-491c-b4b7-dd4b27205107": [
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 953.525.892-34 (Thiago Andreyfson Brandao De Oliveira, owner).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (2) — Thiago Andreyfson Brandao De Oliveira",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Thiago Andreyfson Brandao De Oliveira tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: DIREITO ELEITORAL (11428) | ELEICOES (11583) | CARGOS (11628; DIREITO ELEITORAL (11428) | ELEICOES (11583) | TRANSGRESSOES. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 953.525.892-34"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 25731688249 (LUIS AFONSO BRANDAO DE OLIVEIRA, pep_irma(o)).",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (6) — LUIS AFONSO BRANDAO DE OLIVEIRA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "LUIS AFONSO BRANDAO DE OLIVEIRA tem 6 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: ; ; . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 25731688249"
+    },
+    {
+      "title": "Vereador Luis Afonso Brandão de Oliveira – Atividade Legislativa outubro/2025",
+      "url": "https://camarabreves.pa.gov.br/wp-content/uploads/2025/11/Luis-Afonso-Brandao-de-Oliveira.pdf",
+      "snippet": "Vereador: Luis Afonso Brandão de Oliveira · Mês: outubro/2025 · Projeto de Lei nº 015/2025 – Que Institui o Festival da Canção Gospel no município de Breves. Requerimento nº 299/2025 – solicitando pavimentação no Bairro Aeroporto.",
+      "source": "camarabreves.pa.gov.br (portal oficial)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Confirmação de mandato ativo como Vereador em Breves-PA na legislatura 2025-2028. Atividade legislativa regular registrada em outubro/2025 sem qualquer notícia adversa."
+    },
+    {
+      "title": "Lista de Vereadores 2025-2028 – Câmara Municipal de Breves-PA",
+      "url": "https://camarabreves.pa.gov.br/portal-da-transparencia/atividades-legislativas/atividade-dos-parlamentares/",
+      "snippet": "Atividades Parlamentar – Vereador Luis Afonso Brandão de Oliveira. Portal de transparência da Câmara de Breves lista o parlamentar como vereador ativo na legislatura 2025-2028.",
+      "source": "camarabreves.pa.gov.br – Portal da Transparência Legislativa",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Luis Afonso Brandão de Oliveira confirmado como vereador ativo em Breves-PA para a legislatura 2025-2028, constando no portal oficial da Câmara Municipal."
+    },
+    {
+      "title": "Histórico eleitoral – Vereador Luis Afonso Brandão de Oliveira (desde 2004)",
+      "url": "https://www.econodata.com.br/consulta-empresa/16494801000190-eleicao-2012-luis-afonso-brandao-de-oliveira-vereador",
+      "snippet": "Registros de comitês eleitorais para Vereador em Breves-PA nos pleitos de 2004, 2008 e 2012, endereço Travessa Capitão Assis, 1329 – Riacho Doce, Breves-PA. Múltiplos mandatos identificados.",
+      "source": "Econodata / Receita Federal (CNPJ de comitês eleitorais)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Trajetória política consolidada: Luis Afonso Brandão de Oliveira disputa eleições para vereador em Breves-PA desde pelo menos 2004, sugerindo mandatos consecutivos ou alternados. Sem ocorrências adversas associadas."
+    },
+    {
+      "title": "Owner – Thiago Andreyfson Brandao de Oliveira – Registro em Breves-PA",
+      "url": "https://cnpj.parafa.com.br/breves-pa/6448438000113/eleicoes-2004-manoel-dos-santos-carneiro-vereador",
+      "snippet": "Nome 'thiago andreyfson brandao de oliveira' localizado em listagem de pessoas físicas/jurídicas registradas em Breves-PA. Sem indicação de investigação, contrato público, improbidade ou operação policial.",
+      "source": "cnpj.parafa.com.br – base de dados de CNPJs municipais",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Presença de Thiago Andreyfson Brandao de Oliveira (owner, CNPJ 28.241.930/0001-56) confirmada em Breves-PA. Nenhuma ocorrência adversa encontrada em mídia ou contratos públicos federais."
+    },
+    {
+      "title": "Portal da Transparência Federal – CNPJ 28.241.930/0001-56 – Ausência de contratos federais",
+      "url": "https://portaldatransparencia.gov.br/contratos/consulta",
+      "snippet": "Consulta ao Portal da Transparência do Governo Federal não retornou contratos ou licitações federais vinculados ao CNPJ 28.241.930/0001-56 (Thiago Andreyfson Brandao de Oliveira).",
+      "source": "portaldatransparencia.gov.br – CGU",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Sem registros de contratos federais localizados para o CNPJ do owner. Ausência de vínculo contratual federal com entes públicos — não há indicador de risco por esse canal no momento da pesquisa."
+    },
+    {
+      "title": "Mídia Adversa – PEP Luis Afonso Brandão de Oliveira – SEM OCORRÊNCIAS",
+      "url": "https://camarabreves.pa.gov.br/wp-content/uploads/2025/02/VEREADORES-2025-2028-2.pdf",
+      "snippet": "Buscas por 'corrupção', 'improbidade', 'cassação', 'operação policial' e 'investigação' vinculadas a Luis Afonso Brandão de Oliveira e Breves-PA não retornaram qualquer resultado relevante ou ocorrência adversa.",
+      "source": "Pesquisa de mídia adversa (M2) – Google/Web – setembro/2026",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Ausência total de mídia adversa diretamente vinculada ao PEP Luis Afonso Brandão de Oliveira. Nenhuma operação policial, processo de cassação, investigação ministerial ou notícia de improbidade identificada."
+    },
+    {
+      "title": "Contexto Regional – Breves-PA – Ausência de Operações Policiais Recentes",
+      "url": "https://portaldatransparencia.gov.br/contratos",
+      "snippet": "Buscas por operações policiais, corrupção municipal e escândalos em Breves-PA nos últimos 2 anos (2024-2026) não retornaram ocorrências específicas ao município. Contexto regional sem indicadores ativos de risco.",
+      "source": "Pesquisa de mídia adversa regional (M7) – Google/Web – setembro/2026",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Município de Breves-PA não apresentou registros de operações policiais, investigações ou escândalos de corrupção municipal nos últimos 2 anos nas fontes pesquisadas."
+    }
   ]
 }

@@ -29,13 +29,20 @@ function templateReprovado(c: ClienteData): string {
   );
 }
 
-function templateAprovado(c: ClienteData): string {
+function templateAprovado(c: ClienteData, achadosRelevantes: ResultadoPesquisa[]): string {
+  const clausulaAchados = achadosRelevantes.length === 0
+    ? `A ausência total de sanções, processos por improbidade ou mídia adversa para a empresa, seu titular e ` +
+      `o PEP ${c.tipoPep === "relacionado" ? "relacionado" : "titular"}, mitiga significativamente o risco inicial.`
+    : `Foram identificados ${achadosRelevantes.length} apontamento(s) de risco médio/alto (${achadosRelevantes
+        .slice(0, 3)
+        .map((r) => r.fonte)
+        .join(", ")}${achadosRelevantes.length > 3 ? ", entre outros" : ""}) — revisados e considerados não impeditivos ` +
+      `para a decisão abaixo, mas que devem ser conferidos antes de finalizar.`;
   return (
-    `O único fator de risco é o relacionamento com PEP. Contudo, a atividade econômica da empresa (${c.cnae || "—"}) ` +
+    `O único fator de risco estrutural é o relacionamento com PEP. A atividade econômica da empresa (${c.cnae || "—"}) ` +
     `é de baixo risco para crimes de lavagem de dinheiro ou corrupção, sem aparente conflito de interesses ` +
     `com o cargo político ${c.tipoPep === "relacionado" ? "do parente" : "exercido"}. ` +
-    `A ausência total de sanções, processos por improbidade ou mídia adversa para a empresa, seu titular e ` +
-    `o PEP ${c.tipoPep === "relacionado" ? "relacionado" : "titular"}, mitiga significativamente o risco inicial.\n\n` +
+    `${clausulaAchados}\n\n` +
     `Após análise aprofundada, os apontamentos não configuram risco impeditivo. ` +
     `Recomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente.`
   );
@@ -52,34 +59,46 @@ function templateMonitoramento(c: ClienteData): string {
   );
 }
 
-function templateFalsoPositivo(c: ClienteData): string {
+function templateFalsoPositivo(c: ClienteData, achadosRelevantes: ResultadoPesquisa[]): string {
   const titular = c.nomeResponsavel || c.nomePessoaVinculada || "—";
   const cpf = c.cpfResponsavel || "—";
+  const clausulaAchados = achadosRelevantes.length === 0
+    ? `não foram identificadas mídias adversas, processos por improbidade, sanções em listas ` +
+      `restritivas ou contratos públicos que justifiquem restrição ao relacionamento.`
+    : `⚠️ foram identificados ${achadosRelevantes.length} apontamento(s) de risco médio/alto (${achadosRelevantes
+        .slice(0, 3)
+        .map((r) => r.fonte)
+        .join(", ")}) — CONFERIR antes de confirmar falso positivo, pois esse número diverge do ` +
+      `esperado para essa classificação.`;
   return (
     `Após dupla verificação junto à base Credilink (Tessera) e varredura em fontes públicas ` +
     `(mídia, processos judiciais, sanções e contratos públicos), não foi confirmado vínculo ` +
     `com Pessoa Politicamente Exposta para o titular ${titular} (CPF ${cpf}). ` +
     `O acionamento da fila PLD decorreu de coincidência cadastral ou similaridade de dados, ` +
     `não se sustentando após investigação aprofundada.\n\n` +
-    `Em análises reputacionais conduzidas para a empresa ${c.razaoSocial} (CNPJ ${c.cnpj}), ` +
-    `não foram identificadas mídias adversas, processos por improbidade, sanções em listas ` +
-    `restritivas ou contratos públicos que justifiquem restrição ao relacionamento.\n\n` +
-    `Diante da ausência de vínculo PEP confirmado e da inexistência de achados adversos ` +
-    `relevantes sob a ótica de PLD/FT, o caso é classificado como FALSO POSITIVO. ` +
+    `Em análises reputacionais conduzidas para a empresa ${c.razaoSocial} (CNPJ ${c.cnpj}), ${clausulaAchados}\n\n` +
+    `Diante da ausência de vínculo PEP confirmado, o caso é classificado como FALSO POSITIVO. ` +
     `Recomendo a APROVAÇÃO DO CADASTRO sem inclusão em monitoramento reforçado por ` +
     `característica PEP, seguindo fluxo padrão de monitoramento transacional, ` +
     `conforme Política PLD/FT vigente e Circular BACEN 3.978/2020.`
   );
 }
 
-function corpoTemplate(c: ClienteData, status: StatusAnalise): string {
+function corpoTemplate(c: ClienteData, status: StatusAnalise, resultados: ResultadoPesquisa[]): string {
+  // Achados que uma alegação de "ausência total" precisa respeitar: reais
+  // (não descartados) e de risco médio/alto — baixo risco não contradiz uma
+  // alegação de ausência de adversidade. Antes os templates "aprovado" e
+  // "falso_positivo" afirmavam "ausência total"/"não foram identificadas"
+  // incondicionalmente, só pela categoria escolhida, mesmo quando resultados
+  // continha achados reais em contrário (achado Codex, 2026-09-11).
+  const achadosRelevantes = resultados.filter((r) => !r.descartado && r.risco !== "baixo");
   switch (status) {
     case "reprovado":
       return templateReprovado(c);
     case "falso_positivo":
-      return templateFalsoPositivo(c);
+      return templateFalsoPositivo(c, achadosRelevantes);
     case "aprovado":
-      return templateAprovado(c);
+      return templateAprovado(c, achadosRelevantes);
     case "monitoramento":
     default:
       return templateMonitoramento(c);
@@ -104,7 +123,7 @@ export function gerarParecerLideranca(params: {
   return [
     cabecalho,
     ``,
-    corpoTemplate(cliente, status),
+    corpoTemplate(cliente, status, resultados),
     ``,
     `---`,
     `**Data da Análise:** ${today}`,

@@ -407,9 +407,14 @@ export async function reanalisarResultado(params: {
   if (lower.includes("baixo") || lower.includes("falso positivo")) {
     return { ...resultado, risco: "baixo", resumo: `${resultado.resumo} [Reanálise: ${obs.slice(0, 120)}]` };
   }
+  // Nota livre do analista sem palavra-chave reconhecida: registra o texto,
+  // mas NÃO mexe em pendente_verificacao — antes isso zerava a flag
+  // incondicionalmente, dando a entender que uma verificação de fato
+  // ocorreu só porque o analista digitou algo não relacionado (achado
+  // Codex, 2026-09-11). Preserva o estado anterior; só "homônimo"/"descart"
+  // acima resolve a pendência de verdade.
   return {
     ...resultado,
     resumo: `${resultado.resumo} [Reanálise (${cliente.razaoSocial}): ${obs.slice(0, 160)}]`,
-    pendente_verificacao: false,
   };
 }

@@ -113,6 +113,27 @@ _FINDING_LIMITE_ATINGIDO = {
     "match": "N/A — consulta automática não realizada por limite de quota",
 }
 
+
+def _finding_erro_consulta(motivo: str, cpf: str, nome: str) -> dict:
+    """Achado explícito de FALHA de consulta (chave ausente, HTTP != 200,
+    exceção) — nunca deve ser confundido com "consultamos e não achamos nada".
+    Frontend (registration-enrich.ts) trata `source` com "Erro de Consulta"
+    do mesmo jeito que o placeholder de cota: sem badge de similaridade, com
+    pendente_verificacao=true (achado Codex, 2026-09-11)."""
+    return {
+        "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Erro de Consulta JusBrasil",
+        "url": "https://www.jusbrasil.com.br/consulta-pro/",
+        "snippet": (
+            f"A consulta à API JusBrasil Background Check falhou para {nome} (CPF {cpf}): {motivo}. "
+            f"NÃO foi possível confirmar ausência ou presença de processos — isto NÃO é um resultado "
+            f"negativo, é uma falha técnica. OBRIGATÓRIO: verificar manualmente no JusBrasil PRO."
+        ),
+        "source": "Sistema Pepito — Erro de Consulta JusBrasil",
+        "risk_indicator": "medio",
+        "tipo": "processo",
+        "match": f"N/A — falha técnica: {motivo}",
+    }
+
 # TESSERATI_ACCESS_KEY nunca existiu em nenhum .env do projeto — a variável
 # dedicada e comentada desse serviço (mesmo domínio api.tesserati.com.br) é
 # CREDILINK_API_KEY (ver CLAUDE.md raiz). Sem este fallback, _tess_auth()
@@ -180,10 +201,32 @@ def consultar_tesserati(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
     Compliance (CEIS/CNEP) e ComplianceInternacional para CPF/nome.
     """
     if not TESS_ACCESS_KEY:
-        return []
+        return [{
+            "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Erro de Consulta Tesserati",
+            "url": "https://api.tesserati.com.br",
+            "snippet": f"CREDILINK_API_KEY/TESSERATI_ACCESS_KEY ausente — consulta Tesserati não disparada para {nome} (CPF {cpf}). NÃO é resultado negativo, é falha de configuração.",
+            "source": "Sistema Pepito — Erro de Consulta Tesserati",
+            "risk_indicator": "medio",
+            "tipo": "processo",
+            "match": "N/A — chave de API ausente",
+        }]
 
     cpf_clean = re.sub(r"\D", "", cpf or "")
     findings: list[dict] = []
+
+    # Falha de autenticação (rede, credencial inválida): sem isso, todo
+    # _tess_get() abaixo devolve {} em silêncio e a função retorna [] —
+    # indistinguível de "consultamos e não achamos nada" (achado Codex, 2026-09-11).
+    if not _tess_auth():
+        return [{
+            "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Erro de Consulta Tesserati",
+            "url": "https://api.tesserati.com.br",
+            "snippet": f"Falha de autenticação na API Tesserati para {nome} (CPF {cpf}). NÃO foi possível consultar mandados/processos/mídias — NÃO é resultado negativo, é falha técnica.",
+            "source": "Sistema Pepito — Erro de Consulta Tesserati",
+            "risk_indicator": "medio",
+            "tipo": "processo",
+            "match": "N/A — falha de autenticação",
+        }]
 
     # ── 1. Mandados de Prisão ─────────────────────────────────────────────────
     if cpf_clean:
@@ -325,9 +368,15 @@ def _cpf_digits(cpf: str) -> str:
 
 def _jus_post(endpoint: str, payload: dict) -> dict:
     """Faz POST na API JusBrasil via requests. Rastreia quota (limite 500).
-    Retorna {"_quota_exceeded": True} se limite atingido."""
+    Retorna {"_quota_exceeded": True} se limite atingido; {"_erro": <motivo>}
+    se a chamada falhou por qualquer outro motivo (chave ausente, HTTP != 200,
+    exceção). Chave "_erro" existe PARA DISTINGUIR "não conseguimos consultar"
+    de "consultamos e a API devolveu vazio" — antes das duas caíam no mesmo
+    `{}`, e consultar_jusbrasil() reportava "nenhum processo criminal —
+    confirmado na API" mesmo quando a API nunca foi de fato alcançada
+    (achado Codex, 2026-09-11)."""
     if not JUS_KEY:
-        return {}
+        return {"_erro": "JUSBRASIL_API_KEY ausente — consulta não disparada"}
     if _jus_quota_exceeded():
         return {"_quota_exceeded": True}
     url = f"{JUS_BASE}/{endpoint}"
@@ -346,10 +395,10 @@ def _jus_post(endpoint: str, payload: dict) -> dict:
             print(f"      JusBrasil QUOTA EXCEEDED ({resp.status_code})")
             return {"_quota_exceeded": True}
         print(f"      JusBrasil HTTP {resp.status_code} em /{endpoint}: {resp.text[:200]}")
-        return {}
+        return {"_erro": f"HTTP {resp.status_code} em /{endpoint}"}
     except Exception as e:
         print(f"      JusBrasil erro em /{endpoint}: {e}")
-        return {}
+        return {"_erro": f"exceção em /{endpoint}: {e}"}
 
 
 def _classificar_tipificacoes(tipificacoes: list[dict]) -> tuple[str, list[str]]:
@@ -386,6 +435,8 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
         alert = dict(_FINDING_LIMITE_ATINGIDO)
         alert["snippet"] = f"{alert['snippet']} CPF: {cpf} ({nome})."
         return [alert]
+    if resp.get("_erro"):
+        return [_finding_erro_consulta(resp["_erro"], cpf, nome)]
     nome_api = resp.get("nome", nome)
     processos = resp.get("processos", [])
     total = resp.get("pagination", {}).get("total", 0)
@@ -478,6 +529,9 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
     if resp_bnmp.get("_quota_exceeded"):
         findings.append(dict(_FINDING_LIMITE_ATINGIDO))
         return findings
+    if resp_bnmp.get("_erro"):
+        findings.append(_finding_erro_consulta(resp_bnmp["_erro"], cpf, nome))
+        return findings
     mandados = resp_bnmp.get("mandados", [])
     if mandados:
         for m in mandados:
@@ -505,6 +559,9 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
     resp_mp = _jus_post("background-check/mp", {"documentNumber": cpf_clean, "kind": "CRIMINAL"})
     if resp_mp.get("_quota_exceeded"):
         findings.append(dict(_FINDING_LIMITE_ATINGIDO))
+        return findings
+    if resp_mp.get("_erro"):
+        findings.append(_finding_erro_consulta(resp_mp["_erro"], cpf, nome))
         return findings
     mp_records = resp_mp.get("mp", [])
     for mp in mp_records:
@@ -780,16 +837,22 @@ def main():
     todas = lideranca + analista
 
     if args.all_lideranca:
-        alvos = todas  # Cobre AMBAS as filas
+        alvos = todas  # Cobre AMBAS as filas — uso manual/backfill pontual
         print(f"Modo: re-pesquisa COMPLETA — {len(lideranca)} LIDERANCA + {len(analista)} ANALISTA = {len(alvos)} casos")
     elif args.force is not None:
         ids = set(args.force) if args.force else {it["draft_id"] for it in todas}
         alvos = [it for it in todas if it["draft_id"] in ids]
         print(f"Modo: re-pesquisa forçada de {len(alvos)} caso(s): {[a['full_name_pf'] for a in alvos]}")
     else:
-        # Modo padrão: pesquisa casos SEM cobertura em AMBAS as filas
-        alvos = [it for it in todas if it["draft_id"] not in findings]
-        print(f"LIDERANCA: {len(lideranca)} | ANALISTA: {len(analista)} | Sem cobertura: {len(alvos)}")
+        # Modo padrão (chamado por queue-sync.sh a cada sincronização): pesquisa
+        # SÓ CHECK_ANALISTA sem cobertura. CHECK_LIDERANCA nunca entra aqui —
+        # regra definida por thay@cora.com.br em 2026-09-11: o histórico de
+        # mídia/processos é recente o bastante para não precisar reconsultar
+        # quando o caso escala pra Mesa (o draft_id é o mesmo, então
+        # `findings` já cobre o caso desde a passagem pelo Analista). Cobrir
+        # CHECK_LIDERANCA é exceção pontual — usar --force ou --all-lideranca.
+        alvos = [it for it in analista if it["draft_id"] not in findings]
+        print(f"ANALISTA: {len(analista)} | Sem cobertura: {len(alvos)} | (LIDERANCA: {len(lideranca)} — não roda por padrão, ver --force/--all-lideranca)")
 
     if not alvos:
         print("✓ Nenhum caso para pesquisar.")

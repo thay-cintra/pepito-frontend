@@ -58,7 +58,9 @@ O analista acessa a fila PLD (`/check-analista`), que exibe cadastros com `bucke
 A Liderança acessa a Fila de Revisão (`/fila-revisao`) com os casos `camadaStatus = aguardando_segunda`. Ao abrir:
 
 - Parecer do analista + resultados de pesquisa já disponíveis
-- Liderança pode repesquisar, adicionar fontes, gerar análise consolidada
+- Liderança pode adicionar fontes e gerar análise consolidada; "Repesquisar" fica
+  desabilitado para casos reais (dado real do pipeline não pode ser sobrescrito
+  por simulação — ver nota em `mock-ai.ts` abaixo)
 - Decisão final em uma das 4 categorias regulamentares:
   - **CADASTRO APROVADO**
   - **CADASTRO REPROVADO**
@@ -153,7 +155,10 @@ src/
   lib/
     registration-queue.ts     — Lógica de filas, buckets, synthesizeAnalise
     storage.ts                — localStorage + persistToDisk + timer persistente
-    mock-ai.ts                — Pesquisa de fontes públicas (Credilink, PEP, mídia)
+    mock-ai.ts                — SIMULAÇÃO determinística de pesquisa de fontes
+                                 públicas (Credilink/PEP/mídia) — usada só no
+                                 fluxo 100% manual (Novo Caso Manual); nunca
+                                 consulta nenhuma API real
     auth.ts                   — Google SSO (/auth/me)
   types/
     kyc.ts                    — Tipos: Analise, ComentarioAnalise, StatusAnalise…

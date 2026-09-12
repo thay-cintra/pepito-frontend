@@ -1,11 +1,11 @@
 {
-  "total": 315,
+  "total": 325,
   "by_month": {
     "2026-04": 153,
     "2026-05": 96,
     "2026-07": 9,
     "2026-08": 30,
-    "2026-09": 27
+    "2026-09": 37
   },
   "limit": 325,
   "note": "Limite efetivo para an\u00e1lise PLD: 325/500 consultas (65% do contrato). 35% = 175 consultas reservadas para alertas de monitoramento. Cada CPF consome 3 consultas (criminal + bnmp + mp). Atualizado automaticamente pelo fetch-media-findings.py.",

@@ -22,7 +22,7 @@ import { Select } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/toast";
 import { CnaeCombobox } from "@/components/CnaeCombobox";
-import { storage } from "@/lib/storage";
+import { storage, timer } from "@/lib/storage";
 import { clienteVazio } from "@/lib/cliente-default";
 import { pesquisarFontesPublicas } from "@/lib/mock-ai";
 import { formatCNPJ, formatCPF, uid } from "@/lib/utils";
@@ -89,6 +89,15 @@ export function NovoCasoManual() {
   const navigate = useNavigate();
   const { toast } = useToast();
   const [validando, setValidando] = useState(false);
+
+  // Timer da 1ª camada — este formulário É a 1ª camada do caso manual (cadastro
+  // + parecer inicial), mas como não existe id/draftId até o submit, a chave
+  // usa um id de sessão gerado no mount. Sem isso, duracaoPrimeiraCamada nunca
+  // era gravada para casos manuais (ficava undefined) e o "Tempo total" no
+  // Dashboard só contava o tempo da 2ª camada (Mesa).
+  const [sessionId] = useState(() => uid());
+  const timerKey = `manual:${sessionId}`;
+  const [tInicio] = useState<number>(() => timer.startOrGet(timerKey));
 
   // PJ
   const [cnpj, setCnpj] = useState("");
@@ -221,9 +230,11 @@ export function NovoCasoManual() {
         recomendacao: statusLabel(pesquisa.recomendacao),
         parecerCompleto: "",
         camadaStatus: "aguardando_segunda",
+        duracaoPrimeiraCamada: Math.floor((Date.now() - tInicio) / 1000),
       };
 
       storage.saveAnalise(analise);
+      timer.clear(timerKey);
       toast({
         variant: "success",
         title: "Validação concluída",
@@ -557,8 +568,12 @@ export function NovoCasoManual() {
             />
           </div>
 
-          {/* Iniciar Validação */}
-          <div className="pt-2">
+          {/* Iniciar Validação — roda pesquisarFontesPublicas() (mock-ai.ts),
+              uma SIMULAÇÃO determinística: não consulta nenhuma fonte real
+              (JusBrasil/Credilink/mídia). Legítimo aqui porque este fluxo é
+              100% manual, sem draft_id/pipeline real por trás — mas precisa
+              ficar explícito pro analista (achado Codex, 2026-09-11). */}
+          <div className="pt-2 space-y-1">
             <Button
               onClick={handleIniciarValidacao}
               disabled={!podeIniciar || validando}
@@ -566,14 +581,18 @@ export function NovoCasoManual() {
             >
               {validando ? (
                 <>
-                  <Globe className="h-4 w-4 animate-pulse" /> Validando...
+                  <Globe className="h-4 w-4 animate-pulse" /> Validando (simulação)...
                 </>
               ) : (
                 <>
-                  <Globe className="h-4 w-4" /> Iniciar Validação
+                  <Globe className="h-4 w-4" /> Iniciar Validação (simulação)
                 </>
               )}
             </Button>
+            <p className="text-[11px] text-muted-foreground">
+              ⚠️ Gera achados de exemplo determinísticos — não consulta JusBrasil, Credilink nem mídia real.
+              Use como ponto de partida e valide manualmente cada fonte antes de decidir.
+            </p>
           </div>
         </CardContent>
       </Card>
