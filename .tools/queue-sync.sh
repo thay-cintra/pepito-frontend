@@ -48,10 +48,10 @@ print('  identity:', ident.get('Arn'))" 2>&1; then
     exit 88
   fi
 
-  echo "[1/3] build-real-queue.py — pulling Athena ..."
+  echo "[1/6] build-real-queue.py — pulling Athena ..."
   python pepito-frontend/.tools/build-real-queue.py
 
-  echo "[2/3] Sincronizando token_pf_cred e pareceres-real.json ..."
+  echo "[2/6] Sincronizando token_pf_cred e pareceres-real.json ..."
   python - << 'PYEOF'
 import json, sys
 from pathlib import Path
@@ -88,10 +88,24 @@ pr_path.write_text(json.dumps(pr, ensure_ascii=False, indent=2))
 print(f"  tokens: {sum(1 for i in items if i.get('token_pf_cred'))}/{len(items)} | pareceres +{added}")
 PYEOF
 
-  echo "[3/3] generate-pld-risk-scores.py ..."
+  echo "[3/6] generate-pld-risk-scores.py ..."
   python pepito-frontend/.tools/generate-pld-risk-scores.py
 
-  echo "[4/4] gerando sugestões IA para casos novos (Liderança + Analista) ..."
+  # Reativado 2026-09-11 — este passo tinha ficado de fora deste script desde
+  # sempre (só refresh-daily.sh chamava, e esse LaunchAgent está morto desde
+  # abril/2026): sem ele, NENHUM caso novo recebe dupla-verificação real
+  # JusBrasil/Tesserati/WebSearch — o Pepito só exibia o texto bruto vindo da
+  # tabela externa ("processos não encontrados"), sem nenhuma checagem própria
+  # (achado real: draft 98deb27d, 2026-09-11). Modo padrão (sem --force) só
+  # processa draft_ids ainda ausentes de media-findings.json — nunca reprocessa
+  # o que já foi coberto, então o custo de quota cresce só com o backlog novo.
+  # ATENÇÃO: cota JusBrasil está em 312/325 (96%) — ver jusbrasil-usage.json;
+  # quando estourar, os casos excedentes recebem o placeholder de "verificação
+  # manual necessária" (_FINDING_LIMITE_ATINGIDO), não um erro.
+  echo "[4/6] fetch-media-findings.py — dupla-verificação JusBrasil/Tesserati/WebSearch (casos novos) ..."
+  python pepito-frontend/.tools/fetch-media-findings.py || echo "  aviso: fetch-media-findings falhou (ver log acima)"
+
+  echo "[5/6] gerando sugestões IA para casos novos (Liderança + Analista) ..."
   if [ -n "${LITELLM_API_KEY:-}" ] && [ -n "${LITELLM_BASE_URL:-}" ]; then
     python pepito-frontend/.tools/generate-sugestao-lideranca.py || echo "  aviso: gerador Liderança falhou"
     python pepito-frontend/.tools/generate-sugestao-parecer.py    || echo "  aviso: gerador Analista falhou"
@@ -99,7 +113,7 @@ PYEOF
     echo "  LITELLM_API_KEY/BASE_URL ausentes — pulando geração de sugestões IA"
   fi
 
-  echo "[5/5] npm run build — dist/ importa os JSONs em build-time; sem rebuildar,"
+  echo "[6/6] npm run build — dist/ importa os JSONs em build-time; sem rebuildar,"
   echo "  casos/pareceres sincronizados agora continuam invisíveis no app publicado."
   (cd pepito-frontend && npm run build)
 

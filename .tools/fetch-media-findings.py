@@ -113,8 +113,13 @@ _FINDING_LIMITE_ATINGIDO = {
     "match": "N/A — consulta automática não realizada por limite de quota",
 }
 
-TESS_ACCESS_KEY = os.environ.get("TESSERATI_ACCESS_KEY", "")
-TESS_BASE = os.environ.get("TESSERATI_API_BASE", "https://api.tesserati.com.br")
+# TESSERATI_ACCESS_KEY nunca existiu em nenhum .env do projeto — a variável
+# dedicada e comentada desse serviço (mesmo domínio api.tesserati.com.br) é
+# CREDILINK_API_KEY (ver CLAUDE.md raiz). Sem este fallback, _tess_auth()
+# sempre recebia TESS_ACCESS_KEY="" e consultar_tesserati() retornava [] em
+# silêncio — nenhuma consulta Tesserati real era feita (achado 2026-09-11).
+TESS_ACCESS_KEY = os.environ.get("TESSERATI_ACCESS_KEY") or os.environ.get("CREDILINK_API_KEY", "")
+TESS_BASE = os.environ.get("TESSERATI_API_BASE") or os.environ.get("CREDILINK_API_BASE", "https://api.tesserati.com.br")
 _tess_token: str | None = None  # cached JWT (válido 24h)
 
 
@@ -201,6 +206,12 @@ def consultar_tesserati(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
                 })
 
     # ── 2. Processos Tribunais (civil + criminal) ─────────────────────────────
+    # Antes deste fix (2026-09-11), processos não-criminais eram descartados em
+    # silêncio pela list comprehension — o analista via "sem processos" mesmo
+    # havendo processo cível/trabalhista real e ativo. Agora TODO processo vira
+    # achado: criminal escala risco a "alto" + recomenda REPROVAÇÃO; os demais
+    # (cível/trabalhista/etc.) entram como achado informativo de risco baixo,
+    # sem escalar a decisão — mas nunca mais somem do resultado.
     if cpf_clean:
         r = _tess_get("api/ProcessoTribunalJustica", {"cpf": cpf_clean})
         result = r.get("result")
@@ -209,6 +220,7 @@ def consultar_tesserati(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
             criminais = [l for l in lawsuits if "CRIMINAL" in ((l.get("courtType") or "") + (l.get("type") or "")).upper()
                         or "PENAL" in (l.get("mainSubject") or "").upper()
                         or "CRIME" in (l.get("mainSubject") or "").upper()]
+            nao_criminais = [l for l in lawsuits if l not in criminais]
             if criminais:
                 tip_list = [l.get("mainSubject","")[:60] for l in criminais[:3]]
                 findings.append({
@@ -220,10 +232,25 @@ def consultar_tesserati(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
                         f"Fonte: base consolidada de tribunais brasileiros."
                     ),
                     "source": "Tesserati — ProcessoTribunalJustica",
-                    "risk_indicator": "alto" if criminais else "medio",
+                    "risk_indicator": "alto",
                     "tipo": "processo",
                     "match": f"CPF {cpf}",
-                    "decisao_recomendada": f"REPROVAÇÃO — {len(criminais)} processo(s) criminal(is) confirmado(s) via Tesserati." if criminais else "",
+                    "decisao_recomendada": f"REPROVAÇÃO — {len(criminais)} processo(s) criminal(is) confirmado(s) via Tesserati.",
+                })
+            if nao_criminais:
+                tip_list_nc = [l.get("mainSubject","")[:60] for l in nao_criminais[:3]]
+                findings.append({
+                    "title": f"Tesserati — Processos não-criminais ({len(nao_criminais)}) — {nome}",
+                    "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+                    "snippet": (
+                        f"{nome} tem {len(nao_criminais)} processo(s) não-criminal(is) (cível/trabalhista/outro) "
+                        f"via Tesserati. Assuntos: {'; '.join(tip_list_nc)}. "
+                        f"Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar."
+                    ),
+                    "source": "Tesserati — ProcessoTribunalJustica",
+                    "risk_indicator": "baixo",
+                    "tipo": "processo",
+                    "match": f"CPF {cpf}",
                 })
 
     # ── 3. Mídias Negativas ───────────────────────────────────────────────────
@@ -426,14 +453,19 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
             "match": f"CPF {cpf} — {len(criminal_outros)} processo(s) sem polo passivo crítico",
         })
     else:
-        # Explícito: nenhum processo criminal encontrado via API
+        # Explícito: nenhum processo CRIMINAL encontrado via API — o contrato
+        # JusBrasil Background Check só cobre criminal/BNMP/MP (não tem
+        # endpoint cível/trabalhista); o snippet deixa esse escopo explícito
+        # para não passar a impressão de "nenhum processo" no sentido amplo.
         findings.append({
             "title": f"JusBrasil API: nenhum processo criminal — {nome_api}",
             "url": "https://www.jusbrasil.com.br/processos/",
             "snippet": (
                 f"Consulta à JusBrasil Background Check API (produção) para CPF {cpf} "
                 f"não retornou processos criminais. "
-                f"Total retornado: {total}. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP."
+                f"Total retornado: {total}. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. "
+                f"ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — "
+                f"ver achado Tesserati (ProcessoTribunalJustica) para essa cobertura."
             ),
             "source": "JusBrasil Background Check API (produção)",
             "risk_indicator": "baixo",
@@ -686,7 +718,12 @@ def pesquisar_caso(case: dict) -> list[dict]:
     # Cobre tanto PEP titular (tipo T / owner direto) quanto PEP relacionado
     # (tipo R / qualquer vínculo familiar ou societário). A Credilink já fez a
     # identificação; aqui verificamos registros criminais/adversidades.
-    cpfs_consultados: set[str] = set()  # evita duplicatas se mesmo CPF aparecer duas vezes
+    # cpf_owner entra pré-marcado como já consultado: quando o owner É o PEP
+    # titular (cpf_titular == cpf_owner), sem isso o loop reconsultava o MESMO
+    # CPF pela 2ª vez (já verificado no passo "owner" acima) — desperdício de
+    # cota JusBrasil/Tesserati num contrato com margem apertada (achado
+    # 2026-09-11, draft 98deb27d: cota em 312/325).
+    cpfs_consultados: set[str] = {re.sub(r"\D", "", cpf_owner or "")}
 
     for pep in pep_list:
         cpf_pep = pep.get("cpf_titular", "")

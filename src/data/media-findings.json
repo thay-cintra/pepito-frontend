@@ -4184,5 +4184,115 @@
       "tipo": "midia",
       "match": "Contexto regional sem corrupção municipal vinculada ao PEP (M7)"
     }
+  ],
+  "98deb27d-7534-429e-8089-a458b07bde50": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — ALAN SALVIANO LIMA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 634.824.103-30 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — ver achado Tesserati (ProcessoTribunalJustica) para essa cobertura.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 634.824.103-30 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "Tesserati — Processos não-criminais (4) — Alan Salviano Lima",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Alan Salviano Lima tem 4 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: DIVIDA ATIVA; LIMINAR; DIREITO ELEITORAL (11428) | ELEICOES (11583) | TRANSGRESSOES. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Tesserati — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 634.824.103-30"
+    },
+    {
+      "title": "Alan Salviano Lima — Perfil Oficial de Vereador (Câmara Municipal de Várzea Alegre)",
+      "url": "https://camaravarzeaalegre.ce.gov.br/vereadores/19",
+      "snippet": "Vereador Alan Salviano Lima (MDB), nascido em 25/12/1978 em Várzea Alegre-CE. Requerimentos de autoria do vereador aprovados na 18ª e 19ª Sessões Ordinárias do 1º Período Legislativo de 2026, confirmando mandato ativo.",
+      "source": "Câmara Municipal de Várzea Alegre — Portal Oficial",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação de mandato ativo como Vereador em Várzea Alegre-CE (2025–2028), com atividade parlamentar registrada em maio/2026"
+    },
+    {
+      "title": "Alan Salviano Lima — Diárias concedidas pela Câmara Municipal",
+      "url": "https://camaravarzeaalegre.ce.gov.br/diariaslista/191",
+      "snippet": "Concessão ao Vereador Alan Salviano Lima de 2 diárias no valor de R$ 560,00 para deslocamento à cidade de Fortaleza, registrada no portal de transparência da Câmara.",
+      "source": "Câmara Municipal de Várzea Alegre — Portal Oficial",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1/M4 — Confirmação de exercício do mandato; sem irregularidade identificada na concessão de diárias"
+    },
+    {
+      "title": "Alan Salviano Lima — Presidente da Câmara por dois mandatos; eleito vereador em 2017 e reeleito",
+      "url": "https://varzeaalegreagora.com/camara-de-vereadores-entrega-comenda-vereador-joaquim-inacio-a-11-ex-presidentes/",
+      "snippet": "Alan Salviano Lima (MDB) exerceu a presidência do Legislativo em 2017 (1º mandato) e em 2021 (2º mandato), sendo reeleito presidente para o biênio 2023/2024. Conhecido pela construção da sede do Poder Legislativo de Várzea Alegre.",
+      "source": "Várzea Alegre Agora — Portal de Notícias Regional",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Histórico de mandatos confirmado: vereador desde 2017, atualmente no 3º mandato (2025–2028)"
+    },
+    {
+      "title": "Alan Salviano Lima — Reeleito presidente da Câmara Municipal (dezembro/2022)",
+      "url": "https://varzeaalegreagora.com/alan-salviano-e-reeleito-presidente-da-camara-de-vereadores/",
+      "snippet": "O vereador Alan Salviano (MDB) foi reeleito presidente da Câmara Municipal de Vereadores em dezembro de 2022, conduzindo a mesa diretora até 2024. Em dois mandatos, conquistou sede própria do Poder Legislativo.",
+      "source": "Várzea Alegre Agora — Portal de Notícias Regional",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Confirmação de trajetória pública contínua; zero ocorrência de mídia adversa vinculada ao PEP neste resultado"
+    },
+    {
+      "title": "MPCE — Ação Penal em segredo de Justiça contra prefeito de Várzea Alegre e 17 pessoas (2023)",
+      "url": "https://mais.opovo.com.br/reportagens-especiais/2023/10/30/suspeita-de-irregularidades-mpce-realizou-21-operacoes-em-pelo-menos-13-prefeituras.html",
+      "snippet": "Em Várzea Alegre, está em curso uma ação penal em segredo de Justiça contra o prefeito e outras 17 pessoas, sendo 11 delas ex-agentes públicos. O MPCE realizou 21 operações em pelo menos 13 prefeituras cearenses desde 2021.",
+      "source": "O POVO+ — Reportagem Especial (30/10/2023)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "M7 — Contexto regional de risco: município-sede do PEP possui ação penal ativa contra o Executivo Municipal; o PEP (Vereador, Poder Legislativo) não é citado nominalmente, mas o ambiente institucional é de elevado escrutínio do MPCE"
+    },
+    {
+      "title": "MPCE — Operação Arquimedes: irregularidades em licitação de kits pedagógicos na Prefeitura de Várzea Alegre (jan/2026)",
+      "url": "https://diariodonordeste.verdesmares.com.br/pontopoder/mp-investiga-irregularidades-na-compra-de-kits-pedagogicos-em-varzea-alegre-ce-1.3735689",
+      "snippet": "O MPCE deflagrou a Operação Arquimedes na Prefeitura de Várzea Alegre para investigar suspeitas de irregularidades em licitação de kits de matemática. Prejuízo estimado ao erário de R$ 852 mil. Mandados de busca e apreensão cumpridos na Secretaria de Educação e sede da prefeitura.",
+      "source": "Diário do Nordeste — PontoPoder (22/01/2026)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "M7 — Operação policial/MP diretamente no município-sede do PEP em jan/2026; PEP (Vereador) não é nominado; risco de contexto institucional adverso relevante para due diligence"
+    },
+    {
+      "title": "MPCE — Ação Civil Pública para anular contrato milionário sem licitação firmado pela Prefeitura de Várzea Alegre (abr/2025)",
+      "url": "https://mpce.mp.br/2025/04/mp-do-ceara-ajuiza-acao-para-anular-contrato-milionario-celebrado-sem-licitacao-pela-prefeitura-de-varzea-alegre/",
+      "snippet": "O MPCE ajuizou Ação Civil Pública (proc. nº 3000341-98.2025.8.06.0181) para anular contratos administrativos firmados sem licitação pela Prefeitura de Várzea Alegre, com pagamento superior a R$ 11 milhões em honorários advocatícios, após constatação de graves irregularidades na contratação direta de escritório de advocacia.",
+      "source": "MPCE — Site Oficial (25/04/2025)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "M7/M4 — Irregularidade grave de contratação direta (inexigibilidade suspeita) na Prefeitura de Várzea Alegre; processo ativo em 2025; PEP não citado nominalmente"
+    },
+    {
+      "title": "Polícia Civil do Ceará — Operação de combate ao crime organizado em Várzea Alegre (dez/2024)",
+      "url": "https://www.policiacivil.ce.gov.br/2024/12/20/operacao-da-policia-civil-resulta-em-dois-suspeitos-presos-e-na-apreensao-de-drogas-em-varzea-alegre/",
+      "snippet": "A PCCE deflagrou operação com cumprimento de mandados de busca e apreensão em desfavor de alvos investigados por integrar grupo criminoso com atuação no município de Várzea Alegre (AIS 21 do Ceará), resultando em prisões e apreensão de drogas.",
+      "source": "Polícia Civil do Estado do Ceará — Site Oficial (20/12/2024)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "M7 — Operação policial no município; voltada a crime organizado/tráfico, sem vínculo com o PEP ou o OWNER identificado"
+    },
+    {
+      "title": "Portal da Transparência Federal — CNPJ 50.321.708/0001-12: sem registros de contratos federais encontrados via busca",
+      "url": "https://portaldatransparencia.gov.br/pessoa-juridica/50321708000112",
+      "snippet": "A busca pelo CNPJ 50.321.708/0001-12 no Portal da Transparência do Governo Federal (CGU) não retornou contratos, transferências ou sanções federais vinculados à pessoa jurídica nas buscas realizadas. Recomenda-se consulta direta à URL do portal para confirmação.",
+      "source": "Portal da Transparência — CGU (consulta set/2026)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M6 — Ausência de contratos federais identificados para o CNPJ do OWNER via pesquisa de mídia; verificação direta no portal recomendada para conclusão definitiva"
+    },
+    {
+      "title": "Câmara Municipal de Várzea Alegre — Ofício 225/2026 assinado pelo Vereador Alan Salviano Lima (abr/2026)",
+      "url": "https://camaravarzeaalegre.ce.gov.br/materias/8771",
+      "snippet": "Moção de Aplausos de autoria do Vereador Alan Salviano Lima, aprovada por unanimidade na 13ª Sessão Ordinária do 1º Período Legislativo em 15/04/2026, confirmando atuação parlamentar ativa em 2026.",
+      "source": "Câmara Municipal de Várzea Alegre — Portal Oficial (15/04/2026)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "M1 — Evidência documental mais recente de mandato ativo: atividade legislativa registrada em abril/2026"
+    }
   ]
 }

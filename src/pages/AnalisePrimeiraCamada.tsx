@@ -159,6 +159,13 @@ export function AnalisePrimeiraCamada() {
   const update = (patch: Partial<ClienteData>) => setCliente((c) => ({ ...c, ...patch }));
 
   // Credilink: se o caso já tem token real (Athena), exibe diretamente; caso contrário não chama mock
+  //
+  // IMPORTANTE (achado real 2026-09-11, draft ca6eac08): este token
+  // (caso.token_pf_cred) é SEMPRE da consulta ao CPF do TITULAR DA CONTA —
+  // a Credilink não realiza consulta individual pelo CPF do PEP relacionado
+  // neste pipeline. `nomeConsultado` reflete isso (nome do titular, não do
+  // PEP) para não criar o par falso "nome do PEP + token que nunca consultou
+  // esse CPF" que a versão anterior desta tela exibia.
   useEffect(() => {
     if (cliente.tipoPep !== "relacionado" || !cliente.cpfPepTitular) return;
     // Token real disponível — exibe sem chamar API mock
@@ -167,7 +174,7 @@ export function AnalisePrimeiraCamada() {
         numeroToken: cliente.credilinkNumeroToken,
         linkDossie: cliente.credilinkLinkDossie || "",
         consultadoEm: new Date().toISOString(),
-        nomeConsultado: cliente.nomePessoaVinculada,
+        nomeConsultado: cliente.nomeResponsavel,
       });
       return;
     }
@@ -511,10 +518,12 @@ export function AnalisePrimeiraCamada() {
             <Card className="border-indigo-300 bg-indigo-50/30 dark:bg-indigo-950/20 dark:border-indigo-800">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-indigo-700 dark:text-indigo-300">
-                  <ShieldCheck className="h-5 w-5" /> Consulta Credilink (Tessera)
+                  <ShieldCheck className="h-5 w-5" /> Consulta Credilink (Tessera) — titular da conta
                 </CardTitle>
                 <CardDescription>
-                  Consulta disparada automaticamente via API para o CPF do PEP titular.
+                  Token da consulta Credilink já feita para o CPF do titular da conta ({cliente.cpfResponsavel || "—"}).
+                  A Credilink não realiza consulta individual pelo CPF do PEP relacionado — valide o PEP
+                  separadamente (JusBrasil/Tesserati/CNJ).
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -531,20 +540,20 @@ export function AnalisePrimeiraCamada() {
                   <div className="space-y-3">
                     <div className="rounded-md bg-indigo-100/60 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 p-3 text-xs space-y-2">
                       <div className="flex items-center gap-2">
-                        <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[120px]">CPF consultado:</span>
-                        <span className="font-mono">{cliente.cpfPepTitular}</span>
+                        <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">CPF consultado (titular):</span>
+                        <span className="font-mono">{cliente.cpfResponsavel || "—"}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[120px]">Nome PEP:</span>
+                        <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Nome titular:</span>
                         <span>{credilinkResultado.nomeConsultado}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[120px]">Nº do token:</span>
+                        <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Nº do token:</span>
                         <span className="font-mono font-semibold">{credilinkResultado.numeroToken}</span>
                       </div>
                       {credilinkResultado.linkDossie ? (
                         <div className="flex items-start gap-2">
-                          <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[120px]">Dossiê:</span>
+                          <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Dossiê:</span>
                           <a href={credilinkResultado.linkDossie} target="_blank" rel="noopener noreferrer"
                             className="underline text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 break-all">
                             {credilinkResultado.linkDossie}
@@ -552,18 +561,20 @@ export function AnalisePrimeiraCamada() {
                         </div>
                       ) : (
                         <div className="flex items-start gap-2">
-                          <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[120px]">Dossiê:</span>
+                          <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Dossiê:</span>
                           <span className="text-muted-foreground italic text-[11px]">Acesse manualmente em Tessera/Credilink com o token acima.</span>
                         </div>
                       )}
                       <div className="flex items-center gap-2 text-muted-foreground">
-                        <span className="min-w-[120px]">Consultado em:</span>
+                        <span className="min-w-[160px]">Consultado em:</span>
                         <span>{new Date(credilinkResultado.consultadoEm).toLocaleString("pt-BR")}</span>
                       </div>
                     </div>
-                    <p className="text-[10px] text-muted-foreground">
-                      Dados preenchidos automaticamente via API Tessera/Credilink. Token e dossiê salvos na análise.
-                    </p>
+                    <div className="rounded-md border border-amber-200 dark:border-amber-700 bg-amber-50/40 dark:bg-amber-950/20 p-2 text-[11px] text-amber-800 dark:text-amber-300">
+                      ⚠️ PEP {cliente.nomePessoaVinculada || "relacionado"} (CPF {cliente.cpfPepTitular}) NÃO foi
+                      consultado individualmente na Credilink — o token acima é do titular da conta. Valide o
+                      PEP por fonte separada antes de concluir a análise.
+                    </div>
                   </div>
                 )}
                 {!credilinkConsultando && !credilinkResultado && !cliente.cpfPepTitular && (

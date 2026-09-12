@@ -273,7 +273,7 @@ export function NovaAnalise() {
               <Info label="CPF PEP titular" value={analise.cliente.cpfPepTitular} />
             )}
             {analise.cliente.tipoPep === "relacionado" && analise.cliente.credilinkNumeroToken && (
-              <Info label="Token Credilink" value={analise.cliente.credilinkNumeroToken} />
+              <Info label="Token Credilink (titular da conta)" value={analise.cliente.credilinkNumeroToken} />
             )}
             {analise.cliente.tipoPep === "relacionado" && analise.cliente.credilinkLinkDossie && (
               <Info label="Dossiê Credilink" value="↗ ver link abaixo" />
@@ -288,7 +288,7 @@ export function NovaAnalise() {
           </div>
           {analise.cliente.tipoPep === "relacionado" && analise.cliente.credilinkLinkDossie && (
             <div className="rounded-md border border-indigo-200 dark:border-indigo-700 bg-indigo-50/30 dark:bg-indigo-950/20 px-3 py-2 text-xs flex items-center gap-2">
-              <span className="font-semibold text-indigo-700 dark:text-indigo-300">Dossiê Credilink:</span>
+              <span className="font-semibold text-indigo-700 dark:text-indigo-300">Dossiê Credilink (titular da conta):</span>
               <a
                 href={analise.cliente.credilinkLinkDossie}
                 target="_blank"
@@ -297,6 +297,20 @@ export function NovaAnalise() {
               >
                 {analise.cliente.credilinkLinkDossie}
               </a>
+            </div>
+          )}
+          {/* A Credilink consulta e emite token só para o titular da conta —
+              não existe consulta/token individual para o CPF do PEP relacionado
+              nesse pipeline. Achado real 2026-09-11 (draft ca6eac08): o token
+              acima estava sendo lido como se fosse do PEP. Este aviso evita a
+              mesma confusão até existir uma consulta de fato dedicada ao PEP. */}
+          {analise.cliente.tipoPep === "relacionado" && (
+            <div className="rounded-md border border-amber-200 dark:border-amber-700 bg-amber-50/40 dark:bg-amber-950/20 px-3 py-2 text-xs text-amber-800 dark:text-amber-300">
+              ⚠️ O token/dossiê Credilink acima é da consulta ao <strong>titular da conta</strong>
+              {analise.cliente.nomeResponsavel ? ` (${analise.cliente.nomeResponsavel})` : ""}, não do PEP{" "}
+              {analise.cliente.nomePessoaVinculada || "relacionado"}. A Credilink não realiza consulta
+              individual pelo CPF do PEP nesse fluxo — validar o vínculo/registros do PEP por fonte
+              separada (JusBrasil/Tesserati/CNJ) antes de concluir a análise.
             </div>
           )}
           {/* Síntese da análise (analise_geral + achados) */}
