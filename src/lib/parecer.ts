@@ -72,7 +72,7 @@ function templateFalsoPositivo(c: ClienteData, achadosRelevantes: ResultadoPesqu
         .join(", ")}) — CONFERIR antes de confirmar falso positivo, pois esse número diverge do ` +
       `esperado para essa classificação.`;
   return (
-    `Após dupla verificação junto à base Credilink (Tessera) e varredura em fontes públicas ` +
+    `Após dupla verificação junto à base Credilink e varredura em fontes públicas ` +
     `(mídia, processos judiciais, sanções e contratos públicos), não foi confirmado vínculo ` +
     `com Pessoa Politicamente Exposta para o titular ${titular} (CPF ${cpf}). ` +
     `O acionamento da fila PLD decorreu de coincidência cadastral ou similaridade de dados, ` +
@@ -89,7 +89,7 @@ function corpoTemplate(c: ClienteData, status: StatusAnalise, resultados: Result
   // Achados que uma alegação de "ausência total" precisa respeitar: reais
   // (não descartados) e CONFIRMADOS (não pendente_verificacao — deep-link
   // nunca aberto não é achado, é só um link). Risco "baixo" NÃO é excluído:
-  // um processo cível/trabalhista real do Tesserati (risco baixo, mas achado
+  // um processo cível/trabalhista real do Credilink (risco baixo, mas achado
   // de fato confirmado) contradiz "ausência total" tanto quanto um achado de
   // risco alto — a v1 deste filtro excluía todo risco baixo e continuava
   // deixando esses achados reais invisíveis pro parecer (achado Codex #8,

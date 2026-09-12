@@ -23,7 +23,7 @@ import { formatDate } from "@/lib/utils";
 import { storage, isQuotaExceeded } from "@/lib/storage";
 import { synthesizeAnalise, markTaken } from "@/lib/registration-queue";
 import type { RegistrationCase } from "@/types/registration";
-import { inferCargoOrgao, inferTipoPep, getSugestaoParecer, getSugestaoLideranca, vinculoLabel, getPldRiskScore, getConsultaStatus } from "@/data/registration-enrich";
+import { inferCargoOrgao, inferTipoPep, getSugestaoParecer, getSugestaoLideranca, vinculoLabel, getPldRiskScore, getConsultaStatus, getCredilinkTokens, getLinksManuais } from "@/data/registration-enrich";
 import type { PldRiskScore } from "@/data/registration-enrich";
 import { StatusBadge } from "@/components/RiscoBadge";
 import { HistoricoComentarios } from "@/components/HistoricoComentarios";
@@ -53,6 +53,7 @@ export function RegistrationCaseCard({ caso }: Props) {
   const tipoPep = inferTipoPep(caso);
   const riskScore = getPldRiskScore(caso.draft_id);
   const consultaStatus = getConsultaStatus(caso, tipoPep);
+  const credilinkTokens = getCredilinkTokens(caso, tipoPep);
 
   const handleAbrir = () => {
     if (caso.bucket === "CHECK_LIDERANCA") {
@@ -81,15 +82,24 @@ export function RegistrationCaseCard({ caso }: Props) {
     }
   };
 
-  // Agrupa os links por categoria (a partir dos resultados que já têm link)
-  const linksAgrupados = caso.resultados_pesquisa
-    .filter((r) => !!r.link)
-    .reduce<Record<string, typeof caso.resultados_pesquisa>>((acc, r) => {
-      const cat = categoriaDe(r.fonte);
-      acc[cat] ||= [];
-      acc[cat].push(r);
-      return acc;
-    }, {});
+  // Agrupa os links por categoria — achados reais (com link) + deep-links de
+  // referência pra consulta manual pontual (getLinksManuais, separados da
+  // lista de Resultados de Pesquisa desde 2026-09-12: achado Codex, sem isso
+  // o Analista/Liderança ficava sem NENHUM caminho pra conferir uma fonte que
+  // o WebSearch não cobriu). Fonte já com achado real não repete o deep-link.
+  const fontesComAchado = new Set(caso.resultados_pesquisa.filter((r) => !!r.link).map((r) => r.fonte.toLowerCase()));
+  const linkItems: Array<{ id: string; fonte: string; link: string }> = [
+    ...caso.resultados_pesquisa.filter((r): r is typeof r & { link: string } => !!r.link),
+    ...getLinksManuais(caso)
+      .filter((l) => !fontesComAchado.has(l.fonte.toLowerCase()))
+      .map((l) => ({ id: l.fonte, fonte: l.fonte, link: l.url })),
+  ];
+  const linksAgrupados = linkItems.reduce<Record<string, typeof linkItems>>((acc, r) => {
+    const cat = categoriaDe(r.fonte);
+    acc[cat] ||= [];
+    acc[cat].push(r);
+    return acc;
+  }, {});
 
   return (
     <Card
@@ -128,24 +138,53 @@ export function RegistrationCaseCard({ caso }: Props) {
         </div>
       </CardHeader>
       <CardContent className="space-y-3">
-        {/* Status de consulta Credilink + JusBrasil/Tesserati — no topo por
+        {/* Status de consulta Credilink + JusBrasil/Credilink — no topo por
             pedido de thay@cora.com.br (2026-09-11): é o dado mais crítico
-            pra decisão, tanto pro Analista quanto pra Liderança. */}
-        <div className="flex flex-wrap items-center gap-1.5">
-          <Badge variant={consultaStatus.credilinkPepOk ? "success" : "destructive"} className="text-[10px]">
-            <ShieldCheck className="h-3 w-3 mr-1" />
-            Credilink {tipoPep === "titular" ? "(titular)" : "(PEP)"}: {consultaStatus.credilinkPepOk ? "OK" : "pendente"}
-          </Badge>
-          <Badge variant={consultaStatus.jusbrasilOk ? "success" : "destructive"} className="text-[10px]">
-            <ShieldCheck className="h-3 w-3 mr-1" />
-            JusBrasil/Tesserati: {consultaStatus.jusbrasilOk ? "OK" : "pendente"}
-          </Badge>
-        </div>
-        {!consultaStatus.tudoOk && (
-          <div className="rounded-md border border-amber-300 dark:border-amber-700 bg-amber-50/50 dark:bg-amber-950/20 p-2 text-[11px] text-amber-800 dark:text-amber-300 space-y-0.5">
-            {!consultaStatus.credilinkPepOk && <p>⚠️ Credilink: {consultaStatus.credilinkPepMotivo}</p>}
-            {!consultaStatus.jusbrasilOk && <p>⚠️ JusBrasil/Tesserati: {consultaStatus.jusbrasilMotivo}</p>}
+            pra decisão, tanto pro Analista quanto pra Liderança.
+            Na fila da Liderança (2026-09-12): a investigação já foi validada
+            na 1ª camada — só os números de token ficam visíveis, pra
+            reconsulta manual pontual se necessário, sem repetir o status. */}
+        {caso.bucket === "CHECK_LIDERANCA" ? (
+          <div className="flex flex-wrap items-center gap-1.5 rounded-md bg-muted/30 border p-2 text-[11px] font-mono">
+            <span className="text-muted-foreground font-sans font-semibold">Token Credilink —</span>
+            <span>Titular: {credilinkTokens.titular || "—"}</span>
+            {tipoPep === "relacionado" && (
+              <>
+                <span>·</span>
+                {credilinkTokens.peps.length > 0 ? (
+                  credilinkTokens.peps.map((p) => (
+                    <span
+                      key={p.cpf}
+                      title={p.token ? undefined : "Token ainda não aparece no bundle publicado — se a consulta já rodou, pode precisar de rebuild (credilink-pep-consultas.json é import estático)."}
+                    >
+                      PEP ({p.cpf}): {p.token || "— (ver ledger/rebuild)"}
+                    </span>
+                  ))
+                ) : (
+                  <span>PEP: —</span>
+                )}
+              </>
+            )}
           </div>
+        ) : (
+          <>
+            <div className="flex flex-wrap items-center gap-1.5">
+              <Badge variant={consultaStatus.credilinkPepOk ? "success" : "destructive"} className="text-[10px]">
+                <ShieldCheck className="h-3 w-3 mr-1" />
+                Credilink {tipoPep === "titular" ? "(titular)" : "(PEP)"}: {consultaStatus.credilinkPepOk ? "OK" : "pendente"}
+              </Badge>
+              <Badge variant={consultaStatus.jusbrasilOk ? "success" : "destructive"} className="text-[10px]">
+                <ShieldCheck className="h-3 w-3 mr-1" />
+                JusBrasil/Credilink: {consultaStatus.jusbrasilOk ? "OK" : "pendente"}
+              </Badge>
+            </div>
+            {!consultaStatus.tudoOk && (
+              <div className="rounded-md border border-amber-300 dark:border-amber-700 bg-amber-50/50 dark:bg-amber-950/20 p-2 text-[11px] text-amber-800 dark:text-amber-300 space-y-0.5">
+                {!consultaStatus.credilinkPepOk && <p>⚠️ Credilink: {consultaStatus.credilinkPepMotivo}</p>}
+                {!consultaStatus.jusbrasilOk && <p>⚠️ JusBrasil/Credilink: {consultaStatus.jusbrasilMotivo}</p>}
+              </div>
+            )}
+          </>
         )}
 
         {/* PEP / PF */}

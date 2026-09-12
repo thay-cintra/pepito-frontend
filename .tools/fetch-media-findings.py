@@ -136,76 +136,79 @@ def _finding_erro_consulta(motivo: str, cpf: str, nome: str) -> dict:
 
 # TESSERATI_ACCESS_KEY nunca existiu em nenhum .env do projeto — a variável
 # dedicada e comentada desse serviço (mesmo domínio api.tesserati.com.br) é
-# CREDILINK_API_KEY (ver CLAUDE.md raiz). Sem este fallback, _tess_auth()
-# sempre recebia TESS_ACCESS_KEY="" e consultar_tesserati() retornava [] em
-# silêncio — nenhuma consulta Tesserati real era feita (achado 2026-09-11).
-TESS_ACCESS_KEY = os.environ.get("TESSERATI_ACCESS_KEY") or os.environ.get("CREDILINK_API_KEY", "")
-TESS_BASE = os.environ.get("TESSERATI_API_BASE") or os.environ.get("CREDILINK_API_BASE", "https://api.tesserati.com.br")
-_tess_token: str | None = None  # cached JWT (válido 24h)
+# CREDILINK_API_KEY (ver CLAUDE.md raiz). Sem este fallback, _credilink_auth()
+# sempre recebia CREDILINK_ACCESS_KEY="" e consultar_credilink() retornava [] em
+# silêncio — nenhuma consulta Credilink real era feita (achado 2026-09-11).
+CREDILINK_ACCESS_KEY = os.environ.get("TESSERATI_ACCESS_KEY") or os.environ.get("CREDILINK_API_KEY", "")
+CREDILINK_BASE_URL = os.environ.get("TESSERATI_API_BASE") or os.environ.get("CREDILINK_API_BASE", "https://api.tesserati.com.br")
+_credilink_token: str | None = None  # cached JWT (válido 24h)
 
 
-def _tess_auth() -> str | None:
-    """Obtém (ou reutiliza) o JWT da Tesserati API."""
-    global _tess_token
-    if _tess_token or not TESS_ACCESS_KEY:
-        return _tess_token
+def _credilink_auth() -> str | None:
+    """Obtém (ou reutiliza) o JWT da Credilink API."""
+    global _credilink_token
+    if _credilink_token or not CREDILINK_ACCESS_KEY:
+        return _credilink_token
     try:
         resp = _JUS_SESSION.post(
-            f"{TESS_BASE}/api/Autenticar",
-            json={"accessKey": TESS_ACCESS_KEY},
+            f"{CREDILINK_BASE_URL}/api/Autenticar",
+            json={"accessKey": CREDILINK_ACCESS_KEY},
             headers={"Content-Type": "application/json"},
             timeout=15,
         )
         if resp.status_code == 200:
             data = resp.json()
             if data.get("authenticated"):
-                _tess_token = data["accessToken"]
-                return _tess_token
-        print(f"      Tesserati auth falhou: {resp.status_code} {resp.text[:100]}")
+                _credilink_token = data["accessToken"]
+                return _credilink_token
+        print(f"      Credilink auth falhou: {resp.status_code} {resp.text[:100]}")
     except Exception as e:
-        print(f"      Tesserati auth erro: {e}")
+        print(f"      Credilink auth erro: {e}")
     return None
 
 
-def _tess_get(endpoint: str, params: dict) -> dict:
-    """GET autenticado na Tesserati API."""
-    token = _tess_auth()
+def _credilink_get(endpoint: str, params: dict) -> dict:
+    """GET autenticado na Credilink API. Retorna {"_erro": <motivo>} em falha
+    (sem token, HTTP != 200, exceção) — distinto de {} legítimo, pra quem
+    chama não confundir "endpoint falhou" com "endpoint respondeu vazio"
+    (achado Codex #11, 2026-09-12; mesmo padrão já usado em _jus_post)."""
+    token = _credilink_auth()
     if not token:
-        return {}
+        return {"_erro": "sem autenticação Credilink"}
     try:
         resp = _JUS_SESSION.get(
-            f"{TESS_BASE}/{endpoint}",
+            f"{CREDILINK_BASE_URL}/{endpoint}",
             params=params,
             headers={"Authorization": f"Bearer {token}", "Accept": "application/json"},
             timeout=20,
         )
         if resp.status_code == 200:
             return resp.json()
-        print(f"      Tesserati GET {endpoint} HTTP {resp.status_code}: {resp.text[:100]}")
-        return {}
+        print(f"      Credilink GET {endpoint} HTTP {resp.status_code}: {resp.text[:100]}")
+        return {"_erro": f"HTTP {resp.status_code} em {endpoint}"}
     except Exception as e:
-        print(f"      Tesserati GET {endpoint} erro: {e}")
-        return {}
+        print(f"      Credilink GET {endpoint} erro: {e}")
+        return {"_erro": f"exceção em {endpoint}: {e}"}
 
 
 # Tipificações de listas sancionatórias que implicam alto risco
-TESS_LISTAS_ALTO = {
+CREDILINK_LISTAS_ALTO = {
     "ofac", "onu", "un", "interpol", "pep internacional", "terrorismo",
     "narcotráfico", "narcotrafico", "lavagem", "ceis", "cnep", "improbidade",
 }
 
 
-def consultar_tesserati(cpf: str, nome: str, cnpj: str = "", papel: str = "owner") -> list[dict]:
+def consultar_credilink(cpf: str, nome: str, cnpj: str = "", papel: str = "owner") -> list[dict]:
     """
-    Consulta Tesserati: MandadosPrisao, ProcessoTribunalJustica, MidiasNegativas,
+    Consulta Credilink: MandadosPrisao, ProcessoTribunalJustica, MidiasNegativas,
     Compliance (CEIS/CNEP) e ComplianceInternacional para CPF/nome.
     """
-    if not TESS_ACCESS_KEY:
+    if not CREDILINK_ACCESS_KEY:
         return [{
-            "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Erro de Consulta Tesserati",
+            "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Erro de Consulta Credilink",
             "url": "https://api.tesserati.com.br",
-            "snippet": f"CREDILINK_API_KEY/TESSERATI_ACCESS_KEY ausente — consulta Tesserati não disparada para {nome} (CPF {cpf}). NÃO é resultado negativo, é falha de configuração.",
-            "source": "Sistema Pepito — Erro de Consulta Tesserati",
+            "snippet": f"CREDILINK_API_KEY/TESSERATI_ACCESS_KEY ausente — consulta Credilink não disparada para {nome} (CPF {cpf}). NÃO é resultado negativo, é falha de configuração.",
+            "source": "Sistema Pepito — Erro de Consulta Credilink",
             "risk_indicator": "medio",
             "tipo": "processo",
             "match": "N/A — chave de API ausente",
@@ -215,33 +218,48 @@ def consultar_tesserati(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
     findings: list[dict] = []
 
     # Falha de autenticação (rede, credencial inválida): sem isso, todo
-    # _tess_get() abaixo devolve {} em silêncio e a função retorna [] —
+    # _credilink_get() abaixo devolve {} em silêncio e a função retorna [] —
     # indistinguível de "consultamos e não achamos nada" (achado Codex, 2026-09-11).
-    if not _tess_auth():
+    if not _credilink_auth():
         return [{
-            "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Erro de Consulta Tesserati",
+            "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Erro de Consulta Credilink",
             "url": "https://api.tesserati.com.br",
-            "snippet": f"Falha de autenticação na API Tesserati para {nome} (CPF {cpf}). NÃO foi possível consultar mandados/processos/mídias — NÃO é resultado negativo, é falha técnica.",
-            "source": "Sistema Pepito — Erro de Consulta Tesserati",
+            "snippet": f"Falha de autenticação na API Credilink para {nome} (CPF {cpf}). NÃO foi possível consultar mandados/processos/mídias — NÃO é resultado negativo, é falha técnica.",
+            "source": "Sistema Pepito — Erro de Consulta Credilink",
             "risk_indicator": "medio",
             "tipo": "processo",
             "match": "N/A — falha de autenticação",
         }]
 
+    def _erro_endpoint(endpoint_label: str, r: dict) -> None:
+        # Achado explícito de falha — nunca deixa "endpoint falhou" virar
+        # "endpoint não achou nada" em silêncio (achado Codex #11, 2026-09-12).
+        findings.append({
+            "title": f"⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Erro de Consulta Credilink ({endpoint_label})",
+            "url": "https://api.tesserati.com.br",
+            "snippet": f"Falha ao consultar {endpoint_label} na Credilink para {nome} (CPF {cpf}): {r.get('_erro')}. NÃO é resultado negativo.",
+            "source": "Sistema Pepito — Erro de Consulta Credilink",
+            "risk_indicator": "medio",
+            "tipo": "processo",
+            "match": f"N/A — falha técnica em {endpoint_label}",
+        })
+
     # ── 1. Mandados de Prisão ─────────────────────────────────────────────────
     if cpf_clean:
-        r = _tess_get("api/MandadosPrisao", {"cpf": cpf_clean})
+        r = _credilink_get("api/MandadosPrisao", {"cpf": cpf_clean})
+        if r.get("_erro"):
+            _erro_endpoint("MandadosPrisao", r)
         result = r.get("result")
         if result and isinstance(result, list) and len(result) > 0:
             for m in result:
                 findings.append({
-                    "title": f"Tesserati BNMP — Mandado de Prisão — {nome}",
+                    "title": f"Credilink BNMP — Mandado de Prisão — {nome}",
                     "url": "https://bnmp.cnj.jus.br/",
                     "snippet": (
-                        f"Mandado de prisão identificado via Tesserati para {nome} (CPF {cpf}). "
+                        f"Mandado de prisão identificado via Credilink para {nome} (CPF {cpf}). "
                         f"Dados: {json.dumps(m, ensure_ascii=False)[:200]}"
                     ),
-                    "source": "Tesserati — BNMP Nacional",
+                    "source": "Credilink — BNMP Nacional",
                     "risk_indicator": "alto",
                     "tipo": "processo",
                     "match": f"CPF {cpf}",
@@ -256,7 +274,9 @@ def consultar_tesserati(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
     # (cível/trabalhista/etc.) entram como achado informativo de risco baixo,
     # sem escalar a decisão — mas nunca mais somem do resultado.
     if cpf_clean:
-        r = _tess_get("api/ProcessoTribunalJustica", {"cpf": cpf_clean})
+        r = _credilink_get("api/ProcessoTribunalJustica", {"cpf": cpf_clean})
+        if r.get("_erro"):
+            _erro_endpoint("ProcessoTribunalJustica", r)
         result = r.get("result")
         if result and isinstance(result, dict):
             lawsuits = result.get("lawsuits", [])
@@ -267,30 +287,30 @@ def consultar_tesserati(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
             if criminais:
                 tip_list = [l.get("mainSubject","")[:60] for l in criminais[:3]]
                 findings.append({
-                    "title": f"Tesserati — Processos criminais ({len(criminais)}) — {nome}",
+                    "title": f"Credilink — Processos criminais ({len(criminais)}) — {nome}",
                     "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
                     "snippet": (
-                        f"{nome} tem {len(criminais)} processo(s) criminal(is) via Tesserati. "
+                        f"{nome} tem {len(criminais)} processo(s) criminal(is) via Credilink. "
                         f"Assuntos: {'; '.join(tip_list)}. "
                         f"Fonte: base consolidada de tribunais brasileiros."
                     ),
-                    "source": "Tesserati — ProcessoTribunalJustica",
+                    "source": "Credilink — ProcessoTribunalJustica",
                     "risk_indicator": "alto",
                     "tipo": "processo",
                     "match": f"CPF {cpf}",
-                    "decisao_recomendada": f"REPROVAÇÃO — {len(criminais)} processo(s) criminal(is) confirmado(s) via Tesserati.",
+                    "decisao_recomendada": f"REPROVAÇÃO — {len(criminais)} processo(s) criminal(is) confirmado(s) via Credilink.",
                 })
             if nao_criminais:
                 tip_list_nc = [l.get("mainSubject","")[:60] for l in nao_criminais[:3]]
                 findings.append({
-                    "title": f"Tesserati — Processos não-criminais ({len(nao_criminais)}) — {nome}",
+                    "title": f"Credilink — Processos não-criminais ({len(nao_criminais)}) — {nome}",
                     "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
                     "snippet": (
                         f"{nome} tem {len(nao_criminais)} processo(s) não-criminal(is) (cível/trabalhista/outro) "
-                        f"via Tesserati. Assuntos: {'; '.join(tip_list_nc)}. "
+                        f"via Credilink. Assuntos: {'; '.join(tip_list_nc)}. "
                         f"Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar."
                     ),
-                    "source": "Tesserati — ProcessoTribunalJustica",
+                    "source": "Credilink — ProcessoTribunalJustica",
                     "risk_indicator": "baixo",
                     "tipo": "processo",
                     "match": f"CPF {cpf}",
@@ -298,17 +318,19 @@ def consultar_tesserati(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
 
     # ── 3. Mídias Negativas ───────────────────────────────────────────────────
     if nome:
-        r = _tess_get("api/MidiasNegativas", {"Termo": nome})
+        r = _credilink_get("api/MidiasNegativas", {"Termo": nome})
+        if r.get("_erro"):
+            _erro_endpoint("MidiasNegativas", r)
         result = r.get("result")
         if result and isinstance(result, list) and len(result) > 0:
             findings.append({
-                "title": f"Tesserati — Mídias Negativas — {nome}",
+                "title": f"Credilink — Mídias Negativas — {nome}",
                 "url": "https://api.tesserati.com.br/api/MidiasNegativas",
                 "snippet": (
-                    f"{len(result)} mídia(s) negativa(s) identificada(s) para {nome} via Tesserati. "
+                    f"{len(result)} mídia(s) negativa(s) identificada(s) para {nome} via Credilink. "
                     f"Primeiro resultado: {json.dumps(result[0], ensure_ascii=False)[:200]}"
                 ),
-                "source": "Tesserati — Mídias Negativas",
+                "source": "Credilink — Mídias Negativas",
                 "risk_indicator": "medio",
                 "tipo": "midia",
                 "match": f"Nome {nome}",
@@ -316,14 +338,16 @@ def consultar_tesserati(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
 
     # ── 4. Compliance Nacional (CEIS/CNEP) ────────────────────────────────────
     if cpf_clean:
-        r = _tess_get("api/CNEP", {"cnpj": cnpj}) if cnpj else {}
+        r = _credilink_get("api/CNEP", {"cnpj": cnpj}) if cnpj else {}
+        if r.get("_erro"):
+            _erro_endpoint("CNEP", r)
         result = r.get("result")
         if result and isinstance(result, list) and len(result) > 0:
             findings.append({
-                "title": f"Tesserati CNEP — Empresa punida — {nome}",
+                "title": f"Credilink CNEP — Empresa punida — {nome}",
                 "url": "https://api.tesserati.com.br/api/CNEP",
                 "snippet": f"Empresa {cnpj} consta no CNEP (Cadastro Nacional de Empresas Punidas). {json.dumps(result[0],ensure_ascii=False)[:200]}",
-                "source": "Tesserati — CNEP",
+                "source": "Credilink — CNEP",
                 "risk_indicator": "alto",
                 "tipo": "processo",
                 "match": f"CNPJ {cnpj}",
@@ -516,7 +540,7 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
                 f"não retornou processos criminais. "
                 f"Total retornado: {total}. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. "
                 f"ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — "
-                f"ver achado Tesserati (ProcessoTribunalJustica) para essa cobertura."
+                f"ver achado Credilink (ProcessoTribunalJustica) para essa cobertura."
             ),
             "source": "JusBrasil Background Check API (produção)",
             "risk_indicator": "baixo",
@@ -605,6 +629,16 @@ M6. "{cnpj_owner}" site:portaldatransparencia.gov.br — contratos federais da e
 ━━━ BLOCO MÍDIA — CONTEXTO REGIONAL ━━━
 M7. "{municipio_pep}" OR "{cidade_owner}" + "operação policial" OR "corrupção municipal" (últimos 2 anos)
 
+━━━ BLOCO MÍDIA — EMPRESA (CNPJ/razão social, não só o nome do titular) ━━━
+M8. "{razao_social}" OR "{cnpj_owner}" "fraude" OR "investigação" OR "processo" OR "notícia" — mídia adversa da PESSOA JURÍDICA em si
+M9. "{razao_social}" "{cnpj_owner}" site:jusbrasil.com.br OR site:escavador.com — processos da empresa
+
+━━━ BLOCO GOVERNO ESTADUAL/FEDERAL (TCE/ALE/DOU/CGU) ━━━
+M10. "{nome_pep}" TCE-{uf_owner} — julgamento de contas, reprovação
+M11. "{nome_pep}" Câmara/Assembleia {municipio_pep} — atas, processos disciplinares
+M12. "{nome_pep}" OR "{razao_social}" Diário Oficial da União — atos oficiais
+M13. "{nome_pep}" CGU servidores federais — vínculo com cargo público federal
+
 REGRAS:
 - NÃO repita buscas de processos judiciais — esses já vieram da API JusBrasil
 - Foque em: confirmação de cargo/mandato PEP, mídia adversa, contratos públicos, Portal da Transparência
@@ -612,6 +646,23 @@ REGRAS:
 - risk_indicator "alto": contrato público via inexigibilidade com ente do PEP, cassação, operação policial direta
 - risk_indicator "medio": menção em operação sem prisão, processo cível improbidade, risco ambiental
 - risk_indicator "baixo": confirmação de cargo/mandato sem adversidades
+
+NOMENCLATURA OBRIGATÓRIA DO CAMPO "source" (thay@cora.com.br, 2026-09-12):
+o frontend (Pepito) suprime o link estático "clique aqui e verifique manualmente" de uma fonte
+quando já existe um achado real desta pesquisa com o mesmo nome de fonte — então SEMPRE use
+EXATAMENTE um destes nomes quando o bloco correspondente foi de fato executado (com sucesso ou
+não), para o Pepito parar de pedir verificação manual do que você já verificou:
+- Bloco M1 (mandato/candidatura no TSE): "source": "TSE — Divulgação de Candidaturas"
+- Bloco M3/M6 (Portal da Transparência, contratos federais do PEP ou da empresa): "source": "Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)"
+- Bloco M10 (TCE estadual): "source": "TCE-{UF} — busca interna" (troque {UF} pela UF real do caso, ex. "TCE-CE — busca interna")
+- Bloco M11 (Câmara/Assembleia estadual): "source": "Câmara/ALE-{UF} — Portal de Transparência" (troque {UF} pela UF real)
+- Bloco M12 (Diário Oficial da União): "source": "Diário Oficial da União (DOU)"
+- Bloco M13 (CGU servidores federais): "source": "CGU — Servidores Federais"
+Os nomes exatos de {UF}, {nome_pep} etc. para ESTE caso específico vêm no prompt do usuário
+abaixo — use o UF informado lá, não invente.
+Se o bloco não encontrar nada, ainda assim gere o finding com risk_indicator "baixo" e esse
+"source" exato — "nada encontrado" é resultado válido de uma busca que rodou, não motivo pra
+omitir o finding.
 
 Retorne APENAS o array JSON dos findings:
 [{"title":"...","url":"...","snippet":"...","source":"...","risk_indicator":"baixo","tipo":"pep|midia","match":"..."}]
@@ -634,6 +685,7 @@ def pesquisar_caso_web(case: dict, findings_jusbrasil: list[dict]) -> list[dict]
     vinculo = VINCULO_LABEL.get((ds_vinculo or "").strip().upper(), ds_vinculo or "sócio/familiar")
     nome_owner = case.get("full_name_pf", "")
     cnpj = case.get("cnpj", "")
+    razao_social = case.get("rf_nome_oficial", "")
     cidade = case.get("cidade", "")
     uf = case.get("uf", "")
 
@@ -648,7 +700,7 @@ def pesquisar_caso_web(case: dict, findings_jusbrasil: list[dict]) -> list[dict]
         )
 
     prompt = f"""Realize pesquisa de MÍDIA ADVERSA e PORTAL DA TRANSPARÊNCIA para o seguinte caso PLD.
-Execute os blocos M1–M7 do system prompt usando os valores abaixo:{resumo_api}
+Execute os blocos M1–M13 do system prompt usando os valores abaixo:{resumo_api}
 
 PEP:
   {{nome_pep}} = "{nome_pep}"
@@ -662,10 +714,25 @@ OWNER:
   {{cidade_owner}} = "{cidade}"
   {{uf_owner}} = "{uf}"
 
-Foque especialmente em:
-1. Confirmar se "{nome_pep}" está ativo como {cargo} em {orgao}
-2. Contratos do PEP/empresa com entes públicos (Portal da Transparência federal e municipal)
-3. Mídia adversa (investigações, operações, cassação)
+EMPRESA (pessoa jurídica em si, não confundir com o titular pessoa física):
+  {{razao_social}} = "{razao_social}"
+
+Foque especialmente em (empresa, titular E PEP — os três, não só o PEP):
+1. Confirmar se "{nome_pep}" está ativo como {cargo} em {orgao} (M1)
+2. Contratos do PEP/empresa com entes públicos — Portal da Transparência federal e municipal (M3/M6)
+3. Mídia adversa do PEP, do titular e da EMPRESA "{razao_social}" (CNPJ {cnpj}) em si — não só do nome do titular (M2/M5/M8/M9)
+4. TCE-{uf}, Câmara/ALE-{uf}, DOU e CGU (M10-M13) para o PEP "{nome_pep}"
+
+Nomes EXATOS de "source" pra usar (UF real já resolvido — use literalmente, não invente outro):
+- TCE estadual: "TCE-{uf} — busca interna"
+- Câmara/Assembleia estadual: "Câmara/ALE-{uf} — Portal de Transparência"
+- Diário Oficial da União: "Diário Oficial da União (DOU)"
+- CGU servidores federais: "CGU — Servidores Federais"
+- Portal da Transparência (M3 ou M6): "Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)"
+- TSE (M1): "TSE — Divulgação de Candidaturas"
+Gere um finding para CADA um desses blocos, mesmo que "nada encontrado" (risco baixo) — a ausência
+de achado é resultado válido de uma busca que rodou; só omita o finding se a busca não puder ser
+executada de forma alguma (bloqueio de acesso, captcha, site fora do ar).
 
 Retorne o array JSON com todos os findings."""
 
@@ -720,7 +787,7 @@ def pesquisar_caso(case: dict) -> list[dict]:
     Regra Credilink:
     - pep_pf populado → PEP identificado pela Credilink (via notebook); NÃO re-consultar.
     - pep_pf vazio  → Credilink não identificou PEP; fazer dupla-verificação via
-      JusBrasil/Tesserati/WebSearch apenas para o owner. Se nenhuma fonte encontrar
+      JusBrasil/Credilink/WebSearch apenas para o owner. Se nenhuma fonte encontrar
       adversidades, o caso é candidato a falso positivo.
     """
     pep_list = case.get("pep_pf") or []
@@ -736,14 +803,14 @@ def pesquisar_caso(case: dict) -> list[dict]:
     jus_owner = consultar_jusbrasil(cpf_owner, nome_owner, papel="owner")
     findings.extend(jus_owner)
 
-    # ── Tesserati: owner + empresa (sempre) ──────────────────────────────────
-    print(f"      → Tesserati [owner] CPF {cpf_owner}...")
-    tess_owner = consultar_tesserati(cpf_owner, nome_owner, cnpj=cnpj, papel="owner")
-    findings.extend(tess_owner)
+    # ── Credilink: owner + empresa (sempre) ──────────────────────────────────
+    print(f"      → Credilink [owner] CPF {cpf_owner}...")
+    credilink_owner = consultar_credilink(cpf_owner, nome_owner, cnpj=cnpj, papel="owner")
+    findings.extend(credilink_owner)
 
     if pep_nao_identificado:
         # Credilink já foi consultada e não encontrou PEP.
-        # NÃO consumimos quota de JusBrasil/Tesserati para PEP (não existe).
+        # NÃO consumimos quota de JusBrasil/Credilink para PEP (não existe).
         # Registramos o resultado da dupla-verificação para orientar a decisão.
         print(f"      → PEP não identificado pela Credilink — dupla-verificação (owner only)...")
         altos = [f for f in findings if f.get("risk_indicator") == "alto"]
@@ -762,15 +829,15 @@ def pesquisar_caso(case: dict) -> list[dict]:
                 "snippet": (
                     f"A Credilink (fonte oficial de PEP) não identificou nenhum PEP vinculado a "
                     f"{nome_owner} (CPF {cpf_owner}, CNPJ {cnpj}). "
-                    f"A dupla-verificação via JusBrasil Background Check e Tesserati também não "
+                    f"A dupla-verificação via JusBrasil Background Check e Credilink também não "
                     f"encontrou processos criminais, mandados de prisão ou adversidades materiais. "
                     f"Caso candidato a FALSO POSITIVO — o alerta foi gerado por outro critério "
                     f"(HAS_QSA, SUS_NAME, HIGH_PLD) mas sem correspondência PEP confirmada."
                 ),
-                "source": "Credilink (via notebook) + JusBrasil + Tesserati — dupla-verificação",
+                "source": "Credilink (identificação via notebook) + JusBrasil + Credilink (antecedentes) — dupla-verificação",
                 "risk_indicator": "baixo",
                 "tipo": "pep",
-                "match": "Credilink: sem PEP | JusBrasil: sem processos | Tesserati: sem adversidades",
+                "match": "Credilink: sem PEP | JusBrasil: sem processos | Credilink: sem adversidades",
                 "decisao_recomendada": "FALSO POSITIVO — PEP não confirmado por nenhuma fonte.",
             })
         # WebSearch focado apenas no owner (sem bloco PEP — não existe)
@@ -786,7 +853,7 @@ def pesquisar_caso(case: dict) -> list[dict]:
     # cpf_owner entra pré-marcado como já consultado: quando o owner É o PEP
     # titular (cpf_titular == cpf_owner), sem isso o loop reconsultava o MESMO
     # CPF pela 2ª vez (já verificado no passo "owner" acima) — desperdício de
-    # cota JusBrasil/Tesserati num contrato com margem apertada (achado
+    # cota JusBrasil/Credilink num contrato com margem apertada (achado
     # 2026-09-11, draft 98deb27d: cota em 312/325).
     cpfs_consultados: set[str] = {re.sub(r"\D", "", cpf_owner or "")}
 
@@ -811,11 +878,11 @@ def pesquisar_caso(case: dict) -> list[dict]:
             altos_pep = [f for f in jus_pep if f.get("risk_indicator") == "alto"]
             findings.extend(altos_pep if altos_pep else jus_pep[:1])
 
-        # Tesserati: compliance / mandados / mídias do PEP
-        print(f"      → Tesserati [{papel_label}] CPF {cpf_pep} ({nome_pep})...")
-        tess_pep = consultar_tesserati(cpf_pep, nome_pep, papel=papel_label)
-        altos_tess = [f for f in tess_pep if f.get("risk_indicator") == "alto"]
-        findings.extend(altos_tess if altos_tess else tess_pep[:1])
+        # Credilink: compliance / mandados / mídias do PEP
+        print(f"      → Credilink [{papel_label}] CPF {cpf_pep} ({nome_pep})...")
+        credilink_pep_result = consultar_credilink(cpf_pep, nome_pep, papel=papel_label)
+        altos_tess = [f for f in credilink_pep_result if f.get("risk_indicator") == "alto"]
+        findings.extend(altos_tess if altos_tess else credilink_pep_result[:1])
 
     # ── WebSearch: mídia + PEP + Portal Transparência ────────────────────────
     print(f"      → WebSearch (mídia/PEP/transparência)...")

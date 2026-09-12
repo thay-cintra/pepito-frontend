@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   Building2,
@@ -25,6 +25,7 @@ import { pesquisarFontesPublicas, reanalisarResultado, consultarCredilink, type 
 import { clienteVazio } from "@/lib/cliente-default";
 import { getRegistrationCase, markTaken, QUEUE_UPDATED_EVENT } from "@/lib/registration-queue";
 import { inferCargoOrgao, inferTipoPep, getSugestaoParecer, getConsultaStatus } from "@/data/registration-enrich";
+import { consultarCredilinkPepAgora, type CredilinkPepResultadoUI } from "@/lib/credilink-pep";
 import { formatCNPJ, formatCPF, formatDuration, uid } from "@/lib/utils";
 import type { Analise, ClienteData, ResultadoPesquisa, StatusAnalise } from "@/types/kyc";
 import { STATUS_LABELS, StatusBadge } from "@/components/RiscoBadge";
@@ -55,6 +56,12 @@ export function AnalisePrimeiraCamada() {
   // Liderança com consulta real (JusBrasil/Credilink) OU com o analista
   // confirmando manualmente que verificou a pendência.
   const [checkVerificacaoManual, setCheckVerificacaoManual] = useState(false);
+  // Consulta Credilink do PEP relacionado, disparada automaticamente pela
+  // própria tela quando pendente — sem depender de validação manual do
+  // analista (thay@cora.com.br, 2026-09-12).
+  const [credilinkPepResultado, setCredilinkPepResultado] = useState<CredilinkPepResultadoUI | null>(null);
+  const [credilinkPepConsultando, setCredilinkPepConsultando] = useState(false);
+  const [credilinkPepErro, setCredilinkPepErro] = useState<string | null>(null);
 
   useEffect(() => {
     getAuthUser().then((u) => { if (u?.email) setAnalistaEmail(u.email); });
@@ -203,8 +210,51 @@ export function AnalisePrimeiraCamada() {
     const caso = getRegistrationCase(draftIdOrigem);
     return caso ? getConsultaStatus(caso, cliente.tipoPep) : null;
   }, [draftIdOrigem, cliente.tipoPep]);
-  const precisaCheckManual = !!consultaStatus && !consultaStatus.tudoOk;
+
+  // Reseta o resultado/erro da consulta ao vivo quando o CPF do PEP muda —
+  // sem isso, editar o campo mostrava nome/token da consulta ANTERIOR ao
+  // lado do CPF novo (achado Codex, 2026-09-12: mesmo bug de "dado de uma
+  // pessoa ao lado do documento de outra" que motivou o fix original).
+  const credilinkPepCpfConsultadoRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (credilinkPepCpfConsultadoRef.current !== null && credilinkPepCpfConsultadoRef.current !== cliente.cpfPepTitular) {
+      setCredilinkPepResultado(null);
+      setCredilinkPepErro(null);
+    }
+    credilinkPepCpfConsultadoRef.current = cliente.cpfPepTitular || null;
+  }, [cliente.cpfPepTitular]);
+
+  // "OK" efetivo pro guardrail: ledger estático (build) OU resultado ao vivo
+  // desta sessão — sem isso, uma consulta ao vivo bem-sucedida continuava
+  // exigindo o checkbox de verificação manual até o próximo rebuild
+  // (achado Codex, 2026-09-12).
+  const credilinkPepOkEfetivo = !!consultaStatus?.credilinkPepOk || !!credilinkPepResultado;
+  const precisaCheckManual = !!consultaStatus && !(consultaStatus.jusbrasilOk && credilinkPepOkEfetivo);
   const podeEnviarMesa = podeFinalizarPrimeira && (!precisaCheckManual || checkVerificacaoManual);
+
+  // Dispara a consulta Credilink real do PEP automaticamente — sem botão,
+  // sem esperar o analista. Só cai pra aviso de "verificar manualmente" se
+  // a consulta em si falhar (rede/API fora do ar), nunca por padrão
+  // (thay@cora.com.br, 2026-09-12: "não quero que seja validado
+  // manualmente... somente em casos realmente extremos e inacessíveis").
+  useEffect(() => {
+    if (
+      cliente.tipoPep !== "relacionado" ||
+      !cliente.cpfPepTitular ||
+      consultaStatus?.credilinkPepOk ||
+      credilinkPepConsultando ||
+      credilinkPepResultado ||
+      credilinkPepErro
+    ) {
+      return;
+    }
+    setCredilinkPepConsultando(true);
+    consultarCredilinkPepAgora(cliente.cpfPepTitular, cliente.nomePessoaVinculada)
+      .then(setCredilinkPepResultado)
+      .catch((e) => setCredilinkPepErro(e.message || String(e)))
+      .finally(() => setCredilinkPepConsultando(false));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cliente.tipoPep, cliente.cpfPepTitular, consultaStatus?.credilinkPepOk]);
 
   const handlePesquisar = async () => {
     if (!cliente.cnpj || !cliente.razaoSocial) {
@@ -216,7 +266,7 @@ export function AnalisePrimeiraCamada() {
       return;
     }
     // Caso real (carregado da Fila PLD): resultados já vieram do pipeline
-    // real (Ghost/Credilink/JusBrasil/Tesserati/WebSearch). pesquisarFontesPublicas()
+    // real (Ghost/Credilink/JusBrasil/WebSearch). pesquisarFontesPublicas()
     // é uma SIMULAÇÃO determinística (mock-ai.ts) — rodá-la aqui substituiria
     // achados reais por conteúdo fictício sem o analista perceber (achado
     // Codex, 2026-09-11). Só permitido para caso 100% manual (sem draft_id).
@@ -224,7 +274,7 @@ export function AnalisePrimeiraCamada() {
       toast({
         variant: "destructive",
         title: "Pesquisa manual desabilitada para este caso",
-        description: "Os resultados já vieram do pipeline real (Ghost/Credilink/JusBrasil/Tesserati). Pesquisar de novo aqui rodaria uma SIMULAÇÃO e substituiria os achados reais.",
+        description: "Os resultados já vieram do pipeline real (Ghost/Credilink/JusBrasil). Pesquisar de novo aqui rodaria uma SIMULAÇÃO e substituiria os achados reais.",
       });
       return;
     }
@@ -577,19 +627,18 @@ export function AnalisePrimeiraCamada() {
             <Card className="border-indigo-300 bg-indigo-50/30 dark:bg-indigo-950/20 dark:border-indigo-800">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-indigo-700 dark:text-indigo-300">
-                  <ShieldCheck className="h-5 w-5" /> Consulta Credilink (Tessera) — titular da conta
+                  <ShieldCheck className="h-5 w-5" /> Consulta Credilink — titular da conta
                 </CardTitle>
                 <CardDescription>
                   Token da consulta Credilink já feita para o CPF do titular da conta ({cliente.cpfResponsavel || "—"}).
-                  A Credilink não realiza consulta individual pelo CPF do PEP relacionado — valide o PEP
-                  separadamente (JusBrasil/Tesserati/CNJ).
+                  Status da consulta separada ao CPF do PEP relacionado abaixo.
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 {credilinkConsultando && (
                   <div className="flex items-center gap-3 text-sm text-indigo-700 dark:text-indigo-300 py-2">
                     <ShieldCheck className="h-4 w-4 animate-pulse" />
-                    <span>Consultando Tessera/Credilink para CPF <span className="font-mono font-semibold">{cliente.cpfPepTitular}</span>…</span>
+                    <span>Consultando Credilink para CPF <span className="font-mono font-semibold">{cliente.cpfPepTitular}</span>…</span>
                   </div>
                 )}
                 {!credilinkConsultando && !credilinkResultado && cliente.cpfPepTitular && (
@@ -621,7 +670,7 @@ export function AnalisePrimeiraCamada() {
                       ) : (
                         <div className="flex items-start gap-2">
                           <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Dossiê:</span>
-                          <span className="text-muted-foreground italic text-[11px]">Acesse manualmente em Tessera/Credilink com o token acima.</span>
+                          <span className="text-muted-foreground italic text-[11px]">Acesse manualmente em Credilink com o token acima.</span>
                         </div>
                       )}
                       <div className="flex items-center gap-2 text-muted-foreground">
@@ -629,17 +678,79 @@ export function AnalisePrimeiraCamada() {
                         <span>{new Date(credilinkResultado.consultadoEm).toLocaleString("pt-BR")}</span>
                       </div>
                     </div>
-                    <div className="rounded-md border border-amber-200 dark:border-amber-700 bg-amber-50/40 dark:bg-amber-950/20 p-2 text-[11px] text-amber-800 dark:text-amber-300">
-                      ⚠️ PEP {cliente.nomePessoaVinculada || "relacionado"} (CPF {cliente.cpfPepTitular}) NÃO foi
-                      consultado individualmente na Credilink — o token acima é do titular da conta. Valide o
-                      PEP por fonte separada antes de concluir a análise.
-                    </div>
                   </div>
                 )}
                 {!credilinkConsultando && !credilinkResultado && !cliente.cpfPepTitular && (
                   <p className="text-xs text-amber-600 dark:text-amber-400">
                     ⚠️ CPF do PEP titular não identificado. Preencha o campo acima para disparar a consulta Credilink.
                   </p>
+                )}
+
+                {/* Consulta Credilink do PEP relacionado — mesmo formato do
+                    titular acima. Disparada automaticamente pela própria
+                    tela (useEffect), nunca por ação manual do analista.
+                    Ledger já OK (consultaStatus.credilinkPepOk vindo do
+                    build) mostra confirmação direto, sem rodar de novo. */}
+                {cliente.cpfPepTitular && consultaStatus?.credilinkPepOk && (
+                  <div className="mt-3 rounded-md bg-indigo-100/60 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 p-3 text-xs space-y-2">
+                    <p className="font-semibold text-indigo-800 dark:text-indigo-200">Credilink — PEP relacionado (consulta própria)</p>
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">CPF consultado (PEP):</span>
+                      <span className="font-mono">{cliente.cpfPepTitular}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Nome PEP:</span>
+                      <span>{cliente.nomePessoaVinculada || "—"}</span>
+                    </div>
+                    <p className="text-success text-[11px]">✅ Consultado — dado real, não é o token do titular.</p>
+                  </div>
+                )}
+                {cliente.cpfPepTitular && !consultaStatus?.credilinkPepOk && credilinkPepConsultando && (
+                  <div className="mt-3 flex items-center gap-3 text-sm text-indigo-700 dark:text-indigo-300 py-2">
+                    <ShieldCheck className="h-4 w-4 animate-pulse" />
+                    <span>Consultando Credilink para o PEP <span className="font-mono font-semibold">{cliente.cpfPepTitular}</span> (pode levar até 2min)…</span>
+                  </div>
+                )}
+                {cliente.cpfPepTitular && !consultaStatus?.credilinkPepOk && !credilinkPepConsultando && credilinkPepResultado && (
+                  <div className="mt-3 rounded-md bg-indigo-100/60 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 p-3 text-xs space-y-2">
+                    <p className="font-semibold text-indigo-800 dark:text-indigo-200">Credilink — PEP relacionado (consulta própria, agora)</p>
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">CPF consultado (PEP):</span>
+                      <span className="font-mono">{cliente.cpfPepTitular}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Nome PEP:</span>
+                      <span>{credilinkPepResultado.nomeConsultado}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Nº do token:</span>
+                      <span className="font-mono font-semibold">{credilinkPepResultado.numeroToken || "—"}</span>
+                    </div>
+                    {credilinkPepResultado.linkDossie && (
+                      <div className="flex items-start gap-2">
+                        <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Dossiê:</span>
+                        <a href={credilinkPepResultado.linkDossie} target="_blank" rel="noopener noreferrer"
+                          className="underline text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 break-all">
+                          {credilinkPepResultado.linkDossie}
+                        </a>
+                      </div>
+                    )}
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <span className="min-w-[160px]">Consultado em:</span>
+                      <span>{new Date(credilinkPepResultado.consultadoEm).toLocaleString("pt-BR")}</span>
+                    </div>
+                    {credilinkPepResultado.isPEP !== undefined && (
+                      <p className={credilinkPepResultado.isPEP ? "text-destructive text-[11px] font-semibold" : "text-success text-[11px]"}>
+                        {credilinkPepResultado.isPEP ? "⚠️ isPEP: true — confirmado diretamente na Credilink." : "isPEP: false — não confirmado como PEP na consulta direta."}
+                      </p>
+                    )}
+                  </div>
+                )}
+                {cliente.cpfPepTitular && !consultaStatus?.credilinkPepOk && !credilinkPepConsultando && credilinkPepErro && (
+                  <div className="mt-3 rounded-md border border-destructive/30 bg-destructive/10 p-2 text-[11px] text-destructive">
+                    ⚠️ Consulta Credilink do PEP falhou automaticamente: {credilinkPepErro}. Caso extremo/API
+                    inacessível — validar manualmente por fonte separada (JusBrasil/CNJ) antes de concluir.
+                  </div>
                 )}
               </CardContent>
             </Card>
@@ -709,7 +820,7 @@ export function AnalisePrimeiraCamada() {
               </CardTitle>
               <CardDescription>
                 {draftIdOrigem
-                  ? "Resultados carregados do pipeline real (Ghost/Credilink/JusBrasil/Tesserati/WebSearch) — não sobrescrever."
+                  ? "Resultados carregados do pipeline real (Ghost/Credilink/JusBrasil/WebSearch) — não sobrescrever."
                   : "SIMULAÇÃO — gera dados determinísticos de exemplo, não consulta nenhuma fonte real (só para caso manual sem draft_id)."}
               </CardDescription>
             </CardHeader>
@@ -778,8 +889,8 @@ export function AnalisePrimeiraCamada() {
                 ⚠️ Consulta real pendente — não é possível confirmar que JusBrasil/Credilink foram checados de fato para este caso.
               </p>
               <ul className="list-disc list-inside space-y-1 text-amber-800 dark:text-amber-300">
-                {!consultaStatus.jusbrasilOk && <li>JusBrasil/Tesserati: {consultaStatus.jusbrasilMotivo}</li>}
-                {!consultaStatus.credilinkPepOk && <li>Credilink (PEP): {consultaStatus.credilinkPepMotivo}</li>}
+                {!consultaStatus.jusbrasilOk && <li>JusBrasil/Credilink: {consultaStatus.jusbrasilMotivo}</li>}
+                {!credilinkPepOkEfetivo && <li>Credilink (PEP): {consultaStatus.credilinkPepMotivo}</li>}
               </ul>
               <label className="flex items-start gap-2 pt-1 cursor-pointer">
                 <input

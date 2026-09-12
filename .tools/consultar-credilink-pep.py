@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Consulta Credilink (Tesserati) individual para o CPF do PEP RELACIONADO
+Consulta Credilink individual para o CPF do PEP RELACIONADO
 (quando o PEP não é o titular da conta) — cobre o gap documentado em
 .tools/INCIDENT-REPORT-2026-09-11-CREDILINK-PEP-NAO-CONSULTADO.md:
 token_pf_cred/pep_pf só refletem a consulta ao CPF do TITULAR DA CONTA;
@@ -31,6 +31,7 @@ Uso:
   python consultar-credilink-pep.py --dry-run        # só lista quem seria consultado, não chama a API
 """
 import argparse
+import fcntl
 import json
 import os
 import re
@@ -67,12 +68,40 @@ def _digits(s: str | None) -> str:
 
 
 def _write_json_atomic(path: Path, data: dict) -> None:
-    """Escreve via arquivo temporário + os.replace (atômico no mesmo
-    filesystem) — sem isso, uma interrupção no meio do write_text() direto
-    deixava o JSON truncado/corrompido (achado Codex #10, 2026-09-11)."""
-    tmp = path.with_suffix(path.suffix + ".tmp")
+    """Escreve via arquivo temporário (nome único por processo) + os.replace
+    (atômico no mesmo filesystem) — sem isso, uma interrupção no meio do
+    write_text() direto deixava o JSON truncado/corrompido (achado Codex
+    #10, 2026-09-11). Nome do tmp inclui o PID pra dois processos rodando
+    ao mesmo tempo (ex.: o lote em background + uma consulta ao vivo
+    disparada pela tela) não pisarem no MESMO arquivo temporário
+    (achado Codex #5/#6, 2026-09-12)."""
+    tmp = path.with_suffix(f"{path.suffix}.{os.getpid()}.tmp")
     tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     os.replace(tmp, path)
+
+
+def _merge_entry_atomic(path: Path, cpf: str, resultado: dict) -> None:
+    """Lê o ledger do disco, mescla UMA entrada e escreve de volta — tudo sob
+    lock exclusivo (fcntl.flock). Diferente de carregar o ledger inteiro uma
+    vez no início do script e reescrevê-lo a cada iteração: se dois
+    processos rodarem ao mesmo tempo (lote em background + consulta ao vivo
+    disparada pela tela via server.cjs), cada um só sobrescrevia o snapshot
+    que tinha em memória no início, perdendo as entradas que o outro
+    processo já tinha gravado nesse meio tempo (achado Codex #5/#6,
+    2026-09-12). Faz merge no nível de entrada, sob lock, então concorrência
+    entre processos diferentes não perde dado de nenhum dos dois."""
+    lock_path = path.with_suffix(path.suffix + ".lock")
+    with open(lock_path, "a+") as lock_file:
+        fcntl.flock(lock_file, fcntl.LOCK_EX)
+        try:
+            try:
+                current = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+            except Exception:
+                current = {}
+            current[cpf] = resultado
+            _write_json_atomic(path, current)
+        finally:
+            fcntl.flock(lock_file, fcntl.LOCK_UN)
 
 
 def _auth() -> str | None:
@@ -231,15 +260,34 @@ def _coletar_alvos(desde: datetime) -> dict[str, dict]:
     return alvos
 
 
+def _carregar_alvos_externos(path: Path) -> dict[str, dict]:
+    """Carrega alvos de um JSON externo {cpf: {nome, drafts}} — usado pra
+    cruzar com fontes fora do alcance normal deste script (ex.: casos já
+    DECIDIDOS/fora da fila aberta, levantados via query Athena em
+    squad_core.registration_notebook_output_single_historical +
+    onboarding_drafts). Achado real 2026-09-12: 277 CPFs de PEP relacionado
+    de casos aprovados/reprovados desde abril/2026 nunca haviam sido
+    consultados — a fila aberta + analises-salvas.json cobriam só uma
+    fração pequena do universo real."""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {cpf: {"nome": info.get("nome", ""), "drafts": set(info.get("drafts", []))} for cpf, info in data.items()}
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--desde", default="2026-04-01", help="Data mínima (YYYY-MM-DD) dos casos a considerar")
     parser.add_argument("--force", nargs="*", metavar="CPF", help="Reconsulta CPFs específicos (ignora ledger)")
+    parser.add_argument("--extra-alvos", metavar="PATH", help="JSON externo {cpf: {nome, drafts}} — mescla com os alvos coletados normalmente")
     parser.add_argument("--dry-run", action="store_true", help="Só lista quem seria consultado, não chama a API")
     args = parser.parse_args()
 
     desde = datetime.strptime(args.desde, "%Y-%m-%d")
     alvos = _coletar_alvos(desde)
+    if args.extra_alvos:
+        externos = _carregar_alvos_externos(Path(args.extra_alvos))
+        for cpf, info in externos.items():
+            alvos.setdefault(cpf, {"nome": info["nome"], "drafts": set()})
+            alvos[cpf]["drafts"] |= info["drafts"]
 
     ledger: dict[str, dict] = {}
     if LEDGER_PATH.exists():
@@ -295,9 +343,11 @@ def main():
         print(f"  [{i}/{len(pendentes)}] {cpf} — {nome}...")
         resultado = _consultar_cpf(cpf, nome)
         resultado["drafts"] = sorted(info.get("drafts", []))
+        # Merge sob lock (não sobrescreve o snapshot em memória) — persiste
+        # incrementalmente e sobrevive a outro processo escrevendo ao mesmo
+        # tempo (achado Codex #5/#6, 2026-09-12).
+        _merge_entry_atomic(LEDGER_PATH, cpf, resultado)
         ledger[cpf] = resultado
-        # Persiste incrementalmente — uma falha no meio do lote não perde o que já rodou
-        _write_json_atomic(LEDGER_PATH, ledger)
 
         if any(k.startswith("erro") for k in resultado):
             falhas += 1

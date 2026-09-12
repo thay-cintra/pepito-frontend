@@ -90,95 +90,109 @@
     "model": "manual-analista-2026-05-20",
     "generated_at": "2026-05-20T00:00:00Z"
   },
+  "12f79730-5920-400a-a1a9-8de889fca3cf": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 63.104.531/0001-44 — LALUCI MASSAS E SALGADOS LTDA\n\nO analista recomenda aprovação — concordo parcialmente, mas elevo para monitoramento reforçado em razão de uma lacuna não resolvida: o vínculo societário entre Lucilei Pacheco De Almeida Salomão e a vereadora Rosangela de Souza Tezzon Martins (Câmara Municipal de Mirandópolis/SP, mandato ativo 2025–2029) é do tipo SÓCIO, porém a Credilink não informa em qual empresa ambos figuram como sócios, nem o CNPJ nem a situação cadastral dessa empresa em comum — essa lacuna configura fator de risco adicional pendente de validação. Ademais, a PJ foi constituída em 08/10/2025, ou seja, após o início do mandato da PEP, o que, combinado à lacuna societária não esclarecida, exige atenção adicional, ainda que a atividade (fabricação de massas alimentícias) não apresente interface relevante com o cargo público e não haja qualquer achado adverso de mídia, processos ou sanções para a empresa, o titular ou a PEP.\n\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, condicionada à prévia validação do CNPJ e da situação cadastral (ativa ou baixada) da empresa em que titular e PEP figuram como sócios, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação — concordo parcialmente, mas elevo para monitoramento reforçado em razão de uma lacuna não resolvida: o vínculo societário entre Lucilei Pacheco De A…",
+    "decisao": "monitoramento",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-12T00:23:55Z"
+  },
+  "c562e1c7-4e8c-42fc-8be4-bafee05f8495": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 33.634.909/0001-50 — JONAS RAFAEL DE BRITO 03216997421\n\nO analista recomenda aprovação — concordo. O único fator de risco é o vínculo de irmandade com Macilon Rafael de Brito, ex-vereador de Serra Branca/PB, cujo mandato encerrou em 31/12/2024 e permanece em carência PLD até 31/12/2029. A empresa, constituída em 2019 (anterior ao mandato), atua em comércio varejista de doces e similares, setor sem interface relevante com o poder público, e está sediada em município distinto do da atuação política do PEP. Não foram identificados processos judiciais, sanções, contratos públicos suspeitos ou mídia adversa para a empresa, o titular ou o PEP.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020, com manutenção do monitoramento transacional ordinário durante o período de carência.",
+    "resumo": "APROVAR — O analista recomenda aprovação — concordo.",
+    "decisao": "aprovado",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-12T00:24:02Z"
+  },
+  "ca6eac08-e054-4275-886d-c6f909554381": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 66.268.826/0001-44 — DIVINA CANTINA DISTRIBUITORA UNIPESSOAL LTDA\n\nO analista recomenda aprovação com monitoramento reforçado — concordo. Amélia Míriam De Oliveira é irmã de Tadeu Barbosa de Oliveira, Prefeito de Araçuaí/MG, com mandato ativo até 31/12/2028. A empresa, constituída em 10/04/2026 (durante o mandato do PEP), opera no ramo de restaurantes em Capelinha/MG — município distinto ao de atuação política do PEP —, o que mitiga o risco de conflito de interesses direto, embora a abertura recente em período de mandato ativo configure fator agravante que justifica atenção continuada. Ausência total de sanções, processos por improbidade ou mídia adversa para a empresa, sua titular e o PEP.\n\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica dos fatores de risco, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação com monitoramento reforçado — concordo.",
+    "decisao": "monitoramento",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-12T00:24:09Z"
+  },
+  "a4378011-ca0e-42b4-a4be-1322c2ab7c15": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 61.636.770/0001-10 — ILUMINAR LTDA\n\nO analista recomenda aprovação — concordo parcialmente, porém o desfecho adequado é monitoramento reforçado, dado que a própria titular é a PEP (vereadora ativa em Varjão de Minas/MG, mandato 01/01/2025–31/12/2028) e a empresa foi constituída em julho de 2025, já durante o mandato, configurando fator agravante concreto para o risco de conflito de interesses. A atividade declarada (outras atividades profissionais, científicas e técnicas) é de natureza ampla e não permite descartar interface com contratações públicas municipais sem acompanhamento contínuo. Não foram identificados processos, sanções ou mídia adversa para a titular ou a empresa, o que mitiga o risco, mas não afasta a necessidade de vigilância reforçada.\n\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica das transações e verificação de eventuais contratos com o município de Varjão de Minas ou outros entes públicos, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação — concordo parcialmente, porém o desfecho adequado é monitoramento reforçado, dado que a própria titular é a PEP (vereadora ativa em Varjão de Minas/…",
+    "decisao": "monitoramento",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-12T00:24:18Z"
+  },
+  "10c5ad3f-c676-4ab0-b473-5c261fe55ba7": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 06.068.718/0001-04 — ROSILENE MARIA DE AZEVEDO BORGES LTDA\n\nO analista recomenda aprovação — concordo. O único fator de risco é o vínculo de irmandade com Reginaldo Liberato de Azevedo, vereador ativo em Ceres/GO (mandato 2025–2029). A empresa, constituída em 2003, é amplamente preexistente ao mandato, e sua atividade de creche (educação infantil) não apresenta interface relevante com o poder público municipal de forma a configurar conflito de interesses. Ausência total de sanções, processos judiciais ou mídia adversa para a empresa, sua titular e o PEP.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — O analista recomenda aprovação — concordo.",
+    "decisao": "aprovado",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-12T00:24:24Z"
+  },
   "05375e39-357a-4bf4-bec0-b285551e29ee": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 68.725.172/0001-66 — NEMALOG LOGISTICA E TRANSPORTES LTDA\n\nO analista recomenda aprovação com base na ausência de achados adversos e na divergência geográfica entre a empresa (Mossoró/RN) e o município de atuação do PEP (Paraú/RN) — concordo. O vínculo é de irmandade com Edilson Fernandes da Silva Junior, ex-vereador de Paraú/RN, cujo mandato encerrou em 31/12/2024, permanecendo em carência PLD até 31/12/2029. Não foram identificados processos judiciais, sanções, contratos públicos suspeitos ou mídia adversa para a empresa, seu titular ou o PEP relacionado, e a atividade econômica (serviços de escritório e apoio administrativo) não apresenta interface sensível com o poder público municipal de Paraú.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 68.725.172/0001-66 — NEMALOG LOGISTICA E TRANSPORTES LTDA\n\nO analista recomenda aprovação com base na ausência de achados adversos e na divergência geográfica entre a empresa (Mossoró/RN) e o município de atuação do PEP (Paraú/RN) — concordo. O vínculo é de irmandade com Edilson Fernandes da Silva Junior, ex-vereador de Paraú/RN, cujo mandato encerrou em 31/12/2024 (em carência PLD até 31/12/2029). Não há mídia adversa, processos judiciais, sanções ou contratos públicos identificados para a empresa, seu titular ou o PEP relacionado, e a atividade econômica (serviços combinados de escritório e apoio administrativo) não apresenta interface sensível com o poder público municipal de Paraú/RN.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme Circular BACEN 3.978/2020.",
     "resumo": "APROVAR — O analista recomenda aprovação com base na ausência de achados adversos e na divergência geográfica entre a empresa (Mossoró/RN) e o município de atuação do PEP (Paraú/RN) — concordo.",
     "decisao": "aprovado",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-11T18:46:05Z"
+    "generated_at": "2026-09-12T00:24:31Z"
   },
   "5b91bd5d-b6bd-4e95-8c1f-1cca12c465e5": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 67.814.414/0001-25 — FROTA NORDESTE LTDA\n\nO analista recomenda aprovação simples — concordo. O vínculo é de irmandade com Gustavo Henrique Santos Menezes, ex-vereador de Pitimbu/PB, cujo mandato encerrou em 31/12/2024 e permanece em carência PLD até 31/12/2029. A empresa atua em locação de veículos em João Pessoa/PB, município distinto da base eleitoral do ex-vereador, sem sobreposição geográfica relevante com a atuação política. Não foram identificados processos judiciais, sanções, contratos públicos suspeitos ou mídia adversa para a titular, a empresa ou o PEP relacionado.\n\nRecomendo a APROVAÇÃO DO CADASTRO, pois os apontamentos não configuram risco impeditivo, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — O analista recomenda aprovação simples — concordo.",
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 67.814.414/0001-25 — FROTA NORDESTE LTDA\n\nO analista recomenda aprovação simples — concordo, com ressalva sobre um fator agravante que merece registro. A empresa atua em locação de veículos, setor com interface relevante com o poder público, foi constituída em julho de 2026 (após o encerramento do mandato), e a titular é irmã de Gustavo Henrique Santos Menezes, ex-vereador de Pitimbu/PB (mandato encerrado em 31/12/2024, em carência PLD até 31/12/2029). A abertura da empresa durante o período de carência, combinada com o setor de atuação, configura fator de atenção concreto para eventual conflito de interesses, ainda que o mandato já tenha cessado. Contudo, a ausência total de mídia adversa, sanções, processos judiciais ou apontamentos desabonadores para a empresa, sua titular e o PEP associado mitiga o risco a nível não impeditivo.\n\nRecomendo a APROVAÇÃO DO CADASTRO SOB MONITORAMENTO REFORÇADO, com revisão periódica durante o período de carência PLD, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — O analista recomenda aprovação simples — concordo, com ressalva sobre um fator agravante que merece registro.",
     "decisao": "aprovado",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-11T18:46:13Z"
+    "generated_at": "2026-09-12T00:24:40Z"
+  },
+  "16059106-2aeb-4e36-8978-9089db30942e": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 28.639.509/0001-06 — ROSINEI DE FATIMA PIMENTEL 33987957816\n\nO analista recomenda aprovação — concordo. O único fator de risco é o vínculo de irmandade com Renata Aparecida Pimentel Rissoni, vereadora ativa em Ipaussu/SP (mandato 2025–2029). A empresa, constituída em 2017, é anterior ao mandato e atua em segmento de alimentação (lanchonetes/sucos), sem interface relevante com contratações públicas ou com o cargo exercido pela PEP. Ausência total de sanções, processos por improbidade ou mídia adversa para a empresa, sua titular e a PEP.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — O analista recomenda aprovação — concordo.",
+    "decisao": "aprovado",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-12T00:24:47Z"
   },
   "ef793f91-57bc-4354-8542-fe83688100e6": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 07.684.261/0001-17 — IGREJA EVANGELICA ASSEMBLEIA DE DEUS DE PARACURU UMA IGREJA DE REFUGIO\n\nO analista recomenda monitoramento reforçado — divergência parcial: o desfecho correto é aprovação simples. O vínculo é de irmandade com Eriemerson Nobre Gonçalves, vereador de Caucaia/CE (mandato ativo até 31/12/2028), mas a instituição religiosa foi constituída em 2005, é preexistente ao mandato em cerca de 20 anos, está sediada em Paracuru/CE (município distinto da atuação política do PEP), e não há qualquer achado de mídia adversa, processo judicial ou sanção para a PJ, o titular ou o PEP. A natureza da atividade — organização religiosa sem interface com contratações públicas — afasta o risco de conflito de interesses, e a divergência geográfica reforça a ausência de fator agravante concreto que justificaria monitoramento diferenciado.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 07.684.261/0001-17 — IGREJA EVANGELICA ASSEMBLEIA DE DEUS DE PARACURU UMA IGREJA DE REFUGIO\n\nO analista recomenda monitoramento reforçado — divergência parcial: o desfecho correto é aprovação simples. O vínculo é de irmandade com Eriemerson Nobre Gonçalves, vereador ativo de Caucaia/CE (mandato 2025–2028), mas a empresa é uma organização religiosa constituída em 2005, portanto preexistente ao mandato em cerca de 20 anos, sediada em Paracuru/CE — município distinto da atuação política do PEP —, sem qualquer interface identificável com contratações públicas ou conflito de interesses. A ausência total de mídia adversa, sanções, processos judiciais ou apontamentos desabonadores para a empresa, seu titular e o PEP, aliada à natureza da atividade e à divergência geográfica, afasta os fatores agravantes concretos que justificariam monitoramento diferenciado; o vínculo PEP isolado não é suficiente para elevar o desfecho.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
     "resumo": "APROVAR — O analista recomenda monitoramento reforçado — divergência parcial: o desfecho correto é aprovação simples.",
     "decisao": "aprovado",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-11T18:46:21Z"
+    "generated_at": "2026-09-12T00:24:57Z"
   },
   "a116f88a-ab10-40fe-a80f-3c9515a55749": {
-    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 82.997.289/0001-20 — FARMA SUELI LTDA\n\nO analista recomenda aprovação com monitoramento reforçado — concordo. Franciele Garcia é irmã de Fernanda Garcia Sardanha, prefeita de São Mateus do Sul/PR, com mandato ativo até 31/12/2028.\nA empresa é preexistente ao mandato (constituída em 1991), está sediada em município e estado distintos da atuação política da PEP (Santa Cecília/SC vs. São Mateus do Sul/PR), e atua em comércio varejista farmacêutico sem interface direta com contratações públicas municipais. Ausência total de sanções, processos por improbidade ou mídia adversa para a empresa, sua titular e a PEP. O mandato ativo de alto escalão municipal justifica monitoramento reforçado, mas não configura fator agravante impeditivo.\n\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica dos fatores de risco, conforme Circular BACEN 3.978/2020.",
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 82.997.289/0001-20 — FARMA SUELI LTDA\n\nO analista recomenda aprovação com monitoramento reforçado — concordo. Franciele Garcia é irmã de Fernanda Garcia Sardanha, atual Prefeita de São Mateus do Sul/PR (mandato ativo até 31/12/2028).\nA empresa, constituída em 1991, é amplamente preexistente ao mandato e está sediada em Santa Cecília/SC, município e estado distintos da atuação política da PEP, o que mitiga o risco de conflito de interesses direto; a atividade varejista farmacêutica sem manipulação também não apresenta interface sensível com contratações públicas municipais. Ausência total de sanções, processos ou mídia adversa para a empresa, sua titular e a PEP. O mandato de alto escalão municipal recém-iniciado (jan/2025) justifica, por si só, a manutenção de monitoramento periódico.\n\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica dos fatores de risco durante a vigência do mandato, conforme Circular BACEN 3.978/2020.",
     "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação com monitoramento reforçado — concordo.",
     "decisao": "monitoramento",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-11T18:46:30Z"
-  },
-  "c2cb0bf4-9288-4b97-b1d3-a8b5914d7030": {
-    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 43.651.622/0001-92 — GELO + LTDA\n\nO analista recomenda aprovação com monitoramento reforçado — concordo. Silvio de Oliveira Alves é o próprio titular da empresa e vereador ativo em Perdizes/MG (mandato 01/01/2025–31/12/2029), sendo o vínculo PEP direto (titular = PEP). A empresa está sediada no mesmo município de atuação política e foi constituída em setembro de 2021, antes do início do mandato, o que mitiga o risco de constituição oportunista; a atividade de fabricação de gelo comum não apresenta interface direta com contratações públicas relevantes. Ausência total de sanções, processos por improbidade ou mídia adversa para a empresa e seu titular.\n\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica dos fatores de risco durante o exercício do mandato, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação com monitoramento reforçado — concordo.",
-    "decisao": "monitoramento",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-11T18:46:38Z"
-  },
-  "799d9277-a67c-4db2-aacf-fe26c7c3e4f7": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 58.030.325/0001-05 — SERVEDUC ASSESSORIA E CONSULTORIA LTDA\n\nO analista recomenda aprovação — concordo. Joel Dikson de Lima Nogueira é o próprio titular PEP, ex-Vereador de Jundiá/RN com mandato encerrado em 31/12/2024, permanecendo em carência PLD até 31/12/2029. A empresa foi aberta em novembro de 2024, ainda durante o mandato, em setor de educação profissional técnica — atividade sem interface direta com as atribuições do cargo legislativo municipal exercido, mitigando o risco de conflito de interesses.\n\nNão foram identificados processos judiciais, sanções, mídia adversa ou qualquer achado desabonador para o titular ou a empresa. A ausência de fatores agravantes concretos afasta a necessidade de escalonamento.\n\nRecomendo a APROVAÇÃO DO CADASTRO, com manutenção do monitoramento transacional ordinário durante o período de carência PLD, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — O analista recomenda aprovação — concordo.",
-    "decisao": "aprovado",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-11T18:46:45Z"
-  },
-  "282a3f50-08c1-458e-9900-fbaa839c0cb1": {
-    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 07.259.984/0001-79 — MWX EMPREEDEDORISMO E GESTAO EMPRESARIAL LTDA\n\nO analista recomenda aprovação — concordo parcialmente, mas elevo para monitoramento reforçado em razão de uma lacuna não endereçada no parecer: o vínculo societário entre Paulo Giovanni Pinheiro Teixeira Guedes e o PEP Klelson Alves da Silva (vereador ativo em Barreirinha/AM, mandato 2025–2028) é do tipo sócio, porém a empresa em comum não foi identificada nos dados disponíveis (sem CNPJ nem situação cadastral), o que impede descartar eventual sobreposição com a PJ em análise ou com outra empresa em setor sensível. Os demais fatores são favoráveis: ausência total de mídia adversa, processos ou sanções para a empresa, o titular e o PEP; a PJ foi constituída em 2005, muito antes do mandato; a atividade (fornecimento de alimentos para empresas) não apresenta interface direta com o poder público municipal de Barreirinha; e a sede em Manaus/AM difere do município de atuação política do PEP.\n\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, condicionada à validação prévia do CNPJ e da situação cadastral (ativa ou baixada na Receita Federal) da empresa em que titular e PEP figuram como sócios em comum, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação — concordo parcialmente, mas elevo para monitoramento reforçado em razão de uma lacuna não endereçada no parecer: o vínculo societário entre Paulo Gi…",
-    "decisao": "monitoramento",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-11T18:46:55Z"
+    "generated_at": "2026-09-12T00:25:06Z"
   },
   "45a36634-2643-4823-9269-cd03de7078b9": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 68.465.576/0001-68 — PIOVESAN CONSULTORIA FINANCEIRA LTDA\n\nO analista recomenda aprovação — concordo. O único fator de risco é o vínculo de irmandade com Davi Cargnin Piovesan, ex-vereador de Palmeira das Missões/RS, cujo mandato encerrou em 31/12/2024 e encontra-se em período de carência PLD. A empresa de consultoria financeira está sediada em Alegrete/RS, município distinto da atuação política do ex-PEP, e a atividade econômica não apresenta interface relevante com o cargo público anteriormente exercido. Ausência total de sanções, processos por improbidade ou mídia adversa para a empresa, seu titular e o ex-PEP.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 68.465.576/0001-68 — PIOVESAN CONSULTORIA FINANCEIRA LTDA\n\nO analista recomenda aprovação — concordo. O vínculo é de irmandade com Davi Cargnin Piovesan, ex-vereador de Palmeira das Missões/RS, cujo mandato encerrou em 31/12/2024 (em carência PLD até 31/12/2029). A empresa está sediada em Alegrete/RS, município distinto da atuação política do PEP, e atua em consultoria financeira, setor sem interface relevante com o cargo de vereador anteriormente exercido. Ausência total de sanções, processos por improbidade ou mídia adversa para a empresa, seu titular e o PEP relacionado.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
     "resumo": "APROVAR — O analista recomenda aprovação — concordo.",
     "decisao": "aprovado",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-11T18:47:02Z"
-  },
-  "768189bb-a7b4-4c25-a9f0-b43bc61f887a": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 23.149.833/0001-14 — R M DA CUNHA\n\nO analista recomenda aprovação — concordo, com ressalva pontual sobre a lacuna do vínculo societário. O vínculo é de sócio com Edmilson Lucas Rachel, ex-vereador de Bonito/MS (mandato encerrado em 31/12/2024, em carência PLD até 31/12/2029); a empresa do cadastro atua em comércio varejista de telefonia em Naviraí/MS, setor sem interface relevante com o cargo público exercido, e não há mídia adversa, processos ou sanções identificados para a empresa, o titular ou o PEP. A Credilink não informa em qual empresa titular e PEP figuram como sócios em comum — essa lacuna deve ser validada (CNPJ e situação cadastral ativa ou baixada na Receita Federal) antes da conclusão definitiva do onboarding.\n\nRecomendo a APROVAÇÃO DO CADASTRO condicionada à confirmação da empresa em comum entre titular e PEP e sua situação cadastral, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — O analista recomenda aprovação — concordo, com ressalva pontual sobre a lacuna do vínculo societário.",
-    "decisao": "aprovado",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-11T18:47:09Z"
+    "generated_at": "2026-09-12T00:25:13Z"
   },
   "fdcfbd26-8a43-44c3-892a-006b11e2cee4": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 68.509.014/0001-79 — 68.509.014 DOUGLAS KUBICA\n\nO analista recomenda aprovação — concordo. O único fator de risco é o vínculo de irmandade com Luciana Aparecida Kubica, vereadora ativa em Monte Azul Paulista/SP (mandato 01/01/2025–31/12/2029). A atividade de minimercado/mercearia não apresenta interface relevante com o poder público municipal, e a ausência total de sanções, processos por improbidade ou mídia adversa para a empresa, seu titular e a PEP afasta qualquer fator agravante concreto.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme Circular BACEN 3.978/2020.",
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 68.509.014/0001-79 — 68.509.014 DOUGLAS KUBICA\n\nO analista recomenda aprovação — concordo. O único fator de risco é o vínculo de irmandade com Luciana Aparecida Kubica, vereadora ativa em Monte Azul Paulista/SP (mandato 2025–2029). A atividade de minimercado/mercearia não apresenta interface relevante com o poder público municipal, afastando o risco de conflito de interesses com o cargo legislativo da PEP. Ausência total de sanções, processos judiciais ou mídia adversa para a empresa, seu titular e a PEP.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
     "resumo": "APROVAR — O analista recomenda aprovação — concordo.",
     "decisao": "aprovado",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-11T18:47:16Z"
+    "generated_at": "2026-09-12T00:25:20Z"
   },
-  "68df24fe-b9c6-4e60-a88d-fc735f0b7875": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 03.821.534/0001-77 — TAC CONTABEIS LTDA\n\nO analista recomenda aprovação — concordo, com ressalva sobre a lacuna do vínculo societário. O vínculo é de sócio com Nilton Batista Raupp, ex-vereador de Garopaba/SC (mandato encerrado em 31/12/2024, em carência PLD até 31/12/2029), mas a Credilink não informa em qual empresa titular e PEP figuram como sócios em comum, nem o CNPJ ou situação cadastral dessa empresa — essa lacuna deve ser sanada antes da decisão final. Os achados de mídia adversa no pipeline referem-se a homônimos no Piauí (vítimas de homicídio, não o titular), com confiança de 42% e risco de homônimo classificado como alto dado os sobrenomes comuns; não há qualquer indicativo de envolvimento do titular. Ausência total de processos, sanções ou mídia adversa confirmada para a empresa, seu titular e o PEP.\n\nRecomendo a APROVAÇÃO DO CADASTRO, condicionada à validação do CNPJ e situação cadastral (ativa ou baixada na Receita Federal) da empresa em que Emerson De Sousa Da Silva e Nilton Batista Raupp figuram como sócios em comum, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — O analista recomenda aprovação — concordo, com ressalva sobre a lacuna do vínculo societário.",
-    "decisao": "aprovado",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-11T18:47:25Z"
-  },
-  "fcb6f395-952b-491c-b4b7-dd4b27205107": {
-    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 28.241.930/0001-56 — 28.241.930 THIAGO ANDREYFSON BRANDAO DE OLIVEIRA\n\nO analista recomenda aprovação com monitoramento reforçado — concordo. O vínculo é de irmandade com Luis Afonso Brandao de Oliveira, Vereador ativo em Breves/PA (mandato 01/01/2025–31/12/2028), mesma cidade-sede da empresa, o que configura fator agravante concreto de convergência geográfica entre a atividade comercial e o âmbito de atuação política do PEP. A empresa, contudo, foi constituída em 2017, sendo anterior ao mandato, e atua em comércio varejista de saneantes — setor de interface limitada com contratações públicas municipais. Ausência total de mídia adversa, sanções ou processos judiciais para o titular, a empresa e o PEP relacionado.\n\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica dos fatores de risco, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação com monitoramento reforçado — concordo.",
+  "98deb27d-7534-429e-8089-a458b07bde50": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 50.321.708/0001-12 — AS1 - SERVICOS ADMINISTRATIVOS E CONSULTORIA\n\nO analista recomenda aprovação — concordo parcialmente, porém o desfecho adequado é aprovação sob monitoramento reforçado, dado que o próprio titular Alan Salviano Lima é o PEP, na condição de Vereador ativo em Várzea Alegre/CE (mandato 01/01/2025–31/12/2028), e a empresa foi constituída em abril de 2023 — portanto aberta antes do mandato, mas em setor de consultoria em gestão empresarial que, por natureza, possui interface potencial com contratos e serviços junto ao poder público municipal, exigindo atenção continuada. Não foram identificados processos judiciais, sanções ou mídia adversa para o titular ou a empresa.\n\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica das transações e do relacionamento durante a vigência do mandato, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação — concordo parcialmente, porém o desfecho adequado é aprovação sob monitoramento reforçado, dado que o próprio titular Alan Salviano Lima é o PEP, na…",
     "decisao": "monitoramento",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-11T18:47:33Z"
+    "generated_at": "2026-09-12T00:25:31Z"
   },
-  "ba8a8602-3656-47c3-a3b9-0090bce483bf": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 63.435.830/0001-61 — 63.435.830 MARISETE DA SILVA SILVANO\n\nO analista recomenda aprovação — concordo. O único fator de risco é o vínculo de parentesco (mãe) com Charlene Beatriz Silvano Marques, vereadora ativa em Balneário Barra do Sul/SC (mandato 01/01/2025–31/12/2029). A empresa, constituída em outubro de 2025, atua em comércio varejista de animais de estimação, setor de baixíssima interface com o poder público municipal, sem contratações públicas típicas ou sobreposição relevante com a esfera de atuação da vereadora. Ausência total de sanções, processos por improbidade ou mídia adversa para a empresa, sua titular e a PEP relacionada.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
+  "68df24fe-b9c6-4e60-a88d-fc735f0b7875": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 03.821.534/0001-77 — TAC CONTABEIS LTDA\n\nO analista recomenda aprovação — concordo. O vínculo é societário com Nilton Batista Raupp, ex-vereador de Garopaba/SC, cujo mandato encerrou em 31/12/2024 (em carência PLD até 31/12/2029). A empresa de contabilidade, constituída em 2000, é anterior ao mandato e não apresenta interface direta com a atividade parlamentar. Os achados de mídia PF no pipeline são descartados: trata-se de risco homônimo alto (sobrenomes \"Silva\" e \"Sousa\" extremamente comuns), com confiança de 42% e menção inconclusiva referente a terceiros no Piauí — sem qualquer conexão verificável com o titular. Ausência total de sanções, processos por improbidade ou mídia adversa confirmada para a empresa, seu titular e o PEP.\nRessalva: a empresa em comum entre o titular e o ex-vereador não foi identificada nos dados (nem CNPJ nem situação cadastral) — recomendo validar junto à Receita Federal se essa sociedade está ativa ou baixada antes de encerrar o processo. Condicionada essa validação, recomendo a APROVAÇÃO DO CADASTRO conforme Circular BACEN 3.978/2020.",
     "resumo": "APROVAR — O analista recomenda aprovação — concordo.",
     "decisao": "aprovado",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-11T18:47:40Z"
+    "generated_at": "2026-09-12T00:25:41Z"
+  },
+  "fcb6f395-952b-491c-b4b7-dd4b27205107": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 28.241.930/0001-56 — 28.241.930 THIAGO ANDREYFSON BRANDAO DE OLIVEIRA\n\nO analista recomenda aprovação sob monitoramento reforçado — concordo. O titular é irmão de Luís Afonso Brandão de Oliveira, vereador ativo pelo município de Breves/PA (mandato 2025–2028), e a empresa está sediada na mesma cidade de atuação política, configurando convergência geográfica relevante. A empresa, contudo, foi constituída em 2017, sendo anterior ao mandato, e atua em comércio varejista de saneantes, setor de baixa interface com contratações públicas típicas do Legislativo municipal. Ausência total de sanções, processos judiciais, mídia adversa ou apontamentos desabonadores para a empresa, seu titular e o PEP relacionado.\n\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica dos fatores de risco durante a vigência do mandato, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação sob monitoramento reforçado — concordo.",
+    "decisao": "monitoramento",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-12T00:25:50Z"
   }
 }

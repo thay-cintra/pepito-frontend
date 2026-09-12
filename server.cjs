@@ -94,6 +94,9 @@ const LOCAL_MODE = process.env.LOCAL_MODE === "true" && process.env.NODE_ENV !==
 const DIST          = path.join(__dirname, "dist");
 const ANALISES_FILE = path.join(__dirname, "src", "data", "analises-salvas.json");
 const QUEUE_FILE    = path.join(__dirname, "src", "data", "registration-queue-real.json");
+const CREDILINK_PEP_LEDGER = path.join(__dirname, "src", "data", "credilink-pep-consultas.json");
+const CREDILINK_PEP_SCRIPT = path.join(__dirname, ".tools", "consultar-credilink-pep.py");
+const PYTHON_VENV_BIN = path.join(__dirname, "..", ".venv", "bin", "python3");
 const REFRESH_LOG   = path.join(__dirname, ".tools", "refresh-daily.log");
 const REFRESH_SH    = path.join(__dirname, ".tools", "refresh-daily.sh");
 const QUEUE_SYNC_SH = path.join(__dirname, ".tools", "queue-sync.sh");
@@ -312,6 +315,115 @@ app.get("/api/queue", requireAuth, async (req, res) => {
     if (Array.isArray(data)) return res.json(stripLideranca(data));
     res.json({ ...data, items: stripLideranca(data.items) });
   } catch (e) { res.status(500).json({ error: String(e) }); }
+});
+
+// ── Consulta Credilink sob demanda para o PEP relacionado ───────────────────
+// Chamado pela tela (AnalisePrimeiraCamada.tsx/NovaAnalise.tsx) quando o PEP
+// ainda não tem consulta real no ledger — dispara consultar-credilink-pep.py
+// na hora, espera terminar (~45-90s, processamento assíncrono da própria
+// Credilink) e devolve o resultado real, sem exigir validação manual do
+// analista (thay@cora.com.br, 2026-09-12: "não quero que seja validado
+// manualmente, você deve fazer a consulta na Credilink").
+//
+// Map (não Set) de cpf -> Promise em andamento: uma 2ª requisição pro MESMO
+// cpf enquanto a 1ª ainda roda AGUARDA a mesma Promise em vez de tomar 409 e
+// desistir (achado Codex, 2026-09-12 — 409 virava erro permanente na tela).
+const credilinkPepEmAndamento = new Map();
+
+function readCredilinkLedger() {
+  try {
+    return JSON.parse(fs.readFileSync(CREDILINK_PEP_LEDGER, "utf8"));
+  } catch { return {}; }
+}
+
+// Mesmo critério de "consulta concluída com sucesso" do getConsultaStatus()
+// no frontend (registration-enrich.ts) — sem isso o endpoint podia devolver
+// `ok:true` pra uma entrada incompleta (token sem compliance consolidado,
+// ou erro de negócio com HTTP 200) (achado Codex, 2026-09-12).
+function credilinkEntryOk(entry) {
+  if (!entry) return false;
+  if (Object.keys(entry).some((k) => k.startsWith("erro"))) return false;
+  const compliance = entry.compliance;
+  return !!compliance && compliance.code === 200 && compliance.message !== "Processando";
+}
+
+// Validação real de CPF (dígitos verificadores) — 11 dígitos numéricos não
+// bastam pra evitar disparar a API paga com lixo (achado Codex, 2026-09-12).
+function cpfValido(cpf) {
+  if (!/^\d{11}$/.test(cpf) || /^(\d)\1{10}$/.test(cpf)) return false;
+  const calc = (len) => {
+    let soma = 0;
+    for (let i = 0; i < len; i++) soma += parseInt(cpf[i], 10) * (len + 1 - i);
+    const resto = (soma * 10) % 11;
+    return resto === 10 ? 0 : resto;
+  };
+  return calc(9) === parseInt(cpf[9], 10) && calc(10) === parseInt(cpf[10], 10);
+}
+
+// O CPF precisa pertencer a algum PEP relacionado de um caso da fila real —
+// sem isso qualquer usuário autenticado podia disparar consulta paga pra
+// QUALQUER CPF arbitrário, sem relação com nenhum caso (achado Codex, 2026-09-12).
+async function cpfEhPepDeAlgumCaso(cpf) {
+  const data = await readDataFile(QUEUE_FILE, "registration-queue-real.json", { items: [] });
+  const items = Array.isArray(data) ? data : (data.items || []);
+  return items.some((c) =>
+    (c.pep_pf || []).some((p) => (p.cpf_titular || "").replace(/\D/g, "") === cpf),
+  );
+}
+
+app.post("/api/credilink/consultar-pep", requireAuth, async (req, res) => {
+  const cpf = String(req.body?.cpf || "").replace(/\D/g, "");
+  if (!cpfValido(cpf)) {
+    return res.status(400).json({ error: "CPF inválido (dígito verificador não confere)." });
+  }
+  if (!(await cpfEhPepDeAlgumCaso(cpf))) {
+    console.warn(`[credilink-pep] Rejeitado — CPF ${cpf} não é PEP de nenhum caso na fila (usuário ${req.user?.email})`);
+    return res.status(403).json({ error: "CPF não corresponde a nenhum PEP de caso na fila — consulta recusada." });
+  }
+
+  // Fast-path: já consultado com sucesso — devolve direto, sem gastar nova
+  // consulta paga nem esperar ~90s (achado Codex: remontagem do componente
+  // disparava consulta nova toda vez).
+  const jaConsultado = readCredilinkLedger()[cpf];
+  if (credilinkEntryOk(jaConsultado)) {
+    return res.json({ ok: true, entry: jaConsultado, cached: true });
+  }
+
+  if (credilinkPepEmAndamento.has(cpf)) {
+    console.log(`[credilink-pep] CPF ${cpf} já em consulta — aguardando a mesma Promise (${req.user?.email})`);
+    try {
+      const entry = await credilinkPepEmAndamento.get(cpf);
+      return res.json({ ok: true, entry });
+    } catch (e) {
+      return res.status(500).json({ error: String(e.message || e) });
+    }
+  }
+
+  console.log(`[credilink-pep] Consulta disparada por ${req.user?.email} — CPF ${cpf}`);
+  const promise = new Promise((resolve, reject) => {
+    const proc = spawn(PYTHON_VENV_BIN, [CREDILINK_PEP_SCRIPT, "--force", cpf], {
+      cwd: __dirname,
+      timeout: 3 * 60 * 1000, // 3min — folga sobre o polling interno (~2min)
+    });
+    let stderr = "";
+    proc.stderr?.on("data", (d) => { stderr += d.toString(); });
+    proc.on("close", (code) => {
+      if (code !== 0) return reject(new Error(`exit ${code}: ${stderr.slice(-500)}`));
+      const entry = readCredilinkLedger()[cpf];
+      if (!entry) return reject(new Error("Script rodou mas não gravou entrada no ledger."));
+      resolve(entry);
+    });
+    proc.on("error", reject);
+  }).finally(() => credilinkPepEmAndamento.delete(cpf));
+  credilinkPepEmAndamento.set(cpf, promise);
+
+  try {
+    const entry = await promise;
+    res.json({ ok: true, entry });
+  } catch (e) {
+    console.error(`[credilink-pep] Falhou para CPF ${cpf}:`, e.message);
+    res.status(500).json({ error: String(e.message || e) });
+  }
 });
 
 let queueSyncRunning = false;

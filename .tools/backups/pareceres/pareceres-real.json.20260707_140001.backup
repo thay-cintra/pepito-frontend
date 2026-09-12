@@ -1,0 +1,921 @@
+{
+  "_meta": {
+    "description": "Comentários REAIS extraídos do Retool [ONB] Nova Tela Registration. Cada entrada é a transcrição literal do que está em 'Histórico e inclusão de comentários' do app Retool, mantendo formato, prefixo de ação (ENVIAR_LIDERANCA_PLD / ENVIAR_FILA_PLD), email do autor e timestamp.",
+    "fonte": "Retool — squad_core (https://retool.cora.team/apps/ef5045bc-10c0-11f0-905c-ffd7c996c12f/Segurança do Cliente/[ONB] Nova Tela Registration)",
+    "limitacao": "O Postgres interno do Retool NÃO está sincronizado para Athena. Apenas os comentários explicitamente compartilhados estão aqui. Para popular os 31 restantes, copie/cole de cada caso no Retool ou conecte a API do Retool."
+  },
+  "2840b4e9-59d9-4bed-891b-cc89796b08c0": {
+    "_caso": "Levi Neves Carvalho — 33.278.692/0001-93",
+    "comentarios": [
+      {
+        "timestamp": "2026-04-29T00:00:00",
+        "user_email": "m.matos@cora.com.br",
+        "tipo": "acao",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "text": "ENVIAR_LIDERANCA_PLD Cadastro rejeitado pelo time de PLD - Trata-se de conta vinculada a uma firma individual do ramo funerário (Plano SAF), sediada em Mundo Novo/BA, aberta em 2019. O alerta sistêmico decorre do fato de o titular ser irmão direto de Bernardino Brito Neto ('Bel de Luiz de Véi'), atual Vereador da cidade vizinha de Ruy Barbosa/BA (PEP Ativo). A diligência demonstrou tratar-se de um negócio anterior às eleições mais recentes, porém em consulta a apontamentos criminais identificou processos ativos (2021/2022) envolvendo o titular Levi Neves Carvalho por tráfico de drogas e associação criminosa com decretação de prisão, o início de relacionamento com este cliente demonstra risco muito alto. O titular opera uma empresa funerária, negócio altamente vulnerável à mescla de capitais ilícitos (lavagem de dinheiro oriundo do tráfico). A exposição criminal do titular, somada ao vínculo político direto (irmão vereador na mesma localidade), representa um risco regulatório, criminal e reputacional muito alto, portanto, recomendamos a rejeição."
+      }
+    ]
+  },
+  "af1fe938-e0a0-460f-987a-f7b503f0d1d2": {
+    "_caso": "Cristiano Gonçalves Portela — 60.526.692/0001-38",
+    "comentarios": [
+      {
+        "timestamp": "2026-04-29T00:00:00",
+        "user_email": "m.matos@cora.com.br",
+        "tipo": "acao",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "text": "ENVIAR_LIDERANCA_PLD Cadastro rejeitado pelo time de PLD - A análise da conta vinculada a 'Cristiano Gonçalves Portela Sociedade Individual de Advocacia' revelou uma exposição estrutural e política de risco muito alto. O titular é irmão direto de Filo Portela, atual Chefe de Gabinete da Prefeitura de Picos/PI e ex-Vereador no mesmo município. A diligência comprovou que o titular atua ativamente prestando serviços advocatícios para entes públicos na mesma cidade onde o irmão possui poder político, existindo contrato recente firmado por inexigibilidade de licitação com a Câmara Municipal de Picos (maio/2025). A intersecção entre o recebimento de recursos públicos do legislativo/executivo municipal e a atuação familiar nas mesmas esferas de poder gera um risco iminente de tráfico de influência e desvio de finalidade de verbas (tipologia de contratação favorecida). Devido ao alto nível de vulnerabilidade institucional e reputacional, recomendamos a rejeição."
+      }
+    ]
+  },
+  "d6de2fd8-63fe-4ccd-86f0-aacda66df2df": {
+    "_caso": "Romildo Conegundes Dos Santos Junior — 30.305.332 ROMILDO CONEGUNDES DOS SANTOS JUNIOR — 30.305.332/0001-45",
+    "_fonte": "project_webhook.event_acompanhamento_analise_cadastral",
+    "comentarios": [
+      {
+        "timestamp": "2026-04-22T11:28:10",
+        "user_email": "tallita.saviti@scooto.com.br",
+        "tipo": "acao",
+        "acao": "ENVIAR_FILA_PLD",
+        "text": "ENVIAR_FILA_PLD Cadastro aprovado pelo time de cadastro - Empresário individual com abertura em 2018, cnaes se completam, possui pep, documento PF ok. Conta aprovada."
+      },
+      {
+        "timestamp": "2026-04-22T15:31:58",
+        "user_email": "lucasfeller@cora.com.br",
+        "tipo": "acao",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "text": "ENVIAR_LIDERANCA_PLD Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular possui relacionamento de sócio com a PEP Josinalva Guerra Lins Silva (Vereadora de Natuba/PB), através de outra PJ (SUAS CONSULT LTDA - CNPJ 40.400.051/0001-25, que possui atividade de desenvolvimento e treinamentos em programas de computadores). Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou à PEP. Dito isso, considerando que não foram identificados desabonos relevantes sob a ótica de LD, não temos objeções ao início do relacionamento, porém, considerando o atual cumprimento de mandato ativo pela pessoa relacionada, sugerimos a inclusão em monitoramento reforçado, devido ter sociedade com PEP ativa em empresa de com atividade ligada a computação."
+      },
+      {
+        "timestamp": "2026-04-22T15:31:58-03:00",
+        "user_email": "lucasfeller@cora.com.br",
+        "tipo": "acao",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular possui relacionamento de sócio com a PEP Josinalva Guerra Lins Silva (Vereadora de Natuba/PB). através de outra PJ (SUAS CONSULT LTDA - CNPJ 40.400.051/0001-25, que possui atividade de desenvolvimento e treinamentos em programas de computadores) . Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou à PEP. Dito isso, considerando que não foram identificados desabonos relevantes sob a ótica de LD, não temos objeções ao início do relacionamento, porém, considerando o atual cumprimento de mandato ativo pela pessoa relacionada, sugerimos a inclusão em monitoramento reforçado, devido ter sociedade com PEP ativa em empresa de com atividade ligada a computação. "
+      }
+    ]
+  },
+  "af5e8d1f-f85c-4b1d-b794-2db52a990d89": {
+    "_caso": "Cicero Roberto Mendonça De Souza — FACULDADE DE ENSINO DO CARIRI LTDA — 42.235.850/0001-19",
+    "comentarios": [
+      {
+        "timestamp": "2026-04-29T00:00:00",
+        "user_email": "analista@cora.com.br",
+        "tipo": "acao",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "text": "ENVIAR_LIDERANCA_PLD Cadastro rejeitado pelo time de PLD - A análise conclui pela inviabilidade do relacionamento com a empresa FACULDADE DE ENSINO DO CARIRI LTDA. A presença de um PEP Ativo no quadro societário, que simultaneamente figura como réu em processo criminal por Estelionato e Falsidade Documental, apresenta risco muito alto. Crimes de fraude e falsidade são antecedentes diretos à lavagem de dinheiro, e o risco de contágio criminal para a conta bancária da empresa é considerado extremo."
+      }
+    ]
+  },
+  "3224a5e5-4754-414b-8920-02e25812bf66": {
+    "_caso": "Meire Silva Dos Santos — MJS FARMA LTDA — 49.250.150/0001-42",
+    "_fonte": "project_webhook.event_acompanhamento_analise_cadastral",
+    "comentarios": [
+      {
+        "timestamp": "2026-04-29T13:28:01-03:00",
+        "user_email": "m.matos@cora.com.br",
+        "tipo": "acao",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se da solicitação de onboarding para a empresa MJS FARMA LTDA. A diligência comprovou que a titular, Meire Silva dos Santos, é irmã de Moisés dos Santos Silva, atual Vereador no município de Simões Filho/BA (PEP Ativo), o que enquadra a cliente como 'Pessoa Estreitamente Relacionada'. A empresa atua no ramo farmacêutico, setor que possui forte exposição ao poder público municipal através da compra de medicamentos, porém não consta nenhuma participação da empresa em licitações, pregões eletrônicos ou contratos com o poder público. Portanto, recomendamos a aprovação.  "
+      }
+    ]
+  },
+  "45c71985-d43d-4a41-bf61-382e7fcfe25c": {
+    "_caso": "MARCELO GOMES MILHOMEM — MGM CONSULTORIA E ASSESSORIA PUBLICA LTDA — 27.203.617/0001-60",
+    "_fonte": "project_webhook.event_acompanhamento_analise_cadastral",
+    "comentarios": [
+      {
+        "timestamp": "2026-04-29T12:53:19-03:00",
+        "user_email": "m.matos@cora.com.br",
+        "tipo": "acao",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "text": "Cadastro rejeitado pelo time de PLD - Trata-se da análise da MGM Consultoria e Assessoria Pública LTDA. A diligência comprovou que o titular, Marcelo Gomes Milhomem, é PEP Direto (Vereador em Sandolândia/TO). O agravante central repousa na atividade do negócio: a empresa atua prestando consultoria em licitações e fornecendo o serviço de Pregoeiro para diversas Câmaras Municipais e Prefeituras no interior do Tocantins. A sobreposição entre a influência política do titular e o recebimento contínuo de verbas públicas de cidades da mesma região para gerenciar processos licitatórios gera um Risco de Conformidade severo (conflito de interesses, potencial direcionamento de certames e uso indevido da máquina pública).Devido à forte exposição ao risco de corrupção inerente ao modelo operacional do cliente, recomenda-se a rejeição.  "
+      }
+    ]
+  },
+  "63bd6c5e-8fd0-4f0a-a705-db26168e777c": {
+    "_caso": "Igor Matheus Silva Brita — I M SILVA BRITA LTDA — 41.509.097/0001-40",
+    "_fonte": "project_webhook.event_acompanhamento_analise_cadastral",
+    "comentarios": [
+      {
+        "timestamp": "2026-04-29T13:16:24-03:00",
+        "user_email": "m.matos@cora.com.br",
+        "tipo": "acao",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se da análise de onboarding da empresa I M SILVA BRITA LTDA, sediada em Marialva/PR. A diligência comprovou que o titular, Igor Matheus Silva Brita, é filho de Flavia Cheroni, atual Prefeita Municipal de Marialva/PR (eleita em 2024), enquadrando o cliente como 'Pessoa Estreitamente Relacionada' a um PEP ativo. O negócio do titular opera desde 2021 no setor de representação comercial agrícola. O risco intrínseco é elevado em virtude do conflito de interesses de atuar comercialmente no mesmo município gerido pelo núcleo familiar, abrindo brechas para a tipologia de contratação governamental cruzada. Como não constam processos criminais ou desvios materializados na história das partes envolvidas, recomenda-se a aprovação. "
+      }
+    ]
+  },
+  "d5781b4d-3ca6-46e2-9411-9f03ab55236c": {
+    "_caso": "Filipe Siqueira De Freitas — ELITE ESCAVACOES E TERRAPLENAGEM LTDA — 29.576.525/0001-51",
+    "_fonte": "project_webhook.event_acompanhamento_analise_cadastral",
+    "comentarios": [
+      {
+        "timestamp": "2026-04-30T09:50:25-03:00",
+        "user_email": "m.matos@cora.com.br",
+        "tipo": "acao",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de análise da empresa ELITE ESCAVAÇÕES E TERRAPLENAGEM LTDA. A diligência comprovou que o seu titular, Filipe Siqueira, é PEP Direto, atuando como Vereador no município de Caldazinha/GO. A construtora está sediada na cidade vizinha de Senador Canedo/GO. O cruzamento entre o mandato político do titular e o objeto social da empresa representa risco ao ecossistema de contratações públicas governamentais, porém como não há condenações ou investigações criminais materializadas, não identificamos a participação da empresa em licitações ou contratos com o poder público, recomendamos a aprovação.  "
+      }
+    ]
+  },
+  "fecc8d67-9964-4e68-8f22-5c62a696ada2": {
+    "_caso": "Silvio Luiz Paganini Junior — PAGANINI JUNIOR ENGENHARIA LTDA — 47.696.226/0001-32",
+    "_fonte": "project_webhook.event_acompanhamento_analise_cadastral",
+    "comentarios": [
+      {
+        "timestamp": "2026-04-30T09:25:55-03:00",
+        "user_email": "m.matos@cora.com.br",
+        "tipo": "acao",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se da análise de onboarding da empresa PAGANINI JUNIOR ENGENHARIA LTDA. A diligência comprovou que o titular, Silvio Luiz, é filho direto de Claudia Paganini, política influente que atua como Vereadora e concorreu à Prefeitura de Sales Oliveira/SP em 2024. A empresa do titular é uma firma de Engenharia sediada na mesma cidade. O cruzamento desse vínculo familiar com o segmento de obras e construção civil caracteriza um cenário de sensibilidade e vulnerabilidade a crimes contra a administração pública (licitações). Dado que não há processos de improbidade atrelados à empresa e a ficha criminal encontra-se limpa e após varreduras em bases de dados de fontes abertas, Portais da Transparência, Diários Oficiais dos Municípios do Estado de São Paulo e no Diário Oficial da União (DOU), não foram encontradas publicações, homologações, editais ou registros de contratos públicos vinculados à empresa, portanto recomendamos a aprovação. "
+      },
+      {
+        "timestamp": "2026-04-30T09:29:18-03:00",
+        "user_email": "m.matos@cora.com.br",
+        "tipo": "acao",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se da análise de onboarding da empresa PAGANINI JUNIOR ENGENHARIA LTDA. A diligência comprovou que o titular, Silvio Luiz, é filho direto de Claudia Paganini, política influente que atua como Vereadora e concorreu à Prefeitura de Sales Oliveira/SP em 2024. A empresa do titular é uma firma de Engenharia sediada na mesma cidade. O cruzamento desse vínculo familiar com o segmento de obras e construção civil caracteriza um cenário de sensibilidade e vulnerabilidade a crimes contra a administração pública (licitações). Dado que não há processos de improbidade atrelados à empresa e a ficha criminal encontra-se limpa e após varreduras em bases de dados de fontes abertas, Portais da Transparência, Diários Oficiais dos Municípios do Estado de São Paulo e no Diário Oficial da União (DOU), não foram encontradas publicações, homologações, editais ou registros de contratos públicos vinculados à empresa, portanto recomendamos a aprovação. "
+      }
+    ]
+  },
+  "ffffb49f-2cc0-41d2-925a-742933383886": {
+    "_caso": "Renato Cordeiro Justus — RCJ ADMINISTRACAO E PARTICIPACOES LTDA — 66.247.051/0001-20",
+    "_fonte": "project_webhook.event_acompanhamento_analise_cadastral",
+    "comentarios": [
+      {
+        "timestamp": "2026-04-29T12:43:24-03:00",
+        "user_email": "m.matos@cora.com.br",
+        "tipo": "acao",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "text": "Cadastro rejeitado pelo time de PLD - A análise da empresa RCJ Administração e Participações LTDA identificou que o titular, Renato Cordeiro Justus, é parente de primeiro grau (filho e irmão) de duas Pessoas Expostas Politicamente de altíssimo escalão no Paraná (Nelson Justus e Roberto Justus). A família enfrenta intenso escrutínio do Ministério Público, havendo uma Ação de Improbidade recente cobrando R$ 6,6 milhões do irmão do titular. O próprio titular possui histórico associado a empresas envolvidas em polêmicas de licitações públicas na região. A tentativa de abertura de uma conta utilizando uma Holding Imobiliária recém-criada neste exato contexto temporal apresenta um risco severo de blindagem patrimonial ou trânsito de capitais não justificados. A exposição sistêmica, criminal e reputacional atrelada a este núcleo familiar possui risco muito alto, portanto recomendamos a rejeição.  "
+      },
+      {
+        "timestamp": "2026-05-05T12:42:40-04:00",
+        "user_email": "thay@cora.com.br",
+        "tipo": "acao",
+        "acao": "REJEITAR_CADASTRO",
+        "text": "CADASTRO REPROVADO CNPJ: 66.247.051/0001-20 — RCJ ADMINISTRACAO E PARTICIPACOES LTDA A análise evidencia uma convergência de fatores de risco elevado. A exposição sistêmica, criminal e reputacional atrelada a este núcleo familiar possui risco muito alto.  Diante dos fatores de risco identificados, recomendo a NÃO APROVAÇÃO do relacionamento."
+      }
+    ]
+  },
+  "2569031f-eab9-4816-89d9-c49226c48ace": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-07T17:15:34-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro rejeitado pelo time de PLD - Trata-se de empresa cujo titular possui vínculo societário com ex-vereador do município de Pimenteiras/PI. Em análises reputacionais foi identificado que o próprio titular da conta é ex-Prefeito do referido município e acumula condenações na Justiça Federal, no TCU e no TCE por improbidade administrativa, peculato e desvio de verbas públicas (com sentenças que exigiram devolução de valores milionários ao erário). Dito isso, considerando o histórico contumaz de condenações por corrupção do titular, somos desfavoráveis ao início do relacionamento. "
+      }
+    ]
+  },
+  "99e40577-fd25-49e6-87a3-d642f11eef69": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-07T17:04:59-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro rejeitado pelo time de PLD - Trata-se de empresa cuja titular é irmã de Prefeito. Em varreduras públicas e na Justiça Federal, foi identificado que a titular possui condenação por irregularidades e fraude em licitações cometidas justamente na prefeitura da referida cidade, além de que o PEP também figura no polo passivo de diversos processos que apuram improbidade administrativa. Dito isso, considerando o cenário crítico que combina o mandato ativo do irmão no Executivo municipal, o histórico criminal comprovado da titular em desvios de certames públicos e a natureza intangível da empresa recém-aberta, somos desfavoráveis ao início do relacionamento. "
+      }
+    ]
+  },
+  "672b5137-cc4f-4d12-b265-8fecac548303": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-07T16:58:48-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cuja titular é irmã de vereador. Em análises reputacionais, não foram localizadas mídias desabonadoras ou contratos governamentais associados à empresa ou à sua titular. Dito isso, considerando que não foram identificados desabonos, porém, levando em consideração o exercício atual de mandato da pessoa relacionada e a natureza dos serviços prestados (apoio administrativo), somos favoráveis ao início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "ac873b5c-9783-4a79-b169-c23942c39518": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-07T16:41:14-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular é irmão de ex-vereadora. Em análises reputacionais, não foram identificadas mídias ou apontamentos desabonadores face à empresa, ao seu titular ou à ex-política associada. Dito isso, considerando o cenário livre de apontamentos de desabonos, não temos objeções ao início do relacionamento. "
+      }
+    ]
+  },
+  "4bca8825-d5ff-4251-8b86-fc38cf9bbbee": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-07T16:38:04-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cuja titular é filha de vereadora com mandato ativo. Em análises reputacionais, não foram identificadas mídias ou apontamentos desabonadores face à empresa, à sua titular ou à política associada. Dito isso, considerando que não foram identificados desabonos sob a ótica de LD, porém, levando em consideração o exercício atual de mandato, somos favoráveis ao início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "4556104e-cb9a-49e9-ace2-87933ce979ba": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-07T16:30:08-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular é ex-vereador. Em análises reputacionais, não foram identificadas mídias ou apontamentos desabonadores face à empresa ou ao titular. Dito isso, considerando que não foram identificados desabonos sob a ótica de LD, somos favoráveis ao início do relacionamento. "
+      }
+    ]
+  },
+  "39418459-0314-410d-8c26-23d69dea3561": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-07T15:44:05-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa recém-constituída com atuação no ramo de locações. A análise identificou que um dos sócios exerce o cargo de Vereador (mandato ativo) no exato município-sede do negócio. Em pesquisas reputacionais, não foram identificadas mídias desabonadoras ou histórico criminal atrelados à empresa ou aos sócios sob a ótica de PLD. Dito isso, considerando que não foram identificados desabonos, porém, um dos sócios exerce mandato atualmente, recomendamos a aprovação do início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "c5c809f0-9f53-4f0e-ad0e-d0c9946b0ec7": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-07T15:01:03-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro rejeitado pelo time de PLD - Trata-se de empresa com atuação em setor de alto risco, cujo titular exerce o cargo de Vereador (mandato ativo) no município-sede do negócio. Em pesquisas reputacionais, foi identificado que o titular possui condenação criminal em primeira instância pela prática de Fraude à Licitação (Art. 90 da Lei nº 8.666/93), envolvendo a constituição de empresa com \"laranjas\" para frustrar caráter competitivo de certame público na mesma localidade de atuação. Diante do histórico criminal tipificado atrelado a contratações governamentais, somado ao severo conflito de interesses (político ativo com construtora na base eleitoral), somos desfavoráveis ao início do relacionamento.  "
+      }
+    ]
+  },
+  "386e9d78-c517-4dee-8317-ae24c3ebab76": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-06T16:39:36-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cuja titular é atual Vereadora do município onde a empresa está sediada. Em análises reputacionais, não foram identificadas mídias ou apontamentos desabonadores reais face à empresa ou à política associada. Dito isso, considerando a ausência de mídias negativas e o baixo risco financeiro da atividade (MEI focado em alimentação domiciliar), não temos objeções ao início do relacionamento, recomendando-se a aprovação estritamente sob monitoramento reforçado em virtude do exercício atual de cargo público na exata mesma localidade. "
+      }
+    ]
+  },
+  "20fbe3e7-9521-4c81-bab7-0e7238d42ebf": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-06T16:05:50-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de organização religiosa cujo titular (presidente) é irmão de ex-Vereadora. Em análises reputacionais, não foram identificadas mídias ou apontamentos desabonadores face à instituição, ao seu titular ou à política associada. Dito isso, considerando a idade de constituição da entidade e a ausência de atipicidades midiáticas sob a ótica de PLD, não temos objeções ao início do relacionamento, recomendando-se a aprovação estritamente sob monitoramento reforçado em virtude da atuação em setor de alto risco inerente (organização religiosa) combinada ao recém-encerrado mandato político na mesma localidade. "
+      }
+    ]
+  },
+  "f2a4b186-aa2b-4825-b1e0-b92a837e902a": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-06T15:57:59-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo sócio possui vínculo societário com ex-Vereador. Em análises reputacionais, não foram identificadas mídias ou apontamentos desabonadores face à empresa, ao seu titular ou ao político associado. Dito isso, considerando que não foram identificadas atipicidades ou desabonos sob a ótica de PLD, não temos objeções ao início do relacionamento. "
+      }
+    ]
+  },
+  "41c9bbb4-e083-498f-8877-5ee9375624ca": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-06T15:27:08-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular da conta possui é irmão de Juíza Titular de Tribunal Regional no mesmo estado onde a empresa atua. Em análises reputacionais, não foram identificadas mídias ou apontamentos desabonadores face à empresa, aos sócios ou à magistrada associada. Dito isso, considerando a ausência de mídias negativas, não temos objeções ao início do relacionamento, recomendando-se a aprovação estritamente sob monitoramento reforçado em virtude do exercício atual e ativo do cargo público pelo vínculo associado e da atuação da empresa em setor com sensibilidade para PLD (pecuária). "
+      }
+    ]
+  },
+  "53416d66-03af-4915-9239-5b7c140db4fa": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-06T14:58:00-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de falso positivo para PEP. Em pesquisas reputacionais, não foram identificados desabonos à empresa ou seus sócios, razão pela qual não temos objeções. "
+      }
+    ]
+  },
+  "cfc443fb-2bf3-4264-a427-876c0683c3c1": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-06T12:22:52-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de falso positivo para PEP. Em análises reputacionais à empresa ou ao seu sócio, não foram identificados desabonos, razão pela qual não temos objeções. "
+      }
+    ]
+  },
+  "76d4138a-bf93-4674-8b21-49fb25241629": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-06T12:09:01-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de falso positivo para PEP. No entanto, em análises reputacionais, foram identificados processos criminais relacionados ao sócio: um em que ele era investigado por difamação, outro em que consta como procurador (advogado), e o último, que atuou como testemunha. Dito isso, não foram identificados desabonos relevantes sob a ótica de PLD, razão pela qual não temos objeções. "
+      }
+    ]
+  },
+  "23e03df6-f24d-413a-b06c-e926918e8bbc": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-08T16:36:40-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa recém-constituída cuja titular possui vínculo societário com um vereador com mandato ativo. Em varreduras públicas e em Diários Oficiais, não foram localizadas mídias desabonadoras ou contratos governamentais associados à empresa, à sua titular ou ao sócio. Dito isso, considerando que não foram identificados desabonos sob a ótica de LD, porém, levando em consideração o exercício atual de mandato da pessoa com quem possui vínculo societário, somos favoráveis ao início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "16b74030-5a91-4929-8b99-753a535736a3": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-08T12:05:19-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro rejeitado pelo time de PLD - Trata-se de empresa cujo titular possui relacionamentos políticos, mantendo vínculos societários com o atual Prefeito, um Deputado Estadual e um Vereador. Em análises em fontes oficiais, identificou-se que o titular da conta é alvo formal de denúncia do Ministério Público Federal (Operação Veiculação) por lavagem e ocultação de capitais, fraude em licitação, associação criminosa e desvio de recursos públicos federais (com histórico comprovado de uso de contas empresariais para triangulação financeira de propinas). Considerando a inegociável materialidade criminal do titular em crimes contra a administração pública, somada à sua ampla capilaridade com agentes políticos ativos dos poderes Executivo e Legislativo, somos desfavoráveis ao início do relacionamento.  "
+      }
+    ]
+  },
+  "bda5cef7-6c02-48f5-9f09-7c0c7656f842": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-08T11:21:27-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular é filho de Secretária Executiva. Em análises reputacionais e varreduras abertas, constatou-se que a empresa possui operação real e robusta (produção de grandes eventos automotivos na região e turismo), sem apontamentos criminais ou desabonadores face à empresa, seu sócio ou à PEP. Dito isso, considerando que não foram identificados desabonos sob a ótica de LD, não temos objeções ao início do relacionamento. "
+      }
+    ]
+  },
+  "4e85ce9b-cbf9-4be1-a5ff-f86ae35fdceb": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-08T12:32:47-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de clínica médica cujo titular é irmão de ex-vereador. Em análises reputacionais, verificou-se que o titular é médico com CRM ativo atuante na região, e não foram identificados apontamentos criminais ou desabonadores em face da empresa, do seu sócio ou do ex-político relacionado. Dito isso, considerando o robusto tempo de mercado da empresa, a sua operação lastreada na prestação de serviços de saúde lícitos, o status atual de Ex-PEP (sem mandato) do familiar e a ausência de desabonos sob a ótica de PLD, não temos objeções ao início do relacionamento. "
+      }
+    ]
+  },
+  "872984c6-67ba-4cc6-9e5a-1ac50ec05c54": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-12T19:42:41-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de conta para condomínio. O titular, atuando provavelmente como síndico, é também ex-vereador. Em pesquisas reputacionais, identificou-se que o titular figurou no polo passivo de ação criminal movida pelo Ministério Público do Mato Grosso (Processo nº 0000177-52.2004.8.11.0030) no ano de 2004, sob a tipificação de Corrupção Passiva. O referido processo encontra-se atualmente com status \"Encerrado\". Considerando a natureza estritamente administrativa do CNPJ atual (rateio de despesas de condomínio residencial na Paraíba), a barreira geográfica e o fato de o processo judicial em Mato Grosso ser antigo e já baixado, somos favoráveis ao início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "0fd2f314-2659-437a-8a99-af16bf235307": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-12T19:49:05-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de serralheria cujo titular é irmão de Vereadora no município vizinho de Monte Mor/SP. Em análises externas, não foram localizadas mídias desabonadoras, portanto, considerando a ausência de materialidade negativa, não identificamos conflito de interesses direto. Somos favoráveis ao início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "322d112b-db2b-4a9d-bb71-7fcfb465c2e7": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-14T18:56:01-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular é irmão de Vereador ativo em Santa Maria do Pará/PA. Em análises externas, não foram localizados desabonos ou contratos governamentais vigentes. Considerando o exposto, somos favoráveis ao início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "a81da2e3-03d4-488e-99ed-5f4d1333bf73": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-14T18:51:03-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cuja titular é irmã de Vereador e atual Presidente da Câmara Municipal de Timbiras/MA. Em análises externas, não foram localizados desabonos ou contratos governamentais vigentes. Considerando o exposto, somos favoráveis ao início do relacionamento sob monitoramento reforçado., em observância ao cumprimento atual do mandato.  "
+      }
+    ]
+  },
+  "70f186e7-06b0-461a-838c-87eeb32bbe3c": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-14T18:12:41-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular é sócio comercial de ex-Prefeito de Jacaraci/BA. Em análises externas, não foram localizados desabonos ou contratos governamentais vigentes. Considerando o exposto, somos favoráveis ao início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "61744580-b3a8-42fe-965b-71bcd4bee556": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-14T18:17:23-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cuja titular é irmã de Vereador ativo em Uruguaiana/RS. Em análises externas, não foram localizados desabonos ou contratos governamentais vigentes. Considerando o exposto, somos favoráveis ao início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "280812fe-b3a1-49ae-b971-287e31bed78e": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-14T17:55:49-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de associação privada cujo titular é ex-Vereador e ex-Presidente da Câmara Municipal do exato mesmo município. Em análises externas, não foram localizados desabonos ou favorecimento em repasses de verbas públicas à entidade. Considerando o exposto, somos favoráveis ao início do relacionamento sob monitoramento reforçado, diante da sensibilidade do segmento.  "
+      }
+    ]
+  },
+  "46868788-c75e-496e-856d-a0981cc42271": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-12T19:16:01-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular é Diretor Presidente de Agência Reguladora de Serviços Públicos (ARSAM). Em varreduras públicas, não foram identificados apontamentos criminais, desabonos ou contratos governamentais vigentes que materializem ilícitos. Dito isso, considerando a ausência de materialidade negativa, somos favoráveis ao início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "1ca3b300-3b61-4935-9b04-672d5ecf0279": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-14T16:02:30-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cuja titular é irmã de ex-Secretário Especial da Presidência da República. Em análises externas, não foram localizados desabonos ou contratos governamentais vigentes. Considerando o exposto, somos favoráveis ao início do relacionamento. "
+      }
+    ]
+  },
+  "50ba7308-5250-49f3-8029-e5336b151ebb": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-12T20:02:31-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular é Vereador no exato mesmo município. Em análises externas, não foram localizados desabonos ou contratos governamentais vigentes. Dito isso, considerando o exposto, somos favoráveis ao início do relacionamento sob  monitoramento reforçado. "
+      }
+    ]
+  },
+  "0c50f90b-3517-4fe8-becc-5bca8c7a1923": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-12T19:53:01-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro rejeitado pelo time de PLD - Trata-se de empresa cujo titular é ex-Secretário Municipal de Turismo e Esportes de Florianópolis e ex-vereador, alvo central da \"Operação Presságio\" (Polícia Civil/SC). O titular foi formalmente indiciado e chegou a ser preso por liderar suposto esquema de corrupção passiva, fraude em licitações e lavagem de dinheiro, envolvendo desvios milionários através da contratação de ONGs e serviços vinculados à sua pasta. Considerando o grave e recente histórico criminal atrelado à gestão de verbas públicas no mesmo setor de atuação da empresa agora constituída (eventos/consultoria), o risco de a conta servir como conduíte para lavagem de capitais é extremo, portanto, somos desfavoráveis ao início do relacionamento. "
+      }
+    ]
+  },
+  "5c4f15e8-ca8f-4452-a77d-7cd558a3aafe": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-12T19:30:26-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro rejeitado pelo time de PLD - Trata-se de associação privada cujo titular da conta e presidente da associação é ex-vereador e Diretor no Executivo Municipal (Decreto 081/2025). Dito isso, considerando a natureza jurídica da empresa estruturalmente vulnerável à captação de subvenções, emendas e patrocínios públicos, e o fato de seu presidente possuir cargo ativo e trânsito na Prefeitura do exato mesmo município materializa Conflito de Interesses. O risco de a associação atuar como conduíte para desvio de verbas locais é crítico, razão pela qual somos desfavoráveis ao início do relacionamento. "
+      }
+    ]
+  },
+  "2ff2601a-2b0f-42fe-8c98-235f9492b1a3": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-12T19:23:59-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de academia de ginástica cujo titular da conta é Vereador. Em análises reputacionais, não foram identificados apontamentos criminais, desabonos ou contratos governamentais vigentes entre a empresa e a Prefeitura local. Dito isso, considerando a presunção de legalidade da operação e a ausência de materialidade negativa sob a ótica de LD, somos favoráveis ao início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "7b612586-cdea-4222-a4d0-157a83ca316c": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-12T18:45:56-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro rejeitado pelo time de PLD - Trata-se de empresa consolidada cujo titular é político com mandato ativo, ocupando atualmente o cargo de Presidente da Câmara Municipal de Ribeirão Cascalheira/MT. As pesquisas reputacionais demonstram que no final de 2025, o Ministério Público do Estado de Mato Grosso (MPMT) apresentou denúncia criminal contra o titular por desvio de verbas públicas da Câmara, acusando-o da prática contumaz de peculato (22 vezes) e falsidade ideológica (17 vezes) através de fraudes em diárias. Considerando o mandato ativo no comando do Legislativo municipal somado à denúncia formal em curso por peculato e corrupção sistemática contra os cofres públicos, somos desfavoráveis ao início do relacionamento. "
+      }
+    ]
+  },
+  "d40bbad8-2c38-4713-aadd-5f5d2a066a1c": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-12T19:01:56-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro rejeitado pelo time de PLD - Trata-se de empresa cujo titular é filho de Secretária Municipal de Turismo do município. Em pesquisas externas, nota-se que a empresa presente analisada figura ativamente como fornecedora/recebedora de verbas da própria Prefeitura de Quiterianópolis (orçamentos atrelados à Secretaria de Finanças local). Considerando o conflito de interesses absoluto de ter a mãe no alto escalão do Executivo e a empresa recebendo fundos do exato município, somos desfavoráveis ao início do relacionamento. "
+      }
+    ]
+  },
+  "1b97283a-e7c8-4dc9-bb91-097c0d29dbe0": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-12T18:20:53-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro rejeitado pelo time de PLD - Em consonância com parecer anterior, trata-se de firma individual (ME) recém-constituída (março de 2026) atuante no comércio de materiais de construção, com sede no município de Olho d'Água do Borges/RN. O titular possui vínculo familiar direto (irmão) com Ranilda da Silva, atual Secretária Municipal de Finanças e Administração do exato mesmo município. O vínculo entre uma empresa de setor altamente vulnerável a fraudes licitatórias (materiais de construção), o tempo de constituição irrisório pós-eleitoral e a subordinação geográfica direta ao cofre municipal gerido pela irmã do PEP, materializa um Conflito de Interesses absoluto. A estrutura indica fortíssimo risco de que a empresa possa ser utilizada como 'fachada' ou intermediária para o direcionamento de verbas públicas municipais e triangulação financeira. Desta forma, recomendamos a rejeição.  "
+      }
+    ]
+  },
+  "4328697c-0e2b-4646-af09-24b291854691": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-12T18:37:36-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de cartório recém-constituído cuja titular possui alerta PEP decorrente da função de Tabeliã, portanto, trata-se de falso positivo. Em análises reputacionais e varreduras em Diários Oficiais, constatou-se que a abertura do CNPJ decorre de aprovação legal em concurso público do Tribunal de Justiça (TJPE), não havendo vínculo com cargos políticos eleitorais. Não foram identificados apontamentos criminais ou desabonadores face à titular ou à relacionada. Dito isso, considerando a operação lícita comprovada e a ausência de desabonos sob a ótica de LD, não temos objeções ao início do relacionamento. "
+      }
+    ]
+  },
+  "0a75159b-8eaa-47c3-8063-0318864e4f5d": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-20T11:38:31-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular é sócio de Vereador ativo no exato mesmo município (Tauá/CE). Em análises externas, não foram localizados desabonos ou contratos governamentais vigentes. Considerando o exposto, somos favoráveis ao início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "382b983f-130d-4517-947f-4bce83f7cdca": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-20T10:59:40-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular é Vereador ativo no exato mesmo município. Em análises externas, não foram localizados desabonos ou contratos governamentais vigentes. Considerando o exposto, somos favoráveis ao início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "fa9b536e-9f53-449a-ab23-b00fd4faf696": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-20T10:52:01-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cuja titular é sócia comercial de Vereador ativo em Japeri/RJ. Em análises externas, não foram localizados desabonos ou contratos governamentais vigentes. Considerando o exposto, somos favoráveis ao início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "0f397f16-399a-4806-b543-4f9f8194f9bb": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-20T10:43:40-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular é Vereador ativo em Santo Antônio do Descoberto/GO. Em análises externas, não foram localizados desabonos ou contratos governamentais vigentes. Considerando o exposto, somos favoráveis ao início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "79dbd02b-2e0c-4873-b3a4-6d583dbcc2b6": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-20T09:55:36-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular é Vereador ativo no exato mesmo município. Em análises externas, não foram localizados desabonos ou contratos governamentais vigentes. Considerando o exposto, somos favoráveis ao início do relacionamento sob monitoramento reforçado, diante do exercício atual do mandato. "
+      }
+    ]
+  },
+  "8e2aa4a0-62e7-4b69-a904-dd84530536ad": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-20T10:03:51-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular é ex-vereador. Em análises externas, não foram localizados desabonos ou contratos governamentais vigentes. Considerando o exposto, somos favoráveis ao início do relacionamento. "
+      }
+    ]
+  },
+  "708f2a4d-ac7d-432c-be49-dd214dc64ee6": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-20T12:02:59-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro rejeitado pelo time de PLD - Trata-se de empresa recém-constituída (setor hospitalar/pronto-socorro) cujo titular é sócio comercial de Prefeito ativo (Fonte Boa/AM) e do ex-Reitor da Universidade do Estado do Amazonas (UEA). Em varredura externa de mídias, identificou-se que o sócio ex-Reitor já foi alvo de investigação do Ministério Público (MP-AM) por suspeitas de enriquecimento ilícito e improbidade administrativa em contratos públicos firmados com dispensa de licitação. Considerando a estruturação embrionária da nova empresa em setor sensível (saúde) e o histórico investigativo do sócio vinculado a fraudes em contratações estatais, somos desfavoráveis ao início do relacionamento. "
+      }
+    ]
+  },
+  "164515b6-a72c-4b6d-869e-91c4420a78cc": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-25T11:12:03-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro rejeitado pelo time de PLD - Trata-se de empresa recém-constituída cujo titular é Vereador ativo no exato mesmo município (Unistalda/RS). Em análise estrutural cruzada, identificou-se que o CNPJ foi aberto na mesma data, no mesmo endereço físico e utilizando o mesmo e-mail de contato de outra empresa recém-criada por uma ex-Vereadora local. Considerando as fortes evidências de estruturação em rede (possível criação de múltiplas empresas de fachada vinculadas a agentes políticos locais para possível emissão de notas frias), identifica-se riscos de lavagem de dinheiro. Dito isso, somos desfavoráveis ao início do relacionamento. "
+      }
+    ]
+  },
+  "d1998ed2-2031-445c-84ab-46945283688f": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-25T10:43:44-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa recém-constituída (apoio administrativo) cuja titular é ex-Vereadora do exato mesmo município (mandato encerrado em Dez/2024). Em análises externas, não foram localizados desabonos ou contratos governamentais vigentes. Considerando o exposto, somos favoráveis ao início do relacionamento. "
+      }
+    ]
+  },
+  "6ffe6e0b-fe5f-4560-966f-b512b1faed3a": {
+    "comentarios": [
+      {
+        "timestamp": "2026-05-25T13:24:40-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cuja titular é irmã de Vereador ativo no exato mesmo município (Gurupá/PA). Em análises externas, não foram localizados desabonos ou contratos governamentais vigentes. Considerando o exposto, somos favoráveis ao início do relacionamento sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "539520b8-e85e-4a0d-9a33-5c8771013798": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-30T12:13:18-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa atuante no varejo de panificação cujo titular é irmã de ex-vereadora. Em análises reputacionais, não foram identificadas mídias ou apontamentos desabonadores face à empresa, à sua titular ou à política associada. Dito isso, considerando o cenário reputacional isento conjugado à completa e extrema divergência geográfica interestadual entre a sede da operação comercial e a base eleitoral da familiar, não temos objeções ao início do relacionamento. "
+      }
+    ]
+  },
+  "d6054d96-befc-4b34-b72f-af694be5e857": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-30T19:11:46-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro rejeitado pelo time de PLD - Trata-se de empresa cujo titular da conta é irmão de atual Prefeito. O agravante primário do dossiê é que o próprio Chefe do Executivo figura ativamente como Sócio-Administrador da presente empresa de transportes e turismo. Como a legislação brasileira veda que prefeitos em exercício administrem empresas privadas, somado à total convergência geográfica do negócio na cidade que o sócio governa, o cenário configura conflito de interesses materializado e infração legal primária. Diante disso, temos objeções ao início do relacionamento.  "
+      }
+    ]
+  },
+  "1fc8c7a4-05f8-4fef-8167-fe854a93ddfd": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-30T18:43:41-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa do setor de alimentação cujo próprio titular é ex-vereador e ex-Presidente da Câmara da mesma localidade. Em análises reputacionais, não foram identificadas mídias materiais desabonadoras face à empresa ou ao titular. Dito isso, considerando a ausência de desabonos ou atipicidades, além de que o referido sócio já finalizou o cumprimento de mandato, não temos objeções ao início do relacionamento. "
+      }
+    ]
+  },
+  "9ab362e7-168e-449f-9b36-e8959b9f3ace": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-30T19:36:23-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de associação privada de extrema longevidade, cuja titular da conta é primeira tesoureira da referida associação e irmã de atual Prefeito Municipal de Buritizal - SP. Em análises reputacionais, não foram identificadas mídias materiais desabonadoras. Dito isso, considerando o histórico criminal ilibado, a divergência geográfica atestada e a comprovação material através de pesquisas externas da existência e atuação da associação, recomendamos aprovação sob monitoramento reforçado, tendo em vista o cumprimento atual de mandato legislativo do político supracitado. "
+      }
+    ]
+  },
+  "9a6bc946-4e81-477d-abf6-d3fef9990de4": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-30T18:08:02-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa atuante com locação de veículos cujo próprio titular é ex-vereador. Em análises reputacionais, não foram identificadas mídias desabonadoras face à empresa ou ao seu titular. Dito isso, considerando que não foram identificadas atipicidades ou desabonos, além de que o titular já encerrou o seu mandato, não temos objeções ao início do relacionamento.  "
+      }
+    ]
+  },
+  "92cd1386-d63a-4020-b6be-e22d7bcf09b5": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-30T11:27:57-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular é irmão de ex-vereadora. Em análises reputacionais, não foram identificadas mídias ou apontamentos desabonadores face à empresa, ao seu titular ou à política associada. Dito isso, considerando o cenário reputacional isento conjugado à completa divergência geográfica interestadual entre a sede da operação comercial e a base eleitoral da familiar, não temos objeções ao início do relacionamento. "
+      }
+    ]
+  },
+  "a91f463d-b402-4c98-bb07-81e87b362b8e": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-30T11:18:04-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro rejeitado pelo time de PLD - Trata-se de empresa cujo titular é irmão de ex-vereador. Em análises reputacionais e criminais, foi identificada a existência de processo judicial (nº 0000445-52.2018.8.04.3800) em que o político associado figura como indiciado por Corrupção Ativa. Dito isso, considerando o passivo criminal ligado a crimes contra a administração pública, somado ao setor de atuação sensível da empresa (materiais de construção), temos objeções ao início do relacionamento. "
+      }
+    ]
+  },
+  "a9b526c4-9e41-42d6-9d0c-230dd8a43644": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-30T11:13:20-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa atuante com produção rural, cuja titular possui exposição política indireta por ser sócia/parceira de negócios de uma ex-vereadora de município vizinho. Em análises reputacionais, não foram identificadas mídias materiais desabonadoras, crimes ambientais ou processos face à titular ou à envolvida. Dito isso, considerando que não foram identificados desabonos ou atipicidades, não temos objeções.  "
+      }
+    ]
+  },
+  "c974b32f-1bef-4dc3-99f8-3eae7bca81a9": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-30T11:03:55-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de associação cuja presidente é ex-vereadora da mesma localidade. Em análises reputacionais, não foram identificadas mídias materiais desabonadoras face à entidade ou à titular. Dito isso, apesar de não terem sido identificadas atipicidades ou desabonos, considerando a sensibilidade do segmento, e a condição PEP da presidente da referida associação, sugerimos aprovação sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "1121f15e-d923-4d2b-ba19-aa94209df45b": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-29T12:31:31-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa atuante no setor de transporte, cujo titular é irmão de ex-vereadora da mesma localidade. Em análises reputacionais, não foram identificadas mídias materiais desabonadoras face à empresa ou aos envolvidos. Dito isso, não temos objeções ao início do relacionamento. "
+      }
+    ]
+  },
+  "5a126cd2-fa45-4314-b452-577829f3b2d1": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-29T12:15:52-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa atuante no setor de construção e materiais, cujo titular é irmão de ex-vereador. Em análises reputacionais, não foram identificadas mídias materiais desabonadoras. Dito isso, considerando que não foram identificados desabonos ou atipicidades, não temos objeções ao início do relacionamento. "
+      }
+    ]
+  },
+  "ac9363f4-f25d-4ea1-8769-ed1429772f1a": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-29T12:23:12-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de restaurante cujo próprio titular é ex-vereador. Em análises reputacionais, não foram identificadas mídias materiais desabonadoras face à empresa ou ao seu titular. Dito isso, considerando que não foram identificados desabonos ou atipicidades, não temos objeções ao início do relacionamento. "
+      }
+    ]
+  },
+  "851a3c15-75c2-4a4b-9d01-e727cb0153a5": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-29T12:12:26-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cuja titular é irmã de atual vereador. Em análises reputacionais, não foram identificadas mídias ou apontamentos desabonadores face à empresa, à sua titular ou ao político associado. Dito isso, considerando o cenário reputacional ilibado, a atestada e extrema longevidade da entidade e a considerável divergência geográfica entre a sede comercial (litoral) e o município de atuação do agente (extremo oeste do estado), não temos objeções. "
+      }
+    ]
+  },
+  "e130f2e7-644c-4697-ba5e-feba9e230c0f": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-22T12:52:03-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo próprio titular é ex-vereador. Em análises reputacionais, não foram identificadas mídias ou apontamentos materiais desabonadores face à empresa ou ao seu titular. Dito isso, considerando o cenário reputacional isento, não temos objeções ao início do relacionamento. "
+      }
+    ]
+  },
+  "d3422b5d-9165-4561-a2e5-71b105195e01": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-29T12:09:12-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa atuante com transporte escolar, cujo titular possui dupla exposição política indireta na mesma praça de atuação: é sócio de ex-vereador e irmão de vereador, ambos pelo município sede da empresa. Em análises reputacionais, não foram identificadas mídias desabonadoras face à empresa ou aos envolvidos. Dito isso, considerando o histórico criminal ilibado associado à notória longevidade do CNPJ, recomenda-se aprovação sob monitoramento reforçado. "
+      }
+    ]
+  },
+  "72bf4bd4-62ae-4f01-93a9-a8a0f5488ce2": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-29T11:56:01-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de organização religiosa cujo presidente titular é ex-vereador da mesma localidade. Em análises reputacionais, não foram identificadas mídias materiais desabonadoras face à entidade ou ao seu titular. Dito isso, considerando o histórico reputacional ilibado, porém, o altíssimo risco inerente do setor, sugerimos aprovação sob monitoramento reforçado.  "
+      }
+    ]
+  },
+  "e52874cb-f87c-4bf0-9520-2001b327af05": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-29T08:52:48-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa de consultoria cujo titular é irmão de atual Superintendente da ANATEL. Em análises reputacionais, não foram identificadas mídias ou apontamentos materiais desabonadores face à empresa, ao titular ou ao familiar envolvido. Dito isso, considerando o histórico criminal ilibado associado ao perfil embrionário do negócio, ao alto risco inerente do setor e à convergência geográfica (Brasília) frente à influência federal do familiar, sugerimos o início do relacionamento sob monitoramento reforçado.  "
+      }
+    ]
+  },
+  "32231092-dfd9-47b7-954b-b0e25a148f96": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-22T12:05:52-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo próprio titular é ex-vereador. Em análises reputacionais, não foram identificadas mídias ou apontamentos desabonadores face à empresa ou ao seu titular, havendo inclusive registros de julgamento regular de contas pretéritas junto ao Tribunal de Contas. Dito isso, considerando o cenário da mídia ilibado e a atestada maturidade do CNPJ, não temos objeções ao início do relacionamento.  "
+      }
+    ]
+  },
+  "fdfb3759-85d1-4390-98b0-141fadfc2831": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-22T11:55:07-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cuja titular é mãe de ex-vereadora. Em análises reputacionais, não foram identificadas mídias ou apontamentos materiais desabonadores face à empresa, à sua titular ou à política associada. Dito isso, considerando o cenário da mídia absolutamente isento de crimes associado ao porte inofensivo e ao setor do negócio de beleza, não temos objeções ao início do relacionamento. "
+      }
+    ]
+  },
+  "6b4138c9-ce22-4f42-9c5e-798cf2a69b27": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-22T11:45:29-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cuja titular é filha de atual vereador. Em análises reputacionais, não foram identificadas mídias ou apontamentos desabonadores face à empresa, à sua titular ou ao político associado. Dito isso, considerando o cenário da mídia ilibado e a atestada maturidade do CNPJ, porém, o mandato ativo do pai da titular, recomendamos aprovação sob monitoramento reforçado.  "
+      }
+    ]
+  },
+  "c661ebf6-4970-4e2f-9328-bc37e521d499": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-22T11:58:31-03:00",
+        "user_email": "m.matos@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular, Wesdem Mendes dos Santos, é irmão do PEP Benedito Camilo Mendes Santos (Vereador de Minas Novas/MG, com mandato vigente de 01/01/2025 a 31/12/2029), atuando no segmento de transporte rodoviário de carga intermunicipal, interestadual e internacional (Campo Verde/MT). Em análises reputacionais realizadas com varredura em fontes como imprensa local, TRE, MP estadual, TCE, Câmara Municipal, Polícia Federal/Civil e DOU, não foram identificadas mídias ou processos desabonadores relativos à empresa, ao seu titular ou ao PEP vinculado. Considerando a ausência de desabonos relevantes sob a ótica de Prevenção à Lavagem de Dinheiro e que o vínculo se dá por grau de parentesco indireto (irmão), sem sobreposição societária identificada entre as partes, não temos objeções ao início do relacionamento; contudo, dado o mandato ativo do PEP relacionado e a atuação de risco alto, sugerimos a inclusão em monitoramento reforçado. "
+      }
+    ]
+  },
+  "31e51f4f-ead3-43f6-93ca-a5ecc61ec8fc": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-30T12:06:48-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de distribuidora de alimentos, cujo titular é irmão de ex-vereador. Em análises reputacionais, não foram identificadas mídias desabonadoras. Dito isso, considerando que não foram verificados desabonos ou atipicidades, não temos objeções ao início do relacionamento.  "
+      }
+    ]
+  },
+  "0e283b69-2e9a-4fcb-9911-e2041aaa8d4b": {
+    "comentarios": [
+      {
+        "timestamp": "2026-06-22T12:28:27-03:00",
+        "user_email": "jeniffer@cora.com.br",
+        "acao": "ENVIAR_LIDERANCA_PLD",
+        "tipo": "parecer",
+        "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cujo titular é irmão de ex-vereadora. Em análises reputacionais, não foram identificadas mídias ou apontamentos desabonadores face à empresa, ao seu titular ou à política associada. Dito isso, considerando o cenário reputacional isento conjugado à completa divergência geográfica entre a sede da operação comercial (Santa Catarina) e a base eleitoral da familiar (Sergipe), não temos objeções ao início do relacionamento.  "
+      }
+    ]
+  }
+}

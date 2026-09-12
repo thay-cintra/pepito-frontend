@@ -257,11 +257,11 @@
     {
       "title": "Credilink: PEP não identificado — candidato a Falso Positivo",
       "url": "",
-      "snippet": "A Credilink (fonte oficial de PEP) não identificou nenhum PEP vinculado a Lucas Dieterich Espindola Brenner (CPF 966.608.720-00, CNPJ 65.557.226/0001-33). A dupla-verificação via JusBrasil Background Check e Tesserati também não encontrou processos criminais, mandados de prisão ou adversidades materiais. Caso candidato a FALSO POSITIVO — o alerta foi gerado por outro critério (HAS_QSA, SUS_NAME, HIGH_PLD) mas sem correspondência PEP confirmada.",
-      "source": "Credilink (via notebook) + JusBrasil + Tesserati — dupla-verificação",
+      "snippet": "A Credilink (fonte oficial de PEP) não identificou nenhum PEP vinculado a Lucas Dieterich Espindola Brenner (CPF 966.608.720-00, CNPJ 65.557.226/0001-33). A dupla-verificação via JusBrasil Background Check e Credilink também não encontrou processos criminais, mandados de prisão ou adversidades materiais. Caso candidato a FALSO POSITIVO — o alerta foi gerado por outro critério (HAS_QSA, SUS_NAME, HIGH_PLD) mas sem correspondência PEP confirmada.",
+      "source": "Credilink (via notebook) + JusBrasil + Credilink — dupla-verificação",
       "risk_indicator": "baixo",
       "tipo": "pep",
-      "match": "Credilink: sem PEP | JusBrasil: sem processos | Tesserati: sem adversidades",
+      "match": "Credilink: sem PEP | JusBrasil: sem processos | Credilink: sem adversidades",
       "decisao_recomendada": "FALSO POSITIVO — PEP não confirmado por nenhuma fonte."
     }
   ],
@@ -279,11 +279,11 @@
     {
       "title": "Credilink: PEP não identificado — candidato a Falso Positivo",
       "url": "",
-      "snippet": "A Credilink (fonte oficial de PEP) não identificou nenhum PEP vinculado a Carlos Emanuel Teixeira Pires Bicheiro (CPF 131.227.068-30, CNPJ 37.837.965/0001-43). A dupla-verificação via JusBrasil Background Check e Tesserati também não encontrou processos criminais, mandados de prisão ou adversidades materiais. Caso candidato a FALSO POSITIVO — o alerta foi gerado por outro critério (HAS_QSA, SUS_NAME, HIGH_PLD) mas sem correspondência PEP confirmada.",
-      "source": "Credilink (via notebook) + JusBrasil + Tesserati — dupla-verificação",
+      "snippet": "A Credilink (fonte oficial de PEP) não identificou nenhum PEP vinculado a Carlos Emanuel Teixeira Pires Bicheiro (CPF 131.227.068-30, CNPJ 37.837.965/0001-43). A dupla-verificação via JusBrasil Background Check e Credilink também não encontrou processos criminais, mandados de prisão ou adversidades materiais. Caso candidato a FALSO POSITIVO — o alerta foi gerado por outro critério (HAS_QSA, SUS_NAME, HIGH_PLD) mas sem correspondência PEP confirmada.",
+      "source": "Credilink (via notebook) + JusBrasil + Credilink — dupla-verificação",
       "risk_indicator": "baixo",
       "tipo": "pep",
-      "match": "Credilink: sem PEP | JusBrasil: sem processos | Tesserati: sem adversidades",
+      "match": "Credilink: sem PEP | JusBrasil: sem processos | Credilink: sem adversidades",
       "decisao_recomendada": "FALSO POSITIVO — PEP não confirmado por nenhuma fonte."
     }
   ],
@@ -2334,11 +2334,11 @@
     {
       "title": "Credilink: PEP não identificado — candidato a Falso Positivo",
       "url": "",
-      "snippet": "A Credilink (fonte oficial de PEP) não identificou nenhum PEP vinculado a Ricardo Freitas De Lucena (CPF 045.833.444-81, CNPJ 65.925.616/0001-19). A dupla-verificação via JusBrasil Background Check e Tesserati também não encontrou processos criminais, mandados de prisão ou adversidades materiais. Caso candidato a FALSO POSITIVO — o alerta foi gerado por outro critério (HAS_QSA, SUS_NAME, HIGH_PLD) mas sem correspondência PEP confirmada.",
-      "source": "Credilink (via notebook) + JusBrasil + Tesserati — dupla-verificação",
+      "snippet": "A Credilink (fonte oficial de PEP) não identificou nenhum PEP vinculado a Ricardo Freitas De Lucena (CPF 045.833.444-81, CNPJ 65.925.616/0001-19). A dupla-verificação via JusBrasil Background Check e Credilink também não encontrou processos criminais, mandados de prisão ou adversidades materiais. Caso candidato a FALSO POSITIVO — o alerta foi gerado por outro critério (HAS_QSA, SUS_NAME, HIGH_PLD) mas sem correspondência PEP confirmada.",
+      "source": "Credilink (via notebook) + JusBrasil + Credilink — dupla-verificação",
       "risk_indicator": "baixo",
       "tipo": "pep",
-      "match": "Credilink: sem PEP | JusBrasil: sem processos | Tesserati: sem adversidades",
+      "match": "Credilink: sem PEP | JusBrasil: sem processos | Credilink: sem adversidades",
       "decisao_recomendada": "FALSO POSITIVO — PEP não confirmado por nenhuma fonte."
     }
   ],
@@ -2356,11 +2356,11 @@
     {
       "title": "Credilink: PEP não identificado — candidato a Falso Positivo",
       "url": "",
-      "snippet": "A Credilink (fonte oficial de PEP) não identificou nenhum PEP vinculado a Miqueias Pereira De Sousa (CPF 051.862.333-58, CNPJ 66.286.039/0001-25). A dupla-verificação via JusBrasil Background Check e Tesserati também não encontrou processos criminais, mandados de prisão ou adversidades materiais. Caso candidato a FALSO POSITIVO — o alerta foi gerado por outro critério (HAS_QSA, SUS_NAME, HIGH_PLD) mas sem correspondência PEP confirmada.",
-      "source": "Credilink (via notebook) + JusBrasil + Tesserati — dupla-verificação",
+      "snippet": "A Credilink (fonte oficial de PEP) não identificou nenhum PEP vinculado a Miqueias Pereira De Sousa (CPF 051.862.333-58, CNPJ 66.286.039/0001-25). A dupla-verificação via JusBrasil Background Check e Credilink também não encontrou processos criminais, mandados de prisão ou adversidades materiais. Caso candidato a FALSO POSITIVO — o alerta foi gerado por outro critério (HAS_QSA, SUS_NAME, HIGH_PLD) mas sem correspondência PEP confirmada.",
+      "source": "Credilink (via notebook) + JusBrasil + Credilink — dupla-verificação",
       "risk_indicator": "baixo",
       "tipo": "pep",
-      "match": "Credilink: sem PEP | JusBrasil: sem processos | Tesserati: sem adversidades",
+      "match": "Credilink: sem PEP | JusBrasil: sem processos | Credilink: sem adversidades",
       "decisao_recomendada": "FALSO POSITIVO — PEP não confirmado por nenhuma fonte."
     }
   ],
@@ -2430,15 +2430,15 @@
       "match": "CPF 227.202.433-53 — confiança ALTA"
     },
     {
-      "title": "Tesserati — Processos criminais (7) — Raimundo Nonato Marreiros Moreira",
+      "title": "Credilink — Processos criminais (7) — Raimundo Nonato Marreiros Moreira",
       "url": "https://www.jusbrasil.com.br/busca?q=Raimundo%20Nonato%20Marreiros%20Moreira&tb=processos",
-      "snippet": "Raimundo Nonato Marreiros Moreira tem 7 processo(s) criminal(is) via Tesserati. Assuntos: DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DESOBEDIENCIA A DECISAO JUDICIAL. Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "Raimundo Nonato Marreiros Moreira tem 7 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DIREITO PROCESSUAL CIVIL E DO TRABALHO - OBJETOS DE CARTAS P; DESOBEDIENCIA A DECISAO JUDICIAL. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 227.202.433-53",
-      "decisao_recomendada": "REPROVAÇÃO — 7 processo(s) criminal(is) confirmado(s) via Tesserati.",
-      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
+      "decisao_recomendada": "REPROVAÇÃO — 7 processo(s) criminal(is) confirmado(s) via Credilink.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Credilink"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — JOSE DE OLIVEIRA NETO",
@@ -2451,14 +2451,14 @@
       "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
-      "title": "Tesserati — Mídias Negativas — JOSE DE OLIVEIRA NETO",
+      "title": "Credilink — Mídias Negativas — JOSE DE OLIVEIRA NETO",
       "url": "https://www.escavador.com/busca?entidade=pessoas&q=JOSE%20DE%20OLIVEIRA%20NETO",
-      "snippet": "2 mídia(s) negativa(s) identificada(s) para JOSE DE OLIVEIRA NETO via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/grafica-de-familia-de-bene-recebeu-mais-de-r-3-mi-do-pt-de-minas/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-",
-      "source": "Tesserati — Mídias Negativas",
+      "snippet": "2 mídia(s) negativa(s) identificada(s) para JOSE DE OLIVEIRA NETO via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/grafica-de-familia-de-bene-recebeu-mais-de-r-3-mi-do-pt-de-minas/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-",
+      "source": "Credilink — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome JOSE DE OLIVEIRA NETO",
-      "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Tesserati Mídias Negativas"
+      "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Credilink Mídias Negativas"
     },
     {
       "title": "CNPJ Eleitoral 2012 – JOSE DE OLIVEIRA NETO VEREADOR – Pimenteiras-PI (BAIXADO)",
@@ -2714,25 +2714,25 @@
       "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Falsidade ideológica, Peculato. Crimes de fraude são antecedentes diretos de lavagem de dinheiro."
     },
     {
-      "title": "Tesserati — Processos criminais (2) — Luciano Santos Costa",
+      "title": "Credilink — Processos criminais (2) — Luciano Santos Costa",
       "url": "https://www.jusbrasil.com.br/busca?q=Luciano%20Santos%20Costa&tb=processos",
-      "snippet": "Luciano Santos Costa tem 2 processo(s) criminal(is) via Tesserati. Assuntos: AMEACA; DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "Luciano Santos Costa tem 2 processo(s) criminal(is) via Credilink. Assuntos: AMEACA; DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 025.730.141-00",
-      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati.",
-      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Credilink.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Credilink"
     },
     {
-      "title": "Tesserati — Mídias Negativas — Luciano Santos Costa",
+      "title": "Credilink — Mídias Negativas — Luciano Santos Costa",
       "url": "https://www.escavador.com/busca?entidade=pessoas&q=Luciano%20Santos%20Costa",
-      "snippet": "5 mídia(s) negativa(s) identificada(s) para Luciano Santos Costa via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/eleicoes/2024/candidatos-mt/ribeirao-cascalheira/vereador/luciano-do-gas-77777/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_u",
-      "source": "Tesserati — Mídias Negativas",
+      "snippet": "5 mídia(s) negativa(s) identificada(s) para Luciano Santos Costa via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/eleicoes/2024/candidatos-mt/ribeirao-cascalheira/vereador/luciano-do-gas-77777/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_u",
+      "source": "Credilink — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome Luciano Santos Costa",
-      "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Tesserati Mídias Negativas"
+      "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Credilink Mídias Negativas"
     },
     {
       "title": "Processo criminal — LUCIANO SANTOS COSTA (PEP_MAE)",
@@ -2775,15 +2775,15 @@
       "decisao_recomendada": "REPROVAÇÃO — PEP_MAE réu em processo criminal ativo por Falsidade ideológica, Peculato. Crimes de fraude são antecedentes diretos de lavagem de dinheiro."
     },
     {
-      "title": "Tesserati — Processos criminais (2) — LUCIANO SANTOS COSTA",
+      "title": "Credilink — Processos criminais (2) — LUCIANO SANTOS COSTA",
       "url": "https://www.jusbrasil.com.br/busca?q=LUCIANO%20SANTOS%20COSTA&tb=processos",
-      "snippet": "LUCIANO SANTOS COSTA tem 2 processo(s) criminal(is) via Tesserati. Assuntos: AMEACA; DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "LUCIANO SANTOS COSTA tem 2 processo(s) criminal(is) via Credilink. Assuntos: AMEACA; DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 02573014100",
-      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati.",
-      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Credilink.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Credilink"
     },
     {
       "title": "Luciano Santos Costa – Vereador Ativo – Câmara Municipal de Ribeirão Cascalheira-MT",
@@ -3103,14 +3103,14 @@
       "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
-      "title": "Tesserati — Mídias Negativas — Larissa Barros",
+      "title": "Credilink — Mídias Negativas — Larissa Barros",
       "url": "https://www.escavador.com/busca?entidade=pessoas&q=Larissa%20Barros",
-      "snippet": "2 mídia(s) negativa(s) identificada(s) para Larissa Barros via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/sp/sao-paulo/noticia/2025/05/27/acabaram-com-a-vida-de-uma-menina-cheia-de-planos-lamenta-familia-de-jovem-morta-em-acidente-com-moto-de-app-em-sp.ghtml\",",
-      "source": "Tesserati — Mídias Negativas",
+      "snippet": "2 mídia(s) negativa(s) identificada(s) para Larissa Barros via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/sp/sao-paulo/noticia/2025/05/27/acabaram-com-a-vida-de-uma-menina-cheia-de-planos-lamenta-familia-de-jovem-morta-em-acidente-com-moto-de-app-em-sp.ghtml\",",
+      "source": "Credilink — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome Larissa Barros",
-      "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Tesserati Mídias Negativas"
+      "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Credilink Mídias Negativas"
     },
     {
       "title": "Processos criminais (1 encontrados) — ITALO PEREIRA IBIAPINA",
@@ -3123,15 +3123,15 @@
       "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
-      "title": "Tesserati — Processos criminais (1) — ITALO PEREIRA IBIAPINA",
+      "title": "Credilink — Processos criminais (1) — ITALO PEREIRA IBIAPINA",
       "url": "https://www.jusbrasil.com.br/busca?q=ITALO%20PEREIRA%20IBIAPINA&tb=processos",
-      "snippet": "ITALO PEREIRA IBIAPINA tem 1 processo(s) criminal(is) via Tesserati. Assuntos: DIREITO PENAL - CRIMES CONTRA A HONRA - DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "ITALO PEREIRA IBIAPINA tem 1 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL - CRIMES CONTRA A HONRA - DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 04943621384",
-      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Tesserati.",
-      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Credilink"
     },
     {
       "title": "TSE/O Tempo — Italo Pereira Ibiapina eleito Vereador em Campo Maior-PI (Eleições 2024)",
@@ -3237,15 +3237,15 @@
       "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por \\\"Lavagem\\\" ou Ocultação de Bens, Direitos ou Valores Oriundos de Corrupção, \\\"Lavagem\\\" ou Ocultação de Bens, Direitos ou Valores Oriundos de Corrupção, \\\"Lavagem\\\" ou Ocultação de Bens, Direitos ou Valores Oriundos de Corrupção, Crimes de \"Lavagem\" ou Ocultação de Bens, Direitos ou Valores, Crimes da Lei de licitações. Risco criminal incompatível com apetite da instituição."
     },
     {
-      "title": "Tesserati — Processos criminais (4) — Diogo Antonio De Almeida Barbosa Pereira",
+      "title": "Credilink — Processos criminais (4) — Diogo Antonio De Almeida Barbosa Pereira",
       "url": "https://www.jusbrasil.com.br/busca?q=Diogo%20Antonio%20De%20Almeida%20Barbosa%20Pereira&tb=processos",
-      "snippet": "Diogo Antonio De Almeida Barbosa Pereira tem 4 processo(s) criminal(is) via Tesserati. Assuntos: DIREITO PENAL|CRIMES PREVISTOS NA LEGISLACAO EXTRAVAGANTE|CR; DIREITO PENAL|CRIMES PRATICADOS POR FUNCIONARIOS PUBLICOS CO; DIREITO PENAL|CRIMES PRATICADOS POR FUNCIONARIOS PUBLICOS CO. Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "Diogo Antonio De Almeida Barbosa Pereira tem 4 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL|CRIMES PREVISTOS NA LEGISLACAO EXTRAVAGANTE|CR; DIREITO PENAL|CRIMES PRATICADOS POR FUNCIONARIOS PUBLICOS CO; DIREITO PENAL|CRIMES PRATICADOS POR FUNCIONARIOS PUBLICOS CO. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 518.666.922-91",
-      "decisao_recomendada": "REPROVAÇÃO — 4 processo(s) criminal(is) confirmado(s) via Tesserati.",
-      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
+      "decisao_recomendada": "REPROVAÇÃO — 4 processo(s) criminal(is) confirmado(s) via Credilink.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Credilink"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — TALES TORRICELLI DE SOUSA COSTA E SILVA",
@@ -3258,14 +3258,14 @@
       "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
-      "title": "Tesserati — Mídias Negativas — TALES TORRICELLI DE SOUSA COSTA E SILVA",
+      "title": "Credilink — Mídias Negativas — TALES TORRICELLI DE SOUSA COSTA E SILVA",
       "url": "https://www.escavador.com/busca?entidade=pessoas&q=TALES%20TORRICELLI%20DE%20SOUSA%20COSTA%20E%20SILVA",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para TALES TORRICELLI DE SOUSA COSTA E SILVA via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/eleicoes/2024/candidatos-pb/brejo-do-cruz/prefeito/dr-tales-45/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01",
-      "source": "Tesserati — Mídias Negativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para TALES TORRICELLI DE SOUSA COSTA E SILVA via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/eleicoes/2024/candidatos-pb/brejo-do-cruz/prefeito/dr-tales-45/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01",
+      "source": "Credilink — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome TALES TORRICELLI DE SOUSA COSTA E SILVA",
-      "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Tesserati Mídias Negativas"
+      "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Credilink Mídias Negativas"
     },
     {
       "title": "Processos criminais (6 encontrados) — FRANCISCO MENDES CAMPOS",
@@ -3278,15 +3278,15 @@
       "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
-      "title": "Tesserati — Processos criminais (8) — FRANCISCO MENDES CAMPOS",
+      "title": "Credilink — Processos criminais (8) — FRANCISCO MENDES CAMPOS",
       "url": "https://www.jusbrasil.com.br/busca?q=FRANCISCO%20MENDES%20CAMPOS&tb=processos",
-      "snippet": "FRANCISCO MENDES CAMPOS tem 8 processo(s) criminal(is) via Tesserati. Assuntos: 05.20.10 - CRIMES CONTRA A ORDEM TRIBUTARIA (ART. 1 AO 3 DA ; CALUNIA; CRIMES DE RESPONSABILIDADE. Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "FRANCISCO MENDES CAMPOS tem 8 processo(s) criminal(is) via Credilink. Assuntos: 05.20.10 - CRIMES CONTRA A ORDEM TRIBUTARIA (ART. 1 AO 3 DA ; CALUNIA; CRIMES DE RESPONSABILIDADE. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 52641058472",
-      "decisao_recomendada": "REPROVAÇÃO — 8 processo(s) criminal(is) confirmado(s) via Tesserati.",
-      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
+      "decisao_recomendada": "REPROVAÇÃO — 8 processo(s) criminal(is) confirmado(s) via Credilink.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Credilink"
     },
     {
       "title": "Processo criminal — MARMUTHE DE SOUZA CAVALCANTI (PEP_SOCIO)",
@@ -3299,15 +3299,15 @@
       "decisao_recomendada": "REPROVAÇÃO — PEP_SOCIO réu em processo criminal ativo por Estelionato. Crimes de fraude são antecedentes diretos de lavagem de dinheiro."
     },
     {
-      "title": "Tesserati — Processos criminais (2) — MARMUTHE DE SOUZA CAVALCANTI",
+      "title": "Credilink — Processos criminais (2) — MARMUTHE DE SOUZA CAVALCANTI",
       "url": "https://www.jusbrasil.com.br/busca?q=MARMUTHE%20DE%20SOUZA%20CAVALCANTI&tb=processos",
-      "snippet": "MARMUTHE DE SOUZA CAVALCANTI tem 2 processo(s) criminal(is) via Tesserati. Assuntos: CALUNIA; DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "MARMUTHE DE SOUZA CAVALCANTI tem 2 processo(s) criminal(is) via Credilink. Assuntos: CALUNIA; DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 89512073404",
-      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati.",
-      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Credilink.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Credilink"
     },
     {
       "title": "Prefeito Tales Torricelli — Mandato Ativo Confirmado (Portal Oficial Prefeitura de Brejo do Cruz)",
@@ -3546,15 +3546,15 @@
       "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
-      "title": "Tesserati — Processos criminais (1) — MAYKE KEWIN DE OLIVEIRA",
+      "title": "Credilink — Processos criminais (1) — MAYKE KEWIN DE OLIVEIRA",
       "url": "https://www.jusbrasil.com.br/busca?q=MAYKE%20KEWIN%20DE%20OLIVEIRA&tb=processos",
-      "snippet": "MAYKE KEWIN DE OLIVEIRA tem 1 processo(s) criminal(is) via Tesserati. Assuntos: PENAL > CRIMES CONTRA A HONRA > CALUNIA. Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "MAYKE KEWIN DE OLIVEIRA tem 1 processo(s) criminal(is) via Credilink. Assuntos: PENAL > CRIMES CONTRA A HONRA > CALUNIA. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 08920888698",
-      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Tesserati.",
-      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Credilink"
     }
   ],
   "1b97283a-e7c8-4dc9-bb91-097c0d29dbe0": [
@@ -3569,15 +3569,15 @@
       "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
-      "title": "Tesserati — Processos criminais (2) — Railton Da Silva Paiva",
+      "title": "Credilink — Processos criminais (2) — Railton Da Silva Paiva",
       "url": "https://www.jusbrasil.com.br/busca?q=Railton%20Da%20Silva%20Paiva&tb=processos",
-      "snippet": "Railton Da Silva Paiva tem 2 processo(s) criminal(is) via Tesserati. Assuntos: DIREITO PENAL (287) - CRIMES CONTRA A FE PUBLICA (3523) - FA; CITACAO. Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "Railton Da Silva Paiva tem 2 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL (287) - CRIMES CONTRA A FE PUBLICA (3523) - FA; CITACAO. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 188.155.808-83",
-      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati.",
-      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Credilink.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Credilink"
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — RANILDA DA SILVA",
@@ -3624,14 +3624,14 @@
       "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via JusBrasil Background Check API"
     },
     {
-      "title": "Tesserati — Mídias Negativas — Claudio Amaral De Souza",
+      "title": "Credilink — Mídias Negativas — Claudio Amaral De Souza",
       "url": "https://www.escavador.com/busca?entidade=pessoas&q=Claudio%20Amaral%20De%20Souza",
-      "snippet": "2 mídia(s) negativa(s) identificada(s) para Claudio Amaral De Souza via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/eleicoes/2024/candidatos-mg/diogo-de-vasconcelos/prefeito/joao-claudio-25/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": ",
-      "source": "Tesserati — Mídias Negativas",
+      "snippet": "2 mídia(s) negativa(s) identificada(s) para Claudio Amaral De Souza via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/eleicoes/2024/candidatos-mg/diogo-de-vasconcelos/prefeito/joao-claudio-25/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": ",
+      "source": "Credilink — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome Claudio Amaral De Souza",
-      "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Tesserati Mídias Negativas"
+      "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Credilink Mídias Negativas"
     },
     {
       "title": "Processos criminais (1 encontrados) — LUIZ ANTONIO AMARAL DE SOUZA",
@@ -3653,15 +3653,15 @@
       "match": "CPF 56984251168 — confiança BAIXA"
     },
     {
-      "title": "Tesserati — Processos criminais (1) — LUIZ ANTONIO AMARAL DE SOUZA              ",
+      "title": "Credilink — Processos criminais (1) — LUIZ ANTONIO AMARAL DE SOUZA              ",
       "url": "https://www.jusbrasil.com.br/busca?q=LUIZ%20ANTONIO%20AMARAL%20DE%20SOUZA&tb=processos",
-      "snippet": "LUIZ ANTONIO AMARAL DE SOUZA               tem 1 processo(s) criminal(is) via Tesserati. Assuntos: INQUERITO POLICIAL MILITAR. Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "LUIZ ANTONIO AMARAL DE SOUZA               tem 1 processo(s) criminal(is) via Credilink. Assuntos: INQUERITO POLICIAL MILITAR. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 56984251168",
-      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Tesserati.",
-      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Credilink"
     },
     {
       "title": "M1 — Confirmação de mandato PEP: LUIZ ANTONIO AMARAL DE SOUZA — cargo/município não identificados",
@@ -4072,15 +4072,15 @@
       "match": "CPF 306.920.718-90 — confiança BAIXA"
     },
     {
-      "title": "Tesserati — Processos criminais (2) — Fabio Gigli Rabechini",
+      "title": "Credilink — Processos criminais (2) — Fabio Gigli Rabechini",
       "url": "https://www.jusbrasil.com.br/busca?q=Fabio%20Gigli%20Rabechini&tb=processos",
-      "snippet": "Fabio Gigli Rabechini tem 2 processo(s) criminal(is) via Tesserati. Assuntos: FURTO QUALIFICADO; CRIMES ELEITORAIS. Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "Fabio Gigli Rabechini tem 2 processo(s) criminal(is) via Credilink. Assuntos: FURTO QUALIFICADO; CRIMES ELEITORAIS. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 306.920.718-90",
-      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati.",
-      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Credilink.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Credilink"
     },
     {
       "title": "Processo criminal — FABIO GIGLI RABECHINI (PEP_MAE)",
@@ -4102,15 +4102,15 @@
       "match": "CPF 30692071890 — confiança BAIXA"
     },
     {
-      "title": "Tesserati — Processos criminais (2) — FABIO GIGLI RABECHINI",
+      "title": "Credilink — Processos criminais (2) — FABIO GIGLI RABECHINI",
       "url": "https://www.jusbrasil.com.br/busca?q=FABIO%20GIGLI%20RABECHINI&tb=processos",
-      "snippet": "FABIO GIGLI RABECHINI tem 2 processo(s) criminal(is) via Tesserati. Assuntos: FURTO QUALIFICADO; CRIMES ELEITORAIS. Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "FABIO GIGLI RABECHINI tem 2 processo(s) criminal(is) via Credilink. Assuntos: FURTO QUALIFICADO; CRIMES ELEITORAIS. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 30692071890",
-      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Tesserati.",
-      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Tesserati"
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Credilink.",
+      "url_nota": "Link verificável (JusBrasil): busca nominal — dado original coletado via API Credilink"
     },
     {
       "title": "Página oficial do Vereador Pavão da Academia (FABIO GIGLI RABECHINI) — Câmara Municipal de Monte Mor",
@@ -4189,17 +4189,17 @@
     {
       "title": "JusBrasil API: nenhum processo criminal — ALAN SALVIANO LIMA",
       "url": "https://www.jusbrasil.com.br/processos/",
-      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 634.824.103-30 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — ver achado Tesserati (ProcessoTribunalJustica) para essa cobertura.",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 634.824.103-30 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — ver achado Credilink (ProcessoTribunalJustica) para essa cobertura.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 634.824.103-30 confirmado na API — sem processos criminais"
     },
     {
-      "title": "Tesserati — Processos não-criminais (4) — Alan Salviano Lima",
+      "title": "Credilink — Processos não-criminais (4) — Alan Salviano Lima",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "Alan Salviano Lima tem 4 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: DIVIDA ATIVA; LIMINAR; DIREITO ELEITORAL (11428) | ELEICOES (11583) | TRANSGRESSOES. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "Alan Salviano Lima tem 4 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIVIDA ATIVA; LIMINAR; DIREITO ELEITORAL (11428) | ELEICOES (11583) | TRANSGRESSOES. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 634.824.103-30"
@@ -4299,7 +4299,7 @@
     {
       "title": "JusBrasil API: nenhum processo criminal — LUCILEI PACHECO DE ALMEIDA SALOMAO",
       "url": "https://www.jusbrasil.com.br/processos/",
-      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 213.555.698-00 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — ver achado Tesserati (ProcessoTribunalJustica) para essa cobertura.",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 213.555.698-00 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — ver achado Credilink (ProcessoTribunalJustica) para essa cobertura.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
@@ -4308,17 +4308,17 @@
     {
       "title": "JusBrasil API: nenhum processo criminal — ROSANGELA DE SOUZA TEZZON MARTINS",
       "url": "https://www.jusbrasil.com.br/processos/",
-      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 11995264873 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — ver achado Tesserati (ProcessoTribunalJustica) para essa cobertura.",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 11995264873 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — ver achado Credilink (ProcessoTribunalJustica) para essa cobertura.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 11995264873 confirmado na API — sem processos criminais"
     },
     {
-      "title": "Tesserati — Processos não-criminais (7) — ROSANGELA DE SOUZA TEZZON MARTINS",
+      "title": "Credilink — Processos não-criminais (7) — ROSANGELA DE SOUZA TEZZON MARTINS",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "ROSANGELA DE SOUZA TEZZON MARTINS tem 7 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: DIVIDA ATIVA; CITACAO; INTIMACAO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "ROSANGELA DE SOUZA TEZZON MARTINS tem 7 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIVIDA ATIVA; CITACAO; INTIMACAO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 11995264873"
@@ -4409,17 +4409,17 @@
     {
       "title": "JusBrasil API: nenhum processo criminal — JONAS RAFAEL DE BRITO",
       "url": "https://www.jusbrasil.com.br/processos/",
-      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 032.169.974-21 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — ver achado Tesserati (ProcessoTribunalJustica) para essa cobertura.",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 032.169.974-21 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — ver achado Credilink (ProcessoTribunalJustica) para essa cobertura.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 032.169.974-21 confirmado na API — sem processos criminais"
     },
     {
-      "title": "Tesserati — Mídias Negativas — Jonas Rafael De Brito",
+      "title": "Credilink — Mídias Negativas — Jonas Rafael De Brito",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para Jonas Rafael De Brito via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://www.reportermt.com/policia/programa-captura-veja-quem-sao-os-oito-criminosos-mais-procurados-de-mato-grosso/229383\", \"snippet\": null, \"photo_url\": null, \"published_dat",
-      "source": "Tesserati — Mídias Negativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para Jonas Rafael De Brito via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.reportermt.com/policia/programa-captura-veja-quem-sao-os-oito-criminosos-mais-procurados-de-mato-grosso/229383\", \"snippet\": null, \"photo_url\": null, \"published_dat",
+      "source": "Credilink — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome Jonas Rafael De Brito"
@@ -4427,7 +4427,7 @@
     {
       "title": "JusBrasil API: nenhum processo criminal — MACILON RAFAEL DE BRITO",
       "url": "https://www.jusbrasil.com.br/processos/",
-      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 03217616421 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — ver achado Tesserati (ProcessoTribunalJustica) para essa cobertura.",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 03217616421 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — ver achado Credilink (ProcessoTribunalJustica) para essa cobertura.",
       "source": "JusBrasil Background Check API (produção)",
       "risk_indicator": "baixo",
       "tipo": "processo",
@@ -4454,19 +4454,19 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos não-criminais (9) — Amélia Míriam De Oliveira",
+      "title": "Credilink — Processos não-criminais (9) — Amélia Míriam De Oliveira",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "Amélia Míriam De Oliveira tem 9 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE TITULO; DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE TITULO; . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "Amélia Míriam De Oliveira tem 9 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE TITULO; DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE TITULO; . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 205.343.318-31"
     },
     {
-      "title": "Tesserati — Mídias Negativas — Amélia Míriam De Oliveira",
+      "title": "Credilink — Mídias Negativas — Amélia Míriam De Oliveira",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para Amélia Míriam De Oliveira via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://oglobo.globo.com/politica/miriam-leitao-fala-sobre-tortura-que-sofreu-nua-gravida-de-1-mes-durante-ditadura-13663114\", \"snippet\": null, \"photo_url\": null, \"published_d",
-      "source": "Tesserati — Mídias Negativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para Amélia Míriam De Oliveira via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://oglobo.globo.com/politica/miriam-leitao-fala-sobre-tortura-que-sofreu-nua-gravida-de-1-mes-durante-ditadura-13663114\", \"snippet\": null, \"photo_url\": null, \"published_d",
+      "source": "Credilink — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome Amélia Míriam De Oliveira"
@@ -4481,14 +4481,14 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos criminais (6) — TADEU BARBOSA DE OLIVEIRA",
+      "title": "Credilink — Processos criminais (6) — TADEU BARBOSA DE OLIVEIRA",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "TADEU BARBOSA DE OLIVEIRA tem 6 processo(s) criminal(is) via Tesserati. Assuntos: DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO . Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "TADEU BARBOSA DE OLIVEIRA tem 6 processo(s) criminal(is) via Credilink. Assuntos: DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO . Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 72565594615",
-      "decisao_recomendada": "REPROVAÇÃO — 6 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 6 processo(s) criminal(is) confirmado(s) via Credilink."
     },
     {
       "title": "Tadeu Barbosa de Oliveira — Mandato ativo confirmado | Prefeitura de Araçuaí (site oficial)",
@@ -4592,19 +4592,19 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos não-criminais (1) — Letícia Corrêa Da Silva Godinho",
+      "title": "Credilink — Processos não-criminais (1) — Letícia Corrêa Da Silva Godinho",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "Letícia Corrêa Da Silva Godinho tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "Letícia Corrêa Da Silva Godinho tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 083.260.896-30"
     },
     {
-      "title": "Tesserati — Mídias Negativas — Letícia Corrêa Da Silva Godinho",
+      "title": "Credilink — Mídias Negativas — Letícia Corrêa Da Silva Godinho",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para Letícia Corrêa Da Silva Godinho via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://patoshoje.com.br/noticias/vereadora-revela-condenacao-criminal-do-prefeito-de-varjao-de-minas-e-pede-cassacao-do-mandato-79038.html\", \"snippet\": null, \"photo_url\": nul",
-      "source": "Tesserati — Mídias Negativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para Letícia Corrêa Da Silva Godinho via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://patoshoje.com.br/noticias/vereadora-revela-condenacao-criminal-do-prefeito-de-varjao-de-minas-e-pede-cassacao-do-mandato-79038.html\", \"snippet\": null, \"photo_url\": nul",
+      "source": "Credilink — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome Letícia Corrêa Da Silva Godinho"
@@ -4693,10 +4693,10 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos não-criminais (2) — Rosilene Maria De Azevedo Borges",
+      "title": "Credilink — Processos não-criminais (2) — Rosilene Maria De Azevedo Borges",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "Rosilene Maria De Azevedo Borges tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: 6226 - DIREITO DO CONSUMIDOR -> RESPONSABILIDADE DO FORNECED; AVISO PREVIO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "Rosilene Maria De Azevedo Borges tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 6226 - DIREITO DO CONSUMIDOR -> RESPONSABILIDADE DO FORNECED; AVISO PREVIO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 940.882.501-25"
@@ -4711,10 +4711,10 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos não-criminais (2) — REGINALDO LIBERATO DE AZEVEDO",
+      "title": "Credilink — Processos não-criminais (2) — REGINALDO LIBERATO DE AZEVEDO",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "REGINALDO LIBERATO DE AZEVEDO tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: 4980 - DIREITO CIVIL -> OBRIGACOES -> ESPECIES DE TITULOS DE; 10435 - DIREITO CIVIL -> RESPONSABILIDADE CIVIL -> INDENIZAC. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "REGINALDO LIBERATO DE AZEVEDO tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 4980 - DIREITO CIVIL -> OBRIGACOES -> ESPECIES DE TITULOS DE; 10435 - DIREITO CIVIL -> RESPONSABILIDADE CIVIL -> INDENIZAC. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 88921727191"
@@ -4821,10 +4821,10 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Mídias Negativas — João Pedro Peixoto Fernandes",
+      "title": "Credilink — Mídias Negativas — João Pedro Peixoto Fernandes",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para João Pedro Peixoto Fernandes via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://www.maisgoias.com.br/cidades/de-dentro-da-cadeia-condenado-ordenou-execucao-de-jovem-no-jardim-america/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\":",
-      "source": "Tesserati — Mídias Negativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para João Pedro Peixoto Fernandes via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.maisgoias.com.br/cidades/de-dentro-da-cadeia-condenado-ordenou-execucao-de-jovem-no-jardim-america/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\":",
+      "source": "Credilink — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome João Pedro Peixoto Fernandes"
@@ -4839,10 +4839,10 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos não-criminais (1) — EDILSON FERNANDES DA SILVA JUNIOR",
+      "title": "Credilink — Processos não-criminais (1) — EDILSON FERNANDES DA SILVA JUNIOR",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "EDILSON FERNANDES DA SILVA JUNIOR tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "EDILSON FERNANDES DA SILVA JUNIOR tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 05654875400"
@@ -4958,29 +4958,29 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos criminais (1) — Débora Nascimento Santos",
+      "title": "Credilink — Processos criminais (1) — Débora Nascimento Santos",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "Débora Nascimento Santos tem 1 processo(s) criminal(is) via Tesserati. Assuntos: RECEPTACAO CULPOSA. Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "Débora Nascimento Santos tem 1 processo(s) criminal(is) via Credilink. Assuntos: RECEPTACAO CULPOSA. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 069.412.344-74",
-      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
     },
     {
-      "title": "Tesserati — Processos não-criminais (9) — Débora Nascimento Santos",
+      "title": "Credilink — Processos não-criminais (9) — Débora Nascimento Santos",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "Débora Nascimento Santos tem 9 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: OBRIGACAO DE FAZER / NAO FAZER; OBRIGACAO DE FAZER / NAO FAZER; PROMOCAO / ASCENSAO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "Débora Nascimento Santos tem 9 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: OBRIGACAO DE FAZER / NAO FAZER; OBRIGACAO DE FAZER / NAO FAZER; PROMOCAO / ASCENSAO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 069.412.344-74"
     },
     {
-      "title": "Tesserati — Mídias Negativas — Débora Nascimento Santos",
+      "title": "Credilink — Mídias Negativas — Débora Nascimento Santos",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "3 mídia(s) negativa(s) identificada(s) para Débora Nascimento Santos via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://revistaoeste.com/no-ponto/depois-de-um-ano-pgr-denuncia-presa-debora-dos-santos-pelo-8-1-que-manchou-estatua-com-batom/\", \"snippet\": null, \"photo_url\": null, \"publishe",
-      "source": "Tesserati — Mídias Negativas",
+      "snippet": "3 mídia(s) negativa(s) identificada(s) para Débora Nascimento Santos via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://revistaoeste.com/no-ponto/depois-de-um-ano-pgr-denuncia-presa-debora-dos-santos-pelo-8-1-que-manchou-estatua-com-batom/\", \"snippet\": null, \"photo_url\": null, \"publishe",
+      "source": "Credilink — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome Débora Nascimento Santos"
@@ -4995,10 +4995,10 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos não-criminais (1) — GUSTAVO HENRIQUE SANTOS MENEZES",
+      "title": "Credilink — Processos não-criminais (1) — GUSTAVO HENRIQUE SANTOS MENEZES",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "GUSTAVO HENRIQUE SANTOS MENEZES tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: DEFEITO, NULIDADE OU ANULACAO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "GUSTAVO HENRIQUE SANTOS MENEZES tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DEFEITO, NULIDADE OU ANULACAO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 09731948473"
@@ -5114,10 +5114,10 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos não-criminais (14) — Rosinei de fatima Pimentel santos",
+      "title": "Credilink — Processos não-criminais (14) — Rosinei de fatima Pimentel santos",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "Rosinei de fatima Pimentel santos tem 14 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: COMPRA E VENDA; CHEQUE; COMPRA E VENDA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "Rosinei de fatima Pimentel santos tem 14 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: COMPRA E VENDA; CHEQUE; COMPRA E VENDA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 339.879.578-16"
@@ -5132,14 +5132,14 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos criminais (1) — RENATA APARECIDA PIMENTEL RISSONI",
+      "title": "Credilink — Processos criminais (1) — RENATA APARECIDA PIMENTEL RISSONI",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "RENATA APARECIDA PIMENTEL RISSONI tem 1 processo(s) criminal(is) via Tesserati. Assuntos: CONTRAVENCOES PENAIS. Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "RENATA APARECIDA PIMENTEL RISSONI tem 1 processo(s) criminal(is) via Credilink. Assuntos: CONTRAVENCOES PENAIS. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 21840663898",
-      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
     },
     {
       "title": "Renata Rissoni eleita Vereadora em Ipaussu/SP — Eleições 2024 (TSE/O Tempo)",
@@ -5261,10 +5261,10 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos não-criminais (4) — Francisco Erivelto Gonçalves Junior",
+      "title": "Credilink — Processos não-criminais (4) — Francisco Erivelto Gonçalves Junior",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "Francisco Erivelto Gonçalves Junior tem 4 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: HONORARIOS ADVOCATICIOS; DIREITO DO CONSUMIDOR; INDENIZACAO POR DANO MATERIAL. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "Francisco Erivelto Gonçalves Junior tem 4 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: HONORARIOS ADVOCATICIOS; DIREITO DO CONSUMIDOR; INDENIZACAO POR DANO MATERIAL. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 655.493.683-15"
@@ -5407,10 +5407,10 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Mídias Negativas — Franciele Garcia",
+      "title": "Credilink — Mídias Negativas — Franciele Garcia",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para Franciele Garcia via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/07/07/quem-era-a-jovem-morta-pelo-ex-em-apartamento-no-rs-trabalhadora-independente-conta-irma.ghtml\", \"snippet\": null, ",
-      "source": "Tesserati — Mídias Negativas",
+      "snippet": "1 mídia(s) negativa(s) identificada(s) para Franciele Garcia via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/07/07/quem-era-a-jovem-morta-pelo-ex-em-apartamento-no-rs-trabalhadora-independente-conta-irma.ghtml\", \"snippet\": null, ",
+      "source": "Credilink — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome Franciele Garcia"
@@ -5425,14 +5425,14 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos criminais (1) — FERNANDA GARCIA SARDANHA",
+      "title": "Credilink — Processos criminais (1) — FERNANDA GARCIA SARDANHA",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "FERNANDA GARCIA SARDANHA tem 1 processo(s) criminal(is) via Tesserati. Assuntos: 3396 - DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "FERNANDA GARCIA SARDANHA tem 1 processo(s) criminal(is) via Credilink. Assuntos: 3396 - DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "alto",
       "tipo": "processo",
       "match": "CPF 02560850990",
-      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Tesserati."
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
     },
     {
       "title": "Confirmação de mandato ativo — Fernanda Garcia Sardanha, Prefeita de São Mateus do Sul/PR (2025-2028)",
@@ -5554,10 +5554,10 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos não-criminais (7) — Joao Carlos Piovesan",
+      "title": "Credilink — Processos não-criminais (7) — Joao Carlos Piovesan",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "Joao Carlos Piovesan tem 7 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: HORAS EXTRAS; DIREITO DE ACESSO A INFORMACAO, GARANTIAS CONSTITUCIONAIS, D; PROPRIEDADE. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "Joao Carlos Piovesan tem 7 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: HORAS EXTRAS; DIREITO DE ACESSO A INFORMACAO, GARANTIAS CONSTITUCIONAIS, D; PROPRIEDADE. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 357.730.570-34"
@@ -5572,10 +5572,10 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos não-criminais (17) — DAVI CARGNIN PIOVESAN",
+      "title": "Credilink — Processos não-criminais (17) — DAVI CARGNIN PIOVESAN",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "DAVI CARGNIN PIOVESAN tem 17 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: LIQUIDACAO / CUMPRIMENTO / EXECUCAO :: COMPETENCIA DE FAZEND; LIQUIDACAO / CUMPRIMENTO / EXECUCAO :: COMPETENCIA DE FAZEND; INDENIZACAO POR DANO MATERIAL, RESPONSABILIDADE DA ADMINISTR. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "DAVI CARGNIN PIOVESAN tem 17 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: LIQUIDACAO / CUMPRIMENTO / EXECUCAO :: COMPETENCIA DE FAZEND; LIQUIDACAO / CUMPRIMENTO / EXECUCAO :: COMPETENCIA DE FAZEND; INDENIZACAO POR DANO MATERIAL, RESPONSABILIDADE DA ADMINISTR. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 65569717072"
@@ -5718,10 +5718,10 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos não-criminais (10) — LUCIANA APARECIDA KUBICA",
+      "title": "Credilink — Processos não-criminais (10) — LUCIANA APARECIDA KUBICA",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "LUCIANA APARECIDA KUBICA tem 10 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: PAGAMENTO; PRESTACAO DE SERVICOS; . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "LUCIANA APARECIDA KUBICA tem 10 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: PAGAMENTO; PRESTACAO DE SERVICOS; . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 26541984808"
@@ -5837,10 +5837,10 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Mídias Negativas — Emerson De Sousa Da Silva",
+      "title": "Credilink — Mídias Negativas — Emerson De Sousa Da Silva",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "20 mídia(s) negativa(s) identificada(s) para Emerson De Sousa Da Silva via Tesserati. Primeiro resultado: {\"title\": null, \"link\": \"https://www.tjma.jus.br/midia/portal/noticia/520803/tribunal-do-juri-de-sao-luis-julga-41-reus-em-marco\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-0",
-      "source": "Tesserati — Mídias Negativas",
+      "snippet": "20 mídia(s) negativa(s) identificada(s) para Emerson De Sousa Da Silva via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.tjma.jus.br/midia/portal/noticia/520803/tribunal-do-juri-de-sao-luis-julga-41-reus-em-marco\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-0",
+      "source": "Credilink — Mídias Negativas",
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome Emerson De Sousa Da Silva"
@@ -5855,10 +5855,10 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos não-criminais (11) — NILTON BATISTA RAUPP",
+      "title": "Credilink — Processos não-criminais (11) — NILTON BATISTA RAUPP",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "NILTON BATISTA RAUPP tem 11 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: 0312 | DIVIDA ATIVA (EXECUCAO FISCAL), DIREITO TRIBUTARIO; 010408 | CONCESSAO / PERMISSAO / AUTORIZACAO, SERVICOS, DIRE; LOCACAO DE IMOVEL. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "NILTON BATISTA RAUPP tem 11 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 0312 | DIVIDA ATIVA (EXECUCAO FISCAL), DIREITO TRIBUTARIO; 010408 | CONCESSAO / PERMISSAO / AUTORIZACAO, SERVICOS, DIRE; LOCACAO DE IMOVEL. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 59447940978"
@@ -5983,10 +5983,10 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos não-criminais (2) — Thiago Andreyfson Brandao De Oliveira",
+      "title": "Credilink — Processos não-criminais (2) — Thiago Andreyfson Brandao De Oliveira",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "Thiago Andreyfson Brandao De Oliveira tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: DIREITO ELEITORAL (11428) | ELEICOES (11583) | CARGOS (11628; DIREITO ELEITORAL (11428) | ELEICOES (11583) | TRANSGRESSOES. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "Thiago Andreyfson Brandao De Oliveira tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO ELEITORAL (11428) | ELEICOES (11583) | CARGOS (11628; DIREITO ELEITORAL (11428) | ELEICOES (11583) | TRANSGRESSOES. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 953.525.892-34"
@@ -6001,10 +6001,10 @@
       "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
-      "title": "Tesserati — Processos não-criminais (6) — LUIS AFONSO BRANDAO DE OLIVEIRA",
+      "title": "Credilink — Processos não-criminais (6) — LUIS AFONSO BRANDAO DE OLIVEIRA",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
-      "snippet": "LUIS AFONSO BRANDAO DE OLIVEIRA tem 6 processo(s) não-criminal(is) (cível/trabalhista/outro) via Tesserati. Assuntos: ; ; . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
-      "source": "Tesserati — ProcessoTribunalJustica",
+      "snippet": "LUIS AFONSO BRANDAO DE OLIVEIRA tem 6 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ; ; . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 25731688249"

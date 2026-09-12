@@ -17,7 +17,7 @@ camadas exigido pela Circular BCB nº 4.001/2020.
 Para cada cadastro suspeito de PEP na fila (vindo do Retool/Athena), o Pepito:
 
 1. Pré-carrega os dados do cadastro e do vínculo PEP (Credilink).
-2. Roda (ou expõe o status de) verificações reais — Credilink, JusBrasil, Tesserati, mídia — para
+2. Roda (ou expõe o status de) verificações reais — Credilink, JusBrasil, Credilink, mídia — para
    o titular da conta **e** para o PEP relacionado, quando aplicável.
 3. Sugere um parecer (analista e, depois, Liderança), sempre editável.
 4. **Bloqueia o envio à Mesa de Decisão se essas verificações não estiverem completas**, a menos que
@@ -34,7 +34,7 @@ Nada disso substitui o julgamento do analista/Liderança — é apoio à decisã
 ```mermaid
 flowchart TD
     A["Caso entra na fila PLD<br/>(Retool/Athena, bucket CHECK_ANALISTA)"] --> B["Check Analista<br/>dados + vínculo PEP pré-carregados"]
-    B --> C{"Consulta real completa?<br/>Credilink (titular via tabela;<br/>PEP relacionado via API própria)<br/>+ JusBrasil/Tesserati/WebSearch"}
+    B --> C{"Consulta real completa?<br/>Credilink (titular via tabela;<br/>PEP relacionado via API própria)<br/>+ JusBrasil/Credilink/WebSearch"}
     C -- "Sim" --> E["Analista revisa achados<br/>e sugestão de parecer"]
     C -- "Não / falhou / cota estourada" --> D["⚠️ Banner de pendência +<br/>checkbox obrigatório de<br/>verificação manual"]
     D --> E
@@ -52,8 +52,8 @@ flowchart TD
 | Verificação | Fonte | Quando roda | Owner do dado |
 |---|---|---|---|
 | Identificação do PEP | Credilink (via notebook do onboarding, fora deste repo) | Antes do caso chegar ao Pepito | `pep_pf` / `token_pf_cred` |
-| Antecedentes do titular da conta | JusBrasil + Tesserati | `fetch-media-findings.py`, disparado por `queue-sync.sh` | `media-findings.json` |
-| Antecedentes do PEP relacionado | JusBrasil + Tesserati (mesmo script, mesmo CPF do PEP) | idem | `media-findings.json` |
+| Antecedentes do titular da conta | JusBrasil + Credilink | `fetch-media-findings.py`, disparado por `queue-sync.sh` | `media-findings.json` |
+| Antecedentes do PEP relacionado | JusBrasil + Credilink (mesmo script, mesmo CPF do PEP) | idem | `media-findings.json` |
 | Consulta Credilink do PEP relacionado (nunca existia antes de 2026-09-11) | `consultar-credilink-pep.py` | Manual/agendado, separado do fluxo de onboarding | `credilink-pep-consultas.json` |
 | Mídia adversa (WebSearch) | Anthropic web_search | idem `fetch-media-findings.py` | `media-findings.json` |
 
@@ -64,11 +64,11 @@ flowchart TD
 ### 1. CHECK_ANALISTA — `/check-analista`
 
 - Fila com `bucket = CHECK_ANALISTA` do snapshot Retool/Athena.
-- Card de cada caso mostra logo no topo o status de consulta Credilink e JusBrasil/Tesserati
+- Card de cada caso mostra logo no topo o status de consulta Credilink e JusBrasil/Credilink
   (✅ OK / ⚠️ pendente, com o motivo).
 - Analista abre o caso (`/primeira-camada`), revisa achados reais e a sugestão de parecer
   (LLM ou heurística), edita, e envia à Mesa.
-- **Guardrail:** se Credilink (do PEP relacionado) ou JusBrasil/Tesserati não tiverem consulta real
+- **Guardrail:** se Credilink (do PEP relacionado) ou JusBrasil/Credilink não tiverem consulta real
   registrada, o botão "Enviar à Mesa" fica bloqueado até o analista marcar o checkbox de
   "verifiquei manualmente" — essa confirmação fica registrada no histórico do caso (quem, quando,
   o que estava pendente).
@@ -108,7 +108,7 @@ análises por analista) e exportação CSV. Não participa da decisão regulató
 | Persistência com fallback | `storage.ts` | `localStorage` + backup em `analises-salvas.json`; reload não perde dado |
 
 **Limitação conhecida (não é bug, é contrato):** o JusBrasil Background Check só cobre processos
-criminais, BNMP e MP — não tem endpoint cível/trabalhista. Para isso, o Tesserati
+criminais, BNMP e MP — não tem endpoint cível/trabalhista. Para isso, o Credilink
 (`ProcessoTribunalJustica`) complementa com achados não-criminais.
 
 Detalhes de incidentes específicos (causa raiz, quando, como foi corrigido): ver
@@ -124,7 +124,7 @@ Detalhes de incidentes específicos (causa raiz, quando, como foi corrigido): ve
 | Servidor | Express (Node.js) — `server.cjs` |
 | Autenticação | Google SSO (`@cora.com.br`) |
 | Persistência | `localStorage` + `src/data/*.json` (backup em disco, sem banco externo) |
-| Fonte de dados | Snapshot JSON da fila PLD (Retool/Athena) + consultas próprias (JusBrasil/Tesserati/Credilink) |
+| Fonte de dados | Snapshot JSON da fila PLD (Retool/Athena) + consultas próprias (JusBrasil/Credilink) |
 
 ---
 
@@ -164,7 +164,7 @@ src/
 
 .tools/
   build-real-queue.py              — Puxa fila real do Athena
-  fetch-media-findings.py          — JusBrasil + Tesserati + WebSearch (owner + PEP relacionado)
+  fetch-media-findings.py          — JusBrasil + Credilink + WebSearch (owner + PEP relacionado)
   consultar-credilink-pep.py       — Consulta Credilink real do PEP relacionado (novo, 2026-09-11)
   generate-sugestao-parecer.py     — Sugestão IA (Analista)
   generate-sugestao-lideranca.py   — Sugestão IA (Liderança)

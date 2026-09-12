@@ -1,13 +1,16 @@
 /**
  * Enriquece cada caso REAL da Fila PLD com:
- *   - Lista de `ResultadoPesquisa` apontando para fontes públicas via deep-link
- *     parametrizado (CNPJ, CPF, nome).
+ *   - Lista de `ResultadoPesquisa` (gerarResultados) com o que foi de fato
+ *     CONSULTADO (WebSearch M1-M13, Credilink, JusBrasil, RUFRA, pipeline KYC
+ *     pré-apurado) — nunca um deep-link não verificado (thay@cora.com.br,
+ *     2026-09-12: "se um site não for consultado, nem inclua nos Resultados
+ *     de Pesquisas"). Deep-links de referência pra consulta manual pontual
+ *     ficam à parte, em getLinksManuais().
  *   - Análise consolidada baseada nos sinais já disponíveis (mídia negativa,
  *     processos, RUFRA, PEP info real).
  *   - Parecer sugerido em PT-BR.
  *
- * O analista clica nos links e valida em tempo real — nada é fabricado sobre
- * pessoas reais.
+ * Nada é fabricado sobre pessoas reais.
  */
 
 import type { ResultadoPesquisa, StatusAnalise } from "@/types/kyc";
@@ -40,6 +43,14 @@ function getFindingsFor(draftId: string): MediaFinding[] {
   const v = MEDIA_FINDINGS[draftId];
   if (Array.isArray(v)) return v;
   return [];
+}
+
+/** Achado do bloco M7 (contexto regional — operação/mídia no MUNICÍPIO, sem
+ * menção nominal direta ao PEP/owner) NÃO é uma identificação de verdade —
+ * é sinal contextual. Compartilhado entre gerarResultados() (badge de
+ * similaridade) e gerarParecerSugerido() (decisão preliminar). */
+function isCtxRegional(f: MediaFinding): boolean {
+  return !!(f.match?.includes("M7") || f.homonimo_alerta?.includes("Contexto regional"));
 }
 
 interface CredilinkPepConsulta {
@@ -86,24 +97,26 @@ export function getConsultaStatus(
   const reais = findings.filter((f) => !isPlaceholder(f));
   // Evidência real de que AMBAS as fontes rodaram — não basta "tem algum
   // achado" (podia ser só mídia/TSE de um pipeline antigo, sem JusBrasil nem
-  // Tesserati terem sido de fato chamados; achado Codex #2, 2026-09-11).
+  // Credilink terem sido de fato chamados; achado Codex #2, 2026-09-11).
+  // Credilink e Tesserati são o MESMO serviço — nunca tratar como fontes
+  // diferentes (thay@cora.com.br, 2026-09-12).
   const temJusBrasil = reais.some((f) => f.source.includes("JusBrasil") || f.source.includes("BNMP") || f.source.includes("MP "));
-  const temTesserati = reais.some((f) => f.source.includes("Tesserati"));
+  const temCredilinkAntecedentes = reais.some((f) => f.source.includes("Credilink"));
 
   let jusbrasilOk = true;
   let jusbrasilMotivo = "";
   if (findings.length === 0) {
     jusbrasilOk = false;
-    jusbrasilMotivo = "Nunca consultado (sem dupla-verificação JusBrasil/Tesserati/WebSearch registrada para este caso).";
+    jusbrasilMotivo = "Nunca consultado (sem dupla-verificação JusBrasil/Credilink/WebSearch registrada para este caso).";
   } else if (findings.some((f) => f.source.includes("Controle de Quota"))) {
     jusbrasilOk = false;
     jusbrasilMotivo = "Cota do JusBrasil esgotada no momento da consulta — verificação manual necessária (ver achado 'VERIFICAÇÃO MANUAL NECESSÁRIA').";
   } else if (findings.some((f) => f.source.includes("Erro de Consulta"))) {
     jusbrasilOk = false;
-    jusbrasilMotivo = "Consulta JusBrasil/Tesserati falhou tecnicamente (ver achado 'Erro de Consulta') — não é resultado negativo, precisa reconsultar ou verificar manualmente.";
-  } else if (!temJusBrasil || !temTesserati) {
+    jusbrasilMotivo = "Consulta JusBrasil/Credilink falhou tecnicamente (ver achado 'Erro de Consulta') — não é resultado negativo, precisa reconsultar ou verificar manualmente.";
+  } else if (!temJusBrasil || !temCredilinkAntecedentes) {
     jusbrasilOk = false;
-    jusbrasilMotivo = `Achados existem, mas sem evidência de ${!temJusBrasil ? "JusBrasil" : "Tesserati"} ter rodado para este caso.`;
+    jusbrasilMotivo = `Achados existem, mas sem evidência de ${!temJusBrasil ? "JusBrasil" : "Credilink"} ter rodado para este caso.`;
   }
 
   let credilinkPepOk = true;
@@ -142,6 +155,34 @@ export function getConsultaStatus(
     credilinkPepOk,
     credilinkPepMotivo: motivos.join(" "),
     tudoOk: jusbrasilOk && credilinkPepOk,
+  };
+}
+
+/** Só os números de token Credilink (titular + PEP), sem status/motivo —
+ * pedido de thay@cora.com.br (2026-09-12): "Na fila da Liderança traga
+ * apenas o números dos tokens: Titular da Conta e do PEP, para consultar,
+ * se necessário." A investigação em si já foi validada antes do caso chegar
+ * na Mesa; o token serve só de atalho pra reconsulta manual pontual. */
+export interface CredilinkTokens {
+  titular: string | null;
+  peps: Array<{ cpf: string; token: string | null }>;
+}
+
+export function getCredilinkTokens(
+  c: Pick<RegistrationCase, "cpf" | "token_pf_cred" | "pep_pf">,
+  tipoPep: "titular" | "relacionado",
+): CredilinkTokens {
+  const titular = c.token_pf_cred || null;
+  if (tipoPep === "titular") {
+    return { titular, peps: [] };
+  }
+  const ownerCpf = (c.cpf || "").replace(/\D/g, "");
+  const cpfsPep = Array.from(
+    new Set((c.pep_pf || []).map((p) => (p.cpf_titular || "").replace(/\D/g, "")).filter((cpf) => cpf && cpf !== ownerCpf)),
+  );
+  return {
+    titular,
+    peps: cpfsPep.map((cpf) => ({ cpf, token: CREDILINK_PEP_CONSULTAS[cpf]?.token_compliance || null })),
   };
 }
 
@@ -336,40 +377,33 @@ type Raw = Omit<
   "resultados_pesquisa" | "analise_geral" | "parecer_sugerido" | "recomendacao_sugerida" | "historico_comentarios"
 >;
 
-function toResultado(
-  link: VerifyLink,
-  hint: {
-    tipo: ResultadoPesquisa["tipo"];
-    risco: ResultadoPesquisa["risco"];
-    resumo: string;
-    pendente?: boolean;
-  },
-): ResultadoPesquisa {
-  return {
-    id: uid(),
-    fonte: link.fonte,
-    resumo: hint.resumo,
-    tipo: hint.tipo,
-    risco: hint.risco,
-    link: link.url,
-    // Sem similaridade_nome: toResultado() sempre monta um DEEP-LINK de busca
-    // (URL pré-preenchida), nunca um achado já verificado — nada aqui foi de
-    // fato confirmado, então não existe "% de similaridade" a reportar. Um
-    // badge "Similaridade: 100%" aqui passaria a falsa impressão de match
-    // positivo mesmo quando o resumo diz "nada identificado" (apontado por
-    // thay@cora.com.br, 2026-09-11). Use `pendente: true` sempre que o resumo
-    // afirmar algo (ex.: risco alto, "confirmar mandato X") em vez de
-    // reportar ausência de sinal — isso já sinaliza "não verificado ainda"
-    // sem precisar de badge de similaridade (caso real: draft d309057d,
-    // 2026-08-11).
-    // Default true (não false): TODO toResultado() é um deep-link nunca
-    // aberto automaticamente — mesmo quando o resumo diz "nada identificado",
-    // isso não foi de fato verificado, só o link foi gerado. Antes só a TSE
-    // (abaixo) tinha esse badge; as ~15 outras fontes (mídia, CNJ, JusBrasil,
-    // Escavador, TCU, MPF, TJ, MP, sanções, TCE, ALE, DOU) apareciam como se
-    // fossem achado confirmado (achado Codex, 2026-09-11).
-    pendente_verificacao: hint.pendente ?? true,
-  };
+// toResultado() (deep-link genérico pra fonte não consultada) foi removida
+// em 2026-09-12 — ver gerarResultados() abaixo: "se um site não for
+// consultado, nem inclua nos Resultados de Pesquisas" (thay@cora.com.br).
+
+/** Links de referência pra consulta manual — deliberadamente SEPARADO de
+ * gerarResultados()/ResultadoCard: não afirma "nada identificado" nem carrega
+ * risco/similaridade, é só um atalho de URL pré-preenchida (TSE, CNJ,
+ * sanções, TCE/ALE/UF, DOU, Receita/QSA, mídia). Sem isso, remover os
+ * deep-links de gerarResultados() (item 4, 2026-09-12) deixava o
+ * Analista/Liderança sem NENHUM caminho dentro do Pepito pra conferir uma
+ * fonte que o WebSearch não cobriu ou falhou em cobrir (achado Codex,
+ * 2026-09-12: 63/78 casos da fila ficaram com zero links de verificação
+ * depois da remoção). Consumido só pelo toggle "Ver links de verificação"
+ * em RegistrationCaseCard.tsx — nunca pela lista de Resultados de Pesquisa. */
+export function getLinksManuais(c: Raw): VerifyLink[] {
+  const cargoOrgao = inferCargoOrgao(c);
+  return buildVerifyLinks({
+    cnpj: c.cnpj,
+    cpf: c.cpf,
+    fullNamePf: c.full_name_pf,
+    rfNome: c.rf_nome_oficial,
+    uf: c.uf,
+    cidade: c.cidade,
+    cargoPep: cargoOrgao.cargo,
+    orgaoPublico: cargoOrgao.orgao,
+    cpfPep: cargoOrgao.cpfTitular,
+  });
 }
 
 /** Parseia data no formato dd/mm/yyyy usado pela Credilink em pep_pf. */
@@ -526,23 +560,19 @@ function isEmptyMessage(s: string | null | undefined, kind: "midia" | "processo"
 }
 
 export function gerarResultados(c: Raw): ResultadoPesquisa[] {
-  const cargoOrgao = inferCargoOrgao(c);
-  const links = buildVerifyLinks({
-    cnpj: c.cnpj,
-    cpf: c.cpf,
-    fullNamePf: c.full_name_pf,
-    rfNome: c.rf_nome_oficial,
-    uf: c.uf,
-    cidade: c.cidade,
-    cargoPep: cargoOrgao.cargo,
-    orgaoPublico: cargoOrgao.orgao,
-    cpfPep: cargoOrgao.cpfTitular,
-  });
-  const get = (fonte: string) => links.find((l) => l.fonte === fonte);
-
   const r: ResultadoPesquisa[] = [];
 
   // ===== Achados REAIS de mídia (WebSearch concluído) — entram primeiro =====
+  // Pedido de thay@cora.com.br (2026-09-12): "Se um site não for consultado,
+  // nem inclua nos Resultados de Pesquisas para não poluir a lista." Antes,
+  // dezenas de deep-links pré-montados (TSE, DOU, TCE, ALE, Sanções, CNJ,
+  // Escavador, TCU, MPF, TJ, MP, JusBrasil CNPJ/CPF do PEP, Receita/QSA,
+  // mídia por veículo) entravam aqui via toResultado() sempre que o link
+  // existia, mesmo quando NADA foi de fato consultado — eram só URLs
+  // template pra clique manual, com badge "Pendente verificação" disfarçado
+  // de resultado de pesquisa. Removido: a lista agora só mostra o que foi
+  // realmente consultado (WebSearch M1-M13 em fetch-media-findings.py,
+  // Credilink, JusBrasil, RUFRA, pipeline KYC pré-apurado).
   const findings = getFindingsFor(c.draft_id);
   findings.forEach((f) => {
     const matchInfo = f.match ? ` [Match: ${f.match}]` : "";
@@ -553,6 +583,13 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
     // pendente_verificacao:false igual a um achado de verdade, disfarçando
     // "não consultamos" como "consultamos e confirmamos" (achado Codex, 2026-09-11).
     const isPlaceholderCota = f.source.includes("Controle de Quota") || f.source.includes("Erro de Consulta");
+    // M7 (contexto regional) não identifica NINGUÉM nominalmente — badge de
+    // similaridade "100%" nesse achado dava a entender que o PEP/titular/
+    // empresa foi de fato encontrado, quando o próprio texto diz "sem
+    // vínculo"/"não citado nominalmente" (achado thay@cora.com.br,
+    // 2026-09-12: "se o match foi realmente de 100%, é porque alguém teria
+    // sido identificado, não o contrário").
+    const semIdentificacao = isCtxRegional(f);
     r.push({
       id: uid(),
       fonte: f.source,
@@ -560,9 +597,9 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
       tipo: (f.tipo as ResultadoPesquisa["tipo"]) || "midia",
       risco: f.risk_indicator,
       link: f.url,
-      // Similaridade 100% APENAS quando há match explícito sem alerta de
-      // homônimo E não é o placeholder de cota estourada.
-      ...(isPlaceholderCota
+      // Similaridade só aparece quando ALGUÉM foi de fato identificado:
+      // nem placeholder de cota/erro, nem contexto regional sem nexo nominal.
+      ...(isPlaceholderCota || semIdentificacao
         ? {}
         : { similaridade_nome: f.homonimo_alerta ? "verificar identidade" : "100%" }),
       pendente_verificacao: isPlaceholderCota || !!f.homonimo_alerta,
@@ -598,18 +635,6 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
     });
   }
 
-  // ===== Eleitoral =====
-  // Deep-link de busca — nada foi verificado automaticamente aqui, por isso
-  // `pendente: true` (badge "Pendente verificação"), diferente dos registros
-  // "Base PEP unificada" acima, que são dado real já confirmado na base.
-  const tseCand = get("TSE — Divulgação de Candidaturas");
-  if (tseCand) {
-    r.push(toResultado(tseCand, {
-      tipo: "pep", risco: "alto", pendente: true,
-      resumo: `Confirmar mandato/candidaturas de ${cargoOrgao.nomePEP} no TSE — bens declarados, partido, ${c.uf}. Link de busca; analista deve abrir e conferir manualmente (não verificado automaticamente).`,
-    }));
-  }
-
   // ===== Mídia negativa — usa o conteúdo já apurado =====
   const sinalMidiaPj = !isEmptyMessage(c.pj_midianegativas, "midia");
   const sinalMidiaPf = !isEmptyMessage(c.pf_midianegativas, "midia");
@@ -634,25 +659,6 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
     });
   }
 
-  // Mídia: busca direta nos acervos das publicações.
-  // Para cada publicação, mostra "Nada desabonador identificado" a menos que
-  // haja achado real (já adicionado acima a partir de media-findings.json).
-  const findingSources = new Set(findings.map((f) => f.source.toLowerCase()));
-  links
-    .filter((l) => l.categoria === "Mídia")
-    .forEach((m) => {
-      const fonteLower = m.fonte.toLowerCase();
-      const jaTemAchado = Array.from(findingSources).some((s) =>
-        fonteLower.includes(s.split(" ")[0]) || s.includes(fonteLower.split(" ")[0]),
-      );
-      if (jaTemAchado) return; // já mostrado acima como achado real
-      r.push(toResultado(m, {
-        tipo: "midia",
-        risco: "baixo",
-        resumo: `Nada desabonador identificado em ${m.fonte} para ${c.full_name_pf} (CPF ${c.cpf}, ${c.cidade}/${c.uf}). Link aberto para validação manual se necessário.`,
-      }));
-    });
-
   // ===== Processos =====
   const sinalProcPj = !isEmptyMessage(c.processosjudiciais_pj, "processo");
   const sinalProcPf = !isEmptyMessage(c.processosjudiciais_pf, "processo");
@@ -675,103 +681,6 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
       // Sem similaridade_nome: nada foi encontrado — badge de "match" aqui
       // seria enganoso.
     });
-  }
-
-  // CNJ + JusBrasil (CPF do titular) + Escavador + TJ-{UF} + MP-{UF} + TCU + MPF
-  // — todas fontes de busca por NOME/CPF da pessoa física. JusBrasil por CNPJ
-  // e por CPF do PEP têm resumo próprio (empresa/PEP, não o titular) logo abaixo.
-  ["CNJ — Improbidade Administrativa", "JusBrasil — busca por CPF",
-   "Escavador — perfil pessoa", "TCU — Acórdãos", "MPF — Processos e investigações",
-   `TJ-${c.uf} — consulta processual`, `MP-${c.uf} — Ministério Público`].forEach((nome) => {
-    const link = get(nome);
-    if (link) {
-      const fonteLower = nome.toLowerCase();
-      const jaTemAchado = Array.from(findingSources).some((s) =>
-        fonteLower.includes(s.split(" ")[0]) || s.includes(fonteLower.split(" ")[0]),
-      );
-      if (jaTemAchado) return;
-      r.push(toResultado(link, {
-        tipo: link.categoria === "Estadual" ? "governo" : "processo",
-        risco: "baixo",
-        resumo: `Nada identificado sobre ${c.full_name_pf} (CPF ${c.cpf}) em ${nome}. Link aberto para validação manual se necessário.`,
-      }));
-    }
-  });
-
-  const jaTemAchadoJusBrasil = Array.from(findingSources).some((s) => s.includes("jusbrasil"));
-
-  // JusBrasil — CNPJ da empresa (pessoa jurídica em análise, não o titular).
-  const jusBrasilCnpj = get("JusBrasil — busca por CNPJ");
-  if (jusBrasilCnpj && !jaTemAchadoJusBrasil) {
-    r.push(toResultado(jusBrasilCnpj, {
-      tipo: "processo",
-      risco: "baixo",
-      resumo: `Nada identificado sobre ${c.rf_nome_oficial} (CNPJ ${c.cnpj}) em JusBrasil. Link aberto para validação manual se necessário.`,
-    }));
-  }
-
-  // JusBrasil — CPF do PEP identificado via Credilink (quando o owner é
-  // vínculo, não o próprio titular). Busca separada da do owner acima.
-  const jusBrasilPep = get("JusBrasil — busca por CPF do PEP");
-  if (jusBrasilPep && !jaTemAchadoJusBrasil) {
-    r.push(toResultado(jusBrasilPep, {
-      tipo: "processo",
-      risco: "baixo",
-      resumo: `Nada identificado sobre ${cargoOrgao.nomePEP} (CPF do PEP ${cargoOrgao.cpfTitular}) em JusBrasil. Link aberto para validação manual se necessário.`,
-    }));
-  }
-
-  // ===== Sanções =====
-  ["Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)",
-   "Portal da Transparência — Sanções (CPF)",
-   "CGU — Servidores Federais"].forEach((nome) => {
-    const link = get(nome);
-    if (link) {
-      r.push(toResultado(link, {
-        tipo: "governo", risco: "baixo",
-        resumo: `Nada identificado em ${nome} para ${c.rf_nome_oficial} / ${c.full_name_pf} (CNPJ ${c.cnpj}, CPF ${c.cpf}).`,
-      }));
-    }
-  });
-
-  // ===== Receita / QSA — esses são links de validação cadastral, não pesquisa adversa =====
-  ["Receita Federal — Comprovante CNPJ",
-   "Casa dos Dados — CNPJ + Sócios",
-   "BrasilAPI — CNPJ (JSON)"].forEach((nome) => {
-    const link = get(nome);
-    if (link) {
-      r.push(toResultado(link, {
-        tipo: "societario", risco: "baixo",
-        resumo: `${nome}: confirmar situação cadastral, QSA e atividade do CNPJ ${c.cnpj} (${c.rf_nome_oficial}).`,
-      }));
-    }
-  });
-
-  // ===== TCE estadual =====
-  const tce = get(`TCE-${c.uf} — busca interna`);
-  if (tce) {
-    r.push(toResultado(tce, {
-      tipo: "governo", risco: "baixo",
-      resumo: `Nada identificado no TCE-${c.uf} para ${c.full_name_pf} (${c.cidade}/${c.uf}). Link aberto para validação.`,
-    }));
-  }
-
-  // ===== ALE / Câmara Municipal =====
-  const ale = get(`Câmara/ALE-${c.uf} — Portal de Transparência`);
-  if (ale) {
-    r.push(toResultado(ale, {
-      tipo: "governo", risco: "baixo",
-      resumo: `Validar atuação parlamentar de ${cargoOrgao.nomePEP} (${cargoOrgao.cargo}, ${c.uf}) no portal Câmara/ALE-${c.uf}.`,
-    }));
-  }
-
-  // ===== DOU =====
-  const dou = get("Diário Oficial da União (DOU)");
-  if (dou) {
-    r.push(toResultado(dou, {
-      tipo: "governo", risco: "baixo",
-      resumo: `Nada identificado no DOU para ${c.full_name_pf} (CPF ${c.cpf}). Link aberto para validação.`,
-    }));
   }
 
   // ===== RUFRA (sinal interno) =====
@@ -829,8 +738,7 @@ export function gerarParecerSugerido(c: Raw): string {
   const sinalMidia = !isEmptyMessage(c.pj_midianegativas, "midia") || !isEmptyMessage(c.pf_midianegativas, "midia");
   const sinalProc = !isEmptyMessage(c.processosjudiciais_pj, "processo") || !isEmptyMessage(c.processosjudiciais_pf, "processo");
   const findings = getFindingsFor(c.draft_id);
-  const isCtxRegional = (f: MediaFinding) =>
-    !!(f.match?.includes("M7") || f.homonimo_alerta?.includes("Contexto regional"));
+  // isCtxRegional() compartilhado com gerarResultados() — definido no topo do arquivo.
   const altoExterno = findings.some((f) => f.risk_indicator === "alto" && !isCtxRegional(f));
   const homonimo = findings.some((f) => f.homonimo_alerta && !isCtxRegional(f));
 

@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-09-02T14:00:02.972459",
+  "timestamp": "2026-09-11T14:00:03.290074",
   "checks_executados": 10,
   "checks_falhados": 0,
   "alertas": [
     {
       "nivel": "🟡 MÉDIO",
-      "titulo": "11 novo(s) caso(s) escalado(s) para CHECK_LIDERANCA",
-      "descricao": "Caso(s) derivado(s) pelo analista ou promovido(s) pelo Retool desde a última verificação. Conferir Fila de Revisão:\n• FLAVIO OTAVIO PEDROSO RIBEIRO - ASSESSORIA (CNPJ 68.726.438/0001-95, score 1040) — draft 185f8a15-d5bf-4c44-bea7-07c576f91d00\n• CECCHI & ALVES CONSULTORIA EDUCACIONAL LTDA (CNPJ 12.607.590/0001-02, score 985) — draft a8dc91c6-d84a-4385-84a0-be1c38e0ec45\n• 68.554.271 ARIANE PORTO FREITAS (CNPJ 68.554.271/0001-22, score 1005) — draft 3764d101-48f1-4395-8948-975d3f37a68a\n• MASTERS MIX LTDA (CNPJ 56.086.071/0001-03, score 985) — draft c4e85a13-f7cb-45fe-82d9-91ada039ddc1\n• FARIAS NETO CONSTRUCOES E SERVICOS LTDA (CNPJ 64.884.157/0001-00, score 1020) — draft c4332ba8-1778-4354-b3eb-c842318a15b9\n• 66.155.990 JAMILY DE SOUZA DO NASCIMENTO (CNPJ 66.155.990/0001-45, score 1065) — draft 7aa133b6-3689-46ae-9348-4b5382a9acb0\n• GIDEON SANTOS QUEIROZ 15956452765 (CNPJ 30.864.709/0001-04, score 985) — draft 71a5b5d8-4363-4950-a3ab-d7e816f1003e\n• J. DAMASCENO FILGUEIRAS NETO LTDA (CNPJ 54.669.867/0001-63, score 1065) — draft 0293e756-fc74-461e-a527-03a7baeb4498\n• 49.837.419 SOLANGE REIS DE SOUZA (CNPJ 49.837.419/0001-91, score 985) — draft 58219291-634f-48e4-b049-7712426d478f\n• MARCOS A DOS SANTOS (CNPJ 62.398.558/0001-24, score 1386) — draft 13ddfe7a-82cd-48a5-baf1-23318f38aa08",
+      "titulo": "13 novo(s) caso(s) escalado(s) para CHECK_LIDERANCA",
+      "descricao": "Caso(s) derivado(s) pelo analista ou promovido(s) pelo Retool desde a última verificação. Conferir Fila de Revisão:\n• NEMALOG LOGISTICA E TRANSPORTES LTDA (CNPJ 68.725.172/0001-66, score 1055) — draft 05375e39-357a-4bf4-bec0-b285551e29ee\n• FROTA NORDESTE LTDA (CNPJ 67.814.414/0001-25, score 1005) — draft 5b91bd5d-b6bd-4e95-8c1f-1cca12c465e5\n• IGREJA EVANGELICA ASSEMBLEIA DE DEUS DE PARACURU UMA IGREJA DE REFUGIO (CNPJ 07.684.261/0001-17, score 1000) — draft ef793f91-57bc-4354-8542-fe83688100e6\n• FARMA SUELI LTDA (CNPJ 82.997.289/0001-20, score 1175) — draft a116f88a-ab10-40fe-a80f-3c9515a55749\n• GELO + LTDA (CNPJ 43.651.622/0001-92, score 985) — draft c2cb0bf4-9288-4b97-b1d3-a8b5914d7030\n• SERVEDUC ASSESSORIA E CONSULTORIA LTDA (CNPJ 58.030.325/0001-05, score 1185) — draft 799d9277-a67c-4db2-aacf-fe26c7c3e4f7\n• MWX EMPREEDEDORISMO E GESTAO EMPRESARIAL LTDA (CNPJ 07.259.984/0001-79, score 1035) — draft 282a3f50-08c1-458e-9900-fbaa839c0cb1\n• PIOVESAN CONSULTORIA FINANCEIRA LTDA (CNPJ 68.465.576/0001-68, score 1400) — draft 45a36634-2643-4823-9269-cd03de7078b9\n• R M DA CUNHA (CNPJ 23.149.833/0001-14, score 1065) — draft 768189bb-a7b4-4c25-a9f0-b43bc61f887a\n• 68.509.014 DOUGLAS KUBICA (CNPJ 68.509.014/0001-79, score 1005) — draft fdcfbd26-8a43-44c3-892a-006b11e2cee4",
       "componente": "Fila de Revisão — Liderança",
-      "timestamp": "2026-09-02T14:00:02.644095"
+      "timestamp": "2026-09-11T14:00:03.017198"
     },
     {
       "nivel": "🔵 BAIXO",
       "titulo": "Mudanças não commitadas",
-      "descricao": "125 arquivo(s) modificado(s) sem commit.",
+      "descricao": "136 arquivo(s) modificado(s) sem commit.",
       "componente": "Git Repository",
-      "timestamp": "2026-09-02T14:00:02.972316"
+      "timestamp": "2026-09-11T14:00:03.289870"
     }
   ]
 }

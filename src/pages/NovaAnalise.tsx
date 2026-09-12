@@ -129,6 +129,17 @@ export function NovaAnalise() {
     [resultados],
   );
 
+  // Status real de consulta (Credilink do PEP + JusBrasil/Credilink) pra
+  // não mostrar o aviso "não consultado" quando na real já foi (achado
+  // thay@cora.com.br, 2026-09-12: banner ficou desatualizado depois do
+  // lote real de consultas rodar — texto era estático, nunca conferia o
+  // ledger/media-findings).
+  const consultaStatus = useMemo(() => {
+    if (!analise?.draftId) return null;
+    const casoReal = getRegistrationCase(analise.draftId);
+    return casoReal ? getConsultaStatus(casoReal, analise.cliente.tipoPep) : null;
+  }, [analise?.draftId, analise?.cliente.tipoPep]);
+
   if (!analise) {
     // Sem caso carregado: 2ª Camada vai direto para input manual (per PDF design)
     if (!id) {
@@ -157,7 +168,7 @@ export function NovaAnalise() {
     // pesquisarFontesPublicas() é SIMULAÇÃO determinística (mock-ai.ts), não
     // consulta nenhuma fonte real. Caso vindo da Fila PLD (analise.draftId
     // setado) já tem resultadosPesquisa reais (Ghost/Credilink/JusBrasil/
-    // Tesserati/WebSearch) — "Repesquisar" aqui substituiria por dado
+    // Credilink/WebSearch) — "Repesquisar" aqui substituiria por dado
     // fictício sem o analista perceber (achado Codex, 2026-09-11).
     if (analise?.draftId) {
       toast({
@@ -279,8 +290,6 @@ export function NovaAnalise() {
                 CNPJ {analise.cliente.cnpj} · CNAE {analise.cliente.cnae || "—"} · {analise.cliente.enderecoComercial || "—"}
               </CardDescription>
             </div>
-            {/* Indicador de risco LD */}
-            {analise.draftId && <PldRiskBadgeInline draftId={analise.draftId} />}
           </div>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -319,18 +328,24 @@ export function NovaAnalise() {
               </a>
             </div>
           )}
-          {/* A Credilink consulta e emite token só para o titular da conta —
-              não existe consulta/token individual para o CPF do PEP relacionado
-              nesse pipeline. Achado real 2026-09-11 (draft ca6eac08): o token
-              acima estava sendo lido como se fosse do PEP. Este aviso evita a
-              mesma confusão até existir uma consulta de fato dedicada ao PEP. */}
-          {analise.cliente.tipoPep === "relacionado" && (
+          {/* O token acima é sempre do titular da conta (token_pf_cred).
+              Desde 2026-09-11 existe consulta Credilink real e separada
+              para o CPF do PEP relacionado (consultar-credilink-pep.py,
+              ledger credilink-pep-consultas.json) — o aviso só aparece
+              quando essa consulta REALMENTE não está OK, em vez de sempre
+              (achado thay@cora.com.br, 2026-09-12: banner estava
+              desatualizado, não conferia o ledger real). */}
+          {analise.cliente.tipoPep === "relacionado" && consultaStatus && !consultaStatus.credilinkPepOk && (
             <div className="rounded-md border border-amber-200 dark:border-amber-700 bg-amber-50/40 dark:bg-amber-950/20 px-3 py-2 text-xs text-amber-800 dark:text-amber-300">
               ⚠️ O token/dossiê Credilink acima é da consulta ao <strong>titular da conta</strong>
               {analise.cliente.nomeResponsavel ? ` (${analise.cliente.nomeResponsavel})` : ""}, não do PEP{" "}
-              {analise.cliente.nomePessoaVinculada || "relacionado"}. A Credilink não realiza consulta
-              individual pelo CPF do PEP nesse fluxo — validar o vínculo/registros do PEP por fonte
-              separada (JusBrasil/Tesserati/CNJ) antes de concluir a análise.
+              {analise.cliente.nomePessoaVinculada || "relacionado"}. {consultaStatus.credilinkPepMotivo}
+            </div>
+          )}
+          {analise.cliente.tipoPep === "relacionado" && consultaStatus?.credilinkPepOk && (
+            <div className="rounded-md border border-success/30 bg-success/10 px-3 py-2 text-xs text-success">
+              ✅ PEP {analise.cliente.nomePessoaVinculada || "relacionado"} (CPF {analise.cliente.cpfPepTitular})
+              consultado individualmente na Credilink — dado real, não é o token do titular.
             </div>
           )}
           {/* Síntese da análise (analise_geral + achados) */}
@@ -670,24 +685,6 @@ const NIVEL_CONFIG = {
 
 const FATOR_DOT: Record<string, string> = { alto: "bg-destructive", medio: "bg-yellow-500", baixo: "bg-success" };
 const FATOR_COLOR: Record<string, string> = { alto: "text-destructive", medio: "text-yellow-600", baixo: "text-success" };
-
-/** Badge compacto exibido no header do card */
-function PldRiskBadgeInline({ draftId }: { draftId: string }) {
-  const score = getPldRiskScore(draftId);
-  if (!score) return null;
-  const cfg = NIVEL_CONFIG[score.nivel as keyof typeof NIVEL_CONFIG];
-  const pct = Math.round(score.probabilidade);
-  return (
-    <div className={`shrink-0 rounded-lg border px-3 py-2 text-center min-w-[84px] ${cfg.bg}`}>
-      <p className="text-[10px] uppercase tracking-wide text-muted-foreground leading-none mb-0.5">Prob. LD</p>
-      <p className={`text-xl font-black leading-none ${cfg.color}`}>{pct}%</p>
-      <p className={`text-[10px] font-semibold leading-none mt-0.5 ${cfg.color}`}>{cfg.icon} {cfg.label}</p>
-      <div className="mt-1.5 h-1 w-full rounded-full bg-muted/40 overflow-hidden">
-        <div className={`h-full rounded-full ${cfg.bar}`} style={{ width: `${pct}%` }} />
-      </div>
-    </div>
-  );
-}
 
 /** Painel expandido com todos os fatores de risco */
 function PldRiskPanel({ draftId }: { draftId: string }) {
