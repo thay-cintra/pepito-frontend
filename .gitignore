@@ -12,3 +12,7 @@ src/data/registration-queue-real.json
 # Credenciais e segredos
 .env
 certs/
+
+# Lock files transientes (fcntl.flock) do merge-write do ledger Credilink-PEP
+# — sincronização entre processos concorrentes, sem valor em git.
+*.json.lock
