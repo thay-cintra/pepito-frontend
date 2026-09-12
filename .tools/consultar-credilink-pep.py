@@ -66,6 +66,15 @@ def _digits(s: str | None) -> str:
     return re.sub(r"\D", "", s or "")
 
 
+def _write_json_atomic(path: Path, data: dict) -> None:
+    """Escreve via arquivo temporário + os.replace (atômico no mesmo
+    filesystem) — sem isso, uma interrupção no meio do write_text() direto
+    deixava o JSON truncado/corrompido (achado Codex #10, 2026-09-11)."""
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    os.replace(tmp, path)
+
+
 def _auth() -> str | None:
     global _token_cache
     if _token_cache:
@@ -118,6 +127,11 @@ def _consultar_cpf(cpf: str, nome: str) -> dict:
         body = r.json() if r.status_code == 200 else {}
         if r.status_code == 200 and body.get("code") == 200:
             compliance_token = (body.get("result") or {}).get("token")
+            # code:200 sem token no corpo é resposta malformada — sem isso
+            # ficava sem token e sem erro registrado, indistinguível de uma
+            # falha silenciosa (achado Codex #3, 2026-09-11).
+            if not compliance_token:
+                resultado["erro_compliance_post"] = f"HTTP 200 code:200 mas sem result.token: {r.text[:200]}"
         else:
             resultado["erro_compliance_post"] = f"HTTP {r.status_code}: {r.text[:200]}"
     except Exception as e:
@@ -151,7 +165,14 @@ def _consultar_cpf(cpf: str, nome: str) -> dict:
                 body = r.json()
                 if body.get("message") == "Processando":
                     continue
-                resultado["compliance"] = body
+                # code:200 é obrigatório — sem essa checagem, um erro de
+                # negócio devolvido com HTTP 200 (ex.: token inválido/expirado)
+                # era gravado como se fosse o resultado final normal (achado
+                # Codex #3, 2026-09-11).
+                if body.get("code") == 200:
+                    resultado["compliance"] = body
+                else:
+                    resultado["erro_compliance_get"] = f"code {body.get('code')}: {body.get('message')}"
                 break
             except Exception as e:
                 resultado["erro_compliance_get"] = str(e)
@@ -228,9 +249,28 @@ def main():
             ledger = {}
 
     if args.force:
-        pendentes = {cpf: alvos.get(cpf, {"nome": "", "drafts": set()}) for cpf in (_digits(c) for c in args.force)}
+        # Valida 11 dígitos antes de chamar a API de produção — sem isso,
+        # `--force abc 123.45` gerava chaves vazia/"12345" e consultava a
+        # Credilink real com lixo (achado Codex #11, 2026-09-11).
+        cpfs_validos, invalidos = [], []
+        for c in args.force:
+            d = _digits(c)
+            (cpfs_validos if len(d) == 11 else invalidos).append(d or c)
+        if invalidos:
+            print(f"[FATAL] CPF(s) inválido(s) (precisa 11 dígitos): {invalidos} — abortando sem consumir cota.")
+            return
+        pendentes = {cpf: alvos.get(cpf, {"nome": "", "drafts": set()}) for cpf in cpfs_validos}
     else:
-        pendentes = {cpf: info for cpf, info in alvos.items() if cpf not in ledger}
+        # Entradas com erro_* NÃO contam como "já consultado" — sem isso uma
+        # falha transitória (timeout, token expirado) ficava marcada como
+        # resolvida pra sempre, exigindo --force manual pra notar e corrigir
+        # (achado Codex #9, 2026-09-11).
+        def _falhou(entry: dict) -> bool:
+            return any(k.startswith("erro") for k in entry)
+        pendentes = {
+            cpf: info for cpf, info in alvos.items()
+            if cpf not in ledger or _falhou(ledger[cpf])
+        }
 
     print(f"PEPs relacionados candidatos (desde {args.desde}): {len(alvos)}")
     print(f"Já consultados (no ledger): {len(alvos) - len(pendentes) if not args.force else '—'}")
@@ -257,7 +297,7 @@ def main():
         resultado["drafts"] = sorted(info.get("drafts", []))
         ledger[cpf] = resultado
         # Persiste incrementalmente — uma falha no meio do lote não perde o que já rodou
-        LEDGER_PATH.write_text(json.dumps(ledger, ensure_ascii=False, indent=2), encoding="utf-8")
+        _write_json_atomic(LEDGER_PATH, ledger)
 
         if any(k.startswith("erro") for k in resultado):
             falhas += 1

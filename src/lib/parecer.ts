@@ -1,4 +1,5 @@
 import type { Analise, ClienteData, ResultadoPesquisa, StatusAnalise } from "@/types/kyc";
+import type { ConsultaStatus } from "@/data/registration-enrich";
 
 const STATUS_LABEL: Record<StatusAnalise, string> = {
   aprovado: "CADASTRO APROVADO",
@@ -86,12 +87,14 @@ function templateFalsoPositivo(c: ClienteData, achadosRelevantes: ResultadoPesqu
 
 function corpoTemplate(c: ClienteData, status: StatusAnalise, resultados: ResultadoPesquisa[]): string {
   // Achados que uma alegação de "ausência total" precisa respeitar: reais
-  // (não descartados) e de risco médio/alto — baixo risco não contradiz uma
-  // alegação de ausência de adversidade. Antes os templates "aprovado" e
-  // "falso_positivo" afirmavam "ausência total"/"não foram identificadas"
-  // incondicionalmente, só pela categoria escolhida, mesmo quando resultados
-  // continha achados reais em contrário (achado Codex, 2026-09-11).
-  const achadosRelevantes = resultados.filter((r) => !r.descartado && r.risco !== "baixo");
+  // (não descartados) e CONFIRMADOS (não pendente_verificacao — deep-link
+  // nunca aberto não é achado, é só um link). Risco "baixo" NÃO é excluído:
+  // um processo cível/trabalhista real do Tesserati (risco baixo, mas achado
+  // de fato confirmado) contradiz "ausência total" tanto quanto um achado de
+  // risco alto — a v1 deste filtro excluía todo risco baixo e continuava
+  // deixando esses achados reais invisíveis pro parecer (achado Codex #8,
+  // 2026-09-11, revisão da correção anterior).
+  const achadosRelevantes = resultados.filter((r) => !r.descartado && !r.pendente_verificacao);
   switch (status) {
     case "reprovado":
       return templateReprovado(c);
@@ -111,8 +114,9 @@ export function gerarParecerLideranca(params: {
   resultados: ResultadoPesquisa[];
   analiseConsolidada: string;
   parecerPrimeiraCamada: string;
+  consultaStatus?: ConsultaStatus | null;
 }): string {
-  const { cliente, status, resultados, analiseConsolidada, parecerPrimeiraCamada } = params;
+  const { cliente, status, resultados, analiseConsolidada, parecerPrimeiraCamada, consultaStatus } = params;
   const today = new Date().toLocaleDateString("pt-BR");
 
   const altoRisco = resultados.filter((r) => !r.descartado && r.risco === "alto").length;
@@ -120,9 +124,22 @@ export function gerarParecerLideranca(params: {
 
   const cabecalho = `Decisão: ${STATUS_LABEL[status]}\nCNPJ: ${cliente.cnpj} — ${cliente.razaoSocial}`;
 
+  // Template afirma "dupla verificação junto à Credilink"/"varredura em
+  // fontes públicas" incondicionalmente — se a consulta real está pendente
+  // (ver getConsultaStatus), isso é falso. Prepend um aviso em vez de deixar
+  // a alegação incorreta passar (achado Codex #8, 2026-09-11).
+  const avisoConsultaPendente = consultaStatus && !consultaStatus.tudoOk
+    ? [
+        `⚠️ ATENÇÃO: consulta real pendente no momento da geração deste parecer — ` +
+        `${!consultaStatus.jusbrasilOk ? consultaStatus.jusbrasilMotivo : ""} ${!consultaStatus.credilinkPepOk ? consultaStatus.credilinkPepMotivo : ""}`.trim(),
+        ``,
+      ]
+    : [];
+
   return [
     cabecalho,
     ``,
+    ...avisoConsultaPendente,
     corpoTemplate(cliente, status, resultados),
     ``,
     `---`,

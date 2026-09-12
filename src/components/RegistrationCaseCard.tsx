@@ -23,7 +23,7 @@ import { formatDate } from "@/lib/utils";
 import { storage, isQuotaExceeded } from "@/lib/storage";
 import { synthesizeAnalise, markTaken } from "@/lib/registration-queue";
 import type { RegistrationCase } from "@/types/registration";
-import { inferCargoOrgao, inferTipoPep, getSugestaoParecer, getSugestaoLideranca, vinculoLabel, getPldRiskScore } from "@/data/registration-enrich";
+import { inferCargoOrgao, inferTipoPep, getSugestaoParecer, getSugestaoLideranca, vinculoLabel, getPldRiskScore, getConsultaStatus } from "@/data/registration-enrich";
 import type { PldRiskScore } from "@/data/registration-enrich";
 import { StatusBadge } from "@/components/RiscoBadge";
 import { HistoricoComentarios } from "@/components/HistoricoComentarios";
@@ -52,6 +52,7 @@ export function RegistrationCaseCard({ caso }: Props) {
   const cargoOrgao = inferCargoOrgao(caso);
   const tipoPep = inferTipoPep(caso);
   const riskScore = getPldRiskScore(caso.draft_id);
+  const consultaStatus = getConsultaStatus(caso, tipoPep);
 
   const handleAbrir = () => {
     if (caso.bucket === "CHECK_LIDERANCA") {
@@ -127,6 +128,26 @@ export function RegistrationCaseCard({ caso }: Props) {
         </div>
       </CardHeader>
       <CardContent className="space-y-3">
+        {/* Status de consulta Credilink + JusBrasil/Tesserati — no topo por
+            pedido de thay@cora.com.br (2026-09-11): é o dado mais crítico
+            pra decisão, tanto pro Analista quanto pra Liderança. */}
+        <div className="flex flex-wrap items-center gap-1.5">
+          <Badge variant={consultaStatus.credilinkPepOk ? "success" : "destructive"} className="text-[10px]">
+            <ShieldCheck className="h-3 w-3 mr-1" />
+            Credilink {tipoPep === "titular" ? "(titular)" : "(PEP)"}: {consultaStatus.credilinkPepOk ? "OK" : "pendente"}
+          </Badge>
+          <Badge variant={consultaStatus.jusbrasilOk ? "success" : "destructive"} className="text-[10px]">
+            <ShieldCheck className="h-3 w-3 mr-1" />
+            JusBrasil/Tesserati: {consultaStatus.jusbrasilOk ? "OK" : "pendente"}
+          </Badge>
+        </div>
+        {!consultaStatus.tudoOk && (
+          <div className="rounded-md border border-amber-300 dark:border-amber-700 bg-amber-50/50 dark:bg-amber-950/20 p-2 text-[11px] text-amber-800 dark:text-amber-300 space-y-0.5">
+            {!consultaStatus.credilinkPepOk && <p>⚠️ Credilink: {consultaStatus.credilinkPepMotivo}</p>}
+            {!consultaStatus.jusbrasilOk && <p>⚠️ JusBrasil/Tesserati: {consultaStatus.jusbrasilMotivo}</p>}
+          </div>
+        )}
+
         {/* PEP / PF */}
         <div className="rounded-md bg-muted/40 border p-3 space-y-1.5">
           <p className="text-[11px] uppercase tracking-wide text-muted-foreground">

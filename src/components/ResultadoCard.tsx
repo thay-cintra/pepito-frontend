@@ -117,8 +117,9 @@ export function ResultadoCard({ resultado, onReanalisar, onDescartar, onRestaura
               <button
                 onClick={() => setOpenReanalise((v) => !v)}
                 className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-primary"
+                title="Reclassifica com base na SUA nota — não dispara nova consulta a nenhuma fonte externa"
               >
-                <RefreshCw className="h-3 w-3" /> Reanalisar
+                <RefreshCw className="h-3 w-3" /> Reclassificar (nota do analista)
               </button>
             )}
             {!readOnly && onDescartar && !resultado.descartado && (
@@ -141,7 +142,9 @@ export function ResultadoCard({ resultado, onReanalisar, onDescartar, onRestaura
           {openReanalise && (
             <div className="mt-3 space-y-2 rounded-md border border-dashed border-primary/40 bg-primary/5 p-3">
               <p className="text-xs text-muted-foreground">
-                Suas observações têm prioridade máxima sobre a pesquisa automática.
+                Isso NÃO consulta nenhuma fonte externa de novo — só aplica a SUA nota (palavras como
+                "homônimo"/"descartar", "alto", "baixo" reclassificam automaticamente; qualquer outro
+                texto fica registrado no resumo).
               </p>
               <Textarea
                 value={obs}

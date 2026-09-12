@@ -194,14 +194,15 @@ export function AnalisePrimeiraCamada() {
 
   // Guardrail: só para caso real (draftIdOrigem) — caso manual não tem
   // pipeline real pra checar. tudoOk quando JusBrasil e Credilink (do PEP,
-  // se relacionado) foram de fato consultados, sem placeholder/erro.
-  const consultaStatus = useMemo(
-    () =>
-      draftIdOrigem
-        ? getConsultaStatus({ draft_id: draftIdOrigem }, cliente.tipoPep, cliente.cpfPepTitular || "")
-        : null,
-    [draftIdOrigem, cliente.tipoPep, cliente.cpfPepTitular],
-  );
+  // se relacionado, ou token_pf_cred se titular) foram de fato consultados,
+  // sem placeholder/erro. Usa o RegistrationCase completo (pep_pf, cpf,
+  // token_pf_cred) — não só o CPF "principal" — pra cobrir casos com 2+
+  // PEPs relacionados distintos (achado Codex, 2026-09-11).
+  const consultaStatus = useMemo(() => {
+    if (!draftIdOrigem) return null;
+    const caso = getRegistrationCase(draftIdOrigem);
+    return caso ? getConsultaStatus(caso, cliente.tipoPep) : null;
+  }, [draftIdOrigem, cliente.tipoPep]);
   const precisaCheckManual = !!consultaStatus && !consultaStatus.tudoOk;
   const podeEnviarMesa = podeFinalizarPrimeira && (!precisaCheckManual || checkVerificacaoManual);
 
@@ -307,6 +308,22 @@ export function AnalisePrimeiraCamada() {
   function montarAnalise(camadaStatus: "rascunho" | "aguardando_segunda"): Analise {
     const id = editId ?? uid();
     const existente = editId ? storage.getAnalise(editId) : undefined;
+    // Trilha de auditoria do override do guardrail (achado Codex #13,
+    // 2026-09-11): sem isso, a Mesa/histórico não conseguia distinguir um
+    // caso liberado por consulta real OK de um liberado por confirmação
+    // manual do analista — registra quem, quando, e o que estava pendente.
+    const historicoComentarios = existente?.historicoComentarios ?? [];
+    if (camadaStatus === "aguardando_segunda" && precisaCheckManual && checkVerificacaoManual) {
+      historicoComentarios.push({
+        timestamp: new Date().toISOString(),
+        user_email: analistaEmail || "desconhecido",
+        tipo: "sistema",
+        text:
+          `Override manual do guardrail de consulta: ${analistaEmail || "analista"} confirmou verificação ` +
+          `manual e enviou à Mesa mesmo com pendência — ` +
+          `${!consultaStatus?.jusbrasilOk ? consultaStatus?.jusbrasilMotivo : ""} ${!consultaStatus?.credilinkPepOk ? consultaStatus?.credilinkPepMotivo : ""}`.trim(),
+      });
+    }
     return {
       id,
       data: existente?.data ?? new Date().toISOString(),
@@ -327,6 +344,7 @@ export function AnalisePrimeiraCamada() {
       duracaoSegundos: existente?.duracaoSegundos,
       analistaEmail: existente?.analistaEmail ?? (analistaEmail || undefined),
       createdAt: existente?.createdAt ?? new Date().toISOString(),
+      historicoComentarios,
     };
   }
 

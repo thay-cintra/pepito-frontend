@@ -66,12 +66,30 @@ export interface ConsultaStatus {
   tudoOk: boolean;
 }
 
+/** Uma entrada do ledger só conta como consulta Credilink CONCLUÍDA com
+ * sucesso se o polling do Compliance realmente terminou (não ficou só no
+ * "Processando") — token sozinho não basta, precisa do resultado consolidado
+ * (achado Codex #3, 2026-09-11: entrada sem `compliance` passava como OK). */
+function credilinkEntryOk(entry: CredilinkPepConsulta | undefined): boolean {
+  if (!entry) return false;
+  if (Object.keys(entry).some((k) => k.startsWith("erro"))) return false;
+  const compliance = entry.compliance as { code?: number; message?: string } | undefined;
+  return !!compliance && compliance.code === 200 && compliance.message !== "Processando";
+}
+
 export function getConsultaStatus(
-  c: Pick<RegistrationCase, "draft_id">,
+  c: Pick<RegistrationCase, "draft_id" | "cpf" | "token_pf_cred" | "pep_pf">,
   tipoPep: "titular" | "relacionado",
-  cpfPepTitular: string,
 ): ConsultaStatus {
   const findings = getFindingsFor(c.draft_id);
+  const isPlaceholder = (f: MediaFinding) => f.source.includes("Controle de Quota") || f.source.includes("Erro de Consulta");
+  const reais = findings.filter((f) => !isPlaceholder(f));
+  // Evidência real de que AMBAS as fontes rodaram — não basta "tem algum
+  // achado" (podia ser só mídia/TSE de um pipeline antigo, sem JusBrasil nem
+  // Tesserati terem sido de fato chamados; achado Codex #2, 2026-09-11).
+  const temJusBrasil = reais.some((f) => f.source.includes("JusBrasil") || f.source.includes("BNMP") || f.source.includes("MP "));
+  const temTesserati = reais.some((f) => f.source.includes("Tesserati"));
+
   let jusbrasilOk = true;
   let jusbrasilMotivo = "";
   if (findings.length === 0) {
@@ -83,21 +101,37 @@ export function getConsultaStatus(
   } else if (findings.some((f) => f.source.includes("Erro de Consulta"))) {
     jusbrasilOk = false;
     jusbrasilMotivo = "Consulta JusBrasil/Tesserati falhou tecnicamente (ver achado 'Erro de Consulta') — não é resultado negativo, precisa reconsultar ou verificar manualmente.";
+  } else if (!temJusBrasil || !temTesserati) {
+    jusbrasilOk = false;
+    jusbrasilMotivo = `Achados existem, mas sem evidência de ${!temJusBrasil ? "JusBrasil" : "Tesserati"} ter rodado para este caso.`;
   }
 
   let credilinkPepOk = true;
-  let credilinkPepMotivo = "";
-  if (tipoPep === "relacionado") {
-    const cpfDigits = (cpfPepTitular || "").replace(/\D/g, "");
-    const entry = cpfDigits ? CREDILINK_PEP_CONSULTAS[cpfDigits] : undefined;
-    if (!entry) {
+  const motivos: string[] = [];
+  if (tipoPep === "titular") {
+    // Owner é o próprio PEP: dado já vem real da tabela squad_core via
+    // token_pf_cred — token nulo/vazio significa que a Credilink upstream
+    // não tem nada registrado (achado Codex #4: badge "OK" incondicional).
+    if (!c.token_pf_cred) {
       credilinkPepOk = false;
-      credilinkPepMotivo = "PEP relacionado ainda não foi consultado individualmente na Credilink (só o titular da conta tem consulta registrada).";
-    } else {
-      const erros = Object.keys(entry).filter((k) => k.startsWith("erro"));
-      if (erros.length > 0) {
+      motivos.push("token_pf_cred ausente na tabela squad_core — sem evidência de consulta Credilink para o titular.");
+    }
+  } else {
+    // Verifica TODOS os CPFs de PEP relacionado distintos do owner — não só
+    // o "principal" (achado Codex #4: caso com 2+ PEPs relacionados podia
+    // ficar verde com só 1 consultado).
+    const ownerCpf = (c.cpf || "").replace(/\D/g, "");
+    const cpfsPep = Array.from(
+      new Set((c.pep_pf || []).map((p) => (p.cpf_titular || "").replace(/\D/g, "")).filter((cpf) => cpf && cpf !== ownerCpf)),
+    );
+    if (cpfsPep.length === 0) {
+      credilinkPepOk = false;
+      motivos.push("PEP relacionado sem CPF identificado — não é possível confirmar consulta.");
+    }
+    for (const cpf of cpfsPep) {
+      if (!credilinkEntryOk(CREDILINK_PEP_CONSULTAS[cpf])) {
         credilinkPepOk = false;
-        credilinkPepMotivo = `Consulta Credilink do PEP falhou (${erros.join(", ")}) — necessário reconsultar ou verificar manualmente.`;
+        motivos.push(`PEP CPF ${cpf} ainda não tem consulta Credilink concluída com sucesso.`);
       }
     }
   }
@@ -106,7 +140,7 @@ export function getConsultaStatus(
     jusbrasilOk,
     jusbrasilMotivo,
     credilinkPepOk,
-    credilinkPepMotivo,
+    credilinkPepMotivo: motivos.join(" "),
     tudoOk: jusbrasilOk && credilinkPepOk,
   };
 }

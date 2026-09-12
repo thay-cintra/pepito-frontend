@@ -26,8 +26,9 @@ import {
   reanalisarResultado,
 } from "@/lib/mock-ai";
 import { gerarParecerLideranca, statusLabel } from "@/lib/parecer";
-import { getSugestaoLideranca, getPldRiskScore, getComentariosReais } from "@/data/registration-enrich";
+import { getSugestaoLideranca, getPldRiskScore, getComentariosReais, getConsultaStatus } from "@/data/registration-enrich";
 import type { PldRiskScore } from "@/data/registration-enrich";
+import { getRegistrationCase } from "@/lib/registration-queue";
 import { formatDuration } from "@/lib/utils";
 import type { Analise, ComentarioAnalise, ResultadoPesquisa, StatusAnalise } from "@/types/kyc";
 import { STATUS_LABELS, StatusBadge } from "@/components/RiscoBadge";
@@ -94,12 +95,15 @@ export function NovaAnalise() {
       } else {
         const sugLid = a.draftId ? getSugestaoLideranca(a.draftId) : null;
         const decisaoInicial = sugLid?.decisao ?? a.status;
+        const casoReal = a.draftId ? getRegistrationCase(a.draftId) : undefined;
+        const consultaStatus = casoReal ? getConsultaStatus(casoReal, a.cliente.tipoPep) : null;
         const parecerGerado = sugLid?.text ?? gerarParecerLideranca({
           cliente: a.cliente,
           status: decisaoInicial,
           resultados: a.resultadosPesquisa,
           analiseConsolidada: a.analiseConsolidadaLideranca || "",
           parecerPrimeiraCamada: a.parecerPrimeiraCamada,
+          consultaStatus,
         });
         setDecisao(decisaoInicial);
         setParecerCompleto(parecerGerado);
@@ -190,12 +194,15 @@ export function NovaAnalise() {
   };
 
   const handleGerarParecer = () => {
+    const casoReal = analise.draftId ? getRegistrationCase(analise.draftId) : undefined;
+    const consultaStatus = casoReal ? getConsultaStatus(casoReal, analise.cliente.tipoPep) : null;
     const texto = gerarParecerLideranca({
       cliente: analise.cliente,
       status: decisao,
       resultados,
       analiseConsolidada: "",
       parecerPrimeiraCamada: analise.parecerPrimeiraCamada,
+      consultaStatus,
     });
     setParecerCompleto(texto);
     toast({ variant: "success", title: "Template do parecer preenchido" });

@@ -747,7 +747,15 @@ def pesquisar_caso(case: dict) -> list[dict]:
         # Registramos o resultado da dupla-verificação para orientar a decisão.
         print(f"      → PEP não identificado pela Credilink — dupla-verificação (owner only)...")
         altos = [f for f in findings if f.get("risk_indicator") == "alto"]
-        if not altos:
+        # Falha técnica (cota/erro) NUNCA pode virar "candidato a Falso
+        # Positivo" — isso é "não conseguimos verificar", não "verificamos e
+        # não achamos nada" (achado Codex #6, 2026-09-11).
+        falhou_consulta = any(
+            f.get("source", "").startswith("Sistema Pepito — Controle de Quota") or
+            f.get("source", "").startswith("Sistema Pepito — Erro de Consulta")
+            for f in findings
+        )
+        if not altos and not falhou_consulta:
             findings.append({
                 "title": "Credilink: PEP não identificado — candidato a Falso Positivo",
                 "url": "",
