@@ -352,8 +352,6 @@ export function NovaAnalise() {
               </div>
             </div>
           )}
-          {/* Painel de fatores de risco LD */}
-          {analise.draftId && <PldRiskPanel draftId={analise.draftId} />}
         </CardContent>
       </Card>
 

@@ -36,7 +36,7 @@ class ParseWebsearchFindingsTextTest(unittest.TestCase):
         raw_text = (
             "Resultado da pesquisa:\n"
             '[{"source":"TSE — Divulgação de Candidaturas",'
-            '"risk_indicator":"baixo"}]\nObservação final.'
+            '"risk_indicator":"baixo","achado_positivo":true}]\nObservação final.'
         )
 
         self.assertEqual(
@@ -45,9 +45,26 @@ class ParseWebsearchFindingsTextTest(unittest.TestCase):
                 {
                     "source": "TSE — Divulgação de Candidaturas",
                     "risk_indicator": "baixo",
+                    "achado_positivo": True,
                 }
             ],
         )
+
+    def test_rejects_websearch_finding_without_explicit_positive_flag(self):
+        raw_text = '[{"source":"TSE","risk_indicator":"baixo"}]'
+
+        with self.assertRaisesRegex(ValueError, r"achado_positivo booleano"):
+            fetch_media_findings._parse_websearch_findings_text(raw_text)
+
+    def test_forces_m7_context_to_not_be_a_positive_match(self):
+        raw_text = (
+            '[{"source":"Mídia regional","risk_indicator":"alto",'
+            '"match":"M7 — contexto regional","achado_positivo":true}]'
+        )
+
+        parsed = fetch_media_findings._parse_websearch_findings_text(raw_text)
+
+        self.assertFalse(parsed[0]["achado_positivo"])
 
     def test_logs_when_websearch_is_skipped_for_case_without_pep(self):
         original_available = fetch_media_findings.WEB_SEARCH_AVAILABLE

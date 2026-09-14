@@ -19,6 +19,7 @@ import { perfilPepLabel } from "@/types/registration";
 import { buildVerifyLinks, type VerifyLink } from "@/lib/verify-links";
 import { uid } from "@/lib/utils";
 import { hasCredilinkToken, isCredilinkEntryOk } from "@/lib/credilink-validation";
+import { findingSimilarity, isRegionalContextFinding } from "@/lib/media-finding-match";
 import mediaFindingsRaw from "./media-findings.json";
 import pareceresLlmRaw from "./pareceres-llm.json";
 import pareceresRealRaw from "./pareceres-real.json";
@@ -36,6 +37,7 @@ interface MediaFinding {
   tipo?: string;
   match?: string;            // descrição do critério multi-fator que confirmou identidade
   homonimo_alerta?: string;
+  achado_positivo?: boolean; // ocorrência nominal/relevante, não mera busca sem resultado
 }
 
 const MEDIA_FINDINGS = mediaFindingsRaw as Record<string, MediaFinding[] | { description?: string }>;
@@ -51,7 +53,7 @@ function getFindingsFor(draftId: string): MediaFinding[] {
  * é sinal contextual. Compartilhado entre gerarResultados() (badge de
  * similaridade) e gerarParecerSugerido() (decisão preliminar). */
 function isCtxRegional(f: MediaFinding): boolean {
-  return !!(f.match?.includes("M7") || f.homonimo_alerta?.includes("Contexto regional"));
+  return isRegionalContextFinding(f);
 }
 
 interface CredilinkPepConsulta {
@@ -602,7 +604,7 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
     // vínculo"/"não citado nominalmente" (achado thay@cora.com.br,
     // 2026-09-12: "se o match foi realmente de 100%, é porque alguém teria
     // sido identificado, não o contrário").
-    const semIdentificacao = isCtxRegional(f);
+    const similaridade = findingSimilarity(f);
     r.push({
       id: uid(),
       fonte: f.source,
@@ -612,9 +614,7 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
       link: f.url,
       // Similaridade só aparece quando ALGUÉM foi de fato identificado:
       // nem placeholder de cota/erro, nem contexto regional sem nexo nominal.
-      ...(isPlaceholderCota || semIdentificacao
-        ? {}
-        : { similaridade_nome: f.homonimo_alerta ? "verificar identidade" : "100%" }),
+      ...(similaridade ? { similaridade_nome: similaridade } : {}),
       pendente_verificacao: isPlaceholderCota || !!f.homonimo_alerta,
     });
   });

@@ -49,6 +49,7 @@ export function RegistrationCaseCard({ caso }: Props) {
   const { toast } = useToast();
   const Icon = caso.bucket === "CHECK_LIDERANCA" ? Crown : Users;
   const [showLinks, setShowLinks] = useState(false);
+  const [showParecerLideranca, setShowParecerLideranca] = useState(false);
   const cargoOrgao = inferCargoOrgao(caso);
   const tipoPep = inferTipoPep(caso);
   const riskScore = getPldRiskScore(caso.draft_id);
@@ -300,9 +301,20 @@ export function RegistrationCaseCard({ caso }: Props) {
                 <span className="font-semibold">Sugestão de parecer Liderança (rascunho IA)</span>
                 <Badge variant="outline" className="text-[9px]">opcional</Badge>
               </div>
-              <p className="text-muted-foreground italic whitespace-pre-wrap line-clamp-6">
+              <p className={cn(
+                "text-muted-foreground italic whitespace-pre-wrap",
+                !showParecerLideranca && "line-clamp-3",
+              )}>
                 {sugLid.text}
               </p>
+              <button
+                type="button"
+                onClick={() => setShowParecerLideranca((visible) => !visible)}
+                className="mt-1.5 text-[11px] font-medium text-primary hover:underline"
+                aria-expanded={showParecerLideranca}
+              >
+                {showParecerLideranca ? "Ocultar parecer completo" : "Ver parecer completo"}
+              </button>
             </div>
           );
         })()}

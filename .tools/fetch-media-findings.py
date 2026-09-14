@@ -129,6 +129,7 @@ _FINDING_LIMITE_ATINGIDO = {
     "risk_indicator": "medio",
     "tipo": "processo",
     "match": "N/A — consulta automática não realizada por limite de quota",
+    "achado_positivo": False,
 }
 
 
@@ -150,6 +151,7 @@ def _finding_erro_consulta(motivo: str, cpf: str, nome: str) -> dict:
         "risk_indicator": "medio",
         "tipo": "processo",
         "match": f"N/A — falha técnica: {motivo}",
+        "achado_positivo": False,
     }
 
 # TESSERATI_ACCESS_KEY nunca existiu em nenhum .env do projeto — a variável
@@ -230,6 +232,7 @@ def consultar_credilink(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
             "risk_indicator": "medio",
             "tipo": "processo",
             "match": "N/A — chave de API ausente",
+            "achado_positivo": False,
         }]
 
     cpf_clean = re.sub(r"\D", "", cpf or "")
@@ -247,6 +250,7 @@ def consultar_credilink(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
             "risk_indicator": "medio",
             "tipo": "processo",
             "match": "N/A — falha de autenticação",
+            "achado_positivo": False,
         }]
 
     def _erro_endpoint(endpoint_label: str, r: dict) -> None:
@@ -260,6 +264,7 @@ def consultar_credilink(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
             "risk_indicator": "medio",
             "tipo": "processo",
             "match": f"N/A — falha técnica em {endpoint_label}",
+            "achado_positivo": False,
         })
 
     # ── 1. Mandados de Prisão ─────────────────────────────────────────────────
@@ -281,6 +286,7 @@ def consultar_credilink(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
                     "risk_indicator": "alto",
                     "tipo": "processo",
                     "match": f"CPF {cpf}",
+                    "achado_positivo": True,
                     "decisao_recomendada": f"REPROVAÇÃO — mandado de prisão ativo para {papel}.",
                 })
 
@@ -316,6 +322,7 @@ def consultar_credilink(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
                     "risk_indicator": "alto",
                     "tipo": "processo",
                     "match": f"CPF {cpf}",
+                    "achado_positivo": True,
                     "decisao_recomendada": f"REPROVAÇÃO — {len(criminais)} processo(s) criminal(is) confirmado(s) via Credilink.",
                 })
             if nao_criminais:
@@ -332,6 +339,7 @@ def consultar_credilink(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
                     "risk_indicator": "baixo",
                     "tipo": "processo",
                     "match": f"CPF {cpf}",
+                    "achado_positivo": True,
                 })
 
     # ── 3. Mídias Negativas ───────────────────────────────────────────────────
@@ -352,6 +360,7 @@ def consultar_credilink(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
                 "risk_indicator": "medio",
                 "tipo": "midia",
                 "match": f"Nome {nome}",
+                "achado_positivo": True,
             })
 
     # ── 4. Compliance Nacional (CEIS/CNEP) ────────────────────────────────────
@@ -369,6 +378,7 @@ def consultar_credilink(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
                 "risk_indicator": "alto",
                 "tipo": "processo",
                 "match": f"CNPJ {cnpj}",
+                "achado_positivo": True,
                 "decisao_recomendada": "REPROVAÇÃO — empresa punida conforme CNEP.",
             })
 
@@ -516,6 +526,7 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
             "risk_indicator": risco if polo_passivo else "medio",
             "tipo": "processo",
             "match": f"CPF {cpf} — confiança {conf} — polo_passivo={polo_passivo}",
+            "achado_positivo": True,
         }
 
         if risco == "alto" and polo_passivo:
@@ -547,6 +558,7 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
             "risk_indicator": "medio" if criminal_outros_passivos else "baixo",
             "tipo": "processo",
             "match": f"CPF {cpf} — {len(criminal_outros)} processo(s) sem polo passivo crítico",
+            "achado_positivo": True,
         })
     if not criminal_alto and not criminal_outros:
         # Resultado explícito do endpoint criminal. Civil e trabalhista são
@@ -564,6 +576,7 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
             "risk_indicator": "baixo",
             "tipo": "processo",
             "match": f"CPF {cpf} confirmado na API — sem processos criminais",
+            "achado_positivo": False,
         })
 
     # ── 2–3. Processos civis e trabalhistas ──────────────────────────────────
@@ -596,6 +609,7 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
                 "risk_indicator": "baixo",
                 "tipo": "processo",
                 "match": f"CPF {cpf} confirmado na API — sem processos {label}s",
+                "achado_positivo": False,
             })
             continue
 
@@ -624,6 +638,7 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
             "risk_indicator": "medio" if passivos else "baixo",
             "tipo": "processo",
             "match": f"CPF {cpf} — {len(passivos)} de {total_tipo} processo(s) no polo passivo",
+            "achado_positivo": True,
         })
 
     # ── 4. BNMP — mandados de prisão ─────────────────────────────────────────
@@ -654,6 +669,7 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
                 "risk_indicator": "alto",
                 "tipo": "processo",
                 "match": f"CPF {cpf} — confiança {conf_m}",
+                "achado_positivo": True,
                 "decisao_recomendada": f"REPROVAÇÃO — mandado de prisão ativo ({situacao}) para o {'owner' if papel == 'owner' else 'PEP sócio'}.",
             })
 
@@ -683,6 +699,7 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
             "risk_indicator": risco_mp,
             "tipo": "processo",
             "match": f"CPF {cpf} — confiança {conf_mp}",
+            "achado_positivo": True,
         })
 
     return findings
@@ -738,12 +755,19 @@ não), para o Pepito parar de pedir verificação manual do que você já verifi
 - Bloco M13 (CGU servidores federais): "source": "CGU — Servidores Federais"
 Os nomes exatos de {UF}, {nome_pep} etc. para ESTE caso específico vêm no prompt do usuário
 abaixo — use o UF informado lá, não invente.
-Se o bloco não encontrar nada, ainda assim gere o finding com risk_indicator "baixo" e esse
+Se o bloco não encontrar nada, ainda assim gere o finding com risk_indicator "baixo",
+"achado_positivo": false e esse
 "source" exato — "nada encontrado" é resultado válido de uma busca que rodou, não motivo pra
 omitir o finding.
 
+CAMPO OBRIGATÓRIO "achado_positivo": use true SOMENTE quando a pesquisa encontrou uma ocorrência
+nominal concreta e relevante atribuível à pessoa/empresa pesquisada (processo, mídia adversa,
+sanção, contrato ou mandato/cargo efetivamente confirmado). Use false para busca sem resultado,
+falha/bloqueio, ou informação apenas contextual. O bloco M7 é SEMPRE false, pois contexto regional
+não identifica nominalmente nenhuma pessoa ou empresa.
+
 Retorne APENAS o array JSON dos findings:
-[{"title":"...","url":"...","snippet":"...","source":"...","risk_indicator":"baixo","tipo":"pep|midia","match":"..."}]
+[{"title":"...","url":"...","snippet":"...","source":"...","risk_indicator":"baixo","tipo":"pep|midia","match":"...","achado_positivo":false}]
 """
 
 
@@ -778,6 +802,15 @@ def _parse_websearch_findings_text(text: str) -> list[dict]:
             "(possível budget/erro silencioso), "
             f"texto bruto (200 chars): {raw_excerpt!r}"
         )
+    for finding in parsed:
+        if not isinstance(finding.get("achado_positivo"), bool):
+            raise ValueError(
+                "WebSearch retornou finding sem achado_positivo booleano, "
+                f"texto bruto (200 chars): {raw_excerpt!r}"
+            )
+        regional_marker = " ".join(str(finding.get(field, "")) for field in ("title", "source", "match", "homonimo_alerta"))
+        if re.search(r"\bM7\b", regional_marker, flags=re.IGNORECASE) or "contexto regional" in regional_marker.lower():
+            finding["achado_positivo"] = False
     return parsed
 
 
@@ -847,6 +880,8 @@ Nomes EXATOS de "source" pra usar (UF real já resolvido — use literalmente, n
 Gere um finding para CADA um desses blocos, mesmo que "nada encontrado" (risco baixo) — a ausência
 de achado é resultado válido de uma busca que rodou; só omita o finding se a busca não puder ser
 executada de forma alguma (bloqueio de acesso, captcha, site fora do ar).
+Inclua obrigatoriamente "achado_positivo": true ou false em CADA finding, seguindo a definição do
+system prompt. M7 é sempre false.
 
 Retorne o array JSON com todos os findings."""
 
@@ -949,6 +984,7 @@ def pesquisar_caso(case: dict) -> list[dict]:
                 "risk_indicator": "baixo",
                 "tipo": "pep",
                 "match": "Credilink: sem PEP | JusBrasil: sem processos | Credilink: sem adversidades",
+                "achado_positivo": False,
                 "decisao_recomendada": "FALSO POSITIVO — PEP não confirmado por nenhuma fonte.",
             })
         # WebSearch focado apenas no owner (sem bloco PEP — não existe)
