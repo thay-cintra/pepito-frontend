@@ -1,28 +1,21 @@
 {
-  "timestamp": "2026-09-13T06:01:23.128952",
+  "timestamp": "2026-09-14T14:00:01.748257",
   "checks_executados": 10,
-  "checks_falhados": 0,
+  "checks_falhados": 1,
   "alertas": [
     {
-      "nivel": "🟡 MÉDIO",
-      "titulo": "Build desatualizado",
-      "descricao": "dist/ foi buildado há 27 horas. Atualizações recentes podem não estar visíveis.",
-      "componente": "Build System",
-      "timestamp": "2026-09-13T06:01:22.823873"
-    },
-    {
-      "nivel": "🟡 MÉDIO",
-      "titulo": "7 novo(s) caso(s) escalado(s) para CHECK_LIDERANCA",
-      "descricao": "Caso(s) derivado(s) pelo analista ou promovido(s) pelo Retool desde a última verificação. Conferir Fila de Revisão:\n• LALUCI MASSAS E SALGADOS LTDA (CNPJ 63.104.531/0001-44, score 1215) — draft 12f79730-5920-400a-a1a9-8de889fca3cf\n• JONAS RAFAEL DE BRITO 03216997421 (CNPJ 33.634.909/0001-50, score 985) — draft c562e1c7-4e8c-42fc-8be4-bafee05f8495\n• DIVINA CANTINA DISTRIBUITORA UNIPESSOAL LTDA (CNPJ 66.268.826/0001-44, score 985) — draft ca6eac08-e054-4275-886d-c6f909554381\n• ILUMINAR LTDA (CNPJ 61.636.770/0001-10, score 985) — draft a4378011-ca0e-42b4-a4be-1322c2ab7c15\n• ROSILENE MARIA DE AZEVEDO BORGES  LTDA (CNPJ 06.068.718/0001-04, score 985) — draft 10c5ad3f-c676-4ab0-b473-5c261fe55ba7\n• ROSINEI DE FATIMA PIMENTEL 33987957816 (CNPJ 28.639.509/0001-06, score 985) — draft 16059106-2aeb-4e36-8978-9089db30942e\n• AS1 - SERVICOS ADMINISTRATIVOS E CONSULTORIA (CNPJ 50.321.708/0001-12, score 1020) — draft 98deb27d-7534-429e-8089-a458b07bde50",
-      "componente": "Fila de Revisão — Liderança",
-      "timestamp": "2026-09-13T06:01:22.923910"
+      "nivel": "🟠 ALTO",
+      "titulo": "Parecer Sugestão IA ausente no JSON-fonte",
+      "descricao": "CHECK_ANALISTA sem sugestão: 10 (['1c019a58-ddb8-4d18-9670-61f06f59b0af', 'c76862a4-4593-4f42-8fb3-6c00c2f69fbb', 'e50ad409-18f6-4efb-8ed3-684f5a34e7d0', '89aba1cb-fa59-4f5f-a2ab-14ce4081d7ec', '31432378-3b07-4fc9-ab1c-466d49b4db7f']). CHECK_LIDERANCA sem sugestão: 0 ([]). Rodar generate-sugestao-parecer.py / generate-sugestao-lideranca.py.",
+      "componente": "Parecer Sugestão IA",
+      "timestamp": "2026-09-14T14:00:01.494575"
     },
     {
       "nivel": "🔵 BAIXO",
       "titulo": "Mudanças não commitadas",
       "descricao": "6 arquivo(s) modificado(s) sem commit.",
       "componente": "Git Repository",
-      "timestamp": "2026-09-13T06:01:23.128750"
+      "timestamp": "2026-09-14T14:00:01.748117"
     }
   ]
 }

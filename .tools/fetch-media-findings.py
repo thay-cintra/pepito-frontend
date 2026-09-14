@@ -66,11 +66,11 @@ JUS_BASE = os.environ.get("JUSBRASIL_API_BASE", "https://api.jusbrasil.com.br")
 _JUS_USAGE_PATH = Path(__file__).parent / "jusbrasil-usage.json"
 # Como não há periodicidade explícita documentada no repo, assumimos contrato
 # mensal, coerente com `by_month` e com a confirmação operacional da Thay:
-# 325 chamadas brutas/mês para análise PLD
+# 325 consultas de CPF/mês para análise PLD
 # (65% das 500 contratadas; 175 reservadas para alertas de monitoramento).
-# Cada CPF completo consome 5 chamadas, portanto a capacidade prática é de
-# aproximadamente 65 CPFs/mês. `total` continua vitalício apenas para auditoria;
-# bloqueio e warning usam exclusivamente `by_month[mês corrente]`.
+# Uma consulta de CPF usa internamente 5 endpoints HTTP, mas conta uma única
+# unidade contratual. `total` continua vitalício apenas para auditoria; bloqueio
+# e warning usam exclusivamente `by_month[mês corrente]`.
 _JUS_LIMIT = 325
 _JUS_WARN_THRESHOLD = 293  # 90% do limite mensal efetivo
 
@@ -118,8 +118,8 @@ _FINDING_LIMITE_ATINGIDO = {
     "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
     "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
     "snippet": (
-        "O limite mensal de 325 chamadas JusBrasil Background Check destinado à análise PLD "
-        "foi atingido (65% das 500 chamadas contratadas; 35% reservadas para monitoramento). "
+        "O limite mensal de 325 consultas de CPF no JusBrasil Background Check destinado à análise PLD "
+        "foi atingido (65% das 500 consultas contratadas; 35% reservadas para monitoramento). "
         "A diligência judicial automática não pôde ser realizada para este caso. "
         "OBRIGATÓRIO: realizar verificação manual de processos criminais, civis, trabalhistas, "
         "BNMP e MP "
@@ -419,30 +419,21 @@ def _cpf_digits(cpf: str) -> str:
 
 
 def _jus_post(endpoint: str, payload: dict) -> dict:
-    """Faz POST na API JusBrasil e rastreia o limite mensal de chamadas.
-    Retorna {"_quota_exceeded": True} se limite atingido; {"_erro": <motivo>}
-    se a chamada falhou por qualquer outro motivo (chave ausente, HTTP != 200,
-    exceção). Chave "_erro" existe PARA DISTINGUIR "não conseguimos consultar"
-    de "consultamos e a API devolveu vazio" — antes das duas caíam no mesmo
-    `{}`, e consultar_jusbrasil() reportava "nenhum processo criminal —
-    confirmado na API" mesmo quando a API nunca foi de fato alcançada
-    (achado Codex, 2026-09-11)."""
+    """Faz um POST puro na API JusBrasil, sem alterar o contador de CPF.
+
+    Retorna {"_quota_exceeded": True} para HTTP 429/402 e {"_erro": <motivo>}
+    para as demais falhas. A quota local pertence a consultar_jusbrasil(), não
+    a cada um dos cinco endpoints deste helper.
+    """
     if not JUS_KEY:
         return {"_erro": "JUSBRASIL_API_KEY ausente — consulta não disparada"}
-    if _jus_quota_exceeded():
-        return {"_quota_exceeded": True}
     url = f"{JUS_BASE}/{endpoint}"
-    # Conta a tentativa no momento do despacho: timeouts e falhas de leitura
-    # podem ocorrer depois de a API ter recebido/contabilizado a chamada.
-    total, _ = _jus_usage_increment(1)
     try:
         resp = _JUS_SESSION.post(
             url, json=payload,
             headers={"apikey": JUS_KEY, "Content-Type": "application/json"},
             timeout=30,
         )
-        if _jus_quota_warning():
-            print(f"      ⚠️  JusBrasil: {total}/{_JUS_LIMIT} consultas usadas")
         if resp.status_code == 200:
             return resp.json()
         if resp.status_code in (429, 402):
@@ -479,6 +470,18 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
         alert = dict(_FINDING_LIMITE_ATINGIDO)
         alert["snippet"] = f"{alert['snippet']} CPF consultado: {cpf} ({nome}, {papel})."
         return [alert]
+    if not JUS_KEY:
+        return [_finding_erro_consulta(
+            "JUSBRASIL_API_KEY ausente — consulta não disparada", cpf, nome
+        )]
+
+    # Reserva uma única unidade para a tentativa completa deste CPF. Os cinco
+    # endpoints abaixo são partes da mesma consulta e nunca incrementam o
+    # ledger individualmente. Se a API devolver 429/402 no meio, a função para
+    # com placeholder e esta tentativa continua custando no máximo 1 unidade.
+    total, _ = _jus_usage_increment(1)
+    if _jus_quota_warning():
+        print(f"      ⚠️  JusBrasil: {total}/{_JUS_LIMIT} consultas de CPF usadas")
 
     findings = []
     payload = {"documentNumber": cpf_clean, "pagination": {"cursor": "", "size": 100}}

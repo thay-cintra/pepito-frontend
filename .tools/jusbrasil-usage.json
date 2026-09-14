@@ -1,13 +1,14 @@
 {
-  "total": 613,
+  "total": 123,
   "by_month": {
-    "2026-04": 153,
-    "2026-05": 96,
-    "2026-07": 9,
-    "2026-08": 30,
-    "2026-09": 325
+    "2026-04": 31,
+    "2026-05": 19,
+    "2026-07": 2,
+    "2026-08": 6,
+    "2026-09": 65
   },
   "limit": 325,
-  "note": "Limite mensal efetivo para an\u00e1lise PLD: 325/500 chamadas brutas (65% do contrato). 35% = 175 chamadas reservadas para alertas de monitoramento. Cada CPF consome 5 chamadas (criminal + civil + trabalhista + bnmp + mp), capacidade aproximada de 65 CPFs/m\u00eas. total \u00e9 hist\u00f3rico; bloqueio e warning usam by_month do m\u00eas corrente. Atualizado automaticamente pelo fetch-media-findings.py.",
-  "aviso": "141 consultas registradas retroativamente (uso antes do rastreamento ser implementado, 2026-04-29)."
+  "note": "Limite mensal: 325 CONSULTAS DE CPF/mês (65% do contrato de 500 CPFs/mês; 35% = 175 CPFs/mês reservados para alertas de monitoramento). Cada consulta de CPF dispara 5 chamadas HTTP (criminal + civil + trabalhista + bnmp + mp), mas conta como 1 unidade — bloqueio e warning usam by_month do mês corrente, contando CPFs, não chamadas HTTP. Atualizado automaticamente por consultar_jusbrasil() em fetch-media-findings.py.",
+  "aviso": "141 consultas registradas retroativamente (uso antes do rastreamento ser implementado, 2026-04-29) — esse número já está refletido nos valores acima.",
+  "correcao_2026_09_14": "Todos os valores acima (total e by_month) foram divididos por 5 e arredondados. Até 2026-09-14, _jus_usage_increment() era chamado uma vez por CHAMADA HTTP dentro de consultar_jusbrasil() (5x por CPF: criminal/civil/trabalhista/bnmp/mp), inflando o uso reportado em 5x sobre o real — a thay confirmou que o consumo real de setembro/2026 era de ~60 CPFs, contra os 325 (raw calls) que o contador mostrava. Corrigido o código (agora incrementa 1x por CPF, não por chamada) e os números históricos (best-effort: assume que a mesma proporção 5:1 valeu retroativamente; pode não ser exato para CPFs que falharam no meio das 5 chamadas sob o código antigo, mas é a melhor estimativa disponível sem reconstruir chamada a chamada)."
 }

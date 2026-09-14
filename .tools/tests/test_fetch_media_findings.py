@@ -140,7 +140,7 @@ class JusbrasilQuotaTest(unittest.TestCase):
         self.assertTrue(exceeded)
         self.assertTrue(fetch_media_findings._jus_quota_exceeded())
 
-    def test_failed_dispatched_request_is_still_counted(self):
+    def test_http_helper_does_not_change_usage_on_failed_request(self):
         class FailingSession:
             def post(self, *args, **kwargs):
                 raise TimeoutError("read timed out")
@@ -158,8 +158,8 @@ class JusbrasilQuotaTest(unittest.TestCase):
 
         saved = json.loads(fetch_media_findings._JUS_USAGE_PATH.read_text())
         self.assertIn("_erro", result)
-        self.assertEqual(saved["by_month"][self.month], 1)
-        self.assertEqual(saved["total"], 11)
+        self.assertEqual(saved["by_month"][self.month], 0)
+        self.assertEqual(saved["total"], 10)
 
     def test_missing_or_invalid_month_map_starts_at_zero(self):
         fetch_media_findings._JUS_USAGE_PATH.write_text(
@@ -175,6 +175,99 @@ class JusbrasilQuotaTest(unittest.TestCase):
 
 
 class ConsultarJusbrasilTest(unittest.TestCase):
+    def setUp(self):
+        self.temp_dir = tempfile.TemporaryDirectory()
+        self.original_usage_path = fetch_media_findings._JUS_USAGE_PATH
+        fetch_media_findings._JUS_USAGE_PATH = Path(self.temp_dir.name) / "usage.json"
+        self.month = date.today().strftime("%Y-%m")
+        fetch_media_findings._JUS_USAGE_PATH.write_text(
+            json.dumps({"total": 0, "by_month": {self.month: 0}, "limit": 325})
+        )
+
+    def tearDown(self):
+        fetch_media_findings._JUS_USAGE_PATH = self.original_usage_path
+        self.temp_dir.cleanup()
+
+    def test_missing_api_key_does_not_consume_cpf_quota(self):
+        original_key = fetch_media_findings.JUS_KEY
+        fetch_media_findings.JUS_KEY = ""
+        try:
+            findings = fetch_media_findings.consultar_jusbrasil(
+                "123.456.789-01", "Pessoa Teste"
+            )
+        finally:
+            fetch_media_findings.JUS_KEY = original_key
+
+        saved = json.loads(fetch_media_findings._JUS_USAGE_PATH.read_text())
+        self.assertIn("Erro de Consulta", findings[0]["source"])
+        self.assertEqual(saved["by_month"][self.month], 0)
+        self.assertEqual(saved["total"], 0)
+
+    def test_five_successful_endpoints_increment_one_cpf_consultation(self):
+        calls = []
+
+        class FakeResponse:
+            status_code = 200
+            text = ""
+
+            def __init__(self, payload):
+                self.payload = payload
+
+            def json(self):
+                return self.payload
+
+        class FakeSession:
+            def post(self, url, **kwargs):
+                endpoint = url.split(f"{fetch_media_findings.JUS_BASE}/", 1)[1]
+                calls.append(endpoint)
+                if endpoint.startswith("background-check/lawsuits/"):
+                    return FakeResponse({"nome": "Pessoa Teste", "processos": [], "pagination": {"total": 0}})
+                if endpoint == "background-check/bnmp":
+                    return FakeResponse({"mandados": []})
+                return FakeResponse({"mp": []})
+
+        original_key = fetch_media_findings.JUS_KEY
+        original_session = fetch_media_findings._JUS_SESSION
+        fetch_media_findings.JUS_KEY = "test-key"
+        fetch_media_findings._JUS_SESSION = FakeSession()
+        try:
+            fetch_media_findings.consultar_jusbrasil("123.456.789-01", "Pessoa Teste")
+        finally:
+            fetch_media_findings.JUS_KEY = original_key
+            fetch_media_findings._JUS_SESSION = original_session
+
+        saved = json.loads(fetch_media_findings._JUS_USAGE_PATH.read_text())
+        self.assertEqual(len(calls), 5)
+        self.assertEqual(saved["by_month"][self.month], 1)
+        self.assertEqual(saved["total"], 1)
+
+    def test_quota_response_midway_stops_endpoints_and_still_counts_only_one_cpf(self):
+        calls = []
+        original_post = fetch_media_findings._jus_post
+
+        def fake_post(endpoint, payload):
+            calls.append(endpoint)
+            if endpoint == "background-check/lawsuits/criminal":
+                return {"nome": "Pessoa Teste", "processos": [], "pagination": {"total": 0}}
+            return {"_quota_exceeded": True}
+
+        fetch_media_findings._jus_post = fake_post
+        try:
+            findings = fetch_media_findings.consultar_jusbrasil(
+                "123.456.789-01", "Pessoa Teste"
+            )
+        finally:
+            fetch_media_findings._jus_post = original_post
+
+        saved = json.loads(fetch_media_findings._JUS_USAGE_PATH.read_text())
+        self.assertEqual(
+            calls,
+            ["background-check/lawsuits/criminal", "background-check/lawsuits/civil"],
+        )
+        self.assertTrue(any("Controle de Quota" in finding["source"] for finding in findings))
+        self.assertEqual(saved["by_month"][self.month], 1)
+        self.assertEqual(saved["total"], 1)
+
     def test_consults_all_five_endpoints_and_classifies_noncriminal_lawsuits(self):
         calls = []
         responses = {
