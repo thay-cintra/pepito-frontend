@@ -26,6 +26,7 @@ import { clienteVazio } from "@/lib/cliente-default";
 import { getRegistrationCase, markTaken, QUEUE_UPDATED_EVENT } from "@/lib/registration-queue";
 import { inferCargoOrgao, inferTipoPep, getSugestaoParecer, getConsultaStatus, getCredilinkTokens } from "@/data/registration-enrich";
 import { consultarCredilinkPepAgora, type CredilinkPepResultadoUI } from "@/lib/credilink-pep";
+import { liveConsultationCoversAllPending, needsManualConsultationCheck } from "@/lib/leadership-guard";
 import { formatCNPJ, formatCPF, formatDuration, uid } from "@/lib/utils";
 import type { Analise, ClienteData, ResultadoPesquisa, StatusAnalise } from "@/types/kyc";
 import { STATUS_LABELS, StatusBadge } from "@/components/RiscoBadge";
@@ -211,15 +212,16 @@ export function AnalisePrimeiraCamada() {
     return caso ? getConsultaStatus(caso, cliente.tipoPep) : null;
   }, [draftIdOrigem, cliente.tipoPep]);
 
-  const credilinkPepTokenLedger = useMemo(() => {
-    if (!draftIdOrigem || !cliente.cpfPepTitular) return "";
+  const credilinkPepLedger = useMemo(() => {
+    if (!draftIdOrigem || !cliente.cpfPepTitular) return null;
     const caso = getRegistrationCase(draftIdOrigem);
-    if (!caso) return "";
+    if (!caso) return null;
     const cpfPep = cliente.cpfPepTitular.replace(/\D/g, "");
     return getCredilinkTokens(caso, "relacionado").peps.find(
       (pep) => pep.cpf === cpfPep,
-    )?.token || "";
+    ) || null;
   }, [draftIdOrigem, cliente.cpfPepTitular]);
+  const credilinkPepTokenLedger = credilinkPepLedger?.token || "";
   const credilinkPepLinkDossieLedger = credilinkPepTokenLedger
     ? `https://dashboard.tesserati.com.br/Compliance/VisualizarDossie?token=${credilinkPepTokenLedger}`
     : "";
@@ -237,12 +239,21 @@ export function AnalisePrimeiraCamada() {
     credilinkPepCpfConsultadoRef.current = cliente.cpfPepTitular || null;
   }, [cliente.cpfPepTitular]);
 
-  // "OK" efetivo pro guardrail: ledger estático (build) OU resultado ao vivo
-  // desta sessão — sem isso, uma consulta ao vivo bem-sucedida continuava
-  // exigindo o checkbox de verificação manual até o próximo rebuild
-  // (achado Codex, 2026-09-12).
-  const credilinkPepOkEfetivo = !!consultaStatus?.credilinkPepOk || !!credilinkPepResultado;
-  const precisaCheckManual = !!consultaStatus && !(consultaStatus.jusbrasilOk && credilinkPepOkEfetivo);
+  // Uma consulta ao vivo só cobre o ledger estático quando corresponde à
+  // única pendência. Em casos com 2+ PEPs, consultar o CPF principal não pode
+  // mascarar outro CPF relacionado ainda pendente.
+  const credilinkPepLiveCobrePendencias = !!credilinkPepResultado
+    && !!consultaStatus
+    && liveConsultationCoversAllPending(
+      consultaStatus.credilinkPepCpfsPendentes,
+      cliente.cpfPepTitular || "",
+    );
+  const credilinkPepOkEfetivo = !!consultaStatus?.credilinkPepOk || credilinkPepLiveCobrePendencias;
+  const precisaCheckManual = needsManualConsultationCheck(
+    !!draftIdOrigem,
+    consultaStatus,
+    credilinkPepLiveCobrePendencias,
+  );
   const podeEnviarMesa = podeFinalizarPrimeira && (!precisaCheckManual || checkVerificacaoManual);
 
   // Dispara a consulta Credilink real do PEP automaticamente — sem botão,
@@ -377,6 +388,9 @@ export function AnalisePrimeiraCamada() {
     // manual do analista — registra quem, quando, e o que estava pendente.
     const historicoComentarios = existente?.historicoComentarios ?? [];
     if (camadaStatus === "aguardando_segunda" && precisaCheckManual && checkVerificacaoManual) {
+      const pendenciaConsulta = consultaStatus
+        ? `${!consultaStatus.jusbrasilOk ? consultaStatus.jusbrasilMotivo : ""} ${!consultaStatus.credilinkPepOk ? consultaStatus.credilinkPepMotivo : ""}`.trim()
+        : "status automático de consulta indisponível para o draft real";
       historicoComentarios.push({
         timestamp: new Date().toISOString(),
         user_email: analistaEmail || "desconhecido",
@@ -384,7 +398,7 @@ export function AnalisePrimeiraCamada() {
         text:
           `Override manual do guardrail de consulta: ${analistaEmail || "analista"} confirmou verificação ` +
           `manual e enviou à Mesa mesmo com pendência — ` +
-          `${!consultaStatus?.jusbrasilOk ? consultaStatus?.jusbrasilMotivo : ""} ${!consultaStatus?.credilinkPepOk ? consultaStatus?.credilinkPepMotivo : ""}`.trim(),
+          pendenciaConsulta,
       });
     }
     return {
@@ -733,6 +747,14 @@ export function AnalisePrimeiraCamada() {
                         <span className="text-muted-foreground italic text-[11px]">Token do PEP não disponível no ledger.</span>
                       </div>
                     )}
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <span className="min-w-[160px]">Consultado em:</span>
+                      <span>
+                        {credilinkPepLedger?.consultadoEm
+                          ? new Date(credilinkPepLedger.consultadoEm).toLocaleString("pt-BR")
+                          : "Não informado no ledger"}
+                      </span>
+                    </div>
                     <p className="text-success text-[11px]">✅ Consultado — dado real, não é o token do titular.</p>
                   </div>
                 )}
@@ -914,14 +936,15 @@ export function AnalisePrimeiraCamada() {
             </CardContent>
           </Card>
 
-          {precisaCheckManual && consultaStatus && (
+          {precisaCheckManual && (
             <div className="rounded-md border border-amber-300 dark:border-amber-700 bg-amber-50/50 dark:bg-amber-950/20 p-3 space-y-2 text-xs">
               <p className="font-semibold text-amber-800 dark:text-amber-300">
                 ⚠️ Consulta real pendente — não é possível confirmar que JusBrasil/Credilink foram checados de fato para este caso.
               </p>
               <ul className="list-disc list-inside space-y-1 text-amber-800 dark:text-amber-300">
-                {!consultaStatus.jusbrasilOk && <li>JusBrasil/Credilink: {consultaStatus.jusbrasilMotivo}</li>}
-                {!credilinkPepOkEfetivo && <li>Credilink (PEP): {consultaStatus.credilinkPepMotivo}</li>}
+                {!consultaStatus && <li>Status automático indisponível para este draft real.</li>}
+                {consultaStatus && !consultaStatus.jusbrasilOk && <li>JusBrasil/Credilink: {consultaStatus.jusbrasilMotivo}</li>}
+                {consultaStatus && !credilinkPepOkEfetivo && <li>Credilink (PEP): {consultaStatus.credilinkPepMotivo}</li>}
               </ul>
               <label className="flex items-start gap-2 pt-1 cursor-pointer">
                 <input

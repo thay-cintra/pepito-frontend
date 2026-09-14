@@ -4546,15 +4546,6 @@
       "match": "CPF 03217616421 confirmado na API — sem processos criminais"
     },
     {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão.",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
-    {
       "title": "TSE — Macilon Rafael (nº 13444), candidato/vereador em Serra Branca/PB (PT), Eleições 2024",
       "url": "https://www.otempo.com.br/eleicoes/2024/candidatos/paraiba/serra-branca/vereador/macilon-rafael-13444",
       "snippet": "Dados extraídos do TSE: Macilon Rafael, número de urna 13444, candidato a vereador de Serra Branca/PB pelo PT nas Eleições 2024, nascido em Serra Branca (PB) em 09/02/1976, descrito como \"é vereador\" (mandato em curso). Santa Luzia do Cariri é distrito administrativo do município de Serra Branca/PB — mesma base municipal do owner Jonas Rafael De Brito.",
@@ -4664,18 +4655,63 @@
       "risk_indicator": "baixo",
       "tipo": "governo",
       "match": "Nenhum resultado direto para Macilon Rafael de Brito"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — JONAS RAFAEL DE BRITO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 032.169.974-21 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 032.169.974-21 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo civil — JONAS RAFAEL DE BRITO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint civil da JusBrasil Background Check API para CPF 032.169.974-21 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 032.169.974-21 confirmado na API — sem processos civils"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — JONAS RAFAEL DE BRITO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 032.169.974-21 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 032.169.974-21 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — MACILON RAFAEL DE BRITO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 03217616421 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 03217616421 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 6 encontrado(s) — MACILON RAFAEL DE BRITO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "MACILON RAFAEL DE BRITO consta em 6 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: TREPB, 58ª, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-04-17'}, polo ativo/outro; TREPB, 58ª ZONA ELEITORAL, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-05-19'}, polo ativo/outro; TREPB, 58ª, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-05-03'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 03217616421 — 0 de 6 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — MACILON RAFAEL DE BRITO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 03217616421 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 03217616421 confirmado na API — sem processos trabalhistas"
     }
   ],
   "ca6eac08-e054-4275-886d-c6f909554381": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 205.343.318-31 (Amélia Míriam De Oliveira, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos não-criminais (9) — Amélia Míriam De Oliveira",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -4693,15 +4729,6 @@
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome Amélia Míriam De Oliveira"
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 72565594615 (TADEU BARBOSA DE OLIVEIRA, pep_irma(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
       "title": "Credilink — Processos criminais (6) — TADEU BARBOSA DE OLIVEIRA",
@@ -4802,18 +4829,63 @@
       "risk_indicator": "baixo",
       "tipo": "midia",
       "match": "M7 — Contexto regional (Vale do Jequitinhonha) sem operações policiais ativas identificadas em Araçuaí/MG ou Capelinha/MG no período 2024–2026. Operações localizadas referem-se a Araçoiaba/PE e outros estados — sem correlação geográfica com o caso."
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — AMELIA MIRIAM DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 205.343.318-31 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 205.343.318-31 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 8 encontrado(s) — AMELIA MIRIAM DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "AMELIA MIRIAM DE OLIVEIRA consta em 8 processo(s) civil(s) no JusBrasil; 4 no polo passivo. Exemplos: tjmg, Belo Horizonte, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-09-13'}, polo passivo, valor 41748.91; tjmg, Capelinha, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': 'BAIXADO E DE NATUREZA CRIMINAL, NÃO ACESSÍVEL', 'data': '2026-09-12'}, polo ativo/outro, valor 500000; tjmg, Capelinha, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-08-19'}, polo ativo/outro, valor 63854.8. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 205.343.318-31 — 4 de 8 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 5 encontrado(s) — AMELIA MIRIAM DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "AMELIA MIRIAM DE OLIVEIRA consta em 5 processo(s) trabalhista(s) no JusBrasil; 5 no polo passivo. Exemplos: TRT3, Guanhães, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-08-09'}, polo passivo, valor 39000; TRT3, Guanhães, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2024-10-23'}, polo passivo, valor 39000; TRT3, Guanhães, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2024-11-19'}, polo passivo, valor 30373. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 205.343.318-31 — 5 de 5 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — TADEU BARBOSA DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 72565594615 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 72565594615 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 28 encontrado(s) — TADEU BARBOSA DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "TADEU BARBOSA DE OLIVEIRA consta em 28 processo(s) civil(s) no JusBrasil; 6 no polo passivo. Exemplos: tjmg, Capelinha, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': 'BAIXADO E DE NATUREZA CRIMINAL, NÃO ACESSÍVEL', 'data': '2026-09-12'}, polo ativo/outro, valor 500000; tjmg, Infância e da Juventude da Comarca de Araçuaí, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-08-29'}, polo ativo/outro, valor 60720; TJMG, Araçuaí, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-03-26'}, polo ativo/outro, valor 60000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 72565594615 — 6 de 28 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 1 encontrado(s) — TADEU BARBOSA DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "TADEU BARBOSA DE OLIVEIRA consta em 1 processo(s) trabalhista(s) no JusBrasil; 0 no polo passivo. Exemplos: TRT3, Araçuaí, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-14'}, polo ativo/outro, valor 30000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 72565594615 — 0 de 1 processo(s) no polo passivo"
     }
   ],
   "a4378011-ca0e-42b4-a4be-1322c2ab7c15": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 083.260.896-30 (Letícia Corrêa Da Silva Godinho, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos não-criminais (1) — Letícia Corrêa Da Silva Godinho",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -5013,18 +5085,36 @@
       "risk_indicator": "baixo",
       "tipo": "governo",
       "match": "Nenhum resultado direto para Letícia Corrêa da Silva Godinho"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — LETICIA CORREA DA SILVA GODINHO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 083.260.896-30 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 083.260.896-30 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 9 encontrado(s) — LETICIA CORREA DA SILVA GODINHO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "LETICIA CORREA DA SILVA GODINHO consta em 9 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: TJMG, Patos de Minas, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'BAIXADO', 'data': '2026-04-19'}, polo ativo/outro; TREMG, 210ª, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2025-09-09'}, polo ativo/outro; TREMG, 210ª ZONA ELEITORAL, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-07-28'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 083.260.896-30 — 0 de 9 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — LETICIA CORREA DA SILVA GODINHO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 083.260.896-30 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 083.260.896-30 confirmado na API — sem processos trabalhistas"
     }
   ],
   "10c5ad3f-c676-4ab0-b473-5c261fe55ba7": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 940.882.501-25 (Rosilene Maria De Azevedo Borges, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos não-criminais (2) — Rosilene Maria De Azevedo Borges",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -5033,15 +5123,6 @@
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 940.882.501-25"
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 88921727191 (REGINALDO LIBERATO DE AZEVEDO, pep_irma(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
       "title": "Credilink — Processos não-criminais (2) — REGINALDO LIBERATO DE AZEVEDO",
@@ -5141,18 +5222,63 @@
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "M7 — Contexto regional adverso: operação recente apura fraudes em licitações em municípios de Goiás. Ceres-GO não foi nominalmente citada, mas o padrão se aplica à mesma UF e porte de município."
+    },
+    {
+      "title": "Processos criminais (1 encontrados) — ROSILENE MARIA DE AZEVEDO BORGES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ROSILENE MARIA DE AZEVEDO BORGES tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 940.882.501-25 — 1 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 30 encontrado(s) — ROSILENE MARIA DE AZEVEDO BORGES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ROSILENE MARIA DE AZEVEDO BORGES consta em 30 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: TJGO, RIALMA, status {'inferido': 'Ativo', 'normalizado': 'Ativo', 'tribunal': 'Ativo', 'data': '2026-08-22'}, polo ativo/outro, valor 3590; TJGO, CERES, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'ARQUIVADO', 'data': '2026-05-28'}, polo ativo/outro, valor 946.38; TJGO, CERES, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'ARQUIVADO', 'data': '2026-06-23'}, polo ativo/outro, valor 2189.52. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 940.882.501-25 — 0 de 30 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 1 encontrado(s) — ROSILENE MARIA DE AZEVEDO BORGES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ROSILENE MARIA DE AZEVEDO BORGES consta em 1 processo(s) trabalhista(s) no JusBrasil; 1 no polo passivo. Exemplos: TRT18, CERES, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-05-28'}, polo passivo, valor 4581.91. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 940.882.501-25 — 1 de 1 processo(s) no polo passivo"
+    },
+    {
+      "title": "Processos criminais (2 encontrados) — REGINALDO LIBERATO DE AZEVEDO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "REGINALDO LIBERATO DE AZEVEDO tem 2 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 88921727191 — 2 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 4 encontrado(s) — REGINALDO LIBERATO DE AZEVEDO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "REGINALDO LIBERATO DE AZEVEDO consta em 4 processo(s) civil(s) no JusBrasil; 1 no polo passivo. Exemplos: TJGO, CERES, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'ARQUIVADO', 'data': '2026-07-08'}, polo passivo, valor 1057.25; TREGO, , status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-08-11'}, polo ativo/outro; TREGO, , status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-07-29'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 88921727191 — 1 de 4 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — REGINALDO LIBERATO DE AZEVEDO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 88921727191 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 88921727191 confirmado na API — sem processos trabalhistas"
     }
   ],
   "05375e39-357a-4bf4-bec0-b285551e29ee": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 106.232.344-08 (João Pedro Peixoto Fernandes, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Mídias Negativas — João Pedro Peixoto Fernandes",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
@@ -5161,15 +5287,6 @@
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome João Pedro Peixoto Fernandes"
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 05654875400 (EDILSON FERNANDES DA SILVA JUNIOR, pep_irma(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
       "title": "Credilink — Processos não-criminais (1) — EDILSON FERNANDES DA SILVA JUNIOR",
@@ -5278,18 +5395,72 @@
       "risk_indicator": "baixo",
       "tipo": "midia",
       "match": "Ausência de contratos federais identificados para o CNPJ do owner via busca web no Portal da Transparência. Consulta direta ao portal recomendada para confirmação definitiva."
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — JOAO PEDRO PEIXOTO FERNANDES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 106.232.344-08 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 106.232.344-08 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo civil — JOAO PEDRO PEIXOTO FERNANDES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint civil da JusBrasil Background Check API para CPF 106.232.344-08 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 106.232.344-08 confirmado na API — sem processos civils"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — JOAO PEDRO PEIXOTO FERNANDES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 106.232.344-08 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 106.232.344-08 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — JOAO PEDRO PEIXOTO FERNANDES",
+      "url": "https://www.mprn.mp.br/",
+      "snippet": "JOAO PEDRO PEIXOTO FERNANDES consta em registro do Ministério Público (MP-RN) em procedimento de tipo Extrajudicial. Situação: Baixa de Carga. Assunto: Crimes de Trânsito. Tipificação: Crimes de Trânsito. Confiança: BAIXA.",
+      "source": "MP MP-RN via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 106.232.344-08 — confiança BAIXA"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — EDILSON FERNANDES DA SILVA JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 05654875400 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 05654875400 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 11 encontrado(s) — EDILSON FERNANDES DA SILVA JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "EDILSON FERNANDES DA SILVA JUNIOR consta em 11 processo(s) civil(s) no JusBrasil; 1 no polo passivo. Exemplos: tjrn, Natal, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado Definitivamente', 'tribunal': 'Arquivado definitivamente', 'data': '2026-09-11'}, polo ativo/outro, valor 1699.08; TJRN, Mossoró, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado Definitivamente', 'tribunal': 'Arquivado definitivamente', 'data': '2026-08-27'}, polo ativo/outro, valor 2281.65; tjrn, Mossoró, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Suspenso/sobrestado por decisão judicial', 'data': '2026-08-20'}, polo ativo/outro, valor 17131.82. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 05654875400 — 1 de 11 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — EDILSON FERNANDES DA SILVA JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 05654875400 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 05654875400 confirmado na API — sem processos trabalhistas"
     }
   ],
   "5b91bd5d-b6bd-4e95-8c1f-1cca12c465e5": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 069.412.344-74 (Débora Nascimento Santos, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos criminais (1) — Débora Nascimento Santos",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -5317,15 +5488,6 @@
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome Débora Nascimento Santos"
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 09731948473 (GUSTAVO HENRIQUE SANTOS MENEZES, pep_irma(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
       "title": "Credilink — Processos não-criminais (1) — GUSTAVO HENRIQUE SANTOS MENEZES",
@@ -5434,18 +5596,63 @@
       "risk_indicator": "alto",
       "tipo": "midia",
       "match": "Abuso de máquina pública reconhecido pelo MPE na gestão municipal de Pitimbu — contexto institucional de alto risco para vereador ativo (PEP) no período 2023-2024. Recomenda-se verificar se empresa da Owner (CNPJ 67.814.414/0001-25) foi beneficiária de contratos municipais de Pitimbu no período investigado."
+    },
+    {
+      "title": "Processos criminais (1 encontrados) — DEBORA NASCIMENTO SANTOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "DEBORA NASCIMENTO SANTOS tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 069.412.344-74 — 1 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 11 encontrado(s) — DEBORA NASCIMENTO SANTOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "DEBORA NASCIMENTO SANTOS consta em 11 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: TJPB, Região Metropolitana da Capital, status {'inferido': 'Ativo', 'normalizado': 'Ativo', 'tribunal': 'Ativo', 'data': '2026-09-11'}, polo ativo/outro, valor 6153.84; TJPB, Capital, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'ARQUIVADO', 'data': '2026-05-09'}, polo ativo/outro, valor 4500; TJPB, Mangabeira, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-03-11'}, polo ativo/outro, valor 4070. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 069.412.344-74 — 0 de 11 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — DEBORA NASCIMENTO SANTOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 069.412.344-74 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 069.412.344-74 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — GUSTAVO HENRIQUE SANTOS MENEZES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 09731948473 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 09731948473 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 7 encontrado(s) — GUSTAVO HENRIQUE SANTOS MENEZES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "GUSTAVO HENRIQUE SANTOS MENEZES consta em 7 processo(s) civil(s) no JusBrasil; 2 no polo passivo. Exemplos: TREPB, 73ª, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-08-22'}, polo passivo; TJPB, Comarcas Integradas do Litoral Sul, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'ARQUIVADO', 'data': '2026-08-19'}, polo passivo, valor 10000; TREPB, 73ª, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-05-05'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 09731948473 — 2 de 7 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — GUSTAVO HENRIQUE SANTOS MENEZES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 09731948473 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 09731948473 confirmado na API — sem processos trabalhistas"
     }
   ],
   "16059106-2aeb-4e36-8978-9089db30942e": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 339.879.578-16 (Rosinei de fatima Pimentel santos, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos não-criminais (14) — Rosinei de fatima Pimentel santos",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -5454,15 +5661,6 @@
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 339.879.578-16"
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 21840663898 (RENATA APARECIDA PIMENTEL RISSONI, pep_irma(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
       "title": "Credilink — Processos criminais (1) — RENATA APARECIDA PIMENTEL RISSONI",
@@ -5581,18 +5779,73 @@
       "risk_indicator": "baixo",
       "tipo": "midia",
       "match": "M7 — Sem operações policiais ou corrupção municipal identificadas em Ipaussu/SP"
+    },
+    {
+      "title": "Processo criminal — ROSINEI DE FATIMA PIMENTEL SANTOS (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0000302-57.2006.8.26.0539",
+      "snippet": "ROSINEI DE FATIMA PIMENTEL SANTOS figura como réu (polo passivo) em processo criminal: OUTROS. Tipificação: Estelionato. Processo nº 0000302-57.2006.8.26.0539. Tribunal: Extinto. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — Extinto",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 339.879.578-16 — confiança ALTA — polo_passivo=True",
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Estelionato. Crimes de fraude são antecedentes diretos de lavagem de dinheiro."
+    },
+    {
+      "title": "Processos criminais (4 encontrados) — ROSINEI DE FATIMA PIMENTEL SANTOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ROSINEI DE FATIMA PIMENTEL SANTOS tem 5 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 339.879.578-16 — 4 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 26 encontrado(s) — ROSINEI DE FATIMA PIMENTEL SANTOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ROSINEI DE FATIMA PIMENTEL SANTOS consta em 26 processo(s) civil(s) no JusBrasil; 15 no polo passivo. Exemplos: tjsp, Ipauçu, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-09-04'}, polo passivo, valor 395; tjsp, Foro de Ipaussu, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Extinto', 'tribunal': 'Extinto', 'data': '2026-08-13'}, polo passivo, valor 1248.77; tjsp, Ourinhos, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-08-20'}, polo passivo, valor 5187.99. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 339.879.578-16 — 15 de 26 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 1 encontrado(s) — ROSINEI DE FATIMA PIMENTEL SANTOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ROSINEI DE FATIMA PIMENTEL SANTOS consta em 1 processo(s) trabalhista(s) no JusBrasil; 0 no polo passivo. Exemplos: TRT15, Ourinhos, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-13'}, polo ativo/outro, valor 4622.06. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 339.879.578-16 — 0 de 1 processo(s) no polo passivo"
+    },
+    {
+      "title": "Processos criminais (2 encontrados) — RENATA APARECIDA PIMENTEL RISSONI",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "RENATA APARECIDA PIMENTEL RISSONI tem 2 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 21840663898 — 2 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 15 encontrado(s) — RENATA APARECIDA PIMENTEL RISSONI",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "RENATA APARECIDA PIMENTEL RISSONI consta em 15 processo(s) civil(s) no JusBrasil; 11 no polo passivo. Exemplos: tjsp, Ourinhos, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-09-14'}, polo passivo, valor 102102.16; tjsp, Foro de Ourinhos, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-13'}, polo passivo, valor 2958.17; tjsp, Foro de Ipaussu, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitação prioritária', 'data': '2026-09-12'}, polo passivo, valor 362368.84. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 21840663898 — 11 de 15 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — RENATA APARECIDA PIMENTEL RISSONI",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 21840663898 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 21840663898 confirmado na API — sem processos trabalhistas"
     }
   ],
   "ef793f91-57bc-4354-8542-fe83688100e6": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 655.493.683-15 (Francisco Erivelto Gonçalves Junior, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos não-criminais (4) — Francisco Erivelto Gonçalves Junior",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -5601,15 +5854,6 @@
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 655.493.683-15"
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 90078942349 (ERIEMERSON NOBRE GONCALVES, pep_irma(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
       "title": "ERIEMERSON NOBRE GONCALVES — Confirmação de vínculo com PSD/Caucaia-CE via TRE-CE e JusBrasil",
@@ -5842,18 +6086,63 @@
       "risk_indicator": "baixo",
       "tipo": "governo",
       "match": "Nenhum resultado direto para Eriemerson Nobre Gonçalves"
+    },
+    {
+      "title": "Processos criminais (1 encontrados) — FRANCISCO ERIVELTO GONCALVES JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "FRANCISCO ERIVELTO GONCALVES JUNIOR tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 655.493.683-15 — 1 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 78 encontrado(s) — FRANCISCO ERIVELTO GONCALVES JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "FRANCISCO ERIVELTO GONCALVES JUNIOR consta em 78 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: tjce, FORTALEZA, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': 'Remetido a outro foro', 'data': '2026-08-24'}, polo ativo/outro, valor 150000; TJCE, Núcleo de Justiça 4.0, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Remetido a outro foro', 'data': '2026-09-06'}, polo ativo/outro, valor 50000; tjce, FORTALEZA, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': 'Remetido a outro foro', 'data': '2026-09-03'}, polo ativo/outro, valor 5327.73. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 655.493.683-15 — 0 de 78 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — FRANCISCO ERIVELTO GONCALVES JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 655.493.683-15 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 655.493.683-15 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "Processos criminais (1 encontrados) — ERIEMERSON NOBRE GONCALVES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ERIEMERSON NOBRE GONCALVES tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 90078942349 — 1 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 5 encontrado(s) — ERIEMERSON NOBRE GONCALVES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ERIEMERSON NOBRE GONCALVES consta em 5 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: TRECE, 37ª ZONA ELEITORAL, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-07-24'}, polo ativo/outro; TRECE, 120ª ZONA ELEITORAL, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2025-07-10'}, polo ativo/outro; TRECE, Caucaia, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2024-11-17'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 90078942349 — 0 de 5 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — ERIEMERSON NOBRE GONCALVES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 90078942349 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 90078942349 confirmado na API — sem processos trabalhistas"
     }
   ],
   "a116f88a-ab10-40fe-a80f-3c9515a55749": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 060.887.929-06 (Franciele Garcia, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Mídias Negativas — Franciele Garcia",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
@@ -5862,15 +6151,6 @@
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome Franciele Garcia"
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 02560850990 (FERNANDA GARCIA SARDANHA, pep_irma(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
       "title": "Credilink — Processos criminais (1) — FERNANDA GARCIA SARDANHA",
@@ -5989,18 +6269,63 @@
       "risk_indicator": "baixo",
       "tipo": "midia",
       "match": "SANTA CECILIA-SC | contexto regional SC | operações GAECO/MPSC | SEM menção a Santa Cecília ou Franciele Garcia"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — FRANCIELE GARCIA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 060.887.929-06 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 060.887.929-06 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 1 encontrado(s) — FRANCIELE GARCIA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "FRANCIELE GARCIA consta em 1 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: TJSC, Santa Cecília, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'BAIXADO', 'data': '2026-05-19'}, polo ativo/outro, valor 14903.26. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 060.887.929-06 — 0 de 1 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — FRANCIELE GARCIA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 060.887.929-06 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 060.887.929-06 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "Processos criminais (1 encontrados) — FERNANDA GARCIA SARDANHA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "FERNANDA GARCIA SARDANHA tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 02560850990 — 1 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 68 encontrado(s) — FERNANDA GARCIA SARDANHA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "FERNANDA GARCIA SARDANHA consta em 68 processo(s) civil(s) no JusBrasil; 30 no polo passivo. Exemplos: TREPR, 12ª, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-09-13'}, polo ativo/outro; tjpr, São Mateus do Sul, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'PROCESSO DISTRIBUÍDO', 'data': '2026-09-14'}, polo passivo, valor 2660741.5; tjpr, São Mateus do Sul, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-08'}, polo passivo, valor 600944.94. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 02560850990 — 30 de 68 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 1 encontrado(s) — FERNANDA GARCIA SARDANHA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "FERNANDA GARCIA SARDANHA consta em 1 processo(s) trabalhista(s) no JusBrasil; 1 no polo passivo. Exemplos: TRT9, UNIÃO DA VITÓRIA, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-08-18'}, polo passivo, valor 1000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 02560850990 — 1 de 1 processo(s) no polo passivo"
     }
   ],
   "45a36634-2643-4823-9269-cd03de7078b9": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 357.730.570-34 (Joao Carlos Piovesan, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos não-criminais (7) — Joao Carlos Piovesan",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -6009,15 +6334,6 @@
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 357.730.570-34"
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 65569717072 (DAVI CARGNIN PIOVESAN, pep_irma(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
       "title": "Credilink — Processos não-criminais (17) — DAVI CARGNIN PIOVESAN",
@@ -6259,27 +6575,63 @@
       "risk_indicator": "baixo",
       "tipo": "governo",
       "match": "Nenhum resultado direto para Davi Cargnin Piovesan"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — JOAO CARLOS PIOVESAN",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 357.730.570-34 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 357.730.570-34 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 1 encontrado(s) — JOAO CARLOS PIOVESAN",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "JOAO CARLOS PIOVESAN consta em 1 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: TJRS, ALEGRETE, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-08-15'}, polo ativo/outro, valor 32500. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 357.730.570-34 — 0 de 1 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — JOAO CARLOS PIOVESAN",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 357.730.570-34 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 357.730.570-34 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — DAVI CARGNIN PIOVESAN",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 65569717072 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 65569717072 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 21 encontrado(s) — DAVI CARGNIN PIOVESAN",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "DAVI CARGNIN PIOVESAN consta em 21 processo(s) civil(s) no JusBrasil; 8 no polo passivo. Exemplos: TJRS, Palmeira das Missões, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-07-22'}, polo passivo, valor 76500; TJRS, PORTO ALEGRE, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-10-26'}, polo ativo/outro, valor 185570.53; TJRS, Palmeira das Missões, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-05-18'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 65569717072 — 8 de 21 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — DAVI CARGNIN PIOVESAN",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 65569717072 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 65569717072 confirmado na API — sem processos trabalhistas"
     }
   ],
   "fdcfbd26-8a43-44c3-892a-006b11e2cee4": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 367.127.348-86 (Douglas Kubica, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 26541984808 (LUCIANA APARECIDA KUBICA, pep_irma(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos não-criminais (10) — LUCIANA APARECIDA KUBICA",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -6495,18 +6847,63 @@
       "risk_indicator": "baixo",
       "tipo": "governo",
       "match": "Nenhum resultado direto para Luciana Aparecida Kubica"
+    },
+    {
+      "title": "Processos criminais (1 encontrados) — DOUGLAS KUBICA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "DOUGLAS KUBICA tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 367.127.348-86 — 1 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo civil — DOUGLAS KUBICA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint civil da JusBrasil Background Check API para CPF 367.127.348-86 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 367.127.348-86 confirmado na API — sem processos civils"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — DOUGLAS KUBICA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 367.127.348-86 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 367.127.348-86 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "Processos criminais (2 encontrados) — LUCIANA APARECIDA KUBICA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "LUCIANA APARECIDA KUBICA tem 2 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 26541984808 — 2 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 30 encontrado(s) — LUCIANA APARECIDA KUBICA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "LUCIANA APARECIDA KUBICA consta em 30 processo(s) civil(s) no JusBrasil; 10 no polo passivo. Exemplos: TRESP, , status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-07-18'}, polo ativo/outro; TRESP, , status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-08-19'}, polo ativo/outro; tjsp, Foro de Monte Azul Paulista, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Extinto', 'tribunal': 'Extinto', 'data': '2026-09-04'}, polo passivo, valor 845.6. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 26541984808 — 10 de 30 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — LUCIANA APARECIDA KUBICA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 26541984808 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 26541984808 confirmado na API — sem processos trabalhistas"
     }
   ],
   "68df24fe-b9c6-4e60-a88d-fc735f0b7875": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 072.507.019-67 (Emerson De Sousa Da Silva, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Mídias Negativas — Emerson De Sousa Da Silva",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
@@ -6515,15 +6912,6 @@
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome Emerson De Sousa Da Silva"
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 59447940978 (NILTON BATISTA RAUPP, pep_socio).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
       "title": "Credilink — Processos não-criminais (11) — NILTON BATISTA RAUPP",
@@ -6753,18 +7141,63 @@
       "risk_indicator": "baixo",
       "tipo": "governo",
       "match": "Nenhum resultado direto para Nilton Batista Raupp"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — EMERSON DE SOUSA DA SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 072.507.019-67 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 072.507.019-67 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo civil — EMERSON DE SOUSA DA SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint civil da JusBrasil Background Check API para CPF 072.507.019-67 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 072.507.019-67 confirmado na API — sem processos civils"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — EMERSON DE SOUSA DA SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 072.507.019-67 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 072.507.019-67 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — NILTON BATISTA RAUPP",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 59447940978 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 59447940978 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 40 encontrado(s) — NILTON BATISTA RAUPP",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "NILTON BATISTA RAUPP consta em 40 processo(s) civil(s) no JusBrasil; 13 no polo passivo. Exemplos: tjsc, Garopaba, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-09-12'}, polo ativo/outro, valor 50000; tjsc, Lebon Régis, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-09-11'}, polo ativo/outro, valor 91916.83; tjsc, Balneário Camboriú, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-09-11'}, polo ativo/outro, valor 51596.48. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 59447940978 — 13 de 40 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — NILTON BATISTA RAUPP",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 59447940978 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 59447940978 confirmado na API — sem processos trabalhistas"
     }
   ],
   "fcb6f395-952b-491c-b4b7-dd4b27205107": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 953.525.892-34 (Thiago Andreyfson Brandao De Oliveira, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos não-criminais (2) — Thiago Andreyfson Brandao De Oliveira",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -6773,15 +7206,6 @@
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 953.525.892-34"
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 25731688249 (LUIS AFONSO BRANDAO DE OLIVEIRA, pep_irma(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
       "title": "Credilink — Processos não-criminais (6) — LUIS AFONSO BRANDAO DE OLIVEIRA",
@@ -6854,18 +7278,63 @@
       "risk_indicator": "baixo",
       "tipo": "midia",
       "match": "Município de Breves-PA não apresentou registros de operações policiais, investigações ou escândalos de corrupção municipal nos últimos 2 anos nas fontes pesquisadas."
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — THIAGO ANDREYFSON BRANDAO DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 953.525.892-34 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 953.525.892-34 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 3 encontrado(s) — THIAGO ANDREYFSON BRANDAO DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "THIAGO ANDREYFSON BRANDAO DE OLIVEIRA consta em 3 processo(s) civil(s) no JusBrasil; 1 no polo passivo. Exemplos: TREPA, 15ª, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2025-09-25'}, polo passivo; TJPA, Breves, status {'inferido': 'Ativo', 'normalizado': 'Fase de Conhecimento', 'tribunal': 'CONHECIMENTO', 'data': '2026-09-11'}, polo ativo/outro, valor 14440; TJPA, Breves, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-13'}, polo ativo/outro, valor 14440. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 953.525.892-34 — 1 de 3 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — THIAGO ANDREYFSON BRANDAO DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 953.525.892-34 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 953.525.892-34 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — LUIS AFONSO BRANDAO DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 25731688249 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 25731688249 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 11 encontrado(s) — LUIS AFONSO BRANDAO DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "LUIS AFONSO BRANDAO DE OLIVEIRA consta em 11 processo(s) civil(s) no JusBrasil; 6 no polo passivo. Exemplos: TJPA, Breves, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-09-14'}, polo passivo, valor 128550.02; TJPA, Breves, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-08-22'}, polo passivo; TRF1, SJPA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-08-22'}, polo passivo, valor 107510.28. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 25731688249 — 6 de 11 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 4 encontrado(s) — LUIS AFONSO BRANDAO DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "LUIS AFONSO BRANDAO DE OLIVEIRA consta em 4 processo(s) trabalhista(s) no JusBrasil; 3 no polo passivo. Exemplos: TRT8, BREVES, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-07-02'}, polo passivo, valor 37978.35; TRT8, Vara do Trabalho de Breves, status {'inferido': None, 'normalizado': None, 'tribunal': None, 'data': '2019-10-31'}, polo ativo/outro; TRT8, Vara do Trabalho de Breves, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2020-10-21'}, polo passivo. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 25731688249 — 3 de 4 processo(s) no polo passivo"
     }
   ],
   "6037eecd-e795-4e5e-93b9-20af82920bee": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 712.013.007-20 (BRUNO DAUSTER MAGALHAES E SILVA, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos criminais (2) — BRUNO DAUSTER MAGALHAES E SILVA",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -6893,18 +7362,36 @@
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome BRUNO DAUSTER MAGALHAES E SILVA"
+    },
+    {
+      "title": "Processos criminais (9 encontrados) — BRUNO DAUSTER MAGALHAES E SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "BRUNO DAUSTER MAGALHAES E SILVA tem 9 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 712.013.007-20 — 9 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 25 encontrado(s) — BRUNO DAUSTER MAGALHAES E SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "BRUNO DAUSTER MAGALHAES E SILVA consta em 25 processo(s) civil(s) no JusBrasil; 18 no polo passivo. Exemplos: TRF1, SJBA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-13'}, polo passivo; tjba, SALVADOR, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-10'}, polo ativo/outro, valor 300000; TRF1, SJBA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-08'}, polo passivo. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 712.013.007-20 — 18 de 25 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 4 encontrado(s) — BRUNO DAUSTER MAGALHAES E SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "BRUNO DAUSTER MAGALHAES E SILVA consta em 4 processo(s) trabalhista(s) no JusBrasil; 3 no polo passivo. Exemplos: TRT5, Salvador, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-06'}, polo ativo/outro, valor 130000; TRT5, Salvador, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-08-22'}, polo passivo, valor 142000.9; TRT5, Salvador, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-07-24'}, polo passivo, valor 150000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 712.013.007-20 — 3 de 4 processo(s) no polo passivo"
     }
   ],
   "2c2c34ef-36f3-4f92-a7d0-dea3e73b4386": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 789.047.655-87 (Anderson Pinheiro Santos, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Erro de Consulta Credilink (ProcessoTribunalJustica)",
       "url": "https://api.tesserati.com.br",
@@ -6922,18 +7409,36 @@
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome Anderson Pinheiro Santos"
+    },
+    {
+      "title": "Processos criminais (2 encontrados) — ANDERSON PINHEIRO SANTOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ANDERSON PINHEIRO SANTOS tem 2 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 789.047.655-87 — 2 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 43 encontrado(s) — ANDERSON PINHEIRO SANTOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ANDERSON PINHEIRO SANTOS consta em 43 processo(s) civil(s) no JusBrasil; 21 no polo passivo. Exemplos: TREBA, Camaçari, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-09-13'}, polo passivo; tjba, Camaçari, status {'inferido': 'Ativo', 'normalizado': 'Fase de Conhecimento', 'tribunal': 'CONHECIMENTO', 'data': '2026-09-08'}, polo passivo, valor 7670.07; tjba, LAURO DE FREITAS, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-09-10'}, polo passivo, valor 400000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 789.047.655-87 — 21 de 43 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 2 encontrado(s) — ANDERSON PINHEIRO SANTOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ANDERSON PINHEIRO SANTOS consta em 2 processo(s) trabalhista(s) no JusBrasil; 2 no polo passivo. Exemplos: TRT5, Salvador, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-08-27'}, polo passivo, valor 155261.77; TRT5, Salvador, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-04-19'}, polo passivo, valor 46438.71. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 789.047.655-87 — 2 de 2 processo(s) no polo passivo"
     }
   ],
   "8fb890bf-57a7-4b09-8617-c1a24089c6a9": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 015.546.435-38 (Rodrigo Sales Rios, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos não-criminais (1) — Rodrigo Sales Rios",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -6942,15 +7447,6 @@
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 015.546.435-38"
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 16510739534 (SOLANGE MARGARIDA PRADO SALES RIBEIRO, pep_neta(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
       "title": "M1 — TSE: Candidatura de SOLANGE MARGARIDA PRADO SALES RIBEIRO",
@@ -7068,18 +7564,63 @@
       "risk_indicator": "baixo",
       "tipo": "pep",
       "match": "nenhum registro encontrado — possível nome similar em rede Escavador (Susana Solange Ribeiro do Prado Moreno, professora municipal), sem identidade confirmada"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — RODRIGO SALES RIOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 015.546.435-38 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 015.546.435-38 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 3 encontrado(s) — RODRIGO SALES RIOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "RODRIGO SALES RIOS consta em 3 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: tjsp, Foro de Miguelópolis, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Extinto', 'tribunal': 'Extinto', 'data': '2026-09-11'}, polo ativo/outro; TJSC, São Lourenço do Oeste, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'BAIXADO', 'data': '2026-05-29'}, polo ativo/outro, valor 30312.25; tjsp, Foro de Miguelópolis, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Extinto', 'tribunal': 'Extinto', 'data': '2026-07-31'}, polo ativo/outro, valor 30000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 015.546.435-38 — 0 de 3 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 1 encontrado(s) — RODRIGO SALES RIOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "RODRIGO SALES RIOS consta em 1 processo(s) trabalhista(s) no JusBrasil; 0 no polo passivo. Exemplos: TRT15, Ituverava, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-04-29'}, polo ativo/outro, valor 30000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 015.546.435-38 — 0 de 1 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — SOLANGE MARGARIDA PRADO SALES RIBEIRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 16510739534 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 16510739534 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 1 encontrado(s) — SOLANGE MARGARIDA PRADO SALES RIBEIRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "SOLANGE MARGARIDA PRADO SALES RIBEIRO consta em 1 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: TRF1, SJDF, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-07'}, polo ativo/outro, valor 25000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 16510739534 — 0 de 1 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — SOLANGE MARGARIDA PRADO SALES RIBEIRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 16510739534 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 16510739534 confirmado na API — sem processos trabalhistas"
     }
   ],
   "8de9af0d-cd6a-484d-9387-b88479d1b76d": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 007.544.534-48 (Jerberson Ramos Carneiro De Lima, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos não-criminais (6) — Jerberson Ramos Carneiro De Lima",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -7088,18 +7629,36 @@
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 007.544.534-48"
+    },
+    {
+      "title": "Processos criminais (2 encontrados) — JERBERSON RAMOS CARNEIRO DE LIMA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "JERBERSON RAMOS CARNEIRO DE LIMA tem 2 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 007.544.534-48 — 2 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 15 encontrado(s) — JERBERSON RAMOS CARNEIRO DE LIMA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "JERBERSON RAMOS CARNEIRO DE LIMA consta em 15 processo(s) civil(s) no JusBrasil; 5 no polo passivo. Exemplos: TJPB, Comarcas Integradas do Litoral Sul, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-09-06'}, polo ativo/outro, valor 0.01; TJPB, Comarcas Integradas do Litoral Sul, status {'inferido': 'Ativo', 'normalizado': 'Ativo', 'tribunal': 'Ativo', 'data': '2026-05-16'}, polo passivo, valor 1000000; TRF5, JFPB, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-05-29'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 007.544.534-48 — 5 de 15 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — JERBERSON RAMOS CARNEIRO DE LIMA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 007.544.534-48 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 007.544.534-48 confirmado na API — sem processos trabalhistas"
     }
   ],
   "5a1bd3af-71da-4191-9485-6e586632e999": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 004.499.103-77 (Vinícius Melão Veloso Cerqueira, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos criminais (1) — Vinícius Melão Veloso Cerqueira",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -7120,15 +7679,6 @@
       "match": "CPF 004.499.103-77"
     },
     {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 30663997372 (IELVA MARIA MELAO VELOSO CERQUEIRA, pep_filha(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
-    {
       "title": "Credilink — Processos criminais (1) — IELVA MARIA MELAO VELOSO CERQUEIRA",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
       "snippet": "IELVA MARIA MELAO VELOSO CERQUEIRA tem 1 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL - CRIMES CONTRA A HONRA - CALUNIA DIREITO PENA. Fonte: base consolidada de tribunais brasileiros.",
@@ -7137,18 +7687,73 @@
       "tipo": "processo",
       "match": "CPF 30663997372",
       "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Processos criminais (1 encontrados) — VINICIUS MELAO VELOSO CERQUEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "VINICIUS MELAO VELOSO CERQUEIRA tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 004.499.103-77 — 1 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 13 encontrado(s) — VINICIUS MELAO VELOSO CERQUEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "VINICIUS MELAO VELOSO CERQUEIRA consta em 13 processo(s) civil(s) no JusBrasil; 6 no polo passivo. Exemplos: TJPI, TERESINA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-07-21'}, polo passivo, valor 927.28; TJPI, Comarca de Teresina - JECC Leste 1, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-01-28'}, polo ativo/outro, valor 1518; TRF1, SJPI, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-06-07'}, polo passivo. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 004.499.103-77 — 6 de 13 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — VINICIUS MELAO VELOSO CERQUEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 004.499.103-77 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 004.499.103-77 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "Processo criminal — IELVA MARIA MELAO VELOSO CERQUEIRA (PEP)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0800707-67.2024.8.18.0049",
+      "snippet": "IELVA MARIA MELAO VELOSO CERQUEIRA figura como réu (polo passivo) em processo criminal: PROCESSO_PRINCIPAL. Tipificação: Calúnia, Difamação, Injúria, Difamação, Injúria, Estelionato contra Idoso, Fraudes em Certames de Interesse Público, Calúnia, Difamação, Injúria. Processo nº 0800707-67.2024.8.18.0049. Tribunal: TJPI. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — TJPI",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 30663997372 — confiança ALTA — polo_passivo=True",
+      "decisao_recomendada": "REPROVAÇÃO — PEP réu em processo criminal ativo por Calúnia, Difamação, Injúria, Difamação, Injúria, Estelionato contra Idoso, Fraudes em Certames de Interesse Público, Calúnia, Difamação, Injúria. Crimes de fraude são antecedentes diretos de lavagem de dinheiro."
+    },
+    {
+      "title": "Processos criminais (1 encontrados) — IELVA MARIA MELAO VELOSO CERQUEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "IELVA MARIA MELAO VELOSO CERQUEIRA tem 2 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 30663997372 — 1 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 11 encontrado(s) — IELVA MARIA MELAO VELOSO CERQUEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "IELVA MARIA MELAO VELOSO CERQUEIRA consta em 11 processo(s) civil(s) no JusBrasil; 1 no polo passivo. Exemplos: tjpi, Valença do Piauí, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-03'}, polo ativo/outro, valor 4022.55; TJPI, Núcleos de Justiça 4.0, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Baixado definitivamente', 'data': '2026-09-13'}, polo ativo/outro, valor 61000; tjba, CHORROCHÓ, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-01'}, polo passivo. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 30663997372 — 1 de 11 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — IELVA MARIA MELAO VELOSO CERQUEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 30663997372 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 30663997372 confirmado na API — sem processos trabalhistas"
     }
   ],
   "30b944d2-41fa-4bd9-96f3-8e4c4739db88": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 025.889.015-06 (Raimundo Cardoso Dos Santos Junior, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos não-criminais (1) — Raimundo Cardoso Dos Santos Junior",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -7283,27 +7888,36 @@
       "risk_indicator": "baixo",
       "tipo": "pep",
       "match": "RAIMUNDO CARDOSO DOS SANTOS JUNIOR — nenhum vínculo com cargo público federal localizado na base CGU"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — RAIMUNDO CARDOSO DOS SANTOS JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 025.889.015-06 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 025.889.015-06 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 3 encontrado(s) — RAIMUNDO CARDOSO DOS SANTOS JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "RAIMUNDO CARDOSO DOS SANTOS JUNIOR consta em 3 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: tjba, Amargosa, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-09-09'}, polo ativo/outro, valor 286707.72; TREBA, Iaçu, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': 'Baixado definitivamente', 'data': '2026-07-30'}, polo ativo/outro; TREBA, Iaçu, status {'inferido': 'Ativo', 'normalizado': 'Ativo', 'tribunal': 'ativo', 'data': '2026-07-30'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 025.889.015-06 — 0 de 3 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — RAIMUNDO CARDOSO DOS SANTOS JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 025.889.015-06 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 025.889.015-06 confirmado na API — sem processos trabalhistas"
     }
   ],
   "7d76fbda-ea77-4091-b3f9-51652b8a8839": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 004.967.595-82 (Edmar Bastos Miranda, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 05168131530 (VANDERLEI BASTOS MIRANDA, pep_irma(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos criminais (1) — VANDERLEI BASTOS MIRANDA",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -7313,18 +7927,81 @@
       "tipo": "processo",
       "match": "CPF 05168131530",
       "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — EDMAR BASTOS MIRANDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 004.967.595-82 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 004.967.595-82 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo civil — EDMAR BASTOS MIRANDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint civil da JusBrasil Background Check API para CPF 004.967.595-82 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 004.967.595-82 confirmado na API — sem processos civils"
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 1 encontrado(s) — EDMAR BASTOS MIRANDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "EDMAR BASTOS MIRANDA consta em 1 processo(s) trabalhista(s) no JusBrasil; 0 no polo passivo. Exemplos: TRT5, Brumado, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2024-04-14'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 004.967.595-82 — 0 de 1 processo(s) no polo passivo"
+    },
+    {
+      "title": "Processos criminais (6 encontrados) — VANDERLEI BASTOS MIRANDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "VANDERLEI BASTOS MIRANDA tem 6 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 05168131530 — 6 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 8 encontrado(s) — VANDERLEI BASTOS MIRANDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "VANDERLEI BASTOS MIRANDA consta em 8 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: tjba, BRUMADO, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-08-12'}, polo ativo/outro, valor 1100; TJBA, BRUMADO, status {'inferido': 'Ativo', 'normalizado': 'Fase de Execução', 'tribunal': 'Execução', 'data': '2025-09-11'}, polo ativo/outro, valor 42360; TREBA, Brumado, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-09-18'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 05168131530 — 0 de 8 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — VANDERLEI BASTOS MIRANDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 05168131530 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 05168131530 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — VANDERLEI BASTOS MIRANDA",
+      "url": "https://www.mpdf.mp.br/",
+      "snippet": "VANDERLEI BASTOS MIRANDA consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: ELEITORAL - Cargo - Vereador, ELEITORAL - Corrupção ou Fraude. Tipificação: Corrupção ou Fraude. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 05168131530 — confiança ALTA"
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — VANDERLEI BASTOS MIRANDA",
+      "url": "https://www.mpba.mp.br/",
+      "snippet": "VANDERLEI BASTOS MIRANDA consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: ELEITORAL - Cargo - Vereador, ELEITORAL - Corrupção ou Fraude. Tipificação: Corrupção ou Fraude. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 05168131530 — confiança ALTA"
     }
   ],
   "3f6ddbb9-7896-4775-ba0b-eb2bca2f69a8": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 307.866.978-57 (Paulo sergio santos Pinheiro, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Mídias Negativas — Paulo sergio santos Pinheiro",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
@@ -7333,15 +8010,6 @@
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "Nome Paulo sergio santos Pinheiro"
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 29134252835 (ALZEMAR SANTOS PINHEIRO, pep_irma(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
     },
     {
       "title": "Credilink — Processos não-criminais (1) — ALZEMAR SANTOS PINHEIRO",
@@ -7468,27 +8136,63 @@
       "risk_indicator": "baixo",
       "tipo": "pep",
       "match": "ALZEMAR SANTOS PINHEIRO não identificado como servidor federal na base CGU. Ausência de vínculo federal confirmada. Resultado válido da busca executada."
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — PAULO SERGIO SANTOS PINHEIRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 307.866.978-57 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 307.866.978-57 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo civil — PAULO SERGIO SANTOS PINHEIRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint civil da JusBrasil Background Check API para CPF 307.866.978-57 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 307.866.978-57 confirmado na API — sem processos civils"
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 1 encontrado(s) — PAULO SERGIO SANTOS PINHEIRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "PAULO SERGIO SANTOS PINHEIRO consta em 1 processo(s) trabalhista(s) no JusBrasil; 1 no polo passivo. Exemplos: TRT5, Porto Seguro, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-08-10'}, polo passivo, valor 16601.3. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 307.866.978-57 — 1 de 1 processo(s) no polo passivo"
+    },
+    {
+      "title": "Processos criminais (1 encontrados) — ALZEMAR SANTOS PINHEIRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ALZEMAR SANTOS PINHEIRO tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 29134252835 — 1 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 5 encontrado(s) — ALZEMAR SANTOS PINHEIRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ALZEMAR SANTOS PINHEIRO consta em 5 processo(s) civil(s) no JusBrasil; 3 no polo passivo. Exemplos: TRESP, 13ª ZONA ELEITORAL, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-09-28'}, polo ativo/outro; TRESP, 13ª ZONA ELEITORAL, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-10-11'}, polo ativo/outro; TJSP, Foro de Araraquara, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2020-06-14'}, polo passivo, valor 3035.92. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 29134252835 — 3 de 5 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — ALZEMAR SANTOS PINHEIRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 29134252835 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 29134252835 confirmado na API — sem processos trabalhistas"
     }
   ],
   "a0068ae9-06a7-4d78-bf1f-d8bf3cc66b09": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 037.590.581-24 (Max Alexandre Oliveira Maximiano, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 03759060102 (MAYCOW DOUGLAS DE OLIVEIRA MAXIMIANO, pep_irma(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota"
-    },
     {
       "title": "Credilink — Processos criminais (1) — MAYCOW DOUGLAS DE OLIVEIRA MAXIMIANO",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
@@ -7498,6 +8202,69 @@
       "tipo": "processo",
       "match": "CPF 03759060102",
       "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — MAX ALEXANDRE OLIVEIRA MAXIMIANO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 037.590.581-24 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 037.590.581-24 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo civil — MAX ALEXANDRE OLIVEIRA MAXIMIANO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint civil da JusBrasil Background Check API para CPF 037.590.581-24 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 037.590.581-24 confirmado na API — sem processos civils"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — MAX ALEXANDRE OLIVEIRA MAXIMIANO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 037.590.581-24 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 037.590.581-24 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "Processos criminais (4 encontrados) — MAYCOW DOUGLAS DE OLIVEIRA MAXIMIANO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "MAYCOW DOUGLAS DE OLIVEIRA MAXIMIANO tem 4 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 03759060102 — 4 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 14 encontrado(s) — MAYCOW DOUGLAS DE OLIVEIRA MAXIMIANO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "MAYCOW DOUGLAS DE OLIVEIRA MAXIMIANO consta em 14 processo(s) civil(s) no JusBrasil; 4 no polo passivo. Exemplos: tjgo, FAZENDA NOVA, status {'inferido': 'Ativo', 'normalizado': 'Ativo', 'tribunal': 'Ativo', 'data': '2026-09-11'}, polo passivo, valor 43685.97; TJGO, FAZENDA NOVA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Desarquivado Provisoriamente', 'data': '2026-09-01'}, polo ativo/outro, valor 13505.2; TJGO, FAZENDA NOVA, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'ARQUIVADO', 'data': '2026-07-07'}, polo ativo/outro, valor 70000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 03759060102 — 4 de 14 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — MAYCOW DOUGLAS DE OLIVEIRA MAXIMIANO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 03759060102 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 03759060102 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
+      "snippet": "O limite mensal de 325 chamadas JusBrasil Background Check destinado à análise PLD foi atingido (65% das 500 chamadas contratadas; 35% reservadas para monitoramento). A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, civis, trabalhistas, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão.",
+      "source": "Sistema Pepito — Controle de Quota JusBrasil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "N/A — consulta automática não realizada por limite de quota"
     }
   ],
   "f381d957-fdc8-4aae-a597-3ffd31a7c997": [
@@ -9302,6 +10069,660 @@
       "risk_indicator": "medio",
       "tipo": "processo",
       "match": "N/A — consulta automática não realizada por limite de quota"
+    }
+  ],
+  "1c019a58-ddb8-4d18-9670-61f06f59b0af": [
+    {
+      "title": "Processos criminais (1 encontrados) — ANDRE ARAUJO RODRIGUES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ANDRE ARAUJO RODRIGUES tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 010.217.391-54 — 1 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 2 encontrado(s) — ANDRE ARAUJO RODRIGUES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ANDRE ARAUJO RODRIGUES consta em 2 processo(s) civil(s) no JusBrasil; 2 no polo passivo. Exemplos: TJGO, GOIANIA, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'ARQUIVADO', 'data': '2026-05-21'}, polo passivo, valor 8409.84; TJGO, GOIANIA, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'ARQUIVADO', 'data': '2026-06-02'}, polo passivo, valor 8321.9. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 010.217.391-54 — 2 de 2 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 1 encontrado(s) — ANDRE ARAUJO RODRIGUES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ANDRE ARAUJO RODRIGUES consta em 1 processo(s) trabalhista(s) no JusBrasil; 0 no polo passivo. Exemplos: TRT18, GOIÂNIA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-08-13'}, polo ativo/outro, valor 478195.1. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 010.217.391-54 — 0 de 1 processo(s) no polo passivo"
+    },
+    {
+      "title": "Credilink — Processos criminais (1) — André Araújo Rodrigues",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "André Araújo Rodrigues tem 1 processo(s) criminal(is) via Credilink. Assuntos: 3583 - DIREITO PENAL -> CRIMES CONTRA A ADMINISTRACAO DA JUS. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 010.217.391-54",
+      "decisao_recomendada": "REPROVAÇÃO — 1 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — André Araújo Rodrigues",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "André Araújo Rodrigues tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: AVISO PREVIO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 010.217.391-54"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — André Araújo Rodrigues",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "8 mídia(s) negativa(s) identificada(s) para André Araújo Rodrigues via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.gazetanews.com/brasileiros-sao-acusados-de-fraude-milionaria-nos-eua/index.html\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01T00:00:0",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome André Araújo Rodrigues"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — ANA MARIA PEIXOTO DE ARAUJO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 05265202480 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 05265202480 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (2) — ANA MARIA PEIXOTO DE ARAUJO",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "ANA MARIA PEIXOTO DE ARAUJO tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 9607 - DIREITO CIVIL -> OBRIGACOES -> ESPECIES DE CONTRATOS ; 11806 - DIREITO DO CONSUMIDOR -> CONTRATOS DE CONSUMO -> BAN. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 05265202480"
+    }
+  ],
+  "c76862a4-4593-4f42-8fb3-6c00c2f69fbb": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — AMELIA MIRIAM DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 205.343.318-31 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 205.343.318-31 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 8 encontrado(s) — AMELIA MIRIAM DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "AMELIA MIRIAM DE OLIVEIRA consta em 8 processo(s) civil(s) no JusBrasil; 4 no polo passivo. Exemplos: tjmg, Belo Horizonte, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-09-13'}, polo passivo, valor 41748.91; tjmg, Capelinha, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': 'BAIXADO E DE NATUREZA CRIMINAL, NÃO ACESSÍVEL', 'data': '2026-09-12'}, polo ativo/outro, valor 500000; tjmg, Capelinha, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-08-19'}, polo ativo/outro, valor 63854.8. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 205.343.318-31 — 4 de 8 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 5 encontrado(s) — AMELIA MIRIAM DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "AMELIA MIRIAM DE OLIVEIRA consta em 5 processo(s) trabalhista(s) no JusBrasil; 5 no polo passivo. Exemplos: TRT3, Guanhães, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-08-09'}, polo passivo, valor 39000; TRT3, Guanhães, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2024-10-23'}, polo passivo, valor 39000; TRT3, Guanhães, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2024-11-19'}, polo passivo, valor 30373. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 205.343.318-31 — 5 de 5 processo(s) no polo passivo"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (9) — Amelia Miriam De Oliveira",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Amelia Miriam De Oliveira tem 9 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE TITULO; DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE TITULO; . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 205.343.318-31"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — TADEU BARBOSA DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 72565594615 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 72565594615 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "Credilink — Processos criminais (6) — TADEU BARBOSA DE OLIVEIRA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "TADEU BARBOSA DE OLIVEIRA tem 6 processo(s) criminal(is) via Credilink. Assuntos: DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO . Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 72565594615",
+      "decisao_recomendada": "REPROVAÇÃO — 6 processo(s) criminal(is) confirmado(s) via Credilink."
+    }
+  ],
+  "e50ad409-18f6-4efb-8ed3-684f5a34e7d0": [
+    {
+      "title": "Processos criminais (2 encontrados) — MARCIO ANTONIO COELHO DA SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "MARCIO ANTONIO COELHO DA SILVA tem 2 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 588.675.701-53 — 2 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 19 encontrado(s) — MARCIO ANTONIO COELHO DA SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "MARCIO ANTONIO COELHO DA SILVA consta em 19 processo(s) civil(s) no JusBrasil; 9 no polo passivo. Exemplos: TJGO, VARJAO, status {'inferido': 'Ativo', 'normalizado': 'Ativo', 'tribunal': 'Ativo', 'data': '2026-08-22'}, polo ativo/outro, valor 88148.36; tjgo, VARJAO, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'ARQUIVADO', 'data': '2026-09-11'}, polo passivo, valor 390000; TJGO, VARJAO, status {'inferido': 'Inativo', 'normalizado': None, 'tribunal': 'Suspenso', 'data': '2026-06-03'}, polo passivo, valor 50000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 588.675.701-53 — 9 de 19 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — MARCIO ANTONIO COELHO DA SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 588.675.701-53 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 588.675.701-53 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "Credilink — Processos criminais (2) — Márcio Antônio Coelho Da Silva",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Márcio Antônio Coelho Da Silva tem 2 processo(s) criminal(is) via Credilink. Assuntos: 3396 - DIREITO PENAL -> CRIMES CONTRA A HONRA -> DIFAMACAO -; 3395 - DIREITO PENAL -> CRIMES CONTRA A HONRA -> CALUNIA - C. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 588.675.701-53",
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (9) — Márcio Antônio Coelho Da Silva",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Márcio Antônio Coelho Da Silva tem 9 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 9587 - DIREITO CIVIL -> OBRIGACOES -> ESPECIES DE CONTRATOS ; 7768 - DIREITO DO CONSUMIDOR -> RESPONSABILIDADE DO FORNECED; 9160 - DIREITO PROCESSUAL CIVIL E DO TRABALHO -> LIQUIDACAO . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 588.675.701-53"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Márcio Antônio Coelho Da Silva",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "4 mídia(s) negativa(s) identificada(s) para Márcio Antônio Coelho Da Silva via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=507298&ori=1\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01T00:00:00\", \"source",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Márcio Antônio Coelho Da Silva"
+    }
+  ],
+  "89aba1cb-fa59-4f5f-a2ab-14ce4081d7ec": [
+    {
+      "title": "Processos criminais (1 encontrados) — HUGO JULIANO PIRES DE CARVALHO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "HUGO JULIANO PIRES DE CARVALHO tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 050.725.925-45 — 1 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 23 encontrado(s) — HUGO JULIANO PIRES DE CARVALHO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "HUGO JULIANO PIRES DE CARVALHO consta em 23 processo(s) civil(s) no JusBrasil; 9 no polo passivo. Exemplos: tjba, Tribunal de Justiça, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-09-12'}, polo passivo, valor 22602.52; tjba, Salvador, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-09-12'}, polo ativo/outro, valor 242814.14; tjba, LAPÃO, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-09-12'}, polo passivo, valor 209911.9. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 050.725.925-45 — 9 de 23 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 1 encontrado(s) — HUGO JULIANO PIRES DE CARVALHO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "HUGO JULIANO PIRES DE CARVALHO consta em 1 processo(s) trabalhista(s) no JusBrasil; 0 no polo passivo. Exemplos: TRT5, Salvador, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-04-19'}, polo ativo/outro, valor 80000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 050.725.925-45 — 0 de 1 processo(s) no polo passivo"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (10) — Hugo Juliano Pires De Carvalho",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Hugo Juliano Pires De Carvalho tem 10 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: CEDULA DE CREDITO BANCARIO; CEDULA DE CREDITO BANCARIO; CEDULA DE CREDITO BANCARIO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 050.725.925-45"
+    }
+  ],
+  "31432378-3b07-4fc9-ab1c-466d49b4db7f": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — HEWERTON LEAO SIMOES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 104.861.326-76 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 104.861.326-76 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo civil — HEWERTON LEAO SIMOES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint civil da JusBrasil Background Check API para CPF 104.861.326-76 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 104.861.326-76 confirmado na API — sem processos civils"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — HEWERTON LEAO SIMOES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 104.861.326-76 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 104.861.326-76 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — WEVERSON LEAO SIMOES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 12381697675 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 12381697675 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — WEVERSON LEAO SIMOES",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "WEVERSON LEAO SIMOES tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 022003 | INDENIZACAO POR DANO MORAL, RESPONSABILIDADE CIVIL,. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 12381697675"
+    }
+  ],
+  "7de02545-27ce-4f88-bc0e-530934add08d": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — KAIO DIOGO DE ALMEIDA SANTOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 013.974.914-42 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 013.974.914-42 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo civil — KAIO DIOGO DE ALMEIDA SANTOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint civil da JusBrasil Background Check API para CPF 013.974.914-42 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 013.974.914-42 confirmado na API — sem processos civils"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — KAIO DIOGO DE ALMEIDA SANTOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 013.974.914-42 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 013.974.914-42 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — LARISSA ALESSANDRA SANTOS DE ALMEIDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 08103441490 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 08103441490 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 4 encontrado(s) — LARISSA ALESSANDRA SANTOS DE ALMEIDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "LARISSA ALESSANDRA SANTOS DE ALMEIDA consta em 4 processo(s) civil(s) no JusBrasil; 1 no polo passivo. Exemplos: TJAL, Capela, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'BAIXADO', 'data': '2026-08-18'}, polo passivo, valor 1320; TREAL, Atalaia, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado Definitivamente', 'tribunal': 'Arquivado definitivamente', 'data': '2026-08-18'}, polo ativo/outro; TJAL, Capela, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'BAIXADO', 'data': '2026-08-22'}, polo ativo/outro, valor 1100. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 08103441490 — 1 de 4 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — LARISSA ALESSANDRA SANTOS DE ALMEIDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 08103441490 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 08103441490 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — LARISSA ALESSANDRA SANTOS DE ALMEIDA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "LARISSA ALESSANDRA SANTOS DE ALMEIDA tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: MULTAS E DEMAIS SANCOES. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 08103441490"
+    }
+  ],
+  "db093bf5-aa4b-4b28-a268-09a84c8a536f": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — ALEX SOUZA CASTRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 060.459.665-03 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 060.459.665-03 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 2 encontrado(s) — ALEX SOUZA CASTRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ALEX SOUZA CASTRO consta em 2 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: TREBA, Correntina, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Baixado definitivamente', 'data': '2026-09-09'}, polo ativo/outro; TREBA, Correntina, status {'inferido': 'Ativo', 'normalizado': 'Ativo', 'tribunal': 'ativo', 'data': '2026-09-09'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 060.459.665-03 — 0 de 2 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — ALEX SOUZA CASTRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 060.459.665-03 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 060.459.665-03 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "Credilink — Mídias Negativas — Alex Souza Castro",
+      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
+      "snippet": "8 mídia(s) negativa(s) identificada(s) para Alex Souza Castro via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/sp/vale-do-paraiba-regiao/noticia/2025/11/03/governo-de-sp-e-condenado-a-pagar-r-900-mil-por-morte-de-assaltante-causada-por-pm-em-sao-jose.ghtml\", \"snipp",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Nome Alex Souza Castro"
+    },
+    {
+      "title": "Processos criminais (3 encontrados) — ELITON SANTOS DO NASCIMENTO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ELITON SANTOS DO NASCIMENTO tem 3 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 06000898517 — 3 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 20 encontrado(s) — ELITON SANTOS DO NASCIMENTO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ELITON SANTOS DO NASCIMENTO consta em 20 processo(s) civil(s) no JusBrasil; 3 no polo passivo. Exemplos: TREBA, Correntina, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-09-13'}, polo ativo/outro; tjba, CORRENTINA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-10'}, polo ativo/outro; tjba, CORRENTINA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-08-22'}, polo ativo/outro, valor 1000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 06000898517 — 3 de 20 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — ELITON SANTOS DO NASCIMENTO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 06000898517 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 06000898517 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — ELITON SANTOS DO NASCIMENTO",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "ELITON SANTOS DO NASCIMENTO tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: CHEQUE. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 06000898517"
+    }
+  ],
+  "6c6092e2-b707-492b-80a6-680b01806ff0": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — SYLVANA FARHAT PAIVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 266.015.748-05 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 266.015.748-05 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 4 encontrado(s) — SYLVANA FARHAT PAIVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "SYLVANA FARHAT PAIVA consta em 4 processo(s) civil(s) no JusBrasil; 3 no polo passivo. Exemplos: tjsp, Foro Central Cível, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Extinto', 'tribunal': 'Extinto', 'data': '2026-09-11'}, polo ativo/outro, valor 1000; tjsp, Foro de São José dos Campos, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Extinto', 'tribunal': 'Extinto', 'data': '2026-09-12'}, polo passivo, valor 9942.16; tjsp, Foro de São José dos Campos, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Extinto', 'tribunal': 'Extinto', 'data': '2026-09-07'}, polo passivo, valor 23062.32. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 266.015.748-05 — 3 de 4 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 2 encontrado(s) — SYLVANA FARHAT PAIVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "SYLVANA FARHAT PAIVA consta em 2 processo(s) trabalhista(s) no JusBrasil; 1 no polo passivo. Exemplos: TRT2, São Paulo, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'ARQUIVADO', 'data': '2026-04-14'}, polo ativo/outro; TRT2, São Paulo, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-05-03'}, polo passivo, valor 44821.87. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 266.015.748-05 — 1 de 2 processo(s) no polo passivo"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (5) — Sylvana Farhat Paiva",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Sylvana Farhat Paiva tem 5 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ALIENACAO FIDUCIARIA; ALIENACAO FIDUCIARIA; RESCISAO INDIRETA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 266.015.748-05"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — SAULO FARHAT PAIVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 17596931898 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 17596931898 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — SAULO FARHAT PAIVA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "SAULO FARHAT PAIVA tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 14993 - INCIDANCIA SOBRE SERVIAOS TACNICOS PRESTADOS A ORGAN. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 17596931898"
+    }
+  ],
+  "f1d82eb1-e0dd-4767-bfc5-c7935c659386": [
+    {
+      "title": "Processos criminais (2 encontrados) — DESCIO CORDEIRO BRANDAO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "DESCIO CORDEIRO BRANDAO tem 2 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 371.762.266-87 — 2 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 26 encontrado(s) — DESCIO CORDEIRO BRANDAO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "DESCIO CORDEIRO BRANDAO consta em 26 processo(s) civil(s) no JusBrasil; 11 no polo passivo. Exemplos: TRF6, Belo Horizonte, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-09-13'}, polo passivo, valor 148951.03; TJMG, Belo Horizonte, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-06-03'}, polo ativo/outro, valor 20000; TJRJ, Capital, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-07-23'}, polo passivo. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 371.762.266-87 — 11 de 26 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — DESCIO CORDEIRO BRANDAO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 371.762.266-87 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 371.762.266-87 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — DESCIO CORDEIRO BRANDAO",
+      "url": "https://www.mpmg.mp.br/",
+      "snippet": "DESCIO CORDEIRO BRANDAO consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: ELEITORAL - Cargo - Deputado Estadual, ELEITORAL - Cargo - Deputado Federal, ELEITORAL - Corrupção ou Fraude. Tipificação: Corrupção ou Fraude. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 371.762.266-87 — confiança ALTA"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (20) — Descio Cordeiro Brandao",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Descio Cordeiro Brandao tem 20 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO TRIBUTARIO (14) - CONTRIBUICOES (6031) - CONTRIBUICO; DIREITO TRIBUTARIO (14) - IMPOSTOS (5916) - IRPF/IMPOSTO DE ; DIREITO TRIBUTARIO (14) - IMPOSTOS (5916) - IRPJ/IMPOSTO DE . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 371.762.266-87"
+    },
+    {
+      "title": "Processos criminais (1 encontrados) — STEPHANIE ROCHA CORDEIRO BRANDAO GALVAO BUENO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "STEPHANIE ROCHA CORDEIRO BRANDAO GALVAO BUENO tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 10280040792 — 1 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 11 encontrado(s) — STEPHANIE ROCHA CORDEIRO BRANDAO GALVAO BUENO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "STEPHANIE ROCHA CORDEIRO BRANDAO GALVAO BUENO consta em 11 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: tjrj, Cabo Frio, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'BAIXADO', 'data': '2026-09-11'}, polo ativo/outro; TJRJ, RIO DE JANEIRO, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'ARQUIVADO', 'data': '2026-06-13'}, polo ativo/outro; tjrj, Comarca da Capital Lagoa, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-12'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 10280040792 — 0 de 11 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — STEPHANIE ROCHA CORDEIRO BRANDAO GALVAO BUENO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 10280040792 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 10280040792 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (8) — STEPHANIE ROCHA CORDEIRO BRAND",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "STEPHANIE ROCHA CORDEIRO BRAND tem 8 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: COBRANCA DE QUANTIA INDEVIDA E/OU REPETICAO DE INDEBITO - CD; DANO MATERIAL - OUTROS/ INDENIZACAO POR DANO MATERIAL; DANO MORAL OUTROS - CDC; DANO MATERIAL - CDC; TELEFONIA - OU. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 10280040792"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — EDUARDO CORDEIRO LAGUARDIA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 77306066668 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 77306066668 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 1 encontrado(s) — EDUARDO CORDEIRO LAGUARDIA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "EDUARDO CORDEIRO LAGUARDIA consta em 1 processo(s) civil(s) no JusBrasil; 1 no polo passivo. Exemplos: TRF6, São João Del Rei, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'BAIXADO', 'data': '2026-08-21'}, polo passivo, valor 22800. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 77306066668 — 1 de 1 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — EDUARDO CORDEIRO LAGUARDIA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 77306066668 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 77306066668 confirmado na API — sem processos trabalhistas"
+    }
+  ],
+  "6b26e14d-6d47-4b44-98b2-3a118116b0a2": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — SANDY DE SOUZA PAIVA HOLANDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 116.993.874-43 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 116.993.874-43 confirmado na API — sem processos criminais"
+    },
+    {
+      "title": "JusBrasil — processo civil: 3 encontrado(s) — SANDY DE SOUZA PAIVA HOLANDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "SANDY DE SOUZA PAIVA HOLANDA consta em 3 processo(s) civil(s) no JusBrasil; 1 no polo passivo. Exemplos: TRF5, JFCE, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-10'}, polo passivo, valor 1000; tjce, Sobral, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-08-10'}, polo ativo/outro, valor 50; TRF5, TRF5, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-10'}, polo ativo/outro, valor 1000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 116.993.874-43 — 1 de 3 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — SANDY DE SOUZA PAIVA HOLANDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 116.993.874-43 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 116.993.874-43 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "Credilink — Processos não-criminais (2) — Sandy De Souza Paiva Holanda",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Sandy De Souza Paiva Holanda tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO|; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO,. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 116.993.874-43"
+    },
+    {
+      "title": "Processos criminais (2 encontrados) — JOSE AMARILO SAMPAIO JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "JOSE AMARILO SAMPAIO JUNIOR tem 2 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 07617424337 — 2 processo(s) sem polo passivo crítico"
+    },
+    {
+      "title": "JusBrasil — processo civil: 7 encontrado(s) — JOSE AMARILO SAMPAIO JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "JOSE AMARILO SAMPAIO JUNIOR consta em 7 processo(s) civil(s) no JusBrasil; 1 no polo passivo. Exemplos: TJCE, Comarca de Fortaleza - Juizados Especiais Cível, Criminal e da Fazenda Pública, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-08-11'}, polo ativo/outro; tjce, Cedro, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Julgado', 'tribunal': 'Julgado', 'data': '2026-08-24'}, polo ativo/outro, valor 998; tjce, Comarca de Fortaleza - Juizados Especiais Cível, Criminal e da Fazenda Pública, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-09-13'}, polo ativo/outro, valor 15666.64. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 07617424337 — 1 de 7 processo(s) no polo passivo"
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — JOSE AMARILO SAMPAIO JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 07617424337 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 07617424337 confirmado na API — sem processos trabalhistas"
+    },
+    {
+      "title": "Credilink — Processos criminais (2) — JOSE AMARILO SAMPAIO JUNIOR",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "JOSE AMARILO SAMPAIO JUNIOR tem 2 processo(s) criminal(is) via Credilink. Assuntos: INFRACAO DE MEDIDA SANITARIA PREVENTIVA; INFRACAO DE MEDIDA SANITARIA PREVENTIVA. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 07617424337",
+      "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Credilink."
     }
   ]
 }

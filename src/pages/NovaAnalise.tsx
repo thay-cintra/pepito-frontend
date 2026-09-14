@@ -11,6 +11,7 @@ import {
   Eye,
   Building2,
   PlusCircle,
+  ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -26,7 +27,7 @@ import {
   reanalisarResultado,
 } from "@/lib/mock-ai";
 import { gerarParecerLideranca, statusLabel } from "@/lib/parecer";
-import { getSugestaoLideranca, getPldRiskScore, getComentariosReais, getConsultaStatus } from "@/data/registration-enrich";
+import { getSugestaoLideranca, getPldRiskScore, getComentariosReais, getConsultaStatus, getCredilinkTokens } from "@/data/registration-enrich";
 import type { PldRiskScore } from "@/data/registration-enrich";
 import { getRegistrationCase } from "@/lib/registration-queue";
 import { formatDuration } from "@/lib/utils";
@@ -134,11 +135,16 @@ export function NovaAnalise() {
   // thay@cora.com.br, 2026-09-12: banner ficou desatualizado depois do
   // lote real de consultas rodar — texto era estático, nunca conferia o
   // ledger/media-findings).
+  const casoReal = useMemo(
+    () => analise?.draftId ? getRegistrationCase(analise.draftId) : undefined,
+    [analise?.draftId],
+  );
   const consultaStatus = useMemo(() => {
-    if (!analise?.draftId) return null;
-    const casoReal = getRegistrationCase(analise.draftId);
-    return casoReal ? getConsultaStatus(casoReal, analise.cliente.tipoPep) : null;
-  }, [analise?.draftId, analise?.cliente.tipoPep]);
+    return casoReal && analise ? getConsultaStatus(casoReal, analise.cliente.tipoPep) : null;
+  }, [casoReal, analise]);
+  const credilinkTokens = useMemo(() => {
+    return casoReal && analise ? getCredilinkTokens(casoReal, analise.cliente.tipoPep) : null;
+  }, [casoReal, analise]);
 
   if (!analise) {
     // Sem caso carregado: 2ª Camada vai direto para input manual (per PDF design)
@@ -163,6 +169,21 @@ export function NovaAnalise() {
       </div>
     );
   }
+
+  const titularToken = credilinkTokens?.titular || analise.cliente.credilinkNumeroToken || "";
+  const titularLinkDossie = titularToken
+    ? `https://dashboard.tesserati.com.br/Compliance/VisualizarDossie?token=${titularToken}`
+    : "";
+  const pepConsultas = analise.cliente.tipoPep === "relacionado"
+    ? credilinkTokens?.peps.length
+      ? credilinkTokens.peps
+      : [{
+          cpf: (analise.cliente.cpfPepTitular || "").replace(/\D/g, ""),
+          nome: analise.cliente.nomePessoaVinculada || "",
+          token: null,
+          consultadoEm: null,
+        }]
+    : [];
 
   const handleRepescaisar = async () => {
     // pesquisarFontesPublicas() é SIMULAÇÃO determinística (mock-ai.ts), não
@@ -301,12 +322,6 @@ export function NovaAnalise() {
             {analise.cliente.tipoPep === "relacionado" && analise.cliente.cpfPepTitular && (
               <Info label="CPF PEP titular" value={analise.cliente.cpfPepTitular} />
             )}
-            {analise.cliente.tipoPep === "relacionado" && analise.cliente.credilinkNumeroToken && (
-              <Info label="Token Credilink (titular da conta)" value={analise.cliente.credilinkNumeroToken} />
-            )}
-            {analise.cliente.tipoPep === "relacionado" && analise.cliente.credilinkLinkDossie && (
-              <Info label="Dossiê Credilink" value="↗ ver link abaixo" />
-            )}
             <Info label="Capital" value={analise.cliente.capitalSocial || "—"} />
             <Info label="Faturamento" value={analise.cliente.faturamentoMensal || "—"} />
             <Info label="Constituição" value={analise.cliente.dataConstituicao || "—"} />
@@ -315,39 +330,6 @@ export function NovaAnalise() {
               value={`${formatDuration(analise.duracaoPrimeiraCamada)} · ${STATUS_LABELS[analise.status]}`}
             />
           </div>
-          {analise.cliente.tipoPep === "relacionado" && analise.cliente.credilinkLinkDossie && (
-            <div className="rounded-md border border-indigo-200 dark:border-indigo-700 bg-indigo-50/30 dark:bg-indigo-950/20 px-3 py-2 text-xs flex items-center gap-2">
-              <span className="font-semibold text-indigo-700 dark:text-indigo-300">Dossiê Credilink (titular da conta):</span>
-              <a
-                href={analise.cliente.credilinkLinkDossie}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 truncate"
-              >
-                {analise.cliente.credilinkLinkDossie}
-              </a>
-            </div>
-          )}
-          {/* O token acima é sempre do titular da conta (token_pf_cred).
-              Desde 2026-09-11 existe consulta Credilink real e separada
-              para o CPF do PEP relacionado (consultar-credilink-pep.py,
-              ledger credilink-pep-consultas.json) — o aviso só aparece
-              quando essa consulta REALMENTE não está OK, em vez de sempre
-              (achado thay@cora.com.br, 2026-09-12: banner estava
-              desatualizado, não conferia o ledger real). */}
-          {analise.cliente.tipoPep === "relacionado" && consultaStatus && !consultaStatus.credilinkPepOk && (
-            <div className="rounded-md border border-amber-200 dark:border-amber-700 bg-amber-50/40 dark:bg-amber-950/20 px-3 py-2 text-xs text-amber-800 dark:text-amber-300">
-              ⚠️ O token/dossiê Credilink acima é da consulta ao <strong>titular da conta</strong>
-              {analise.cliente.nomeResponsavel ? ` (${analise.cliente.nomeResponsavel})` : ""}, não do PEP{" "}
-              {analise.cliente.nomePessoaVinculada || "relacionado"}. {consultaStatus.credilinkPepMotivo}
-            </div>
-          )}
-          {analise.cliente.tipoPep === "relacionado" && consultaStatus?.credilinkPepOk && (
-            <div className="rounded-md border border-success/30 bg-success/10 px-3 py-2 text-xs text-success">
-              ✅ PEP {analise.cliente.nomePessoaVinculada || "relacionado"} (CPF {analise.cliente.cpfPepTitular})
-              consultado individualmente na Credilink — dado real, não é o token do titular.
-            </div>
-          )}
           {/* Síntese da análise (analise_geral + achados) */}
           {analise.analiseGeral && (
             <div className="rounded-md border bg-muted/30 p-3 space-y-2">
@@ -372,6 +354,110 @@ export function NovaAnalise() {
           )}
           {/* Painel de fatores de risco LD */}
           {analise.draftId && <PldRiskPanel draftId={analise.draftId} />}
+        </CardContent>
+      </Card>
+
+      <Card className="border-indigo-300 bg-indigo-50/30 dark:bg-indigo-950/20 dark:border-indigo-800">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-indigo-700 dark:text-indigo-300">
+            <ShieldCheck className="h-5 w-5" /> Consulta Credilink
+          </CardTitle>
+          <CardDescription>
+            Evidências somente para leitura. A Mesa não dispara novas consultas.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="rounded-md bg-indigo-100/60 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 p-3 text-xs space-y-2">
+            <p className="font-semibold text-indigo-800 dark:text-indigo-200">Consulta Credilink — titular da conta</p>
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">CPF consultado (titular):</span>
+              <span className="font-mono">{analise.cliente.cpfResponsavel || "—"}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Nome titular:</span>
+              <span>{analise.cliente.nomeResponsavel || "—"}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Nº do token:</span>
+              <span className="font-mono font-semibold">{titularToken || "—"}</span>
+            </div>
+            {titularLinkDossie ? (
+              <div className="flex items-start gap-2">
+                <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Dossiê:</span>
+                <a href={titularLinkDossie} target="_blank" rel="noopener noreferrer"
+                  className="underline text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 break-all">
+                  {titularLinkDossie}
+                </a>
+              </div>
+            ) : (
+              <div className="flex items-start gap-2">
+                <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Dossiê:</span>
+                <span className="text-muted-foreground italic text-[11px]">Token do titular não disponível.</span>
+              </div>
+            )}
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <span className="min-w-[160px]">Consultado em:</span>
+              <span>
+                {casoReal?.modified_at
+                  ? `${new Date(casoReal.modified_at).toLocaleString("pt-BR")} (registro upstream)`
+                  : "Não informado pela fonte upstream"}
+              </span>
+            </div>
+          </div>
+
+          {pepConsultas.map((pep) => {
+            const linkDossie = pep.token
+              ? `https://dashboard.tesserati.com.br/Compliance/VisualizarDossie?token=${pep.token}`
+              : "";
+            return (
+              <div key={pep.cpf || "pep-sem-cpf"} className="rounded-md bg-indigo-100/60 dark:bg-indigo-900/30 border border-indigo-200 dark:border-indigo-700 p-3 text-xs space-y-2">
+                <p className="font-semibold text-indigo-800 dark:text-indigo-200">Credilink — PEP relacionado (consulta própria)</p>
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">CPF consultado (PEP):</span>
+                  <span className="font-mono">{pep.cpf || "—"}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Nome PEP:</span>
+                  <span>{pep.nome || analise.cliente.nomePessoaVinculada || "—"}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Nº do token:</span>
+                  <span className="font-mono font-semibold">{pep.token || "—"}</span>
+                </div>
+                {linkDossie ? (
+                  <div className="flex items-start gap-2">
+                    <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Dossiê:</span>
+                    <a href={linkDossie} target="_blank" rel="noopener noreferrer"
+                      className="underline text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 break-all">
+                      {linkDossie}
+                    </a>
+                  </div>
+                ) : (
+                  <div className="flex items-start gap-2">
+                    <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Dossiê:</span>
+                    <span className="text-muted-foreground italic text-[11px]">Token do PEP não disponível no ledger.</span>
+                  </div>
+                )}
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <span className="min-w-[160px]">Consultado em:</span>
+                  <span>
+                    {pep.consultadoEm
+                      ? new Date(pep.consultadoEm).toLocaleString("pt-BR")
+                      : "Não informado no ledger"}
+                  </span>
+                </div>
+                {consultaStatus?.credilinkPepOk && pep.token && (
+                  <p className="text-success text-[11px]">✅ Consultado — dado real, não é o token do titular.</p>
+                )}
+              </div>
+            );
+          })}
+
+          {(!consultaStatus || !consultaStatus.credilinkPepOk) && (
+            <div className="rounded-md border border-amber-300 dark:border-amber-700 bg-amber-50/50 dark:bg-amber-950/20 p-3 text-xs text-amber-800 dark:text-amber-300">
+              ⚠️ Pendência de consulta obrigatória na Credilink. {consultaStatus?.credilinkPepMotivo || "Não há evidência de consulta automática vinculada a este caso."}
+            </div>
+          )}
         </CardContent>
       </Card>
 

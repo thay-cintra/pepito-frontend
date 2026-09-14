@@ -15,6 +15,8 @@
  * também, no mesmo formato do titular da conta."
  */
 
+import { isCredilinkEntryOk } from "@/lib/credilink-validation";
+
 export interface CredilinkPepEntry {
   cpf: string;
   nome: string;
@@ -81,8 +83,8 @@ export async function consultarCredilinkPepAgora(cpf: string, nome: string): Pro
   if (!entry || entry.cpf !== cpfDigits) {
     throw new Error("Resposta do servidor não corresponde ao CPF consultado.");
   }
-  if (!entry.compliance || entry.compliance.code !== 200 || entry.compliance.message === "Processando") {
-    throw new Error("Consulta não retornou resultado consolidado (compliance ausente/incompleto).");
+  if (!isCredilinkEntryOk(entry)) {
+    throw new Error("Consulta não retornou token real e resultado consolidado de compliance.");
   }
   return credilinkPepEntryParaUI(entry);
 }

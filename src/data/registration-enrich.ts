@@ -18,6 +18,7 @@ import type { PepPfItem, RegistrationCase, ComentarioHistorico } from "@/types/r
 import { perfilPepLabel } from "@/types/registration";
 import { buildVerifyLinks, type VerifyLink } from "@/lib/verify-links";
 import { uid } from "@/lib/utils";
+import { hasCredilinkToken, isCredilinkEntryOk } from "@/lib/credilink-validation";
 import mediaFindingsRaw from "./media-findings.json";
 import pareceresLlmRaw from "./pareceres-llm.json";
 import pareceresRealRaw from "./pareceres-real.json";
@@ -74,6 +75,7 @@ export interface ConsultaStatus {
   jusbrasilMotivo: string;
   credilinkPepOk: boolean;
   credilinkPepMotivo: string;
+  credilinkPepCpfsPendentes: string[];
   tudoOk: boolean;
 }
 
@@ -81,13 +83,6 @@ export interface ConsultaStatus {
  * sucesso se o polling do Compliance realmente terminou (não ficou só no
  * "Processando") — token sozinho não basta, precisa do resultado consolidado
  * (achado Codex #3, 2026-09-11: entrada sem `compliance` passava como OK). */
-function credilinkEntryOk(entry: CredilinkPepConsulta | undefined): boolean {
-  if (!entry) return false;
-  if (Object.keys(entry).some((k) => k.startsWith("erro"))) return false;
-  const compliance = entry.compliance as { code?: number; message?: string } | undefined;
-  return !!compliance && compliance.code === 200 && compliance.message !== "Processando";
-}
-
 export function getConsultaStatus(
   c: Pick<RegistrationCase, "draft_id" | "cpf" | "token_pf_cred" | "pep_pf">,
   tipoPep: "titular" | "relacionado",
@@ -121,12 +116,15 @@ export function getConsultaStatus(
 
   let credilinkPepOk = true;
   const motivos: string[] = [];
+  const credilinkPepCpfsPendentes: string[] = [];
   if (tipoPep === "titular") {
     // Owner é o próprio PEP: dado já vem real da tabela squad_core via
     // token_pf_cred — token nulo/vazio significa que a Credilink upstream
     // não tem nada registrado (achado Codex #4: badge "OK" incondicional).
-    if (!c.token_pf_cred) {
+    if (!hasCredilinkToken(c.token_pf_cred)) {
       credilinkPepOk = false;
+      const ownerCpf = (c.cpf || "").replace(/\D/g, "");
+      if (ownerCpf) credilinkPepCpfsPendentes.push(ownerCpf);
       motivos.push("token_pf_cred ausente na tabela squad_core — sem evidência de consulta Credilink para o titular.");
     }
   } else {
@@ -142,8 +140,9 @@ export function getConsultaStatus(
       motivos.push("PEP relacionado sem CPF identificado — não é possível confirmar consulta.");
     }
     for (const cpf of cpfsPep) {
-      if (!credilinkEntryOk(CREDILINK_PEP_CONSULTAS[cpf])) {
+      if (!isCredilinkEntryOk(CREDILINK_PEP_CONSULTAS[cpf])) {
         credilinkPepOk = false;
+        credilinkPepCpfsPendentes.push(cpf);
         motivos.push(`PEP CPF ${cpf} ainda não tem consulta Credilink concluída com sucesso.`);
       }
     }
@@ -154,6 +153,7 @@ export function getConsultaStatus(
     jusbrasilMotivo,
     credilinkPepOk,
     credilinkPepMotivo: motivos.join(" "),
+    credilinkPepCpfsPendentes,
     tudoOk: jusbrasilOk && credilinkPepOk,
   };
 }
@@ -165,7 +165,12 @@ export function getConsultaStatus(
  * na Mesa; o token serve só de atalho pra reconsulta manual pontual. */
 export interface CredilinkTokens {
   titular: string | null;
-  peps: Array<{ cpf: string; token: string | null }>;
+  peps: Array<{
+    cpf: string;
+    nome: string;
+    token: string | null;
+    consultadoEm: string | null;
+  }>;
 }
 
 export function getCredilinkTokens(
@@ -182,7 +187,15 @@ export function getCredilinkTokens(
   );
   return {
     titular,
-    peps: cpfsPep.map((cpf) => ({ cpf, token: CREDILINK_PEP_CONSULTAS[cpf]?.token_compliance || null })),
+    peps: cpfsPep.map((cpf) => {
+      const entry = CREDILINK_PEP_CONSULTAS[cpf];
+      return {
+        cpf,
+        nome: entry?.nome || "",
+        token: entry?.token_compliance || null,
+        consultadoEm: entry?.consultado_em || null,
+      };
+    }),
   };
 }
 
