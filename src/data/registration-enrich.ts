@@ -38,6 +38,12 @@ interface MediaFinding {
   match?: string;            // descrição do critério multi-fator que confirmou identidade
   homonimo_alerta?: string;
   achado_positivo?: boolean; // ocorrência nominal/relevante, não mera busca sem resultado
+  // API respondeu OK mas sem título/resumo pra confirmar o achado (achado
+  // real, 2026-09-15: Credilink Mídias Negativas/CNEP às vezes devolvem um
+  // item com todos os campos de conteúdo null, só um link cru) — nunca
+  // tratar como confirmado; ver isCtxRegional-style suppression em
+  // media-finding-match.ts.
+  sem_conteudo_verificavel?: boolean;
 }
 
 const MEDIA_FINDINGS = mediaFindingsRaw as Record<string, MediaFinding[] | { description?: string }>;
@@ -615,7 +621,12 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
       // Similaridade só aparece quando ALGUÉM foi de fato identificado:
       // nem placeholder de cota/erro, nem contexto regional sem nexo nominal.
       ...(similaridade ? { similaridade_nome: similaridade } : {}),
-      pendente_verificacao: isPlaceholderCota || !!f.homonimo_alerta,
+      // sem_conteudo_verificavel (2026-09-15): API respondeu OK mas sem
+      // título/resumo — não é erro técnico nem placeholder de cota, mas
+      // também não é achado confirmado; precisa da mesma sinalização de
+      // "verificar manualmente" (achado real: draft c562e1c7, Credilink
+      // Mídias Negativas com todos os campos de conteúdo null).
+      pendente_verificacao: isPlaceholderCota || !!f.homonimo_alerta || !!f.sem_conteudo_verificavel,
     });
   });
 

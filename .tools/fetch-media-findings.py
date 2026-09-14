@@ -62,6 +62,17 @@ else:
 JUS_KEY = os.environ.get("JUSBRASIL_API_KEY", "")
 JUS_BASE = os.environ.get("JUSBRASIL_API_BASE", "https://api.jusbrasil.com.br")
 
+# PH3A (DataBusca) — mesma API já usada em midiamonitor-pld/ph3a_client.py.
+# Aqui usada só pra achar "empresa em comum" entre titular e PEP sócio (thay@
+# cora.com.br, 2026-09-15: "o caso identifica o PEP e o titular como sócio,
+# mas não diz em qual empresa" — achado real, draft 12f79730, PH3A confirmado
+# ao vivo trazendo PartnerShips[] com a empresa exata: CNPJ 08.247.613/0001-30,
+# ambas as partes com 50% de quota, entrada 2006-08-24).
+PH3A_KEY = os.environ.get("PH3A_API_KEY", "")
+PH3A_LOGIN_URL = "https://api.ph3a.com.br/DataBusca/api/Account/Login"
+PH3A_DATA_URL = "https://api.ph3a.com.br/DataBusca/data"
+_ph3a_token: dict = {"token": None, "expires_at": 0.0}
+
 # ── Controle de limite JusBrasil ────────────────────────────────────────────
 _JUS_USAGE_PATH = Path(__file__).parent / "jusbrasil-usage.json"
 # Como não há periodicidade explícita documentada no repo, assumimos contrato
@@ -343,44 +354,109 @@ def consultar_credilink(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
                 })
 
     # ── 3. Mídias Negativas ───────────────────────────────────────────────────
+    # Achado real (thay@cora.com.br, 2026-09-15, draft c562e1c7): a API
+    # retorna HTTP 200 com result=[{...}] MESMO quando o item não tem
+    # title/snippet real (todos os campos de conteúdo vêm null, só um `link`
+    # cru sobrevive) — a thay conferiu manualmente o dossiê Compliance e não
+    # achou NADA lá. Antes disso virava "1 mídia negativa identificada" com
+    # JSON cru despejado no snippet (`{"title": null, "snippet": null, ...}`
+    # aparecendo literalmente na tela) e badge de Similaridade 100% — uma
+    # confirmação que a própria API nunca deu. 45 achados existentes tinham
+    # esse padrão (não é raro, é como esse endpoint normalmente responde
+    # quando o "match" é fraco). Agora só conta como mídia negativa CONFIRMADA
+    # quando o item tem title OU snippet reais — sem isso, vira achado
+    # explicitamente "não confirmável", sem badge de similaridade, sinalizado
+    # pra verificação manual do link (nunca inventa conteúdo).
     if nome:
         r = _credilink_get("api/MidiasNegativas", {"Termo": nome})
         if r.get("_erro"):
             _erro_endpoint("MidiasNegativas", r)
         result = r.get("result")
         if result and isinstance(result, list) and len(result) > 0:
-            findings.append({
-                "title": f"Credilink — Mídias Negativas — {nome}",
-                "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-                "snippet": (
-                    f"{len(result)} mídia(s) negativa(s) identificada(s) para {nome} via Credilink. "
-                    f"Primeiro resultado: {json.dumps(result[0], ensure_ascii=False)[:200]}"
-                ),
-                "source": "Credilink — Mídias Negativas",
-                "risk_indicator": "medio",
-                "tipo": "midia",
-                "match": f"Nome {nome}",
-                "achado_positivo": True,
-            })
+            item = result[0] if isinstance(result[0], dict) else {}
+            titulo_item = (item.get("title") or "").strip()
+            snippet_item = (item.get("snippet") or "").strip()
+            link_item = item.get("link") or ""
+            if titulo_item or snippet_item:
+                findings.append({
+                    "title": f"Credilink — Mídias Negativas — {nome}",
+                    "url": link_item or "https://api.tesserati.com.br/api/MidiasNegativas",
+                    "snippet": (
+                        f"{len(result)} mídia(s) negativa(s) identificada(s) para {nome} via Credilink. "
+                        f"{titulo_item}{' — ' if titulo_item and snippet_item else ''}{snippet_item}"
+                    ).strip(),
+                    "source": "Credilink — Mídias Negativas",
+                    "risk_indicator": "medio",
+                    "tipo": "midia",
+                    "match": f"Nome {nome}",
+                    "achado_positivo": True,
+                })
+            else:
+                findings.append({
+                    "title": f"Credilink — Mídias Negativas — resultado sem conteúdo verificável — {nome}",
+                    "url": link_item or "https://api.tesserati.com.br/api/MidiasNegativas",
+                    "snippet": (
+                        f"A busca de mídias negativas via Credilink para {nome} retornou "
+                        f"{len(result)} resultado(s) SEM título nem resumo (dado incompleto da "
+                        f"própria API — não é um erro técnico, a API respondeu OK). NÃO É POSSÍVEL "
+                        f"confirmar se {nome} é de fato mencionado no link retornado. "
+                        f"Não tratar como mídia negativa confirmada sem verificação manual do link."
+                        + (f" Link: {link_item}" if link_item else "")
+                    ),
+                    "source": "Credilink — Mídias Negativas",
+                    "risk_indicator": "baixo",
+                    "tipo": "midia",
+                    "match": "N/A — resultado sem título/resumo, não confirmável",
+                    "achado_positivo": False,
+                    "sem_conteudo_verificavel": True,
+                })
 
     # ── 4. Compliance Nacional (CEIS/CNEP) ────────────────────────────────────
+    # Mesma correção do bloco de Mídias Negativas acima — nunca despeja JSON
+    # cru como "conteúdo" nem confirma um achado sem título/descrição reais.
     if cpf_clean:
         r = _credilink_get("api/CNEP", {"cnpj": cnpj}) if cnpj else {}
         if r.get("_erro"):
             _erro_endpoint("CNEP", r)
         result = r.get("result")
         if result and isinstance(result, list) and len(result) > 0:
-            findings.append({
-                "title": f"Credilink CNEP — Empresa punida — {nome}",
-                "url": "https://api.tesserati.com.br/api/CNEP",
-                "snippet": f"Empresa {cnpj} consta no CNEP (Cadastro Nacional de Empresas Punidas). {json.dumps(result[0],ensure_ascii=False)[:200]}",
-                "source": "Credilink — CNEP",
-                "risk_indicator": "alto",
-                "tipo": "processo",
-                "match": f"CNPJ {cnpj}",
-                "achado_positivo": True,
-                "decisao_recomendada": "REPROVAÇÃO — empresa punida conforme CNEP.",
-            })
+            item = result[0] if isinstance(result[0], dict) else {}
+            # Schema do CNEP não documentado por falta de achado real até
+            # agora (0 ocorrências em produção) — aceita qualquer chave de
+            # texto plausível como "conteúdo real"; ajustar se um achado de
+            # verdade aparecer com schema diferente.
+            conteudo_texto = " ".join(
+                str(v).strip() for v in item.values()
+                if isinstance(v, str) and v.strip()
+            ) if isinstance(item, dict) else ""
+            if conteudo_texto:
+                findings.append({
+                    "title": f"Credilink CNEP — Empresa punida — {nome}",
+                    "url": "https://api.tesserati.com.br/api/CNEP",
+                    "snippet": f"Empresa {cnpj} consta no CNEP (Cadastro Nacional de Empresas Punidas). {conteudo_texto[:300]}",
+                    "source": "Credilink — CNEP",
+                    "risk_indicator": "alto",
+                    "tipo": "processo",
+                    "match": f"CNPJ {cnpj}",
+                    "achado_positivo": True,
+                    "decisao_recomendada": "REPROVAÇÃO — empresa punida conforme CNEP.",
+                })
+            else:
+                findings.append({
+                    "title": f"Credilink CNEP — resultado sem conteúdo verificável — {nome}",
+                    "url": "https://api.tesserati.com.br/api/CNEP",
+                    "snippet": (
+                        f"A consulta CNEP via Credilink para CNPJ {cnpj} retornou {len(result)} "
+                        f"resultado(s) sem conteúdo textual identificável — não é possível confirmar "
+                        f"punição sem verificação manual. NÃO tratar como achado confirmado."
+                    ),
+                    "source": "Credilink — CNEP",
+                    "risk_indicator": "baixo",
+                    "tipo": "processo",
+                    "match": "N/A — resultado sem conteúdo, não confirmável",
+                    "achado_positivo": False,
+                    "sem_conteudo_verificavel": True,
+                })
 
     return findings
 
@@ -929,6 +1005,204 @@ Retorne o array JSON com todos os findings."""
     return []
 
 
+def _ph3a_login(force: bool = False) -> str | None:
+    if not PH3A_KEY:
+        return None
+    now = time.time()
+    if not force and _ph3a_token["token"] and now < _ph3a_token["expires_at"]:
+        return _ph3a_token["token"]
+    try:
+        r = requests.post(PH3A_LOGIN_URL, json={"UserName": PH3A_KEY}, timeout=15, verify=False)
+        r.raise_for_status()
+        token = r.json().get("data", {}).get("Token")
+        if not token:
+            return None
+        _ph3a_token["token"] = token
+        _ph3a_token["expires_at"] = now + 18 * 60  # token expira em 20min (doc PH3A) — margem
+        return token
+    except Exception as e:
+        print(f"      PH3A login erro: {e}")
+        return None
+
+
+def _ph3a_partnerships(cpf: str) -> list[dict]:
+    """Retorna PartnerShips[] do dossiê PH3A pra um CPF — cada item é uma
+    empresa onde esse CPF é sócio DIRETO, com Partners[] listando todos os
+    sócios (Document/Status/Quote/Role) e Name/Document/DocumentFormatted da
+    própria empresa no nível externo do dict."""
+    token = _ph3a_login()
+    if not token:
+        return []
+    cpf_clean = _cpf_digits(cpf)
+    try:
+        headers = {"Content-Type": "application/json", "Token": token}
+        r = requests.post(PH3A_DATA_URL, json={"Document": cpf_clean, "Type": 0},
+                           headers=headers, timeout=20, verify=False)
+        if r.status_code == 401:
+            headers["Token"] = _ph3a_login(force=True) or ""
+            r = requests.post(PH3A_DATA_URL, json={"Document": cpf_clean, "Type": 0},
+                               headers=headers, timeout=20, verify=False)
+        r.raise_for_status()
+        payload = r.json()
+        data = payload.get("Data", {}) if isinstance(payload, dict) else {}
+        partnerships = data.get("PartnerShips") if isinstance(data, dict) else None
+        if partnerships is None:
+            return []
+        if not isinstance(partnerships, list):
+            print(f"      PH3A PartnerShips em formato inesperado pra CPF {cpf}: {type(partnerships).__name__}")
+            return []
+        return [item for item in partnerships if isinstance(item, dict)]
+    except Exception as e:
+        print(f"      PH3A PartnerShips erro pra CPF {cpf}: {e}")
+        return []
+
+
+# Situações cadastrais que NÃO devem escalar risco — empresa já encerrada não
+# serve mais de veículo ativo pra irregularidade (thay@cora.com.br,
+# 2026-09-15: "Empresa que foram baixadas, canceladas não merecem atenção ao
+# risco dado o status"). INAPTA fica de fora de propósito — é omissão de
+# declaração, não encerramento, e a própria thay sinalizou uma empresa INAPTA
+# como merecendo atenção no caso real que motivou esta função.
+_SITUACOES_SEM_RISCO = {"BAIXADA", "CANCELADA"}
+
+
+def _brasilapi_situacao_cnpj(cnpj: str) -> dict:
+    """Consulta gratuita (sem chave) da situação cadastral real na Receita
+    Federal via BrasilAPI — o campo `Status` do PartnerShips da PH3A NÃO é a
+    situação cadastral (é um flag interno da própria base PH3A), por isso
+    cruzamos com uma fonte que reflete a Receita Federal de verdade."""
+    cnpj_clean = re.sub(r"\D", "", cnpj or "")
+    # BrasilAPI é pública e sem chave, mas tem rate-limit agressivo — achado
+    # real (2026-09-15): chamadas em sequência rápida (2+ empresas do mesmo
+    # caso) devolviam 429/erro silencioso, virando "situação não confirmada"
+    # mesmo pra empresa que na real é ATIVA. Retry com backoff curto.
+    for tentativa in range(3):
+        try:
+            r = requests.get(f"https://brasilapi.com.br/api/cnpj/v1/{cnpj_clean}", timeout=15, verify=False)
+            if r.status_code == 200:
+                payload = r.json()
+                if isinstance(payload, dict):
+                    return payload
+                print(f"      BrasilAPI retornou formato inesperado pra CNPJ {cnpj}: {type(payload).__name__}")
+                return {}
+            if r.status_code == 429:
+                time.sleep(2 * (tentativa + 1))
+                continue
+            return {}
+        except Exception as e:
+            print(f"      BrasilAPI erro pra CNPJ {cnpj} (tentativa {tentativa + 1}): {e}")
+            time.sleep(1)
+    return {}
+
+
+def _ph3a_document_digits(record: dict, expected_length: int) -> str:
+    """Normaliza documento PH3A preservando zeros à esquerda.
+
+    `DocumentFormatted` é autoritativo. O fallback numérico `Document` só é
+    usado quando o formatado não veio e é recomposto ao tamanho fixo do tipo
+    (11 para CPF, 14 para CNPJ), pois JSON number descarta zeros iniciais.
+    """
+    formatted = record.get("DocumentFormatted")
+    using_numeric_fallback = formatted is None or str(formatted).strip() == ""
+    raw = record.get("Document") if using_numeric_fallback else formatted
+    digits = _cpf_digits(str(raw or ""))
+    if using_numeric_fallback and digits and len(digits) < expected_length:
+        return digits.zfill(expected_length)
+    return digits
+
+
+def identificar_empresa_comum(
+    cpf_a: str, nome_a: str, cpf_b: str, nome_b: str, cnpj_caso: str = "",
+) -> list[dict]:
+    """Identifica, via PH3A, empresa(s) onde cpf_a e cpf_b são sócios diretos
+    ao mesmo tempo (achado real: draft 12f79730, PH3A trouxe a empresa exata
+    onde titular+PEP têm 50%/50% de quota — antes o caso só dizia "são
+    sócios", sem apontar em qual empresa, exigindo investigação manual).
+    Cruza cada candidata com a situação cadastral real (BrasilAPI/Receita
+    Federal) — empresas BAIXADA/CANCELADA não escalam risco (pedido
+    explícito da thay), demais situações (ATIVA, INAPTA, SUSPENSA etc.)
+    geram achado informativo pro analista avaliar.
+
+    `cnpj_caso` (opcional): CNPJ da própria empresa em análise no caso — se a
+    "empresa em comum" encontrada for essa mesma empresa, não é achado novo
+    (é a própria conta sendo aberta, já visível em todo o resto da tela),
+    então é excluída (achado real, draft 68df24fe: PH3A trouxe de volta a
+    TAC CONTABEIS, que É a empresa do caso, ao lado de uma 2ª empresa
+    genuinamente nova/oculta — NBRAUPP CONTABILIDADE)."""
+    if not PH3A_KEY:
+        return []
+    cpf_a_clean, cpf_b_clean = _cpf_digits(cpf_a), _cpf_digits(cpf_b)
+    if not cpf_a_clean or not cpf_b_clean:
+        return []
+    cnpj_caso_clean = _cpf_digits(cnpj_caso)
+
+    partnerships = _ph3a_partnerships(cpf_a_clean)
+    empresas_comuns = []
+    for ps in partnerships:
+        partners = ps.get("Partners") or []
+        # Usa DocumentFormatted, não Document (int) — o JSON perde zeros à
+        # esquerda num inteiro puro (ex.: CNPJ 03.821.534/... vira
+        # 3821534000177, 13 dígitos, nunca bate com o CNPJ real de 14
+        # dígitos do caso — achado real, draft 68df24fe, 2026-09-15).
+        docs_socios = {
+            _ph3a_document_digits(p, 11)
+            for p in partners
+            if isinstance(p, dict)
+        }
+        if cpf_b_clean not in docs_socios:
+            continue
+        cnpj_ps = _ph3a_document_digits(ps, 14)
+        if cnpj_caso_clean and cnpj_ps == cnpj_caso_clean:
+            continue
+        empresas_comuns.append((ps, cnpj_ps))
+
+    findings = []
+    for ps, cnpj_digits in empresas_comuns:
+        cnpj_empresa = ps.get("DocumentFormatted") or cnpj_digits
+        nome_empresa_ph3a = ps.get("Name", "")
+        situacao_info = _brasilapi_situacao_cnpj(cnpj_empresa)
+        situacao = (situacao_info.get("descricao_situacao_cadastral") or "").upper()
+        razao_social = situacao_info.get("razao_social") or nome_empresa_ph3a
+        data_situacao = situacao_info.get("data_situacao_cadastral", "")
+        motivo_situacao = situacao_info.get("descricao_motivo_situacao_cadastral", "")
+
+        if situacao in _SITUACOES_SEM_RISCO:
+            findings.append({
+                "title": f"PH3A — Sociedade em comum encerrada ({situacao}) — {razao_social}",
+                "url": f"https://brasilapi.com.br/api/cnpj/v1/{re.sub(r'[^0-9]', '', cnpj_empresa)}",
+                "snippet": (
+                    f"{nome_a} e {nome_b} são sócios em comum de {razao_social} (CNPJ {cnpj_empresa}), "
+                    f"identificada via PH3A. Situação cadastral: {situacao} desde {data_situacao} "
+                    f"({motivo_situacao or 'motivo não informado'}). Empresa encerrada não escala "
+                    f"risco por si só — registrado apenas como informativo."
+                ),
+                "source": "PH3A — Sociedade em comum (PartnerShips)",
+                "risk_indicator": "baixo",
+                "tipo": "societario",
+                "match": f"CPF {cpf_a} + CPF {cpf_b} — sócios confirmados de {cnpj_empresa} ({situacao})",
+                "achado_positivo": False,
+            })
+        else:
+            findings.append({
+                "title": f"PH3A — Sociedade em comum identificada — {razao_social}",
+                "url": f"https://brasilapi.com.br/api/cnpj/v1/{re.sub(r'[^0-9]', '', cnpj_empresa)}",
+                "snippet": (
+                    f"{nome_a} e {nome_b} são sócios em comum de {razao_social} (CNPJ {cnpj_empresa}), "
+                    f"identificada via PH3A (PartnerShips). Situação cadastral atual: "
+                    f"{situacao or 'não confirmada'}"
+                    f"{f' desde {data_situacao}' if data_situacao else ''}"
+                    f"{f' ({motivo_situacao})' if motivo_situacao else ''}. "
+                    f"Validar se a natureza dessa sociedade é relevante para o risco do cadastro."
+                ),
+                "source": "PH3A — Sociedade em comum (PartnerShips)",
+                "risk_indicator": "medio",
+                "tipo": "societario",
+                "match": f"CPF {cpf_a} + CPF {cpf_b} — sócios confirmados de {cnpj_empresa} ({situacao or 'situação não confirmada'})",
+                "achado_positivo": True,
+            })
+    return findings
+
+
 def pesquisar_caso(case: dict) -> list[dict]:
     """
     Pesquisa completa de diligência PLD para um caso.
@@ -1033,6 +1307,13 @@ def pesquisar_caso(case: dict) -> list[dict]:
         credilink_pep_result = consultar_credilink(cpf_pep, nome_pep, papel=papel_label)
         altos_tess = [f for f in credilink_pep_result if f.get("risk_indicator") == "alto"]
         findings.extend(altos_tess if altos_tess else credilink_pep_result[:1])
+
+        # PH3A: empresa em comum (vínculo SOCIO declarado, mas sem dizer qual
+        # empresa — achado real, draft 12f79730, thay@cora.com.br 2026-09-15).
+        # Não depende de LiteLLM nem de cota JusBrasil — API própria (PH3A).
+        if vinculo == "SOCIO":
+            print(f"      → PH3A [empresa em comum] {nome_owner} + {nome_pep}...")
+            findings.extend(identificar_empresa_comum(cpf_owner, nome_owner, cpf_pep, nome_pep, cnpj_caso=cnpj))
 
     # ── WebSearch: mídia + PEP + Portal Transparência ────────────────────────
     print(f"      → WebSearch (mídia/PEP/transparência)...")

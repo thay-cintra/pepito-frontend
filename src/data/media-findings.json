@@ -2707,15 +2707,16 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — JOSE DE OLIVEIRA NETO",
-      "url": "https://www.escavador.com/busca?entidade=pessoas&q=JOSE%20DE%20OLIVEIRA%20NETO",
-      "snippet": "2 mídia(s) negativa(s) identificada(s) para JOSE DE OLIVEIRA NETO via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/grafica-de-familia-de-bene-recebeu-mais-de-r-3-mi-do-pt-de-minas/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — JOSE DE OLIVEIRA NETO",
+      "url": "https://www.estadao.com.br/politica/grafica-de-familia-de-bene-recebeu-mais-de-r-3-mi-do-pt-de-minas/",
+      "snippet": "A busca via Credilink para JOSE DE OLIVEIRA NETO retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se JOSE DE OLIVEIRA NETO é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.estadao.com.br/politica/grafica-de-familia-de-bene-recebeu-mais-de-r-3-mi-do-pt-de-minas/",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome JOSE DE OLIVEIRA NETO",
+      "match": "N/A — resultado sem título/resumo, não confirmável",
       "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Credilink Mídias Negativas",
-      "achado_positivo": true
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "CNPJ Eleitoral 2012 – JOSE DE OLIVEIRA NETO VEREADOR – Pimenteiras-PI (BAIXADO)",
@@ -3010,15 +3011,16 @@
       "achado_positivo": true
     },
     {
-      "title": "Credilink — Mídias Negativas — Luciano Santos Costa",
-      "url": "https://www.escavador.com/busca?entidade=pessoas&q=Luciano%20Santos%20Costa",
-      "snippet": "5 mídia(s) negativa(s) identificada(s) para Luciano Santos Costa via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/eleicoes/2024/candidatos-mt/ribeirao-cascalheira/vereador/luciano-do-gas-77777/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_u",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Luciano Santos Costa",
+      "url": "https://www.estadao.com.br/politica/eleicoes/2024/candidatos-mt/ribeirao-cascalheira/vereador/luciano-do-gas-77777/",
+      "snippet": "A busca via Credilink para Luciano Santos Costa retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Luciano Santos Costa é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.estadao.com.br/politica/eleicoes/2024/candidatos-mt/ribeirao-cascalheira/vereador/luciano-do-gas-77777/",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Luciano Santos Costa",
+      "match": "N/A — resultado sem título/resumo, não confirmável",
       "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Credilink Mídias Negativas",
-      "achado_positivo": true
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "Processo criminal — LUCIANO SANTOS COSTA (PEP_MAE)",
@@ -3428,15 +3430,16 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Larissa Barros",
-      "url": "https://www.escavador.com/busca?entidade=pessoas&q=Larissa%20Barros",
-      "snippet": "2 mídia(s) negativa(s) identificada(s) para Larissa Barros via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/sp/sao-paulo/noticia/2025/05/27/acabaram-com-a-vida-de-uma-menina-cheia-de-planos-lamenta-familia-de-jovem-morta-em-acidente-com-moto-de-app-em-sp.ghtml\",",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Larissa Barros",
+      "url": "https://g1.globo.com/sp/sao-paulo/noticia/2025/05/27/acabaram-com-a-vida-de-uma-menina-cheia-de-planos-lamenta-familia-de-jovem-morta-em-acidente-com-moto-de-app-em-sp.ghtml",
+      "snippet": "A busca via Credilink para Larissa Barros retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Larissa Barros é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://g1.globo.com/sp/sao-paulo/noticia/2025/05/27/acabaram-com-a-vida-de-uma-menina-cheia-de-planos-lamenta-familia-de-jovem-morta-em-acidente-com-moto-de-app-em-sp.ghtml",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Larissa Barros",
+      "match": "N/A — resultado sem título/resumo, não confirmável",
       "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Credilink Mídias Negativas",
-      "achado_positivo": true
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "Processos criminais (1 encontrados) — ITALO PEREIRA IBIAPINA",
@@ -3599,15 +3602,16 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — TALES TORRICELLI DE SOUSA COSTA E SILVA",
-      "url": "https://www.escavador.com/busca?entidade=pessoas&q=TALES%20TORRICELLI%20DE%20SOUSA%20COSTA%20E%20SILVA",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para TALES TORRICELLI DE SOUSA COSTA E SILVA via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/eleicoes/2024/candidatos-pb/brejo-do-cruz/prefeito/dr-tales-45/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — TALES TORRICELLI DE SOUSA COSTA E SILVA",
+      "url": "https://www.estadao.com.br/politica/eleicoes/2024/candidatos-pb/brejo-do-cruz/prefeito/dr-tales-45/",
+      "snippet": "A busca via Credilink para TALES TORRICELLI DE SOUSA COSTA E SILVA retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se TALES TORRICELLI DE SOUSA COSTA E SILVA é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.estadao.com.br/politica/eleicoes/2024/candidatos-pb/brejo-do-cruz/prefeito/dr-tales-45/",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome TALES TORRICELLI DE SOUSA COSTA E SILVA",
+      "match": "N/A — resultado sem título/resumo, não confirmável",
       "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Credilink Mídias Negativas",
-      "achado_positivo": true
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "Processos criminais (6 encontrados) — FRANCISCO MENDES CAMPOS",
@@ -4002,15 +4006,16 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Claudio Amaral De Souza",
-      "url": "https://www.escavador.com/busca?entidade=pessoas&q=Claudio%20Amaral%20De%20Souza",
-      "snippet": "2 mídia(s) negativa(s) identificada(s) para Claudio Amaral De Souza via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.estadao.com.br/politica/eleicoes/2024/candidatos-mg/diogo-de-vasconcelos/prefeito/joao-claudio-25/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": ",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Claudio Amaral De Souza",
+      "url": "https://www.estadao.com.br/politica/eleicoes/2024/candidatos-mg/diogo-de-vasconcelos/prefeito/joao-claudio-25/",
+      "snippet": "A busca via Credilink para Claudio Amaral De Souza retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Claudio Amaral De Souza é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.estadao.com.br/politica/eleicoes/2024/candidatos-mg/diogo-de-vasconcelos/prefeito/joao-claudio-25/",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Claudio Amaral De Souza",
+      "match": "N/A — resultado sem título/resumo, não confirmável",
       "url_nota": "Link verificável (Escavador): busca nominal — dado original coletado via API Credilink Mídias Negativas",
-      "achado_positivo": true
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "Processos criminais (1 encontrados) — LUIZ ANTONIO AMARAL DE SOUZA",
@@ -4988,6 +4993,16 @@
       "tipo": "pep",
       "match": "M1 — Primeiro mandato como vereadora (2025–2028). Declara bens de R$ 24.000,00 ao TSE. Perfil PEP de baixa exposição patrimonial e primeiro mandato eletivo confirmado.",
       "achado_positivo": false
+    },
+    {
+      "title": "PH3A — Sociedade em comum identificada — ALMEIDA SALOMAO & MARTINS LTDA",
+      "url": "https://brasilapi.com.br/api/cnpj/v1/08247613000130",
+      "snippet": "Lucilei Pacheco De Almeida Salomão e ROSANGELA DE SOUZA TEZZON MARTINS são sócios em comum de ALMEIDA SALOMAO & MARTINS LTDA (CNPJ 08.247.613/0001-30), identificada via PH3A (PartnerShips). Situação cadastral atual: INAPTA desde 2021-03-10 (OMISSAO DE DECLARACOES). Validar se a natureza dessa sociedade é relevante para o risco do cadastro.",
+      "source": "PH3A — Sociedade em comum (PartnerShips)",
+      "risk_indicator": "medio",
+      "tipo": "societario",
+      "match": "CPF 213.555.698-00 + CPF 11995264873 — sócios confirmados de 08.247.613/0001-30 (INAPTA)",
+      "achado_positivo": true
     }
   ],
   "c562e1c7-4e8c-42fc-8be4-bafee05f8495": [
@@ -5002,14 +5017,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Jonas Rafael De Brito",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para Jonas Rafael De Brito via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.reportermt.com/policia/programa-captura-veja-quem-sao-os-oito-criminosos-mais-procurados-de-mato-grosso/229383\", \"snippet\": null, \"photo_url\": null, \"published_dat",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Jonas Rafael De Brito",
+      "url": "https://www.reportermt.com/policia/programa-captura-veja-quem-sao-os-oito-criminosos-mais-procurados-de-mato-grosso/229383",
+      "snippet": "A busca via Credilink para Jonas Rafael De Brito retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Jonas Rafael De Brito é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.reportermt.com/policia/programa-captura-veja-quem-sao-os-oito-criminosos-mais-procurados-de-mato-grosso/229383",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Jonas Rafael De Brito",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — MACILON RAFAEL DE BRITO",
@@ -5217,14 +5233,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Amélia Míriam De Oliveira",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para Amélia Míriam De Oliveira via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://oglobo.globo.com/politica/miriam-leitao-fala-sobre-tortura-que-sofreu-nua-gravida-de-1-mes-durante-ditadura-13663114\", \"snippet\": null, \"photo_url\": null, \"published_d",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Amélia Míriam De Oliveira",
+      "url": "https://oglobo.globo.com/politica/miriam-leitao-fala-sobre-tortura-que-sofreu-nua-gravida-de-1-mes-durante-ditadura-13663114",
+      "snippet": "A busca via Credilink para Amélia Míriam De Oliveira retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Amélia Míriam De Oliveira é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://oglobo.globo.com/politica/miriam-leitao-fala-sobre-tortura-que-sofreu-nua-gravida-de-1-mes-durante-ditadura-13663114",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Amélia Míriam De Oliveira",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "Credilink — Processos criminais (6) — TADEU BARBOSA DE OLIVEIRA",
@@ -5410,14 +5427,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Letícia Corrêa Da Silva Godinho",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para Letícia Corrêa Da Silva Godinho via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://patoshoje.com.br/noticias/vereadora-revela-condenacao-criminal-do-prefeito-de-varjao-de-minas-e-pede-cassacao-do-mandato-79038.html\", \"snippet\": null, \"photo_url\": nul",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Letícia Corrêa Da Silva Godinho",
+      "url": "https://patoshoje.com.br/noticias/vereadora-revela-condenacao-criminal-do-prefeito-de-varjao-de-minas-e-pede-cassacao-do-mandato-79038.html",
+      "snippet": "A busca via Credilink para Letícia Corrêa Da Silva Godinho retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Letícia Corrêa Da Silva Godinho é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://patoshoje.com.br/noticias/vereadora-revela-condenacao-criminal-do-prefeito-de-varjao-de-minas-e-pede-cassacao-do-mandato-79038.html",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Letícia Corrêa Da Silva Godinho",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "Câmara Municipal de Varjão de Minas – Lista Oficial de Vereadores (8ª Legislatura)",
@@ -5836,14 +5854,15 @@
   ],
   "05375e39-357a-4bf4-bec0-b285551e29ee": [
     {
-      "title": "Credilink — Mídias Negativas — João Pedro Peixoto Fernandes",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para João Pedro Peixoto Fernandes via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.maisgoias.com.br/cidades/de-dentro-da-cadeia-condenado-ordenou-execucao-de-jovem-no-jardim-america/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\":",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — João Pedro Peixoto Fernandes",
+      "url": "https://www.maisgoias.com.br/cidades/de-dentro-da-cadeia-condenado-ordenou-execucao-de-jovem-no-jardim-america/",
+      "snippet": "A busca via Credilink para João Pedro Peixoto Fernandes retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se João Pedro Peixoto Fernandes é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.maisgoias.com.br/cidades/de-dentro-da-cadeia-condenado-ordenou-execucao-de-jovem-no-jardim-america/",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome João Pedro Peixoto Fernandes",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "Credilink — Processos não-criminais (1) — EDILSON FERNANDES DA SILVA JUNIOR",
@@ -6059,14 +6078,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Débora Nascimento Santos",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "3 mídia(s) negativa(s) identificada(s) para Débora Nascimento Santos via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://revistaoeste.com/no-ponto/depois-de-um-ano-pgr-denuncia-presa-debora-dos-santos-pelo-8-1-que-manchou-estatua-com-batom/\", \"snippet\": null, \"photo_url\": null, \"publishe",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Débora Nascimento Santos",
+      "url": "https://revistaoeste.com/no-ponto/depois-de-um-ano-pgr-denuncia-presa-debora-dos-santos-pelo-8-1-que-manchou-estatua-com-batom/",
+      "snippet": "A busca via Credilink para Débora Nascimento Santos retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Débora Nascimento Santos é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://revistaoeste.com/no-ponto/depois-de-um-ano-pgr-denuncia-presa-debora-dos-santos-pelo-8-1-que-manchou-estatua-com-batom/",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Débora Nascimento Santos",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "Credilink — Processos não-criminais (1) — GUSTAVO HENRIQUE SANTOS MENEZES",
@@ -6794,14 +6814,15 @@
   ],
   "a116f88a-ab10-40fe-a80f-3c9515a55749": [
     {
-      "title": "Credilink — Mídias Negativas — Franciele Garcia",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para Franciele Garcia via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/07/07/quem-era-a-jovem-morta-pelo-ex-em-apartamento-no-rs-trabalhadora-independente-conta-irma.ghtml\", \"snippet\": null, ",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Franciele Garcia",
+      "url": "https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/07/07/quem-era-a-jovem-morta-pelo-ex-em-apartamento-no-rs-trabalhadora-independente-conta-irma.ghtml",
+      "snippet": "A busca via Credilink para Franciele Garcia retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Franciele Garcia é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://g1.globo.com/rs/rio-grande-do-sul/noticia/2026/07/07/quem-era-a-jovem-morta-pelo-ex-em-apartamento-no-rs-trabalhadora-independente-conta-irma.ghtml",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Franciele Garcia",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "Credilink — Processos criminais (1) — FERNANDA GARCIA SARDANHA",
@@ -7641,14 +7662,15 @@
   ],
   "68df24fe-b9c6-4e60-a88d-fc735f0b7875": [
     {
-      "title": "Credilink — Mídias Negativas — Emerson De Sousa Da Silva",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "20 mídia(s) negativa(s) identificada(s) para Emerson De Sousa Da Silva via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.tjma.jus.br/midia/portal/noticia/520803/tribunal-do-juri-de-sao-luis-julga-41-reus-em-marco\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-0",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Emerson De Sousa Da Silva",
+      "url": "https://www.tjma.jus.br/midia/portal/noticia/520803/tribunal-do-juri-de-sao-luis-julga-41-reus-em-marco",
+      "snippet": "A busca via Credilink para Emerson De Sousa Da Silva retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Emerson De Sousa Da Silva é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.tjma.jus.br/midia/portal/noticia/520803/tribunal-do-juri-de-sao-luis-julga-41-reus-em-marco",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Emerson De Sousa Da Silva",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "Credilink — Processos não-criminais (11) — NILTON BATISTA RAUPP",
@@ -7963,6 +7985,16 @@
       "tipo": "processo",
       "match": "CPF 59447940978 confirmado na API — sem processos trabalhistas",
       "achado_positivo": false
+    },
+    {
+      "title": "PH3A — Sociedade em comum identificada — NBRAUPP CONTABILIDADE S/S LTDA",
+      "url": "https://brasilapi.com.br/api/cnpj/v1/09001045000155",
+      "snippet": "Emerson De Sousa Da Silva e NILTON BATISTA RAUPP são sócios em comum de NBRAUPP CONTABILIDADE S/S LTDA (CNPJ 09.001.045/0001-55), identificada via PH3A (PartnerShips). Situação cadastral atual: ATIVA desde 2007-08-20 (SEM MOTIVO). Validar se a natureza dessa sociedade é relevante para o risco do cadastro.",
+      "source": "PH3A — Sociedade em comum (PartnerShips)",
+      "risk_indicator": "medio",
+      "tipo": "societario",
+      "match": "CPF 072.507.019-67 + CPF 59447940978 — sócios confirmados de 09.001.045/0001-55 (ATIVA)",
+      "achado_positivo": true
     }
   ],
   "fcb6f395-952b-491c-b4b7-dd4b27205107": [
@@ -8140,14 +8172,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — BRUNO DAUSTER MAGALHAES E SILVA",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para BRUNO DAUSTER MAGALHAES E SILVA via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.bnews.com.br/noticias/politica/bruno-dauster-toma-decisao-sobre-caso-dos-respiradores.html\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — BRUNO DAUSTER MAGALHAES E SILVA",
+      "url": "https://www.bnews.com.br/noticias/politica/bruno-dauster-toma-decisao-sobre-caso-dos-respiradores.html",
+      "snippet": "A busca via Credilink para BRUNO DAUSTER MAGALHAES E SILVA retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se BRUNO DAUSTER MAGALHAES E SILVA é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.bnews.com.br/noticias/politica/bruno-dauster-toma-decisao-sobre-caso-dos-respiradores.html",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome BRUNO DAUSTER MAGALHAES E SILVA",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "Processos criminais (9 encontrados) — BRUNO DAUSTER MAGALHAES E SILVA",
@@ -8192,14 +8225,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Anderson Pinheiro Santos",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "9 mídia(s) negativa(s) identificada(s) para Anderson Pinheiro Santos via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/rj/regiao-dos-lagos/noticia/2026/05/18/suspeito-de-matar-o-proprio-pai-e-ocultar-o-corpo-em-cisterna-e-preso-em-sao-pedro-da-aldeia-no-rj.ghtml\", \"snippet",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Anderson Pinheiro Santos",
+      "url": "https://g1.globo.com/rj/regiao-dos-lagos/noticia/2026/05/18/suspeito-de-matar-o-proprio-pai-e-ocultar-o-corpo-em-cisterna-e-preso-em-sao-pedro-da-aldeia-no-rj.ghtml",
+      "snippet": "A busca via Credilink para Anderson Pinheiro Santos retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Anderson Pinheiro Santos é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://g1.globo.com/rj/regiao-dos-lagos/noticia/2026/05/18/suspeito-de-matar-o-proprio-pai-e-ocultar-o-corpo-em-cisterna-e-preso-em-sao-pedro-da-aldeia-no-rj.ghtml",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Anderson Pinheiro Santos",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "Processos criminais (2 encontrados) — ANDERSON PINHEIRO SANTOS",
@@ -8593,14 +8627,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Raimundo Cardoso Dos Santos Junior",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "2 mídia(s) negativa(s) identificada(s) para Raimundo Cardoso Dos Santos Junior via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://conjur.com.br/2023-mai-05/stf-analisa-250-denuncias-envolvidos-atos-golpistas/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01T00:00:00\", \"",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Raimundo Cardoso Dos Santos Junior",
+      "url": "https://conjur.com.br/2023-mai-05/stf-analisa-250-denuncias-envolvidos-atos-golpistas/",
+      "snippet": "A busca via Credilink para Raimundo Cardoso Dos Santos Junior retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Raimundo Cardoso Dos Santos Junior é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://conjur.com.br/2023-mai-05/stf-analisa-250-denuncias-envolvidos-atos-golpistas/",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Raimundo Cardoso Dos Santos Junior",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "M1 — TSE Eleições 2024: Junior Cardoso (Raimundo Cardoso Dos Santos Junior) — Candidatura a Vereador em Milagres-BA",
@@ -8858,14 +8893,15 @@
   ],
   "3f6ddbb9-7896-4775-ba0b-eb2bca2f69a8": [
     {
-      "title": "Credilink — Mídias Negativas — Paulo sergio santos Pinheiro",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "9 mídia(s) negativa(s) identificada(s) para Paulo sergio santos Pinheiro via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=506844&amp;ori=1\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01T00:00:00\", \"so",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Paulo sergio santos Pinheiro",
+      "url": "https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=506844&amp;ori=1",
+      "snippet": "A busca via Credilink para Paulo sergio santos Pinheiro retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Paulo sergio santos Pinheiro é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=506844&amp;ori=1",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Paulo sergio santos Pinheiro",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "Credilink — Processos não-criminais (1) — ALZEMAR SANTOS PINHEIRO",
@@ -9237,14 +9273,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — EDSON DAVID JUNIOR",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — EDSON DAVID JUNIOR",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "29 mídia(s) negativa(s) identificada(s) para EDSON DAVID JUNIOR via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/es/espirito-santo/noticia/2026/09/05/caso-david-correa-do-vasco-ex-agente-que-era-chefe-do-trafico-foi-preso-dentro-do-apartamento-de-luxo-do-jogador-no-e",
+      "snippet": "A busca via Credilink para EDSON DAVID JUNIOR retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se EDSON DAVID JUNIOR é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://api.tesserati.com.br/api/MidiasNegativas",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome EDSON DAVID JUNIOR",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "affe9cb3-5bad-40c9-8119-3991eb312bd5": [
@@ -9280,14 +9317,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Marco Aurelio Ribeiro",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "12 mídia(s) negativa(s) identificada(s) para Marco Aurelio Ribeiro via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://defatoonline.com.br/na-globo-lula-defende-lulinha-e-admite-erro-de-marco-aurelio-ribeiro-o-marcola-seu-ex-chefe-de-gabinete/\", \"snippet\": null, \"photo_url\": null, \"pub",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Marco Aurelio Ribeiro",
+      "url": "https://defatoonline.com.br/na-globo-lula-defende-lulinha-e-admite-erro-de-marco-aurelio-ribeiro-o-marcola-seu-ex-chefe-de-gabinete/",
+      "snippet": "A busca via Credilink para Marco Aurelio Ribeiro retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Marco Aurelio Ribeiro é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://defatoonline.com.br/na-globo-lula-defende-lulinha-e-admite-erro-de-marco-aurelio-ribeiro-o-marcola-seu-ex-chefe-de-gabinete/",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Marco Aurelio Ribeiro",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "40e1ddfe-4d41-4ca7-976f-14d26aa896b7": [
@@ -9386,14 +9424,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Wanira De Holanda Brasil",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "2 mídia(s) negativa(s) identificada(s) para Wanira De Holanda Brasil via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.trf5.jus.br/index.php/noticias/leitura-de-noticias?/id=323813\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01T00:00:00\", \"source_url\": ",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Wanira De Holanda Brasil",
+      "url": "https://www.trf5.jus.br/index.php/noticias/leitura-de-noticias?/id=323813",
+      "snippet": "A busca via Credilink para Wanira De Holanda Brasil retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Wanira De Holanda Brasil é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.trf5.jus.br/index.php/noticias/leitura-de-noticias?/id=323813",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Wanira De Holanda Brasil",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
@@ -9534,14 +9573,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Cledson Dos Santos Silva",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Cledson Dos Santos Silva",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "7 mídia(s) negativa(s) identificada(s) para Cledson Dos Santos Silva via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/ma/maranhao/regiao-tocantina/noticia/2026/08/30/homem-e-condenado-a-20-anos-de-prisao-por-matar-dono-de-bar-dentro-do-proprio-estabelecimento-em-imperatri",
+      "snippet": "A busca via Credilink para Cledson Dos Santos Silva retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Cledson Dos Santos Silva é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://api.tesserati.com.br/api/MidiasNegativas",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Cledson Dos Santos Silva",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
@@ -9609,14 +9649,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Edilson Da Rocha Silva",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "8 mídia(s) negativa(s) identificada(s) para Edilson Da Rocha Silva via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.tjma.jus.br/midia/cgj/noticia/509335/sao-luis-tera-53-acusados-no-banco-dos-reus-em-marco\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Edilson Da Rocha Silva",
+      "url": "https://www.tjma.jus.br/midia/cgj/noticia/509335/sao-luis-tera-53-acusados-no-banco-dos-reus-em-marco",
+      "snippet": "A busca via Credilink para Edilson Da Rocha Silva retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Edilson Da Rocha Silva é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.tjma.jus.br/midia/cgj/noticia/509335/sao-luis-tera-53-acusados-no-banco-dos-reus-em-marco",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Edilson Da Rocha Silva",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "b24a6d43-1985-4f2f-b412-226c47f296d5": [
@@ -9695,14 +9736,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Marcelo Da Costa Almeida",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "17 mídia(s) negativa(s) identificada(s) para Marcelo Da Costa Almeida via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://noticias.stf.jus.br/postsnoticias/stf-autoriza-buscas-contra-deputado-investigado-por-fraudes-em-licitacoes-no-rio-de-janeiro/\", \"snippet\": null, \"photo_url\": null, \"p",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Marcelo Da Costa Almeida",
+      "url": "https://noticias.stf.jus.br/postsnoticias/stf-autoriza-buscas-contra-deputado-investigado-por-fraudes-em-licitacoes-no-rio-de-janeiro/",
+      "snippet": "A busca via Credilink para Marcelo Da Costa Almeida retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Marcelo Da Costa Almeida é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://noticias.stf.jus.br/postsnoticias/stf-autoriza-buscas-contra-deputado-investigado-por-fraudes-em-licitacoes-no-rio-de-janeiro/",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Marcelo Da Costa Almeida",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
@@ -9793,14 +9835,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — William Julio De Oliveira",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "3 mídia(s) negativa(s) identificada(s) para William Julio De Oliveira via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.cut.org.br/noticias/atos-golpistas-veja-quem-vai-continuar-preso-e-quem-vai-ser-solto-com-tornozelei-1333\", \"snippet\": null, \"photo_url\": null, \"published_datetime",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — William Julio De Oliveira",
+      "url": "https://www.cut.org.br/noticias/atos-golpistas-veja-quem-vai-continuar-preso-e-quem-vai-ser-solto-com-tornozelei-1333",
+      "snippet": "A busca via Credilink para William Julio De Oliveira retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se William Julio De Oliveira é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.cut.org.br/noticias/atos-golpistas-veja-quem-vai-continuar-preso-e-quem-vai-ser-solto-com-tornozelei-1333",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome William Julio De Oliveira",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "33864c75-0861-44b7-ab34-565d5c051530": [
@@ -9900,14 +9943,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Reinaldo Dos Santos",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "15 mídia(s) negativa(s) identificada(s) para Reinaldo Dos Santos via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/pr/parana/noticia/2026/08/13/agressao-rececpcionista-hotel-juri-curitiba.ghtml\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Reinaldo Dos Santos",
+      "url": "https://g1.globo.com/pr/parana/noticia/2026/08/13/agressao-rececpcionista-hotel-juri-curitiba.ghtml",
+      "snippet": "A busca via Credilink para Reinaldo Dos Santos retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Reinaldo Dos Santos é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://g1.globo.com/pr/parana/noticia/2026/08/13/agressao-rececpcionista-hotel-juri-curitiba.ghtml",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Reinaldo Dos Santos",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "85d8df98-5898-4e61-8013-9a718d5ad826": [
@@ -9974,14 +10018,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Emerson Raimundo Filho",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "2 mídia(s) negativa(s) identificada(s) para Emerson Raimundo Filho via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://atarde.com.br/bahia/bahiasalvador/ravengar-filhos-neto-e-ex-esposa-sao-presos-em-operacao-da-policia-civil-845268\", \"snippet\": null, \"photo_url\": null, \"published_date",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Emerson Raimundo Filho",
+      "url": "https://atarde.com.br/bahia/bahiasalvador/ravengar-filhos-neto-e-ex-esposa-sao-presos-em-operacao-da-policia-civil-845268",
+      "snippet": "A busca via Credilink para Emerson Raimundo Filho retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Emerson Raimundo Filho é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://atarde.com.br/bahia/bahiasalvador/ravengar-filhos-neto-e-ex-esposa-sao-presos-em-operacao-da-policia-civil-845268",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Emerson Raimundo Filho",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "349012d9-de4b-4c05-aa94-c0c8bbc53319": [
@@ -10006,14 +10051,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Marco Aurelio de Almeida Rosa",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "6 mídia(s) negativa(s) identificada(s) para Marco Aurelio de Almeida Rosa via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://noticias.stf.jus.br/postsnoticias/atos-antidemocraticos-stf-aceita-denuncias-contra-mais-245-pessoas-envolvidas/\", \"snippet\": null, \"photo_url\": null, \"published_datet",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Marco Aurelio de Almeida Rosa",
+      "url": "https://noticias.stf.jus.br/postsnoticias/atos-antidemocraticos-stf-aceita-denuncias-contra-mais-245-pessoas-envolvidas/",
+      "snippet": "A busca via Credilink para Marco Aurelio de Almeida Rosa retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Marco Aurelio de Almeida Rosa é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://noticias.stf.jus.br/postsnoticias/atos-antidemocraticos-stf-aceita-denuncias-contra-mais-245-pessoas-envolvidas/",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Marco Aurelio de Almeida Rosa",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "c392aa13-8052-4b84-8c54-fb818bd949a0": [
@@ -10049,14 +10095,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Daniel Bruno Alves Nunes",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Daniel Bruno Alves Nunes",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "2 mídia(s) negativa(s) identificada(s) para Daniel Bruno Alves Nunes via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://cbn.globo.com/podcasts/fim-de-expediente/entrevista/2024/04/05/fred-bruno-relata-perda-de-seguidores-ao-se-posicionar-contra-robinho-e-daniel-alves-condenados-por-estu",
+      "snippet": "A busca via Credilink para Daniel Bruno Alves Nunes retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Daniel Bruno Alves Nunes é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://api.tesserati.com.br/api/MidiasNegativas",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Daniel Bruno Alves Nunes",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
@@ -10102,14 +10149,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Vanderlúcio Pereira",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para Vanderlúcio Pereira via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.opovo.com.br/noticias/politica/2022/06/07/prefeitura-de-juazeiro-do-norte-e-acusada-de-usar-ar-condicionado-para-refrescar-cavalos-mp-apura-o-caso.html\", \"snippet\"",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Vanderlúcio Pereira",
+      "url": "https://www.opovo.com.br/noticias/politica/2022/06/07/prefeitura-de-juazeiro-do-norte-e-acusada-de-usar-ar-condicionado-para-refrescar-cavalos-mp-apura-o-caso.html",
+      "snippet": "A busca via Credilink para Vanderlúcio Pereira retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Vanderlúcio Pereira é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.opovo.com.br/noticias/politica/2022/06/07/prefeitura-de-juazeiro-do-norte-e-acusada-de-usar-ar-condicionado-para-refrescar-cavalos-mp-apura-o-caso.html",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Vanderlúcio Pereira",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
@@ -10144,14 +10192,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Edivando De Lima Dias",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "4 mídia(s) negativa(s) identificada(s) para Edivando De Lima Dias via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.hojemais.com.br/aracatuba/noticia/justica/juri-condena-irmaos-acusados-de-matar-pai-do-exprefeito-de-mirandopolis\", \"snippet\": null, \"photo_url\": null, \"published_",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Edivando De Lima Dias",
+      "url": "https://www.hojemais.com.br/aracatuba/noticia/justica/juri-condena-irmaos-acusados-de-matar-pai-do-exprefeito-de-mirandopolis",
+      "snippet": "A busca via Credilink para Edivando De Lima Dias retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Edivando De Lima Dias é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.hojemais.com.br/aracatuba/noticia/justica/juri-condena-irmaos-acusados-de-matar-pai-do-exprefeito-de-mirandopolis",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Edivando De Lima Dias",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "c285c0b9-6ea6-47cb-a77e-108075d18ac8": [
@@ -10176,14 +10225,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Alan Rodrigues De Araujo",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "10 mídia(s) negativa(s) identificada(s) para Alan Rodrigues De Araujo via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/rr/roraima/noticia/2026/08/26/delegado-e-investigador-do-am-sao-presos-em-operacao-que-investiga-roubo-de-800-mil-e-ouro-em-roraima.ghtml\", \"snippet\": nul",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Alan Rodrigues De Araujo",
+      "url": "https://g1.globo.com/rr/roraima/noticia/2026/08/26/delegado-e-investigador-do-am-sao-presos-em-operacao-que-investiga-roubo-de-800-mil-e-ouro-em-roraima.ghtml",
+      "snippet": "A busca via Credilink para Alan Rodrigues De Araujo retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Alan Rodrigues De Araujo é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://g1.globo.com/rr/roraima/noticia/2026/08/26/delegado-e-investigador-do-am-sao-presos-em-operacao-que-investiga-roubo-de-800-mil-e-ouro-em-roraima.ghtml",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Alan Rodrigues De Araujo",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
@@ -10239,14 +10289,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Francisco Marciel Da Costa",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "4 mídia(s) negativa(s) identificada(s) para Francisco Marciel Da Costa via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/df/distrito-federal/noticia/2025/12/10/saiba-quais-sao-os-crimes-dos-sete-foragidos-do-df-que-estao-na-lista-de-mais-perigosos-do-pais.ghtml\", \"snippet\": ",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Francisco Marciel Da Costa",
+      "url": "https://g1.globo.com/df/distrito-federal/noticia/2025/12/10/saiba-quais-sao-os-crimes-dos-sete-foragidos-do-df-que-estao-na-lista-de-mais-perigosos-do-pais.ghtml",
+      "snippet": "A busca via Credilink para Francisco Marciel Da Costa retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Francisco Marciel Da Costa é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://g1.globo.com/df/distrito-federal/noticia/2025/12/10/saiba-quais-sao-os-crimes-dos-sete-foragidos-do-df-que-estao-na-lista-de-mais-perigosos-do-pais.ghtml",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Francisco Marciel Da Costa",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
@@ -10324,14 +10375,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Everaldo José Vieira",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "5 mídia(s) negativa(s) identificada(s) para Everaldo José Vieira via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.radiocatedraljf.com.br/post/em-meio-%C3%A0-trag%C3%A9dia-solidariedade-entra-em-cena-e-arquidiocese-de-jf-se-mobiliza-para-ajudar-v%C3%ADtimas\", \"snippet\": null, \"",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Everaldo José Vieira",
+      "url": "https://www.radiocatedraljf.com.br/post/em-meio-%C3%A0-trag%C3%A9dia-solidariedade-entra-em-cena-e-arquidiocese-de-jf-se-mobiliza-para-ajudar-v%C3%ADtimas",
+      "snippet": "A busca via Credilink para Everaldo José Vieira retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Everaldo José Vieira é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.radiocatedraljf.com.br/post/em-meio-%C3%A0-trag%C3%A9dia-solidariedade-entra-em-cena-e-arquidiocese-de-jf-se-mobiliza-para-ajudar-v%C3%ADtimas",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Everaldo José Vieira",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
@@ -10376,14 +10428,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Ana leticia Santos De sousa",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "2 mídia(s) negativa(s) identificada(s) para Ana leticia Santos De sousa via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://conjur.com.br/2023-mai-05/stf-analisa-250-denuncias-envolvidos-atos-golpistas/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01T00:00:00\", \"",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Ana leticia Santos De sousa",
+      "url": "https://conjur.com.br/2023-mai-05/stf-analisa-250-denuncias-envolvidos-atos-golpistas/",
+      "snippet": "A busca via Credilink para Ana leticia Santos De sousa retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Ana leticia Santos De sousa é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://conjur.com.br/2023-mai-05/stf-analisa-250-denuncias-envolvidos-atos-golpistas/",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Ana leticia Santos De sousa",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
@@ -10440,14 +10493,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Cleiton De Freitas Silveira",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Cleiton De Freitas Silveira",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para Cleiton De Freitas Silveira via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://diariogaucho.clicrbs.com.br/policia/noticia/2022/03/pm-e-indiciado-por-homicidio-no-caso-de-policial-rodoviario-aposentado-morto-durante-abordagem-em-torres-23236649.h",
+      "snippet": "A busca via Credilink para Cleiton De Freitas Silveira retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Cleiton De Freitas Silveira é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://api.tesserati.com.br/api/MidiasNegativas",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Cleiton De Freitas Silveira",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
@@ -10468,6 +10522,16 @@
       "tipo": "processo",
       "match": "CPF 82486964649",
       "achado_positivo": false
+    },
+    {
+      "title": "PH3A — Sociedade em comum identificada — BOI DE PRATA LEILOES PROMOTORA DE EVENTOS RURAIS LTDA",
+      "url": "https://brasilapi.com.br/api/cnpj/v1/36907460000145",
+      "snippet": "Cleiton De Freitas Silveira e SINOMAR BARBOSA DE MORAIS são sócios em comum de BOI DE PRATA LEILOES PROMOTORA DE EVENTOS RURAIS LTDA (CNPJ 36.907.460/0001-45), identificada via PH3A (PartnerShips). Situação cadastral atual: ATIVA desde 2020-04-09 (SEM MOTIVO). Validar se a natureza dessa sociedade é relevante para o risco do cadastro.",
+      "source": "PH3A — Sociedade em comum (PartnerShips)",
+      "risk_indicator": "medio",
+      "tipo": "societario",
+      "match": "CPF 012.945.966-67 + CPF 82486964649 — sócios confirmados de 36.907.460/0001-45 (ATIVA)",
+      "achado_positivo": true
     }
   ],
   "7bbe3eae-04b0-4d54-93ce-01a9b2141ea2": [
@@ -10545,14 +10609,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Jefferson Lima Viana",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para Jefferson Lima Viana via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://elimarcortes.com.br/2018/02/19/escrivao-de-policia-preso-pela-federa/\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01T00:00:00\", \"source_ur",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Jefferson Lima Viana",
+      "url": "https://elimarcortes.com.br/2018/02/19/escrivao-de-policia-preso-pela-federa/",
+      "snippet": "A busca via Credilink para Jefferson Lima Viana retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Jefferson Lima Viana é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://elimarcortes.com.br/2018/02/19/escrivao-de-policia-preso-pela-federa/",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Jefferson Lima Viana",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "7e4ccffd-17cb-4bcd-8998-c67c83334e01": [
@@ -10589,14 +10654,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Wagner Almeida De Oliveira",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "6 mídia(s) negativa(s) identificada(s) para Wagner Almeida De Oliveira via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/sp/piracicaba-regiao/noticia/2026/03/26/de-gerentes-da-caixa-a-falsificadores-de-documentos-quem-e-quem-no-esquema-de-fraudes-bancarias.ghtml\", \"snippet\":",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Wagner Almeida De Oliveira",
+      "url": "https://g1.globo.com/sp/piracicaba-regiao/noticia/2026/03/26/de-gerentes-da-caixa-a-falsificadores-de-documentos-quem-e-quem-no-esquema-de-fraudes-bancarias.ghtml",
+      "snippet": "A busca via Credilink para Wagner Almeida De Oliveira retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Wagner Almeida De Oliveira é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://g1.globo.com/sp/piracicaba-regiao/noticia/2026/03/26/de-gerentes-da-caixa-a-falsificadores-de-documentos-quem-e-quem-no-esquema-de-fraudes-bancarias.ghtml",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Wagner Almeida De Oliveira",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
@@ -10717,14 +10783,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Elvis De Souza Santos",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "6 mídia(s) negativa(s) identificada(s) para Elvis De Souza Santos via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.mpgo.mp.br/portal/noticia/justica-afasta-vereador-de-valparaiso-de-goias-denunciado-pelo-mp-e-determina-bloqueio-de-bens\", \"snippet\": null, \"photo_url\": null, \"pub",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Elvis De Souza Santos",
+      "url": "https://www.mpgo.mp.br/portal/noticia/justica-afasta-vereador-de-valparaiso-de-goias-denunciado-pelo-mp-e-determina-bloqueio-de-bens",
+      "snippet": "A busca via Credilink para Elvis De Souza Santos retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Elvis De Souza Santos é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.mpgo.mp.br/portal/noticia/justica-afasta-vereador-de-valparaiso-de-goias-denunciado-pelo-mp-e-determina-bloqueio-de-bens",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Elvis De Souza Santos",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "2f5d198e-d80e-4866-af6e-7c5e0a99a286": [
@@ -10761,14 +10828,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Rodrigo Fernandes Moreira",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "8 mídia(s) negativa(s) identificada(s) para Rodrigo Fernandes Moreira via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://cbn.globo.com/rio-de-janeiro/noticia/2025/11/04/megaoperacao-prendeu-quatro-dos-69-integrantes-do-cv-denunciados-pelo-mp-veja-a-lista-completa.ghtml\", \"snippet\": null,",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Rodrigo Fernandes Moreira",
+      "url": "https://cbn.globo.com/rio-de-janeiro/noticia/2025/11/04/megaoperacao-prendeu-quatro-dos-69-integrantes-do-cv-denunciados-pelo-mp-veja-a-lista-completa.ghtml",
+      "snippet": "A busca via Credilink para Rodrigo Fernandes Moreira retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Rodrigo Fernandes Moreira é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://cbn.globo.com/rio-de-janeiro/noticia/2025/11/04/megaoperacao-prendeu-quatro-dos-69-integrantes-do-cv-denunciados-pelo-mp-veja-a-lista-completa.ghtml",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Rodrigo Fernandes Moreira",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "3142b9ba-efb8-4d5a-9e7e-fcd1d74b6725": [
@@ -10793,14 +10861,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Jose Alves Tavares Correia Neto",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "1 mídia(s) negativa(s) identificada(s) para Jose Alves Tavares Correia Neto via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://sindpolalagoas.com.br/noticia/juridico-do-sindpol-publica-lista-de-policiais-civis-que-deverao-enviar-documentos-2/\", \"snippet\": null, \"photo_url\": null, \"published_da",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Jose Alves Tavares Correia Neto",
+      "url": "https://sindpolalagoas.com.br/noticia/juridico-do-sindpol-publica-lista-de-policiais-civis-que-deverao-enviar-documentos-2/",
+      "snippet": "A busca via Credilink para Jose Alves Tavares Correia Neto retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Jose Alves Tavares Correia Neto é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://sindpolalagoas.com.br/noticia/juridico-do-sindpol-publica-lista-de-policiais-civis-que-deverao-enviar-documentos-2/",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Jose Alves Tavares Correia Neto",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "7261ef7d-8cd3-4843-92bb-77c73dbcdc74": [
@@ -10892,14 +10961,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Edson José Correia",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "4 mídia(s) negativa(s) identificada(s) para Edson José Correia via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.gazetaweb.com/noticias/maceio/dmtt-de-maceio-notifica-mais-de-14-mil-condutores-por-multas-veja-se-voce-esta-na-lista-923493\", \"snippet\": null, \"photo_url\": null, ",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Edson José Correia",
+      "url": "https://www.gazetaweb.com/noticias/maceio/dmtt-de-maceio-notifica-mais-de-14-mil-condutores-por-multas-veja-se-voce-esta-na-lista-923493",
+      "snippet": "A busca via Credilink para Edson José Correia retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Edson José Correia é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.gazetaweb.com/noticias/maceio/dmtt-de-maceio-notifica-mais-de-14-mil-condutores-por-multas-veja-se-voce-esta-na-lista-923493",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Edson José Correia",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "3a5dd7ee-5b37-4b66-bb19-a50c556f49aa": [
@@ -10957,14 +11027,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Matheus De Oliveira Pires",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "9 mídia(s) negativa(s) identificada(s) para Matheus De Oliveira Pires via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/ac/acre/noticia/2026/02/18/justica-mantem-prisao-temporaria-de-jogadores-suspeitos-de-estupro-coletivo-em-alojamento-do-vasco-ac.ghtml\", \"snippet\": null, ",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Matheus De Oliveira Pires",
+      "url": "https://g1.globo.com/ac/acre/noticia/2026/02/18/justica-mantem-prisao-temporaria-de-jogadores-suspeitos-de-estupro-coletivo-em-alojamento-do-vasco-ac.ghtml",
+      "snippet": "A busca via Credilink para Matheus De Oliveira Pires retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Matheus De Oliveira Pires é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://g1.globo.com/ac/acre/noticia/2026/02/18/justica-mantem-prisao-temporaria-de-jogadores-suspeitos-de-estupro-coletivo-em-alojamento-do-vasco-ac.ghtml",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Matheus De Oliveira Pires",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "0401a07e-14c2-4738-97dd-04ad76192660": [
@@ -11022,14 +11093,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Cicero Neco Mirais",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "4 mídia(s) negativa(s) identificada(s) para Cicero Neco Mirais via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/ma/maranhao/noticia/2025/07/11/ex-prefeito-e-ex-secretario-de-estreito-devem-devolver-mais-r-182-mil-aos-cofres-municipais.ghtml\", \"snippet\": null, \"photo",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Cicero Neco Mirais",
+      "url": "https://g1.globo.com/ma/maranhao/noticia/2025/07/11/ex-prefeito-e-ex-secretario-de-estreito-devem-devolver-mais-r-182-mil-aos-cofres-municipais.ghtml",
+      "snippet": "A busca via Credilink para Cicero Neco Mirais retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Cicero Neco Mirais é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://g1.globo.com/ma/maranhao/noticia/2025/07/11/ex-prefeito-e-ex-secretario-de-estreito-devem-devolver-mais-r-182-mil-aos-cofres-municipais.ghtml",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Cicero Neco Mirais",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "401922c4-6835-4860-ac8b-aad233686503": [
@@ -11194,14 +11266,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — André Araújo Rodrigues",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "8 mídia(s) negativa(s) identificada(s) para André Araújo Rodrigues via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://www.gazetanews.com/brasileiros-sao-acusados-de-fraude-milionaria-nos-eua/index.html\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01T00:00:0",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — André Araújo Rodrigues",
+      "url": "https://www.gazetanews.com/brasileiros-sao-acusados-de-fraude-milionaria-nos-eua/index.html",
+      "snippet": "A busca via Credilink para André Araújo Rodrigues retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se André Araújo Rodrigues é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.gazetanews.com/brasileiros-sao-acusados-de-fraude-milionaria-nos-eua/index.html",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome André Araújo Rodrigues",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "JusBrasil API: nenhum processo criminal — ANA MARIA PEIXOTO DE ARAUJO",
@@ -11340,14 +11413,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Márcio Antônio Coelho Da Silva",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "4 mídia(s) negativa(s) identificada(s) para Márcio Antônio Coelho Da Silva via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=507298&ori=1\", \"snippet\": null, \"photo_url\": null, \"published_datetime_utc\": \"0001-01-01T00:00:00\", \"source",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Márcio Antônio Coelho Da Silva",
+      "url": "https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=507298&ori=1",
+      "snippet": "A busca via Credilink para Márcio Antônio Coelho Da Silva retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Márcio Antônio Coelho Da Silva é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=507298&ori=1",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Márcio Antônio Coelho Da Silva",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     }
   ],
   "89aba1cb-fa59-4f5f-a2ab-14ce4081d7ec": [
@@ -11548,14 +11622,15 @@
       "achado_positivo": false
     },
     {
-      "title": "Credilink — Mídias Negativas — Alex Souza Castro",
-      "url": "https://api.tesserati.com.br/api/MidiasNegativas",
-      "snippet": "8 mídia(s) negativa(s) identificada(s) para Alex Souza Castro via Credilink. Primeiro resultado: {\"title\": null, \"link\": \"https://g1.globo.com/sp/vale-do-paraiba-regiao/noticia/2025/11/03/governo-de-sp-e-condenado-a-pagar-r-900-mil-por-morte-de-assaltante-causada-por-pm-em-sao-jose.ghtml\", \"snipp",
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Alex Souza Castro",
+      "url": "https://g1.globo.com/sp/vale-do-paraiba-regiao/noticia/2025/11/03/governo-de-sp-e-condenado-a-pagar-r-900-mil-por-morte-de-assaltante-causada-por-pm-em-sao-jose.ghtml",
+      "snippet": "A busca via Credilink para Alex Souza Castro retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Alex Souza Castro é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://g1.globo.com/sp/vale-do-paraiba-regiao/noticia/2025/11/03/governo-de-sp-e-condenado-a-pagar-r-900-mil-por-morte-de-assaltante-causada-por-pm-em-sao-jose.ghtml",
       "source": "Credilink — Mídias Negativas",
-      "risk_indicator": "medio",
+      "risk_indicator": "baixo",
       "tipo": "midia",
-      "match": "Nome Alex Souza Castro",
-      "achado_positivo": true
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
     },
     {
       "title": "Processos criminais (3 encontrados) — ELITON SANTOS DO NASCIMENTO",

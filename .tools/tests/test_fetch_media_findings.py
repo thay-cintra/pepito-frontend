@@ -6,6 +6,7 @@ import unittest
 from contextlib import redirect_stdout
 from datetime import date
 from pathlib import Path
+from unittest.mock import patch
 
 
 SCRIPT_PATH = Path(__file__).resolve().parents[1] / "fetch-media-findings.py"
@@ -13,6 +14,164 @@ SPEC = importlib.util.spec_from_file_location("fetch_media_findings", SCRIPT_PAT
 assert SPEC is not None and SPEC.loader is not None
 fetch_media_findings = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(fetch_media_findings)
+
+
+class EmpresaComumPh3aTest(unittest.TestCase):
+    def _identificar(self, partnerships, situacoes=None, cnpj_caso=""):
+        situacoes = situacoes or {}
+
+        def brasilapi(cnpj):
+            digits = fetch_media_findings._cpf_digits(cnpj)
+            return {
+                "descricao_situacao_cadastral": situacoes.get(digits, "ATIVA"),
+                "razao_social": f"Empresa {digits}",
+            }
+
+        with (
+            patch.object(fetch_media_findings, "PH3A_KEY", "test-key"),
+            patch.object(fetch_media_findings, "_ph3a_partnerships", return_value=partnerships),
+            patch.object(fetch_media_findings, "_brasilapi_situacao_cnpj", side_effect=brasilapi),
+        ):
+            return fetch_media_findings.identificar_empresa_comum(
+                "987.654.321-00",
+                "Titular Teste",
+                "012.345.678-90",
+                "PEP Teste",
+                cnpj_caso=cnpj_caso,
+            )
+
+    def test_matches_leading_zero_cpf_via_document_formatted(self):
+        partnership = {
+            "Name": "Empresa em comum",
+            "Document": 821534000177,
+            "DocumentFormatted": "08.215.340/0017-70",
+            "Partners": [
+                {
+                    "Name": "PEP Teste",
+                    "Document": 1234567890,
+                    "DocumentFormatted": "012.345.678-90",
+                }
+            ],
+        }
+
+        self.assertNotEqual(str(partnership["Partners"][0]["Document"]), "01234567890")
+        findings = self._identificar([partnership])
+
+        self.assertEqual(len(findings), 1)
+        self.assertIn("08.215.340/0017-70", findings[0]["snippet"])
+
+    def test_excludes_the_case_company(self):
+        partnerships = [
+            {
+                "Name": "Empresa do caso",
+                "DocumentFormatted": "08.247.613/0001-30",
+                "Partners": [{"DocumentFormatted": "012.345.678-90"}],
+            },
+            {
+                "Name": "Outra empresa",
+                "DocumentFormatted": "11.222.333/0001-44",
+                "Partners": [{"DocumentFormatted": "012.345.678-90"}],
+            },
+        ]
+
+        findings = self._identificar(
+            partnerships,
+            cnpj_caso="08.247.613/0001-30",
+        )
+
+        self.assertEqual(len(findings), 1)
+        self.assertIn("11.222.333/0001-44", findings[0]["snippet"])
+        self.assertNotIn("08.247.613/0001-30", findings[0]["snippet"])
+
+    def test_classifies_closed_statuses_as_low_and_other_statuses_as_medium(self):
+        cases = {
+            "BAIXADA": ("baixo", False),
+            "CANCELADA": ("baixo", False),
+            "ATIVA": ("medio", True),
+            "INAPTA": ("medio", True),
+            "SUSPENSA": ("medio", True),
+        }
+        partnership = {
+            "Name": "Empresa em comum",
+            "DocumentFormatted": "11.222.333/0001-44",
+            "Partners": [{"DocumentFormatted": "012.345.678-90"}],
+        }
+
+        for status, expected in cases.items():
+            with self.subTest(status=status):
+                finding = self._identificar(
+                    [partnership],
+                    {"11222333000144": status},
+                )[0]
+                self.assertEqual(
+                    (finding["risk_indicator"], finding["achado_positivo"]),
+                    expected,
+                )
+
+    def test_recovers_leading_zero_when_partner_document_formatted_is_missing(self):
+        partnership = {
+            "Name": "Empresa em comum",
+            "DocumentFormatted": "08.215.340/0017-70",
+            "Partners": [{"Document": 1234567890}],
+        }
+
+        findings = self._identificar([partnership])
+
+        self.assertEqual(len(findings), 1)
+
+    def test_excludes_leading_zero_case_cnpj_when_company_formatted_is_missing(self):
+        partnership = {
+            "Name": "Empresa do caso",
+            "Document": 8247613000130,
+            "Partners": [{"DocumentFormatted": "012.345.678-90"}],
+        }
+
+        findings = self._identificar(
+            [partnership],
+            cnpj_caso="08.247.613/0001-30",
+        )
+
+        self.assertEqual(findings, [])
+
+    def test_ph3a_partnerships_rejects_success_payload_with_unexpected_shape(self):
+        class FakeResponse:
+            status_code = 200
+
+            def __init__(self, payload):
+                self.payload = payload
+
+            def raise_for_status(self):
+                return None
+
+            def json(self):
+                return self.payload
+
+        with (
+            patch.object(fetch_media_findings, "_ph3a_login", return_value="token"),
+            patch.object(
+                fetch_media_findings.requests,
+                "post",
+                return_value=FakeResponse({"Data": {"PartnerShips": {"unexpected": True}}}),
+            ),
+        ):
+            self.assertEqual(fetch_media_findings._ph3a_partnerships("01234567890"), [])
+
+    def test_brasilapi_rejects_success_payload_with_unexpected_shape(self):
+        class FakeResponse:
+            status_code = 200
+
+            def raise_for_status(self):
+                return None
+
+            def json(self):
+                return [{"unexpected": True}]
+
+        with patch.object(
+            fetch_media_findings.requests,
+            "get",
+            return_value=FakeResponse(),
+        ):
+            self.assertEqual(fetch_media_findings._brasilapi_situacao_cnpj("08.247.613/0001-30"), {})
 
 
 class ParseWebsearchFindingsTextTest(unittest.TestCase):
