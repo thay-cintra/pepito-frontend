@@ -3,14 +3,14 @@
 Pesquisa de mídia e judicial OBRIGATÓRIA para casos CHECK_LIDERANCA.
 
 Fontes (em ordem de execução):
-  1. JusBrasil Background Check API (produção) — processos criminais, BNMP e MP
-     por CPF do owner E CPF do PEP (quando sócio/titular)
+  1. JusBrasil Background Check API (produção) — processos criminais, civis,
+     trabalhistas, BNMP e MP por CPF do owner E CPF do PEP (quando sócio/titular)
   2. WebSearch (Anthropic web_search_20250305) — mídia adversa, Portal da
      Transparência, confirmação de cargo PEP, contratos públicos
 
 Os achados da API JusBrasil são registrados com risk_indicator estruturado
-(alto/medio/baixo) e nunca dependem de indexação web aberta — cobrem Vara
-Criminal Estadual, TRF, BNMP e MP que a busca web não alcança.
+(alto/medio/baixo) e nunca dependem de indexação web aberta — cobrem processos
+criminais, civis e trabalhistas, além de BNMP e MP.
 
 Roda como [2/5] no refresh-daily.sh, após build-real-queue.py.
 """
@@ -64,8 +64,15 @@ JUS_BASE = os.environ.get("JUSBRASIL_API_BASE", "https://api.jusbrasil.com.br")
 
 # ── Controle de limite JusBrasil ────────────────────────────────────────────
 _JUS_USAGE_PATH = Path(__file__).parent / "jusbrasil-usage.json"
-_JUS_LIMIT = 325       # 65% do contrato — 35% reservado para alertas de monitoramento
-_JUS_WARN_THRESHOLD = 293  # aviso ao atingir 90% do limite efetivo
+# Como não há periodicidade explícita documentada no repo, assumimos contrato
+# mensal, coerente com `by_month` e com a confirmação operacional da Thay:
+# 325 chamadas brutas/mês para análise PLD
+# (65% das 500 contratadas; 175 reservadas para alertas de monitoramento).
+# Cada CPF completo consome 5 chamadas, portanto a capacidade prática é de
+# aproximadamente 65 CPFs/mês. `total` continua vitalício apenas para auditoria;
+# bloqueio e warning usam exclusivamente `by_month[mês corrente]`.
+_JUS_LIMIT = 325
+_JUS_WARN_THRESHOLD = 293  # 90% do limite mensal efetivo
 
 
 def _jus_usage_load() -> dict:
@@ -80,31 +87,42 @@ def _jus_usage_save(data: dict) -> None:
 
 
 def _jus_usage_increment(n: int = 1) -> tuple[int, bool]:
-    """Incrementa contador e retorna (total, limite_atingido)."""
+    """Incrementa contadores e retorna (uso_do_mês, limite_mensal_atingido)."""
     import datetime
     data = _jus_usage_load()
     month = datetime.date.today().strftime("%Y-%m")
     data["total"] = data.get("total", 0) + n
+    if not isinstance(data.get("by_month"), dict):
+        data["by_month"] = {}
     data["by_month"][month] = data["by_month"].get(month, 0) + n
     _jus_usage_save(data)
-    return data["total"], data["total"] >= _JUS_LIMIT
+    month_total = data["by_month"][month]
+    return month_total, month_total >= _JUS_LIMIT
 
 
 def _jus_quota_exceeded() -> bool:
-    return _jus_usage_load().get("total", 0) >= _JUS_LIMIT
+    import datetime
+    month = datetime.date.today().strftime("%Y-%m")
+    by_month = _jus_usage_load().get("by_month")
+    return isinstance(by_month, dict) and by_month.get(month, 0) >= _JUS_LIMIT
 
 
 def _jus_quota_warning() -> bool:
-    return _jus_usage_load().get("total", 0) >= _JUS_WARN_THRESHOLD
+    import datetime
+    month = datetime.date.today().strftime("%Y-%m")
+    by_month = _jus_usage_load().get("by_month")
+    return isinstance(by_month, dict) and by_month.get(month, 0) >= _JUS_WARN_THRESHOLD
 
 
 _FINDING_LIMITE_ATINGIDO = {
     "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
     "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
     "snippet": (
-        "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. "
+        "O limite mensal de 325 chamadas JusBrasil Background Check destinado à análise PLD "
+        "foi atingido (65% das 500 chamadas contratadas; 35% reservadas para monitoramento). "
         "A diligência judicial automática não pôde ser realizada para este caso. "
-        "OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP "
+        "OBRIGATÓRIO: realizar verificação manual de processos criminais, civis, trabalhistas, "
+        "BNMP e MP "
         "diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão."
     ),
     "source": "Sistema Pepito — Controle de Quota JusBrasil",
@@ -391,7 +409,7 @@ def _cpf_digits(cpf: str) -> str:
 
 
 def _jus_post(endpoint: str, payload: dict) -> dict:
-    """Faz POST na API JusBrasil via requests. Rastreia quota (limite 500).
+    """Faz POST na API JusBrasil e rastreia o limite mensal de chamadas.
     Retorna {"_quota_exceeded": True} se limite atingido; {"_erro": <motivo>}
     se a chamada falhou por qualquer outro motivo (chave ausente, HTTP != 200,
     exceção). Chave "_erro" existe PARA DISTINGUIR "não conseguimos consultar"
@@ -404,13 +422,15 @@ def _jus_post(endpoint: str, payload: dict) -> dict:
     if _jus_quota_exceeded():
         return {"_quota_exceeded": True}
     url = f"{JUS_BASE}/{endpoint}"
+    # Conta a tentativa no momento do despacho: timeouts e falhas de leitura
+    # podem ocorrer depois de a API ter recebido/contabilizado a chamada.
+    total, _ = _jus_usage_increment(1)
     try:
         resp = _JUS_SESSION.post(
             url, json=payload,
             headers={"apikey": JUS_KEY, "Content-Type": "application/json"},
             timeout=30,
         )
-        total, exceeded = _jus_usage_increment(1)
         if _jus_quota_warning():
             print(f"      ⚠️  JusBrasil: {total}/{_JUS_LIMIT} consultas usadas")
         if resp.status_code == 200:
@@ -437,7 +457,7 @@ def _classificar_tipificacoes(tipificacoes: list[dict]) -> tuple[str, list[str]]
 
 def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]:
     """
-    Consulta criminal, BNMP e MP para um CPF via JusBrasil Background Check.
+    Consulta criminal, civil, trabalhista, BNMP e MP para um CPF via JusBrasil.
     Retorna lista de findings estruturados.
     """
     cpf_clean = _cpf_digits(cpf)
@@ -451,7 +471,7 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
         return [alert]
 
     findings = []
-    payload = {"documentNumber": cpf_clean, "pagination": {"cursor": "", "size": 50}}
+    payload = {"documentNumber": cpf_clean, "pagination": {"cursor": "", "size": 100}}
 
     # ── 1. Processos criminais ────────────────────────────────────────────────
     resp = _jus_post("background-check/lawsuits/criminal", payload)
@@ -467,20 +487,19 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
 
     criminal_alto = []
     criminal_outros = []
+    criminal_outros_passivos = 0
 
     for p in processos:
         polo_passivo = p.get("polo_passivo", False)
         conf = p.get("confianca_associacao", "BAIXA")
         tipificacoes = p.get("tipificacao", [])
         risco, tip_nomes = _classificar_tipificacoes(tipificacoes)
-        classe = p.get("classe_processual", p.get("assunto", ""))
+        classe = p.get("classe_processual") or p.get("assunto") or p.get("tipo_processo", "")
         numero = p.get("numero_processo", "")
         link = p.get("link", "")
-        tribunal = p.get("status", {}).get("tribunal", "") or p.get("tribunal", "")
-
-        if not polo_passivo and risco != "alto":
-            # Não é réu e tipificação não é crítica — ignorar (pode ser vítima/testemunha)
-            continue
+        status_raw = p.get("status")
+        tribunal_status = status_raw.get("tribunal", "") if isinstance(status_raw, dict) else ""
+        tribunal = tribunal_status or p.get("tribunal", "")
 
         entry = {
             "title": f"Processo criminal — {nome_api} ({papel.upper()})",
@@ -508,11 +527,13 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
             criminal_alto.append(entry)
         else:
             criminal_outros.append(entry)
+            if polo_passivo:
+                criminal_outros_passivos += 1
 
     # Adiciona agrupado para não poluir com dezenas de entradas
     if criminal_alto:
         findings.extend(criminal_alto)
-    elif criminal_outros:
+    if criminal_outros:
         # Resumo dos não-críticos
         findings.append({
             "title": f"Processos criminais ({len(criminal_outros)} encontrados) — {nome_api}",
@@ -523,24 +544,21 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
                 f"Validar manualmente os detalhes para descartar homônimos."
             ),
             "source": "JusBrasil Background Check API",
-            "risk_indicator": "medio",
+            "risk_indicator": "medio" if criminal_outros_passivos else "baixo",
             "tipo": "processo",
             "match": f"CPF {cpf} — {len(criminal_outros)} processo(s) sem polo passivo crítico",
         })
-    else:
-        # Explícito: nenhum processo CRIMINAL encontrado via API — o contrato
-        # JusBrasil Background Check só cobre criminal/BNMP/MP (não tem
-        # endpoint cível/trabalhista); o snippet deixa esse escopo explícito
-        # para não passar a impressão de "nenhum processo" no sentido amplo.
+    if not criminal_alto and not criminal_outros:
+        # Resultado explícito do endpoint criminal. Civil e trabalhista são
+        # consultados separadamente logo abaixo.
         findings.append({
             "title": f"JusBrasil API: nenhum processo criminal — {nome_api}",
             "url": "https://www.jusbrasil.com.br/processos/",
             "snippet": (
                 f"Consulta à JusBrasil Background Check API (produção) para CPF {cpf} "
                 f"não retornou processos criminais. "
-                f"Total retornado: {total}. Fonte confiável — cobre Vara Criminal Estadual, TRF, MP. "
-                f"ESCOPO: este contrato JusBrasil não cobre processos cíveis/trabalhistas — "
-                f"ver achado Credilink (ProcessoTribunalJustica) para essa cobertura."
+                f"Total retornado: {total}. Fonte confiável — cobre processos criminais; "
+                f"as coberturas civil e trabalhista constam em achados separados."
             ),
             "source": "JusBrasil Background Check API (produção)",
             "risk_indicator": "baixo",
@@ -548,7 +566,67 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
             "match": f"CPF {cpf} confirmado na API — sem processos criminais",
         })
 
-    # ── 2. BNMP — mandados de prisão ─────────────────────────────────────────
+    # ── 2–3. Processos civis e trabalhistas ──────────────────────────────────
+    # Esses endpoints não trazem tipificação criminal. Registramos todos os
+    # processos de forma agrupada: risco médio quando a pessoa está no polo
+    # passivo; baixo quando aparece apenas no polo ativo/outra posição. Não há
+    # recomendação automática de reprovação para processo civil/trabalhista.
+    for categoria, label in (("civil", "civil"), ("trabalhista", "trabalhista")):
+        resp_tipo = _jus_post(f"background-check/lawsuits/{categoria}", payload)
+        if resp_tipo.get("_quota_exceeded"):
+            findings.append(dict(_FINDING_LIMITE_ATINGIDO))
+            return findings
+        if resp_tipo.get("_erro"):
+            findings.append(_finding_erro_consulta(resp_tipo["_erro"], cpf, nome))
+            return findings
+
+        nome_api = resp_tipo.get("nome", nome_api)
+        processos_tipo = resp_tipo.get("processos", [])
+        total_tipo = resp_tipo.get("pagination", {}).get("total", len(processos_tipo))
+
+        if not processos_tipo:
+            findings.append({
+                "title": f"JusBrasil API: nenhum processo {label} — {nome_api}",
+                "url": "https://www.jusbrasil.com.br/processos/",
+                "snippet": (
+                    f"Consulta ao endpoint {label} da JusBrasil Background Check API "
+                    f"para CPF {cpf} não retornou processos. Total retornado: {total_tipo}."
+                ),
+                "source": f"JusBrasil Background Check — {label.title()}",
+                "risk_indicator": "baixo",
+                "tipo": "processo",
+                "match": f"CPF {cpf} confirmado na API — sem processos {label}s",
+            })
+            continue
+
+        passivos = [p for p in processos_tipo if p.get("polo_passivo", False)]
+        detalhes = []
+        for processo in processos_tipo[:3]:
+            tribunal = processo.get("tribunal", "não informado")
+            status = processo.get("status", "não informado")
+            comarca = processo.get("comarca", "não informada")
+            polo = "passivo" if processo.get("polo_passivo", False) else "ativo/outro"
+            valor = processo.get("valor_causa")
+            detalhes.append(
+                f"{tribunal}, {comarca}, status {status}, polo {polo}"
+                + (f", valor {valor}" if valor not in (None, "") else "")
+            )
+
+        findings.append({
+            "title": f"JusBrasil — processo {label}: {total_tipo} encontrado(s) — {nome_api}",
+            "url": "https://www.jusbrasil.com.br/processos/",
+            "snippet": (
+                f"{nome_api} consta em {total_tipo} processo(s) {label}(s) no JusBrasil; "
+                f"{len(passivos)} no polo passivo. Exemplos: {'; '.join(detalhes)}. "
+                "Achado informativo para avaliação do analista; não gera reprovação automática."
+            ),
+            "source": f"JusBrasil Background Check — {label.title()}",
+            "risk_indicator": "medio" if passivos else "baixo",
+            "tipo": "processo",
+            "match": f"CPF {cpf} — {len(passivos)} de {total_tipo} processo(s) no polo passivo",
+        })
+
+    # ── 4. BNMP — mandados de prisão ─────────────────────────────────────────
     resp_bnmp = _jus_post("background-check/bnmp", {"documentNumber": cpf_clean})
     if resp_bnmp.get("_quota_exceeded"):
         findings.append(dict(_FINDING_LIMITE_ATINGIDO))
@@ -579,7 +657,7 @@ def consultar_jusbrasil(cpf: str, nome: str, papel: str = "owner") -> list[dict]
                 "decisao_recomendada": f"REPROVAÇÃO — mandado de prisão ativo ({situacao}) para o {'owner' if papel == 'owner' else 'PEP sócio'}.",
             })
 
-    # ── 3. MP — inquéritos e investigações ───────────────────────────────────
+    # ── 5. MP — inquéritos e investigações ───────────────────────────────────
     resp_mp = _jus_post("background-check/mp", {"documentNumber": cpf_clean, "kind": "CRIMINAL"})
     if resp_mp.get("_quota_exceeded"):
         findings.append(dict(_FINDING_LIMITE_ATINGIDO))

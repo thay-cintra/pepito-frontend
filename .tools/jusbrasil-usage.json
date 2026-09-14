@@ -8,6 +8,6 @@
     "2026-09": 37
   },
   "limit": 325,
-  "note": "Limite efetivo para an\u00e1lise PLD: 325/500 consultas (65% do contrato). 35% = 175 consultas reservadas para alertas de monitoramento. Cada CPF consome 3 consultas (criminal + bnmp + mp). Atualizado automaticamente pelo fetch-media-findings.py.",
+  "note": "Limite mensal efetivo para an\u00e1lise PLD: 325/500 chamadas brutas (65% do contrato). 35% = 175 chamadas reservadas para alertas de monitoramento. Cada CPF consome 5 chamadas (criminal + civil + trabalhista + bnmp + mp), capacidade aproximada de 65 CPFs/m\u00eas. total \u00e9 hist\u00f3rico; bloqueio e warning usam by_month do m\u00eas corrente. Atualizado automaticamente pelo fetch-media-findings.py.",
   "aviso": "141 consultas registradas retroativamente (uso antes do rastreamento ser implementado, 2026-04-29)."
 }

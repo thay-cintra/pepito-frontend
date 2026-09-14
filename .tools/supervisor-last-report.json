@@ -1,21 +1,28 @@
 {
-  "timestamp": "2026-09-11T14:00:03.290074",
+  "timestamp": "2026-09-13T06:01:23.128952",
   "checks_executados": 10,
   "checks_falhados": 0,
   "alertas": [
     {
       "nivel": "🟡 MÉDIO",
-      "titulo": "13 novo(s) caso(s) escalado(s) para CHECK_LIDERANCA",
-      "descricao": "Caso(s) derivado(s) pelo analista ou promovido(s) pelo Retool desde a última verificação. Conferir Fila de Revisão:\n• NEMALOG LOGISTICA E TRANSPORTES LTDA (CNPJ 68.725.172/0001-66, score 1055) — draft 05375e39-357a-4bf4-bec0-b285551e29ee\n• FROTA NORDESTE LTDA (CNPJ 67.814.414/0001-25, score 1005) — draft 5b91bd5d-b6bd-4e95-8c1f-1cca12c465e5\n• IGREJA EVANGELICA ASSEMBLEIA DE DEUS DE PARACURU UMA IGREJA DE REFUGIO (CNPJ 07.684.261/0001-17, score 1000) — draft ef793f91-57bc-4354-8542-fe83688100e6\n• FARMA SUELI LTDA (CNPJ 82.997.289/0001-20, score 1175) — draft a116f88a-ab10-40fe-a80f-3c9515a55749\n• GELO + LTDA (CNPJ 43.651.622/0001-92, score 985) — draft c2cb0bf4-9288-4b97-b1d3-a8b5914d7030\n• SERVEDUC ASSESSORIA E CONSULTORIA LTDA (CNPJ 58.030.325/0001-05, score 1185) — draft 799d9277-a67c-4db2-aacf-fe26c7c3e4f7\n• MWX EMPREEDEDORISMO E GESTAO EMPRESARIAL LTDA (CNPJ 07.259.984/0001-79, score 1035) — draft 282a3f50-08c1-458e-9900-fbaa839c0cb1\n• PIOVESAN CONSULTORIA FINANCEIRA LTDA (CNPJ 68.465.576/0001-68, score 1400) — draft 45a36634-2643-4823-9269-cd03de7078b9\n• R M DA CUNHA (CNPJ 23.149.833/0001-14, score 1065) — draft 768189bb-a7b4-4c25-a9f0-b43bc61f887a\n• 68.509.014 DOUGLAS KUBICA (CNPJ 68.509.014/0001-79, score 1005) — draft fdcfbd26-8a43-44c3-892a-006b11e2cee4",
+      "titulo": "Build desatualizado",
+      "descricao": "dist/ foi buildado há 27 horas. Atualizações recentes podem não estar visíveis.",
+      "componente": "Build System",
+      "timestamp": "2026-09-13T06:01:22.823873"
+    },
+    {
+      "nivel": "🟡 MÉDIO",
+      "titulo": "7 novo(s) caso(s) escalado(s) para CHECK_LIDERANCA",
+      "descricao": "Caso(s) derivado(s) pelo analista ou promovido(s) pelo Retool desde a última verificação. Conferir Fila de Revisão:\n• LALUCI MASSAS E SALGADOS LTDA (CNPJ 63.104.531/0001-44, score 1215) — draft 12f79730-5920-400a-a1a9-8de889fca3cf\n• JONAS RAFAEL DE BRITO 03216997421 (CNPJ 33.634.909/0001-50, score 985) — draft c562e1c7-4e8c-42fc-8be4-bafee05f8495\n• DIVINA CANTINA DISTRIBUITORA UNIPESSOAL LTDA (CNPJ 66.268.826/0001-44, score 985) — draft ca6eac08-e054-4275-886d-c6f909554381\n• ILUMINAR LTDA (CNPJ 61.636.770/0001-10, score 985) — draft a4378011-ca0e-42b4-a4be-1322c2ab7c15\n• ROSILENE MARIA DE AZEVEDO BORGES  LTDA (CNPJ 06.068.718/0001-04, score 985) — draft 10c5ad3f-c676-4ab0-b473-5c261fe55ba7\n• ROSINEI DE FATIMA PIMENTEL 33987957816 (CNPJ 28.639.509/0001-06, score 985) — draft 16059106-2aeb-4e36-8978-9089db30942e\n• AS1 - SERVICOS ADMINISTRATIVOS E CONSULTORIA (CNPJ 50.321.708/0001-12, score 1020) — draft 98deb27d-7534-429e-8089-a458b07bde50",
       "componente": "Fila de Revisão — Liderança",
-      "timestamp": "2026-09-11T14:00:03.017198"
+      "timestamp": "2026-09-13T06:01:22.923910"
     },
     {
       "nivel": "🔵 BAIXO",
       "titulo": "Mudanças não commitadas",
-      "descricao": "136 arquivo(s) modificado(s) sem commit.",
+      "descricao": "6 arquivo(s) modificado(s) sem commit.",
       "componente": "Git Repository",
-      "timestamp": "2026-09-11T14:00:03.289870"
+      "timestamp": "2026-09-13T06:01:23.128750"
     }
   ]
 }
