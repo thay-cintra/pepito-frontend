@@ -4293,6 +4293,118 @@
       "risk_indicator": "baixo",
       "tipo": "pep",
       "match": "M1 — Evidência documental mais recente de mandato ativo: atividade legislativa registrada em abril/2026"
+    },
+    {
+      "title": "TSE/Câmara — Alan Salviano Lima (MDB), vereador e PRESIDENTE da Câmara Municipal de Várzea Alegre/CE, CPF confirmado por assinatura digital oficial",
+      "url": "https://camaravarzeaalegre.ce.gov.br/vereadores/19",
+      "snippet": "Alan Salviano Lima, nascido em 25/12/1978 em Várzea Alegre/CE, técnico em Contabilidade/Estatística/Economia Doméstica e Administração. Eleito vereador em 2020 (MDB, 1.304 votos) e reeleito em 2024 (1.636 votos), assumiu 1º mandato como presidente da Câmara em 2017, reeleito presidente em 2021/2022 e novamente para o biênio 2023/2024. Documento oficial da Câmara (ofício digitalmente assinado) confirma CPF 634.824.10330 — MESMO CPF do cadastro do owner/PEP no caso (634.824.103-30), confirmando identidade sem ambiguidade.",
+      "source": "TSE — Divulgação de Candidaturas",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Alan Salviano Lima — nome completo e CPF (634.824.103-30) confirmados via documento oficial da Câmara de Várzea Alegre/CE; vereador e presidente da Câmara, mesma cidade do cadastro"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa (corrupção/improbidade/cassação/operação policial) para Alan Salviano Lima; achado de 'vereador Salvino' é HOMÔNIMO PARCIAL não relacionado (Rio de Janeiro, inquérito arquivado)",
+      "url": "https://agenciabrasil.ebc.com.br/justica/noticia/2026-05/justica-do-rio-critica-policia-e-arquiva-inquerito-contra-vereador",
+      "snippet": "Busca ampla por \"Alan Salviano Lima\" + corrupção/improbidade/cassação/investigação/operação policial não retornou nenhum resultado adverso direto. O único achado próximo por similaridade fonética é um caso envolvendo o 'vereador Salvino' no Rio de Janeiro (citado em conversa de WhatsApp com o Comando Vermelho), cujo inquérito foi arquivado pela Justiça por falta de provas e suspeita de perseguição política — trata-se de pessoa e estado DIFERENTES (RJ, não CE), primeiro nome distinto ('Salvino' vs 'Salviano'), sem qualquer relação com Alan Salviano Lima de Várzea Alegre/CE.",
+      "source": "Pesquisa Web — Mídia Adversa (M2)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado adverso direto para Alan Salviano Lima",
+      "homonimo_alerta": "'Vereador Salvino' (Rio de Janeiro, inquérito arquivado por citação em conversa de WhatsApp com o CV) é pessoa distinta — nome, estado e caso não coincidem com Alan Salviano Lima de Várzea Alegre/CE."
+    },
+    {
+      "title": "Portal da Transparência — nenhum contrato federal (CEIS/CNEP/CEPIM) localizado para Alan Salviano Lima",
+      "url": "https://portaldatransparencia.gov.br/localidades/2314003-varzea-alegre?ano=2018",
+      "snippet": "Busca por \"Alan Salviano Lima\" + Várzea Alegre + contratos federais/portaldatransparencia.gov.br não retornou registro nas listas CEIS/CNEP/CEPIM nem contrato federal em nome do vereador. O portal municipal de Várzea Alegre registra mais de 4.383 contratos públicos no total (dado agregado do município, sem vínculo nominal direto localizado com Alan Salviano Lima).",
+      "source": "Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Alan Salviano Lima"
+    },
+    {
+      "title": "Pesquisa Web — sem achado de dispensa/inexigibilidade/licitação irregular vinculada a Alan Salviano Lima; operação federal recente no Ceará (compra de votos/emendas parlamentares) não cita Várzea Alegre nem o nome do owner",
+      "url": "https://www.gov.br/pf/pt-br/assuntos/noticias/2026/07/pf-apura-suposta-compra-de-votos-nas-eleicoes-municipais-de-2024-no-ceara",
+      "snippet": "PF deflagrou 'Operação Voto Livre' (jul/2026) apurando suposta compra de votos nas eleições municipais de 2024 no Ceará, e outra operação (set/2026) apurando desvio de emendas parlamentares no estado — nenhuma das duas cita Várzea Alegre ou Alan Salviano Lima nominalmente nos resultados encontrados. Nenhum achado de licitação/dispensa/inexigibilidade vinculado ao vereador.",
+      "source": "Pesquisa Web — Contratos/Licitações (M4)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado direto para Alan Salviano Lima nas operações federais recentes no Ceará"
+    },
+    {
+      "title": "Pesquisa Web — busca ampliada e cuidadosa de mídia adversa para Alan Salviano Lima (owner=PEP) não encontrou processo criminal, cível, trabalhista ou administrativo em seu nome além dos registros eleitorais/institucionais já esperados",
+      "url": "https://portal.tjce.jus.br/uploads/2025/10/Pauta-PJE-27.10.2025.pdf",
+      "snippet": "Dado o histórico de dúvida da analista sobre a cobertura do JusBrasil para processos não-criminais deste caso, foi feita busca ampliada: \"Alan Salviano Lima\" + processo cível/trabalhista/administrativo + TJCE, e busca direta pelo CPF 634.824.103-30. Nenhum processo judicial (cível, trabalhista, administrativo ou criminal) foi localizado publicamente em nome de Alan Salviano Lima nas pautas e sistemas de busca do TJCE (e-SAJ) ou em agregadores web. Homônimos parciais localizados ('Francisco Salviano Rodrigues Cassemiro', 'Alan Sérgio Rodrigues') não coincidem com o nome completo do owner. RESSALVA IMPORTANTE: busca via motor de busca web não substitui consulta direta ao e-SAJ/TJCE ou ao JusBrasil PRO com CPF — a ausência de resultado aqui não é garantia de cobertura completa; recomenda-se a analista considerar este achado como complementar, não substitutivo, à verificação direta no JusBrasil PRO mencionada nos achados anteriores do caso.",
+      "source": "Pesquisa Web — Mídia Adversa Owner (M5)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "Nenhum processo (cível/trabalhista/administrativo/criminal) localizado para Alan Salviano Lima via busca web ampliada",
+      "homonimo_alerta": "'Francisco Salviano Rodrigues Cassemiro' e 'Alan Sérgio Rodrigues' (TJCE) são homônimos parciais de sobrenome/prenome, não correspondem ao nome completo de Alan Salviano Lima."
+    },
+    {
+      "title": "Pesquisa Web — Contexto Regional Várzea Alegre/CE: operação policial recente (dez/2024) é de tráfico de drogas, sem vínculo com o PEP/owner",
+      "url": "https://www.policiacivil.ce.gov.br/2024/12/20/operacao-da-policia-civil-resulta-em-dois-suspeitos-presos-e-na-apreensao-de-drogas-em-varzea-alegre/",
+      "snippet": "Operação da Polícia Civil do Ceará em Várzea Alegre (20/12/2024) resultou em duas prisões e apreensão de drogas, envolvendo suspeitos de integrarem grupo criminoso — crime comum, sem relação com corrupção municipal, licitação ou os nomes do caso. Nenhuma operação de corrupção municipal específica para Várzea Alegre/CE foi localizada nos últimos 2 anos.",
+      "source": "Pesquisa Web — Contexto Regional (M7)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Contexto regional (Várzea Alegre/CE) — evento de natureza criminal comum, sem nexo nominal com o PEP/owner",
+      "homonimo_alerta": "Contexto regional — sem vínculo nominal direto com o PEP/owner"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa para a empresa AS1 - SERVIÇOS ADMINISTRATIVOS E CONSULTORIA (CNPJ 50.321.708/0001-12, nome fantasia 'Prática Serviços Administrativos e Consultoria')",
+      "url": "https://econodata.com.br/consulta-empresa/50321708000112-AS1-SERVICOS-ADMINISTRATIVOS-E-CONSULTORIA",
+      "snippet": "AS1 - Serviços Administrativos e Consultoria, CNPJ 50.321.708/0001-12, sediada na Rua Manoel de Sousa Bezerra, 291, Serrinha, Várzea Alegre/CE, aberta em 14/04/2023, ME, CNAE M-7020-4/00 (consultoria em gestão empresarial). Busca por fraude/investigação/processo/notícia não retornou nenhum resultado adverso específico para esta empresa.",
+      "source": "Pesquisa Web — Mídia Adversa Empresa (M8)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado direto para o CNPJ/razão social da empresa"
+    },
+    {
+      "title": "JusBrasil/Escavador — nenhum processo localizado para a empresa AS1 - SERVIÇOS ADMINISTRATIVOS E CONSULTORIA; homônimo de nome fantasia em outro estado, sem relação",
+      "url": "https://www.jusbrasil.com.br/nome/pratica-servicos-administrativos-ltda/cnpj-MnFsqSD1i1M",
+      "snippet": "Busca no JusBrasil/Escavador pelo CNPJ 50.321.708/0001-12 e pela razão social AS1 não retornou processos judiciais específicos da empresa de Várzea Alegre/CE. Existe uma empresa homônima de nome fantasia 'Pratica Servicos Administrativos LTDA' (CNPJ 09.539.155/0001-75) sediada em Petrópolis/RJ, sem qualquer relação com a empresa do caso (CNPJ diferente, estado diferente).",
+      "source": "Pesquisa Web — JusBrasil/Escavador Empresa (M9)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "Nenhum processo localizado para a empresa do caso",
+      "homonimo_alerta": "'Pratica Servicos Administrativos LTDA' (Petrópolis/RJ, CNPJ 09.539.155/0001-75) é empresa homônima de nome fantasia, CNPJ e estado diferentes — sem relação com a AS1 do caso."
+    },
+    {
+      "title": "TCE-CE — não foi possível confirmar/afastar presença de Alan Salviano Lima na lista de contas irregulares (PDF binário não indexável); recomenda-se consulta manual direta",
+      "url": "https://www.tce.ce.gov.br/downloads/Lista_Contas_Irregulares_TCE_CE_14082026.pdf",
+      "snippet": "Tentativa de leitura da Lista de Contas Irregulares do TCE-CE (14/08/2026) retornou conteúdo binário não extraível por esta ferramenta de busca web, impossibilitando confirmação direta se o nome de Alan Salviano Lima ou de Várzea Alegre consta na lista. Nenhuma notícia paralela (imprensa, portal da Câmara) menciona Alan Salviano Lima em processo de contas irregulares. RECOMENDA-SE verificação manual direta desta lista pela analista antes da decisão final.",
+      "source": "TCE-CE — busca interna",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Não confirmado por limitação técnica de leitura do PDF — nenhuma notícia paralela indica irregularidade de contas"
+    },
+    {
+      "title": "Câmara Municipal de Várzea Alegre/CE — confirma Alan Salviano Lima como vereador e presidente da Câmara; sem processo de cassação ou representação em curso",
+      "url": "https://www.camaravarzeaalegre.ce.gov.br/vereadores?bg=26",
+      "snippet": "Portal oficial da Câmara Municipal de Várzea Alegre/CE confirma Alan Salviano Lima (MDB) como vereador e presidente do Legislativo local (biênios 2017, 2021/2022 e 2023/2024), com foco declarado em transparência e responsável pela construção da nova sede da Câmara. Nenhuma menção a processo de cassação, afastamento ou representação em curso contra ele.",
+      "source": "Câmara/ALE-CE — Portal de Transparência",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Alan Salviano Lima — vereador e presidente da Câmara de Várzea Alegre/CE"
+    },
+    {
+      "title": "Diário Oficial da União — nenhuma publicação localizada para Alan Salviano Lima",
+      "url": "https://www.in.gov.br/servicos/diario-oficial-da-uniao",
+      "snippet": "Busca por \"Alan Salviano Lima\" no Diário Oficial da União não retornou nenhuma publicação (nomeação, sanção, ato de pessoal) vinculada ao nome do vereador. Consistente com o cargo ser de esfera municipal, sem vínculo federal.",
+      "source": "Diário Oficial da União (DOU)",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Alan Salviano Lima"
+    },
+    {
+      "title": "CGU — Alan Salviano Lima não consta como servidor federal",
+      "url": "https://www.gov.br/cgu/pt-br/acesso-a-informacao/servidores",
+      "snippet": "Busca por \"Alan Salviano Lima\" + CGU servidores federais não retornou nenhum registro. Consistente com o cargo de vereador/presidente da Câmara municipal, sem vínculo com o funcionalismo público federal.",
+      "source": "CGU — Servidores Federais",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Alan Salviano Lima"
     }
   ],
   "12f79730-5920-400a-a1a9-8de889fca3cf": [
@@ -4441,6 +4553,117 @@
       "risk_indicator": "medio",
       "tipo": "processo",
       "match": "N/A — consulta automática não realizada por limite de quota"
+    },
+    {
+      "title": "TSE — Macilon Rafael (nº 13444), candidato/vereador em Serra Branca/PB (PT), Eleições 2024",
+      "url": "https://www.otempo.com.br/eleicoes/2024/candidatos/paraiba/serra-branca/vereador/macilon-rafael-13444",
+      "snippet": "Dados extraídos do TSE: Macilon Rafael, número de urna 13444, candidato a vereador de Serra Branca/PB pelo PT nas Eleições 2024, nascido em Serra Branca (PB) em 09/02/1976, descrito como \"é vereador\" (mandato em curso). Santa Luzia do Cariri é distrito administrativo do município de Serra Branca/PB — mesma base municipal do owner Jonas Rafael De Brito.",
+      "source": "TSE — Divulgação de Candidaturas",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Macilon Rafael de Brito — nome completo coincide; município (distrito de Serra Branca/PB) coincide com o cadastro do owner"
+    },
+    {
+      "title": "Câmara Municipal de Serra Branca/PB — vereadores em exercício",
+      "url": "https://camaradeserrabranca.pb.gov.br/vereador/",
+      "snippet": "Portal oficial da Câmara Municipal de Serra Branca/PB lista os vereadores em exercício. Busca confirma vínculo de Macilon Rafael de Brito com o Legislativo municipal de Serra Branca, município ao qual pertence o distrito de Santa Luzia do Cariri. Nenhuma menção a processo de cassação, afastamento ou representação em curso.",
+      "source": "Câmara/ALE-PB — Portal de Transparência",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Macilon Rafael de Brito — vereador, Câmara de Serra Branca/PB"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa (corrupção/improbidade/cassação/operação policial) para Macilon Rafael de Brito",
+      "url": "https://www.google.com/search?q=%22Macilon+Rafael+de+Brito%22+corrup%C3%A7%C3%A3o+OR+improbidade+OR+cassa%C3%A7%C3%A3o+OR+investiga%C3%A7%C3%A3o+OR+opera%C3%A7%C3%A3o+policial",
+      "snippet": "Busca ampla por \"Macilon Rafael de Brito\" + corrupção/improbidade/cassação/investigação/operação policial não retornou nenhuma notícia ou processo vinculado a ele. Resultados retornados foram sobre pessoas homônimas de sobrenome Brito (Flávio Bolsonaro, Lava Jato, Rafael Brito deputado federal de AL) — sem relação com o PEP do caso.",
+      "source": "Pesquisa Web — Mídia Adversa (M2)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado direto para Macilon Rafael de Brito"
+    },
+    {
+      "title": "Portal da Transparência — nenhum contrato federal (CEIS/CNEP/CEPIM) localizado para Macilon Rafael de Brito",
+      "url": "https://portaldatransparencia.gov.br/sancoes/consulta",
+      "snippet": "Busca por \"Macilon Rafael de Brito\" + Santa Luzia do Cariri + contratos federais/portaldatransparencia.gov.br não retornou nenhum registro nas listas CEIS/CNEP/CEPIM nem contratos federais associados ao nome do PEP.",
+      "source": "Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Macilon Rafael de Brito"
+    },
+    {
+      "title": "Pesquisa Web — sem match direto de licitação/contrato para Macilon Rafael de Brito; achado de \"Câmara de Santa Luzia\" é homônimo de município (MG, não PB)",
+      "url": "https://www.mpmg.mp.br/portal/menu/comunicacao/noticias/mpmg-e-policia-civil-deflagram-operacao-arremate-contra-esquema-de-corrupcao-em-licitacoes-na-camara-de-santa-luzia.shtml",
+      "snippet": "Operação Arremate (MPMG/Polícia Civil, 2026) investiga fraude em licitações na Câmara Municipal de Santa Luzia — porém trata-se do município de Santa Luzia, MINAS GERAIS (região metropolitana de Belo Horizonte), sem qualquer relação nominal ou geográfica com Santa Luzia do Cariri (distrito de Serra Branca/PB) ou com Macilon Rafael de Brito.",
+      "source": "Pesquisa Web — Contratos/Licitações (M4)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Homônimo de topônimo — Santa Luzia/MG ≠ Santa Luzia do Cariri/PB",
+      "homonimo_alerta": "Operação 'Arremate' é contra a Câmara de Santa Luzia, MG — município diferente de Santa Luzia do Cariri/PB (distrito de Serra Branca). Sem vínculo nominal ou geográfico com o PEP do caso."
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa direta para o owner Jonas Rafael de Brito em Serra Branca/PB",
+      "url": "https://www.google.com/search?q=%22Jonas+Rafael+de+Brito%22+Serra+Branca+Para%C3%ADba",
+      "snippet": "Busca por \"Jonas Rafael de Brito\" + Serra Branca/Paraíba (cidade do owner) não retornou nenhuma notícia, processo ou registro de fraude/investigação/contrato público vinculado ao owner nessa localidade. Achado de mídia negativa já constante na Credilink (link a 'oito criminosos procurados de Mato Grosso') refere-se a outro estado, sem CPF/confirmação de identidade — potencial homônimo, não corroborado aqui.",
+      "source": "Pesquisa Web — Mídia Adversa Owner (M5)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado direto para Jonas Rafael de Brito em Serra Branca/PB",
+      "homonimo_alerta": "Achado da Credilink (mídia de Mato Grosso, 'procurados') não foi corroborado por esta pesquisa web e refere-se a UF diferente do cadastro (PB) — possível homônimo, sem confirmação de CPF/vínculo."
+    },
+    {
+      "title": "Pesquisa Web — contexto regional (Santa Luzia do Cariri/PB e Serra Branca/PB): sem vínculo nominal com o PEP",
+      "url": "https://www.reporterpb.com.br/noticia/sertao/2025/02/01/policia-militar-cumpre-mandando-de-prisao-e-apreende-armas-de-fogo-durante-operacao-em-santa-luzia/168619.html",
+      "snippet": "Operação da Polícia Militar em fevereiro/2025 cumpriu mandado de prisão e apreendeu armas de fogo em 'Santa Luzia' no sertão da Paraíba (matéria não especifica se é o município de Santa Luzia/PB ou o distrito de Santa Luzia do Cariri de Serra Branca/PB, municípios distintos). Nenhuma menção nominal a Macilon Rafael de Brito, Jonas Rafael de Brito ou à empresa do caso.",
+      "source": "Pesquisa Web — Contexto Regional (M7)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Contexto regional (sertão da Paraíba) — sem nexo nominal com o PEP ou owner",
+      "homonimo_alerta": "Contexto regional — sem vínculo nominal direto com o PEP/owner"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa para a empresa JONAS RAFAEL DE BRITO 03216997421 (CNPJ 33.634.909/0001-50)",
+      "url": "https://www.google.com/search?q=%2233.634.909%2F0001-50%22+fraude+OR+investiga%C3%A7%C3%A3o+OR+processo+OR+not%C3%ADcia",
+      "snippet": "Busca pelo CNPJ 33.634.909/0001-50 e pela razão social não retornou nenhuma notícia, processo ou registro de fraude/investigação vinculado à empresa. Trata-se de MEI (CNPJ com sufixo do CPF do titular), sem presença digital adversa identificada.",
+      "source": "Pesquisa Web — Mídia Adversa Empresa (M8)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado direto para o CNPJ/razão social da empresa"
+    },
+    {
+      "title": "JusBrasil/Escavador — nenhum processo localizado para a empresa JONAS RAFAEL DE BRITO 03216997421",
+      "url": "https://www.escavador.com/busca?q=33.634.909%2F0001-50",
+      "snippet": "Busca no JusBrasil/Escavador pelo CNPJ 33.634.909/0001-50 e pela razão social não retornou processos judiciais registrados em nome da empresa.",
+      "source": "Pesquisa Web — JusBrasil/Escavador Empresa (M9)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "Nenhum processo localizado para a empresa"
+    },
+    {
+      "title": "TCE-PB — nenhum registro localizado para Macilon Rafael de Brito",
+      "url": "https://www.tce.pb.gov.br/",
+      "snippet": "Busca por \"Macilon Rafael de Brito\" + TCE-PB não retornou processos, prestações de contas ou julgamentos específicos vinculados ao nome do PEP no Tribunal de Contas do Estado da Paraíba.",
+      "source": "TCE-PB — busca interna",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Macilon Rafael de Brito"
+    },
+    {
+      "title": "Diário Oficial da União — nenhuma publicação localizada para Macilon Rafael de Brito",
+      "url": "https://www.in.gov.br/servicos/diario-oficial-da-uniao",
+      "snippet": "Busca por \"Macilon Rafael de Brito\" no Diário Oficial da União não retornou nenhuma publicação (nomeação, sanção, ato de pessoal) vinculada ao nome do PEP. Consistente com o cargo ser de esfera municipal (vereador), sem vínculo federal.",
+      "source": "Diário Oficial da União (DOU)",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Macilon Rafael de Brito"
+    },
+    {
+      "title": "CGU — Macilon Rafael de Brito não consta como servidor federal",
+      "url": "https://www.gov.br/cgu/pt-br",
+      "snippet": "Busca por \"Macilon Rafael de Brito\" + CGU servidores federais não retornou nenhum registro. Consistente com o cargo de vereador municipal (Serra Branca/PB), sem vínculo com o funcionalismo público federal.",
+      "source": "CGU — Servidores Federais",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Macilon Rafael de Brito"
     }
   ],
   "ca6eac08-e054-4275-886d-c6f909554381": [
@@ -4680,6 +4903,116 @@
       "risk_indicator": "baixo",
       "tipo": "midia",
       "match": "M7 – Contexto regional sem operação policial municipal específica identificada para Varjão de Minas. Risco regional genérico de MG não se conecta ao município do PEP."
+    },
+    {
+      "title": "Câmara Municipal de Varjão de Minas — Letícia Corrêa da Silva Godinho (Pros), vereadora em exercício",
+      "url": "https://varjaodeminas.mg.leg.br/?pag=T1RjPU9EZz1PVFU9T0dFPU9EWT1PR0k9T1RZPU9XST1PR1U9T1dVPQ%3D%3D",
+      "snippet": "Portal oficial da Câmara Municipal de Varjão de Minas/MG lista Letícia Corrêa da Silva Godinho (partido Pros) entre os vereadores em exercício. Confirma mandato de vereadora, mesma pessoa que é titular/owner do caso.",
+      "source": "TSE — Divulgação de Candidaturas",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Letícia Corrêa da Silva Godinho — nome completo coincide; vereadora em Varjão de Minas/MG, mesma cidade do cadastro"
+    },
+    {
+      "title": "Estado de Minas — vereadora Letícia Corrêa da Silva Godinho foi a AUTORA da denúncia que afastou o prefeito de Varjão de Minas (não é acusada)",
+      "url": "https://www.em.com.br/politica/2023/11/6662190-justica-determina-afastamento-do-prefeito-de-varjao-de-minas.html",
+      "snippet": "Em novembro/2023, a Justiça determinou o afastamento do prefeito Walter Pereira Filho de Varjão de Minas, condenado em segunda instância por sonegação fiscal. A vereadora Letícia Corrêa da Silva Godinho (Pros) foi quem apresentou a denúncia que levou a Câmara a votar pelo afastamento do prefeito em maio/2023 — ela figura como autora da denúncia (fiscalizadora), não como acusada. Artigo não menciona conflito de interesse, empresa dela ou irregularidade cometida pela vereadora.",
+      "source": "Pesquisa Web — Mídia Adversa (M2)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Letícia Corrêa da Silva Godinho — papel de autora/fiscalizadora da denúncia contra o prefeito, sem adversidade própria"
+    },
+    {
+      "title": "Portal da Transparência — nenhum contrato federal (CEIS/CNEP/CEPIM) localizado para Letícia Corrêa da Silva Godinho",
+      "url": "https://portaldatransparencia.gov.br/sancoes/consulta",
+      "snippet": "Busca por \"Letícia Godinho\" + Varjão de Minas + contratos federais/portaldatransparencia.gov.br não retornou registro nas listas CEIS/CNEP/CEPIM nem contrato federal em nome da vereadora/owner. Município de Varjão de Minas recebeu R$ 152.504.712,99 em recursos federais ao longo do tempo (dado agregado do município, sem vínculo nominal com Godinho).",
+      "source": "Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Letícia Corrêa da Silva Godinho"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma licitação/contrato/dispensa/inexigibilidade localizada envolvendo Letícia Godinho em Varjão de Minas",
+      "url": "https://portaldatransparencia.gov.br/licitacoes/985373054",
+      "snippet": "Busca por \"Letícia Godinho\" Varjão de Minas licitação/contrato/dispensa/inexigibilidade não retornou registro nominal vinculando a vereadora a contratação pública municipal ou federal com a Prefeitura de Varjão de Minas.",
+      "source": "Pesquisa Web — Contratos/Licitações (M4)",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Letícia Corrêa da Silva Godinho"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa (fraude/investigação/contrato público/licitação) para a owner Letícia Corrêa da Silva Godinho em Varjão de Minas",
+      "url": "https://www.google.com/search?q=%22Let%C3%ADcia+Corr%C3%AAa+da+Silva+Godinho%22+Varj%C3%A3o+de+Minas+fraude+OR+investiga%C3%A7%C3%A3o+OR+contrato+p%C3%BAblico+OR+licita%C3%A7%C3%A3o",
+      "snippet": "Busca ampla por \"Letícia Corrêa da Silva Godinho\" + Varjão de Minas + fraude/investigação/contrato público/licitação não retornou nenhum resultado adverso. Único achado relevante é seu papel de vereadora denunciante contra o ex-prefeito (já registrado no bloco M2), sem qualquer menção adversa a ela própria.",
+      "source": "Pesquisa Web — Mídia Adversa Owner (M5)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado adverso direto para Letícia Corrêa da Silva Godinho"
+    },
+    {
+      "title": "Pesquisa Web — contexto regional de Varjão de Minas/MG: afastamento de ex-prefeito por sonegação fiscal, sem vínculo com a owner além do papel de denunciante já registrado",
+      "url": "https://www.em.com.br/politica/2023/11/6662190-justica-determina-afastamento-do-prefeito-de-varjao-de-minas.html",
+      "snippet": "Único evento de relevância envolvendo a administração municipal de Varjão de Minas nos últimos anos é o afastamento judicial do ex-prefeito Walter Pereira Filho (condenado por sonegação fiscal, 2023), que teve a própria owner/PEP Letícia Godinho como denunciante — portanto não é um risco regional dissociado, mas o mesmo evento já registrado nos blocos anteriores. Nenhuma outra operação policial ou corrupção municipal recente foi localizada para Varjão de Minas.",
+      "source": "Pesquisa Web — Contexto Regional (M7)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Evento já registrado no bloco M2 — owner como denunciante, sem adversidade própria"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa para a empresa ILUMINAR LTDA (CNPJ 61.636.770/0001-10)",
+      "url": "https://www.google.com/search?q=%22ILUMINAR+LTDA%22+61.636.770+fraude+OR+investiga%C3%A7%C3%A3o+OR+processo+OR+not%C3%ADcia",
+      "snippet": "Busca pelo CNPJ 61.636.770/0001-10 e pela razão social ILUMINAR LTDA (Varjão de Minas/MG) não retornou nenhuma notícia, processo ou registro de fraude/investigação vinculado à empresa. Existem outras empresas homônimas de nome 'Iluminar' no Brasil (ex.: Iluminar Comércio e Serviços Ltda, CNPJ 03.534.081/0001-06, e fabricante 'A Iluminar'), sem relação com o CNPJ do caso.",
+      "source": "Pesquisa Web — Mídia Adversa Empresa (M8)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado direto para o CNPJ 61.636.770/0001-10",
+      "homonimo_alerta": "Existem empresas homônimas 'Iluminar' com CNPJs distintos (ex.: 03.534.081/0001-06) — nenhuma delas corresponde ao CNPJ 61.636.770/0001-10 do caso."
+    },
+    {
+      "title": "JusBrasil/Escavador — nenhum processo específico localizado para a empresa ILUMINAR LTDA (CNPJ 61.636.770/0001-10)",
+      "url": "https://www.jusbrasil.com.br/processos/nome/30288363/municipio-de-varjao-de-minas",
+      "snippet": "Busca no JusBrasil/Escavador pela razão social ILUMINAR LTDA e pelo CNPJ 61.636.770/0001-10 não retornou processos judiciais específicos da empresa. Jusbrasil indexa 266 processos citando 'Município de Varjão de Minas' como parte, mas nenhum deles foi confirmado como envolvendo a empresa Iluminar Ltda do caso — necessária verificação manual adicional se a analista quiser detalhar esse volume.",
+      "source": "Pesquisa Web — JusBrasil/Escavador Empresa (M9)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "Nenhum processo específico confirmado para a empresa Iluminar Ltda"
+    },
+    {
+      "title": "TCE-MG — nenhum registro específico localizado para Letícia Corrêa da Silva Godinho",
+      "url": "https://www.tce.mg.gov.br/",
+      "snippet": "Busca por \"Letícia Godinho\" + TCE-MG retornou apenas resultados de uma pesquisadora acadêmica homônima da Fundação João Pinheiro (sem relação com a vereadora do caso) e notícias institucionais genéricas do TCE-MG. Nenhum processo, prestação de contas ou julgamento específico vinculado à vereadora de Varjão de Minas foi localizado.",
+      "source": "TCE-MG — busca interna",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para a vereadora; achados retornados são de pesquisadora acadêmica homônima",
+      "homonimo_alerta": "Resultados de 'Letícia Godinho' no TCE-MG/Google Scholar referem-se a uma pesquisadora da Fundação João Pinheiro, pessoa distinta da vereadora do caso."
+    },
+    {
+      "title": "Câmara Municipal de Varjão de Minas/MG — Portal de Transparência confirma vereadora Letícia Corrêa da Silva Godinho",
+      "url": "https://varjaodeminas.mg.leg.br/",
+      "snippet": "Portal oficial de transparência da Câmara Municipal de Varjão de Minas/MG confirma Letícia Corrêa da Silva Godinho como vereadora em exercício (partido Pros). Nenhuma menção a processo de cassação, afastamento ou representação em curso contra ela.",
+      "source": "Câmara/ALE-MG — Portal de Transparência",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Letícia Corrêa da Silva Godinho — vereadora, Câmara de Varjão de Minas/MG"
+    },
+    {
+      "title": "Diário Oficial da União — nenhuma publicação localizada para Letícia Corrêa da Silva Godinho ou Iluminar Ltda",
+      "url": "https://www.in.gov.br/servicos/diario-oficial-da-uniao",
+      "snippet": "Busca por \"Letícia Godinho\" OR \"Iluminar Ltda\" no Diário Oficial da União não retornou nenhuma publicação (nomeação, sanção, ato de pessoal, contrato) vinculada ao nome da PEP/owner ou da empresa. Consistente com o cargo ser de esfera municipal (vereadora), sem vínculo federal direto.",
+      "source": "Diário Oficial da União (DOU)",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Letícia Corrêa da Silva Godinho ou Iluminar Ltda"
+    },
+    {
+      "title": "CGU — Letícia Corrêa da Silva Godinho não consta como servidora federal",
+      "url": "https://www.gov.br/cgu/pt-br",
+      "snippet": "Busca por \"Letícia Godinho\" + CGU servidores federais não retornou nenhum registro. Consistente com o cargo de vereadora municipal (Varjão de Minas/MG), sem vínculo com o funcionalismo público federal.",
+      "source": "CGU — Servidores Federais",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Letícia Corrêa da Silva Godinho"
     }
   ],
   "10c5ad3f-c676-4ab0-b473-5c261fe55ba7": [
@@ -5394,6 +5727,121 @@
       "risk_indicator": "medio",
       "tipo": "midia",
       "match": "M7 — Risco sistêmico/estadual: padrão de fraudes em licitações municipais no Ceará confirmado por operação federal recente"
+    },
+    {
+      "title": "TSE — nenhuma confirmação de mandato/candidatura para Eriemerson Nobre Gonçalves em Paracuru/CE; achado indica vínculo político com Caucaia/CE, município DIFERENTE",
+      "url": "https://www.jusbrasil.com.br/processos/nome/148452936/eriemerson-nobre-goncalves",
+      "snippet": "Busca por \"Eriemerson Nobre Gonçalves\" + Paracuru + vereador/prefeito/cargo não confirmou mandato em Paracuru/CE (cidade do cadastro do owner). Em vez disso, os achados apontam Eriemerson Nobre Gonçalves (apelido 'Mersinho', formação em economia) como figura política filiada ao PSD em CAUCAIA/CE — município vizinho, mas DIFERENTE de Paracuru. 6 processos no JusBrasil (TRE-CE/TJCE) o vinculam ao PSD-Caucaia e ao Promotor Eleitoral do Ceará. IMPORTANTE PARA A ANALISTA: não foi possível confirmar que o PEP do caso (cadastrado como da mesma cidade do owner, Paracuru/CE) é a mesma pessoa política encontrada em Caucaia/CE — risco de erro de identificação do município do PEP ou de homônimo.",
+      "source": "TSE — Divulgação de Candidaturas",
+      "risk_indicator": "medio",
+      "tipo": "pep",
+      "match": "Nome completo coincide (Eriemerson Nobre Gonçalves), mas município do vínculo político encontrado (Caucaia/CE) DIVERGE do município do PEP no cadastro (Paracuru/CE)",
+      "homonimo_alerta": "Pesquisa web associa Eriemerson Nobre Gonçalves a atividade política em Caucaia/CE (PSD, 'Promotor Eleitoral'), NÃO em Paracuru/CE onde o owner está cadastrado. Recomenda-se verificação manual de CPF/identidade antes de tratar como o mesmo PEP do cadastro do caso."
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa direta (corrupção/improbidade/cassação/operação policial) para Eriemerson Nobre Gonçalves",
+      "url": "https://www.jusbrasil.com.br/processos/nome/148452936/eriemerson-nobre-goncalves",
+      "snippet": "Busca por \"Eriemerson Nobre Gonçalves\" + corrupção/improbidade/cassação/investigação/operação policial não retornou notícia de mídia adversa. Os 6 processos judiciais localizados no JusBrasil são de natureza eleitoral (TRE-CE) e cível (TJCE), sem indicação de crime ou improbidade administrativa nos títulos/partes disponíveis publicamente.",
+      "source": "Pesquisa Web — Mídia Adversa (M2)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhuma mídia adversa localizada; apenas processos eleitorais/cíveis genéricos"
+    },
+    {
+      "title": "Portal da Transparência — nenhum contrato federal (CEIS/CNEP/CEPIM) localizado para Eriemerson Nobre Gonçalves",
+      "url": "https://portaldatransparencia.gov.br/localidades/2310209-paracuru",
+      "snippet": "Busca por \"Eriemerson Nobre Gonçalves\" + Paracuru/CE + contratos federais/portaldatransparencia.gov.br não retornou registro nas listas CEIS/CNEP/CEPIM nem contrato federal em nome do PEP. Portal indica apenas um beneficiário genérico de Paracuru/CE que recebeu R$ 7.700,81 em recursos federais, sem confirmação de identidade com o nome pesquisado.",
+      "source": "Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Eriemerson Nobre Gonçalves"
+    },
+    {
+      "title": "Pesquisa Web — contexto de licitação/contrato em Paracuru/CE não confirma nexo nominal com Eriemerson Nobre Gonçalves",
+      "url": "https://atual7.com/2019/12/03/justica-condena-junior-franco-e-mais-11-por-fraude-em-licitacao/",
+      "snippet": "Busca por licitação/contrato/dispensa/inexigibilidade em Paracuru retornou majoritariamente casos de fraude em licitação em OUTROS municípios do Brasil (Cururupu/MA, Itaperuçu/PR) e uma operação da PF/CGU/MPF sobre fraude em licitações no Ceará (2026, sem citação de município ou nome específico do PEP). Nenhum achado cita nominalmente Eriemerson Nobre Gonçalves.",
+      "source": "Pesquisa Web — Contratos/Licitações (M4)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado direto para Eriemerson Nobre Gonçalves"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa para o owner Francisco Erivelto Gonçalves Junior em Paracuru/CE",
+      "url": "https://www.jusbrasil.com.br/processos/nome/456110163/francisco-erivelto-de-oliveira-francelino-junior",
+      "snippet": "Busca por \"Francisco Erivelto Gonçalves Junior\" + Paracuru + fraude/investigação/contrato público/licitação não retornou nenhum resultado direto. Existe um homônimo parcial de nome 'Francisco Erivelto de Oliveira Francelino Junior' com 9 processos no JusBrasil, porém o nome completo NÃO coincide (sobrenome diferente: 'de Oliveira Francelino' vs 'Gonçalves') e não há confirmação de vínculo com Paracuru/CE — tratado como homônimo não corroborado.",
+      "source": "Pesquisa Web — Mídia Adversa Owner (M5)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado direto para Francisco Erivelto Gonçalves Junior",
+      "homonimo_alerta": "'Francisco Erivelto de Oliveira Francelino Junior' (JusBrasil) tem sobrenome diferente do owner e não foi confirmado vínculo com Paracuru/CE — não corroborado como a mesma pessoa."
+    },
+    {
+      "title": "Pesquisa Web — Contexto Regional: Paracuru/CE tem histórico de operações policiais contra a Câmara Municipal (2017, 2022), sem nexo nominal confirmado com o PEP ou owner do caso",
+      "url": "https://gcmais.com.br/noticias/2022/08/18/paracuru-presidente-da-camara-municipal-e-vereadores-sao-alvos-de-operacao-que-investiga-rachadinhas/",
+      "snippet": "Paracuru/CE tem histórico relevante de investigações: 'Operação Cascalho do Mar' (2017, fraude em licitação e corrupção envolvendo prefeito e secretários, com prisão do então prefeito por porte ilegal de arma), 'Operação Salário Sagrado' (crimes contra administração pública envolvendo vereadores da Câmara de Paracuru) e operação de 2022 investigando 'rachadinhas' com presidente da Câmara e vereadores como alvos. Nenhuma dessas matérias cita nominalmente Eriemerson Nobre Gonçalves ou Francisco Erivelto Gonçalves Junior — a matéria de 2022 menciona apenas 'um familiar de uma vereadora' e o 'ex-presidente da Câmara', sem identificação nominal completa.",
+      "source": "Pesquisa Web — Contexto Regional (M7)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Contexto regional (Paracuru/CE) — sem vínculo nominal direto confirmado com o PEP ou owner",
+      "homonimo_alerta": "Contexto regional — sem vínculo nominal direto com o PEP/owner (nomes não identificados nas matérias das operações de 2017/2022)"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa para a empresa IGREJA EVANGELICA ASSEMBLEIA DE DEUS DE PARACURU UMA IGREJA DE REFUGIO (CNPJ 07.684.261/0001-17)",
+      "url": "https://www.solutudo.com.br/empresas/ce/paracuru/instituicoes-religiosas/igreja-evangelica-assembleia-de-deus-de-paracuru-uma-igreja-de-refugio-17631955",
+      "snippet": "Igreja fundada em 14/10/2005, CNPJ 07.684.261/0001-17, sediada na Av. João Lopes Meireles, Vila São José, Paracuru/CE. Busca por fraude/investigação/processo/notícia não retornou nenhum resultado adverso específico para esta igreja. Existem escândalos nacionais envolvendo outras igrejas 'Assembleia de Deus' (ex.: multa da CGU à Assembleia de Deus de Goiânia por propina no MEC; investigação em Ji-Paraná/RO por coação de fiéis), mas NENHUM deles cita ou tem relação com a igreja de Paracuru/CE do caso.",
+      "source": "Pesquisa Web — Mídia Adversa Empresa (M8)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado direto para o CNPJ/razão social da empresa",
+      "homonimo_alerta": "Escândalos de outras igrejas 'Assembleia de Deus' (Goiânia, Ji-Paraná, Brasília, Paracambi) não têm relação com o CNPJ 07.684.261/0001-17 de Paracuru/CE — municípios/entidades distintas."
+    },
+    {
+      "title": "JusBrasil/Escavador — nenhum processo localizado para a empresa IGREJA EVANGELICA ASSEMBLEIA DE DEUS DE PARACURU UMA IGREJA DE REFUGIO",
+      "url": "https://www.jusbrasil.com.br/busca?q=07.684.261%2F0001-17",
+      "snippet": "Busca no JusBrasil/Escavador pelo CNPJ 07.684.261/0001-17 e pela razão social não retornou processos judiciais específicos vinculados à igreja. Resultado similar de nome ('Igreja Evangelica Assembleia de Deus de Paracambi', 19 processos) refere-se a Paracambi/RJ, município diferente, sem relação com o CNPJ do caso.",
+      "source": "Pesquisa Web — JusBrasil/Escavador Empresa (M9)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "Nenhum processo localizado para a empresa",
+      "homonimo_alerta": "'Igreja Evangelica Assembleia de Deus de Paracambi' (RJ) é entidade distinta, sem relação com a igreja de Paracuru/CE do caso."
+    },
+    {
+      "title": "TCE-CE — nenhum registro de irregularidade localizado para Eriemerson Nobre Gonçalves",
+      "url": "https://www.tce.ce.gov.br/downloads/Lista_Contas_Irregulares_TCE_CE_14082026.pdf",
+      "snippet": "Busca por \"Eriemerson\" Gonçalves + TCE-CE não encontrou o nome na lista de contas irregulares do TCE-CE nem em outros registros específicos do Tribunal de Contas do Estado do Ceará. Único achado de relevância cívica é o título de 'Cidadão de Caucaia' concedido a Eriemerson Nobre Gonçalves pela Câmara/Prefeitura de Caucaia — reforça a associação com Caucaia/CE, não Paracuru/CE.",
+      "source": "TCE-CE — busca interna",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum registro de irregularidade; achado cívico (título honorífico) reforça vínculo com Caucaia/CE, não Paracuru/CE",
+      "homonimo_alerta": "Título de 'Cidadão de Caucaia' reforça que o vínculo político/cívico de Eriemerson Nobre Gonçalves é com Caucaia/CE, município diferente de Paracuru/CE onde o owner está cadastrado."
+    },
+    {
+      "title": "Câmara Municipal de Paracuru/CE — Eriemerson Nobre Gonçalves não consta na lista pesquisável de vereadores/cargos do Legislativo local",
+      "url": "https://camaradeparacuru.ce.gov.br/institucional/cronologia/",
+      "snippet": "Busca no portal oficial da Câmara Municipal de Paracuru/CE e em fontes agregadoras (anuariodoceara.com.br) não confirmou Eriemerson Nobre Gonçalves como vereador ou ocupante de cargo no Legislativo de Paracuru. Achados de vínculo político (PSD, título de Cidadão) apontam para Caucaia/CE, câmara municipal diferente.",
+      "source": "Câmara/ALE-CE — Portal de Transparência",
+      "risk_indicator": "medio",
+      "tipo": "pep",
+      "match": "Nenhuma confirmação de cargo em Paracuru/CE; vínculo político real aparenta ser com a Câmara Municipal de Caucaia/CE",
+      "homonimo_alerta": "Cargo/mandato do PEP não foi confirmado em Paracuru/CE (cidade do owner); indícios apontam para Caucaia/CE — necessária verificação manual de identidade/município antes de decisão da Mesa."
+    },
+    {
+      "title": "Diário Oficial da União — nenhuma publicação localizada para Eriemerson Nobre Gonçalves ou a igreja",
+      "url": "https://www.in.gov.br/servicos/diario-oficial-da-uniao",
+      "snippet": "Busca por \"Eriemerson Nobre Gonçalves\" OR razão social da igreja no Diário Oficial da União não retornou nenhuma publicação (nomeação, sanção, ato de pessoal, convênio) vinculada aos nomes pesquisados.",
+      "source": "Diário Oficial da União (DOU)",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Eriemerson Nobre Gonçalves ou a empresa"
+    },
+    {
+      "title": "CGU — Eriemerson Nobre Gonçalves não consta como servidor federal",
+      "url": "https://www.gov.br/cgu/pt-br/acesso-a-informacao/servidores",
+      "snippet": "Busca por \"Eriemerson Nobre Gonçalves\" + CGU servidores federais não retornou nenhum registro no cadastro de servidores públicos federais. Não há indício de vínculo com o funcionalismo público federal.",
+      "source": "CGU — Servidores Federais",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Eriemerson Nobre Gonçalves"
     }
   ],
   "a116f88a-ab10-40fe-a80f-3c9515a55749": [
@@ -5696,6 +6144,121 @@
       "risk_indicator": "baixo",
       "tipo": "midia",
       "match": "M7 — Contexto regional (cidade do owner): operação policial em Alegrete-RS sem relação com corrupção administrativa, licitações ou com o owner Joao Carlos Piovesan."
+    },
+    {
+      "title": "TSE/mídia — Davi Cargnin Piovesan é vereador confirmado em PALMEIRA DAS MISSÕES/RS, município DIFERENTE de Alegrete/RS (cidade do owner)",
+      "url": "https://www.palmeiradasmissoes.rs.leg.br/davi.pdf",
+      "snippet": "Davi Cargnin Piovesan (PT), nascido em 24/11/1975 em Palmeira das Missões/RS, professor, foi o vereador mais votado do PT em 2020 (705 votos, 4º mais votado) e presidiu a Câmara Municipal de Palmeira das Missões em 2024. NÃO foi localizada nenhuma candidatura ou mandato de 'Davi Piovesan'/'Davi Cargnin Piovesan' na Câmara Municipal de Alegrete/RS (cidade do owner) nas eleições de 2020 ou 2024 (TRE-RS/gazetadopovo/otempo). Palmeira das Missões e Alegrete são municípios distintos e geograficamente distantes no RS. IMPORTANTE PARA A ANALISTA: risco de erro de identificação de município do PEP ou de homônimo — recomenda-se verificação manual de CPF antes de tratar como o mesmo vínculo familiar declarado (irmão do owner).",
+      "source": "TSE — Divulgação de Candidaturas",
+      "risk_indicator": "medio",
+      "tipo": "pep",
+      "match": "Nome completo coincide (Davi Cargnin Piovesan), mas município do mandato de vereador encontrado (Palmeira das Missões/RS) DIVERGE do município do PEP no cadastro (Alegrete/RS)",
+      "homonimo_alerta": "Único 'Davi Cargnin Piovesan' com mandato de vereador confirmado publicamente é de Palmeira das Missões/RS, não de Alegrete/RS. Nenhuma candidatura/mandato foi localizada em Alegrete para esse nome — verificar identidade/CPF antes de confirmar o vínculo do PEP declarado no cadastro."
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa (corrupção/improbidade/cassação/operação policial) para Davi Cargnin Piovesan",
+      "url": "https://www.google.com/search?q=%22Davi+Cargnin+Piovesan%22+corrup%C3%A7%C3%A3o+OR+improbidade+OR+cassa%C3%A7%C3%A3o+OR+investiga%C3%A7%C3%A3o+OR+opera%C3%A7%C3%A3o+policial",
+      "snippet": "Busca ampla por \"Davi Cargnin Piovesan\" + corrupção/improbidade/cassação/investigação/operação policial não retornou nenhuma notícia ou processo vinculado a ele (seja em Palmeira das Missões ou em Alegrete). Resultados retornados foram sobre operações de corrupção não relacionadas (Rio de Janeiro, fundo de pensão) sem conexão nominal com o PEP.",
+      "source": "Pesquisa Web — Mídia Adversa (M2)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado direto para Davi Cargnin Piovesan"
+    },
+    {
+      "title": "Portal da Transparência — nenhum contrato federal (CEIS/CNEP/CEPIM) localizado para Davi Cargnin Piovesan/Davi Piovesan",
+      "url": "https://portaldatransparencia.gov.br/localidades/2200277-alegrete-do-piaui",
+      "snippet": "Busca por \"Davi Piovesan\" + Alegrete + contratos federais/portaldatransparencia.gov.br não retornou registro nas listas CEIS/CNEP/CEPIM nem contrato federal em nome do PEP. Resultados retornados foram sobre localidades homônimas de nome 'Alegrete' (Alegrete do Piauí) sem relação com o caso.",
+      "source": "Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Davi Cargnin Piovesan"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma licitação/contrato/fraude localizada para João Carlos Piovesan em Alegrete/RS",
+      "url": "https://www.gazetadopovo.com.br/brasil/pf-investiga-fraude-licitacoes-avaliadas-406-milhoes-rs/",
+      "snippet": "Busca por \"João Carlos Piovesan\" Alegrete fraude/investigação/licitação não retornou nenhum resultado direto vinculado ao owner. Achado mais próximo é a operação 'Laranja Mecânica' (PF, fraude em licitação de transporte escolar em vários municípios do RS incluindo Alegrete, 2017) — porém sem qualquer menção nominal a João Carlos Piovesan.",
+      "source": "Pesquisa Web — Contratos/Licitações (M4)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado direto para João Carlos Piovesan",
+      "homonimo_alerta": "Operação 'Laranja Mecânica' (2017, transporte escolar) menciona Alegrete/RS entre os municípios investigados, mas nenhum nome de réu coincide com João Carlos Piovesan ou Davi Cargnin Piovesan — sem vínculo nominal confirmado."
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa direta para o owner João Carlos Piovesan em Alegrete/RS",
+      "url": "https://www.google.com/search?q=%22Jo%C3%A3o+Carlos+Piovesan%22+Alegrete+fraude+OR+investiga%C3%A7%C3%A3o+OR+contrato+p%C3%BAblico+OR+licita%C3%A7%C3%A3o",
+      "snippet": "Busca por \"João Carlos Piovesan\" + Alegrete + fraude/investigação/contrato público/licitação não retornou nenhum resultado adverso. Único achado com sobrenome 'Piovesan' e vínculo a entidade de classe é um 'João Piovesan' suplente no Sindicato da Indústria da Madeira de Caxias do Sul/RS — município diferente de Alegrete, sem confirmação de ser a mesma pessoa.",
+      "source": "Pesquisa Web — Mídia Adversa Owner (M5)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado adverso direto para João Carlos Piovesan",
+      "homonimo_alerta": "'João Piovesan' (suplente sindical em Caxias do Sul/RS) é homônimo parcial não confirmado como o mesmo owner do caso (município diferente de Alegrete)."
+    },
+    {
+      "title": "Pesquisa Web — Contexto Regional Alegrete/RS: operação policial recente (Quarto Grau, jan/2025) é de tráfico/roubo, sem vínculo com o PEP/owner",
+      "url": "https://www.pc.rs.gov.br/policia-civil-deflagra-operacao-quarto-grau-em-alegrete",
+      "snippet": "Operação Quarto Grau (Polícia Civil, 07/01/2025) em Alegrete/RS investigou roubo ocorrido em 10/12/2024 e tráfico de drogas em um bairro da cidade, com apreensão de drogas, armas e dinheiro — crime comum, sem relação com corrupção municipal, licitação ou os nomes do caso. Nenhuma operação de corrupção municipal específica para Alegrete/RS foi localizada nos últimos 2 anos.",
+      "source": "Pesquisa Web — Contexto Regional (M7)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Contexto regional (Alegrete/RS) — evento de natureza criminal comum, sem nexo nominal com o PEP/owner",
+      "homonimo_alerta": "Contexto regional — sem vínculo nominal direto com o PEP/owner"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa para a empresa PIOVESAN CONSULTORIA FINANCEIRA LTDA (CNPJ 68.465.576/0001-68)",
+      "url": "https://cnpj.chat/cidade/rs/8507-alegrete",
+      "snippet": "PIOVESAN CONSULTORIA FINANCEIRA LTDA, CNPJ 68.465.576/0001-68, sediada em Alegrete/RS, atividade 'outras atividades auxiliares dos serviços financeiros não especificadas anteriormente', empresa aberta em 07/08/2026. Busca por fraude/investigação/processo/notícia não retornou nenhum resultado adverso específico para esta empresa.",
+      "source": "Pesquisa Web — Mídia Adversa Empresa (M8)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado direto para o CNPJ/razão social da empresa"
+    },
+    {
+      "title": "JusBrasil/Escavador — nenhum processo localizado para a empresa PIOVESAN CONSULTORIA FINANCEIRA LTDA",
+      "url": "https://www.escavador.com/nomes/anderson-augusto-piovesan-6cd69bf0fa",
+      "snippet": "Busca no JusBrasil/Escavador pela razão social PIOVESAN CONSULTORIA FINANCEIRA LTDA e pelo CNPJ 68.465.576/0001-68 não retornou processos judiciais específicos da empresa. Único processo com sobrenome Piovesan localizado ('Anderson Augusto Piovesan', 1 processo em SP) não tem relação confirmada com a empresa ou o owner do caso.",
+      "source": "Pesquisa Web — JusBrasil/Escavador Empresa (M9)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "Nenhum processo localizado para a empresa",
+      "homonimo_alerta": "'Anderson Augusto Piovesan' (processo em SP) é homônimo parcial de sobrenome, sem relação confirmada com João Carlos Piovesan ou a empresa do caso."
+    },
+    {
+      "title": "TCE-RS — nenhum registro localizado para Davi Cargnin Piovesan; achados referem-se à Câmara de Palmeira das Missões/RS, não Alegrete/RS",
+      "url": "https://www.palmeiradasmissoes.rs.leg.br/institucional/historia",
+      "snippet": "Busca por \"Davi Cargnin Piovesan\" + TCE-RS não retornou processo, prestação de contas ou julgamento específico. Os únicos vínculos institucionais localizados (presidência da Câmara, capacitação de rede de proteção à mulher via CAO/MPRS) são todos em Palmeira das Missões/RS — reforça a divergência de município já registrada no bloco 1 (TSE).",
+      "source": "TCE-RS — busca interna",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto; vínculos institucionais reforçam município de Palmeira das Missões/RS, não Alegrete/RS",
+      "homonimo_alerta": "Reforça a divergência de município já registrada: vínculos institucionais de Davi Cargnin Piovesan são todos em Palmeira das Missões/RS, não em Alegrete/RS (cidade do owner)."
+    },
+    {
+      "title": "Câmara Municipal de Alegrete/RS — não foi possível confirmar Davi Cargnin Piovesan na lista de vereadores em exercício",
+      "url": "https://www.alegrete.rs.leg.br/camara/membros/exercicio/0",
+      "snippet": "Tentativa de acesso ao portal oficial da Câmara Municipal de Alegrete/RS foi bloqueada por verificação anti-robô, impossibilitando confirmação direta da lista de vereadores em exercício. Buscas indiretas (TRE-RS, gazetadopovo, otempo) não confirmaram candidatura ou mandato de 'Davi Piovesan'/'Davi Cargnin Piovesan' em Alegrete nas eleições de 2020 ou 2024. Recomenda-se verificação manual direta no portal da Câmara de Alegrete.",
+      "source": "Câmara/ALE-RS — Portal de Transparência",
+      "risk_indicator": "medio",
+      "tipo": "pep",
+      "match": "Não confirmado — acesso ao portal bloqueado; buscas indiretas não localizam o PEP em Alegrete/RS",
+      "homonimo_alerta": "Nenhuma fonte indireta confirma Davi Cargnin Piovesan como vereador de Alegrete/RS; verificação manual direta no portal da Câmara é necessária antes da decisão da Mesa."
+    },
+    {
+      "title": "Diário Oficial da União — nenhuma publicação localizada para Davi Cargnin Piovesan ou a empresa",
+      "url": "https://www.in.gov.br/servicos/diario-oficial-da-uniao",
+      "snippet": "Busca por \"Davi Cargnin Piovesan\" OR \"Piovesan Consultoria Financeira\" no Diário Oficial da União não retornou nenhuma publicação (nomeação, sanção, ato de pessoal, contrato) vinculada aos nomes pesquisados.",
+      "source": "Diário Oficial da União (DOU)",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Davi Cargnin Piovesan ou a empresa"
+    },
+    {
+      "title": "CGU — Davi Cargnin Piovesan não consta como servidor federal",
+      "url": "https://www.gov.br/cgu/pt-br/acesso-a-informacao/servidores",
+      "snippet": "Busca por \"Davi Cargnin Piovesan\" + CGU servidores federais não retornou nenhum registro. Consistente com o cargo de vereador municipal, sem vínculo com o funcionalismo público federal.",
+      "source": "CGU — Servidores Federais",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Davi Cargnin Piovesan"
     }
   ],
   "fdcfbd26-8a43-44c3-892a-006b11e2cee4": [
@@ -5824,6 +6387,114 @@
       "risk_indicator": "baixo",
       "tipo": "midia",
       "match": "M7 — Contexto regional. Única operação policial recente identificada em Monte Azul Paulista (jan/2025) refere-se a tráfico de drogas, sem envolvimento de agentes políticos ou contratos públicos. Não foram encontradas operações de corrupção municipal ativas nos últimos 2 anos direcionadas ao município."
+    },
+    {
+      "title": "TSE — Luciana Aparecida Kubica (PV, nº 43789), vereadora eleita/em exercício em Monte Azul Paulista/SP",
+      "url": "https://www.otempo.com.br/eleicoes/2024/candidatos/sao-paulo/monte-azul-paulista/vereador/luciana-kubica-43789",
+      "snippet": "Luciana Kubica, número de urna 43789, vereadora eleita de Monte Azul Paulista/SP pelo PV nas Eleições 2024, nascida em Monte Azul Paulista em 02/04/1978, servidora pública municipal com ensino superior completo. Assumiu como suplente em junho/2021 a cadeira deixada pelo vereador José de Souza Molico, completando o mandato até 31/12/2024, e foi reeleita em 2024. Confirma mandato de vereadora, mesma cidade/UF do owner (irmão).",
+      "source": "TSE — Divulgação de Candidaturas",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Luciana Aparecida Kubica — nome completo coincide; vereadora em Monte Azul Paulista/SP, mesma cidade do cadastro"
+    },
+    {
+      "title": "Pesquisa Web — ACHADO RELEVANTE: pai da PEP, Gilberto Roberto Kubica (ex-vereador, 4 legislaturas, presidente da Câmara), foi CONDENADO por improbidade administrativa em esquema de fraude em licitação em Monte Azul Paulista (condenação mantida pelo TJSP)",
+      "url": "https://www.jusbrasil.com.br/noticias/tjsp-mantem-condenacao-de-ex-prefeito-e-ex-vereador-de-monte-azul-paulista-por-improbidade/164297630",
+      "snippet": "A 8ª Câmara de Direito Público do TJSP manteve condenação de 5 pessoas, entre elas o ex-prefeito Francisco de Assis Livolis Blanco e o ex-vereador Gilberto Kubica (pai de Luciana Aparecida Kubica, a PEP do caso), por improbidade administrativa. As licitações 17/98 e 30/00 foram declaradas nulas — modalidade convite considerada ilegal por simulação e conluio de licitantes para fraudar a publicidade e a competitividade. Segundo a decisão, o esquema foi montado para 'comprar' o apoio político de Gilberto Kubica, então vereador e proprietário da empresa São Jorge. Condenados a ressarcir o erário em mais de R$ 124 mil. Gilberto Roberto Kubica presidiu a Câmara Municipal de Monte Azul Paulista por dois biênios e cumpriu 4 legislaturas como vereador.",
+      "source": "Pesquisa Web — Mídia Adversa (M2)",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "Gilberto Roberto Kubica — pai confirmado da PEP Luciana Aparecida Kubica, mesmo sobrenome/município — condenação por improbidade administrativa mantida pelo TJSP em esquema de fraude em licitação"
+    },
+    {
+      "title": "Portal da Transparência — nenhum contrato federal (CEIS/CNEP/CEPIM) localizado para Luciana Aparecida Kubica",
+      "url": "https://portaldatransparencia.gov.br/sancoes/consulta",
+      "snippet": "Busca por \"Luciana Kubica\" + Monte Azul Paulista + contratos federais/portaldatransparencia.gov.br não retornou registro nas listas CEIS/CNEP/CEPIM nem contrato federal em nome da PEP.",
+      "source": "Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Luciana Aparecida Kubica"
+    },
+    {
+      "title": "Pesquisa Web — histórico de fraude em licitação em Monte Azul Paulista está diretamente ligado ao pai da PEP (Gilberto Kubica) — já registrado no bloco M2; nenhum novo achado de licitação envolvendo Luciana ou Douglas Kubica",
+      "url": "https://www.jusbrasil.com.br/noticias/tjsp-mantem-condenacao-de-ex-prefeito-e-ex-vereador-de-monte-azul-paulista-por-improbidade/164297630",
+      "snippet": "O único achado de licitação/contrato/dispensa/inexigibilidade envolvendo o sobrenome Kubica em Monte Azul Paulista é o esquema de fraude nas licitações 17/98 e 30/00 (já registrado no bloco M2), envolvendo o pai da PEP. Não há achado adicional de licitação envolvendo diretamente Luciana Aparecida Kubica ou Douglas Kubica (owner).",
+      "source": "Pesquisa Web — Contratos/Licitações (M4)",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "Mesmo achado do bloco M2 (Gilberto Kubica, pai da PEP) — sem novo achado direto sobre Luciana ou Douglas Kubica"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa direta para o owner Douglas Kubica em Monte Azul Paulista",
+      "url": "https://www.google.com/search?q=%22Douglas+Kubica%22+Monte+Azul+Paulista+fraude+OR+investiga%C3%A7%C3%A3o+OR+contrato+p%C3%BAblico+OR+licita%C3%A7%C3%A3o",
+      "snippet": "Busca por \"Douglas Kubica\" + Monte Azul Paulista + fraude/investigação/contrato público/licitação não retornou nenhum resultado adverso direto para o owner. O sobrenome Kubica em Monte Azul Paulista está associado publicamente à família política (pai Gilberto Kubica, filha vereadora Luciana Kubica), sem menção nominal a Douglas Kubica em processos ou notícias.",
+      "source": "Pesquisa Web — Mídia Adversa Owner (M5)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado adverso direto para Douglas Kubica"
+    },
+    {
+      "title": "Pesquisa Web — Contexto Regional Monte Azul Paulista/SP: operação policial recente é de tráfico de drogas (jan/2025), sem vínculo com o PEP/owner; único achado de corrupção municipal é o caso histórico já registrado no bloco M2 (Gilberto Kubica)",
+      "url": "https://regional24horas.com.br/noticia/monte-azul-paulista-fim-da-linha-policia-civil-e-gcm-chega-de-acute-fininho-e-manda-traficante-para-a-cadeia-/10292",
+      "snippet": "Operação da Polícia Civil e GCM em Monte Azul Paulista (04/01/2025) resultou em prisão de traficante — crime comum, sem relação com corrupção municipal ou com os nomes do caso. O único evento de corrupção municipal relevante para a cidade nos últimos anos é o caso histórico de fraude em licitação envolvendo Gilberto Kubica (pai da PEP), já registrado no bloco M2 — não é um novo achado de contexto regional dissociado, mas o mesmo evento com nexo familiar direto confirmado.",
+      "source": "Pesquisa Web — Contexto Regional (M7)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Evento de corrupção municipal já registrado no bloco M2, com nexo familiar direto — não é risco regional dissociado"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa para a empresa 68.509.014 DOUGLAS KUBICA (CNPJ 68.509.014/0001-79)",
+      "url": "https://www.google.com/search?q=%2268.509.014%2F0001-79%22+fraude+OR+investiga%C3%A7%C3%A3o+OR+processo+OR+not%C3%ADcia",
+      "snippet": "Busca pelo CNPJ 68.509.014/0001-79 (MEI Douglas Kubica) e pela razão social não retornou nenhuma notícia, processo ou registro de fraude/investigação vinculado à empresa do owner. Não foi localizada relação entre essa empresa e a 'São Jorge', empresa historicamente ligada a Gilberto Kubica (pai da PEP) no episódio de fraude em licitação.",
+      "source": "Pesquisa Web — Mídia Adversa Empresa (M8)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado direto para o CNPJ/razão social da empresa"
+    },
+    {
+      "title": "JusBrasil/Escavador — nenhum processo localizado para a empresa 68.509.014 DOUGLAS KUBICA ou para Douglas Kubica",
+      "url": "https://www.jusbrasil.com.br/busca?q=68.509.014%2F0001-79",
+      "snippet": "Busca no JusBrasil/Escavador pelo CNPJ 68.509.014/0001-79, pela razão social e pelo nome 'Douglas Kubica' não retornou processos judiciais específicos.",
+      "source": "Pesquisa Web — JusBrasil/Escavador Empresa (M9)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "Nenhum processo localizado para a empresa ou para Douglas Kubica"
+    },
+    {
+      "title": "TCE-SP — nenhum registro específico localizado para Luciana Kubica; TCE-SP não retornou achado adicional além do processo judicial (TJSP) já registrado sobre o pai da PEP",
+      "url": "https://www.tce.sp.gov.br/",
+      "snippet": "Busca por \"Luciana Kubica\" + TCE-SP/TCESP não retornou processo, prestação de contas ou julgamento específico vinculado à vereadora. O achado de improbidade administrativa contra Gilberto Kubica (pai da PEP) tramitou no TJSP (Poder Judiciário), não no TCE-SP — já registrado no bloco M2.",
+      "source": "TCE-SP — busca interna",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Luciana Kubica no TCE-SP"
+    },
+    {
+      "title": "Câmara Municipal de Monte Azul Paulista — confirma Luciana Aparecida Kubica como vereadora e Gilberto Roberto Kubica (pai) como ex-vereador de 4 legislaturas/ex-presidente da Câmara",
+      "url": "https://siscam.camaramonteazul.sp.gov.br/Vereadores/Vereador/92",
+      "snippet": "Portal oficial (SISCAM) da Câmara Municipal de Monte Azul Paulista confirma Luciana Aparecida Kubica como vereadora em exercício e lista Gilberto Roberto Kubica como ex-vereador (4 legislaturas, presidente da Câmara por 2 biênios) — mesma família Kubica, mesma cidade do owner Douglas Kubica.",
+      "source": "Câmara/ALE-SP — Portal de Transparência",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Luciana Aparecida Kubica — vereadora; Gilberto Roberto Kubica (pai) — ex-vereador/ex-presidente da Câmara, mesma família"
+    },
+    {
+      "title": "Diário Oficial da União — nenhuma publicação localizada para Luciana Aparecida Kubica ou a empresa do owner",
+      "url": "https://www.in.gov.br/servicos/diario-oficial-da-uniao",
+      "snippet": "Busca por \"Luciana Kubica\" OR \"68.509.014 Douglas Kubica\" no Diário Oficial da União não retornou nenhuma publicação (nomeação, sanção, ato de pessoal, contrato) vinculada aos nomes pesquisados. Consistente com o cargo ser de esfera municipal (vereadora), sem vínculo federal direto.",
+      "source": "Diário Oficial da União (DOU)",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Luciana Aparecida Kubica ou a empresa"
+    },
+    {
+      "title": "CGU — Luciana Aparecida Kubica não consta como servidora federal (é servidora pública municipal)",
+      "url": "https://www.gov.br/cgu/pt-br/acesso-a-informacao/servidores",
+      "snippet": "Busca por \"Luciana Aparecida Kubica\" + CGU servidores federais não retornou registro. Consistente com sua profissão declarada de servidora pública MUNICIPAL, sem vínculo com o funcionalismo público federal.",
+      "source": "CGU — Servidores Federais",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Luciana Aparecida Kubica"
     }
   ],
   "68df24fe-b9c6-4e60-a88d-fc735f0b7875": [
@@ -5970,6 +6641,118 @@
       "risk_indicator": "baixo",
       "tipo": "pep",
       "match": "Confirmação de atuação parlamentar do PEP em janeiro/2025 — apresentação de emenda legislativa sobre zoneamento urbano. Contradiz a referência de 'ex-vereador' de abril/2026. Recomenda-se apuração da data exata de saída do mandato/não eleição para a 16ª Legislatura."
+    },
+    {
+      "title": "TSE/Câmara — Nilton Batista Raupp é vereador confirmado em GAROPABA/SC (MDB), município DIFERENTE de Imbituba/SC (cidade do owner)",
+      "url": "https://www.camaragaropaba.sc.gov.br/camara/membros/show/3832",
+      "snippet": "Nilton Batista Raupp (MDB) é contador (CRC 16110/O-0) e vereador da Câmara Municipal de GAROPABA/SC, eleito para a 15ª legislatura (2021-2024), tendo presidido a Mesa Diretora e uma CPI. Candidatou-se em 2020 pelo MDB em Garopaba. NÃO foi localizado nenhum mandato de vereador em Imbituba/SC (cidade onde a empresa TAC Contábeis do owner está sediada e onde o cadastro do caso indica 'mesma cidade/UF' do PEP). Garopaba e Imbituba são municípios litorâneos vizinhos de SC, mas distintos. IMPORTANTE PARA A ANALISTA: o vínculo societário com o owner (sócio confirmado em outro bloco) é real, mas o cargo político do PEP é em Garopaba, não em Imbituba — verificar se o cadastro do caso tem erro de município ou se há necessidade de reclassificação.",
+      "source": "TSE — Divulgação de Candidaturas",
+      "risk_indicator": "medio",
+      "tipo": "pep",
+      "match": "Nome completo coincide (Nilton Batista Raupp) e vínculo societário com o owner é confirmado, mas o município do mandato de vereador (Garopaba/SC) DIVERGE do município declarado no cadastro do caso (Imbituba/SC)",
+      "homonimo_alerta": "Nilton Batista Raupp é vereador de Garopaba/SC, não de Imbituba/SC — cidade do mandato político diverge da cidade do cadastro do caso; recomenda-se confirmar se é erro de município no cadastro antes de tratar a informação de 'mesma cidade' como correta."
+    },
+    {
+      "title": "Confirmação de sociedade — Nilton Batista Raupp é SÓCIO/CONTADOR de TAC Contábeis LTDA junto com o owner Emerson de Sousa da Silva (administrador)",
+      "url": "https://www.nibo.com.br/achar-contadores/sc/garopaba/centro/nilton-batista-raupp/ffbb181e-c9eb-413d-8dc3-3967e97e6d28/",
+      "snippet": "Confirmado: Nilton Batista Raupp (Contador CRC 16110/O-0) é um dos sócios/responsáveis técnicos da TAC Contabilidade (TAC CONTABEIS LTDA, CNPJ 03.821.534/0001-77, Imbituba/SC), ao lado de Emerson de Sousa da Silva (Contador CRC 036364/O-9), o owner/administrador da empresa do caso. Confirma o vínculo societário declarado no cadastro (\"sócio do owner\"), mas o mandato político de vereador de Raupp é exercido em Garopaba/SC, não em Imbituba/SC.",
+      "source": "Pesquisa Web — Mídia Adversa (M2)",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Vínculo societário com o owner confirmado (sócio/contador da TAC Contábeis); nenhuma mídia adversa (corrupção/improbidade/cassação/operação policial) localizada para Nilton Batista Raupp"
+    },
+    {
+      "title": "Portal da Transparência — nenhum contrato federal (CEIS/CNEP/CEPIM) localizado para Nilton Batista Raupp",
+      "url": "https://portaldatransparencia.gov.br/sancoes/consulta",
+      "snippet": "Busca por \"Nilton Raupp\" + Imbituba/Garopaba + contratos federais/portaldatransparencia.gov.br não retornou registro nas listas CEIS/CNEP/CEPIM nem contrato federal em nome do PEP.",
+      "source": "Portal da Transparência — CEIS / CNEP / CEPIM (CNPJ)",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Nilton Batista Raupp"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma licitação/contrato/dispensa/inexigibilidade localizada para Nilton Batista Raupp em Imbituba ou Garopaba/SC",
+      "url": "https://www.google.com/search?q=%22Nilton+Batista+Raupp%22+licita%C3%A7%C3%A3o+OR+contrato+OR+dispensa+OR+inexigibilidade",
+      "snippet": "Busca por licitação/contrato/dispensa/inexigibilidade envolvendo Nilton Batista Raupp não retornou nenhum resultado adverso, tanto em Imbituba quanto em Garopaba/SC (município do mandato real).",
+      "source": "Pesquisa Web — Contratos/Licitações (M4)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado direto para Nilton Batista Raupp"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa (fraude/investigação/contrato público/licitação) para o owner Emerson de Sousa da Silva; disputa política envolvendo o sócio PEP em Garopaba é de natureza procedimental, sem corrupção",
+      "url": "https://garopaba.sc/politica/vereador-nilton-raupp-defende-sua-honestidade-e-critica-presidente-da-camara/",
+      "snippet": "Busca por \"Emerson de Sousa da Silva\" + Imbituba + fraude/investigação/contrato público/licitação não retornou nenhum resultado adverso para o owner. Único achado de contexto envolvendo o sócio PEP (Nilton Raupp) é uma disputa política interna na Câmara de Garopaba (questionamento sobre nomeação de uma servidão/rua por outro vereador, respondido por Raupp alegando 30+ anos de vida pública com 'lisura' e que a obra foi paga com recursos privados/comunitários) e episódios de destituição/tumulto na presidência da Mesa Diretora em 2024/2025 — disputas político-procedimentais internas, SEM menção a corrupção, fraude contábil, TAC Contábeis ou Emerson de Sousa da Silva.",
+      "source": "Pesquisa Web — Mídia Adversa Owner (M5)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado adverso direto para Emerson de Sousa da Silva; disputa política do sócio PEP é procedimental, não relacionada a corrupção/fraude"
+    },
+    {
+      "title": "Pesquisa Web — Contexto Regional Imbituba/SC: MÚLTIPLAS operações policiais recentes contra fraude/desvio na Prefeitura (Ourímetro, Holerite, Castelo de Barro), mas nenhuma cita nominalmente Nilton Batista Raupp, Emerson de Sousa da Silva ou TAC Contábeis",
+      "url": "https://ssp.sc.gov.br/policia-civil-deflagra-operacao-ourimetro-cumpre-32-mandados-de-busca-e-dez-servidores-sao-afastados-da-administracao-municipal-de-imbituba/",
+      "snippet": "Imbituba/SC tem histórico recente relevante de corrupção municipal: 'Operação Ourímetro' (mai/2024, fraude em medição de horas de máquinas contratadas pela Prefeitura, 32 mandados, 10 servidores afastados), 'Operação Holerite' (fev/2025, desvio de dinheiro na prefeitura, 1 prisão preventiva) e 'Operação Castelo de Barro' (out/2024-jun/2025, desvio de brita contratada pelo município, R$500 mil, crimes de organização criminosa/compra de votos/caixa dois/lavagem — vereador Ronaldo Gonçalves Junior foi alvo). NENHUMA dessas operações cita nominalmente Nilton Batista Raupp, Emerson de Sousa da Silva ou a TAC Contábeis. IMPORTANTE PARA A ANALISTA: dado o volume de operações recentes contra a administração municipal de Imbituba, recomenda-se atenção elevada a qualquer contrato entre a TAC Contábeis e a Prefeitura de Imbituba, embora nenhum vínculo nominal tenha sido encontrado nesta pesquisa.",
+      "source": "Pesquisa Web — Contexto Regional (M7)",
+      "risk_indicator": "medio",
+      "tipo": "midia",
+      "match": "Contexto regional (Imbituba/SC) — múltiplas operações de corrupção municipal recentes, mas SEM vínculo nominal direto confirmado com o PEP/owner/empresa do caso",
+      "homonimo_alerta": "Contexto regional — sem vínculo nominal direto com o PEP/owner/empresa; nenhuma das operações (Ourímetro, Holerite, Castelo de Barro) cita Nilton Batista Raupp, Emerson de Sousa da Silva ou TAC Contábeis"
+    },
+    {
+      "title": "Pesquisa Web — nenhuma mídia adversa para a empresa TAC CONTÁBEIS LTDA (CNPJ 03.821.534/0001-77)",
+      "url": "https://www.econodata.com.br/consulta-empresa/03821534000177-tac-contabeis-ltda",
+      "snippet": "TAC CONTABEIS LTDA (nome fantasia TAC Contabilidade), CNPJ 03.821.534/0001-77, sediada na Rua Ernani Cotrin, 296, sala 202, Centro, Imbituba/SC, aberta em 18/05/2000, ME, CNAE 6920-6/01 (serviços contábeis). Busca por fraude/investigação/processo/notícia não retornou nenhum resultado adverso específico para esta empresa. Existem empresas homônimas de nome fantasia 'TAC Contabilidade' em outros estados (Amazonas, CNPJ 59.530.206/0001-76) sem relação com a empresa do caso.",
+      "source": "Pesquisa Web — Mídia Adversa Empresa (M8)",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "Nenhum resultado direto para o CNPJ/razão social da empresa",
+      "homonimo_alerta": "'TAC Contabilidade' no Amazonas (CNPJ 59.530.206/0001-76) é empresa homônima de nome fantasia, sem relação com a TAC Contábeis de Imbituba/SC do caso."
+    },
+    {
+      "title": "JusBrasil/Escavador — nenhum processo de fraude localizado para a empresa TAC CONTÁBEIS LTDA",
+      "url": "https://www.jusbrasil.com.br/nome/tac-contabilidade/cnpj-1CZjDz9k-Z",
+      "snippet": "Busca no JusBrasil/Escavador pelo CNPJ 03.821.534/0001-77 e pela razão social TAC Contábeis não retornou processos de fraude ou irregularidade específicos vinculados à empresa. Existe registro de página no JusBrasil para a empresa, mas sem indicação de processo relevante nos resultados de busca web.",
+      "source": "Pesquisa Web — JusBrasil/Escavador Empresa (M9)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "Nenhum processo de fraude localizado para a empresa"
+    },
+    {
+      "title": "TCE-SC — nenhum registro de irregularidade localizado para Nilton Batista Raupp",
+      "url": "https://www.tce.sc.gov.br/",
+      "snippet": "Busca por \"Nilton Batista Raupp\" + TCE-SC não retornou processo, prestação de contas ou julgamento específico vinculado ao PEP, seja em Garopaba ou Imbituba/SC.",
+      "source": "TCE-SC — busca interna",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Nilton Batista Raupp"
+    },
+    {
+      "title": "Câmara Municipal de Garopaba/SC — confirma Nilton Batista Raupp como vereador (15ª legislatura, 2021-2024), ex-presidente da Mesa Diretora; disputas internas de mandato são de natureza procedimental (MP pediu anulação de votação por questão de suplentes), sem menção a corrupção do próprio Raupp",
+      "url": "https://garopaba.sc/politica/ministerio-publico-solicita-anulacao-da-votacao-da-camara-de-garopaba-realizada-em-1o-de-julho/",
+      "snippet": "Nilton Batista Raupp foi presidente da Mesa Diretora da Câmara de Garopaba e de uma CPI. Em 2024/2025, houve disputa procedimental na Câmara sobre destituição do então presidente Jairo Pereira dos Santos (votação tumultuada, MP pediu anulação por questão de suplentes votantes) — Raupp participou como vereador votante, sem ser alvo de acusação de corrupção nesse episódio. Confirma-se que o mandato de vereador de Raupp é em GAROPABA/SC, não em Imbituba/SC.",
+      "source": "Câmara/ALE-SC — Portal de Transparência",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Nilton Batista Raupp — vereador confirmado em Garopaba/SC (não Imbituba/SC)",
+      "homonimo_alerta": "Reforça a divergência de município já registrada no bloco 1 (TSE): mandato de vereador de Nilton Batista Raupp é em Garopaba/SC, não em Imbituba/SC."
+    },
+    {
+      "title": "Diário Oficial da União — nenhuma publicação localizada para Nilton Batista Raupp ou TAC Contábeis",
+      "url": "https://www.in.gov.br/servicos/diario-oficial-da-uniao",
+      "snippet": "Busca por \"Nilton Batista Raupp\" OR \"TAC Contábeis\" no Diário Oficial da União não retornou nenhuma publicação (nomeação, sanção, ato de pessoal, contrato) vinculada aos nomes pesquisados. Consistente com o cargo ser de esfera municipal, sem vínculo federal.",
+      "source": "Diário Oficial da União (DOU)",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Nilton Batista Raupp ou TAC Contábeis"
+    },
+    {
+      "title": "CGU — Nilton Batista Raupp não consta como servidor federal",
+      "url": "https://www.gov.br/cgu/pt-br/acesso-a-informacao/servidores",
+      "snippet": "Busca por \"Nilton Batista Raupp\" + CGU servidores federais não retornou nenhum registro. Consistente com o cargo de vereador municipal (Garopaba/SC) e atividade de contador privado, sem vínculo com o funcionalismo público federal.",
+      "source": "CGU — Servidores Federais",
+      "risk_indicator": "baixo",
+      "tipo": "governo",
+      "match": "Nenhum resultado direto para Nilton Batista Raupp"
     }
   ],
   "fcb6f395-952b-491c-b4b7-dd4b27205107": [
