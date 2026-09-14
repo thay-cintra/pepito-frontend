@@ -7400,10 +7400,11 @@
       "url": "https://www.tjsp.jus.br/Noticias/Noticia?codigoNoticia=25504",
       "snippet": "Procedimentos licitatórios 17/98 e 30/00 declarados nulos por simulação e conluio de licitantes. Ex-prefeito Francisco de Assis Livolis Blanco e ex-vereador Gilberto Kubica entre os 5 condenados. Esquema visava 'compra' do apoio político de Gilberto Kubica, proprietário da empresa São Jorge.",
       "source": "TJSP (site oficial do Tribunal de Justiça de SP)",
-      "risk_indicator": "medio",
+      "risk_indicator": "alto",
       "tipo": "midia",
       "match": "Fonte primária (TJSP) confirmando condenação do pai da PEP. Padrão de vínculo entre mandato parlamentar (vereança) e titularidade de empresa beneficiada por contratos públicos — padrão estrutural relevante para avaliação do owner Douglas Kubica, irmão da PEP.",
-      "achado_positivo": true
+      "achado_positivo": true,
+      "decisao_recomendada": "MONITORAMENTO/REVISÃO REFORÇADA RECOMENDADA — condenação por improbidade administrativa (fraude em licitação) do PAI da PEP mantida pelo TJSP. Vínculo familiar direto (não é a própria PEP), mas risco de contágio reputacional/associativo relevante dado o histórico de influência política da família Kubica no mesmo município onde a PEP hoje exerce mandato. Reclassificado de médio para alto em 2026-09-15 (thay@cora.com.br) — processo cível de improbidade com CONDENAÇÃO MANTIDA em 2ª instância é mais grave que mera denúncia/processo em curso."
     },
     {
       "title": "Portal da Transparência Federal — Município de Monte Azul Paulista: R$ 279,8 milhões em recursos federais recebidos",
@@ -7420,10 +7421,11 @@
       "url": "https://siscam.camaramonteazul.sp.gov.br/Vereadores/Contagem/92",
       "snippet": "Perfil de Gilberto Roberto Kubica no sistema legislativo oficial da Câmara Municipal de Monte Azul Paulista. Pai da vereadora Luciana Kubica, exerceu vereança em quatro legislaturas e presidiu a Casa de Leis por dois biênios.",
       "source": "camaramonteazul.sp.gov.br / siscam (sistema oficial)",
-      "risk_indicator": "medio",
+      "risk_indicator": "alto",
       "tipo": "midia",
       "match": "Evidência de influência política histórica da família Kubica na Câmara Municipal. Pai (Gilberto, condenado por improbidade) + filha (Luciana, PEP vereadora) + filho (Douglas, owner da empresa analisada): família politicamente proeminente com antecedente judicial grave no município.",
-      "achado_positivo": true
+      "achado_positivo": true,
+      "decisao_recomendada": "MONITORAMENTO/REVISÃO REFORÇADA RECOMENDADA — condenação por improbidade administrativa (fraude em licitação) do PAI da PEP mantida pelo TJSP. Vínculo familiar direto (não é a própria PEP), mas risco de contágio reputacional/associativo relevante dado o histórico de influência política da família Kubica no mesmo município onde a PEP hoje exerce mandato. Reclassificado de médio para alto em 2026-09-15 (thay@cora.com.br) — processo cível de improbidade com CONDENAÇÃO MANTIDA em 2ª instância é mais grave que mera denúncia/processo em curso."
     },
     {
       "title": "Câmara de Monte Azul Paulista inicia ano legislativo 2026 — site oficial atualizado",
@@ -7470,10 +7472,11 @@
       "url": "https://www.jusbrasil.com.br/noticias/tjsp-mantem-condenacao-de-ex-prefeito-e-ex-vereador-de-monte-azul-paulista-por-improbidade/164297630",
       "snippet": "A 8ª Câmara de Direito Público do TJSP manteve condenação de 5 pessoas, entre elas o ex-prefeito Francisco de Assis Livolis Blanco e o ex-vereador Gilberto Kubica (pai de Luciana Aparecida Kubica, a PEP do caso), por improbidade administrativa. As licitações 17/98 e 30/00 foram declaradas nulas — modalidade convite considerada ilegal por simulação e conluio de licitantes para fraudar a publicidade e a competitividade. Segundo a decisão, o esquema foi montado para 'comprar' o apoio político de Gilberto Kubica, então vereador e proprietário da empresa São Jorge. Condenados a ressarcir o erário em mais de R$ 124 mil. Gilberto Roberto Kubica presidiu a Câmara Municipal de Monte Azul Paulista por dois biênios e cumpriu 4 legislaturas como vereador.",
       "source": "Pesquisa Web — Mídia Adversa (M2)",
-      "risk_indicator": "medio",
+      "risk_indicator": "alto",
       "tipo": "processo",
       "match": "Gilberto Roberto Kubica — pai confirmado da PEP Luciana Aparecida Kubica, mesmo sobrenome/município — condenação por improbidade administrativa mantida pelo TJSP em esquema de fraude em licitação",
-      "achado_positivo": true
+      "achado_positivo": true,
+      "decisao_recomendada": "MONITORAMENTO/REVISÃO REFORÇADA RECOMENDADA — condenação por improbidade administrativa (fraude em licitação) do PAI da PEP mantida pelo TJSP. Vínculo familiar direto (não é a própria PEP), mas risco de contágio reputacional/associativo relevante dado o histórico de influência política da família Kubica no mesmo município onde a PEP hoje exerce mandato. Reclassificado de médio para alto em 2026-09-15 (thay@cora.com.br) — processo cível de improbidade com CONDENAÇÃO MANTIDA em 2ª instância é mais grave que mera denúncia/processo em curso."
     },
     {
       "title": "Portal da Transparência — nenhum contrato federal (CEIS/CNEP/CEPIM) localizado para Luciana Aparecida Kubica",

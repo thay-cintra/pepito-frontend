@@ -31,6 +31,7 @@ import { formatCNPJ, formatCPF, formatDuration, uid } from "@/lib/utils";
 import type { Analise, ClienteData, ResultadoPesquisa, StatusAnalise } from "@/types/kyc";
 import { STATUS_LABELS, StatusBadge } from "@/components/RiscoBadge";
 import { statusLabel } from "@/lib/parecer";
+import { orderResultadosByRisk } from "@/lib/resultados-order";
 
 const STATUS_OPTIONS: StatusAnalise[] = ["aprovado", "monitoramento", "reprovado", "falso_positivo"];
 
@@ -63,6 +64,7 @@ export function AnalisePrimeiraCamada() {
   const [credilinkPepResultado, setCredilinkPepResultado] = useState<CredilinkPepResultadoUI | null>(null);
   const [credilinkPepConsultando, setCredilinkPepConsultando] = useState(false);
   const [credilinkPepErro, setCredilinkPepErro] = useState<string | null>(null);
+  const resultadosOrdenados = useMemo(() => orderResultadosByRisk(resultados), [resultados]);
 
   useEffect(() => {
     getAuthUser().then((u) => { if (u?.email) setAnalistaEmail(u.email); });
@@ -923,7 +925,7 @@ export function AnalisePrimeiraCamada() {
                   Nenhum resultado ainda — execute a pesquisa.
                 </p>
               ) : (
-                resultados.map((r) => (
+                resultadosOrdenados.map((r) => (
                   <ResultadoCard
                     key={r.id}
                     resultado={r}

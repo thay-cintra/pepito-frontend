@@ -31,6 +31,7 @@ import { getSugestaoLideranca, getPldRiskScore, getComentariosReais, getConsulta
 import type { PldRiskScore } from "@/data/registration-enrich";
 import { getRegistrationCase } from "@/lib/registration-queue";
 import { formatDuration } from "@/lib/utils";
+import { orderResultadosByRisk } from "@/lib/resultados-order";
 import type { Analise, ComentarioAnalise, ResultadoPesquisa, StatusAnalise } from "@/types/kyc";
 import { STATUS_LABELS, StatusBadge } from "@/components/RiscoBadge";
 
@@ -56,6 +57,7 @@ export function NovaAnalise() {
     timerKey ? timer.startOrGet(timerKey) : Date.now(),
   );
   const [agora, setAgora] = useState(Date.now());
+  const resultadosOrdenados = useMemo(() => orderResultadosByRisk(resultados), [resultados]);
 
   useEffect(() => {
     if (timerKey) setTInicio(timer.startOrGet(timerKey));
@@ -529,7 +531,7 @@ export function NovaAnalise() {
                 placeholder="Pontos novos para direcionar a IA antes de repesquisar (opcional)"
                 rows={2}
               />
-              {resultados.map((r) => (
+              {resultadosOrdenados.map((r) => (
                 <ResultadoCard
                   key={r.id}
                   resultado={r}

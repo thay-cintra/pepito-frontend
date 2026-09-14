@@ -741,8 +741,8 @@ REGRAS:
 - NÃO repita buscas de processos judiciais — esses já vieram da API JusBrasil
 - Foque em: confirmação de cargo/mandato PEP, mídia adversa, contratos públicos, Portal da Transparência
 - Homônimo: só marque homonimo_alerta quando há evidência concreta de identidade diferente
-- risk_indicator "alto": contrato público via inexigibilidade com ente do PEP, cassação, operação policial direta
-- risk_indicator "medio": menção em operação sem prisão, processo cível improbidade, risco ambiental
+- risk_indicator "alto": contrato público via inexigibilidade com ente do PEP, cassação, operação policial direta; também inclui condenação por improbidade ou corrupção MANTIDA/CONFIRMADA por tribunal em 2ª instância ou superior, mesmo quando a condenação é de familiar direto do PEP/owner (pai, mãe, cônjuge ou irmão), pois o contágio reputacional familiar é fator de risco PLD reconhecido
+- risk_indicator "medio": menção em operação sem prisão, denúncia ou processo cível de improbidade ainda em curso/sem condenação confirmada em 2ª instância, condenação apenas em 1ª instância, risco ambiental
 - risk_indicator "baixo": confirmação de cargo/mandato sem adversidades
 
 NOMENCLATURA OBRIGATÓRIA DO CAMPO "source" (thay@cora.com.br, 2026-09-12):
