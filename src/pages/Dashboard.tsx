@@ -43,6 +43,7 @@ import { useToast } from "@/components/ui/toast";
 import { storage, KEY_VERSION, ANALISE_SAVED_EVENT } from "@/lib/storage";
 import { exportarAnaliseTexto } from "@/lib/parecer";
 import { formatDate, formatDuration } from "@/lib/utils";
+import { matchesNormalizedSearch } from "@/lib/registration-search";
 import type { Analise, StatusAnalise } from "@/types/kyc";
 import { STATUS_LABELS, StatusBadge } from "@/components/RiscoBadge";
 import { Badge } from "@/components/ui/badge";
@@ -156,8 +157,12 @@ export function Dashboard() {
   const filtradas = useMemo(() => {
     return concluidas.filter((a) => {
       if (filtro !== "todos" && a.status !== filtro) return false;
-      if (busca && !`${a.cliente.razaoSocial} ${a.cliente.cnpj} ${a.draftId || ""}`.toLowerCase().includes(busca.toLowerCase()))
-        return false;
+      if (!matchesNormalizedSearch(busca, [
+        a.cliente.razaoSocial,
+        a.cliente.cnpj,
+        a.draftId,
+        a.cliente.credilinkNumeroToken,
+      ])) return false;
       // Filtra pela data da DECISÃO FINAL (concludedAt), não pela data de abertura (createdAt)
       const dataDecisao = a.concludedAt || a.createdAt;
       if (dataIni && new Date(dataDecisao) < new Date(dataIni)) return false;
@@ -416,7 +421,7 @@ export function Dashboard() {
               <Input
                 value={busca}
                 onChange={(e) => setBusca(e.target.value)}
-                placeholder="CNPJ, razão social ou Draft ID"
+                placeholder="CNPJ, razão social, Draft ID ou token Credilink"
               />
             </div>
           </div>

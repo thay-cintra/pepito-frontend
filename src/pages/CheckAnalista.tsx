@@ -18,6 +18,7 @@ import type {
 import type { StatusAnalise } from "@/types/kyc";
 import { getDecisaoIA } from "@/data/registration-enrich";
 import { RegistrationCaseCard } from "@/components/RegistrationCaseCard";
+import { registrationCaseMatchesSearch } from "@/lib/registration-search";
 
 const STATUS_OPTIONS: ("todos" | RegistrationStatus)[] = [
   "todos",
@@ -70,11 +71,7 @@ export function CheckAnalista() {
     return casos.filter((c) => {
       if (statusFiltro !== "todos" && c.status !== statusFiltro) return false;
       if (decisaoFiltro !== "todas" && getDecisaoIA(c) !== decisaoFiltro) return false;
-      if (busca) {
-        const q = busca.toLowerCase();
-        const hay = `${c.rf_nome_oficial} ${c.cnpj} ${c.cpf} ${c.full_name_pf} ${c.email} ${c.draft_id} ${c.uf} ${c.cidade} ${c.cnae}`.toLowerCase();
-        if (!hay.includes(q)) return false;
-      }
+      if (!registrationCaseMatchesSearch(c, busca)) return false;
       return true;
     });
   }, [casos, statusFiltro, decisaoFiltro, busca]);
@@ -210,7 +207,7 @@ export function CheckAnalista() {
               <Input
                 value={busca}
                 onChange={(e) => setBusca(e.target.value)}
-                placeholder="CNPJ, CPF, razão social, Draft ID, UF, CNAE..."
+                placeholder="CNPJ, CPF, razão social, Draft ID, token Credilink..."
               />
             </div>
           </div>

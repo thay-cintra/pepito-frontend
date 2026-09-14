@@ -24,7 +24,7 @@ import { getAuthUser } from "@/lib/auth";
 import { pesquisarFontesPublicas, reanalisarResultado, consultarCredilink, type CredilinkResultado } from "@/lib/mock-ai";
 import { clienteVazio } from "@/lib/cliente-default";
 import { getRegistrationCase, markTaken, QUEUE_UPDATED_EVENT } from "@/lib/registration-queue";
-import { inferCargoOrgao, inferTipoPep, getSugestaoParecer, getConsultaStatus } from "@/data/registration-enrich";
+import { inferCargoOrgao, inferTipoPep, getSugestaoParecer, getConsultaStatus, getCredilinkTokens } from "@/data/registration-enrich";
 import { consultarCredilinkPepAgora, type CredilinkPepResultadoUI } from "@/lib/credilink-pep";
 import { formatCNPJ, formatCPF, formatDuration, uid } from "@/lib/utils";
 import type { Analise, ClienteData, ResultadoPesquisa, StatusAnalise } from "@/types/kyc";
@@ -210,6 +210,19 @@ export function AnalisePrimeiraCamada() {
     const caso = getRegistrationCase(draftIdOrigem);
     return caso ? getConsultaStatus(caso, cliente.tipoPep) : null;
   }, [draftIdOrigem, cliente.tipoPep]);
+
+  const credilinkPepTokenLedger = useMemo(() => {
+    if (!draftIdOrigem || !cliente.cpfPepTitular) return "";
+    const caso = getRegistrationCase(draftIdOrigem);
+    if (!caso) return "";
+    const cpfPep = cliente.cpfPepTitular.replace(/\D/g, "");
+    return getCredilinkTokens(caso, "relacionado").peps.find(
+      (pep) => pep.cpf === cpfPep,
+    )?.token || "";
+  }, [draftIdOrigem, cliente.cpfPepTitular]);
+  const credilinkPepLinkDossieLedger = credilinkPepTokenLedger
+    ? `https://dashboard.tesserati.com.br/Compliance/VisualizarDossie?token=${credilinkPepTokenLedger}`
+    : "";
 
   // Reseta o resultado/erro da consulta ao vivo quando o CPF do PEP muda —
   // sem isso, editar o campo mostrava nome/token da consulta ANTERIOR ao
@@ -702,6 +715,24 @@ export function AnalisePrimeiraCamada() {
                       <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Nome PEP:</span>
                       <span>{cliente.nomePessoaVinculada || "—"}</span>
                     </div>
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Nº do token:</span>
+                      <span className="font-mono font-semibold">{credilinkPepTokenLedger || "—"}</span>
+                    </div>
+                    {credilinkPepLinkDossieLedger ? (
+                      <div className="flex items-start gap-2">
+                        <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Dossiê:</span>
+                        <a href={credilinkPepLinkDossieLedger} target="_blank" rel="noopener noreferrer"
+                          className="underline text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 break-all">
+                          {credilinkPepLinkDossieLedger}
+                        </a>
+                      </div>
+                    ) : (
+                      <div className="flex items-start gap-2">
+                        <span className="font-semibold text-indigo-800 dark:text-indigo-200 min-w-[160px]">Dossiê:</span>
+                        <span className="text-muted-foreground italic text-[11px]">Token do PEP não disponível no ledger.</span>
+                      </div>
+                    )}
                     <p className="text-success text-[11px]">✅ Consultado — dado real, não é o token do titular.</p>
                   </div>
                 )}
