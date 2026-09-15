@@ -1,14 +1,14 @@
 {
-  "total": 123,
+  "total": 127,
   "by_month": {
     "2026-04": 31,
     "2026-05": 19,
     "2026-07": 2,
     "2026-08": 6,
-    "2026-09": 65
+    "2026-09": 69
   },
   "limit": 325,
-  "note": "Limite mensal: 325 CONSULTAS DE CPF/mês (65% do contrato de 500 CPFs/mês; 35% = 175 CPFs/mês reservados para alertas de monitoramento). Cada consulta de CPF dispara 5 chamadas HTTP (criminal + civil + trabalhista + bnmp + mp), mas conta como 1 unidade — bloqueio e warning usam by_month do mês corrente, contando CPFs, não chamadas HTTP. Atualizado automaticamente por consultar_jusbrasil() em fetch-media-findings.py.",
-  "aviso": "141 consultas registradas retroativamente (uso antes do rastreamento ser implementado, 2026-04-29) — esse número já está refletido nos valores acima.",
-  "correcao_2026_09_14": "Todos os valores acima (total e by_month) foram divididos por 5 e arredondados. Até 2026-09-14, _jus_usage_increment() era chamado uma vez por CHAMADA HTTP dentro de consultar_jusbrasil() (5x por CPF: criminal/civil/trabalhista/bnmp/mp), inflando o uso reportado em 5x sobre o real — a thay confirmou que o consumo real de setembro/2026 era de ~60 CPFs, contra os 325 (raw calls) que o contador mostrava. Corrigido o código (agora incrementa 1x por CPF, não por chamada) e os números históricos (best-effort: assume que a mesma proporção 5:1 valeu retroativamente; pode não ser exato para CPFs que falharam no meio das 5 chamadas sob o código antigo, mas é a melhor estimativa disponível sem reconstruir chamada a chamada)."
+  "note": "Limite mensal: 325 CONSULTAS DE CPF/m\u00eas (65% do contrato de 500 CPFs/m\u00eas; 35% = 175 CPFs/m\u00eas reservados para alertas de monitoramento). Cada consulta de CPF dispara 5 chamadas HTTP (criminal + civil + trabalhista + bnmp + mp), mas conta como 1 unidade \u2014 bloqueio e warning usam by_month do m\u00eas corrente, contando CPFs, n\u00e3o chamadas HTTP. Atualizado automaticamente por consultar_jusbrasil() em fetch-media-findings.py.",
+  "aviso": "141 consultas registradas retroativamente (uso antes do rastreamento ser implementado, 2026-04-29) \u2014 esse n\u00famero j\u00e1 est\u00e1 refletido nos valores acima.",
+  "correcao_2026_09_14": "Todos os valores acima (total e by_month) foram divididos por 5 e arredondados. At\u00e9 2026-09-14, _jus_usage_increment() era chamado uma vez por CHAMADA HTTP dentro de consultar_jusbrasil() (5x por CPF: criminal/civil/trabalhista/bnmp/mp), inflando o uso reportado em 5x sobre o real \u2014 a thay confirmou que o consumo real de setembro/2026 era de ~60 CPFs, contra os 325 (raw calls) que o contador mostrava. Corrigido o c\u00f3digo (agora incrementa 1x por CPF, n\u00e3o por chamada) e os n\u00fameros hist\u00f3ricos (best-effort: assume que a mesma propor\u00e7\u00e3o 5:1 valeu retroativamente; pode n\u00e3o ser exato para CPFs que falharam no meio das 5 chamadas sob o c\u00f3digo antigo, mas \u00e9 a melhor estimativa dispon\u00edvel sem reconstruir chamada a chamada)."
 }

@@ -11939,5 +11939,80 @@
       "decisao_recomendada": "REPROVAÇÃO — 2 processo(s) criminal(is) confirmado(s) via Credilink.",
       "achado_positivo": true
     }
+  ],
+  "e965ae00-5488-43ec-9fc7-b60c9ef4f2ce": [
+    {
+      "title": "Processo criminal — ROBSON ANTONIO FERREIRA (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0027657-92.2017.8.13.0450",
+      "snippet": "ROBSON ANTONIO FERREIRA figura como réu (polo passivo) em processo criminal: PROCESSO_PRINCIPAL_ORDINARIO. Tipificação: Outras fraudes. Processo nº 0027657-92.2017.8.13.0450. Tribunal: BAIXADO. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — BAIXADO",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 896.192.266-15 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Outras fraudes. Crimes de fraude são antecedentes diretos de lavagem de dinheiro."
+    },
+    {
+      "title": "Processos criminais (1 encontrados) — ROBSON ANTONIO FERREIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ROBSON ANTONIO FERREIRA tem 2 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 896.192.266-15 — 1 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo civil: 15 encontrado(s) — ROBSON ANTONIO FERREIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ROBSON ANTONIO FERREIRA consta em 15 processo(s) civil(s) no JusBrasil; 7 no polo passivo. Exemplos: tjmg, Nova Ponte, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'BAIXADO', 'data': '2026-08-26'}, polo ativo/outro, valor 202655.89; tjmg, NOVA PONTE/MG, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'BAIXADO', 'data': '2026-08-23'}, polo ativo/outro, valor 1000; TRF6, SSJ de Uberlândia-MG, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-08-14'}, polo passivo, valor 126214.48. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 896.192.266-15 — 7 de 15 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 1 encontrado(s) — ROBSON ANTONIO FERREIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ROBSON ANTONIO FERREIRA consta em 1 processo(s) trabalhista(s) no JusBrasil; 1 no polo passivo. Exemplos: TRT3, Uberlândia, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2024-11-18'}, polo passivo, valor 49782.86. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 896.192.266-15 — 1 de 1 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Processos criminais (3) — Robson Antônio Ferreira",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Robson Antônio Ferreira tem 3 processo(s) criminal(is) via Credilink. Assuntos: PENAL > CRIMES PREVISTOS NA LEGISLACAO EXTRAVAGANTE > CRIMES; DIREITO PENAL (287) - CRIMES CONTRA O PATRIMONIO (3415) - OU; PROCESSUAL PENAL > EXECUCAO PENAL > PENA PRIVATIVA DE LIBERD. Fonte: base consolidada de tribunais brasileiros.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 896.192.266-15",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — 3 processo(s) criminal(is) confirmado(s) via Credilink."
+    },
+    {
+      "title": "Credilink — Processos não-criminais (16) — Robson Antônio Ferreira",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Robson Antônio Ferreira tem 16 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO TRIBUTARIO (14) - IMPOSTOS (5916) - ICMS/ IMPOSTO SO; CIVIL > OBRIGACOES > ESPECIES DE TITULOS DE CREDITO > CHEQUE; DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE CONTRA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 896.192.266-15",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Robson Antônio Ferreira",
+      "url": "https://midiamax.com.br/politica/transparencia/2026/medico-preso-liderar-esquema-milionario-fraude-exames-foi-candidato-vice-prefeito/",
+      "snippet": "A busca de mídias negativas via Credilink para Robson Antônio Ferreira retornou 6 resultado(s) SEM título nem resumo (dado incompleto da própria API — não é um erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Robson Antônio Ferreira é de fato mencionado no link retornado. Não tratar como mídia negativa confirmada sem verificação manual do link. Link: https://midiamax.com.br/politica/transparencia/2026/medico-preso-liderar-esquema-milionario-fraude-exames-foi-candidato-vice-prefeito/",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
+    }
   ]
 }
