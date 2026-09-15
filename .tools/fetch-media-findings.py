@@ -302,39 +302,119 @@ def consultar_credilink(cpf: str, nome: str, cnpj: str = "", papel: str = "owner
                 })
 
     # ── 2. Processos Tribunais (civil + criminal) ─────────────────────────────
-    # Antes deste fix (2026-09-11), processos não-criminais eram descartados em
-    # silêncio pela list comprehension — o analista via "sem processos" mesmo
-    # havendo processo cível/trabalhista real e ativo. Agora TODO processo vira
-    # achado: criminal escala risco a "alto" + recomenda REPROVAÇÃO; os demais
-    # (cível/trabalhista/etc.) entram como achado informativo de risco baixo,
-    # sem escalar a decisão — mas nunca mais somem do resultado.
+    # Classificação corrigida (thay@cora.com.br, 2026-09-15 — achado real: 22+
+    # casos com "risco alto"/REPROVAÇÃO automática que na verdade eram
+    # difamação/calúnia/injúria/multa de trânsito/contravenção/processo em que
+    # a pessoa era autor ou autoridade, não ré). A versão anterior marcava
+    # QUALQUER processo com courtType/mainSubject contendo "CRIMINAL"/"PENAL"/
+    # "CRIME" como risco alto + REPROVAÇÃO automática, sem checar (a) se a
+    # pessoa é RÉ de fato — a API já traz `parties[]` com `doc` (CPF) e
+    # `polarity` ("PASSIVE" = polo passivo/réu; "NEUTRAL"/outro = autoridade,
+    # testemunha, vítima) —, (b) a gravidade real do crime (reaproveita
+    # TIPIFICACOES_ALTO — difamação/injúria/trânsito/contravenção nunca
+    # escalam sozinhos), e (c) se o processo está `status=="ARQUIVADO"`
+    # (feedback já registrado: "processo arquivado ≠ risco"). Antes disso,
+    # processos não-criminais eram descartados em silêncio pela list
+    # comprehension (fix 2026-09-11) — mantido: nunca somem do resultado.
     if cpf_clean:
         r = _credilink_get("api/ProcessoTribunalJustica", {"cpf": cpf_clean})
         if r.get("_erro"):
             _erro_endpoint("ProcessoTribunalJustica", r)
         result = r.get("result")
         if result and isinstance(result, dict):
-            lawsuits = result.get("lawsuits", [])
+            lawsuits = result.get("lawsuits") or []
             criminais = [l for l in lawsuits if "CRIMINAL" in ((l.get("courtType") or "") + (l.get("type") or "")).upper()
                         or "PENAL" in (l.get("mainSubject") or "").upper()
                         or "CRIME" in (l.get("mainSubject") or "").upper()]
             nao_criminais = [l for l in lawsuits if l not in criminais]
-            if criminais:
-                tip_list = [l.get("mainSubject","")[:60] for l in criminais[:3]]
+
+            reu_grave_ativo, reu_grave_atencao, reu_leve, sem_reu_confirmado = [], [], [], []
+            for l in criminais:
+                parties = l.get("parties") or []
+                own = next((p for p in parties if _cpf_digits(str(p.get("doc") or "")) == cpf_clean), None)
+                eh_reu = own.get("polarity") == "PASSIVE" if own else None  # None = não deu pra confirmar o papel
+                assunto = " ".join(filter(None, [
+                    l.get("mainSubject"), l.get("inferredCNJSubjectName"), l.get("inferredBroadCNJSubjectName"),
+                ])).lower()
+                grave = any(kw in assunto for kw in TIPIFICACOES_ALTO)
+                arquivado = (l.get("status") or "").upper() == "ARQUIVADO"
+                if eh_reu is False:
+                    sem_reu_confirmado.append(l)
+                elif grave and eh_reu and not arquivado:
+                    reu_grave_ativo.append(l)
+                elif grave:  # réu indeterminado OU arquivado, mas gravidade real — não ignora, mas não reprova sozinho
+                    reu_grave_atencao.append(l)
+                else:
+                    reu_leve.append(l)
+
+            if reu_grave_ativo:
+                tip_list = [l.get("mainSubject","")[:60] for l in reu_grave_ativo[:3]]
                 findings.append({
-                    "title": f"Credilink — Processos criminais ({len(criminais)}) — {nome}",
+                    "title": f"Credilink — Processo criminal grave, réu confirmado ({len(reu_grave_ativo)}) — {nome}",
                     "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
                     "snippet": (
-                        f"{nome} tem {len(criminais)} processo(s) criminal(is) via Credilink. "
-                        f"Assuntos: {'; '.join(tip_list)}. "
-                        f"Fonte: base consolidada de tribunais brasileiros."
+                        f"{nome} é RÉU confirmado (parties[].polarity=PASSIVE pelo CPF) em "
+                        f"{len(reu_grave_ativo)} processo(s) criminal(is) de natureza grave, não arquivado(s). "
+                        f"Assuntos: {'; '.join(tip_list)}. Fonte: base consolidada de tribunais brasileiros."
                     ),
                     "source": "Credilink — ProcessoTribunalJustica",
                     "risk_indicator": "alto",
                     "tipo": "processo",
-                    "match": f"CPF {cpf}",
+                    "match": f"CPF {cpf} — réu confirmado, natureza grave, não arquivado",
                     "achado_positivo": True,
-                    "decisao_recomendada": f"REPROVAÇÃO — {len(criminais)} processo(s) criminal(is) confirmado(s) via Credilink.",
+                    "decisao_recomendada": f"REPROVAÇÃO — {len(reu_grave_ativo)} processo(s) criminal(is) grave(s) confirmado(s) como réu via Credilink.",
+                })
+            if reu_grave_atencao:
+                tip_list = [l.get("mainSubject","")[:60] for l in reu_grave_atencao[:3]]
+                findings.append({
+                    "title": f"Credilink — Processo criminal grave, requer leitura manual ({len(reu_grave_atencao)}) — {nome}",
+                    "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+                    "snippet": (
+                        f"{nome} consta em {len(reu_grave_atencao)} processo(s) criminal(is) de natureza "
+                        f"grave, mas ARQUIVADO(S) e/ou sem confirmação de que a pessoa é ré (parties sem "
+                        f"doc correspondente ao CPF) — não fundamenta reprovação automática (processo "
+                        f"arquivado não é indício de risco confirmado; papel não confirmado não é achado "
+                        f"desabonador), mas precisa de leitura manual antes de descartar. Assuntos: "
+                        f"{'; '.join(tip_list)}."
+                    ),
+                    "source": "Credilink — ProcessoTribunalJustica",
+                    "risk_indicator": "medio",
+                    "tipo": "processo",
+                    "match": f"CPF {cpf} — natureza grave, arquivado e/ou papel não confirmado",
+                    "achado_positivo": True,
+                })
+            if reu_leve:
+                tip_list = [l.get("mainSubject","")[:60] for l in reu_leve[:3]]
+                findings.append({
+                    "title": f"Credilink — Processo criminal leve ({len(reu_leve)}) — {nome}",
+                    "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+                    "snippet": (
+                        f"{nome} consta em {len(reu_leve)} processo(s) criminal(is) de natureza leve "
+                        f"(honra/trânsito/contravenção/outro sem gravidade PLD — não é tráfico, fraude, "
+                        f"corrupção, violência ou crime patrimonial grave). Assuntos: {'; '.join(tip_list)}. "
+                        f"Não escala a recomendação."
+                    ),
+                    "source": "Credilink — ProcessoTribunalJustica",
+                    "risk_indicator": "baixo",
+                    "tipo": "processo",
+                    "match": f"CPF {cpf} — natureza leve",
+                    "achado_positivo": True,
+                })
+            if sem_reu_confirmado:
+                tip_list = [l.get("mainSubject","")[:60] for l in sem_reu_confirmado[:3]]
+                findings.append({
+                    "title": f"Credilink — Processo(s) criminal(is), pessoa NÃO é ré ({len(sem_reu_confirmado)}) — {nome}",
+                    "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+                    "snippet": (
+                        f"{nome} aparece em {len(sem_reu_confirmado)} processo(s) criminal(is) via Credilink, "
+                        f"mas CONFIRMADAMENTE não como ré (polarity != PASSIVE — pode ser autora, vítima, "
+                        f"testemunha ou autoridade). Não é achado desabonador. Assuntos: {'; '.join(tip_list)}."
+                    ),
+                    "source": "Credilink — ProcessoTribunalJustica",
+                    "risk_indicator": "baixo",
+                    "tipo": "processo",
+                    "match": f"CPF {cpf} — confirmadamente não é ré",
+                    "achado_positivo": False,
                 })
             if nao_criminais:
                 tip_list_nc = [l.get("mainSubject","")[:60] for l in nao_criminais[:3]]
@@ -486,6 +566,11 @@ TIPIFICACOES_ALTO = {
     "associação criminosa", "associacao criminosa", "organização criminosa",
     "peculato", "corrupção", "corrupcao", "improbidade",
     "sequestro", "extorsão", "extorsao", "concussão",
+    # Adicionado 2026-09-15 (achado real: draft 0239c46e, processo arquivado
+    # de "CRIMES DO SISTEMA NACIONAL DE ARMAS" não batia em nenhuma palavra-
+    # chave existente) — mesmo critério já usado em CNAE_LD_MAP no frontend
+    # (armas = score 2415, categoria mais alta de risco).
+    "sistema nacional de armas", "arma de fogo", "armas de fogo", "tráfico de armas", "trafico de armas",
 }
 
 

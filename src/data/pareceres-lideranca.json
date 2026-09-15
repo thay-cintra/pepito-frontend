@@ -129,14 +129,13 @@
     "generated_at": "2026-09-12T00:24:24Z"
   },
   "05375e39-357a-4bf4-bec0-b285551e29ee": {
-    "text": "⚠️ ATENÇÃO — ACHADO DE RISCO ALTO NÃO REFLETIDO NESTE PARECER (thay@cora.com.br + Codex, 2026-09-15): Operação Mederi (PF/TRF-5) – PARAÚ/RN é um dos municípios alvo; 35 mandados de busca e apreensão — A investigação segue um inquérito aberto em 24/11/2023 e teve fase ostensiva em 27/01/2026, quando 35 mandados de busca e apreensão foram realizados e…; Operação Mederi – Prefeito de Paraú 'João Evaristo Peixoto' investigado e indiciado no TRF-5 — A competência do tribunal decorre da presença de autoridades com foro por prerrogativa de função entre os investigados — 'notadamente o ex-Prefeito de…; + 5 outros achados de risco alto. A decisão abaixo foi registrada sem considerar essas informações — requer revisão humana antes de manter a aprovação.\n\n---\n\nDecisão: CADASTRO APROVADO\nCNPJ: 68.725.172/0001-66 — NEMALOG LOGISTICA E TRANSPORTES LTDA\n\nO analista recomenda aprovação com base na ausência de achados adversos e na divergência geográfica entre a empresa (Mossoró/RN) e o município de atuação do PEP (Paraú/RN) — concordo. O vínculo é de irmandade com Edilson Fernandes da Silva Junior, ex-vereador de Paraú/RN, cujo mandato encerrou em 31/12/2024 (em carência PLD até 31/12/2029). Não há mídia adversa, processos judiciais, sanções ou contratos públicos identificados para a empresa, seu titular ou o PEP relacionado, e a atividade econômica (serviços combinados de escritório e apoio administrativo) não apresenta interface sensível com o poder público municipal de Paraú/RN.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — O analista recomenda aprovação com base na ausência de achados adversos e na divergência geográfica entre a empresa (Mossoró/RN) e o município de atuação do PEP (Paraú/RN) — concordo.",
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO PADRÃO\nCNPJ: 68.725.172/0001-66 — NEMALOG LOGISTICA E TRANSPORTES LTDA\n\nO analista recomenda aprovação — concordo. O vínculo é de irmandade com Edilson Fernandes da Silva Junior, Vereador de Paraú/RN. Revisão de 2026-09-15: a Operação Mederi (PF/TRF-5) atinge o Município de Paraú/RN e tem como indiciado o PREFEITO do município (João Evaristo Peixoto) — pessoa diferente do PEP (vereador) e do titular, com coincidência apenas parcial de sobrenome com o titular. Nenhum achado confirma nominalmente vínculo do titular ou do PEP com a operação ou com o prefeito investigado — é contexto regional (mesma cidade), não nexo pessoal, consistente com o critério já adotado pela Mesa em casos análogos (achado sem nexo nominativo direto não fundamenta reprovação). Sem mídia adversa, processos ou sanções para a empresa, o titular ou o PEP.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme Circular BACEN 3.978/2020. Não há elemento concreto que justifique monitoramento reforçado além do padrão já aplicado a vínculos PEP — a coincidência de sobrenome, isoladamente, não é evidência de parentesco com o prefeito investigado.",
     "decisao": "aprovado",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-12T00:24:31Z",
     "revisao_manual_2026_09_15": {
-      "motivo": "Parecer favorável sinalizado por coexistir com 7 achado(s) real(is) de risco alto; decisão preservada para revisão humana.",
-      "autor": "thay@cora.com.br + Codex"
+      "motivo": "Achado 'Operação Mederi' reclassificado: contexto regional/coincidência de sobrenome, sem confirmação nominal — mantida aprovação, monitoramento padrão (não reforçado).",
+      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "5b91bd5d-b6bd-4e95-8c1f-1cca12c465e5": {
@@ -151,14 +150,13 @@
     }
   },
   "16059106-2aeb-4e36-8978-9089db30942e": {
-    "text": "⚠️ ATENÇÃO — ACHADO DE RISCO ALTO NÃO REFLETIDO NESTE PARECER (thay@cora.com.br + Codex, 2026-09-15): Credilink — Processos criminais (1) — RENATA APARECIDA PIMENTEL RISSONI — RENATA APARECIDA PIMENTEL RISSONI tem 1 processo(s) criminal(is) via Credilink. Assuntos: CONTRAVENCOES PENAIS. Fonte: base consolidada de tribunais b…; Processo criminal — ROSINEI DE FATIMA PIMENTEL SANTOS (OWNER) — ROSINEI DE FATIMA PIMENTEL SANTOS figura como réu (polo passivo) em processo criminal: OUTROS. Tipificação: Estelionato. Processo nº 0000302-57.2006.8…. A decisão abaixo foi registrada sem considerar essas informações — requer revisão humana antes de manter a aprovação.\n\n---\n\nDecisão: CADASTRO APROVADO\nCNPJ: 28.639.509/0001-06 — ROSINEI DE FATIMA PIMENTEL 33987957816\n\nO analista recomenda aprovação — concordo. O único fator de risco é o vínculo de irmandade com Renata Aparecida Pimentel Rissoni, vereadora ativa em Ipaussu/SP (mandato 2025–2029). A empresa, constituída em 2017, é anterior ao mandato e atua em segmento de alimentação (lanchonetes/sucos), sem interface relevante com contratações públicas ou com o cargo exercido pela PEP. Ausência total de sanções, processos por improbidade ou mídia adversa para a empresa, sua titular e a PEP.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — O analista recomenda aprovação — concordo.",
-    "decisao": "aprovado",
+    "text": "Decisão: CADASTRO REPROVADO (condicionado à confirmação de status processual)\nCNPJ: 28.639.509/0001-06 — ROSINEI DE FATIMA PIMENTEL 33987957816\n\nRevisão de 2026-09-15 (thay@cora.com.br): a titular Rosinei de Fatima Pimentel Santos figura como ré confirmada (confiança ALTA) em processo criminal por ESTELIONATO (processo nº 0000302-57.2006.8.26.0539). O tribunal de origem consta como extinto por reorganização judiciária — isso não equivale a arquivamento do processo; não há confirmação do desfecho. Diante da gravidade (estelionato) e da confirmação de identidade (não é homônimo), o processo por si só já afasta a aprovação simples, independentemente do vínculo com a PEP (irmã, Vereadora de Ipaussu/SP), que não apresenta achado adverso próprio além do já registrado.\n\nRecomendo a REPROVAÇÃO DO CADASTRO. Caso a área responsável confirme que o processo foi arquivado por prescrição ou absolvição, sem outro fator agravante, a decisão pode ser reavaliada para monitoramento reforçado — mas a aprovação simples não é recomendada com a informação hoje disponível.",
+    "decisao": "reprovado",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-12T00:24:47Z",
     "revisao_manual_2026_09_15": {
-      "motivo": "Parecer favorável sinalizado por coexistir com 2 achado(s) real(is) de risco alto; decisão preservada para revisão humana.",
-      "autor": "thay@cora.com.br + Codex"
+      "motivo": "Achado JusBrasil (estelionato, réu confirmado, confiança ALTA) da própria titular — não estava refletido no parecer original.",
+      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "ef793f91-57bc-4354-8542-fe83688100e6": {
@@ -183,13 +181,12 @@
     "generated_at": "2026-09-12T00:25:13Z"
   },
   "fdcfbd26-8a43-44c3-892a-006b11e2cee4": {
-    "text": "⚠️ ATENÇÃO — ACHADO ADICIONADO APÓS A GERAÇÃO DESTE PARECER (2026-09-15, thay@cora.com.br): a pesquisa web complementar (rodada em 2026-09-12, após este texto ter sido gerado em 2026-09-12T00:25:20Z) encontrou que o PAI da PEP, Gilberto Roberto Kubica (ex-vereador de Monte Azul Paulista/SP por 4 legislaturas, ex-presidente da Câmara Municipal), foi CONDENADO por improbidade administrativa em esquema de fraude em licitação — condenação MANTIDA pelo TJSP (8ª Câmara de Direito Público). As licitações 17/98 e 30/00 foram anuladas por simulação/conluio de licitantes; o esquema foi descrito na decisão como montado para 'comprar' o apoio político de Gilberto Kubica. Condenados a ressarcir o erário em mais de R$ 124 mil. Reclassificado como risco ALTO em 2026-09-15 (vínculo familiar direto — pai da PEP — com condenação judicial mantida, não mera denúncia).\n\nA afirmação abaixo de \"ausência total de... mídia adversa... para... a PEP\" NÃO reflete mais o estado atual da pesquisa — mantida apenas para preservar o texto original do parecer; considerar este achado antes de decidir. Regeneração completa do parecer via LLM pendente (orçamento do provedor esgotado no momento desta correção).\n\n---\n\nDecisão: CADASTRO APROVADO\nCNPJ: 68.509.014/0001-79 — 68.509.014 DOUGLAS KUBICA\n\nO analista recomenda aprovação — concordo. O único fator de risco é o vínculo de irmandade com Luciana Aparecida Kubica, vereadora ativa em Monte Azul Paulista/SP (mandato 2025–2029). A atividade de minimercado/mercearia não apresenta interface relevante com o poder público municipal, afastando o risco de conflito de interesses com o cargo legislativo da PEP. Ausência total de sanções, processos judiciais ou mídia adversa para a empresa, seu titular e a PEP.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — O analista recomenda aprovação — concordo.",
-    "decisao": "aprovado",
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 68.509.014/0001-79 — 68.509.014 DOUGLAS KUBICA\n\nO analista recomenda aprovação sob monitoramento reforçado — concordo. O vínculo direto é de irmandade com Luciana Aparecida Kubica, vereadora ativa em Monte Azul Paulista/SP (mandato 2025–2029); a atividade de minimercado/mercearia não apresenta interface relevante com o poder público municipal. Achado adicional (2026-09-15): o PAI da PEP, Gilberto Roberto Kubica (ex-vereador, 4 legislaturas, ex-presidente da Câmara), foi condenado por improbidade administrativa em esquema de fraude em licitação, condenação mantida pelo TJSP — vínculo familiar indireto (pai, não a própria PEP), ilícito administrativo/cível, sem processo criminal contra o titular ou a PEP. Ausência de sanções, processos judiciais ou mídia adversa para a empresa, seu titular e a PEP diretamente.\n\nRecomendo a APROVAÇÃO DO CADASTRO SOB MONITORAMENTO REFORÇADO conforme Circular BACEN 3.978/2020, dado o histórico de influência política da família Kubica no mesmo município onde a PEP hoje exerce mandato — cautela proporcional, não bloqueio.",
+    "decisao": "monitoramento",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-12T00:25:20Z",
     "revisao_manual_2026_09_15": {
-      "motivo": "Achado grave (condenação por improbidade do pai da PEP, mantida pelo TJSP) descoberto após a geração original do parecer — LLM indisponível para regeneração completa.",
+      "motivo": "Achado WebSearch (condenação por improbidade do pai da PEP, mantida pelo TJSP) integrado ao texto do parecer — antes só um aviso em separado.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },

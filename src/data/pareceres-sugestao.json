@@ -1512,12 +1512,12 @@
     "generated_at": "2026-08-19T16:35:33Z"
   },
   "fdcfbd26-8a43-44c3-892a-006b11e2cee4": {
-    "text": "⚠️ ATENÇÃO — ACHADO DE RISCO ALTO NÃO REFLETIDO NESTE PARECER (thay@cora.com.br + Codex, 2026-09-15): TJSP — Condenação Gilberto Kubica: fraude licitatória para 'compra de apoio político', empresa São Jorge — Procedimentos licitatórios 17/98 e 30/00 declarados nulos por simulação e conluio de licitantes. Ex-prefeito Francisco de Assis Livolis Blanco e ex-ve…; Câmara Municipal de Monte Azul Paulista — Vereadores: Gilberto Roberto Kubica (perfil histórico) — Perfil de Gilberto Roberto Kubica no sistema legislativo oficial da Câmara Municipal de Monte Azul Paulista. Pai da vereadora Luciana Kubica, exerceu…; + 1 outro achado de risco alto. A decisão abaixo foi registrada sem considerar essas informações — requer revisão humana antes de manter a aprovação.\n\n---\n\nTrata-se de empresa cujo titular, Douglas Kubica, é irmão da PEP Luciana Aparecida Kubica (Vereadora de Monte Azul Paulista/SP, com mandato ativo até 31/12/2029), atuando no ramo de minimercados, mercearias e armazéns. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou à PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD e que a atividade da empresa não guarda interface direta com o cargo público exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Douglas Kubica, é irmão da PEP Luciana Aparecida Kubica (Vereadora de Monte Azul Paulista/SP, mandato ativo até 31/12/2029), atuando no ramo de minimercados, mercearias e armazéns. Revisão de 2026-09-15 (thay@cora.com.br): pesquisa web identificou que o PAI da PEP, Gilberto Roberto Kubica (ex-vereador por 4 legislaturas, ex-presidente da Câmara Municipal), foi CONDENADO por improbidade administrativa em esquema de fraude em licitação (condenação MANTIDA pelo TJSP, 8ª Câmara de Direito Público) — licitações 17/98 e 30/00 anuladas por simulação/conluio, esquema descrito como montado para 'comprar' seu apoio político, ressarcimento ao erário superior a R$ 124 mil. Trata-se de vínculo familiar INDIRETO (pai da PEP, não a própria PEP nem o titular) e de ilícito de natureza administrativa/cível (improbidade), não processo criminal. Não há achado adverso próprio para o titular ou para a PEP Luciana Aparecida Kubica, cuja atividade legislativa atual não guarda interface com a empresa (minimercado).\n\nConsiderando que o achado recai sobre familiar de 2º grau de proximidade (pai da PEP, não a própria PEP) e é de natureza administrativa (improbidade, sem processo criminal), mas dado o histórico de influência política da família Kubica no mesmo município onde a PEP hoje exerce mandato, sugerimos a APROVAÇÃO DO CADASTRO SOB MONITORAMENTO REFORÇADO.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-08-19T18:37:22Z",
     "revisao_manual_2026_09_15": {
-      "motivo": "Parecer favorável sinalizado por coexistir com 3 achado(s) real(is) de risco alto; decisão preservada para revisão humana.",
-      "autor": "thay@cora.com.br + Codex"
+      "motivo": "Achado WebSearch (condenação por improbidade do pai da PEP, mantida pelo TJSP) integrado ao texto do parecer — antes só um aviso em separado.",
+      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "5b91bd5d-b6bd-4e95-8c1f-1cca12c465e5": {
@@ -1559,12 +1559,12 @@
     "generated_at": "2026-08-24T13:30:20Z"
   },
   "05375e39-357a-4bf4-bec0-b285551e29ee": {
-    "text": "⚠️ ATENÇÃO — ACHADO DE RISCO ALTO NÃO REFLETIDO NESTE PARECER (thay@cora.com.br + Codex, 2026-09-15): Operação Mederi (PF/TRF-5) – PARAÚ/RN é um dos municípios alvo; 35 mandados de busca e apreensão — A investigação segue um inquérito aberto em 24/11/2023 e teve fase ostensiva em 27/01/2026, quando 35 mandados de busca e apreensão foram realizados e…; Operação Mederi – Prefeito de Paraú 'João Evaristo Peixoto' investigado e indiciado no TRF-5 — A competência do tribunal decorre da presença de autoridades com foro por prerrogativa de função entre os investigados — 'notadamente o ex-Prefeito de…; + 5 outros achados de risco alto. A decisão abaixo foi registrada sem considerar essas informações — requer revisão humana antes de manter a aprovação.\n\n---\n\nTrata-se de empresa cujo titular, João Pedro Peixoto Fernandes, é irmão do ex-PEP Edilson Fernandes da Silva Junior (ex-Vereador de Paraú/RN, mandato encerrado em 31/12/2024, em período de carência PLD até 31/12/2029), atuando no ramo de serviços combinados de escritório e apoio administrativo em Mossoró/RN. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao ex-PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD, o encerramento do mandato, a atividade da empresa sem interface com o cargo público anteriormente exercido e a inexistência de fatores de risco adicionais, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, João Pedro Peixoto Fernandes, é irmão do PEP Edilson Fernandes da Silva Junior (Vereador de Paraú/RN). Revisão de 2026-09-15 (thay@cora.com.br): a Operação Mederi (PF/TRF-5, corrupção em contratos de saúde) atinge o Município de Paraú/RN e tem como investigado/indiciado o PREFEITO do município, João Evaristo Peixoto — pessoa DIFERENTE do PEP (Edilson Fernandes da Silva Junior, vereador) e do titular (João Pedro Peixoto Fernandes), com apenas coincidência parcial de sobrenome ('Peixoto') com o titular. NENHUM achado confirma nominalmente que o titular ou o PEP têm relação com o prefeito investigado ou com os fatos apurados na operação — trata-se de contexto regional (mesmo município), não de nexo pessoal confirmado. Não há mídia adversa, processos ou sanções identificados para a empresa, o titular ou o PEP diretamente. Considerando a ausência de nexo nominal confirmado com a Operação Mederi e a inexistência de outros achados adversos, sugerimos a APROVAÇÃO do cadastro, com recomendação de diligência adicional pontual (via cartório/Receita Federal) apenas se surgir indício concreto de parentesco entre o titular e o prefeito investigado — não identificado até o momento.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-08-24T18:30:10Z",
     "revisao_manual_2026_09_15": {
-      "motivo": "Parecer favorável sinalizado por coexistir com 7 achado(s) real(is) de risco alto; decisão preservada para revisão humana.",
-      "autor": "thay@cora.com.br + Codex"
+      "motivo": "Achado 'Operação Mederi' reclassificado: contexto regional/coincidência de sobrenome, sem confirmação nominal do titular ou PEP — não é achado desabonador confirmado.",
+      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "6ab15739-413b-4db1-8e82-f733eb781ac5": {
@@ -1621,12 +1621,12 @@
     "generated_at": "2026-08-25T18:56:32Z"
   },
   "16059106-2aeb-4e36-8978-9089db30942e": {
-    "text": "⚠️ ATENÇÃO — ACHADO DE RISCO ALTO NÃO REFLETIDO NESTE PARECER (thay@cora.com.br + Codex, 2026-09-15): Credilink — Processos criminais (1) — RENATA APARECIDA PIMENTEL RISSONI — RENATA APARECIDA PIMENTEL RISSONI tem 1 processo(s) criminal(is) via Credilink. Assuntos: CONTRAVENCOES PENAIS. Fonte: base consolidada de tribunais b…; Processo criminal — ROSINEI DE FATIMA PIMENTEL SANTOS (OWNER) — ROSINEI DE FATIMA PIMENTEL SANTOS figura como réu (polo passivo) em processo criminal: OUTROS. Tipificação: Estelionato. Processo nº 0000302-57.2006.8…. A decisão abaixo foi registrada sem considerar essas informações — requer revisão humana antes de manter a aprovação.\n\n---\n\nTrata-se de empresa cujo titular, Rosinei de Fatima Pimentel Santos, é irmã da PEP Renata Aparecida Pimentel Rissoni (Vereadora de Ipaussu/SP, com mandato ativo até 31/12/2029), atuando no ramo de lanchonetes, casas de chá, de sucos e similares. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, à sua titular ou à PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD e que a atividade da empresa não guarda interface com o cargo público exercido pela PEP, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Rosinei de Fatima Pimentel Santos, é irmã da PEP Renata Aparecida Pimentel Rissoni (Vereadora de Ipaussu/SP). Revisão de 2026-09-15 (thay@cora.com.br): a TITULAR Rosinei de Fatima Pimentel Santos figura como RÉ (polo passivo confirmado, confiança ALTA) em processo criminal por ESTELIONATO (processo nº 0000302-57.2006.8.26.0539). O registro indica tribunal de origem já extinto (reorganização judiciária) — não há confirmação de que o processo em si esteja arquivado ou de seu desfecho; a natureza do crime (estelionato) e a confirmação de que a titular é ré (não homônimo) justificam tratamento como processo criminal relevante da própria titular, independentemente de outros fatores. Recomenda-se confirmação pontual do status atual do processo (arquivado/em curso/condenação) antes de finalizar, mas o achado por si só já é suficiente para não recomendar aprovação simples.\n\nConsiderando processo criminal por estelionato da própria titular, confirmado com confiança alta, recomendamos a REPROVAÇÃO do cadastro, condicionada à confirmação do status processual atual — se comprovado arquivamento por prescrição/absolvição sem outro fator agravante, reavaliar para monitoramento reforçado.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-08-25T18:56:37Z",
     "revisao_manual_2026_09_15": {
-      "motivo": "Parecer favorável sinalizado por coexistir com 2 achado(s) real(is) de risco alto; decisão preservada para revisão humana.",
-      "autor": "thay@cora.com.br + Codex"
+      "motivo": "Achado JusBrasil (estelionato, réu confirmado, confiança ALTA) da própria titular — não estava refletido no parecer original.",
+      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "c285c0b9-6ea6-47cb-a77e-108075d18ac8": {
@@ -1668,12 +1668,12 @@
     "generated_at": "2026-09-01T15:40:36Z"
   },
   "df5805d6-6cdd-46b4-b0b2-46e4c2667835": {
-    "text": "⚠️ ATENÇÃO — ACHADO DE RISCO ALTO NÃO REFLETIDO NESTE PARECER (thay@cora.com.br + Codex, 2026-09-15): Credilink — Processos criminais (2) — Reinaldo Dos Santos — Reinaldo Dos Santos tem 2 processo(s) criminal(is) via Credilink. Assuntos: PECULATO; DIREITO PENAL - CRIMES PRATICADOS POR FUNCIONARIOS PUBLICOS . Fo…. A decisão abaixo foi registrada sem considerar essas informações — requer revisão humana antes de manter a aprovação.\n\n---\n\nTrata-se de empresa cujo titular é o próprio PEP Reinaldo dos Santos (Vereador de Cajamar/SP, mandato ativo até 31/12/2029), atuando no ramo de atividades de contabilidade. Em análises reputacionais, foi identificada notícia referente à prisão de \"José Reinaldo dos Santos Júnior\" em Guaíra/PR (G1, 2020), porém o match apresenta confiança de 72% e risco de homônimo elevado, tratando-se de pessoa distinta (nome completo e município divergentes), razão pela qual o achado é considerado inconclusivo e não confirmado para o titular. Considerando a ausência de desabonos confirmados, a atividade contábil da empresa sem interface direta com a função legislativa exercida, e o achado reputacional não confirmado por identidade, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular é o próprio PEP Reinaldo dos Santos (Vereador de Cajamar/SP, mandato ativo até 31/12/2029), atuando no ramo de atividades de contabilidade. Revisão de 2026-09-15 (thay@cora.com.br + reclassificação de risco Credilink): o titular/PEP Reinaldo dos Santos é RÉU CONFIRMADO (parties[].polarity=PASSIVE pelo próprio CPF) em 2 processos criminais ATIVOS (não arquivados) por PECULATO e crime praticado por funcionário público — exatamente o perfil de crime associado ao exercício do próprio mandato público. Trata-se do titular da conta, PEP com mandato ativo, réu confirmado em processo criminal de corrupção/desvio de recursos públicos.\n\nConsiderando processo criminal ativo e confirmado do titular/PEP por peculato — crime diretamente relacionado ao exercício de função pública —, recomendamos a REPROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-01T15:40:45Z",
     "revisao_manual_2026_09_15": {
-      "motivo": "Parecer favorável sinalizado por coexistir com 1 achado(s) real(is) de risco alto; decisão preservada para revisão humana.",
-      "autor": "thay@cora.com.br + Codex"
+      "motivo": "Achado 'Credilink — Processo criminal grave, réu confirmado' (peculato, ativo) do próprio titular/PEP — reclassificado de médio (contagem genérica) para alto após correção da lógica de classificação Credilink.",
+      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "85d8df98-5898-4e61-8013-9a718d5ad826": {
@@ -1836,12 +1836,12 @@
     "generated_at": "2026-09-10T19:40:27Z"
   },
   "5a1bd3af-71da-4191-9485-6e586632e999": {
-    "text": "⚠️ ATENÇÃO — ACHADO DE RISCO ALTO NÃO REFLETIDO NESTE PARECER (thay@cora.com.br + Codex, 2026-09-15): Credilink — Processos criminais (1) — Vinícius Melão Veloso Cerqueira — Vinícius Melão Veloso Cerqueira tem 1 processo(s) criminal(is) via Credilink. Assuntos: OITIVA. Fonte: base consolidada de tribunais brasileiros.; Credilink — Processos criminais (1) — IELVA MARIA MELAO VELOSO CERQUEIRA — IELVA MARIA MELAO VELOSO CERQUEIRA tem 1 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL - CRIMES CONTRA A HONRA - CALUNIA DIREITO PEN…; + 1 outro achado de risco alto. A decisão abaixo foi registrada sem considerar essas informações — requer revisão humana antes de manter a aprovação.\n\n---\n\nTrata-se de empresa cujo titular é filho da PEP Ielva Maria Melão Veloso Cerqueira (ex-Vereadora de Valença do Piauí/PI, com mandato encerrado em 31/12/2024 e em período de carência PLD até 31/12/2029), atuando no ramo de transporte rodoviário de carga municipal, com sede em Teresina/PI. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou à PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD, o encerramento do mandato da PEP, a ausência de interface entre a atividade da empresa e o cargo público exercido, e o fato de a empresa estar sediada em município distinto do de atuação da ex-vereadora, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Vinícius Melão Veloso Cerqueira, é filho da PEP Ielva Maria Melão Veloso Cerqueira (ex-Vereadora de Valença do Piauí/PI), atuando no ramo de transporte de grãos. Revisão de 2026-09-15 (thay@cora.com.br): a PEP Ielva Maria Melão Veloso Cerqueira é RÉ CONFIRMADA (JusBrasil, confiança ALTA; Credilink corrobora) em processo criminal ATIVO (TJPI, processo nº 0800707-67.2024.8.18.0049) com múltiplas tipificações, incluindo ESTELIONATO CONTRA IDOSO e FRAUDES EM CERTAMES DE INTERESSE PÚBLICO — crimes de natureza patrimonial/fraude, não meras infrações de honra. Trata-se de processo criminal ativo e confirmado da própria PEP por crime de fraude, configurando risco de contágio reputacional direto sobre o vínculo familiar com o titular.\n\nConsiderando processo criminal ativo e confirmado da PEP por estelionato/fraude, recomendamos a REPROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-10T19:40:32Z",
     "revisao_manual_2026_09_15": {
-      "motivo": "Parecer favorável sinalizado por coexistir com 3 achado(s) real(is) de risco alto; decisão preservada para revisão humana.",
-      "autor": "thay@cora.com.br + Codex"
+      "motivo": "Achado JusBrasil + Credilink (estelionato contra idoso, fraudes em certames — processo ativo, réu confirmado) da PEP — não estava refletido no parecer original.",
+      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "30b944d2-41fa-4bd9-96f3-8e4c4739db88": {
@@ -1850,12 +1850,12 @@
     "generated_at": "2026-09-10T19:40:36Z"
   },
   "7d76fbda-ea77-4091-b3f9-51652b8a8839": {
-    "text": "⚠️ ATENÇÃO — ACHADO DE RISCO ALTO NÃO REFLETIDO NESTE PARECER (thay@cora.com.br + Codex, 2026-09-15): Credilink — Processos criminais (1) — VANDERLEI BASTOS MIRANDA — VANDERLEI BASTOS MIRANDA tem 1 processo(s) criminal(is) via Credilink. Assuntos: INJURIA. Fonte: base consolidada de tribunais brasileiros.; MP — Inquérito/Investigação criminal — VANDERLEI BASTOS MIRANDA — VANDERLEI BASTOS MIRANDA consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: ELEITORAL - Cargo…; + 1 outro achado de risco alto. A decisão abaixo foi registrada sem considerar essas informações — requer revisão humana antes de manter a aprovação.\n\n---\n\nTrata-se de empresa cujo titular, Edmar Bastos Miranda, é irmão do PEP Vanderlei Bastos Miranda (Vereador de Brumado/BA, mandato ativo até 31/12/2028), atuando no ramo de fabricação de móveis com predominância de madeira. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP. Considerando a ausência de desabonos relevantes sob a ótica de LD e que a atividade da empresa (fabricação de móveis) não guarda interface direta com o cargo público exercido pelo irmão, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Edmar Bastos Miranda, é irmão do PEP Vanderlei Bastos Miranda (Vereador de Brumado/BA). Revisão de 2026-09-15 (thay@cora.com.br): o PEP Vanderlei Bastos Miranda consta em registro ATIVO do Ministério Público Federal (MPF), com assunto 'ELEITORAL - Corrupção ou Fraude' vinculado ao seu cargo de Vereador, confiança ALTA. Trata-se de investigação/denúncia formal do MP por corrupção/fraude envolvendo a própria PEP, em situação ativa (não arquivada), o que fundamenta reprovação conforme critério já adotado pela Mesa para denúncias do MP em curso.\n\nConsiderando investigação ativa do MPF por corrupção/fraude contra a PEP, recomendamos a REPROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-10T19:40:41Z",
     "revisao_manual_2026_09_15": {
-      "motivo": "Parecer favorável sinalizado por coexistir com 3 achado(s) real(is) de risco alto; decisão preservada para revisão humana.",
-      "autor": "thay@cora.com.br + Codex"
+      "motivo": "Achado MPF (corrupção/fraude eleitoral, situação ativa) da PEP — não estava refletido no parecer original.",
+      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "3f6ddbb9-7896-4775-ba0b-eb2bca2f69a8": {
@@ -1906,12 +1906,12 @@
     }
   },
   "0239c46e-20f5-404f-8c66-3df728391728": {
-    "text": "⚠️ ATENÇÃO — ACHADO DE RISCO ALTO NÃO REFLETIDO NESTE PARECER (thay@cora.com.br + Codex, 2026-09-15): Credilink — Processos criminais (11) — Cleiton De Freitas Silveira — Cleiton De Freitas Silveira tem 11 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL (287) - CRIMES PREVISTOS NA LEGISLACAO EXTRAVA; DIR…. A decisão abaixo foi registrada sem considerar essas informações — requer revisão humana antes de manter a aprovação.\n\n---\n\nTrata-se de empresa cujo titular, Cleiton de Freitas Silveira, possui relacionamento de sócio com o PEP Sinomar Barbosa de Morais (Vereador de Iturama/MG), atuando no ramo de criação de bovinos para corte em Ouroeste/SP; ressalta-se que a Credilink não informa em qual empresa titular e PEP são sócios, nem o respectivo CNPJ ou situação cadastral, sendo necessária validação manual desse vínculo, inclusive para confirmar se a empresa em comum encontra-se ativa ou baixada na Receita Federal. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD, a atividade agropecuária da empresa sem interface direta com a pasta legislativa exercida pelo PEP, e a localização da PJ em município distinto do mandato, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro, condicionada à validação manual do vínculo societário indicado.",
+    "text": "Trata-se de empresa cujo titular, Cleiton de Freitas Silveira, possui relacionamento de sócio com o PEP Sinomar Barbosa de Morais (Vereador de Iturama/MG), atuando no ramo de criação de bovinos para corte em Ouroeste/SP. Revisão de 2026-09-15 (thay@cora.com.br + reclassificação de risco Credilink): o titular Cleiton de Freitas Silveira é RÉU CONFIRMADO (parties[].polarity=PASSIVE pelo próprio CPF) em 2 processos criminais ATIVOS (não arquivados) por crimes do Sistema Nacional de Armas. Trata-se de processo criminal ativo do TITULAR por crime grave (posse/porte irregular de arma de fogo), independente do vínculo com o PEP ou de outros fatores. Não foram identificadas mídias adversas adicionais para a empresa ou o PEP.\n\nConsiderando processo criminal ativo e confirmado do titular por crime de natureza grave, recomendamos a REPROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-11T18:42:41Z",
     "revisao_manual_2026_09_15": {
-      "motivo": "Parecer favorável sinalizado por coexistir com 1 achado(s) real(is) de risco alto; decisão preservada para revisão humana.",
-      "autor": "thay@cora.com.br + Codex"
+      "motivo": "Achado 'Credilink — Processo criminal grave, réu confirmado' (Sistema Nacional de Armas, ativo) do próprio titular — reclassificado de médio (contagem genérica) para alto após correção da lógica de classificação Credilink (checagem de polo_passivo real + gravidade).",
+      "autor": "thay@cora.com.br (via Claude Code)"
     }
   }
 }
