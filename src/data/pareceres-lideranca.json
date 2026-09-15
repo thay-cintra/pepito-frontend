@@ -139,14 +139,17 @@
     }
   },
   "5b91bd5d-b6bd-4e95-8c1f-1cca12c465e5": {
-    "text": "⚠️ ATENÇÃO — ACHADO DE RISCO ALTO NÃO REFLETIDO NESTE PARECER (thay@cora.com.br + Codex, 2026-09-15): Credilink — Processos criminais (1) — Débora Nascimento Santos — Débora Nascimento Santos tem 1 processo(s) criminal(is) via Credilink. Assuntos: RECEPTACAO CULPOSA. Fonte: base consolidada de tribunais brasileiros.. A decisão abaixo foi registrada sem considerar essas informações — requer revisão humana antes de manter a aprovação.\n\n---\n\nDecisão: CADASTRO APROVADO\nCNPJ: 67.814.414/0001-25 — FROTA NORDESTE LTDA\n\nO analista recomenda aprovação simples — concordo, com ressalva sobre um fator agravante que merece registro. A empresa atua em locação de veículos, setor com interface relevante com o poder público, foi constituída em julho de 2026 (após o encerramento do mandato), e a titular é irmã de Gustavo Henrique Santos Menezes, ex-vereador de Pitimbu/PB (mandato encerrado em 31/12/2024, em carência PLD até 31/12/2029). A abertura da empresa durante o período de carência, combinada com o setor de atuação, configura fator de atenção concreto para eventual conflito de interesses, ainda que o mandato já tenha cessado. Contudo, a ausência total de mídia adversa, sanções, processos judiciais ou apontamentos desabonadores para a empresa, sua titular e o PEP associado mitiga o risco a nível não impeditivo.\n\nRecomendo a APROVAÇÃO DO CADASTRO SOB MONITORAMENTO REFORÇADO, com revisão periódica durante o período de carência PLD, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — O analista recomenda aprovação simples — concordo, com ressalva sobre um fator agravante que merece registro.",
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 67.814.414/0001-25 — FROTA NORDESTE LTDA\n\nO analista recomenda aprovação simples — concordo, com ressalva sobre um fator agravante que merece registro. A empresa atua em locação de veículos, setor com interface relevante com o poder público, foi constituída em julho de 2026 (após o encerramento do mandato), e a titular é irmã de Gustavo Henrique Santos Menezes, ex-vereador de Pitimbu/PB (mandato encerrado em 31/12/2024, em carência PLD até 31/12/2029). A abertura da empresa durante o período de carência, combinada com o setor de atuação, configura fator de atenção concreto para eventual conflito de interesses, ainda que o mandato já tenha cessado. Contudo, a ausência total de mídia adversa, sanções, processos judiciais ou apontamentos desabonadores para a empresa, sua titular e o PEP associado mitiga o risco a nível não impeditivo.\n\nRecomendo a APROVAÇÃO DO CADASTRO SOB MONITORAMENTO REFORÇADO, com revisão periódica durante o período de carência PLD, conforme Circular BACEN 3.978/2020.",
     "decisao": "aprovado",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-12T00:24:40Z",
     "revisao_manual_2026_09_15": {
       "motivo": "Parecer favorável sinalizado por coexistir com 1 achado(s) real(is) de risco alto; decisão preservada para revisão humana.",
       "autor": "thay@cora.com.br + Codex"
+    },
+    "revisao_manual_2026_09_15_aviso_removido": {
+      "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
+      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "16059106-2aeb-4e36-8978-9089db30942e": {
