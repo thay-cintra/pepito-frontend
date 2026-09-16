@@ -75,7 +75,7 @@
     "generated_at": "2026-05-20T22:30:12Z"
   },
   "401922c4-6835-4860-ac8b-aad233686503": {
-    "text": "Trata-se de associação cujo titular, Gildon Lazaro Orlando Da Silva, possui relacionamento de vínculo familiar ou associativo com PEP não identificado nominalmente nos registros disponíveis, constando apenas a vinculação ao estado do Maranhão, sem cargo formal ou período de mandato informados, sendo a entidade atuante no ramo de atividades de organizações associativas ligadas à cultura e à arte, com sede em São José dos Basílios/MA. A Credilink registra 1 processo criminal de natureza grave para o titular, arquivado e/ou sem confirmação de que ele seja réu, além de 3 processos não criminais; o finding exige leitura manual e não fundamenta reprovação automática. Considerando a natureza e o contexto dos achados registrados sob a ótica de LD, a natureza cultural e associativa da entidade, e o fato de que a vinculação PEP não pôde ser caracterizada em razão da ausência de dados sobre o titular PEP, seu cargo e período de mandato — o que impede a avaliação adequada de conflito de interesses —, sugerimos a APROVAÇÃO do cadastro, recomendando que sejam diligenciadas junto ao cliente as informações complementares sobre o PEP vinculado para fins de completude do dossiê.",
+    "text": "Trata-se de associação cujo titular, Gildon Lazaro Orlando Da Silva, possui relacionamento de vínculo familiar ou associativo com PEP não identificado nominalmente nos registros disponíveis, constando apenas a vinculação ao estado do Maranhão, sem cargo formal ou período de mandato informados, sendo a entidade atuante no ramo de atividades de organizações associativas ligadas à cultura e à arte, com sede em São José dos Basílios/MA. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à associação ou ao seu titular. Considerando a ausência de desabonos relevantes sob a ótica de LD, a natureza cultural e associativa da entidade, e o fato de que a vinculação PEP não pôde ser caracterizada em razão da ausência de dados sobre o titular PEP, seu cargo e período de mandato — o que impede a avaliação adequada de conflito de interesses —, sugerimos a APROVAÇÃO do cadastro, recomendando que sejam diligenciadas junto ao cliente as informações complementares sobre o PEP vinculado para fins de completude do dossiê.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-07-13T16:12:49Z",
     "revisao_manual_2026_09_15": {
@@ -84,10 +84,6 @@
     },
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -287,7 +283,7 @@
     "generated_at": "2026-07-13T16:13:58Z"
   },
   "7261ef7d-8cd3-4843-92bb-77c73dbcdc74": {
-    "text": "Trata-se de empresa cujo titular, Maria Giovana Luchiari Pisoni Duarte Fortunato, possui vínculo familiar (tipo não especificado) com PEP de cargo e mandato não informados junto ao estado de SP, atuando no ramo de atividades associativas não especificadas (CNPJ 44.461.870/0001-33, INSTITUTO FORTUNATO, constituída em maio de 2021, em Americana/SP). A Credilink registra 1 processo criminal classificado como leve, por calúnia, e 6 processos não criminais para a titular; segundo os findings, esses registros não escalam a recomendação. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD, a impossibilidade de avaliar interface entre a atividade da empresa e o cargo público exercido em razão da ausência de informações sobre o cargo e mandato do PEP, e não havendo qualquer fator de risco adicional concreto identificado, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Maria Giovana Luchiari Pisoni Duarte Fortunato, possui vínculo familiar (tipo não especificado) com PEP de cargo e mandato não informados junto ao estado de SP, atuando no ramo de atividades associativas não especificadas (CNPJ 44.461.870/0001-33, INSTITUTO FORTUNATO, constituída em maio de 2021, em Americana/SP). Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, à sua titular ou ao PEP relacionado. Considerando a ausência de desabonos relevantes sob a ótica de PLD, a impossibilidade de avaliar interface entre a atividade da empresa e o cargo público exercido em razão da ausência de informações sobre o cargo e mandato do PEP, e não havendo qualquer fator de risco adicional concreto identificado, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-07-13T16:14:03Z",
     "revisao_manual_2026_09_15": {
@@ -296,10 +292,6 @@
     },
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -414,7 +406,7 @@
     "generated_at": "2026-07-13T16:15:56Z"
   },
   "3a5dd7ee-5b37-4b66-bb19-a50c556f49aa": {
-    "text": "Trata-se de empresa cujo titular, Paulo Roberto Miranda Acácio De Lima, possui relacionamento de vínculo (tipo não especificado) com PEP não identificado nominalmente, com cargo e mandato não informados, vinculado ao estado do CE, sendo a empresa CONDOMINIO GREEN BEACH RESIDENCE (CNPJ 03.769.844/0001-90) atuante no ramo de condomínios prediais em Fortaleza/CE, com abertura datada de março de 2000. A Credilink registra 6 processos criminais de natureza leve para o titular, com assuntos de crimes contra a flora e intimação, e 5 processos não criminais; segundo os findings, esses registros não escalam a recomendação. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD, a atividade de administração condominial sem interface sensível com o poder público, e a impossibilidade de avaliar fatores de risco adicionais em razão da ausência de informações sobre o PEP titular (nome, cargo e período de mandato não informados), não temos objeções ao início do relacionamento, sugerimos a APROVAÇÃO do cadastro, ressalvando a necessidade de atualização cadastral para identificação completa do PEP vinculado.",
+    "text": "Trata-se de empresa cujo titular, Paulo Roberto Miranda Acácio De Lima, possui relacionamento de vínculo (tipo não especificado) com PEP não identificado nominalmente, com cargo e mandato não informados, vinculado ao estado do CE, sendo a empresa CONDOMINIO GREEN BEACH RESIDENCE (CNPJ 03.769.844/0001-90) atuante no ramo de condomínios prediais em Fortaleza/CE, com abertura datada de março de 2000. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP relacionado. Considerando a ausência de desabonos relevantes sob a ótica de PLD, a atividade de administração condominial sem interface sensível com o poder público, e a impossibilidade de avaliar fatores de risco adicionais em razão da ausência de informações sobre o PEP titular (nome, cargo e período de mandato não informados), não temos objeções ao início do relacionamento, sugerimos a APROVAÇÃO do cadastro, ressalvando a necessidade de atualização cadastral para identificação completa do PEP vinculado.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-07-13T16:16:02Z",
     "revisao_manual_2026_09_15": {
@@ -423,10 +415,6 @@
     },
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -466,7 +454,7 @@
     "generated_at": "2026-07-13T16:16:45Z"
   },
   "ac762768-a56d-4b3e-9f93-7d580a9edf4c": {
-    "text": "Trata-se de empresa cujo titular, Cicero Neco Mirais, possui vínculo de relacionamento com PEP de identificação não informada (cargo e mandato não especificados, vinculado ao estado do MA), atuando no ramo de obras de fundações (construção civil), com sede em Estreito/MA. A Credilink registra 4 processos criminais classificados como leves e 46 processos não criminais para o titular; segundo os findings, esses registros não escalam a recomendação. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD, bem como a impossibilidade de avaliar interface entre a atividade da empresa e eventual cargo público exercido pelo PEP em razão da ausência de informações sobre cargo, órgão e período de mandato, sugerimos a APROVAÇÃO do cadastro, recomendando que sejam diligenciadas junto ao cliente as informações completas sobre o PEP vinculado para fins de adequada manutenção do dossiê.",
+    "text": "Trata-se de empresa cujo titular, Cicero Neco Mirais, possui vínculo de relacionamento com PEP de identificação não informada (cargo e mandato não especificados, vinculado ao estado do MA), atuando no ramo de obras de fundações (construção civil), com sede em Estreito/MA. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP relacionado. Considerando a ausência de desabonos relevantes sob a ótica de PLD, bem como a impossibilidade de avaliar interface entre a atividade da empresa e eventual cargo público exercido pelo PEP em razão da ausência de informações sobre cargo, órgão e período de mandato, sugerimos a APROVAÇÃO do cadastro, recomendando que sejam diligenciadas junto ao cliente as informações completas sobre o PEP vinculado para fins de adequada manutenção do dossiê.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-07-13T16:16:51Z",
     "revisao_manual_2026_09_15": {
@@ -475,10 +463,6 @@
     },
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -644,14 +628,10 @@
     "metodo": "regenerado - análise existente"
   },
   "20fbe3e7-9521-4c81-bab7-0e7238d42ebf": {
-    "text": "Cadastro aprovado pelo time de PLD - Trata-se de organização religiosa cujo titular (presidente) é irmão de ex-Vereadora. A pesquisa localizou cobertura sobre a condenação de ex-prefeito de Pirambu/SE por improbidade administrativa; o próprio finding classifica o resultado como contextual e recomenda validar se Josivaldo Cruz possui vínculo com gestões anteriores, sem confirmar relação direta. Dito isso, considerando a idade de constituição da entidade e a ausência de atipicidades midiáticas sob a ótica de PLD, não temos objeções ao início do relacionamento, recomendando-se a aprovação estritamente sob monitoramento ref...",
+    "text": "Cadastro aprovado pelo time de PLD - Trata-se de organização religiosa cujo titular (presidente) é irmão de ex-Vereadora. Em análises reputacionais, não foram identificadas mídias ou apontamentos desabonadores face à instituição, ao seu titular ou à política associada. Dito isso, considerando a idade de constituição da entidade e a ausência de atipicidades midiáticas sob a ótica de PLD, não temos objeções ao início do relacionamento, recomendando-se a aprovação estritamente sob monitoramento ref...",
     "model": "heuristic-fallback",
     "generated_at": "2026-07-06T11:47:31.395394Z",
-    "metodo": "regenerado - análise existente",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
+    "metodo": "regenerado - análise existente"
   },
   "386e9d78-c517-4dee-8317-ae24c3ebab76": {
     "text": "Cadastro aprovado pelo time de PLD - Trata-se de empresa cuja titular é atual Vereadora do município onde a empresa está sediada. Em análises reputacionais, não foram identificadas mídias ou apontamentos desabonadores reais face à empresa ou à política associada. Dito isso, considerando a ausência de mídias negativas e o baixo risco financeiro da atividade (MEI focado em alimentação domiciliar), não temos objeções ao início do relacionamento, recomendando-se a aprovação estritamente sob monitora...",
@@ -1485,29 +1465,21 @@
     "generated_at": "2026-08-17T19:30:31Z"
   },
   "68df24fe-b9c6-4e60-a88d-fc735f0b7875": {
-    "text": "Trata-se de empresa cujo titular, Emerson De Sousa Da Silva, possui relacionamento de sócio com o PEP Nilton Batista Raupp (Vereador de Garopaba/SC, mandato encerrado em 31/12/2024, em período de carência PLD até 31/12/2029), atuando no ramo de atividades de contabilidade em Imbituba/SC. As duas menções de mídia envolvendo nome parcialmente coincidente permanecem inconclusivas e com alta probabilidade de homônimo. Para o PEP Nilton Batista Raupp, a pesquisa também localizou perfil oficial e duas notícias sobre sua atuação política, além de 40 processos civis, dos quais 13 no polo passivo; a sociedade em comum NBRAUPP CONTABILIDADE S/S LTDA foi confirmada via PH3A. A empresa em comum entre titular e PEP, antes não identificada, foi confirmada via API PH3A + Receita Federal/BrasilAPI em 2026-09-15: NBRAUPP CONTABILIDADE S/S LTDA (CNPJ 09.001.045/0001-55), situação cadastral ATIVA desde 20/08/2007; esse finding societário não atribui irregularidade à empresa. Considerando que o mandato do PEP já se encontra encerrado, que a atividade contábil da empresa não guarda interface direta com a pasta de vereança, que os processos civis localizados recaem sobre o PEP e são informativos, e que os achados de mídia são inconclusivos e de alta probabilidade de homônimo, sugerimos a APROVAÇÃO do cadastro, recomendando que o analista responsável confirme a identidade do titular para descarte definitivo das menções identificadas.",
+    "text": "Trata-se de empresa cujo titular, Emerson De Sousa Da Silva, possui relacionamento de sócio com o PEP Nilton Batista Raupp (Vereador de Garopaba/SC, mandato encerrado em 31/12/2024, em período de carência PLD até 31/12/2029), atuando no ramo de atividades de contabilidade em Imbituba/SC. Em análises reputacionais, foram identificadas duas menções em mídia relacionadas a homicídio qualificado no Piauí envolvendo um indivíduo de nome parcialmente coincidente, porém com risco de homônimo classificado como ALTO (confiança de 42%), dado que os sobrenomes \"Silva\" e \"Sousa\" são extremamente comuns, e as notícias identificam a vítima — e não o autor — como \"Emerson de/da Silva Sousa\", não havendo confirmação de identidade com o titular; não foram identificados processos desabonadores contra a PJ ou o PF. A empresa em comum entre titular e PEP, antes não identificada, foi confirmada via API PH3A + Receita Federal/BrasilAPI em 2026-09-15: NBRAUPP CONTABILIDADE S/S LTDA (CNPJ 09.001.045/0001-55), situação cadastral ATIVA desde 20/08/2007, sem achado adverso vinculado. Considerando que o mandato do PEP já se encontra encerrado, que a atividade contábil da empresa não guarda interface direta com a pasta de vereança, que não há processos em desfavor do titular ou da empresa, e que os achados de mídia são inconclusivos e de alta probabilidade de homônimo, sugerimos a APROVAÇÃO do cadastro, recomendando que o analista responsável confirme a identidade do titular para descarte definitivo das menções identificadas.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-08-17T19:30:40Z",
     "revisao_manual_2026_09_15": {
       "motivo": "Empresa em comum resolvida via PH3A + BrasilAPI.",
       "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "e59f5e1a-2ff5-414e-8be6-2955d0bab3ed": {
-    "text": "Trata-se de empresa cujo titular, Elvis de Souza Santos, possui vínculo com um PEP identificado na base Credilink, porém sem informações suficientes sobre o tipo de vínculo, nome do PEP titular, cargo formal, órgão ou período de mandato para caracterização adequada do relacionamento. A Credilink registra 2 processos criminais para o titular, com assuntos de prisão preventiva e crimes praticados por funcionários públicos; o finding não informa polo ou desfecho processual. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD, mas também a impossibilidade de avaliar adequadamente o vínculo PEP em razão da incompletude dos dados cadastrais (cargo, nome do PEP, município e vigência do mandato não informados), recomendamos a complementação das informações junto ao cliente antes de concluir a análise, ficando a recomendação final condicionada ao esclarecimento desses dados.",
+    "text": "Trata-se de empresa cujo titular, Elvis de Souza Santos, possui vínculo com um PEP identificado na base Credilink, porém sem informações suficientes sobre o tipo de vínculo, nome do PEP titular, cargo formal, órgão ou período de mandato para caracterização adequada do relacionamento. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP vinculado. Considerando a ausência de desabonos relevantes sob a ótica de PLD, mas também a impossibilidade de avaliar adequadamente o vínculo PEP em razão da incompletude dos dados cadastrais (cargo, nome do PEP, município e vigência do mandato não informados), recomendamos a complementação das informações junto ao cliente antes de concluir a análise, ficando a recomendação final condicionada ao esclarecimento desses dados.",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-08-17T19:30:46Z",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
+    "generated_at": "2026-08-17T19:30:46Z"
   },
   "4e568c65-cb0b-4bfd-9267-76ca1a47d27c": {
-    "text": "Trata-se de empresa cujo titular, Fabiana Lopes Alvim Góes, é irmã do PEP Luis Claudio Lopes Alvim (Vereador de Goianá/MG, mandato ativo até 31/12/2028), atuando no ramo de atividades de associações de defesa de direitos sociais em Juiz de Fora/MG. A Credilink registra 8 processos não criminais para a titular, além de 1 processo criminal classificado como leve e 18 processos não criminais para o PEP Luis Claudio Lopes Alvim; segundo os findings, esses registros não escalam a recomendação. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD, a inexistência de interface entre a atividade da associação e o cargo público exercido, bem como a distância geográfica entre os municípios de atuação, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Fabiana Lopes Alvim Góes, é irmã do PEP Luis Claudio Lopes Alvim (Vereador de Goianá/MG, mandato ativo até 31/12/2028), atuando no ramo de atividades de associações de defesa de direitos sociais em Juiz de Fora/MG. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, à sua titular ou ao PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD, a inexistência de interface entre a atividade da associação e o cargo público exercido, bem como a distância geográfica entre os municípios de atuação, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-08-18T14:52:23Z",
     "revisao_manual_2026_09_15": {
@@ -1516,10 +1488,6 @@
     },
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -1564,20 +1532,16 @@
     "generated_at": "2026-08-19T16:35:33Z"
   },
   "fdcfbd26-8a43-44c3-892a-006b11e2cee4": {
-    "text": "Trata-se de empresa cujo titular, Douglas Kubica, é irmão da PEP Luciana Aparecida Kubica (Vereadora de Monte Azul Paulista/SP, mandato ativo até 31/12/2029), atuando no ramo de minimercados, mercearias e armazéns. Revisão de 2026-09-15 (thay@cora.com.br): pesquisa web identificou que o PAI da PEP, Gilberto Roberto Kubica (ex-vereador por 4 legislaturas, ex-presidente da Câmara Municipal), foi CONDENADO por improbidade administrativa em esquema de fraude em licitação (condenação MANTIDA pelo TJSP, 8ª Câmara de Direito Público) — licitações 17/98 e 30/00 anuladas por simulação/conluio, esquema descrito como montado para 'comprar' seu apoio político, ressarcimento ao erário superior a R$ 124 mil. Trata-se de vínculo familiar INDIRETO (pai da PEP, não a própria PEP nem o titular) e de ilícito de natureza administrativa/cível (improbidade), não processo criminal. Não há achado adverso próprio para o titular ou para a PEP Luciana Aparecida Kubica, cuja atividade legislativa atual não guarda interface com a empresa (minimercado). O JusBrasil também registra 30 processos civis da PEP Luciana Aparecida Kubica, 10 no polo passivo; o achado é informativo, não gera reprovação automática e não altera a decisão de monitoramento fundamentada na condenação do familiar.\n\nConsiderando que o achado recai sobre familiar de 2º grau de proximidade (pai da PEP, não a própria PEP) e é de natureza administrativa (improbidade, sem processo criminal), mas dado o histórico de influência política da família Kubica no mesmo município onde a PEP hoje exerce mandato, sugerimos a APROVAÇÃO DO CADASTRO SOB MONITORAMENTO REFORÇADO.",
+    "text": "Trata-se de empresa cujo titular, Douglas Kubica, é irmão da PEP Luciana Aparecida Kubica (Vereadora de Monte Azul Paulista/SP, mandato ativo até 31/12/2029), atuando no ramo de minimercados, mercearias e armazéns. Revisão de 2026-09-15 (thay@cora.com.br): pesquisa web identificou que o PAI da PEP, Gilberto Roberto Kubica (ex-vereador por 4 legislaturas, ex-presidente da Câmara Municipal), foi CONDENADO por improbidade administrativa em esquema de fraude em licitação (condenação MANTIDA pelo TJSP, 8ª Câmara de Direito Público) — licitações 17/98 e 30/00 anuladas por simulação/conluio, esquema descrito como montado para 'comprar' seu apoio político, ressarcimento ao erário superior a R$ 124 mil. Trata-se de vínculo familiar INDIRETO (pai da PEP, não a própria PEP nem o titular) e de ilícito de natureza administrativa/cível (improbidade), não processo criminal. Não há achado adverso próprio para o titular ou para a PEP Luciana Aparecida Kubica, cuja atividade legislativa atual não guarda interface com a empresa (minimercado).\n\nConsiderando que o achado recai sobre familiar de 2º grau de proximidade (pai da PEP, não a própria PEP) e é de natureza administrativa (improbidade, sem processo criminal), mas dado o histórico de influência política da família Kubica no mesmo município onde a PEP hoje exerce mandato, sugerimos a APROVAÇÃO DO CADASTRO SOB MONITORAMENTO REFORÇADO.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-08-19T18:37:22Z",
     "revisao_manual_2026_09_15": {
       "motivo": "Achado WebSearch (condenação por improbidade do pai da PEP, mantida pelo TJSP) integrado ao texto do parecer — antes só um aviso em separado.",
       "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Complementação manual do parecer com achado(s) adicional(is) de risco médio/baixo existente(s) em media-findings.json, preservando o achado alto e a decisão já registrados.",
-      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "5b91bd5d-b6bd-4e95-8c1f-1cca12c465e5": {
-    "text": "Trata-se de empresa cujo titular, Débora Nascimento Santos, é irmã do ex-PEP Gustavo Henrique Santos Menezes (ex-Vereador de Pitimbu/PB, mandato encerrado em 31/12/2024, ainda em período de carência PLD até 31/12/2029), atuando no ramo de locação de automóveis sem condutor em João Pessoa/PB. A pesquisa localizou, para a titular, 1 processo criminal no JusBrasil sem configuração como ré em tipificação crítica, 1 processo criminal leve e 9 processos não criminais na Credilink; para o ex-PEP, localizou 7 processos civis, 2 no polo passivo, e 1 processo não criminal. Os registros requerem avaliação, mas não geram reprovação automática. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD/LD, o encerramento do mandato, e que a atividade da empresa não guarda interface com o cargo público anteriormente exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Débora Nascimento Santos, é irmã do ex-PEP Gustavo Henrique Santos Menezes (ex-Vereador de Pitimbu/PB, mandato encerrado em 31/12/2024, ainda em período de carência PLD até 31/12/2029), atuando no ramo de locação de automóveis sem condutor em João Pessoa/PB. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, à sua titular ou ao ex-PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD/LD, o encerramento do mandato, e que a atividade da empresa não guarda interface com o cargo público anteriormente exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-08-24T13:29:53Z",
     "revisao_manual_2026_09_15": {
@@ -1586,10 +1550,6 @@
     },
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -1604,46 +1564,30 @@
     "generated_at": "2026-08-24T13:30:03Z"
   },
   "a116f88a-ab10-40fe-a80f-3c9515a55749": {
-    "text": "⚠️ ATENÇÃO — ACHADO DE RISCO ALTO NÃO REFLETIDO NESTE PARECER (thay@cora.com.br + Codex, 2026-09-15): Credilink — Processos criminais (1) — FERNANDA GARCIA SARDANHA — FERNANDA GARCIA SARDANHA tem 1 processo(s) criminal(is) via Credilink. Assuntos: 3396 - DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.. A decisão abaixo foi registrada sem considerar essas informações — requer revisão humana antes de manter a aprovação.\n\n---\n\nTrata-se de empresa cujo titular, Franciele Garcia, é irmã da PEP Fernanda Garcia Sardanha (Prefeita de São Mateus do Sul/PR), atuando no ramo de comércio varejista de produtos farmacêuticos, sem manipulação de fórmulas, com sede em Santa Cecília/SC. A pesquisa registra 1 processo criminal por difamação para a PEP Fernanda Garcia Sardanha, sem informação de polo ou desfecho, multa de R$ 3.984,60 aplicada pelo TCE-PR por irregularidade no Pregão Eletrônico nº 131/2022, representação julgada parcialmente procedente pelo TCE-PR sem irregularidades graves e ato de inexigibilidade de chamamento público assinado pela prefeita. Também constam 68 processos civis, 30 no polo passivo, 1 processo trabalhista no polo passivo e referência duplicada aos mesmos 68 processos; os findings exigem avaliação e não geram reprovação automática por si sós. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD, que a atividade da empresa não guarda interface direta com o cargo público exercido pela PEP e que a empresa está sediada em município e estado distintos daquele em que a PEP exerce o mandato, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "⚠️ ATENÇÃO — ACHADO DE RISCO ALTO NÃO REFLETIDO NESTE PARECER (thay@cora.com.br + Codex, 2026-09-15): Credilink — Processos criminais (1) — FERNANDA GARCIA SARDANHA — FERNANDA GARCIA SARDANHA tem 1 processo(s) criminal(is) via Credilink. Assuntos: 3396 - DIFAMACAO. Fonte: base consolidada de tribunais brasileiros.. A decisão abaixo foi registrada sem considerar essas informações — requer revisão humana antes de manter a aprovação.\n\n---\n\nTrata-se de empresa cujo titular, Franciele Garcia, é irmã da PEP Fernanda Garcia Sardanha (Prefeita de São Mateus do Sul/PR), atuando no ramo de comércio varejista de produtos farmacêuticos, sem manipulação de fórmulas, com sede em Santa Cecília/SC. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, à sua titular ou à PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD, que a atividade da empresa não guarda interface direta com o cargo público exercido pela PEP e que a empresa está sediada em município e estado distintos daquele em que a PEP exerce o mandato, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-08-24T13:30:12Z",
     "revisao_manual_2026_09_15": {
       "motivo": "Parecer favorável sinalizado por coexistir com 1 achado(s) real(is) de risco alto; decisão preservada para revisão humana.",
       "autor": "thay@cora.com.br + Codex"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "45a36634-2643-4823-9269-cd03de7078b9": {
-    "text": "Trata-se de empresa cujo titular, João Carlos Piovesan, é irmão do ex-PEP Davi Cargnin Piovesan (ex-Vereador de Palmeira das Missões/RS, com mandato encerrado em 31/12/2024 e em período de carência PLD até 31/12/2029), atuando no ramo de consultoria financeira em Alegrete/RS. A pesquisa localizou 21 processos civis do ex-PEP Davi Cargnin Piovesan no JusBrasil, dos quais 8 no polo passivo; o achado é informativo e não gera reprovação automática. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD/LD, o encerramento do mandato, e que a atividade da empresa não guarda interface com o cargo público anteriormente exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, João Carlos Piovesan, é irmão do ex-PEP Davi Cargnin Piovesan (ex-Vereador de Palmeira das Missões/RS, com mandato encerrado em 31/12/2024 e em período de carência PLD até 31/12/2029), atuando no ramo de consultoria financeira em Alegrete/RS. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao ex-PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD/LD, o encerramento do mandato, e que a atividade da empresa não guarda interface com o cargo público anteriormente exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-08-24T13:30:16Z",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
+    "generated_at": "2026-08-24T13:30:16Z"
   },
   "fcb6f395-952b-491c-b4b7-dd4b27205107": {
-    "text": "Trata-se de empresa cujo titular é irmão do PEP Luis Afonso Brandão de Oliveira (Vereador de Breves/PA), atuando no ramo de comércio varejista de produtos saneantes domissanitários. A pesquisa localizou 3 processos civis do titular, 1 no polo passivo, e, para o PEP, 11 processos civis, 6 no polo passivo, e 4 processos trabalhistas, 3 no polo passivo; os achados são informativos e não geram reprovação automática. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD e que a atividade da empresa não guarda interface direta com o cargo público exercido, não temos objeções ao início do relacionamento, sugerimos a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular é irmão do PEP Luis Afonso Brandão de Oliveira (Vereador de Breves/PA), atuando no ramo de comércio varejista de produtos saneantes domissanitários. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD e que a atividade da empresa não guarda interface direta com o cargo público exercido, não temos objeções ao início do relacionamento, sugerimos a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-08-24T13:30:20Z",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
+    "generated_at": "2026-08-24T13:30:20Z"
   },
   "05375e39-357a-4bf4-bec0-b285551e29ee": {
-    "text": "Trata-se de empresa cujo titular, João Pedro Peixoto Fernandes, é irmão do PEP Edilson Fernandes da Silva Junior (Vereador de Paraú/RN). Revisão de 2026-09-15 (thay@cora.com.br): a Operação Mederi (PF/TRF-5, corrupção em contratos de saúde) atinge o Município de Paraú/RN e tem como investigado/indiciado o PREFEITO do município, João Evaristo Peixoto — pessoa DIFERENTE do PEP (Edilson Fernandes da Silva Junior, vereador) e do titular (João Pedro Peixoto Fernandes), com apenas coincidência parcial de sobrenome ('Peixoto') com o titular. NENHUM achado confirma nominalmente que o titular ou o PEP têm relação com o prefeito investigado ou com os fatos apurados na operação — trata-se de contexto regional (mesmo município), não de nexo pessoal confirmado. Além do contexto regional da Operação Mederi, o titular consta em procedimento extrajudicial do MP-RN, com situação de baixa de carga, por crimes de trânsito e confiança baixa. Para o PEP, o JusBrasil registra 11 processos civis, 1 no polo passivo, e a Credilink registra 1 processo não criminal de Direito Administrativo e outras matérias de Direito Público; esses achados são informativos e não geram reprovação automática. Considerando a ausência de nexo nominal confirmado com a Operação Mederi e a inexistência de outros achados adversos, sugerimos a APROVAÇÃO do cadastro, com recomendação de diligência adicional pontual (via cartório/Receita Federal) apenas se surgir indício concreto de parentesco entre o titular e o prefeito investigado — não identificado até o momento.",
+    "text": "Trata-se de empresa cujo titular, João Pedro Peixoto Fernandes, é irmão do PEP Edilson Fernandes da Silva Junior (Vereador de Paraú/RN). Revisão de 2026-09-15 (thay@cora.com.br): a Operação Mederi (PF/TRF-5, corrupção em contratos de saúde) atinge o Município de Paraú/RN e tem como investigado/indiciado o PREFEITO do município, João Evaristo Peixoto — pessoa DIFERENTE do PEP (Edilson Fernandes da Silva Junior, vereador) e do titular (João Pedro Peixoto Fernandes), com apenas coincidência parcial de sobrenome ('Peixoto') com o titular. NENHUM achado confirma nominalmente que o titular ou o PEP têm relação com o prefeito investigado ou com os fatos apurados na operação — trata-se de contexto regional (mesmo município), não de nexo pessoal confirmado. Não há mídia adversa, processos ou sanções identificados para a empresa, o titular ou o PEP diretamente. Considerando a ausência de nexo nominal confirmado com a Operação Mederi e a inexistência de outros achados adversos, sugerimos a APROVAÇÃO do cadastro, com recomendação de diligência adicional pontual (via cartório/Receita Federal) apenas se surgir indício concreto de parentesco entre o titular e o prefeito investigado — não identificado até o momento.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-08-24T18:30:10Z",
     "revisao_manual_2026_09_15": {
       "motivo": "Achado 'Operação Mederi' reclassificado: contexto regional/coincidência de sobrenome, sem confirmação nominal do titular ou PEP — não é achado desabonador confirmado.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Complementação manual do parecer com achado(s) adicional(is) de risco médio/baixo existente(s) em media-findings.json, preservando o achado alto e a decisão já registrados.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -1668,7 +1612,7 @@
     "generated_at": "2026-08-25T18:56:01Z"
   },
   "ca6eac08-e054-4275-886d-c6f909554381": {
-    "text": "Trata-se de empresa cujo titular, Amélia Míriam De Oliveira, é irmã do PEP Tadeu Barbosa de Oliveira (Prefeito de Araçuaí/MG, mandato ativo até 31/12/2028), atuando no ramo de restaurantes e similares na cidade de Capelinha/MG. A pesquisa localizou, para a titular, 8 processos civis, 4 no polo passivo, 5 processos trabalhistas, todos no polo passivo, e 9 processos não criminais na Credilink; para o PEP, localizou 28 processos civis, 6 no polo passivo, 6 processos criminais classificados como leves e 5 processos não criminais. Os registros são informativos e não geram reprovação automática. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD, o fato de a empresa estar localizada em município distinto ao de atuação do PEP e que a atividade de restaurante não guarda interface direta com a pasta pública exercida, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Amélia Míriam De Oliveira, é irmã do PEP Tadeu Barbosa de Oliveira (Prefeito de Araçuaí/MG, mandato ativo até 31/12/2028), atuando no ramo de restaurantes e similares na cidade de Capelinha/MG. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, à sua titular ou ao PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD, o fato de a empresa estar localizada em município distinto ao de atuação do PEP e que a atividade de restaurante não guarda interface direta com a pasta pública exercida, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-08-25T18:56:06Z",
     "revisao_manual_2026_09_15": {
@@ -1678,32 +1622,20 @@
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
       "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "a4378011-ca0e-42b4-a4be-1322c2ab7c15": {
-    "text": "Trata-se de empresa cujo titular é a própria PEP Letícia Corrêa Da Silva Godinho (Vereadora de Varjão de Minas/MG), atuando no ramo de outras atividades profissionais, científicas e técnicas, com abertura da PJ em julho de 2025, já durante o mandato vigente. A pesquisa localizou notícia segundo a qual a PEP Leticia Correa da Silva Godinho recebeu R$ 42.733,36 em diárias da Câmara Municipal de Varjão de Minas em 2025 e 2026, em levantamento que aponta pagamentos elevados e repasses idênticos em lote; o finding não confirma fraude ou outro ilícito. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD e que a atividade declarada não guarda interface direta com a pasta legislativa exercida, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular é a própria PEP Letícia Corrêa Da Silva Godinho (Vereadora de Varjão de Minas/MG), atuando no ramo de outras atividades profissionais, científicas e técnicas, com abertura da PJ em julho de 2025, já durante o mandato vigente. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa ou à PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD e que a atividade declarada não guarda interface direta com a pasta legislativa exercida, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-08-25T18:56:20Z",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
+    "generated_at": "2026-08-25T18:56:20Z"
   },
   "10c5ad3f-c676-4ab0-b473-5c261fe55ba7": {
-    "text": "Trata-se de empresa cujo titular é irmã do PEP Reginaldo Liberato de Azevedo (Vereador de Ceres/GO), atuando no ramo de creche (educação infantil). A pesquisa localizou 1 processo trabalhista da titular, no polo passivo, além de 2 processos criminais do PEP sem configuração como réu em tipificação crítica e 4 processos civis do PEP, 1 deles no polo passivo; os registros exigem avaliação manual e não geram reprovação automática. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD e que a atividade da empresa não guarda interface direta com o cargo público exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular é irmã do PEP Reginaldo Liberato de Azevedo (Vereador de Ceres/GO), atuando no ramo de creche (educação infantil). Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, à sua titular ou ao PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD e que a atividade da empresa não guarda interface direta com o cargo público exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-08-25T18:56:23Z",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
+    "generated_at": "2026-08-25T18:56:23Z"
   },
   "7bbe3eae-04b0-4d54-93ce-01a9b2141ea2": {
-    "text": "Trata-se de empresa cujo titular é irmão do PEP Davidson Campos de Oliveira (Praça da Marinha/SP), atuando no ramo de restaurantes e similares em Ipero/SP. A Credilink registra 2 processos criminais classificados como leves para o titular, com assuntos de ameaça e violência doméstica, além de 2 processos não criminais; segundo os findings, esses registros não escalam a recomendação. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD e que a atividade da empresa (alimentação) não guarda interface com o cargo militar exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular é irmão do PEP Davidson Campos de Oliveira (Praça da Marinha/SP), atuando no ramo de restaurantes e similares em Ipero/SP. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD e que a atividade da empresa (alimentação) não guarda interface com o cargo militar exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-08-25T18:56:27Z",
     "revisao_manual_2026_09_15": {
@@ -1713,10 +1645,6 @@
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
       "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "7e4ccffd-17cb-4bcd-8998-c67c83334e01": {
@@ -1725,15 +1653,11 @@
     "generated_at": "2026-08-25T18:56:32Z"
   },
   "16059106-2aeb-4e36-8978-9089db30942e": {
-    "text": "Trata-se de empresa cujo titular, Rosinei de Fatima Pimentel Santos, é irmã da PEP Renata Aparecida Pimentel Rissoni (Vereadora de Ipaussu/SP). Revisão de 2026-09-15 (thay@cora.com.br): a TITULAR Rosinei de Fatima Pimentel Santos figura como RÉ (polo passivo confirmado, confiança ALTA) em processo criminal por ESTELIONATO (processo nº 0000302-57.2006.8.26.0539). O registro indica tribunal de origem já extinto (reorganização judiciária) — não há confirmação de que o processo em si esteja arquivado ou de seu desfecho; a natureza do crime (estelionato) e a confirmação de que a titular é ré (não homônimo) justificam tratamento como processo criminal relevante da própria titular, independentemente de outros fatores. Recomenda-se confirmação pontual do status atual do processo (arquivado/em curso/condenação) antes de finalizar, mas o achado por si só já é suficiente para não recomendar aprovação simples. Além do processo por estelionato já descrito, o JusBrasil registra outros 4 processos criminais da titular sem configuração como ré em tipificação crítica e 26 processos civis, 15 no polo passivo; para a PEP, registra 2 processos criminais sem configuração como ré em tipificação crítica e 15 processos civis, 11 no polo passivo. Esses registros adicionais exigem avaliação manual e não alteram a decisão fundamentada no achado alto confirmado.\n\nConsiderando processo criminal por estelionato da própria titular, confirmado com confiança alta, recomendamos a REPROVAÇÃO do cadastro, condicionada à confirmação do status processual atual — se comprovado arquivamento por prescrição/absolvição sem outro fator agravante, reavaliar para monitoramento reforçado.",
+    "text": "Trata-se de empresa cujo titular, Rosinei de Fatima Pimentel Santos, é irmã da PEP Renata Aparecida Pimentel Rissoni (Vereadora de Ipaussu/SP). Revisão de 2026-09-15 (thay@cora.com.br): a TITULAR Rosinei de Fatima Pimentel Santos figura como RÉ (polo passivo confirmado, confiança ALTA) em processo criminal por ESTELIONATO (processo nº 0000302-57.2006.8.26.0539). O registro indica tribunal de origem já extinto (reorganização judiciária) — não há confirmação de que o processo em si esteja arquivado ou de seu desfecho; a natureza do crime (estelionato) e a confirmação de que a titular é ré (não homônimo) justificam tratamento como processo criminal relevante da própria titular, independentemente de outros fatores. Recomenda-se confirmação pontual do status atual do processo (arquivado/em curso/condenação) antes de finalizar, mas o achado por si só já é suficiente para não recomendar aprovação simples.\n\nConsiderando processo criminal por estelionato da própria titular, confirmado com confiança alta, recomendamos a REPROVAÇÃO do cadastro, condicionada à confirmação do status processual atual — se comprovado arquivamento por prescrição/absolvição sem outro fator agravante, reavaliar para monitoramento reforçado.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-08-25T18:56:37Z",
     "revisao_manual_2026_09_15": {
       "motivo": "Achado JusBrasil (estelionato, réu confirmado, confiança ALTA) da própria titular — não estava refletido no parecer original.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Complementação manual do parecer com achado(s) adicional(is) de risco médio/baixo existente(s) em media-findings.json, preservando o achado alto e a decisão já registrados.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -1743,7 +1667,7 @@
     "generated_at": "2026-08-27T13:25:26Z"
   },
   "7dd231fa-7139-4702-a00c-164342816695": {
-    "text": "Trata-se de empresa cujo titular, Francisco Marciel Da Costa, é irmão do PEP Marcel Alexandre Da Costa (Vereador de Rafael Fernandes/RN, com mandato ativo até 31/12/2029), atuando no ramo de minimercados, mercearias e armazéns. A Credilink registra 4 processos não criminais para o titular e 3 processos não criminais para o PEP Marcel Alexandre da Costa; os achados são informativos e não escalam a recomendação. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD e que a atividade da empresa não guarda interface com o cargo público exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Francisco Marciel Da Costa, é irmão do PEP Marcel Alexandre Da Costa (Vereador de Rafael Fernandes/RN, com mandato ativo até 31/12/2029), atuando no ramo de minimercados, mercearias e armazéns. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD e que a atividade da empresa não guarda interface com o cargo público exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-08-27T13:25:35Z",
     "revisao_manual_2026_09_15": {
@@ -1753,10 +1677,6 @@
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
       "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "bd2f5845-ac96-4cfa-abb1-98085d75a039": {
@@ -1765,7 +1685,7 @@
     "generated_at": "2026-08-27T13:25:39Z"
   },
   "e8effd87-62c2-47d7-8733-b1028db0ee1c": {
-    "text": "Trata-se de empresa cujo titular, Everaldo José Vieira, é irmão do PEP Edicarlos Vieira (Vereador de Jundiaí/SP, mandato ativo até 31/12/2028), atuando no ramo de comércio atacadista de produtos alimentícios em geral, com sede em Cascavel/PR. A Credilink registra, para o titular, 1 processo criminal de natureza grave arquivado e/ou sem confirmação de que ele seja réu, 1 processo criminal classificado como leve e 1 processo não criminal, além de 1 processo não criminal para o PEP Edicarlos Vieira; os findings exigem leitura manual e não fundamentam reprovação automática. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD, a atividade da empresa sem interface com o cargo público exercido e a distância geográfica entre a sede da PJ (Cascavel/PR) e o município de atuação do PEP (Jundiaí/SP), não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Everaldo José Vieira, é irmão do PEP Edicarlos Vieira (Vereador de Jundiaí/SP, mandato ativo até 31/12/2028), atuando no ramo de comércio atacadista de produtos alimentícios em geral, com sede em Cascavel/PR. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD, a atividade da empresa sem interface com o cargo público exercido e a distância geográfica entre a sede da PJ (Cascavel/PR) e o município de atuação do PEP (Jundiaí/SP), não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-08-27T13:25:44Z",
     "revisao_manual_2026_09_15": {
@@ -1774,10 +1694,6 @@
     },
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -1841,16 +1757,12 @@
     "generated_at": "2026-09-01T18:42:22Z"
   },
   "33864c75-0861-44b7-ab34-565d5c051530": {
-    "text": "⚠️ ATENÇÃO — ACHADO DE RISCO ALTO NÃO REFLETIDO NESTE PARECER (thay@cora.com.br + Codex, 2026-09-15): Credilink — Processos criminais (2) — MARGARETE DE CASTRO COELHO — MARGARETE DE CASTRO COELHO tem 2 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL (287) - CRIMES PREVISTOS NA LEGISLACAO EXTRAVA; DIREI…; Credilink — Processos criminais (4) — CARMELITA DE CASTRO SILVA — CARMELITA DE CASTRO SILVA tem 4 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL - CRIMES CONTRA A HONRA - DIFAMACAO DIREITO PE; DIREIT…. A decisão abaixo foi registrada sem considerar essas informações — requer revisão humana antes de manter a aprovação.\n\n---\n\nTrata-se de empresa cujo titular é irmã da PEP Carmelita de Castro Silva (ex-Prefeita de São Raimundo Nonato/PI, mandato encerrado em 31/12/2024, em período de carência PLD até 31/12/2029), atuando no ramo de atividades de organizações associativas ligadas à cultura e à arte. Além da ocorrência de mídia classificada como SEM_MATCH, a Credilink registra 2 processos criminais para Margarete de Castro Coelho, com assuntos descritos como crimes previstos na legislação extravagante, e 4 para a PEP Carmelita de Castro Silva, com assuntos de difamação e calúnia; os findings não informam polo ou desfecho processual. Considerando que os achados registrados foram ponderados sob a ótica de PLD, que a atividade da associação (cultura e arte) não guarda interface com a pasta executiva exercida pela PEP, e que o mandato já se encontra encerrado, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "⚠️ ATENÇÃO — ACHADO DE RISCO ALTO NÃO REFLETIDO NESTE PARECER (thay@cora.com.br + Codex, 2026-09-15): Credilink — Processos criminais (2) — MARGARETE DE CASTRO COELHO — MARGARETE DE CASTRO COELHO tem 2 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL (287) - CRIMES PREVISTOS NA LEGISLACAO EXTRAVA; DIREI…; Credilink — Processos criminais (4) — CARMELITA DE CASTRO SILVA — CARMELITA DE CASTRO SILVA tem 4 processo(s) criminal(is) via Credilink. Assuntos: DIREITO PENAL - CRIMES CONTRA A HONRA - DIFAMACAO DIREITO PE; DIREIT…. A decisão abaixo foi registrada sem considerar essas informações — requer revisão humana antes de manter a aprovação.\n\n---\n\nTrata-se de empresa cujo titular é irmã da PEP Carmelita de Castro Silva (ex-Prefeita de São Raimundo Nonato/PI, mandato encerrado em 31/12/2024, em período de carência PLD até 31/12/2029), atuando no ramo de atividades de organizações associativas ligadas à cultura e à arte. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou à PEP — a única ocorrência localizada na varredura automatizada (O Globo, 2026-02-05, sobre rompimento de tubulação em Nova Iguaçu/RJ) apresentou match SEM_MATCH com confiança de 12%, sendo descartada por ausência de relação com as partes. Considerando que não foram identificados desabonos relevantes sob a ótica de PLD, que a atividade da associação (cultura e arte) não guarda interface com a pasta executiva exercida pela PEP, e que o mandato já se encontra encerrado, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-01T18:42:29Z",
     "revisao_manual_2026_09_15": {
       "motivo": "Parecer favorável sinalizado por coexistir com 2 achado(s) real(is) de risco alto; decisão preservada para revisão humana.",
       "autor": "thay@cora.com.br + Codex"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "349012d9-de4b-4c05-aa94-c0c8bbc53319": {
@@ -1859,7 +1771,7 @@
     "generated_at": "2026-09-01T18:42:40Z"
   },
   "c392aa13-8052-4b84-8c54-fb818bd949a0": {
-    "text": "Trata-se de empresa cujo titular, Daniel Bruno Alves Nunes, é irmão do ex-PEP Wagno Alves Nunes (ex-Vereador de Santo Antônio da Barra/GO, com mandato encerrado em 31/12/2020 e fora do período de carência), atuando no ramo de intermediação e agenciamento de serviços e negócios em geral, com sede em Brasília/DF. A Credilink registra, para o titular, 1 processo criminal classificado como leve e 3 processos não criminais, além de 1 processo criminal classificado como leve e 3 processos não criminais para o ex-PEP Wagno Alves Nunes; segundo os findings, esses registros não escalam a recomendação. Considerando que o mandato encontra-se encerrado e fora do período de carência, que os achados registrados foram ponderados sob a ótica de PLD e que a atividade da empresa não guarda interface com o cargo público anteriormente exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Daniel Bruno Alves Nunes, é irmão do ex-PEP Wagno Alves Nunes (ex-Vereador de Santo Antônio da Barra/GO, com mandato encerrado em 31/12/2020 e fora do período de carência), atuando no ramo de intermediação e agenciamento de serviços e negócios em geral, com sede em Brasília/DF. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao ex-PEP. Considerando que o mandato encontra-se encerrado e fora do período de carência, que não foram identificados desabonos relevantes sob a ótica de PLD e que a atividade da empresa não guarda interface com o cargo público anteriormente exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-01T18:42:44Z",
     "revisao_manual_2026_09_15": {
@@ -1868,10 +1780,6 @@
     },
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -1891,7 +1799,7 @@
     "generated_at": "2026-09-02T20:21:26Z"
   },
   "80dfda06-79df-4429-ae77-fc90f280f142": {
-    "text": "Trata-se de empresa cujo titular é irmão do PEP Tiago Lourenço de Faria Godinho (ex-Vereador de Capão Bonito do Sul/RS, com mandato encerrado em 31/12/2024 e em período de carência PLD até 31/12/2029), atuando no ramo de cabeleireiros, manicure e pedicure em Lagoa Vermelha/RS. A Credilink registra, para o titular, 1 processo criminal classificado como leve, por crime de trânsito, e 6 processos não criminais, além de 1 processo não criminal para o ex-PEP Tiago Lourenço de Faria Godinho; segundo os findings, esses registros não escalam a recomendação. Considerando a natureza e o contexto dos achados registrados sob a ótica de LD, o encerramento do mandato, e que a atividade da empresa não guarda qualquer interface com o cargo público anteriormente exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular é irmão do PEP Tiago Lourenço de Faria Godinho (ex-Vereador de Capão Bonito do Sul/RS, com mandato encerrado em 31/12/2024 e em período de carência PLD até 31/12/2029), atuando no ramo de cabeleireiros, manicure e pedicure em Lagoa Vermelha/RS. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP. Considerando a ausência de desabonos relevantes sob a ótica de LD, o encerramento do mandato, e que a atividade da empresa não guarda qualquer interface com o cargo público anteriormente exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-02T20:21:32Z",
     "revisao_manual_2026_09_15": {
@@ -1901,14 +1809,10 @@
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
       "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "523539b5-afe7-45e3-8e20-1abbad0495b6": {
-    "text": "Trata-se de empresa cujo titular, Felipe André Rodrigues De Arruda, é irmão do PEP Francisco Douglas Rodrigues De Arruda (Vereador de Afogados da Ingazeira/PE, com mandato ativo até 31/12/2028), atuando no ramo de atividades de organizações religiosas ou filosóficas. A Credilink registra 3 processos não criminais para o titular, além de 1 processo criminal classificado como leve e 4 processos não criminais para o PEP Francisco Douglas Rodrigues de Arruda; segundo os findings, esses registros não escalam a recomendação. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD e que a atividade religiosa da empresa não guarda interface com o cargo público exercido pelo irmão, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Felipe André Rodrigues De Arruda, é irmão do PEP Francisco Douglas Rodrigues De Arruda (Vereador de Afogados da Ingazeira/PE, com mandato ativo até 31/12/2028), atuando no ramo de atividades de organizações religiosas ou filosóficas. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD e que a atividade religiosa da empresa não guarda interface com o cargo público exercido pelo irmão, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-02T20:21:35Z",
     "revisao_manual_2026_09_15": {
@@ -1918,14 +1822,10 @@
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
       "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "47136df2-a5ae-4abf-a311-43f6c1ba6ecb": {
-    "text": "Trata-se de empresa cujo titular, Cledson dos Santos Silva, é irmão do PEP Tarcio dos Santos Silva (Vereador de Castro Alves/BA, com mandato ativo até 31/12/2029), atuando no ramo de transporte rodoviário de carga municipal. A Credilink registra 2 processos não criminais para o titular, relacionados a abono da Lei 8.178/91 e gratificação natalina/13º salário; o achado é informativo e não escala a recomendação. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD e que a atividade de transporte de carga não guarda interface direta com o cargo público exercido pelo familiar, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Cledson dos Santos Silva, é irmão do PEP Tarcio dos Santos Silva (Vereador de Castro Alves/BA, com mandato ativo até 31/12/2029), atuando no ramo de transporte rodoviário de carga municipal. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD e que a atividade de transporte de carga não guarda interface direta com o cargo público exercido pelo familiar, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-02T20:21:39Z",
     "revisao_manual_2026_09_15": {
@@ -1934,10 +1834,6 @@
     },
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -1962,7 +1858,7 @@
     "generated_at": "2026-09-04T13:26:31Z"
   },
   "affe9cb3-5bad-40c9-8119-3991eb312bd5": {
-    "text": "Trata-se de empresa cujo titular é o próprio PEP Marco Aurelio Ribeiro (Vereador de Marcelândia/MT), atuando no ramo de formação de condutores (autoescola). A Credilink registra 2 processos criminais com assuntos de corrupção passiva e ativa, arquivados e/ou sem confirmação de que o titular seja réu, além de 3 processos criminais classificados como leves e 10 processos não criminais; os findings exigem leitura manual e não fundamentam reprovação automática. Considerando que os achados registrados foram ponderados sob a ótica de PLD, que a atividade da empresa (formação de condutores) não guarda interface com o cargo público exercido e que o achado de mídia não se confirma como pertencente ao titular, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular é o próprio PEP Marco Aurelio Ribeiro (Vereador de Marcelândia/MT), atuando no ramo de formação de condutores (autoescola). Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa ou ao seu titular; o único achado localizado refere-se a um homônimo parcial (Marco Aurélio Santana Ribeiro, ex-chefe de gabinete presidencial), com confiança de 49% e menção indireta, não sendo possível associá-lo ao PEP em análise. Considerando que não foram identificados desabonos relevantes sob a ótica de PLD, que a atividade da empresa (formação de condutores) não guarda interface com o cargo público exercido e que o achado de mídia não se confirma como pertencente ao titular, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-04T13:26:37Z",
     "revisao_manual_2026_09_15": {
@@ -1971,10 +1867,6 @@
     },
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -1989,13 +1881,9 @@
     "generated_at": "2026-09-04T13:26:51Z"
   },
   "2c2c34ef-36f3-4f92-a7d0-dea3e73b4386": {
-    "text": "Trata-se de empresa cujo titular é o próprio PEP Anderson Pinheiro Santos (Vereador de Lauro de Freitas/BA, com mandato ativo até 31/12/2028), atuando no ramo de transporte rodoviário de carga municipal. Além do resultado de mídia classificado como SEM_MATCH, a pesquisa localizou 2 processos criminais do titular sem configuração como réu em tipificação crítica, 43 processos civis, dos quais 21 no polo passivo, e 2 processos trabalhistas, ambos no polo passivo; os registros requerem avaliação manual e não geram reprovação automática. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD e que a atividade de transporte rodoviário de carga não guarda interface direta com o cargo de Vereador exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular é o próprio PEP Anderson Pinheiro Santos (Vereador de Lauro de Freitas/BA, com mandato ativo até 31/12/2028), atuando no ramo de transporte rodoviário de carga municipal. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP, sendo o único resultado de mídia retornado pelo pipeline interno classificado como SEM_MATCH, com confiança de 12% e risco baixo, referindo-se a terceiros sem qualquer relação com o caso. Considerando a ausência de desabonos relevantes sob a ótica de PLD e que a atividade de transporte rodoviário de carga não guarda interface direta com o cargo de Vereador exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-10T19:40:11Z",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
+    "generated_at": "2026-09-10T19:40:11Z"
   },
   "8fb890bf-57a7-4b09-8617-c1a24089c6a9": {
     "text": "Trata-se de empresa cujo titular, Rodrigo Sales Rios, é neto da PEP Solange Margarida Prado Sales Ribeiro (Dirigente do Serviço Público Federal/SP), atuando no ramo de atividade médica ambulatorial restrita a consultas em Ituverava/SP. Em análises reputacionais, foram identificadas 11 ocorrências de mídia adversa em nome do titular (PF), com menções a termos como corrupção, tráfico de drogas, estelionato, inquérito e investigação, além de 1 processo ativo na esfera estadual (Juizado Especial Cível, valor de R$ 30.312,25); dado o volume e a gravidade dos termos identificados, recomenda-se que o analista confirme a identidade do titular antes de qualquer conclusão definitiva, verificando se os achados referem-se efetivamente ao CPF 015.546.435-38. Considerando a gravidade das menções reputacionais associadas ao owner — especialmente referências a corrupção, tráfico e investigação criminal —, aliadas ao vínculo familiar com PEP de mandato ativo e à existência de processo judicial ativo, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, condicionada à confirmação de identidade pelo analista responsável, podendo a recomendação ser escalada para REPROVAÇÃO caso os achados sejam confirmados como pertencentes ao titular.",
@@ -2003,24 +1891,16 @@
     "generated_at": "2026-09-10T19:40:20Z"
   },
   "8de9af0d-cd6a-484d-9387-b88479d1b76d": {
-    "text": "Trata-se de empresa cujo titular é o próprio PEP Jerberson Ramos Carneiro de Lima (Vereador de Conde/PB), atuando no ramo de transporte rodoviário de carga intermunicipal, interestadual e internacional, com sede em João Pessoa/PB. A pesquisa localizou 15 processos civis do titular no JusBrasil, dos quais 5 no polo passivo; o achado é informativo e não gera reprovação automática. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD e que a atividade de transporte de carga não guarda interface direta com as atribuições do cargo de vereador exercido, não temos objeções ao início do relacionamento, sugerimos a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular é o próprio PEP Jerberson Ramos Carneiro de Lima (Vereador de Conde/PB), atuando no ramo de transporte rodoviário de carga intermunicipal, interestadual e internacional, com sede em João Pessoa/PB. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa ou ao titular. Considerando a ausência de desabonos relevantes sob a ótica de PLD e que a atividade de transporte de carga não guarda interface direta com as atribuições do cargo de vereador exercido, não temos objeções ao início do relacionamento, sugerimos a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-10T19:40:27Z",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
+    "generated_at": "2026-09-10T19:40:27Z"
   },
   "5a1bd3af-71da-4191-9485-6e586632e999": {
-    "text": "Trata-se de empresa cujo titular, Vinícius Melão Veloso Cerqueira, é filho da PEP Ielva Maria Melão Veloso Cerqueira (ex-Vereadora de Valença do Piauí/PI), atuando no ramo de transporte de grãos. Revisão de 2026-09-15 (thay@cora.com.br): a PEP Ielva Maria Melão Veloso Cerqueira é RÉ CONFIRMADA (JusBrasil, confiança ALTA; Credilink corrobora) em processo criminal ATIVO (TJPI, processo nº 0800707-67.2024.8.18.0049) com múltiplas tipificações, incluindo ESTELIONATO CONTRA IDOSO e FRAUDES EM CERTAMES DE INTERESSE PÚBLICO — crimes de natureza patrimonial/fraude, não meras infrações de honra. Trata-se de processo criminal ativo e confirmado da própria PEP por crime de fraude, configurando risco de contágio reputacional direto sobre o vínculo familiar com o titular. Para o titular, o JusBrasil também registra 1 processo criminal sem configuração como réu em tipificação crítica e 13 processos civis, 6 no polo passivo; para a PEP, registra 1 processo criminal adicional sem configuração como ré em tipificação crítica e 11 processos civis, 1 no polo passivo. Esses registros adicionais exigem avaliação manual e não alteram a decisão fundamentada no processo de fraude já confirmado.\n\nConsiderando processo criminal ativo e confirmado da PEP por estelionato/fraude, recomendamos a REPROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Vinícius Melão Veloso Cerqueira, é filho da PEP Ielva Maria Melão Veloso Cerqueira (ex-Vereadora de Valença do Piauí/PI), atuando no ramo de transporte de grãos. Revisão de 2026-09-15 (thay@cora.com.br): a PEP Ielva Maria Melão Veloso Cerqueira é RÉ CONFIRMADA (JusBrasil, confiança ALTA; Credilink corrobora) em processo criminal ATIVO (TJPI, processo nº 0800707-67.2024.8.18.0049) com múltiplas tipificações, incluindo ESTELIONATO CONTRA IDOSO e FRAUDES EM CERTAMES DE INTERESSE PÚBLICO — crimes de natureza patrimonial/fraude, não meras infrações de honra. Trata-se de processo criminal ativo e confirmado da própria PEP por crime de fraude, configurando risco de contágio reputacional direto sobre o vínculo familiar com o titular.\n\nConsiderando processo criminal ativo e confirmado da PEP por estelionato/fraude, recomendamos a REPROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-10T19:40:32Z",
     "revisao_manual_2026_09_15": {
       "motivo": "Achado JusBrasil + Credilink (estelionato contra idoso, fraudes em certames — processo ativo, réu confirmado) da PEP — não estava refletido no parecer original.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Complementação manual do parecer com achado(s) adicional(is) de risco médio/baixo existente(s) em media-findings.json, preservando o achado alto e a decisão já registrados.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -2030,29 +1910,21 @@
     "generated_at": "2026-09-10T19:40:36Z"
   },
   "7d76fbda-ea77-4091-b3f9-51652b8a8839": {
-    "text": "Trata-se de empresa cujo titular, Edmar Bastos Miranda, é irmão do PEP Vanderlei Bastos Miranda (Vereador de Brumado/BA). Revisão de 2026-09-15 (thay@cora.com.br): o PEP Vanderlei Bastos Miranda consta em registro ATIVO do Ministério Público Federal (MPF), com assunto 'ELEITORAL - Corrupção ou Fraude' vinculado ao seu cargo de Vereador, confiança ALTA. Trata-se de investigação/denúncia formal do MP por corrupção/fraude envolvendo a própria PEP, em situação ativa (não arquivada), o que fundamenta reprovação conforme critério já adotado pela Mesa para denúncias do MP em curso. O JusBrasil também registra 6 processos criminais do PEP sem configuração como réu em tipificação crítica, que exigem validação manual para descarte de homônimos e não alteram a decisão fundamentada na investigação ativa do MPF.\n\nConsiderando investigação ativa do MPF por corrupção/fraude contra a PEP, recomendamos a REPROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Edmar Bastos Miranda, é irmão do PEP Vanderlei Bastos Miranda (Vereador de Brumado/BA). Revisão de 2026-09-15 (thay@cora.com.br): o PEP Vanderlei Bastos Miranda consta em registro ATIVO do Ministério Público Federal (MPF), com assunto 'ELEITORAL - Corrupção ou Fraude' vinculado ao seu cargo de Vereador, confiança ALTA. Trata-se de investigação/denúncia formal do MP por corrupção/fraude envolvendo a própria PEP, em situação ativa (não arquivada), o que fundamenta reprovação conforme critério já adotado pela Mesa para denúncias do MP em curso.\n\nConsiderando investigação ativa do MPF por corrupção/fraude contra a PEP, recomendamos a REPROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-10T19:40:41Z",
     "revisao_manual_2026_09_15": {
       "motivo": "Achado MPF (corrupção/fraude eleitoral, situação ativa) da PEP — não estava refletido no parecer original.",
       "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Complementação manual do parecer com achado(s) adicional(is) de risco médio/baixo existente(s) em media-findings.json, preservando o achado alto e a decisão já registrados.",
-      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "3f6ddbb9-7896-4775-ba0b-eb2bca2f69a8": {
-    "text": "Trata-se de empresa cujo titular, Paulo Sergio Santos Pinheiro, é irmão do ex-Vereador Alzemar Santos Pinheiro (Câmara Municipal de Gavião Peixoto/SP, mandato encerrado em 31/12/2024, em período de carência PLD até 31/12/2029), atuando no ramo de obras de alvenaria em Trancoso/BA. A pesquisa localizou 1 processo trabalhista ativo da titular, no polo passivo, e 5 processos civis do ex-PEP, dos quais 3 no polo passivo; são achados informativos que não geram reprovação automática. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD, que a atividade da empresa está sediada em município distinto e diverso da base de atuação do ex-mandatário, e que não há interface direta entre o CNAE e o cargo anteriormente exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Paulo Sergio Santos Pinheiro, é irmão do ex-Vereador Alzemar Santos Pinheiro (Câmara Municipal de Gavião Peixoto/SP, mandato encerrado em 31/12/2024, em período de carência PLD até 31/12/2029), atuando no ramo de obras de alvenaria em Trancoso/BA. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD, que a atividade da empresa está sediada em município distinto e diverso da base de atuação do ex-mandatário, e que não há interface direta entre o CNAE e o cargo anteriormente exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-10T19:40:47Z",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
+    "generated_at": "2026-09-10T19:40:47Z"
   },
   "a0068ae9-06a7-4d78-bf1f-d8bf3cc66b09": {
-    "text": "Trata-se de empresa cujo titular, Max Alexandre Oliveira Maximiano, é irmão do PEP Maycow Douglas de Oliveira Maximiano (Vereador de Fazenda Nova/GO, com mandato ativo até 31/12/2028), atuando no ramo de comércio por atacado de automóveis, camionetas e utilitários novos e usados. A pesquisa localizou, para o PEP Maycow Douglas de Oliveira Maximiano, 4 processos criminais no JusBrasil sem configuração como réu em tipificação crítica, 14 processos civis, dos quais 4 no polo passivo, 1 processo criminal classificado como leve e 4 processos não criminais na Credilink; os registros exigem avaliação manual e não geram reprovação automática. Considerando a natureza e o contexto dos achados registrados sob a ótica de LD e que a atividade da empresa não guarda interface direta com o cargo público exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Max Alexandre Oliveira Maximiano, é irmão do PEP Maycow Douglas de Oliveira Maximiano (Vereador de Fazenda Nova/GO, com mandato ativo até 31/12/2028), atuando no ramo de comércio por atacado de automóveis, camionetas e utilitários novos e usados. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP. Considerando a ausência de desabonos relevantes sob a ótica de LD e que a atividade da empresa não guarda interface direta com o cargo público exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-10T19:40:51Z",
     "revisao_manual_2026_09_15": {
@@ -2062,10 +1934,6 @@
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
       "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "d9fa6c94-de3a-4a22-b530-aefa457815f3": {
@@ -2074,13 +1942,9 @@
     "generated_at": "2026-09-10T19:41:02Z"
   },
   "6037eecd-e795-4e5e-93b9-20af82920bee": {
-    "text": "Trata-se de empresa cujo titular é o próprio PEP Bruno Dauster Magalhães e Silva (Secretário de Estado da Casa Civil/BA), atuando no ramo de consultoria em gestão empresarial, com sede em Salvador/BA e abertura da PJ em fevereiro de 2019. A pesquisa localizou, para o titular, 2 processos criminais na Credilink, 9 processos criminais no JusBrasil sem configuração como réu em tipificação crítica, 25 processos civis, dos quais 18 no polo passivo, e 4 processos trabalhistas, dos quais 3 no polo passivo; os registros exigem avaliação manual. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD, porém observando que a empresa foi aberta durante o período de exercício do cargo público em setor com potencial interface com a administração estadual — dado que serviços de consultoria empresarial podem ser contratados por entes públicos —, e que a vigência do mandato não foi confirmada, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, recomendando acompanhamento periódico das movimentações e eventual atualização cadastral para confirmação do status atual do vínculo com a função pública.",
+    "text": "Trata-se de empresa cujo titular é o próprio PEP Bruno Dauster Magalhães e Silva (Secretário de Estado da Casa Civil/BA), atuando no ramo de consultoria em gestão empresarial, com sede em Salvador/BA e abertura da PJ em fevereiro de 2019. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa ou ao seu titular. Considerando a ausência de desabonos relevantes sob a ótica de PLD, porém observando que a empresa foi aberta durante o período de exercício do cargo público em setor com potencial interface com a administração estadual — dado que serviços de consultoria empresarial podem ser contratados por entes públicos —, e que a vigência do mandato não foi confirmada, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, recomendando acompanhamento periódico das movimentações e eventual atualização cadastral para confirmação do status atual do vínculo com a função pública.",
     "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-11T16:36:29Z",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
+    "generated_at": "2026-09-11T16:36:29Z"
   },
   "f381d957-fdc8-4aae-a597-3ffd31a7c997": {
     "text": "Trata-se de empresa cujo titular, Elenira Tatiana Lemos Vieira, é a própria PEP (Secretária Municipal de Políticas para as Mulheres de Aparecida de Goiânia/GO, com mandato encerrado em 31/12/2025 e em período de carência PLD até 31/12/2030), atuando no ramo de fabricação de motocicletas; adicionalmente, a Credilink aponta vínculo societário com uma empresa não identificada — cujo nome, CNPJ e situação cadastral não foram informados —, sendo necessária validação manual para confirmar se essa empresa está ativa ou baixada na Receita Federal e se guarda relação com o cadastro ora analisado. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou à PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD, a atividade de fabricação de motocicletas sem interface direta com a pasta pública exercida e o encerramento do mandato, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro, condicionada à validação manual do vínculo societário indicado.",
@@ -2088,7 +1952,7 @@
     "generated_at": "2026-09-11T18:42:23Z"
   },
   "b24a6d43-1985-4f2f-b412-226c47f296d5": {
-    "text": "Trata-se de empresa cujo titular, Ortencio Cordeiro Souza, possui relacionamento de sócio com o PEP Ricardo Almeida Nunes da Silva (ex-Prefeito de Cícero Dantas/BA, mandato encerrado em 31/12/2024, em período de carência PLD até 31/12/2029), atuando no ramo de comércio varejista de móveis; ressalta-se que a Credilink não informa em qual empresa titular e PEP são sócios, nem o respectivo CNPJ ou situação cadastral, sendo necessária validação manual desse vínculo — inclusive para confirmar se a empresa em comum está ativa ou baixada na Receita Federal. A Credilink registra 8 processos criminais classificados como leves, com assuntos de difamação e calúnia, e 18 processos não criminais para o titular; segundo os findings, esses registros não escalam a recomendação. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD, o encerramento do mandato, a atividade da empresa (comércio varejista de móveis) sem interface direta com a pasta pública exercida, e inexistindo fatores de risco adicionais concretos, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro, condicionada à validação manual do vínculo societário indicado.",
+    "text": "Trata-se de empresa cujo titular, Ortencio Cordeiro Souza, possui relacionamento de sócio com o PEP Ricardo Almeida Nunes da Silva (ex-Prefeito de Cícero Dantas/BA, mandato encerrado em 31/12/2024, em período de carência PLD até 31/12/2029), atuando no ramo de comércio varejista de móveis; ressalta-se que a Credilink não informa em qual empresa titular e PEP são sócios, nem o respectivo CNPJ ou situação cadastral, sendo necessária validação manual desse vínculo — inclusive para confirmar se a empresa em comum está ativa ou baixada na Receita Federal. Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou ao PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD, o encerramento do mandato, a atividade da empresa (comércio varejista de móveis) sem interface direta com a pasta pública exercida, e inexistindo fatores de risco adicionais concretos, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro, condicionada à validação manual do vínculo societário indicado.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-11T18:42:30Z",
     "revisao_manual_2026_09_15": {
@@ -2098,35 +1962,23 @@
     "revisao_manual_2026_09_15_aviso_removido": {
       "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
       "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "12f79730-5920-400a-a1a9-8de889fca3cf": {
-    "text": "Trata-se de empresa cujo titular possui relacionamento de sócio com a PEP Rosangela de Souza Tezzon Martins (Vereadora de Mirandópolis/SP), atuando no ramo de fabricação de massas alimentícias. A empresa em comum entre titular e PEP, antes não identificada pela Credilink, foi confirmada via API PH3A + Receita Federal/BrasilAPI em 2026-09-15: ALMEIDA SALOMAO & MARTINS LTDA (CNPJ 08.247.613/0001-30), sócias 50%/50% desde 2006, situação cadastral INAPTA desde 10/03/2021 (omissão de declarações — irregularidade fiscal, sem indício de fraude ou processo criminal). O achado positivo é o vínculo societário já descrito entre o titular e a PEP na ALMEIDA SALOMAO & MARTINS LTDA, cuja situação cadastral consta como INAPTA desde 10/03/2021 por omissão de declarações. Considerando a natureza e o contexto dos achados registrados sob a ótica de PLD e que a atividade de fabricação de massas alimentícias não guarda interface com o cargo público exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro — a lacuna societária que antes exigia validação manual já está esclarecida.",
+    "text": "Trata-se de empresa cujo titular possui relacionamento de sócio com a PEP Rosangela de Souza Tezzon Martins (Vereadora de Mirandópolis/SP), atuando no ramo de fabricação de massas alimentícias. A empresa em comum entre titular e PEP, antes não identificada pela Credilink, foi confirmada via API PH3A + Receita Federal/BrasilAPI em 2026-09-15: ALMEIDA SALOMAO & MARTINS LTDA (CNPJ 08.247.613/0001-30), sócias 50%/50% desde 2006, situação cadastral INAPTA desde 10/03/2021 (omissão de declarações — irregularidade fiscal, sem indício de fraude ou processo criminal). Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular ou à PEP. Considerando a ausência de desabonos relevantes sob a ótica de PLD e que a atividade de fabricação de massas alimentícias não guarda interface com o cargo público exercido, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro — a lacuna societária que antes exigia validação manual já está esclarecida.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-11T18:42:35Z",
     "revisao_manual_2026_09_15": {
       "motivo": "Lacuna societária resolvida via PH3A + BrasilAPI.",
       "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json.",
-      "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
   "0239c46e-20f5-404f-8c66-3df728391728": {
-    "text": "Trata-se de empresa cujo titular, Cleiton de Freitas Silveira, possui relacionamento de sócio com o PEP Sinomar Barbosa de Morais (Vereador de Iturama/MG), atuando no ramo de criação de bovinos para corte em Ouroeste/SP. Revisão de 2026-09-15 (thay@cora.com.br + reclassificação de risco Credilink): o titular Cleiton de Freitas Silveira é RÉU CONFIRMADO (parties[].polarity=PASSIVE pelo próprio CPF) em 2 processos criminais ATIVOS (não arquivados) por crimes do Sistema Nacional de Armas. Trata-se de processo criminal ativo do TITULAR por crime grave (posse/porte irregular de arma de fogo), independente do vínculo com o PEP ou de outros fatores. Não foram identificadas mídias adversas adicionais para a empresa ou o PEP. A PH3A identificou que Cleiton de Freitas Silveira e Sinomar Barbosa de Morais são sócios em comum da BOI DE PRATA LEILOES PROMOTORA DE EVENTOS RURAIS LTDA (CNPJ 36.907.460/0001-45), ativa desde 09/04/2020. Em registros criminais adicionais, a Credilink aponta 2 processos de natureza grave arquivados e/ou sem confirmação de que o titular seja réu, que exigem leitura manual e não fundamentam reprovação automática por si sós.\n\nConsiderando processo criminal ativo e confirmado do titular por crime de natureza grave, recomendamos a REPROVAÇÃO do cadastro.",
+    "text": "Trata-se de empresa cujo titular, Cleiton de Freitas Silveira, possui relacionamento de sócio com o PEP Sinomar Barbosa de Morais (Vereador de Iturama/MG), atuando no ramo de criação de bovinos para corte em Ouroeste/SP. Revisão de 2026-09-15 (thay@cora.com.br + reclassificação de risco Credilink): o titular Cleiton de Freitas Silveira é RÉU CONFIRMADO (parties[].polarity=PASSIVE pelo próprio CPF) em 2 processos criminais ATIVOS (não arquivados) por crimes do Sistema Nacional de Armas. Trata-se de processo criminal ativo do TITULAR por crime grave (posse/porte irregular de arma de fogo), independente do vínculo com o PEP ou de outros fatores. Não foram identificadas mídias adversas adicionais para a empresa ou o PEP.\n\nConsiderando processo criminal ativo e confirmado do titular por crime de natureza grave, recomendamos a REPROVAÇÃO do cadastro.",
     "model": "anthropic-claude-sonnet-4-6",
     "generated_at": "2026-09-11T18:42:41Z",
     "revisao_manual_2026_09_15": {
       "motivo": "Achado 'Credilink — Processo criminal grave, réu confirmado' (Sistema Nacional de Armas, ativo) do próprio titular — reclassificado de médio (contagem genérica) para alto após correção da lógica de classificação Credilink (checagem de polo_passivo real + gravidade).",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Complementação manual do parecer com achado(s) adicional(is) de risco médio/baixo existente(s) em media-findings.json, preservando o achado alto e a decisão já registrados.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   }

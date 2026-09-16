@@ -1,21 +1,28 @@
 {
-  "timestamp": "2026-09-14T14:00:01.748257",
+  "timestamp": "2026-09-16T14:00:01.268174",
   "checks_executados": 10,
   "checks_falhados": 1,
   "alertas": [
     {
+      "nivel": "🟡 MÉDIO",
+      "titulo": "Build desatualizado",
+      "descricao": "dist/ foi buildado há 25 horas. Atualizações recentes podem não estar visíveis.",
+      "componente": "Build System",
+      "timestamp": "2026-09-16T14:00:01.033384"
+    },
+    {
       "nivel": "🟠 ALTO",
       "titulo": "Parecer Sugestão IA ausente no JSON-fonte",
-      "descricao": "CHECK_ANALISTA sem sugestão: 10 (['1c019a58-ddb8-4d18-9670-61f06f59b0af', 'c76862a4-4593-4f42-8fb3-6c00c2f69fbb', 'e50ad409-18f6-4efb-8ed3-684f5a34e7d0', '89aba1cb-fa59-4f5f-a2ab-14ce4081d7ec', '31432378-3b07-4fc9-ab1c-466d49b4db7f']). CHECK_LIDERANCA sem sugestão: 0 ([]). Rodar generate-sugestao-parecer.py / generate-sugestao-lideranca.py.",
+      "descricao": "CHECK_ANALISTA sem sugestão: 11 (['1c019a58-ddb8-4d18-9670-61f06f59b0af', 'c76862a4-4593-4f42-8fb3-6c00c2f69fbb', 'e50ad409-18f6-4efb-8ed3-684f5a34e7d0', '89aba1cb-fa59-4f5f-a2ab-14ce4081d7ec', '31432378-3b07-4fc9-ab1c-466d49b4db7f']). CHECK_LIDERANCA sem sugestão: 0 ([]). Rodar generate-sugestao-parecer.py / generate-sugestao-lideranca.py.",
       "componente": "Parecer Sugestão IA",
-      "timestamp": "2026-09-14T14:00:01.494575"
+      "timestamp": "2026-09-16T14:00:01.050037"
     },
     {
       "nivel": "🔵 BAIXO",
       "titulo": "Mudanças não commitadas",
-      "descricao": "6 arquivo(s) modificado(s) sem commit.",
+      "descricao": "14 arquivo(s) modificado(s) sem commit.",
       "componente": "Git Repository",
-      "timestamp": "2026-09-14T14:00:01.748117"
+      "timestamp": "2026-09-16T14:00:01.267943"
     }
   ]
 }
