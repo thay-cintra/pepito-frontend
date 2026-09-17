@@ -9337,16 +9337,6 @@
   ],
   "affe9cb3-5bad-40c9-8119-3991eb312bd5": [
     {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 650.470.951-34 (Marco Aurelio Ribeiro, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota",
-      "achado_positivo": false
-    },
-    {
       "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Marco Aurelio Ribeiro",
       "url": "https://defatoonline.com.br/na-globo-lula-defende-lulinha-e-admite-erro-de-marco-aurelio-ribeiro-o-marcola-seu-ex-chefe-de-gabinete/",
       "snippet": "A busca via Credilink para Marco Aurelio Ribeiro retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Marco Aurelio Ribeiro é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://defatoonline.com.br/na-globo-lula-defende-lulinha-e-admite-erro-de-marco-aurelio-ribeiro-o-marcola-seu-ex-chefe-de-gabinete/",
@@ -9385,6 +9375,69 @@
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 650.470.951-34",
+      "achado_positivo": true
+    },
+    {
+      "title": "Processo criminal — MARCO AURELIO RIBEIRO (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/1000925-86.2025.8.11.0109",
+      "snippet": "MARCO AURELIO RIBEIRO figura como réu (polo passivo) em processo criminal: INVESTIGACAO. Tipificação: Captação ilícita de votos ou corrupção eleitoral. Processo nº 1000925-86.2025.8.11.0109. Tribunal: ARQUIVADO. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — ARQUIVADO",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 65047095134 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Captação ilícita de votos ou corrupção eleitoral. Risco criminal incompatível com apetite da instituição."
+    },
+    {
+      "title": "Processo criminal — MARCO AURELIO RIBEIRO (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0001741-81.2008.8.11.0109",
+      "snippet": "MARCO AURELIO RIBEIRO figura como réu (polo passivo) em processo criminal: PROCESSO_PRINCIPAL_ORDINARIO. Tipificação: Quadrilha ou Bando, Falsidade ideológica, Corrupção ativa, Crimes de Responsabilidade. Processo nº 0001741-81.2008.8.11.0109. Tribunal: ARQUIVADO. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — ARQUIVADO",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 65047095134 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Quadrilha ou Bando, Falsidade ideológica, Corrupção ativa, Crimes de Responsabilidade. Crimes de fraude são antecedentes diretos de lavagem de dinheiro."
+    },
+    {
+      "title": "Processo criminal — MARCO AURELIO RIBEIRO (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0001362-77.2007.8.11.0109",
+      "snippet": "MARCO AURELIO RIBEIRO figura como réu (polo passivo) em processo criminal: PROCESSO_PRINCIPAL_ORDINARIO. Tipificação: Peculato, Peculato, Corrupção passiva, Advocacia administrativa. Processo nº 0001362-77.2007.8.11.0109. Tribunal: ARQUIVADO. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — ARQUIVADO",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 65047095134 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Peculato, Peculato, Corrupção passiva, Advocacia administrativa. Risco criminal incompatível com apetite da instituição."
+    },
+    {
+      "title": "Processos criminais (4 encontrados) — MARCO AURELIO RIBEIRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "MARCO AURELIO RIBEIRO tem 7 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 65047095134 — 4 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo civil: 17 encontrado(s) — MARCO AURELIO RIBEIRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "MARCO AURELIO RIBEIRO consta em 17 processo(s) civil(s) no JusBrasil; 6 no polo passivo. Exemplos: TJMT, CUIABÁ, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Suspenso/sobrestado por decisão judicial', 'data': '2026-09-17'}, polo passivo, valor 15677244; TJMT, CUIABÁ, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'ARQUIVADO', 'data': '2026-09-16'}, polo passivo, valor 70601.13; TJMT, MARCELÂNDIA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Solicitado atendimento em plantão judiciário', 'data': '2026-09-17'}, polo ativo/outro, valor 9281060. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 65047095134 — 6 de 17 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 1 encontrado(s) — MARCO AURELIO RIBEIRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "MARCO AURELIO RIBEIRO consta em 1 processo(s) trabalhista(s) no JusBrasil; 1 no polo passivo. Exemplos: TRT23, SINOP, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-09-03'}, polo passivo, valor 171882.78. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 65047095134 — 1 de 1 processo(s) no polo passivo",
       "achado_positivo": true
     }
   ],
@@ -9474,16 +9527,6 @@
   ],
   "c189cbde-50b2-4935-ab4c-e563e829a194": [
     {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 751.287.994-68 (Wanira De Holanda Brasil, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota",
-      "achado_positivo": false
-    },
-    {
       "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Wanira De Holanda Brasil",
       "url": "https://www.trf5.jus.br/index.php/noticias/leitura-de-noticias?/id=323813",
       "snippet": "A busca via Credilink para Wanira De Holanda Brasil retornou resultado(s) SEM título nem resumo (dado incompleto da própria API — não é erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Wanira De Holanda Brasil é de fato mencionado. Não tratar como achado confirmado sem verificação manual do link. Link: https://www.trf5.jus.br/index.php/noticias/leitura-de-noticias?/id=323813",
@@ -9495,16 +9538,6 @@
       "sem_conteudo_verificavel": true
     },
     {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 08359144451 (ANDREZZA BRASIL SOUTO BEZERRA, pep_socio).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota",
-      "achado_positivo": false
-    },
-    {
       "title": "Credilink — Processos não-criminais (4) — ANDREZZA BRASIL SOUTO BEZERRA",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
       "snippet": "ANDREZZA BRASIL SOUTO BEZERRA tem 4 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE TITULO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
@@ -9512,6 +9545,385 @@
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 08359144451",
+      "achado_positivo": false
+    },
+    {
+      "title": "Processo criminal — WANIRA DE HOLANDA BRASIL (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0004244-88.2015.4.05.8400",
+      "snippet": "WANIRA DE HOLANDA BRASIL figura como réu (polo passivo) em processo criminal: PROCESSO_PRINCIPAL_ORDINARIO. Tipificação: Falsidade ideológica, Crimes da Lei de licitações. Processo nº 0004244-88.2015.4.05.8400. Tribunal: TRF5. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — TRF5",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Falsidade ideológica, Crimes da Lei de licitações. Crimes de fraude são antecedentes diretos de lavagem de dinheiro."
+    },
+    {
+      "title": "Processo criminal — WANIRA DE HOLANDA BRASIL (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0003832-60.2015.4.05.8400",
+      "snippet": "WANIRA DE HOLANDA BRASIL figura como réu (polo passivo) em processo criminal: PROCESSO_PRINCIPAL_ORDINARIO. Tipificação: \\\"Lavagem\\\" ou Ocultação de Bens, Direitos ou Valores Oriundos de Corrupção, Crimes de Responsabilidade, Crimes da Lei de licitações. Processo nº 0003832-60.2015.4.05.8400. Tribunal: TRF5. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — TRF5",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por \\\"Lavagem\\\" ou Ocultação de Bens, Direitos ou Valores Oriundos de Corrupção, Crimes de Responsabilidade, Crimes da Lei de licitações. Risco criminal incompatível com apetite da instituição."
+    },
+    {
+      "title": "Processo criminal — WANIRA DE HOLANDA BRASIL (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0003021-03.2015.4.05.8400",
+      "snippet": "WANIRA DE HOLANDA BRASIL figura como réu (polo passivo) em processo criminal: PROCESSO_PRINCIPAL_ORDINARIO. Tipificação: \\\"Lavagem\\\" ou Ocultação de Bens, Direitos ou Valores Oriundos de Corrupção, \\\"Lavagem\\\" ou Ocultação de Bens, Direitos ou Valores Oriundos de Corrupção, \\\"Lavagem\\\" ou Ocultação de Bens, Direitos ou Valores Oriundos de Corrupção, Crimes da Lei de licitações. Processo nº 0003021-03.2015.4.05.8400. Tribunal: TRF5. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — TRF5",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por \\\"Lavagem\\\" ou Ocultação de Bens, Direitos ou Valores Oriundos de Corrupção, \\\"Lavagem\\\" ou Ocultação de Bens, Direitos ou Valores Oriundos de Corrupção, \\\"Lavagem\\\" ou Ocultação de Bens, Direitos ou Valores Oriundos de Corrupção, Crimes da Lei de licitações. Risco criminal incompatível com apetite da instituição."
+    },
+    {
+      "title": "Processo criminal — WANIRA DE HOLANDA BRASIL (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0809061-94.2017.4.05.8400",
+      "snippet": "WANIRA DE HOLANDA BRASIL figura como réu (polo passivo) em processo criminal: PROCESSO_PRINCIPAL_ORDINARIO. Tipificação: Falsificação de documento público, Falsidade ideológica, Crimes da Lei de licitações. Processo nº 0809061-94.2017.4.05.8400. Tribunal: TRF5. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — TRF5",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Falsificação de documento público, Falsidade ideológica, Crimes da Lei de licitações. Crimes de fraude são antecedentes diretos de lavagem de dinheiro."
+    },
+    {
+      "title": "Processo criminal — WANIRA DE HOLANDA BRASIL (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0813046-71.2017.4.05.8400",
+      "snippet": "WANIRA DE HOLANDA BRASIL figura como réu (polo passivo) em processo criminal: PROCESSO_PRINCIPAL_ORDINARIO. Tipificação: Falsificação de documento público, Falsidade ideológica, Crimes da Lei de licitações. Processo nº 0813046-71.2017.4.05.8400. Tribunal: TRF5. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — TRF5",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Falsificação de documento público, Falsidade ideológica, Crimes da Lei de licitações. Crimes de fraude são antecedentes diretos de lavagem de dinheiro."
+    },
+    {
+      "title": "Processo criminal — WANIRA DE HOLANDA BRASIL (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0811147-38.2017.4.05.8400",
+      "snippet": "WANIRA DE HOLANDA BRASIL figura como réu (polo passivo) em processo criminal: PROCESSO_PRINCIPAL. Tipificação: Corrupção Praticada por Prefeitos e Vereadores, Supressão de documento. Processo nº 0811147-38.2017.4.05.8400. Tribunal: TRF5. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — TRF5",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Corrupção Praticada por Prefeitos e Vereadores, Supressão de documento. Risco criminal incompatível com apetite da instituição."
+    },
+    {
+      "title": "Processo criminal — WANIRA DE HOLANDA BRASIL (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0006093-06.2017.4.03.6000",
+      "snippet": "WANIRA DE HOLANDA BRASIL figura como réu (polo passivo) em processo criminal: CARTA_PRECATORIA. Tipificação: Crimes de \"Lavagem\" ou Ocultação de Bens, Direitos ou Valores. Processo nº 0006093-06.2017.4.03.6000. Tribunal: BAIXA - DEVOLVIDO. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — BAIXA - DEVOLVIDO",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Crimes de \"Lavagem\" ou Ocultação de Bens, Direitos ou Valores. Risco criminal incompatível com apetite da instituição."
+    },
+    {
+      "title": "Processo criminal — WANIRA DE HOLANDA BRASIL (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0013503-52.2016.4.03.6000",
+      "snippet": "WANIRA DE HOLANDA BRASIL figura como réu (polo passivo) em processo criminal: CARTA_PRECATORIA. Tipificação: Crimes de \"Lavagem\" ou Ocultação de Bens, Direitos ou Valores. Processo nº 0013503-52.2016.4.03.6000. Tribunal: BAIXA - DEVOLVIDO. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — BAIXA - DEVOLVIDO",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Crimes de \"Lavagem\" ou Ocultação de Bens, Direitos ou Valores. Risco criminal incompatível com apetite da instituição."
+    },
+    {
+      "title": "Processo criminal — WANIRA DE HOLANDA BRASIL (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0011489-95.2016.4.03.6000",
+      "snippet": "WANIRA DE HOLANDA BRASIL figura como réu (polo passivo) em processo criminal: CARTA_PRECATORIA. Tipificação: Crimes de \"Lavagem\" ou Ocultação de Bens, Direitos ou Valores. Processo nº 0011489-95.2016.4.03.6000. Tribunal: BAIXA - DEVOLVIDO. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — BAIXA - DEVOLVIDO",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Crimes de \"Lavagem\" ou Ocultação de Bens, Direitos ou Valores. Risco criminal incompatível com apetite da instituição."
+    },
+    {
+      "title": "Processos criminais (60 encontrados) — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "WANIRA DE HOLANDA BRASIL tem 69 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — 60 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo civil: 140 encontrado(s) — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em 140 processo(s) civil(s) no JusBrasil; 49 no polo passivo. Exemplos: TRF5, JFRN, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Remetido', 'data': '2026-09-15'}, polo passivo; tjrn, Tribunal de Justiça do Rio Grande do Norte, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-14'}, polo ativo/outro, valor 48805.36; TRF5, JFRN, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Remetido', 'data': '2026-09-11'}, polo passivo, valor 126100. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — 49 de 140 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 1 encontrado(s) — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em 1 processo(s) trabalhista(s) no JusBrasil; 1 no polo passivo. Exemplos: TRT21, Currais Novos, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-05-07'}, polo passivo, valor 2151.1. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — 1 de 1 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mpdf.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Arquivado. Assunto: PFDC - DIREITO PENAL, 2ª CCR - DIREITO PENAL, SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações. Tipificação: Crimes da Lei de licitações. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mppe.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: SCI - Crimes de Responsabilidade, 2ª CCR - Crimes de Responsabilidade, 5ª CCR - Crimes de Responsabilidade, SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações, 2ª CCR - Contra a Administração da Justiça, SCI - Falsidade ideológica praticada por Funcionário Público, 2ª CCR - Falsidade ideológica praticada por Funcionário Público. Tipificação: Crimes da Lei de licitações, Crimes de Responsabilidade, Falsidade ideológica. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mppe.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações. Tipificação: Crimes da Lei de licitações. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mppe.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações. Tipificação: Crimes da Lei de licitações. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mpdf.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: SCI - Falsidade ideológica, 2ª CCR - Falsidade ideológica, SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações. Tipificação: Crimes da Lei de licitações, Falsidade ideológica. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mpdf.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Arquivado. Assunto: SCI - Crimes de Responsabilidade, 2ª CCR - Crimes de Responsabilidade, 5ª CCR - Crimes de Responsabilidade, SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações. Tipificação: Crimes da Lei de licitações, Crimes de Responsabilidade. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mppe.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: SCI - Falsidade ideológica, 2ª CCR - Falsidade ideológica, SCI - Fraude processual, 2ª CCR - Fraude processual, SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações. Tipificação: Crimes da Lei de licitações, Fraude processual, Falsidade ideológica. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mppe.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Arquivado. Assunto: SCI - Falsificação de documento público, 2ª CCR - Falsificação de documento público, SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações, SCI - Falsidade ideológica praticada por Funcionário Público, 2ª CCR - Falsidade ideológica praticada por Funcionário Público, SCI - Falsificação de documento Público praticada por Funcionário Público, 2ª CCR - Falsificação de documento Público praticada por Funcionário Público. Tipificação: Crimes da Lei de licitações, Falsidade ideológica, Falsificação de documento público. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mppe.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: SCI - Crimes de Responsabilidade, 2ª CCR - Crimes de Responsabilidade, 5ª CCR - Crimes de Responsabilidade, SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações. Tipificação: Crimes da Lei de licitações, Crimes de Responsabilidade. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mppe.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Arquivado. Assunto: SCI - Supressão de documento, 2ª CCR - Supressão de documento, SCI - Crimes de Responsabilidade, 2ª CCR - Crimes de Responsabilidade, 5ª CCR - Crimes de Responsabilidade, SCI - Corrupção Praticada por Prefeitos e Vereadores, 2ª CCR - Corrupção Praticada por Prefeitos e Vereadores, 5ª CCR - Corrupção Praticada por Prefeitos e Vereadores. Tipificação: Crimes de Responsabilidade, Supressão de documento, Corrupção Praticada por Prefeitos e Vereadores. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mppe.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações. Tipificação: Crimes da Lei de licitações. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mppe.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: SCI - Crimes de Responsabilidade, 2ª CCR - Crimes de Responsabilidade, 5ª CCR - Crimes de Responsabilidade, SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações. Tipificação: Crimes da Lei de licitações, Crimes de Responsabilidade. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mpdf.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: 1ª CCR - Parcelamento, 5ª CCR - Parcelamento, 1ª CCR - Vícios Formais da Sentença, 1ª CCR - Multa de 10%, 1ª CCR - Efeito Suspensivo / Impugnação / Embargos à Execução, SCI - Improbidade Administrativa, 1ª CCR - Improbidade Administrativa, 5ª CCR - Improbidade Administrativa, SCI - Aplicação da Pena, 2ª CCR - Aplicação da Pena, 2ª CCR - Ausência de Fundamentação. Tipificação: Improbidade Administrativa. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mprn.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: SCI - Crimes de Responsabilidade, 2ª CCR - Crimes de Responsabilidade, 5ª CCR - Crimes de Responsabilidade, SCI - Dano ao Erário, 1ª CCR - Dano ao Erário, 5ª CCR - Dano ao Erário. Tipificação: Crimes de Responsabilidade. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mpdf.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: PFDC - DIREITO PENAL, 2ª CCR - DIREITO PENAL, SCI - Falsidade ideológica, 2ª CCR - Falsidade ideológica, SCI - Crimes de Responsabilidade, 2ª CCR - Crimes de Responsabilidade, 5ª CCR - Crimes de Responsabilidade, SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações. Tipificação: Crimes da Lei de licitações, Crimes de Responsabilidade, Falsidade ideológica. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mpdf.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Arquivado. Assunto: PFDC - DIREITO PENAL, 2ª CCR - DIREITO PENAL, SCI - Falsificação de documento público, 2ª CCR - Falsificação de documento público. Tipificação: Falsificação de documento público. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mppe.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações. Tipificação: Crimes da Lei de licitações. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mppe.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: SCI - Crimes de Responsabilidade, 2ª CCR - Crimes de Responsabilidade, 5ª CCR - Crimes de Responsabilidade, SCI - &quot;Lavagem&quot; ou Ocultação de Bens, Direitos ou Valores Oriundos de Corrupção, 2ª CCR - &quot;Lavagem&quot; ou Ocultação de Bens, Direitos ou Valores Oriundos de Corrupção, 5ª CCR - &quot;Lavagem&quot; ou Ocultação de Bens, Direitos ou Valores Oriundos de Corrupção. Tipificação: Crimes de Responsabilidade. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mppe.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações. Tipificação: Crimes da Lei de licitações. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mprn.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Arquivado. Assunto: SCI - Crimes de Responsabilidade, 2ª CCR - Crimes de Responsabilidade, 5ª CCR - Crimes de Responsabilidade. Tipificação: Crimes de Responsabilidade. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mppe.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: SCI - Crimes de Responsabilidade, 2ª CCR - Crimes de Responsabilidade, 5ª CCR - Crimes de Responsabilidade, SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações. Tipificação: Crimes da Lei de licitações, Crimes de Responsabilidade. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — WANIRA DE HOLANDA BRASIL",
+      "url": "https://www.mpdf.mp.br/",
+      "snippet": "WANIRA DE HOLANDA BRASIL consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Arquivado. Assunto: PFDC - DIREITO PENAL, 2ª CCR - DIREITO PENAL, SCI - Crimes da Lei de licitações, 2ª CCR - Crimes da Lei de licitações, 5ª CCR - Crimes da Lei de licitações. Tipificação: Crimes da Lei de licitações. Confiança: ALTA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 75128799468 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "Processos criminais (4 encontrados) — ANDREZZA BRASIL SOUTO BEZERRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ANDREZZA BRASIL SOUTO BEZERRA tem 4 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 08359144451 — 4 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo civil: 24 encontrado(s) — ANDREZZA BRASIL SOUTO BEZERRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ANDREZZA BRASIL SOUTO BEZERRA consta em 24 processo(s) civil(s) no JusBrasil; 9 no polo passivo. Exemplos: tjrn, Tribunal de Justiça do Rio Grande do Norte, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-09'}, polo ativo/outro, valor 199650.67; tjrn, Tangará, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-17'}, polo passivo, valor 111363.51; TRERN, 53ª, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2025-09-11'}, polo passivo. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 08359144451 — 9 de 24 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — ANDREZZA BRASIL SOUTO BEZERRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 08359144451 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 08359144451 confirmado na API — sem processos trabalhistas",
       "achado_positivo": false
     }
   ],
@@ -9569,26 +9981,6 @@
   ],
   "523539b5-afe7-45e3-8e20-1abbad0495b6": [
     {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 089.894.034-64 (Felipe André Rodrigues De Arruda, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota",
-      "achado_positivo": false
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 88068269487 (FRANCISCO DOUGLAS RODRIGUES DE ARRUDA, pep_irma(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota",
-      "achado_positivo": false
-    },
-    {
       "title": "Credilink — Processos não-criminais (3) — Felipe André Rodrigues De Arruda",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
       "snippet": "Felipe André Rodrigues De Arruda tem 3 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ACIDENTE DE TRANSITO; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO ; ACIDENTE DE TRANSITO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
@@ -9617,19 +10009,69 @@
       "tipo": "processo",
       "match": "CPF 88068269487",
       "achado_positivo": true
+    },
+    {
+      "title": "Processos criminais (1 encontrados) — FELIPE ANDRE RODRIGUES DE ARRUDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "FELIPE ANDRE RODRIGUES DE ARRUDA tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 08989403464 — 1 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo civil: 5 encontrado(s) — FELIPE ANDRE RODRIGUES DE ARRUDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "FELIPE ANDRE RODRIGUES DE ARRUDA consta em 5 processo(s) civil(s) no JusBrasil; 1 no polo passivo. Exemplos: tjpe, São José do Egito - Varas, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Remetido', 'data': '2026-09-17'}, polo ativo/outro, valor 153865; TJPE, Comarca de Flores, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-07-25'}, polo ativo/outro, valor 274527.7; tjpe, Recife - TJPE, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-08-17'}, polo passivo, valor 274527.7. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 08989403464 — 1 de 5 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — FELIPE ANDRE RODRIGUES DE ARRUDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 08989403464 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 08989403464 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "Processos criminais (1 encontrados) — FRANCISCO DOUGLAS RODRIGUES DE ARRUDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "FRANCISCO DOUGLAS RODRIGUES DE ARRUDA tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 88068269487 — 1 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo civil: 8 encontrado(s) — FRANCISCO DOUGLAS RODRIGUES DE ARRUDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "FRANCISCO DOUGLAS RODRIGUES DE ARRUDA consta em 8 processo(s) civil(s) no JusBrasil; 5 no polo passivo. Exemplos: tjpe, Comarca de Afogados da Ingazeira, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado Definitivamente', 'tribunal': 'Arquivado definitivamente', 'data': '2026-09-13'}, polo passivo, valor 26328.35; TREPE, 66ª, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-07-11'}, polo passivo; TJPE, Comarca de Afogados da Ingazeira, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-05-02'}, polo passivo, valor 6416.85. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 88068269487 — 5 de 8 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — FRANCISCO DOUGLAS RODRIGUES DE ARRUDA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 88068269487 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 88068269487 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
     }
   ],
   "47136df2-a5ae-4abf-a311-43f6c1ba6ecb": [
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 038.841.375-14 (Cledson Dos Santos Silva, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota",
-      "achado_positivo": false
-    },
     {
       "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Cledson Dos Santos Silva",
       "url": "https://api.tesserati.com.br/api/MidiasNegativas",
@@ -9640,16 +10082,6 @@
       "match": "N/A — resultado sem título/resumo, não confirmável",
       "achado_positivo": false,
       "sem_conteudo_verificavel": true
-    },
-    {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 05800913501 (TARCIO DOS SANTOS SILVA, pep_irma(o)).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota",
-      "achado_positivo": false
     },
     {
       "title": "Credilink — Processos não-criminais (2) — Cledson Dos Santos Silva",
@@ -9669,6 +10101,66 @@
       "risk_indicator": "baixo",
       "tipo": "processo",
       "match": "CPF 05800913501 — confirmadamente não é ré",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — CLEDSON DOS SANTOS SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 03884137514 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 03884137514 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 2 encontrado(s) — CLEDSON DOS SANTOS SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "CLEDSON DOS SANTOS SILVA consta em 2 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: TJBA, CASTRO ALVES, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-05-29'}, polo ativo/outro; TJBA, CASTRO ALVES, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-05-27'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 03884137514 — 0 de 2 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — CLEDSON DOS SANTOS SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 03884137514 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 03884137514 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "Processos criminais (2 encontrados) — TARCIO DOS SANTOS SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "TARCIO DOS SANTOS SILVA tem 2 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 05800913501 — 2 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo civil: 3 encontrado(s) — TARCIO DOS SANTOS SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "TARCIO DOS SANTOS SILVA consta em 3 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: TREBA, Castro Alves, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-07-31'}, polo ativo/outro; TREBA, Castro Alves, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-08-01'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 05800913501 — 0 de 3 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — TARCIO DOS SANTOS SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 05800913501 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 05800913501 confirmado na API — sem processos trabalhistas",
       "achado_positivo": false
     }
   ],
@@ -9696,16 +10188,6 @@
   ],
   "4ee79154-b223-4d5a-a9dc-133d1dd7b776": [
     {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 005.344.415-99 (Edilson Da Rocha Silva, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota",
-      "achado_positivo": false
-    },
-    {
       "title": "Credilink — Processos não-criminais (2) — Edilson Da Rocha Silva",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
       "snippet": "Edilson Da Rocha Silva tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ALIENACAO FIDUCIARIA; ALIENACAO FIDUCIARIA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
@@ -9725,6 +10207,36 @@
       "match": "N/A — resultado sem título/resumo, não confirmável",
       "achado_positivo": false,
       "sem_conteudo_verificavel": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — EDILSON DA ROCHA SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 00534441599 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 00534441599 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 8 encontrado(s) — EDILSON DA ROCHA SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "EDILSON DA ROCHA SILVA consta em 8 processo(s) civil(s) no JusBrasil; 3 no polo passivo. Exemplos: tjba, Tribunal de Justiça, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-09-17'}, polo ativo/outro; TREBA, Inhambupe, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-07-25'}, polo ativo/outro; TREBA, Inhambupe, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-07-24'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 00534441599 — 3 de 8 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — EDILSON DA ROCHA SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 00534441599 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 00534441599 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
     }
   ],
   "b24a6d43-1985-4f2f-b412-226c47f296d5": [
@@ -10384,16 +10896,6 @@
   ],
   "bd2f5845-ac96-4cfa-abb1-98085d75a039": [
     {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 049.146.374-05 (Samuel Oliveira Fernades, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota",
-      "achado_positivo": false
-    },
-    {
       "title": "Credilink — Processos não-criminais (6) — Samuel Oliveira Fernades",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
       "snippet": "Samuel Oliveira Fernades tem 6 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO TRIBUTARIO (14) - CONTRIBUICOES (6031) - CONTRIBUICO; HORAS EXTRAS; AVISO PREVIO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
@@ -10402,6 +10904,36 @@
       "tipo": "processo",
       "match": "CPF 049.146.374-05",
       "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — SAMUEL OLIVEIRA FERNANDES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 04914637405 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 04914637405 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 9 encontrado(s) — SAMUEL OLIVEIRA FERNANDES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "SAMUEL OLIVEIRA FERNANDES consta em 9 processo(s) civil(s) no JusBrasil; 1 no polo passivo. Exemplos: TRF5, PB / Campina Grande, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-08-13'}, polo ativo/outro, valor 301.71; TREPB, 67ª, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-05-05'}, polo ativo/outro; TREPB, 67ª ZONA ELEITORAL, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-03-18'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 04914637405 — 1 de 9 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 2 encontrado(s) — SAMUEL OLIVEIRA FERNANDES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "SAMUEL OLIVEIRA FERNANDES consta em 2 processo(s) trabalhista(s) no JusBrasil; 0 no polo passivo. Exemplos: TRT13, Campina Grande, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-12'}, polo ativo/outro, valor 36000; TRT13, Santa Rita, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-03-02'}, polo ativo/outro, valor 40000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 04914637405 — 0 de 2 processo(s) no polo passivo",
+      "achado_positivo": true
     }
   ],
   "e8effd87-62c2-47d7-8733-b1028db0ee1c": [
@@ -10669,16 +11201,6 @@
   ],
   "abfe2c80-ff61-4292-af8b-d3decccefd11": [
     {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 064.179.945-46 (Jefferson Lima Viana, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota",
-      "achado_positivo": false
-    },
-    {
       "title": "Credilink — Processos não-criminais (3) — Jefferson Lima Viana",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
       "snippet": "Jefferson Lima Viana tem 3 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO ELEITORAL (11428) | ELEICOES (11583) | TRANSGRESSOES; ALIENACAO FIDUCIARIA; DIREITO ELEITORAL (11428) | ELEICOES (11583) | TRANSGRESSOES. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
@@ -10698,27 +11220,97 @@
       "match": "N/A — resultado sem título/resumo, não confirmável",
       "achado_positivo": false,
       "sem_conteudo_verificavel": true
+    },
+    {
+      "title": "Processos criminais (1 encontrados) — JEFFERSON LIMA VIANA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "JEFFERSON LIMA VIANA tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 06417994546 — 1 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo civil: 9 encontrado(s) — JEFFERSON LIMA VIANA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "JEFFERSON LIMA VIANA consta em 9 processo(s) civil(s) no JusBrasil; 1 no polo passivo. Exemplos: TREBA, Macarani, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-09-16'}, polo ativo/outro; TJBA, Vitória Da Conquista, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-04-06'}, polo passivo, valor 1653.75; TREBA, Macarani, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Baixado definitivamente', 'data': '2026-08-20'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 06417994546 — 1 de 9 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — JEFFERSON LIMA VIANA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 06417994546 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 06417994546 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
     }
   ],
   "7e4ccffd-17cb-4bcd-8998-c67c83334e01": [
     {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 350.816.006-87 (Sandra Marchiori Da Silva Rodrigues, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
+      "title": "JusBrasil API: nenhum processo criminal — SANDRA MARCHIORI DA SILVA RODRIGUES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 35081600687 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota",
+      "match": "CPF 35081600687 confirmado na API — sem processos criminais",
       "achado_positivo": false
     },
     {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 71078665168 (SAMANTHA MARCHIORI RODRIGUES RIBEIRO, pep_mae).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
+      "title": "JusBrasil API: nenhum processo civil — SANDRA MARCHIORI DA SILVA RODRIGUES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint civil da JusBrasil Background Check API para CPF 35081600687 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
       "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota",
+      "match": "CPF 35081600687 confirmado na API — sem processos civils",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — SANDRA MARCHIORI DA SILVA RODRIGUES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 35081600687 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 35081600687 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — SAMANTHA MARCHIORI RODRIGUES RIBEIRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 71078665168 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 71078665168 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil API: nenhum processo civil — SAMANTHA MARCHIORI RODRIGUES RIBEIRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint civil da JusBrasil Background Check API para CPF 71078665168 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 71078665168 confirmado na API — sem processos civils",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — SAMANTHA MARCHIORI RODRIGUES RIBEIRO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 71078665168 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 71078665168 confirmado na API — sem processos trabalhistas",
       "achado_positivo": false
     }
   ],
@@ -10819,16 +11411,6 @@
   ],
   "785b402a-e759-4e38-8695-639059a9a5b9": [
     {
-      "title": "⚠️ VERIFICAÇÃO MANUAL NECESSÁRIA — Limite JusBrasil atingido",
-      "url": "https://www.jusbrasil.com.br/consulta-pro/configuracoes",
-      "snippet": "Quota de 500 consultas JusBrasil Background Check foi atingida para o período contratual. A diligência judicial automática não pôde ser realizada para este caso. OBRIGATÓRIO: realizar verificação manual de processos criminais, BNMP e MP diretamente no JusBrasil PRO antes de aprovar ou enviar para a Mesa de Decisão. CPF consultado: 312.949.168-66 (Marcela Cavenatti avelino, owner).",
-      "source": "Sistema Pepito — Controle de Quota JusBrasil",
-      "risk_indicator": "medio",
-      "tipo": "processo",
-      "match": "N/A — consulta automática não realizada por limite de quota",
-      "achado_positivo": false
-    },
-    {
       "title": "Credilink — Processos não-criminais (22) — Marcela Cavenatti avelino",
       "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
       "snippet": "Marcela Cavenatti avelino tem 22 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: VAGA DE GARAGEM; DEFEITO, NULIDADE OU ANULACAO; DISPENSA / RESCISAO DO CONTRATO DE TRABALHO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
@@ -10837,6 +11419,36 @@
       "tipo": "processo",
       "match": "CPF 312.949.168-66",
       "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — MARCELA CAVENATTI AVELINO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 31294916866 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 31294916866 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 25 encontrado(s) — MARCELA CAVENATTI AVELINO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "MARCELA CAVENATTI AVELINO consta em 25 processo(s) civil(s) no JusBrasil; 12 no polo passivo. Exemplos: tjsp, Suzano, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO-AGUARDA DESPACHO', 'data': '2026-09-16'}, polo passivo, valor 20000; tjsp, Foro Central Cível, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-09-16'}, polo passivo, valor 27379.28; tjsp, Foro Regional XII - Nossa Senhora do Ó, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitação prioritária', 'data': '2026-09-12'}, polo passivo, valor 511021.8. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 31294916866 — 12 de 25 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 18 encontrado(s) — MARCELA CAVENATTI AVELINO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "MARCELA CAVENATTI AVELINO consta em 18 processo(s) trabalhista(s) no JusBrasil; 15 no polo passivo. Exemplos: TRT2, Guarulhos, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-09'}, polo passivo, valor 50779.55; TRT2, Guarulhos, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-17'}, polo passivo, valor 40269.08; TRT2, São Paulo, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-03'}, polo ativo/outro, valor 87016.72. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 31294916866 — 15 de 18 processo(s) no polo passivo",
+      "achado_positivo": true
     }
   ],
   "e59f5e1a-2ff5-414e-8be6-2955d0bab3ed": [
