@@ -350,6 +350,10 @@ export interface CredilinkResultado {
   linkDossie: string;
   consultadoEm: string;
   nomeConsultado: string;
+  // true quando o token veio de verificação manual pontual via API Credilink
+  // (getCredilinkTitularOverride), corrigindo um token_pf_cred quebrado/antigo
+  // vindo da tabela squad_core — achado real 2026-09-17, draft 8fb890bf.
+  verificadoManualmente?: boolean;
 }
 
 /**

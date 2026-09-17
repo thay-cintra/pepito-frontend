@@ -43,7 +43,11 @@
     "resumo": "REPROVAR — Empresa fornecedora contumaz da Prefeitura de Capela/AL com +R$320k em contratos durante o exato período do mandato da irmã ex-Vereadora. Tipologia de favorecimento e duto para recursos públicos sensíveis.",
     "decisao": "reprovado",
     "model": "manual-analista-2026-05-19",
-    "generated_at": "2026-05-19T00:00:00Z"
+    "generated_at": "2026-05-19T00:00:00Z",
+    "revisao_manual_2026_09_17": {
+      "motivo": "Codex propôs reverter esta reprovação para aprovação/monitoramento alegando que a investigação real não corroborou contratos públicos/mídia adversa. REJEITADO após revisão: esta reprovação é um caso estrutural de Conflito de Interesses (empresa no mesmo município de familiar PEP em cargo de influência/Executivo, ou ME recém-constituída em setor vulnerável junto a Secretária de Finanças) que, por regra já estabelecida e validada por thay@cora.com.br, NÃO exige contrato público ou mídia adversa corroborados para fundamentar reprovação — o padrão estrutural já basta. Texto e decisão originais mantidos sem alteração.",
+      "autor": "thay@cora.com.br (via Claude Code) — reversão de proposta do Codex"
+    }
   },
   "70f186e7-06b0-461a-838c-87eeb32bbe3c": {
     "text": "Decisão: MONITORAMENTO\nEmpresa: KABRU PARTICIPACOES LTDA\n\nSócio do ex-Prefeito de Jacaraci/BA (dentro da carência PEP). Holding constituída 8 dias antes da análise em município diferente. Sem desabonos confirmados. Monitoramento ordinário; verificar atividades da holding ao longo do relacionamento.",
@@ -89,14 +93,22 @@
     "resumo": "REPROVAR — Filho de Secretária Municipal + empresa recebe verbas da mesma Prefeitura → Conflito de Interesses absoluto.",
     "decisao": "reprovado",
     "model": "manual-revisao-2026-05-20",
-    "generated_at": "2026-05-20T00:00:00Z"
+    "generated_at": "2026-05-20T00:00:00Z",
+    "revisao_manual_2026_09_17": {
+      "motivo": "Codex propôs reverter esta reprovação para aprovação/monitoramento alegando que a investigação real não corroborou contratos públicos/mídia adversa. REJEITADO após revisão: esta reprovação é um caso estrutural de Conflito de Interesses (empresa no mesmo município de familiar PEP em cargo de influência/Executivo, ou ME recém-constituída em setor vulnerável junto a Secretária de Finanças) que, por regra já estabelecida e validada por thay@cora.com.br, NÃO exige contrato público ou mídia adversa corroborados para fundamentar reprovação — o padrão estrutural já basta. Texto e decisão originais mantidos sem alteração.",
+      "autor": "thay@cora.com.br (via Claude Code) — reversão de proposta do Codex"
+    }
   },
   "1b97283a-e7c8-4dc9-bb91-097c0d29dbe0": {
     "text": "Decisão: CADASTRO REPROVADO\nCNPJ: RAILTON DA SILVA PAIVA — ME de materiais de construção, Olho d'Água do Borges/RN\n\nCadastro rejeitado pelo time de PLD. Trata-se de firma individual (ME) recém-constituída em março de 2026, atuante no comércio de materiais de construção, com sede no exato município onde a irmã do titular, Ranilda da Silva, exerce o cargo de Secretária Municipal de Finanças e Administração. A convergência de três fatores materializa Conflito de Interesses absoluto: (1) empresa aberta no período pós-eleitoral, portanto constituída após a irmã assumir o cargo que controla o cofre municipal; (2) setor de materiais de construção — historicamente o mais vulnerável a fraudes licitatórias e superfaturamento em contratos públicos municipais; (3) subordinação geográfica direta ao ente cujas finanças são geridas pela familiar PEP. A estrutura configura fortíssimo risco de uso da empresa como fachada ou intermediária para direcionamento de verbas públicas e triangulação financeira.\n\nRecomendo a NÃO APROVAÇÃO do relacionamento comercial, por incompatibilidade com o apetite de risco da instituição, conforme Circular BACEN 3.978/2020.",
     "resumo": "REPROVAR — ME recém-constituída (mar/2026) em materiais de construção, mesmo município onde irmã é Secretária de Finanças; Conflito de Interesses absoluto; risco de fachada para verbas públicas.",
     "decisao": "reprovado",
     "model": "manual-analista-2026-05-20",
-    "generated_at": "2026-05-20T00:00:00Z"
+    "generated_at": "2026-05-20T00:00:00Z",
+    "revisao_manual_2026_09_17": {
+      "motivo": "Codex propôs reverter esta reprovação para aprovação/monitoramento alegando que a investigação real não corroborou contratos públicos/mídia adversa. REJEITADO após revisão: esta reprovação é um caso estrutural de Conflito de Interesses (empresa no mesmo município de familiar PEP em cargo de influência/Executivo, ou ME recém-constituída em setor vulnerável junto a Secretária de Finanças) que, por regra já estabelecida e validada por thay@cora.com.br, NÃO exige contrato público ou mídia adversa corroborados para fundamentar reprovação — o padrão estrutural já basta. Texto e decisão originais mantidos sem alteração.",
+      "autor": "thay@cora.com.br (via Claude Code) — reversão de proposta do Codex"
+    }
   },
   "12f79730-5920-400a-a1a9-8de889fca3cf": {
     "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 63.104.531/0001-44 — LALUCI MASSAS E SALGADOS LTDA\n\nO analista recomenda aprovação — concordo parcialmente, mantendo monitoramento reforçado. O vínculo societário entre Lucilei Pacheco De Almeida Salomão e a vereadora Rosangela de Souza Tezzon Martins (Câmara Municipal de Mirandópolis/SP, mandato ativo 2025–2029) é do tipo SÓCIO — a empresa em comum, antes não identificada pela Credilink, foi confirmada via API PH3A + Receita Federal (BrasilAPI) em 2026-09-15: ALMEIDA SALOMAO & MARTINS LTDA (nome fantasia CENTRO DE FORMAÇÃO DE CONDUTORES RODAS DE OURO), CNPJ 08.247.613/0001-30, com ambas as sócias em 50%/50% desde 24/08/2006. Situação cadastral: INAPTA desde 10/03/2021, por omissão de declarações — irregularidade fiscal, sem indicativo de fraude, processo criminal ou sanção associada. Ademais, a PJ do caso foi constituída em 08/10/2025, após o início do mandato da PEP, mas sem qualquer achado adverso de mídia, processos ou sanções para a empresa, o titular ou a PEP.\n\nCom a lacuna societária esclarecida e sem achado adverso adicional, mantenho a recomendação de APROVAÇÃO SOB MONITORAMENTO REFORÇADO como medida de cautela dado o histórico de inaptidão fiscal da empresa em comum — cabe à Mesa avaliar se o monitoramento pode ser reduzido ao padrão, já que a condição originalmente colocada (identificar a empresa e sua situação cadastral) foi cumprida sem indicar risco de LD/FT, conforme Circular BACEN 3.978/2020.",

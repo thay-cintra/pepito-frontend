@@ -27,6 +27,7 @@ import pareceresSugestaoRaw from "./pareceres-sugestao.json";
 import pareceresLiderancaRaw from "./pareceres-lideranca.json";
 import pldRiskScoresRaw from "./pld-risk-scores.json";
 import credilinkPepConsultasRaw from "./credilink-pep-consultas.json";
+import credilinkTitularOverridesRaw from "./credilink-titular-overrides.json";
 
 interface MediaFinding {
   title: string;
@@ -73,6 +74,31 @@ interface CredilinkPepConsulta {
 }
 
 const CREDILINK_PEP_CONSULTAS = credilinkPepConsultasRaw as Record<string, CredilinkPepConsulta>;
+
+interface CredilinkTitularOverride {
+  token_compliance?: string;
+  consultado_em?: string;
+  nome?: string;
+  motivo?: string;
+}
+
+const CREDILINK_TITULAR_OVERRIDES = credilinkTitularOverridesRaw as Record<string, CredilinkTitularOverride>;
+
+/** token_pf_cred (coluna estática squad_core) às vezes NÃO é o dossiê mais
+ * recente do titular na base da Credilink — achado real 2026-09-17, draft
+ * 8fb890bf: token_pf_cred apontava para um token de 2024-04-30 travado em
+ * "Processando" (nunca finalizado, sem documento associado), enquanto a
+ * consulta real e mais recente do titular (2026-09-08, "Processado") tinha
+ * outro token, só encontrado consultando a API da Credilink diretamente, não
+ * a tabela. Overrides aqui vêm de verificação manual pontual via API, não de
+ * reprocessamento em massa de token_pf_cred. */
+export function getCredilinkTitularOverride(cpf: string | undefined): CredilinkTitularOverride | undefined {
+  return CREDILINK_TITULAR_OVERRIDES[(cpf || "").replace(/\D/g, "")];
+}
+
+export function getCredilinkTitularToken(cpf: string | undefined, tokenPfCred: string | null | undefined): string | null {
+  return getCredilinkTitularOverride(cpf)?.token_compliance || tokenPfCred || null;
+}
 
 /** Guardrail (thay@cora.com.br, 2026-09-11): um caso só pode ir pra Fila de
  * Liderança se JusBrasil e Credilink tiverem sido de fato consultados —
@@ -185,7 +211,7 @@ export function getCredilinkTokens(
   c: Pick<RegistrationCase, "cpf" | "token_pf_cred" | "pep_pf">,
   tipoPep: "titular" | "relacionado",
 ): CredilinkTokens {
-  const titular = c.token_pf_cred || null;
+  const titular = getCredilinkTitularToken(c.cpf, c.token_pf_cred);
   if (tipoPep === "titular") {
     return { titular, peps: [] };
   }

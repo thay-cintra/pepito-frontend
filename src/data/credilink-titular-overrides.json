@@ -1,0 +1,11 @@
+{
+  "01554643538": {
+    "token_compliance": "ea21044b732a4bb1",
+    "consultado_em": "2026-09-08T03:39:52.397",
+    "nome": "RODRIGO SALES RIOS",
+    "motivo": "token_pf_cred da tabela squad_core (1092b5d0cd8a470b) aponta para um token quebrado/antigo da base da Credilink: verificação via GET /api/Compliance?token=1092b5d0cd8a470b retorna code 200 message 'Processando' com dataInicio 2024-04-30T16:12:42 (nunca finalizou) e documentoConsultado nulo — não é o dossiê real do titular. A consulta real e mais recente (code 200, 'Processado', dataInicio 2026-09-08T03:39:52, documentoConsultado 01554643538) foi localizada via verificação manual pontual do token que o analista via na tela da Credilink (ea21044b732a4bb1), confirmando que é o dossiê correto e completo de Rodrigo Sales Rios.",
+    "revisor": "thay@cora.com.br (via Claude Code)",
+    "verificado_em": "2026-09-17",
+    "draft_id_origem": "8fb890bf-57a7-4b09-8617-c1a24089c6a9"
+  }
+}

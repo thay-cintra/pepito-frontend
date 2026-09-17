@@ -24,7 +24,7 @@ import { getAuthUser } from "@/lib/auth";
 import { pesquisarFontesPublicas, reanalisarResultado, consultarCredilink, type CredilinkResultado } from "@/lib/mock-ai";
 import { clienteVazio } from "@/lib/cliente-default";
 import { getRegistrationCase, markTaken, QUEUE_UPDATED_EVENT } from "@/lib/registration-queue";
-import { inferCargoOrgao, inferTipoPep, getSugestaoParecer, getConsultaStatus, getCredilinkTokens } from "@/data/registration-enrich";
+import { inferCargoOrgao, inferTipoPep, getSugestaoParecer, getConsultaStatus, getCredilinkTokens, getCredilinkTitularToken, getCredilinkTitularOverride } from "@/data/registration-enrich";
 import { consultarCredilinkPepAgora, type CredilinkPepResultadoUI } from "@/lib/credilink-pep";
 import { liveConsultationCoversAllPending, needsManualConsultationCheck } from "@/lib/leadership-guard";
 import { formatCNPJ, formatCPF, formatDuration, uid } from "@/lib/utils";
@@ -128,10 +128,11 @@ export function AnalisePrimeiraCamada() {
           nomeResponsavel: caso.full_name_pf,
           nomePessoaVinculada: cargoOrgao.nomePEP,
           cpfPepTitular: tipoPep === "relacionado" ? (cargoOrgao.cpfTitular || caso.pep_pf?.[0]?.cpf_titular || "") : "",
-          credilinkNumeroToken: caso.token_pf_cred || "",
-          credilinkLinkDossie: caso.token_pf_cred
-            ? `https://dashboard.tesserati.com.br/Compliance/VisualizarDossie?token=${caso.token_pf_cred}`
-            : "",
+          credilinkNumeroToken: getCredilinkTitularToken(caso.cpf, caso.token_pf_cred) || "",
+          credilinkLinkDossie: (() => {
+            const tok = getCredilinkTitularToken(caso.cpf, caso.token_pf_cred);
+            return tok ? `https://dashboard.tesserati.com.br/Compliance/VisualizarDossie?token=${tok}` : "";
+          })(),
           cpfResponsavel: caso.cpf,
           tipoPep,
           tipoVinculo: tipoPep === "relacionado" ? "Owner é vínculo do PEP titular" : "",
@@ -184,19 +185,23 @@ export function AnalisePrimeiraCamada() {
     if (cliente.tipoPep !== "relacionado" || !cliente.cpfPepTitular) return;
     // Token real disponível — exibe sem chamar API mock
     if (cliente.credilinkNumeroToken) {
+      // Achado real (thay@cora.com.br, 2026-09-17, draft 8fb890bf): antes
+      // usava new Date().toISOString() aqui — mostrava a DATA DE HOJE (o
+      // dia em que o analista abre a tela) como se fosse a data real da
+      // consulta Credilink. token_pf_cred vem de uma coluna estática do
+      // pipeline squad_core (Athena) que não carrega nenhum timestamp de
+      // quando a Credilink foi de fato consultada. Quando o CPF tem override
+      // verificado manualmente via API Credilink (getCredilinkTitularOverride
+      // — mesmo achado 8fb890bf: token_pf_cred apontava pro token ERRADO,
+      // mais antigo da base), usamos a data real confirmada; senão não
+      // inventamos nenhuma (string vazia = "não disponível", tratado no
+      // render abaixo).
+      const override = getCredilinkTitularOverride(cliente.cpfResponsavel);
       setCredilinkResultado({
         numeroToken: cliente.credilinkNumeroToken,
         linkDossie: cliente.credilinkLinkDossie || "",
-        // Achado real (thay@cora.com.br, 2026-09-17, draft 8fb890bf): antes
-        // usava new Date().toISOString() aqui — mostrava a DATA DE HOJE (o
-        // dia em que o analista abre a tela) como se fosse a data real da
-        // consulta Credilink. token_pf_cred vem de uma coluna estática do
-        // pipeline squad_core (Athena) que não carrega nenhum timestamp de
-        // quando a Credilink foi de fato consultada — não temos essa data,
-        // então não inventamos uma. String vazia = "não disponível" (ver
-        // render abaixo, que trata isso explicitamente em vez de tentar
-        // formatar uma data inválida).
-        consultadoEm: "",
+        consultadoEm: override?.consultado_em || "",
+        verificadoManualmente: !!override,
         nomeConsultado: cliente.nomeResponsavel,
       });
       return;
@@ -204,7 +209,7 @@ export function AnalisePrimeiraCamada() {
     // Sem token real — informa que a consulta deve ser feita manualmente
     setCredilinkResultado(null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cliente.cpfPepTitular, cliente.credilinkNumeroToken]);
+  }, [cliente.cpfPepTitular, cliente.credilinkNumeroToken, cliente.cpfResponsavel]);
 
   const podeFinalizarPrimeira = useMemo(
     () => cliente.cnpj && cliente.razaoSocial && parecerPrimeiraCamada.trim().length > 10,
@@ -715,7 +720,7 @@ export function AnalisePrimeiraCamada() {
                         <span className="min-w-[160px]">Consultado em:</span>
                         <span>
                           {credilinkResultado.consultadoEm
-                            ? new Date(credilinkResultado.consultadoEm).toLocaleString("pt-BR")
+                            ? `${new Date(credilinkResultado.consultadoEm).toLocaleString("pt-BR")}${credilinkResultado.verificadoManualmente ? " (verificado manualmente via API Credilink)" : ""}`
                             : "Data não disponível (token vem do pipeline squad_core, sem timestamp de consulta rastreado)"}
                         </span>
                       </div>
