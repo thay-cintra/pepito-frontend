@@ -12099,5 +12099,649 @@
       "achado_positivo": false,
       "sem_conteudo_verificavel": true
     }
+  ],
+  "bdb93555-3b64-4adf-8aad-8b775fb6a139": [
+    {
+      "title": "Processos criminais (1 encontrados) — JAIR ANILDO FRITSCH",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "JAIR ANILDO FRITSCH tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 009.130.750-35 — 1 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo civil: 5 encontrado(s) — JAIR ANILDO FRITSCH",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "JAIR ANILDO FRITSCH consta em 5 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: TRERS, 40ª, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': 'Baixado definitivamente', 'data': '2026-07-29'}, polo ativo/outro; TRERS, 40ª, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-05-04'}, polo ativo/outro; TRERS, 40ª, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-07-28'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 009.130.750-35 — 0 de 5 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — JAIR ANILDO FRITSCH",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 009.130.750-35 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 009.130.750-35 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    }
+  ],
+  "bf43bb48-56c8-49fc-8bef-287f4f417977": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — MARCO ANTONIO FRANCO FILHO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 404.885.928-52 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 404.885.928-52 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 1 encontrado(s) — MARCO ANTONIO FRANCO FILHO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "MARCO ANTONIO FRANCO FILHO consta em 1 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: tjsp, Foro de Jaboticabal, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Extinto', 'tribunal': 'Extinto', 'data': '2026-09-17'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 404.885.928-52 — 0 de 1 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — MARCO ANTONIO FRANCO FILHO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 404.885.928-52 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 404.885.928-52 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Marco Antônio Franco Filho",
+      "url": "https://g1.globo.com/df/distrito-federal/noticia/2025/12/20/justica-mantem-prisao-de-dois-suspeitos-de-clonar-redes-sociais-de-pousadas-de-pirenopolis.ghtml",
+      "snippet": "A busca de mídias negativas via Credilink para Marco Antônio Franco Filho retornou 10 resultado(s) SEM título nem resumo (dado incompleto da própria API — não é um erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Marco Antônio Franco Filho é de fato mencionado no link retornado. Não tratar como mídia negativa confirmada sem verificação manual do link. Link: https://g1.globo.com/df/distrito-federal/noticia/2025/12/20/justica-mantem-prisao-de-dois-suspeitos-de-clonar-redes-sociais-de-pousadas-de-pirenopolis.ghtml",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — MARCO AURELIO FRANCO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 40488758840 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 40488758840 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 8 encontrado(s) — MARCO AURELIO FRANCO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "MARCO AURELIO FRANCO consta em 8 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: tjsp, Foro de Viradouro, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Extinto', 'tribunal': 'Extinto', 'data': '2026-09-09'}, polo ativo/outro; tjsp, Foro de Viradouro, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Extinto', 'tribunal': 'Extinto', 'data': '2026-09-08'}, polo ativo/outro; tjsp, Foro de Viradouro, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Extinto', 'tribunal': 'Extinto', 'data': '2026-09-08'}, polo ativo/outro, valor 1372.83. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 40488758840 — 0 de 8 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — MARCO AURELIO FRANCO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 40488758840 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 40488758840 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — MARCO AURELIO FRANCO",
+      "url": "https://difusoraourofino.com.br/noticia/21589/ministerio-publico-de-minas-gerais-defende-tirar-o-patrimonio-do-crime-organizado-para-o-enfraquecimento-das-faccoes",
+      "snippet": "A busca de mídias negativas via Credilink para MARCO AURELIO FRANCO retornou 13 resultado(s) SEM título nem resumo (dado incompleto da própria API — não é um erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se MARCO AURELIO FRANCO é de fato mencionado no link retornado. Não tratar como mídia negativa confirmada sem verificação manual do link. Link: https://difusoraourofino.com.br/noticia/21589/ministerio-publico-de-minas-gerais-defende-tirar-o-patrimonio-do-crime-organizado-para-o-enfraquecimento-das-faccoes",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
+    }
+  ],
+  "d1e7ad75-086a-4015-89a4-822f9b6568f9": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — TIAGO FERREIRA DA SILVA NETO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 032.651.491-02 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 032.651.491-02 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 3 encontrado(s) — TIAGO FERREIRA DA SILVA NETO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "TIAGO FERREIRA DA SILVA NETO consta em 3 processo(s) civil(s) no JusBrasil; 2 no polo passivo. Exemplos: tjgo, NIQUELANDIA, status {'inferido': 'Ativo', 'normalizado': 'Ativo', 'tribunal': 'Ativo', 'data': '2026-09-10'}, polo ativo/outro, valor 30000; tjmg, Ituiutaba, status {'inferido': 'Ativo', 'normalizado': 'Ativo', 'tribunal': 'ativo', 'data': '2026-09-17'}, polo passivo, valor 530979; tjmg, Belo Horizonte, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'BAIXADO', 'data': '2026-09-17'}, polo passivo. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 032.651.491-02 — 2 de 3 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — TIAGO FERREIRA DA SILVA NETO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 032.651.491-02 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 032.651.491-02 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "Credilink — Processos não-criminais (3) — Tiago Ferreira Da Silva Neto",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Tiago Ferreira Da Silva Neto tem 3 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 9524 - DIREITO PROCESSUAL CIVIL E DO TRABALHO -> TUTELA PROV; DIREITO DO CONSUMIDOR (1156) - RESPONSABILIDADE DO FORNECEDO; INDENIZACAO POR DANO MATERIAL < RESPONSABILIDADE DO FORNECED. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 032.651.491-02",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Tiago Ferreira Da Silva Neto",
+      "url": "https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=506165&tip=UN",
+      "snippet": "A busca de mídias negativas via Credilink para Tiago Ferreira Da Silva Neto retornou 6 resultado(s) SEM título nem resumo (dado incompleto da própria API — não é um erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Tiago Ferreira Da Silva Neto é de fato mencionado no link retornado. Não tratar como mídia negativa confirmada sem verificação manual do link. Link: https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=506165&tip=UN",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — ELIZEU FERREIRA DA SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 02214799109 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 02214799109 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 5 encontrado(s) — ELIZEU FERREIRA DA SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ELIZEU FERREIRA DA SILVA consta em 5 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: TREGO, 143ª, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-07-30'}, polo ativo/outro; TREGO, 143ª, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-07-24'}, polo ativo/outro; TRF1, Subseção Judiciária de Uruaçu-GO, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-02-11'}, polo ativo/outro, valor 48480. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 02214799109 — 0 de 5 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — ELIZEU FERREIRA DA SILVA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 02214799109 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 02214799109 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — ELIZEU FERREIRA DA SILVA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "ELIZEU FERREIRA DA SILVA tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 02214799109",
+      "achado_positivo": true
+    }
+  ],
+  "3f785fff-a290-4114-a9a6-74f0917efdef": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — KALIL BRAGA FERREIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 008.386.222-67 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 008.386.222-67 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 10 encontrado(s) — KALIL BRAGA FERREIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "KALIL BRAGA FERREIRA consta em 10 processo(s) civil(s) no JusBrasil; 3 no polo passivo. Exemplos: TJRR, Boa Vista, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-14'}, polo passivo; TJRR, Boa Vista, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-08'}, polo passivo; TJAM, Capital - Fórum de Manaus, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'BAIXADO', 'data': '2026-08-17'}, polo ativo/outro, valor 500. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 008.386.222-67 — 3 de 10 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — KALIL BRAGA FERREIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 008.386.222-67 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 008.386.222-67 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "Credilink — Processos não-criminais (2) — Kalil Braga Ferreira",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Kalil Braga Ferreira tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO PROCESSUAL CIVIL E DO TRABALHO (8826) - LIQUIDACAO /; DIREITO ADMINISTRATIVO E OUTRAS MATERIAS DE DIREITO PUBLICO . Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 008.386.222-67",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — AYLLON MENEZES DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 57751374268 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 57751374268 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 9 encontrado(s) — AYLLON MENEZES DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "AYLLON MENEZES DE OLIVEIRA consta em 9 processo(s) civil(s) no JusBrasil; 6 no polo passivo. Exemplos: tjam, Capital - Fórum de Manaus, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'Baixado', 'data': '2026-09-17'}, polo ativo/outro, valor 166517.34; TJAM, Capital - Fórum de Manaus, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'BAIXADO', 'data': '2026-08-19'}, polo ativo/outro; tjam, Manaus, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'ARQUIVADO', 'data': '2026-08-11'}, polo passivo, valor 82714.07. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 57751374268 — 6 de 9 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — AYLLON MENEZES DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 57751374268 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 57751374268 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "Credilink — Processos não-criminais (9) — AYLLON MENEZES DE OLIVEIRA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "AYLLON MENEZES DE OLIVEIRA tem 9 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ALIENACAO FIDUCIARIA; HABILITACAO / REGISTRO CADASTRAL / JULGAMENTO / HOMOLOGACAO; HABILITACAO / REGISTRO CADASTRAL / JULGAMENTO / HOMOLOGACAO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 57751374268",
+      "achado_positivo": true
+    },
+    {
+      "title": "PH3A — Sociedade em comum identificada — INSTITUTO MEDICO DE CLINICA E PEDIATRIA DO ESTADO DO AMAZONAS LTDA",
+      "url": "https://brasilapi.com.br/api/cnpj/v1/04812092000165",
+      "snippet": "Kalil Braga Ferreira e AYLLON MENEZES DE OLIVEIRA são sócios em comum de INSTITUTO MEDICO DE CLINICA E PEDIATRIA DO ESTADO DO AMAZONAS LTDA (CNPJ 04.812.092/0001-65), identificada via PH3A (PartnerShips). Situação cadastral atual: ATIVA desde 2005-08-27 (SEM MOTIVO). Validar se a natureza dessa sociedade é relevante para o risco do cadastro.",
+      "source": "PH3A — Sociedade em comum (PartnerShips)",
+      "risk_indicator": "medio",
+      "tipo": "societario",
+      "match": "CPF 008.386.222-67 + CPF 57751374268 — sócios confirmados de 04.812.092/0001-65 (ATIVA)",
+      "achado_positivo": true
+    }
+  ],
+  "08493df4-bfd1-4ae0-83cf-7e04d971ab50": [
+    {
+      "title": "Processos criminais (1 encontrados) — DELMAR JOSE PIMENTEL JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "DELMAR JOSE PIMENTEL JUNIOR tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 003.915.489-05 — 1 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo civil: 43 encontrado(s) — DELMAR JOSE PIMENTEL JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "DELMAR JOSE PIMENTEL JUNIOR consta em 43 processo(s) civil(s) no JusBrasil; 32 no polo passivo. Exemplos: tjpr, Ponta Grossa, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-09-17'}, polo passivo, valor 81676.6; tjpr, Campina da Lagoa, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-09-15'}, polo passivo, valor 5222.15; tjsc, Balneário Camboriú, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-09-16'}, polo passivo, valor 252560.56. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 003.915.489-05 — 32 de 43 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 5 encontrado(s) — DELMAR JOSE PIMENTEL JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "DELMAR JOSE PIMENTEL JUNIOR consta em 5 processo(s) trabalhista(s) no JusBrasil; 4 no polo passivo. Exemplos: TRT12, BALNEÁRIO CAMBORIÚ, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-07'}, polo passivo, valor 12639; TRT9, PONTA GROSSA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-08-14'}, polo passivo, valor 8000; TRT9, PONTA GROSSA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-05-08'}, polo passivo, valor 17024.91. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 003.915.489-05 — 4 de 5 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Processo criminal grave, requer leitura manual (1) — Delmar Jose Pimentel  Junior",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Delmar Jose Pimentel  Junior consta em 1 processo(s) criminal(is) de natureza grave, mas ARQUIVADO(S) e/ou sem confirmação de que a pessoa é ré (parties sem doc correspondente ao CPF) — não fundamenta reprovação automática (processo arquivado não é indício de risco confirmado; papel não confirmado não é achado desabonador), mas precisa de leitura manual antes de descartar. Assuntos: 3633 - CRIMES DO SISTEMA NACIONAL DE ARMAS.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 003.915.489-05 — natureza grave, arquivado e/ou papel não confirmado",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Processo criminal leve (2) — Delmar Jose Pimentel  Junior",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Delmar Jose Pimentel  Junior consta em 2 processo(s) criminal(is) de natureza leve (honra/trânsito/contravenção/outro sem gravidade PLD — não é tráfico, fraude, corrupção, violência ou crime patrimonial grave). Assuntos: 12730 - ACORDO DE NAO PERSECUCAO PENAL; 12544 - SIMPLES. Não escala a recomendação.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 003.915.489-05 — natureza leve",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Processos não-criminais (33) — Delmar Jose Pimentel  Junior",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Delmar Jose Pimentel  Junior tem 33 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 10677 - BUSCA E APREENSAO; AVISO PREVIO; 9149 - VALOR DA EXECUCAO / CALCULO / ATUALIZACAO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 003.915.489-05",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Delmar Jose Pimentel  Junior",
+      "url": "https://dcmais.com.br/ponta-grossa/medico-do-samu-que-usou-supostos-atestados-falsos-ficou-o-equivalente-a-8-meses-sem-trabalhar-diz-mp/",
+      "snippet": "A busca de mídias negativas via Credilink para Delmar Jose Pimentel  Junior retornou 1 resultado(s) SEM título nem resumo (dado incompleto da própria API — não é um erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Delmar Jose Pimentel  Junior é de fato mencionado no link retornado. Não tratar como mídia negativa confirmada sem verificação manual do link. Link: https://dcmais.com.br/ponta-grossa/medico-do-samu-que-usou-supostos-atestados-falsos-ficou-o-equivalente-a-8-meses-sem-trabalhar-diz-mp/",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — EDELMAR JOSE PIMENTEL",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 04829779900 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 04829779900 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 21 encontrado(s) — EDELMAR JOSE PIMENTEL",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "EDELMAR JOSE PIMENTEL consta em 21 processo(s) civil(s) no JusBrasil; 3 no polo passivo. Exemplos: TREPR, 139ª, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-09-17'}, polo ativo/outro; tjpr, Ponta Grossa, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-08-28'}, polo passivo; tjpr, Ponta Grossa, status {'inferido': 'Ativo', 'normalizado': 'Arquivado Provisoriamente', 'tribunal': 'Arquivado Provisoriamente', 'data': '2026-09-17'}, polo passivo, valor 101961.3. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 04829779900 — 3 de 21 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 5 encontrado(s) — EDELMAR JOSE PIMENTEL",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "EDELMAR JOSE PIMENTEL consta em 5 processo(s) trabalhista(s) no JusBrasil; 5 no polo passivo. Exemplos: TRT9, PONTA GROSSA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-01'}, polo passivo, valor 57538.61; TRT9, PONTA GROSSA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-05-13'}, polo passivo, valor 16000; TRT9, PONTA GROSSA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'TRANSFERIDO PARA O PJE', 'data': '2026-05-11'}, polo passivo, valor 17684.99. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 04829779900 — 5 de 5 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Processos não-criminais (9) — EDELMAR JOSE PIMENTEL",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "EDELMAR JOSE PIMENTEL tem 9 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: PLANO DE DEMISSAO VOLUNTARIA/INCENTIVADA; PLANO DE DEMISSAO VOLUNTARIA/INCENTIVADA; AVISO PREVIO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 04829779900",
+      "achado_positivo": true
+    }
+  ],
+  "45a772d8-e8bc-44b4-8d05-9ff4f5bd6ea9": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — ANTONIO CARNEIRO DE OLIVEIRA JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 055.429.815-50 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 055.429.815-50 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 2 encontrado(s) — ANTONIO CARNEIRO DE OLIVEIRA JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ANTONIO CARNEIRO DE OLIVEIRA JUNIOR consta em 2 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: tjba, QUEIMADAS, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'Tramitando', 'data': '2026-09-14'}, polo ativo/outro, valor 20000; TJBA, QUEIMADAS, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-05-28'}, polo ativo/outro, valor 10833.33. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 055.429.815-50 — 0 de 2 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — ANTONIO CARNEIRO DE OLIVEIRA JUNIOR",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 055.429.815-50 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 055.429.815-50 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "Credilink — Processos não-criminais (3) — Antonio Carneiro de Oliveira Junior",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Antonio Carneiro de Oliveira Junior tem 3 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: SEGURO; RESCISAO; SANCOES ADMINISTRATIVAS. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 055.429.815-50",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Antonio Carneiro de Oliveira Junior",
+      "url": "https://noticias.stf.jus.br/postsnoticias/stf-aceita-denuncias-contra-mais-250-pessoas-envolvidas-nos-atos-de-8-1/",
+      "snippet": "A busca de mídias negativas via Credilink para Antonio Carneiro de Oliveira Junior retornou 1 resultado(s) SEM título nem resumo (dado incompleto da própria API — não é um erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Antonio Carneiro de Oliveira Junior é de fato mencionado no link retornado. Não tratar como mídia negativa confirmada sem verificação manual do link. Link: https://noticias.stf.jus.br/postsnoticias/stf-aceita-denuncias-contra-mais-250-pessoas-envolvidas-nos-atos-de-8-1/",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
+    },
+    {
+      "title": "Processo criminal — JOSE ARIEL RODRIGUES DE OLIVEIRA (PEP_IRMA(O))",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/8001566-20.2025.8.05.0206",
+      "snippet": "JOSE ARIEL RODRIGUES DE OLIVEIRA figura como réu (polo passivo) em processo criminal: INVESTIGACAO. Tipificação: Homicídio qualificado, Homicídio Qualificado. Processo nº 8001566-20.2025.8.05.0206. Tribunal: TJBA. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — TJBA",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 79528945520 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — PEP_IRMA(O) réu em processo criminal ativo por Homicídio qualificado, Homicídio Qualificado. Risco criminal incompatível com apetite da instituição."
+    },
+    {
+      "title": "Processos criminais (3 encontrados) — JOSE ARIEL RODRIGUES DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "JOSE ARIEL RODRIGUES DE OLIVEIRA tem 4 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 79528945520 — 3 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo civil: 18 encontrado(s) — JOSE ARIEL RODRIGUES DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "JOSE ARIEL RODRIGUES DE OLIVEIRA consta em 18 processo(s) civil(s) no JusBrasil; 11 no polo passivo. Exemplos: TJBA, QUEIMADAS, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2025-05-19'}, polo passivo; tjba, QUEIMADAS, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-08'}, polo passivo, valor 40000; TRF1, SSJ de Campo Formoso-BA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-08-12'}, polo passivo. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 79528945520 — 11 de 18 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — JOSE ARIEL RODRIGUES DE OLIVEIRA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 79528945520 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 79528945520 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — JOSE ARIEL RODRIGUES DE OLIVEIRA",
+      "url": "https://www.mpba.mp.br/",
+      "snippet": "JOSE ARIEL RODRIGUES DE OLIVEIRA consta em registro do Ministério Público (MPF) em procedimento de tipo JUDICIAL. Situação: Ativo. Assunto: ELEITORAL - Cargo - Vereador, ELEITORAL - Corrupção ou Fraude. Tipificação: Corrupção ou Fraude. Confiança: BAIXA.",
+      "source": "MP MPF via JusBrasil Background Check API",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 79528945520 — confiança BAIXA",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Processo criminal leve (1) — JOSE ARIEL RODRIGUES DE OLIVEIRA",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "JOSE ARIEL RODRIGUES DE OLIVEIRA consta em 1 processo(s) criminal(is) de natureza leve (honra/trânsito/contravenção/outro sem gravidade PLD — não é tráfico, fraude, corrupção, violência ou crime patrimonial grave). Assuntos: BUSCA E APREENSAO DE BENS. Não escala a recomendação.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 79528945520 — natureza leve",
+      "achado_positivo": true
+    }
+  ],
+  "238129eb-96e1-4505-a1e9-5e1b675f5f3b": [
+    {
+      "title": "Processo criminal — ROSINEI DE FATIMA PIMENTEL SANTOS (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0000302-57.2006.8.26.0539",
+      "snippet": "ROSINEI DE FATIMA PIMENTEL SANTOS figura como réu (polo passivo) em processo criminal: OUTROS. Tipificação: Estelionato. Processo nº 0000302-57.2006.8.26.0539. Tribunal: Extinto. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — Extinto",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 339.879.578-16 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Estelionato. Crimes de fraude são antecedentes diretos de lavagem de dinheiro."
+    },
+    {
+      "title": "Processos criminais (4 encontrados) — ROSINEI DE FATIMA PIMENTEL SANTOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ROSINEI DE FATIMA PIMENTEL SANTOS tem 5 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 339.879.578-16 — 4 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo civil: 26 encontrado(s) — ROSINEI DE FATIMA PIMENTEL SANTOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ROSINEI DE FATIMA PIMENTEL SANTOS consta em 26 processo(s) civil(s) no JusBrasil; 15 no polo passivo. Exemplos: tjsp, Ipauçu, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-09-15'}, polo passivo, valor 395; tjsp, Foro de Ipaussu, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Extinto', 'tribunal': 'Extinto', 'data': '2026-08-13'}, polo passivo, valor 1248.77; tjsp, Ourinhos, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-08-20'}, polo passivo, valor 5187.99. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 339.879.578-16 — 15 de 26 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 1 encontrado(s) — ROSINEI DE FATIMA PIMENTEL SANTOS",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ROSINEI DE FATIMA PIMENTEL SANTOS consta em 1 processo(s) trabalhista(s) no JusBrasil; 0 no polo passivo. Exemplos: TRT15, Ourinhos, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-16'}, polo ativo/outro, valor 4622.06. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 339.879.578-16 — 0 de 1 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Processos não-criminais (14) — Rosinei de fatima Pimentel santos",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Rosinei de fatima Pimentel santos tem 14 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: COMPRA E VENDA; CHEQUE; COMPRA E VENDA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 339.879.578-16",
+      "achado_positivo": true
+    },
+    {
+      "title": "Processos criminais (2 encontrados) — RENATA APARECIDA PIMENTEL RISSONI",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "RENATA APARECIDA PIMENTEL RISSONI tem 2 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 21840663898 — 2 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Processo criminal leve (1) — RENATA APARECIDA PIMENTEL RISSONI",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "RENATA APARECIDA PIMENTEL RISSONI consta em 1 processo(s) criminal(is) de natureza leve (honra/trânsito/contravenção/outro sem gravidade PLD — não é tráfico, fraude, corrupção, violência ou crime patrimonial grave). Assuntos: CONTRAVENCOES PENAIS. Não escala a recomendação.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 21840663898 — natureza leve",
+      "achado_positivo": true
+    }
+  ],
+  "788684ae-94e1-47ef-91a6-f2920480a7df": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — SEBASTIAO IVAN PEREIRA DE SOUZA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 407.426.012-34 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 407.426.012-34 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 4 encontrado(s) — SEBASTIAO IVAN PEREIRA DE SOUZA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "SEBASTIAO IVAN PEREIRA DE SOUZA consta em 4 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: TREAM, Envira, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-07'}, polo ativo/outro; TREAM, Envira, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-07-15'}, polo ativo/outro; TREAM, Envira, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-07-15'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 407.426.012-34 — 0 de 4 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — SEBASTIAO IVAN PEREIRA DE SOUZA",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 407.426.012-34 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 407.426.012-34 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Sebastiao Ivan Pereira De Souza",
+      "url": "https://amazonasatual.com.br/extorsao-a-empresario-denuncia-do-mp-revela-uma-historia-de-arrepiar-em-manaus/",
+      "snippet": "A busca de mídias negativas via Credilink para Sebastiao Ivan Pereira De Souza retornou 1 resultado(s) SEM título nem resumo (dado incompleto da própria API — não é um erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Sebastiao Ivan Pereira De Souza é de fato mencionado no link retornado. Não tratar como mídia negativa confirmada sem verificação manual do link. Link: https://amazonasatual.com.br/extorsao-a-empresario-denuncia-do-mp-revela-uma-historia-de-arrepiar-em-manaus/",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
+    }
   ]
 }

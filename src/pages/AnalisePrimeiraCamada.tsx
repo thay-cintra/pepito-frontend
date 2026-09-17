@@ -187,7 +187,16 @@ export function AnalisePrimeiraCamada() {
       setCredilinkResultado({
         numeroToken: cliente.credilinkNumeroToken,
         linkDossie: cliente.credilinkLinkDossie || "",
-        consultadoEm: new Date().toISOString(),
+        // Achado real (thay@cora.com.br, 2026-09-17, draft 8fb890bf): antes
+        // usava new Date().toISOString() aqui — mostrava a DATA DE HOJE (o
+        // dia em que o analista abre a tela) como se fosse a data real da
+        // consulta Credilink. token_pf_cred vem de uma coluna estática do
+        // pipeline squad_core (Athena) que não carrega nenhum timestamp de
+        // quando a Credilink foi de fato consultada — não temos essa data,
+        // então não inventamos uma. String vazia = "não disponível" (ver
+        // render abaixo, que trata isso explicitamente em vez de tentar
+        // formatar uma data inválida).
+        consultadoEm: "",
         nomeConsultado: cliente.nomeResponsavel,
       });
       return;
@@ -704,7 +713,11 @@ export function AnalisePrimeiraCamada() {
                       )}
                       <div className="flex items-center gap-2 text-muted-foreground">
                         <span className="min-w-[160px]">Consultado em:</span>
-                        <span>{new Date(credilinkResultado.consultadoEm).toLocaleString("pt-BR")}</span>
+                        <span>
+                          {credilinkResultado.consultadoEm
+                            ? new Date(credilinkResultado.consultadoEm).toLocaleString("pt-BR")
+                            : "Data não disponível (token vem do pipeline squad_core, sem timestamp de consulta rastreado)"}
+                        </span>
                       </div>
                     </div>
                   </div>
