@@ -1,28 +1,28 @@
 {
-  "timestamp": "2026-09-16T14:00:01.268174",
+  "timestamp": "2026-09-17T14:00:02.908901",
   "checks_executados": 10,
   "checks_falhados": 1,
   "alertas": [
     {
-      "nivel": "🟡 MÉDIO",
-      "titulo": "Build desatualizado",
-      "descricao": "dist/ foi buildado há 25 horas. Atualizações recentes podem não estar visíveis.",
-      "componente": "Build System",
-      "timestamp": "2026-09-16T14:00:01.033384"
-    },
-    {
       "nivel": "🟠 ALTO",
       "titulo": "Parecer Sugestão IA ausente no JSON-fonte",
-      "descricao": "CHECK_ANALISTA sem sugestão: 11 (['1c019a58-ddb8-4d18-9670-61f06f59b0af', 'c76862a4-4593-4f42-8fb3-6c00c2f69fbb', 'e50ad409-18f6-4efb-8ed3-684f5a34e7d0', '89aba1cb-fa59-4f5f-a2ab-14ce4081d7ec', '31432378-3b07-4fc9-ab1c-466d49b4db7f']). CHECK_LIDERANCA sem sugestão: 0 ([]). Rodar generate-sugestao-parecer.py / generate-sugestao-lideranca.py.",
+      "descricao": "CHECK_ANALISTA sem sugestão: 17 (['bdb93555-3b64-4adf-8aad-8b775fb6a139', 'bf43bb48-56c8-49fc-8bef-287f4f417977', 'd1e7ad75-086a-4015-89a4-822f9b6568f9', '3f785fff-a290-4114-a9a6-74f0917efdef', '08493df4-bfd1-4ae0-83cf-7e04d971ab50']). CHECK_LIDERANCA sem sugestão: 1 (['8fb890bf-57a7-4b09-8617-c1a24089c6a9']). Rodar generate-sugestao-parecer.py / generate-sugestao-lideranca.py.",
       "componente": "Parecer Sugestão IA",
-      "timestamp": "2026-09-16T14:00:01.050037"
+      "timestamp": "2026-09-17T14:00:02.650993"
+    },
+    {
+      "nivel": "🟡 MÉDIO",
+      "titulo": "1 novo(s) caso(s) escalado(s) para CHECK_LIDERANCA",
+      "descricao": "Caso(s) derivado(s) pelo analista ou promovido(s) pelo Retool desde a última verificação. Conferir Fila de Revisão:\n• R N RIOS SERVICOS MEDICOS LTDA (CNPJ 49.233.058/0001-74, score 1556) — draft 8fb890bf-57a7-4b09-8617-c1a24089c6a9",
+      "componente": "Fila de Revisão — Liderança",
+      "timestamp": "2026-09-17T14:00:02.733183"
     },
     {
       "nivel": "🔵 BAIXO",
       "titulo": "Mudanças não commitadas",
-      "descricao": "14 arquivo(s) modificado(s) sem commit.",
+      "descricao": "6 arquivo(s) modificado(s) sem commit.",
       "componente": "Git Repository",
-      "timestamp": "2026-09-16T14:00:01.267943"
+      "timestamp": "2026-09-17T14:00:02.908479"
     }
   ]
 }
