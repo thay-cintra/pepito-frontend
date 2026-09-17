@@ -13355,5 +13355,304 @@
       "achado_positivo": false,
       "sem_conteudo_verificavel": true
     }
+  ],
+  "8151b5b8-54d5-408b-8455-801d0b4d629e": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — LUCAS GONZAGA DA CONCEICAO ALBUQUERQUE",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 080.066.803-02 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 080.066.803-02 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil API: nenhum processo civil — LUCAS GONZAGA DA CONCEICAO ALBUQUERQUE",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint civil da JusBrasil Background Check API para CPF 080.066.803-02 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 080.066.803-02 confirmado na API — sem processos civils",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — LUCAS GONZAGA DA CONCEICAO ALBUQUERQUE",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 080.066.803-02 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 080.066.803-02 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "Credilink: PEP não identificado — candidato a Falso Positivo",
+      "url": "",
+      "snippet": "A Credilink (fonte oficial de PEP) não identificou nenhum PEP vinculado a LUCAS GONZAGA DE ALBUQUERQUE DA CONCEIÇÃO (CPF 080.066.803-02, CNPJ 54.260.175/0001-67). A dupla-verificação via JusBrasil Background Check e Credilink também não encontrou processos criminais, mandados de prisão ou adversidades materiais. Caso candidato a FALSO POSITIVO — o alerta foi gerado por outro critério (HAS_QSA, SUS_NAME, HIGH_PLD) mas sem correspondência PEP confirmada.",
+      "source": "Credilink (identificação via notebook) + JusBrasil + Credilink (antecedentes) — dupla-verificação",
+      "risk_indicator": "baixo",
+      "tipo": "pep",
+      "match": "Credilink: sem PEP | JusBrasil: sem processos | Credilink: sem adversidades",
+      "achado_positivo": false,
+      "decisao_recomendada": "FALSO POSITIVO — PEP não confirmado por nenhuma fonte."
+    }
+  ],
+  "8953fe82-e600-4ae6-83b2-d11ede9b264a": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — OMIR SILVA DE MORAES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 719.756.400-04 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 719.756.400-04 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 7 encontrado(s) — OMIR SILVA DE MORAES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "OMIR SILVA DE MORAES consta em 7 processo(s) civil(s) no JusBrasil; 2 no polo passivo. Exemplos: TJRS, CAMPO BOM, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'SUSP/SOBR-P.Decisão Judicial', 'data': '2026-09-06'}, polo passivo, valor 190480.6; TJRS, TRIBUNAL DE JUSTIÇA, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-08-14'}, polo ativo/outro, valor 190480.6; TJRS, PORTO ALEGRE, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO-AGUARDA DESPACHO', 'data': '2026-05-31'}, polo ativo/outro, valor 2934.7. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 719.756.400-04 — 2 de 7 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — OMIR SILVA DE MORAES",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 719.756.400-04 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 719.756.400-04 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — Omir Silva De Moraes",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Omir Silva De Moraes tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ACIDENTE DE TRANSITO, INDENIZACAO POR DANO MATERIAL, RESPONS. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 719.756.400-04",
+      "achado_positivo": true
+    },
+    {
+      "title": "Processos criminais (1 encontrados) — PABLO DIEISON NEULAND",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "PABLO DIEISON NEULAND tem 1 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 00490366023 — 1 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo civil: 10 encontrado(s) — PABLO DIEISON NEULAND",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "PABLO DIEISON NEULAND consta em 10 processo(s) civil(s) no JusBrasil; 1 no polo passivo. Exemplos: TRERS, 131ª, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-08-14'}, polo ativo/outro; TRERS, 131ª, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-05-04'}, polo ativo/outro; TRERS, 131ª, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-05-06'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 00490366023 — 1 de 10 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — PABLO DIEISON NEULAND",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 00490366023 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 00490366023 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "Credilink — Processos não-criminais (2) — PABLO DIEISON NEULAND",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "PABLO DIEISON NEULAND tem 2 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: ; LIMINAR. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 00490366023",
+      "achado_positivo": true
+    },
+    {
+      "title": "PH3A — Sociedade em comum identificada — S.A PARTICIPACOES SOCIETARIAS LTDA",
+      "url": "https://brasilapi.com.br/api/cnpj/v1/49229956000159",
+      "snippet": "Omir Silva De Moraes e PABLO DIEISON NEULAND são sócios em comum de S.A PARTICIPACOES SOCIETARIAS LTDA (CNPJ 49.229.956/0001-59), identificada via PH3A (PartnerShips). Situação cadastral atual: ATIVA desde 2023-01-18 (SEM MOTIVO). Validar se a natureza dessa sociedade é relevante para o risco do cadastro.",
+      "source": "PH3A — Sociedade em comum (PartnerShips)",
+      "risk_indicator": "medio",
+      "tipo": "societario",
+      "match": "CPF 719.756.400-04 + CPF 00490366023 — sócios confirmados de 49.229.956/0001-59 (ATIVA)",
+      "achado_positivo": true
+    }
+  ],
+  "01493876-050d-4f9d-86d1-b463c55cebd5": [
+    {
+      "title": "JusBrasil API: nenhum processo criminal — ADEMILTON JAIR MARTINS MARIANO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 021.362.424-90 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 021.362.424-90 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 1 encontrado(s) — ADEMILTON JAIR MARTINS MARIANO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ADEMILTON JAIR MARTINS MARIANO consta em 1 processo(s) civil(s) no JusBrasil; 0 no polo passivo. Exemplos: TJPB, Capital, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado', 'tribunal': 'ARQUIVADO', 'data': '2026-03-07'}, polo ativo/outro, valor 1000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 021.362.424-90 — 0 de 1 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 1 encontrado(s) — ADEMILTON JAIR MARTINS MARIANO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "ADEMILTON JAIR MARTINS MARIANO consta em 1 processo(s) trabalhista(s) no JusBrasil; 0 no polo passivo. Exemplos: TRT13, 5ª Vara do Trabalho de João Pessoa, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2020-08-29'}, polo ativo/outro. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 021.362.424-90 — 0 de 1 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Processos não-criminais (1) — Ademilton Jair Martins Mariano",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Ademilton Jair Martins Mariano tem 1 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: FORNECIMENTO DE ENERGIA ELETRICA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 021.362.424-90",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — ADEILSON JOELBY MARTINS MARIANO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 91806690420 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 91806690420 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "Credilink — Processos não-criminais (5) — ADEILSON JOELBY MARTINS MARIANO",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "ADEILSON JOELBY MARTINS MARIANO tem 5 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: DIREITO CIVIL (899) - OBRIGACOES (7681) - ESPECIES DE CONTRA; CONTRATOS BANCARIOS; EXECUCAO CONTRATUAL. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 91806690420",
+      "achado_positivo": true
+    }
+  ],
+  "c7c5ad6d-d467-4adf-9b8b-f0be6fd77de2": [
+    {
+      "title": "Processos criminais (3 encontrados) — VINICIUS DALCOLMO KFURI SIMAO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "VINICIUS DALCOLMO KFURI SIMAO tem 3 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 055.771.767-19 — 3 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo civil: 16 encontrado(s) — VINICIUS DALCOLMO KFURI SIMAO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "VINICIUS DALCOLMO KFURI SIMAO consta em 16 processo(s) civil(s) no JusBrasil; 13 no polo passivo. Exemplos: TJES, Vitória - Comarca da Capital, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-01-14'}, polo passivo, valor 35.26; TRF3, SP - Capital-Civel, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': 'BAIXA - MIGRACAO DE METADADOS AO PJE', 'data': '2026-05-02'}, polo passivo; TJES, Vitória - Comarca da Capital, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2025-07-09'}, polo passivo, valor 8985.31. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 055.771.767-19 — 13 de 16 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo trabalhista — VINICIUS DALCOLMO KFURI SIMAO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta ao endpoint trabalhista da JusBrasil Background Check API para CPF 055.771.767-19 não retornou processos. Total retornado: 0.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 055.771.767-19 confirmado na API — sem processos trabalhistas",
+      "achado_positivo": false
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — VINICIUS DALCOLMO KFURI SIMAO",
+      "url": "https://www.mpes.mp.br/",
+      "snippet": "VINICIUS DALCOLMO KFURI SIMAO consta em registro do Ministério Público (MP-ES) em procedimento de tipo Judicial. Situação: Auto em Local Externo MP. Assunto: (3395) DIREITO PENAL &gt;&gt; Crimes contra a Honra &gt;&gt; Calúnia (3396) DIREITO PENAL &gt;&gt; Crimes contra a Honra &gt;&gt; Difamação. Tipificação: Difamação, Calúnia. Confiança: ALTA.",
+      "source": "MP MP-ES via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 055.771.767-19 — confiança ALTA",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Processo criminal leve (1) — Vinicius Dalcolmo Kfuri Simao",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Vinicius Dalcolmo Kfuri Simao consta em 1 processo(s) criminal(is) de natureza leve (honra/trânsito/contravenção/outro sem gravidade PLD — não é tráfico, fraude, corrupção, violência ou crime patrimonial grave). Assuntos: DIREITO PENAL - CRIMES CONTRA A HONRA. Não escala a recomendação.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 055.771.767-19 — natureza leve",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Processos não-criminais (13) — Vinicius Dalcolmo Kfuri Simao",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Vinicius Dalcolmo Kfuri Simao tem 13 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 021904 | ESPECIES DE TITULOS DE CREDITO, OBRIGACOES, DIREITO; CARTAS PRECATORIA/ROGATORIA/ORDEM - CIVEL INT; DIREITO TRIBUTARIO - DIVIDA ATIVA. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 055.771.767-19",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil API: nenhum processo criminal — LUIZA DALCOLMO KFURI POZO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "Consulta à JusBrasil Background Check API (produção) para CPF 09968093769 não retornou processos criminais. Total retornado: 0. Fonte confiável — cobre processos criminais; as coberturas civil e trabalhista constam em achados separados.",
+      "source": "JusBrasil Background Check API (produção)",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 09968093769 confirmado na API — sem processos criminais",
+      "achado_positivo": false
+    },
+    {
+      "title": "JusBrasil — processo civil: 4 encontrado(s) — LUIZA DALCOLMO KFURI POZO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "LUIZA DALCOLMO KFURI POZO consta em 4 processo(s) civil(s) no JusBrasil; 2 no polo passivo. Exemplos: tjsp, Santo Amaro, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'MOVIMENTO', 'data': '2026-08-25'}, polo ativo/outro, valor 6500; TRF3, SP - Capital-Civel, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': 'BAIXA - MIGRACAO DE METADADOS AO PJE', 'data': '2026-05-02'}, polo passivo; tjsp, Foro Central Juizados Especiais Cíveis, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Extinto', 'tribunal': 'Extinto', 'data': '2026-09-16'}, polo ativo/outro, valor 6827.38. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 09968093769 — 2 de 4 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 1 encontrado(s) — LUIZA DALCOLMO KFURI POZO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "LUIZA DALCOLMO KFURI POZO consta em 1 processo(s) trabalhista(s) no JusBrasil; 1 no polo passivo. Exemplos: TRT2, São Paulo, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': None, 'data': '2026-09-17'}, polo passivo, valor 4639.99. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 09968093769 — 1 de 1 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Processos não-criminais (4) — LUIZA DALCOLMO KFURI SIMAO",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "LUIZA DALCOLMO KFURI SIMAO tem 4 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: 021904 | ESPECIES DE TITULOS DE CREDITO, OBRIGACOES, DIREITO; CARTAS PRECATORIA/ROGATORIA/ORDEM - CIVEL INT; OUTRAS RELACOES DE EMPREGO. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 09968093769",
+      "achado_positivo": true
+    }
   ]
 }

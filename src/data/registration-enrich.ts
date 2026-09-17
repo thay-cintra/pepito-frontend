@@ -686,9 +686,33 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
   }
 
   // ===== Mídia negativa — usa o conteúdo já apurado =====
+  // Achado real (thay@cora.com.br + Claude Code, 2026-09-18, draft 8fb890bf):
+  // este sinal é BRUTO — vem de um scanner de palavra-chave do pipeline
+  // upstream (squad_core), sem qualquer verificação nominal. Quando o caso já
+  // teve uma investigação REAL (WebSearch M1-M13/JusBrasil/Credilink, via
+  // findings) que checou mídia adversa e NÃO encontrou nenhum achado
+  // confirmado (achado_positivo=true tipo "midia"), esse card não pode
+  // continuar aparecendo como risco "alto" com similaridade "100%" — isso é
+  // exatamente o que fez pareceres citarem "várias mídias adversas" que na
+  // real investigação nunca existiram (caso 8fb890bf: 11 ocorrências brutas,
+  // zero reais). Card passa a refletir a reconciliação: risco "medio" e sem
+  // badge de 100%, com nota explícita de que não foi corroborado.
+  const investigacaoReal = getFindingsFor(c.draft_id).filter(
+    (f) => !f.source.includes("Controle de Quota") && !f.source.includes("Erro de Consulta"),
+  );
+  const midiaRealConfirmada = investigacaoReal.some((f) => f.tipo === "midia" && f.achado_positivo);
   const sinalMidiaPj = !isEmptyMessage(c.pj_midianegativas, "midia");
   const sinalMidiaPf = !isEmptyMessage(c.pf_midianegativas, "midia");
-  if (sinalMidiaPj || sinalMidiaPf) {
+  if ((sinalMidiaPj || sinalMidiaPf) && investigacaoReal.length > 0 && !midiaRealConfirmada) {
+    r.push({
+      id: uid(),
+      fonte: "Pipeline KYC — Mídia adversa pré-apurada",
+      resumo: `Sinais de mídia negativa ${sinalMidiaPj ? "PJ" : ""}${sinalMidiaPj && sinalMidiaPf ? " e " : ""}${sinalMidiaPf ? "PF" : ""} do scanner interno (pipeline squad_core) — NÃO corroborado pela investigação específica (WebSearch/JusBrasil/Credilink) já realizada para este caso, que não encontrou mídia adversa real. Conteúdo bruto: ${clean(c.pf_midianegativas || c.pj_midianegativas).slice(0, 200)}`,
+      tipo: "midia",
+      risco: "medio",
+      pendente_verificacao: true,
+    });
+  } else if (sinalMidiaPj || sinalMidiaPf) {
     r.push({
       id: uid(),
       fonte: "Pipeline KYC — Mídia adversa pré-apurada",
@@ -710,9 +734,22 @@ export function gerarResultados(c: Raw): ResultadoPesquisa[] {
   }
 
   // ===== Processos =====
+  // Mesma reconciliação aplicada à mídia acima (achado 8fb890bf, 2026-09-18):
+  // sinal bruto do pipeline não pode ficar "alto"/100% quando a investigação
+  // real (JusBrasil/Credilink) já rodou e não confirmou nenhum processo real.
+  const processoRealConfirmado = investigacaoReal.some((f) => f.tipo === "processo" && f.achado_positivo);
   const sinalProcPj = !isEmptyMessage(c.processosjudiciais_pj, "processo");
   const sinalProcPf = !isEmptyMessage(c.processosjudiciais_pf, "processo");
-  if (sinalProcPj || sinalProcPf) {
+  if ((sinalProcPj || sinalProcPf) && investigacaoReal.length > 0 && !processoRealConfirmado) {
+    r.push({
+      id: uid(),
+      fonte: "Pipeline KYC — Processos judiciais pré-apurados",
+      resumo: `Sinais de processos judiciais (${sinalProcPj ? "PJ " : ""}${sinalProcPf ? "PF" : ""}) do scanner interno (pipeline squad_core) — NÃO corroborado pela investigação específica (JusBrasil/Credilink) já realizada para este caso, que não confirmou processo real. Conteúdo bruto: ${clean(c.processosjudiciais_pf || c.processosjudiciais_pj).slice(0, 200)}`,
+      tipo: "processo",
+      risco: "medio",
+      pendente_verificacao: true,
+    });
+  } else if (sinalProcPj || sinalProcPf) {
     r.push({
       id: uid(),
       fonte: "Pipeline KYC — Processos judiciais pré-apurados",
@@ -869,8 +906,19 @@ export function gerarParecerAnalista(c: Raw): string {
   } else if (altoExterno) {
     const fonte = findings.find((f) => f.risk_indicator === "alto");
     frase2 = `Em análises reputacionais, foi identificado apontamento adverso de risco ALTO em ${fonte?.source ?? "fonte pública"} (${fonte?.title?.slice(0, 100) ?? "—"}). Validação obrigatória do conteúdo antes da decisão final.`;
+  } else if (findings.length > 0) {
+    // Sinal bruto do pipeline (pf/pj_midianegativas, processosjudiciais_*) só
+    // pode ser citado como achado real quando NENHUMA investigação específica
+    // (WebSearch/JusBrasil/Credilink, já presente em `findings`) o reconcilia —
+    // achado real 2026-09-18, draft 8fb890bf: citar o sinal bruto direto,
+    // sem checar achado_positivo, gerou pareceres afirmando "mídia adversa"
+    // que a investigação real já tinha descartado.
+    const reconciliado = findings.some((f) => f.achado_positivo);
+    frase2 = reconciliado
+      ? `Em análises reputacionais, foram identificados sinais não-materiais (mídia ou processos sem matéria de improbidade/corrupção), sem configurar desabono relevante.`
+      : `Em análises reputacionais, o pipeline interno sinalizou possível mídia/processo adverso, mas a investigação específica (WebSearch/JusBrasil/Credilink) já realizada para este caso NÃO corroborou o sinal — ver achados detalhados nos Resultados de Pesquisa.`;
   } else if (algumSinal) {
-    frase2 = `Em análises reputacionais, foram identificados sinais não-materiais (mídia ou processos sem matéria de improbidade/corrupção). Pipeline interno do Cora apontou: "${(c.pf_midianegativas || c.pj_midianegativas || c.processosjudiciais_pf || c.processosjudiciais_pj || "—").slice(0, 120)}".`;
+    frase2 = `Em análises reputacionais, o pipeline interno do Cora sinalizou possível mídia/processo adverso ("${(c.pf_midianegativas || c.pj_midianegativas || c.processosjudiciais_pf || c.processosjudiciais_pj || "—").slice(0, 120)}"), mas nenhuma investigação específica (WebSearch/JusBrasil/Credilink) foi ainda concluída para confirmar ou descartar o sinal — validação manual necessária antes de decidir.`;
   } else {
     frase2 = `Em análises reputacionais, não foram identificadas mídias ou processos desabonadores face à empresa, ao seu titular${tipoPep === "relacionado" ? " ou à PEP" : ""}.`;
   }

@@ -2421,5 +2421,206 @@
       "motivo": "Complementação manual do parecer com achado(s) adicional(is) de risco médio/baixo existente(s) em media-findings.json, preservando o achado alto e a decisão já registrados.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
+  },
+  "8151b5b8-54d5-408b-8455-801d0b4d629e": {
+    "text": "Trata-se da GONZAGA EMPREENDIMENTOS E NEGOCIOS LTDA, de titularidade de Lucas Gonzaga de Albuquerque da Conceição, atuante em serviços combinados de escritório e apoio administrativo em Buriticupu/MA. Embora o cadastro tenha sido direcionado para análise por alerta relacionado ao QSA e ao score de PLD, a Credilink não identificou vínculo do titular com pessoa politicamente exposta; a investigação complementar também não encontrou processos criminais, civis ou trabalhistas em seu CPF, nem outras adversidades materiais. Considerando que o enquadramento PEP não foi confirmado por nenhuma das fontes específicas consultadas e que não há achado desabonador associado ao titular ou à empresa, o alerta deve ser tratado como FALSO POSITIVO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:00Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer narrativo reconciliado com os 4 achados consolidados da investigação real.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "8953fe82-e600-4ae6-83b2-d11ede9b264a": {
+    "text": "Trata-se da SUL ART PERSIANAS LTDA, de titularidade de Omir Silva de Moraes, sócio do PEP Pablo Dieison Neuland, Vereador de Sapiranga/RS em mandato ativo, vínculo também corroborado pela sociedade comum de ambos na S.A PARTICIPACOES SOCIETARIAS LTDA, ativa desde 2023. A investigação não encontrou processo criminal para Omir; localizou 7 processos civis, 2 no polo passivo, além de registro não criminal ligado a acidente de trânsito e indenização por dano material. Para Pablo, o JusBrasil registrou 1 processo criminal sem configuração como réu em tipificação crítica, 10 processos civis, apenas 1 no polo passivo, e a Credilink apontou 2 registros não criminais, sem evidência de fraude, corrupção ou outro ilícito relevante para PLD. Os processos civis e os registros sem polo passivo crítico não fundamentam reprovação, mas a sociedade direta e atual com Vereador em exercício recomenda acompanhamento reforçado do relacionamento. Diante do vínculo societário confirmado com PEP ativo e da ausência de desabono criminal material, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:01Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer narrativo reconciliado com os 9 achados consolidados da investigação real.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "01493876-050d-4f9d-86d1-b463c55cebd5": {
+    "text": "Trata-se de empresário individual cujo titular, Ademilton Jair Martins Mariano, é irmão do PEP Adeilson Joelby Martins Mariano, Vereador de Soledade/PB em mandato ativo, atuando no comércio varejista de cosméticos e produtos de higiene em João Pessoa/PB. A investigação não encontrou processo criminal para o titular nem para o PEP. Para Ademilton, foram localizados 1 processo civil e 1 trabalhista, ambos arquivados e sem participação no polo passivo, além de registro não criminal relacionado a fornecimento de energia elétrica; para Adeilson, a Credilink apontou 5 registros de natureza civil ou contratual, sem indício criminal. Os achados são de natureza não criminal, sem tipificação de fraude ou corrupção e sem nexo material de PLD, não justificando reprovação, e não há indício de interface entre a atividade do titular (comércio de cosméticos em João Pessoa/PB) e o mandato do PEP em Soledade/PB. Considerando a ausência de desabono e de fator de sensibilidade materializado, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:02Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer narrativo reconciliado com os 6 achados consolidados da investigação real.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    },
+    "revisao_manual_2026_09_18b": {
+      "motivo": "Texto recomendava 'aprovação sob monitoramento reforçado' com base apenas no parentesco com PEP ativo/em carência, sem fator de sensibilidade materializado (mesmo município, setor contratável, timing, sócio direto ou achado grave) — viola a regra já estabelecida de que todo PEP já vai ao PLD e monitoramento reforçado só se justifica com fator concreto, não por padrão. Corrigido para aprovado simples.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "bdb93555-3b64-4adf-8aad-8b775fb6a139": {
+    "text": "Trata-se da AGRO MAIS LTDA, cujo titular, Jair Anildo Fritsch, é ex-Vereador de Sinimbu/RS, com mandato encerrado em 31/12/2024 e período de carência PEP até 31/12/2029, atuando no comércio atacadista de máquinas e equipamentos agropecuários no mesmo município. A investigação localizou 1 processo criminal no JusBrasil sem configuração do titular como réu em tipificação crítica e 5 processos civis, todos sem participação no polo passivo e predominantemente arquivados; não foram encontrados processos trabalhistas. Esses registros exigem leitura contextual, mas não confirmam ilícito criminal, fraude ou outro risco material de PLD. Considerando o enquadramento PEP ainda vigente por carência, a atuação empresarial no mesmo município e a ausência de achado criminal desabonador confirmado, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:03Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer narrativo reconciliado com os 3 achados consolidados da investigação real.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "bf43bb48-56c8-49fc-8bef-287f4f417977": {
+    "text": "Trata-se de empresário individual cujo titular, Marco Antônio Franco Filho, é irmão do PEP Marco Aurelio Franco, Vereador de Viradouro/SP em mandato ativo, atuando em promoção de vendas em Ituiutaba/MG. A investigação não encontrou processos criminais ou trabalhistas para o titular ou para o PEP. O único processo civil do titular e os 8 processos civis do PEP não os colocam no polo passivo e constam como extintos ou arquivados; os retornos de mídia da Credilink vieram sem título ou resumo, impossibilitando confirmar qualquer menção e não podendo ser tratados como mídia adversa real. Não há, portanto, desabono criminal ou reputacional confirmado, e a empresa opera em outro estado, sem nexo territorial direto com o mandato municipal nem indício de interface com o poder público. Considerando a ausência de desabono e de fator de sensibilidade materializado além do parentesco, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:04Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer narrativo reconciliado com os 8 achados consolidados da investigação real.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    },
+    "revisao_manual_2026_09_18b": {
+      "motivo": "Texto recomendava 'aprovação sob monitoramento reforçado' com base apenas no parentesco com PEP ativo/em carência, sem fator de sensibilidade materializado (mesmo município, setor contratável, timing, sócio direto ou achado grave) — viola a regra já estabelecida de que todo PEP já vai ao PLD e monitoramento reforçado só se justifica com fator concreto, não por padrão. Corrigido para aprovado simples.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "d1e7ad75-086a-4015-89a4-822f9b6568f9": {
+    "text": "Trata-se de empresário individual cujo titular, Tiago Ferreira da Silva Neto, é irmão do PEP Elizeu Ferreira da Silva, Vereador de Colinas do Sul/GO em mandato ativo, atuando em serviços de pintura de edifícios no mesmo município por empresa constituída em 02/01/2025. A investigação não encontrou processos criminais ou trabalhistas para o titular nem para o PEP. Tiago consta em 3 processos civis, 2 no polo passivo, incluindo ação ativa de aproximadamente R$ 531 mil, e em 3 registros não criminais da Credilink relacionados a matérias processuais e consumeristas; Elizeu consta em 5 processos civis, nenhum no polo passivo, e em 1 registro não criminal de direito administrativo. O retorno de mídia da Credilink para Tiago não possui título ou resumo verificável e não confirma mídia adversa. Embora os achados judiciais civis não configurem, isoladamente, risco alto de PLD, o parentesco com Vereador ativo, a coincidência municipal, o setor de obras e a abertura da empresa no início do novo mandato justificam acompanhamento reforçado. Diante desse conjunto, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:05Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer narrativo reconciliado com os 9 achados consolidados da investigação real.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "3f785fff-a290-4114-a9a6-74f0917efdef": {
+    "text": "Trata-se da AZURI UNIDADES LTDA, de titularidade de Kalil Braga Ferreira, que possui relacionamento societário direto com o PEP Ayllon Menezes de Oliveira, Diretor-Presidente da Fundação Hospital Adriano Jorge, atuando a nova empresa no ramo de alojamentos em Natal/RN. A sociedade entre ambos foi corroborada pela PH3A no INSTITUTO MEDICO DE CLINICA E PEDIATRIA DO ESTADO DO AMAZONAS LTDA, empresa ativa do setor médico desde 2005. A investigação não encontrou processos criminais para Kalil ou Ayllon; foram localizados 10 processos civis para Kalil, 3 no polo passivo, e 9 para Ayllon, 6 no polo passivo, além de registros não criminais na Credilink, sem confirmação de fraude, corrupção ou outro ilícito material para PLD. Ainda que esses processos civis não fundamentem reprovação, a sociedade direta no mesmo setor em que o PEP exerce poder decisório em fundação hospitalar pública configura risco estrutural de conflito de interesses, independentemente da separação geográfica. Diante desse risco estrutural e da ausência de ilícito criminal confirmado, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:06Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer com reconciliação de 9 achados e risco estrutural societário no setor de saúde.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "08493df4-bfd1-4ae0-83cf-7e04d971ab50": {
+    "text": "Trata-se da DJR SERVICOS MEDICOS LTDA, cujo titular, Delmar Jose Pimentel Junior, é irmão do PEP Edelmar Jose Pimentel, Vereador de Ponta Grossa/PR em mandato ativo, atuando em atividade médica ambulatorial no mesmo município. A investigação localizou para Delmar 1 processo criminal no JusBrasil sem configuração como réu em tipificação crítica, 43 processos civis, 32 no polo passivo, 5 processos trabalhistas, 4 no polo passivo, e registros adicionais da Credilink; entre estes, há 1 processo ligado a crimes do Sistema Nacional de Armas, classificado como grave, porém arquivado e/ou sem confirmação de que o titular figure como réu, além de 2 registros criminais leves. Para Edelmar não foram encontrados processos criminais, mas há 21 processos civis, 3 no polo passivo, e 5 trabalhistas, todos no polo passivo. O retorno de mídia da Credilink não possui conteúdo verificável. Os processos civis e trabalhistas não justificam reprovação automática, mas a tipificação grave do processo arquivado, sem motivo de arquivamento ou papel processual confirmados, exige diligência manual antes de descarte, somando-se ao vínculo com PEP ativo e à atividade médica no mesmo município. Enquanto essa validação não for concluída, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:07Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer reconciliado com 11 achados, com diligência para processo grave arquivado ou sem polo confirmado.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "45a772d8-e8bc-44b4-8d05-9ff4f5bd6ea9": {
+    "text": "Trata-se de empresário individual cujo titular, Antonio Carneiro de Oliveira Junior, é irmão do ex-PEP Jose Ariel Rodrigues de Oliveira, ex-Vereador de Queimadas/BA, atuando em obras de alvenaria no mesmo município. Para Antonio, a investigação não encontrou processos criminais ou trabalhistas; os 2 processos civis identificados estão no polo ativo ou em outra posição, e a Credilink registra apenas matérias não criminais. O retorno de mídia veio sem título ou resumo e não confirma associação do titular ao conteúdo. Para Jose Ariel, contudo, o JusBrasil confirmou pelo CPF sua condição de réu em processo criminal ativo por homicídio qualificado, além de outros processos criminais sem polo passivo crítico e 18 processos civis, 11 no polo passivo; há também procedimento ativo do MPF por corrupção ou fraude eleitoral, mas com confiança baixa. Como os achados graves recaem sobre ex-PEP relacionado por vínculo familiar, sem sociedade empresarial confirmada com o titular, não se estende automaticamente a reprovação ao cadastro, mas o risco reputacional exige acompanhamento e reavaliação. Diante dos achados graves associados ao ex-PEP familiar, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:08Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer reconciliado com 11 achados, incluindo processo ativo grave do ex-PEP familiar.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "238129eb-96e1-4505-a1e9-5e1b675f5f3b": {
+    "text": "Trata-se de empresária individual cuja titular, Rosinei de Fatima Pimentel Santos, é irmã da PEP Renata Aparecida Pimentel Rissoni, Vereadora de Ipaussu/SP em mandato ativo, atuando em lanchonete no mesmo município. A investigação identificou Rosinei como ré, com associação de CPF em confiança alta, em processo por estelionato; o processo consta como extinto, sem informação suficiente sobre o fundamento da extinção. Também foram localizados 4 outros processos criminais sem configuração como ré em tipificação crítica, 26 processos civis, 15 no polo passivo, 1 processo trabalhista no polo ativo ou em outra posição e 14 registros não criminais na Credilink. Para Renata, há 2 processos criminais sem polo passivo crítico e 1 contravenção penal classificada como leve. O processo de estelionato extinto não fundamenta reprovação automática, mas, diante da tipificação grave e da ausência de confirmação do motivo da extinção, exige diligência manual e impede aprovação simples, especialmente considerando o vínculo familiar com PEP ativa no mesmo município. Até a conclusão dessa diligência, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:09Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer reconciliado com 7 achados, com diligência para processo extinto por estelionato.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "788684ae-94e1-47ef-91a6-f2920480a7df": {
+    "text": "Trata-se de organização religiosa cujo titular, Sebastiao Ivan Pereira de Souza, é o próprio PEP, Vereador de Envira/AM em mandato ativo, atuando no mesmo município. A investigação não encontrou processos criminais ou trabalhistas para o titular. Os 4 processos civis localizados não o colocam no polo passivo, sendo parte deles arquivada, e o retorno de mídia da Credilink veio sem título ou resumo verificável, não podendo ser considerado mídia adversa confirmada. Não há achado criminal ou reputacional material que justifique reprovação; contudo, o exercício atual do mandato municipal pelo próprio titular e a natureza da organização recomendam acompanhamento periódico. Diante do vínculo PEP direto e ativo, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:10Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer narrativo reconciliado com os 4 achados consolidados da investigação real.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "c7c5ad6d-d467-4adf-9b8b-f0be6fd77de2": {
+    "text": "Trata-se da empresa de desenvolvimento de software de Vinicius Dalcolmo Kfuri Simao, com registro de vínculo familiar PEP por intermédio de sua irmã Luiza Dalcolmo Kfuri Simao, sem cargo ou órgão público informados na base disponível. Para Vinicius, a investigação localizou 3 processos criminais sem configuração como réu em tipificação crítica, procedimento do MP-ES por calúnia e difamação com confiança alta, 1 processo criminal leve por crimes contra a honra, 16 processos civis, 13 no polo passivo, e 13 registros não criminais. Para Luiza, não foram encontrados processos criminais; há 4 processos civis, 2 no polo passivo, 1 processo trabalhista ativo no polo passivo e registros não criminais. Os achados criminais do titular se restringem, conforme as fontes, a crimes contra a honra ou processos sem polo passivo crítico e não representam fraude, corrupção ou tipificação grave de PLD; os processos civis e trabalhistas também não geram reprovação automática. Como o cargo PEP não está caracterizado e há volume processual relevante, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com diligência para completar o enquadramento PEP.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:11Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer reconciliado com 10 achados e registro de lacuna no enquadramento PEP.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "1c019a58-ddb8-4d18-9670-61f06f59b0af": {
+    "text": "Trata-se da empresa de engenharia de André Araújo Rodrigues, filho da PEP Ana Maria Peixoto de Araujo, Prefeita de Malta/PB em mandato ativo, estando a empresa sediada em Goiânia/GO. Por operar em outro estado e sem nexo identificado com a Prefeitura de Malta, o vínculo familiar não configura conflito de interesses estrutural neste caso. A investigação localizou para André 1 processo criminal no JusBrasil sem configuração como réu em tipificação crítica, 2 processos civis arquivados no polo passivo e 1 processo trabalhista no polo ativo ou em outra posição. A Credilink registra 1 processo criminal relacionado a crime contra a administração da Justiça, mas o finding não confirma situação ativa nem a condição de réu, exigindo validação antes de qualquer conclusão desabonadora; o retorno de mídia não possui conteúdo verificável. Para Ana Maria, não foram encontrados processos criminais e os registros da Credilink são não criminais. Ausente processo criminal ativo e confirmado, não há base para reprovação, mas a pendência sobre o registro criminal do titular recomenda diligência e acompanhamento. Até a confirmação de seu status e polo processual, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:12Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer reconciliado com 8 achados, sem atribuição indevida de conflito estrutural municipal.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "e50ad409-18f6-4efb-8ed3-684f5a34e7d0": {
+    "text": "Trata-se de empresário individual cujo titular, Márcio Antônio Coelho da Silva, é o próprio PEP, Vereador de Varjão/GO em mandato ativo, atuando em transporte rodoviário municipal de cargas por empresa constituída em 09/09/2026 no mesmo município. A investigação localizou 2 processos criminais no JusBrasil sem configuração como réu em tipificação crítica, 19 processos civis, 9 no polo passivo, e 2 registros criminais da Credilink relativos a calúnia e difamação, sem indicação de situação ativa ou confirmação do polo processual. Não foram encontrados processos trabalhistas, e o retorno de mídia da Credilink não contém título ou resumo verificável. Os processos civis e os registros por crimes contra a honra não fundamentam reprovação automática, mas o exercício atual do mandato, a coincidência territorial e a atividade de transporte municipal por empresa recém-aberta elevam a necessidade de acompanhamento. Diante desses fatores, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:13Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer narrativo reconciliado com os 6 achados consolidados da investigação real.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "89aba1cb-fa59-4f5f-a2ab-14ce4081d7ec": {
+    "text": "Trata-se de empresa de engenharia cujo titular, Hugo Juliano Pires de Carvalho, é ex-Vereador de Lapão/BA, com mandato encerrado em 31/12/2024 e período de carência PEP até 31/12/2029, permanecendo a atividade empresarial no mesmo município. A investigação não confirmou processo criminal desabonador: o registro criminal do JusBrasil não configura o titular como réu em tipificação crítica. Foram localizados 23 processos civis, 9 no polo passivo, e 1 processo trabalhista arquivado em que Hugo não está no polo passivo; a Credilink registra matérias não criminais, principalmente cédulas de crédito bancário. O volume de processos civis requer acompanhamento, mas, sem fraude, corrupção ou crime ativo confirmado, não justifica reprovação. Considerando o período de carência PEP, o setor de engenharia e a atuação no mesmo município do antigo mandato, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:14Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer narrativo reconciliado com os 4 achados consolidados da investigação real.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "31432378-3b07-4fc9-ab1c-466d49b4db7f": {
+    "text": "Trata-se de organização religiosa cujo titular, Hewerton Leão Simões, é irmão do PEP Weverson Leao Simoes, Vereador de Serro/MG em mandato ativo, estando a entidade sediada no mesmo município. A investigação não encontrou processos criminais, civis ou trabalhistas para Hewerton, nem processo criminal para o PEP. A Credilink registra para Weverson somente 1 processo não criminal relacionado a indenização por dano moral, sem indício criminal ou repercussão material para PLD. Não há achado desabonador que fundamente reprovação; contudo, o parentesco direto com Vereador em exercício e a coincidência territorial recomendam acompanhamento durante o mandato. Diante do vínculo PEP ativo, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:15Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer narrativo reconciliado com os 5 achados consolidados da investigação real.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "7de02545-27ce-4f88-bc0e-530934add08d": {
+    "text": "Trata-se de empresário individual cujo titular, Kaio Diogo de Almeida Santos, é irmão da ex-PEP Larissa Alessandra Santos de Almeida, ex-Vereadora de Capela/AL, com mandato encerrado em 31/12/2024 e carência PEP até 31/12/2029, atuando em instalação e manutenção elétrica em Maceió/AL. A investigação não encontrou processos criminais, civis ou trabalhistas para Kaio, nem processos criminais ou trabalhistas para Larissa. Para a ex-PEP foram localizados 4 processos civis, apenas 1 no polo passivo, todos os exemplos registrados como arquivados, e 1 registro não criminal relacionado a multas e sanções. Não há desabono criminal ou reputacional confirmado, e a empresa atua em município diferente daquele do antigo mandato, sem indício de interface com o poder público local. Considerando a ausência de desabono e de fator de sensibilidade materializado além do período de carência, não temos objeções ao início do relacionamento, sugerindo a APROVAÇÃO do cadastro.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:16Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer narrativo reconciliado com os 7 achados consolidados da investigação real.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    },
+    "revisao_manual_2026_09_18b": {
+      "motivo": "Texto recomendava 'aprovação sob monitoramento reforçado' com base apenas no parentesco com PEP ativo/em carência, sem fator de sensibilidade materializado (mesmo município, setor contratável, timing, sócio direto ou achado grave) — viola a regra já estabelecida de que todo PEP já vai ao PLD e monitoramento reforçado só se justifica com fator concreto, não por padrão. Corrigido para aprovado simples.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "db093bf5-aa4b-4b28-a268-09a84c8a536f": {
+    "text": "Trata-se de empresário individual cujo titular, Alex Souza Castro, é sócio do PEP Eliton Santos do Nascimento, Vereador de Correntina/BA em mandato ativo, atuando em obras de urbanização de ruas, praças e calçadas no mesmo município. A investigação não encontrou processos criminais ou trabalhistas para Alex; os 2 processos civis identificados não o colocam no polo passivo, e o retorno de mídia da Credilink não possui conteúdo verificável. Para Eliton, o JusBrasil localizou 3 processos criminais sem configuração como réu em tipificação crítica, 20 processos civis, 3 no polo passivo, e nenhum processo trabalhista; a Credilink registra apenas matéria não criminal relacionada a cheque. Não há processo criminal ativo e confirmado por fraude, corrupção ou lavagem que sustente reprovação. Entretanto, a sociedade direta com Vereador ativo, no mesmo município, em empresa recém-constituída e dedicada a obras urbanas potencialmente contratáveis pelo poder público, recomenda controle reforçado do relacionamento. Diante desse risco de interface com a administração municipal, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:17Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer reconciliado com 8 achados e com o vínculo societário no setor de obras urbanas.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "6c6092e2-b707-492b-80a6-680b01806ff0": {
+    "text": "Trata-se da CLEAN BNB SERVICOS DE LIMPEZA LTDA, de titularidade de Sylvana Farhat Paiva, irmã do PEP Saulo Farhat Paiva, Diretor da Caixa Econômica Federal em exercício desde 15/04/2024, tendo a empresa de serviços de limpeza sido constituída em São Paulo/SP em 12/06/2025. A investigação não encontrou processos criminais para Sylvana ou Saulo. Para a titular foram localizados 4 processos civis, 3 no polo passivo, com os exemplos registrados como extintos, e 2 processos trabalhistas, 1 deles ativo no polo passivo, além de registros não criminais na Credilink; para o PEP há apenas 1 registro não criminal. Esses achados judiciais não configuram, isoladamente, risco alto de PLD. Contudo, a empresa foi aberta durante o exercício do cargo diretivo do irmão e atua em limpeza, serviço potencialmente contratável pela Caixa em sua rede nacional, o que configura risco estrutural de conflito de interesses independentemente do estado de constituição da PJ. Diante desse risco estrutural e da ausência de ilícito criminal confirmado, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:18Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer com reconciliação de 6 achados e risco estrutural durante cargo diretivo na Caixa.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "f1d82eb1-e0dd-4767-bfc5-c7935c659386": {
+    "text": "Trata-se da DESCIO CORDEIRO BRANDAO TRATAMENTO DA DOR LTDA, de titularidade de Descio Cordeiro Brandao, com registros de vínculo PEP familiar com Stephanie Rocha Cordeiro Brandao e Eduardo Cordeiro Laguardia, atuando em atividade médica ambulatorial em Belo Horizonte/MG. A investigação localizou 2 processos criminais de Descio sem configuração como réu em tipificação crítica, 26 processos civis, 11 no polo passivo, e registros tributários não criminais. De forma determinante, o Ministério Público Federal registra procedimento judicial ATIVO, com confiança alta e associação pelo CPF do titular, por corrupção ou fraude em matéria eleitoral. Para Stephanie não foi confirmado processo criminal desabonador; para Eduardo há somente 1 processo civil arquivado no polo passivo. A existência de procedimento ativo do MPF por corrupção ou fraude contra o próprio titular constitui achado material e suficiente para afastar o relacionamento, independentemente dos demais registros civis. Considerando a investigação ativa e de alta confiança por corrupção ou fraude envolvendo o titular, recomendamos a REPROVAÇÃO do cadastro.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:19Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer reconciliado com 12 achados, refletindo procedimento ativo do MPF por corrupção ou fraude.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "6b26e14d-6d47-4b44-98b2-3a118116b0a2": {
+    "text": "Trata-se da S H MED LTDA, de titularidade de Sandy de Souza Paiva Holanda, sócia do ex-PEP Jose Amarilo Sampaio Junior, ex-Vereador de Cedro/CE ainda em período de carência PEP até 31/12/2029, atuando em atividade médica ambulatorial em Tianguá/CE. A investigação não encontrou processo criminal ou trabalhista para Sandy; foram localizados 3 processos civis, apenas 1 no polo passivo e de valor aproximado de R$ 1 mil, além de registros não criminais de direito administrativo. Para Jose Amarilo, o JusBrasil apontou 2 processos criminais sem configuração como réu em tipificação crítica e 7 processos civis, 1 no polo passivo; a Credilink registra 2 processos por infração de medida sanitária preventiva, mas o finding não confirma situação ativa nem a condição de réu. Sem processo criminal ativo e confirmado por fraude, corrupção ou lavagem, não há base para reprovação. A sociedade direta com ex-PEP ainda em carência, somada ao setor médico e à necessidade de validar os registros sanitários, recomenda acompanhamento reforçado. Diante desse conjunto, sugerimos a APROVAÇÃO SOB MONITORAMENTO REFORÇADO.",
+    "model": "anthropic-claude-sonnet-4-6",
+    "generated_at": "2026-09-18T00:00:20Z",
+    "revisao_manual_2026_09_18": {
+      "motivo": "Inclusão de parecer reconciliado com 8 achados e diligência sobre registros sanitários do ex-PEP sócio.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
   }
 }

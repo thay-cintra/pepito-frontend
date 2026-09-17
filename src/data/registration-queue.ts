@@ -2,7 +2,7 @@ import type { RegistrationCase } from "@/types/registration";
 import {
   gerarResultados,
   gerarAnaliseGeral,
-  gerarParecerSugerido,
+  gerarParecerAnalista,
   recomendacaoSugerida,
   gerarHistoricoComentarios,
 } from "./registration-enrich";
@@ -40,7 +40,12 @@ function enrich(raw: Raw[]): RegistrationCase[] {
     ...c,
     resultados_pesquisa: gerarResultados(c),
     analise_geral: gerarAnaliseGeral(c),
-    parecer_sugerido: gerarParecerSugerido(c),
+    // gerarParecerAnalista() (template narrativo "Josinalva") substitui
+    // gerarParecerSugerido() (dump cru de score/CNAE/reason) como fallback —
+    // achado real, 2026-09-18: 21 casos em CHECK_ANALISTA sem entrada em
+    // pareceres-sugestao.json caíam nesse fallback genérico, fora do padrão
+    // de texto usado no resto da fila.
+    parecer_sugerido: gerarParecerAnalista(c),
     recomendacao_sugerida: recomendacaoSugerida(c),
     historico_comentarios: gerarHistoricoComentarios(c),
   }));

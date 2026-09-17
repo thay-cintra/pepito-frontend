@@ -3,12 +3,12 @@
     "descricao": "Scores de probabilidade de lavagem de dinheiro por draft_id. Modelo baseado em análise de 399 contas históricas com risk_business.status='PLD'. 9 fatores de risco com pesos derivados de frequência histórica.",
     "modelo_versao": "1.0",
     "universo_historico": 399,
-    "gerado_em": "2026-09-17T15:38:27Z",
-    "total_casos": 77,
+    "gerado_em": "2026-09-17T20:54:35Z",
+    "total_casos": 80,
     "distribuicao": {
+      "baixo": 10,
       "alto": 20,
-      "medio": 47,
-      "baixo": 8,
+      "medio": 48,
       "critico": 2
     },
     "fatores_pesos": {
@@ -26,6 +26,64 @@
     }
   },
   "scores": {
+    "8151b5b8-54d5-408b-8455-801d0b4d629e": {
+      "probabilidade": 9.8,
+      "nivel": "baixo",
+      "score_modelo": 12,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_medio",
+          "label": "Score PLD 985 (médio-alto)",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "",
+      "pep_vinculo": "",
+      "gerado_em": "2026-09-17T20:54:35Z"
+    },
+    "8953fe82-e600-4ae6-83b2-d11ede9b264a": {
+      "probabilidade": 16.3,
+      "nivel": "baixo",
+      "score_modelo": 20,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_medio",
+          "label": "Score PLD 985 (médio-alto)",
+          "nivel": "medio"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — SOCIO: titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "SOCIO",
+      "gerado_em": "2026-09-17T20:54:35Z"
+    },
+    "01493876-050d-4f9d-86d1-b463c55cebd5": {
+      "probabilidade": 16.3,
+      "nivel": "baixo",
+      "score_modelo": 20,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_medio",
+          "label": "Score PLD 985 (médio-alto)",
+          "nivel": "medio"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-09-17T20:54:35Z"
+    },
     "bdb93555-3b64-4adf-8aad-8b775fb6a139": {
       "probabilidade": 44.7,
       "nivel": "alto",
@@ -55,7 +113,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "bf43bb48-56c8-49fc-8bef-287f4f417977": {
       "probabilidade": 40.7,
@@ -86,7 +144,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "d1e7ad75-086a-4015-89a4-822f9b6568f9": {
       "probabilidade": 24.4,
@@ -112,7 +170,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "3f785fff-a290-4114-a9a6-74f0917efdef": {
       "probabilidade": 33.3,
@@ -138,7 +196,7 @@
       ],
       "pep_cargo": "DIRETOR-PRESIDENTE",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "08493df4-bfd1-4ae0-83cf-7e04d971ab50": {
       "probabilidade": 45.5,
@@ -174,7 +232,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "45a772d8-e8bc-44b4-8d05-9ff4f5bd6ea9": {
       "probabilidade": 53.7,
@@ -210,7 +268,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "238129eb-96e1-4505-a1e9-5e1b675f5f3b": {
       "probabilidade": 16.3,
@@ -231,7 +289,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "788684ae-94e1-47ef-91a6-f2920480a7df": {
       "probabilidade": 56.9,
@@ -262,7 +320,38 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
+    },
+    "c7c5ad6d-d467-4adf-9b8b-f0be6fd77de2": {
+      "probabilidade": 35.0,
+      "nivel": "medio",
+      "score_modelo": 43,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1386 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado () — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "midia_neg",
+          "label": "Mídias negativas identificadas",
+          "nivel": "medio"
+        },
+        {
+          "id": "sus_name",
+          "label": "Nome em lista suspeita (SUS_NAME)",
+          "nivel": "alto"
+        }
+      ],
+      "pep_cargo": "",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "6037eecd-e795-4e5e-93b9-20af82920bee": {
       "probabilidade": 32.5,
@@ -283,7 +372,7 @@
       ],
       "pep_cargo": "SECRETÁRIO DE ESTADO",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "1c019a58-ddb8-4d18-9670-61f06f59b0af": {
       "probabilidade": 33.3,
@@ -309,7 +398,7 @@
       ],
       "pep_cargo": "PREFEITO",
       "pep_vinculo": "FILHA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "e50ad409-18f6-4efb-8ed3-684f5a34e7d0": {
       "probabilidade": 39.0,
@@ -335,7 +424,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOBRINHA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "89aba1cb-fa59-4f5f-a2ab-14ce4081d7ec": {
       "probabilidade": 30.1,
@@ -361,7 +450,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "31432378-3b07-4fc9-ab1c-466d49b4db7f": {
       "probabilidade": 43.1,
@@ -387,7 +476,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "7de02545-27ce-4f88-bc0e-530934add08d": {
       "probabilidade": 24.4,
@@ -413,7 +502,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "db093bf5-aa4b-4b28-a268-09a84c8a536f": {
       "probabilidade": 26.8,
@@ -434,7 +523,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "6c6092e2-b707-492b-80a6-680b01806ff0": {
       "probabilidade": 35.0,
@@ -460,7 +549,7 @@
       ],
       "pep_cargo": "VICE PRESIDENTE",
       "pep_vinculo": "IRMAO",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "2c2c34ef-36f3-4f92-a7d0-dea3e73b4386": {
       "probabilidade": 44.7,
@@ -491,7 +580,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "f1d82eb1-e0dd-4767-bfc5-c7935c659386": {
       "probabilidade": 33.3,
@@ -517,7 +606,7 @@
       ],
       "pep_cargo": "ADMINISTRADOR",
       "pep_vinculo": "PRIMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "8fb890bf-57a7-4b09-8617-c1a24089c6a9": {
       "probabilidade": 40.7,
@@ -548,7 +637,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "NETA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "8de9af0d-cd6a-484d-9387-b88479d1b76d": {
       "probabilidade": 32.5,
@@ -569,7 +658,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "5a1bd3af-71da-4191-9485-6e586632e999": {
       "probabilidade": 41.5,
@@ -600,7 +689,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "FILHA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "30b944d2-41fa-4bd9-96f3-8e4c4739db88": {
       "probabilidade": 22.0,
@@ -621,7 +710,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "7d76fbda-ea77-4091-b3f9-51652b8a8839": {
       "probabilidade": 24.4,
@@ -647,7 +736,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "3f6ddbb9-7896-4775-ba0b-eb2bca2f69a8": {
       "probabilidade": 40.7,
@@ -678,7 +767,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "6b26e14d-6d47-4b44-98b2-3a118116b0a2": {
       "probabilidade": 41.5,
@@ -709,7 +798,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "a0068ae9-06a7-4d78-bf1f-d8bf3cc66b09": {
       "probabilidade": 16.3,
@@ -730,7 +819,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "f381d957-fdc8-4aae-a597-3ffd31a7c997": {
       "probabilidade": 40.7,
@@ -756,7 +845,7 @@
       ],
       "pep_cargo": "SECRETARIO DA SECRETARIA MUNICIPAL DE POLITICAS PARA AS MULHERES",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "d9fa6c94-de3a-4a22-b530-aefa457815f3": {
       "probabilidade": 33.3,
@@ -782,7 +871,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "PARENTE",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "e454e72f-634b-45df-b18d-5f95064592b4": {
       "probabilidade": 24.4,
@@ -808,7 +897,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "affe9cb3-5bad-40c9-8119-3991eb312bd5": {
       "probabilidade": 44.7,
@@ -839,7 +928,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "40e1ddfe-4d41-4ca7-976f-14d26aa896b7": {
       "probabilidade": 47.2,
@@ -870,7 +959,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "aee57ba2-92d1-4f72-b892-238af96e902f": {
       "probabilidade": 33.3,
@@ -896,7 +985,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMAO",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "c189cbde-50b2-4935-ab4c-e563e829a194": {
       "probabilidade": 35.0,
@@ -922,7 +1011,7 @@
       ],
       "pep_cargo": "PREFEITO",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "80dfda06-79df-4429-ae77-fc90f280f142": {
       "probabilidade": 24.4,
@@ -948,7 +1037,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "523539b5-afe7-45e3-8e20-1abbad0495b6": {
       "probabilidade": 57.7,
@@ -984,7 +1073,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "47136df2-a5ae-4abf-a311-43f6c1ba6ecb": {
       "probabilidade": 16.3,
@@ -1005,7 +1094,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "8d19dffb-10c0-42d3-9876-395b6086c990": {
       "probabilidade": 30.1,
@@ -1031,7 +1120,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "TIA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "4ee79154-b223-4d5a-a9dc-133d1dd7b776": {
       "probabilidade": 30.1,
@@ -1057,7 +1146,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "b24a6d43-1985-4f2f-b412-226c47f296d5": {
       "probabilidade": 24.4,
@@ -1083,7 +1172,7 @@
       ],
       "pep_cargo": "PREFEITO",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "13a03b51-5446-43f1-9792-75e41cd232c6": {
       "probabilidade": 35.0,
@@ -1109,7 +1198,7 @@
       ],
       "pep_cargo": "DIRETOR-PRESIDENTE",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "9dc3eed5-c854-47dc-8139-bd79da999697": {
       "probabilidade": 46.3,
@@ -1140,7 +1229,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "a480f71d-1fbf-42ba-b1dc-c414c454d41d": {
       "probabilidade": 9.8,
@@ -1156,7 +1245,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "0d547b73-06c0-4e9c-9fa6-7594f9f151a7": {
       "probabilidade": 43.1,
@@ -1187,7 +1276,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "502fc65e-1ce7-422b-9ad7-bb83ef657f6b": {
       "probabilidade": 37.4,
@@ -1218,7 +1307,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "df5805d6-6cdd-46b4-b0b2-46e4c2667835": {
       "probabilidade": 36.6,
@@ -1244,7 +1333,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "85d8df98-5898-4e61-8013-9a718d5ad826": {
       "probabilidade": 30.9,
@@ -1270,7 +1359,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "SOBRINHA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "e3665740-c963-464d-8eae-794867b22828": {
       "probabilidade": 38.2,
@@ -1296,7 +1385,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "349012d9-de4b-4c05-aa94-c0c8bbc53319": {
       "probabilidade": 69.1,
@@ -1337,7 +1426,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "SOBRINHA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "c392aa13-8052-4b84-8c54-fb818bd949a0": {
       "probabilidade": 43.1,
@@ -1363,7 +1452,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "9714d345-717e-499d-a0d5-2c8b8ac9aa00": {
       "probabilidade": 24.4,
@@ -1389,7 +1478,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "9a0883b0-0ea7-43b0-9830-97902e811156": {
       "probabilidade": 22.0,
@@ -1410,7 +1499,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "PRIMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "c285c0b9-6ea6-47cb-a77e-108075d18ac8": {
       "probabilidade": 16.3,
@@ -1431,7 +1520,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "7dd231fa-7139-4702-a00c-164342816695": {
       "probabilidade": 26.8,
@@ -1452,7 +1541,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "bd2f5845-ac96-4cfa-abb1-98085d75a039": {
       "probabilidade": 47.2,
@@ -1483,7 +1572,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "e8effd87-62c2-47d7-8733-b1028db0ee1c": {
       "probabilidade": 33.3,
@@ -1509,7 +1598,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "0239c46e-20f5-404f-8c66-3df728391728": {
       "probabilidade": 16.3,
@@ -1530,7 +1619,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "abfe2c80-ff61-4292-af8b-d3decccefd11": {
       "probabilidade": 22.0,
@@ -1551,7 +1640,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "7e4ccffd-17cb-4bcd-8998-c67c83334e01": {
       "probabilidade": 35.0,
@@ -1577,28 +1666,7 @@
       ],
       "pep_cargo": "SECRETARIO",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-09-17T15:38:27Z"
-    },
-    "16059106-2aeb-4e36-8978-9089db30942e": {
-      "probabilidade": 16.3,
-      "nivel": "baixo",
-      "score_modelo": 20,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_medio",
-          "label": "Score PLD 985 (médio-alto)",
-          "nivel": "medio"
-        },
-        {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "baixo"
-        }
-      ],
-      "pep_cargo": "VEREADOR",
-      "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "4e568c65-cb0b-4bfd-9267-76ca1a47d27c": {
       "probabilidade": 35.0,
@@ -1624,7 +1692,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "785b402a-e759-4e38-8695-639059a9a5b9": {
       "probabilidade": 26.8,
@@ -1645,7 +1713,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "e59f5e1a-2ff5-414e-8be6-2955d0bab3ed": {
       "probabilidade": 20.3,
@@ -1661,7 +1729,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "2f5d198e-d80e-4866-af6e-7c5e0a99a286": {
       "probabilidade": 9.8,
@@ -1677,7 +1745,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "b922a2b7-13c3-4738-a640-b886adb5b5ba": {
       "probabilidade": 20.3,
@@ -1693,7 +1761,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "3142b9ba-efb8-4d5a-9e7e-fcd1d74b6725": {
       "probabilidade": 26.8,
@@ -1714,7 +1782,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "7261ef7d-8cd3-4843-92bb-77c73dbcdc74": {
       "probabilidade": 20.3,
@@ -1730,7 +1798,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "86746d70-d87e-4d63-9a2a-b4cb95936df1": {
       "probabilidade": 99.0,
@@ -1746,7 +1814,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "281ca852-a543-44c8-836e-5e305a6c7dfb": {
       "probabilidade": 26.8,
@@ -1767,7 +1835,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "4d30f7cc-70af-4acc-a59b-d94470f4b736": {
       "probabilidade": 20.3,
@@ -1783,7 +1851,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "3a5dd7ee-5b37-4b66-bb19-a50c556f49aa": {
       "probabilidade": 20.3,
@@ -1799,7 +1867,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "d0b1c912-b0e3-41bd-ad39-e631c8abd6e9": {
       "probabilidade": 20.3,
@@ -1815,7 +1883,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "0401a07e-14c2-4738-97dd-04ad76192660": {
       "probabilidade": 26.8,
@@ -1836,7 +1904,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "ac762768-a56d-4b3e-9f93-7d580a9edf4c": {
       "probabilidade": 20.3,
@@ -1852,7 +1920,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "401922c4-6835-4860-ac8b-aad233686503": {
       "probabilidade": 20.3,
@@ -1868,7 +1936,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "161cba7c-9195-4fcb-b232-7af941ea5fe5": {
       "probabilidade": 26.8,
@@ -1889,7 +1957,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "719f82b4-c6d0-4f1f-b7ca-44e636b5b57e": {
       "probabilidade": 20.3,
@@ -1905,7 +1973,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     },
     "27569b17-5b49-48b5-91e0-d527157867d9": {
       "probabilidade": 43.1,
@@ -1931,7 +1999,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T15:38:27Z"
+      "gerado_em": "2026-09-17T20:54:35Z"
     }
   }
 }
