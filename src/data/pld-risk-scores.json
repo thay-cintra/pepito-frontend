@@ -3,12 +3,12 @@
     "descricao": "Scores de probabilidade de lavagem de dinheiro por draft_id. Modelo baseado em análise de 399 contas históricas com risk_business.status='PLD'. 9 fatores de risco com pesos derivados de frequência histórica.",
     "modelo_versao": "1.0",
     "universo_historico": 399,
-    "gerado_em": "2026-09-17T20:54:35Z",
-    "total_casos": 80,
+    "gerado_em": "2026-09-23T14:25:23Z",
+    "total_casos": 94,
     "distribuicao": {
+      "medio": 58,
+      "alto": 24,
       "baixo": 10,
-      "alto": 20,
-      "medio": 48,
       "critico": 2
     },
     "fatores_pesos": {
@@ -26,6 +26,323 @@
     }
   },
   "scores": {
+    "37949231-2907-4394-bda1-86d7f551e30b": {
+      "probabilidade": 24.4,
+      "nivel": "medio",
+      "score_modelo": 30,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_medio",
+          "label": "Score PLD 985 (médio-alto)",
+          "nivel": "medio"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (PREFEITO) — SOCIO: titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Prefeito ativo (AQUIRAZ-CE) + eleições 2026: risco de uso da empresa para captar recursos de campanha via contratos municipais, emendas ou repasses públicos. Candidatura à reeleição cria incentivo a buscar fontes extraoficiais de financiamento.",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "PREFEITO",
+      "pep_vinculo": "SOCIO",
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "4b5ddcc8-3255-4905-8cbb-1e037890f274": {
+      "probabilidade": 36.6,
+      "nivel": "medio",
+      "score_modelo": 45,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1391 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (VEREADOR): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        },
+        {
+          "id": "midia_neg",
+          "label": "Mídias negativas identificadas",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "20b42a57-97c2-447f-bc8b-3c3d0a030a5b": {
+      "probabilidade": 44.7,
+      "nivel": "alto",
+      "score_modelo": 55,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1421 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (VEREADOR): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        },
+        {
+          "id": "midia_neg",
+          "label": "Mídias negativas identificadas",
+          "nivel": "medio"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (PIRAJU-SP) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "alto"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "MAE",
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "311cb6f0-b677-47eb-9fb8-a7aad8147c70": {
+      "probabilidade": 33.3,
+      "nivel": "medio",
+      "score_modelo": 41,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1005 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado () — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "empresa_nova",
+          "label": "Empresa nova (1 meses)",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "6a5f9185-763f-4c56-8f35-808b2e24dac4": {
+      "probabilidade": 16.3,
+      "nivel": "baixo",
+      "score_modelo": 20,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_medio",
+          "label": "Score PLD 985 (médio-alto)",
+          "nivel": "medio"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "2c9226bc-fdfb-48b0-b361-197ec2013412": {
+      "probabilidade": 30.9,
+      "nivel": "medio",
+      "score_modelo": 38,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1386 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "midia_neg",
+          "label": "Mídias negativas identificadas",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "8824a1f0-06de-4ada-a495-cc24e4d5f666": {
+      "probabilidade": 41.5,
+      "nivel": "alto",
+      "score_modelo": 51,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1175 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — MAE: titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "empresa_nova",
+          "label": "Empresa nova (0 meses)",
+          "nivel": "medio"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (BOM JESUS DAS SELVAS-MA) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "MAE",
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "97f41fe2-cbd0-44d0-9b95-60472b2fac84": {
+      "probabilidade": 24.4,
+      "nivel": "medio",
+      "score_modelo": 30,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_medio",
+          "label": "Score PLD 985 (médio-alto)",
+          "nivel": "medio"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (PARANAIGUARA-GO) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "f9a0d106-f716-4c39-bb8c-c799947ea0ed": {
+      "probabilidade": 24.4,
+      "nivel": "medio",
+      "score_modelo": 30,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_medio",
+          "label": "Score PLD 985 (médio-alto)",
+          "nivel": "medio"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (ARINOS-MG) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "0455f538-769d-403a-b139-d4513571ef1a": {
+      "probabilidade": 33.3,
+      "nivel": "medio",
+      "score_modelo": 41,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1040 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "municipio_fronteira",
+          "label": "Município de fronteira internacional (MANAUS): Circular BACEN 4.001 classifica como zona de risco elevado para LD/FT. Zona de fronteira facilita tráfico de drogas/armas, contrabando e doleiros. Exige Diligência Reforçada e monitoramento contínuo.",
+          "nivel": "alto"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "3fa59b82-7f59-4fbe-870a-0dbf49c39b0e": {
+      "probabilidade": 43.1,
+      "nivel": "alto",
+      "score_modelo": 53,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1090 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (ADMINISTRADOR): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        },
+        {
+          "id": "empresa_nova",
+          "label": "Empresa nova (3 meses)",
+          "nivel": "medio"
+        },
+        {
+          "id": "sus_name",
+          "label": "Nome em lista suspeita (SUS_NAME)",
+          "nivel": "alto"
+        }
+      ],
+      "pep_cargo": "ADMINISTRADOR",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "9884f4cc-96b2-4759-ab97-ce4848e8435e": {
+      "probabilidade": 32.5,
+      "nivel": "medio",
+      "score_modelo": 40,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1045 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "",
+      "pep_vinculo": "",
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
     "8151b5b8-54d5-408b-8455-801d0b4d629e": {
       "probabilidade": 9.8,
       "nivel": "baixo",
@@ -40,7 +357,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "8953fe82-e600-4ae6-83b2-d11ede9b264a": {
       "probabilidade": 16.3,
@@ -61,7 +378,33 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "34033a15-1d61-484e-82da-d4a81e961f81": {
+      "probabilidade": 35.0,
+      "nivel": "medio",
+      "score_modelo": 43,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1035 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (MOSSORÓ-RN) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "01493876-050d-4f9d-86d1-b463c55cebd5": {
       "probabilidade": 16.3,
@@ -82,7 +425,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "bdb93555-3b64-4adf-8aad-8b775fb6a139": {
       "probabilidade": 44.7,
@@ -113,7 +456,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "bf43bb48-56c8-49fc-8bef-287f4f417977": {
       "probabilidade": 40.7,
@@ -144,7 +487,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "d1e7ad75-086a-4015-89a4-822f9b6568f9": {
       "probabilidade": 24.4,
@@ -170,7 +513,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "3f785fff-a290-4114-a9a6-74f0917efdef": {
       "probabilidade": 33.3,
@@ -196,7 +539,7 @@
       ],
       "pep_cargo": "DIRETOR-PRESIDENTE",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "08493df4-bfd1-4ae0-83cf-7e04d971ab50": {
       "probabilidade": 45.5,
@@ -232,7 +575,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "45a772d8-e8bc-44b4-8d05-9ff4f5bd6ea9": {
       "probabilidade": 53.7,
@@ -268,7 +611,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "238129eb-96e1-4505-a1e9-5e1b675f5f3b": {
       "probabilidade": 16.3,
@@ -289,7 +632,105 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "9708d6dc-7171-4677-a519-1ed17e8cd03f": {
+      "probabilidade": 62.6,
+      "nivel": "critico",
+      "score_modelo": 77,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1536 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "cnae_risco",
+          "label": "CNAE alto risco (4313400 - Obras de terraplenagem)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "alto"
+        },
+        {
+          "id": "proc_jud",
+          "label": "Processos judiciais ao onboarding",
+          "nivel": "alto"
+        },
+        {
+          "id": "midia_neg",
+          "label": "Mídias negativas identificadas",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "",
+      "pep_vinculo": "MAE",
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "c19919d4-21ea-484a-939c-a37b6593e1f7": {
+      "probabilidade": 51.2,
+      "nivel": "alto",
+      "score_modelo": 63,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1010 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "cnae_risco",
+          "label": "CNAE alto risco (4723700 - Comércio varejista de bebidas)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (VEREADOR) — FILHA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (PILÕES-PB) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "alto"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "FILHA(O)",
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "704fdc30-db8b-41d3-95ef-41c49c6237ec": {
+      "probabilidade": 47.2,
+      "nivel": "alto",
+      "score_modelo": 58,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1020 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_titular",
+          "label": "PEP titular (VEREADOR): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "medio"
+        },
+        {
+          "id": "empresa_nova",
+          "label": "Empresa nova (5 meses)",
+          "nivel": "medio"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Vereador ativo (JAGUARARI-BA) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
+          "nivel": "medio"
+        }
+      ],
+      "pep_cargo": "VEREADOR",
+      "pep_vinculo": "PAI",
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "788684ae-94e1-47ef-91a6-f2920480a7df": {
       "probabilidade": 56.9,
@@ -320,7 +761,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "c7c5ad6d-d467-4adf-9b8b-f0be6fd77de2": {
       "probabilidade": 35.0,
@@ -351,7 +792,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "6037eecd-e795-4e5e-93b9-20af82920bee": {
       "probabilidade": 32.5,
@@ -372,7 +813,7 @@
       ],
       "pep_cargo": "SECRETÁRIO DE ESTADO",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "1c019a58-ddb8-4d18-9670-61f06f59b0af": {
       "probabilidade": 33.3,
@@ -398,7 +839,7 @@
       ],
       "pep_cargo": "PREFEITO",
       "pep_vinculo": "FILHA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "e50ad409-18f6-4efb-8ed3-684f5a34e7d0": {
       "probabilidade": 39.0,
@@ -424,7 +865,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOBRINHA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "89aba1cb-fa59-4f5f-a2ab-14ce4081d7ec": {
       "probabilidade": 30.1,
@@ -450,7 +891,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "31432378-3b07-4fc9-ab1c-466d49b4db7f": {
       "probabilidade": 43.1,
@@ -476,7 +917,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "7de02545-27ce-4f88-bc0e-530934add08d": {
       "probabilidade": 24.4,
@@ -502,7 +943,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "db093bf5-aa4b-4b28-a268-09a84c8a536f": {
       "probabilidade": 26.8,
@@ -523,7 +964,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "6c6092e2-b707-492b-80a6-680b01806ff0": {
       "probabilidade": 35.0,
@@ -549,7 +990,7 @@
       ],
       "pep_cargo": "VICE PRESIDENTE",
       "pep_vinculo": "IRMAO",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "2c2c34ef-36f3-4f92-a7d0-dea3e73b4386": {
       "probabilidade": 44.7,
@@ -580,7 +1021,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "f1d82eb1-e0dd-4767-bfc5-c7935c659386": {
       "probabilidade": 33.3,
@@ -606,38 +1047,7 @@
       ],
       "pep_cargo": "ADMINISTRADOR",
       "pep_vinculo": "PRIMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
-    },
-    "8fb890bf-57a7-4b09-8617-c1a24089c6a9": {
-      "probabilidade": 40.7,
-      "nivel": "alto",
-      "score_modelo": 50,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_high",
-          "label": "Score PLD 1556 (HIGH)",
-          "nivel": "alto"
-        },
-        {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado () — NETA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "baixo"
-        },
-        {
-          "id": "proc_jud",
-          "label": "Processos judiciais ao onboarding",
-          "nivel": "alto"
-        },
-        {
-          "id": "midia_neg",
-          "label": "Mídias negativas identificadas",
-          "nivel": "medio"
-        }
-      ],
-      "pep_cargo": "",
-      "pep_vinculo": "NETA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "8de9af0d-cd6a-484d-9387-b88479d1b76d": {
       "probabilidade": 32.5,
@@ -658,7 +1068,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "5a1bd3af-71da-4191-9485-6e586632e999": {
       "probabilidade": 41.5,
@@ -689,7 +1099,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "FILHA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "30b944d2-41fa-4bd9-96f3-8e4c4739db88": {
       "probabilidade": 22.0,
@@ -710,7 +1120,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "7d76fbda-ea77-4091-b3f9-51652b8a8839": {
       "probabilidade": 24.4,
@@ -736,7 +1146,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "3f6ddbb9-7896-4775-ba0b-eb2bca2f69a8": {
       "probabilidade": 40.7,
@@ -767,7 +1177,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "6b26e14d-6d47-4b44-98b2-3a118116b0a2": {
       "probabilidade": 41.5,
@@ -798,7 +1208,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "a0068ae9-06a7-4d78-bf1f-d8bf3cc66b09": {
       "probabilidade": 16.3,
@@ -819,7 +1229,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "f381d957-fdc8-4aae-a597-3ffd31a7c997": {
       "probabilidade": 40.7,
@@ -845,7 +1255,7 @@
       ],
       "pep_cargo": "SECRETARIO DA SECRETARIA MUNICIPAL DE POLITICAS PARA AS MULHERES",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "d9fa6c94-de3a-4a22-b530-aefa457815f3": {
       "probabilidade": 33.3,
@@ -871,7 +1281,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "PARENTE",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "e454e72f-634b-45df-b18d-5f95064592b4": {
       "probabilidade": 24.4,
@@ -897,7 +1307,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "affe9cb3-5bad-40c9-8119-3991eb312bd5": {
       "probabilidade": 44.7,
@@ -928,7 +1338,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "40e1ddfe-4d41-4ca7-976f-14d26aa896b7": {
       "probabilidade": 47.2,
@@ -959,7 +1369,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "aee57ba2-92d1-4f72-b892-238af96e902f": {
       "probabilidade": 33.3,
@@ -985,7 +1395,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMAO",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "c189cbde-50b2-4935-ab4c-e563e829a194": {
       "probabilidade": 35.0,
@@ -1011,7 +1421,7 @@
       ],
       "pep_cargo": "PREFEITO",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "80dfda06-79df-4429-ae77-fc90f280f142": {
       "probabilidade": 24.4,
@@ -1037,43 +1447,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
-    },
-    "523539b5-afe7-45e3-8e20-1abbad0495b6": {
-      "probabilidade": 57.7,
-      "nivel": "alto",
-      "score_modelo": 71,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_high",
-          "label": "Score PLD 1020 (HIGH)",
-          "nivel": "alto"
-        },
-        {
-          "id": "cnae_risco",
-          "label": "CNAE alto risco (94.91-0-00 - Atividades de organizações )",
-          "nivel": "alto"
-        },
-        {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado (VEREADOR) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "medio"
-        },
-        {
-          "id": "empresa_nova",
-          "label": "Empresa nova (1 meses)",
-          "nivel": "medio"
-        },
-        {
-          "id": "eleitoral_2026",
-          "label": "PEP Vereador ativo (AFOGADOS DA INGAZEIRA-PE) + eleições 2026: vereadores têm acesso a emendas impositivas e influência sobre contratos municipais. Risco de a empresa titular receber repasses do município via inexigibilidade ou dispensa, ou ser usada para financiar campanha de reeleição (caixa 2 digital — típica tipologia pré-eleitoral).",
-          "nivel": "alto"
-        }
-      ],
-      "pep_cargo": "VEREADOR",
-      "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "47136df2-a5ae-4abf-a311-43f6c1ba6ecb": {
       "probabilidade": 16.3,
@@ -1094,7 +1468,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "8d19dffb-10c0-42d3-9876-395b6086c990": {
       "probabilidade": 30.1,
@@ -1120,7 +1494,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "TIA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "4ee79154-b223-4d5a-a9dc-133d1dd7b776": {
       "probabilidade": 30.1,
@@ -1146,7 +1520,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "b24a6d43-1985-4f2f-b412-226c47f296d5": {
       "probabilidade": 24.4,
@@ -1172,7 +1546,7 @@
       ],
       "pep_cargo": "PREFEITO",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "13a03b51-5446-43f1-9792-75e41cd232c6": {
       "probabilidade": 35.0,
@@ -1198,7 +1572,7 @@
       ],
       "pep_cargo": "DIRETOR-PRESIDENTE",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "9dc3eed5-c854-47dc-8139-bd79da999697": {
       "probabilidade": 46.3,
@@ -1229,23 +1603,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-09-17T20:54:35Z"
-    },
-    "a480f71d-1fbf-42ba-b1dc-c414c454d41d": {
-      "probabilidade": 9.8,
-      "nivel": "baixo",
-      "score_modelo": 12,
-      "score_max": 123,
-      "fatores": [
-        {
-          "id": "score_medio",
-          "label": "Score PLD 985 (médio-alto)",
-          "nivel": "medio"
-        }
-      ],
-      "pep_cargo": "",
-      "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "0d547b73-06c0-4e9c-9fa6-7594f9f151a7": {
       "probabilidade": 43.1,
@@ -1276,7 +1634,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "502fc65e-1ce7-422b-9ad7-bb83ef657f6b": {
       "probabilidade": 37.4,
@@ -1307,7 +1665,38 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
+    },
+    "33864c75-0861-44b7-ab34-565d5c051530": {
+      "probabilidade": 39.0,
+      "nivel": "medio",
+      "score_modelo": 48,
+      "score_max": 123,
+      "fatores": [
+        {
+          "id": "score_high",
+          "label": "Score PLD 1406 (HIGH)",
+          "nivel": "alto"
+        },
+        {
+          "id": "pep_relacionado",
+          "label": "PEP relacionado (PREFEITO) — IRMA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
+          "nivel": "baixo"
+        },
+        {
+          "id": "midia_neg",
+          "label": "Mídias negativas identificadas",
+          "nivel": "medio"
+        },
+        {
+          "id": "eleitoral_2026",
+          "label": "PEP Prefeito ativo (Câmara dos Deputados) + eleições 2026: risco de uso da empresa para captar recursos de campanha via contratos municipais, emendas ou repasses públicos. Candidatura à reeleição cria incentivo a buscar fontes extraoficiais de financiamento.",
+          "nivel": "alto"
+        }
+      ],
+      "pep_cargo": "PREFEITO",
+      "pep_vinculo": "IRMA(O)",
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "df5805d6-6cdd-46b4-b0b2-46e4c2667835": {
       "probabilidade": 36.6,
@@ -1333,23 +1722,18 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "85d8df98-5898-4e61-8013-9a718d5ad826": {
-      "probabilidade": 30.9,
+      "probabilidade": 24.4,
       "nivel": "medio",
-      "score_modelo": 38,
+      "score_modelo": 30,
       "score_max": 123,
       "fatores": [
         {
           "id": "score_high",
-          "label": "Score PLD 1506 (HIGH)",
+          "label": "Score PLD 1716 (HIGH)",
           "nivel": "alto"
-        },
-        {
-          "id": "pep_relacionado",
-          "label": "PEP relacionado () — SOBRINHA(O): titular possui vínculo com Pessoa Politicamente Exposta, não é o PEP. Gatilho de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "baixo"
         },
         {
           "id": "midia_neg",
@@ -1358,8 +1742,8 @@
         }
       ],
       "pep_cargo": "",
-      "pep_vinculo": "SOBRINHA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "pep_vinculo": "",
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "e3665740-c963-464d-8eae-794867b22828": {
       "probabilidade": 38.2,
@@ -1385,32 +1769,22 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "349012d9-de4b-4c05-aa94-c0c8bbc53319": {
-      "probabilidade": 69.1,
-      "nivel": "critico",
-      "score_modelo": 85,
+      "probabilidade": 47.2,
+      "nivel": "alto",
+      "score_modelo": 58,
       "score_max": 123,
       "fatores": [
         {
           "id": "score_high",
-          "label": "Score PLD 1756 (HIGH)",
+          "label": "Score PLD 1916 (HIGH)",
           "nivel": "alto"
         },
         {
           "id": "cnae_risco",
           "label": "CNAE alto risco (74.90-1-04 - Atividades de intermediação)",
-          "nivel": "alto"
-        },
-        {
-          "id": "pep_titular",
-          "label": "PEP titular (): o próprio titular da empresa é uma Pessoa Politicamente Exposta — gatilho obrigatório de Diligência Reforçada (Circular BACEN 3.978/2020). Isoladamente não é motivo de reprovação.",
-          "nivel": "alto"
-        },
-        {
-          "id": "proc_jud",
-          "label": "Processos judiciais ao onboarding",
           "nivel": "alto"
         },
         {
@@ -1425,8 +1799,8 @@
         }
       ],
       "pep_cargo": "",
-      "pep_vinculo": "SOBRINHA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "pep_vinculo": "",
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "c392aa13-8052-4b84-8c54-fb818bd949a0": {
       "probabilidade": 43.1,
@@ -1452,7 +1826,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "9714d345-717e-499d-a0d5-2c8b8ac9aa00": {
       "probabilidade": 24.4,
@@ -1478,7 +1852,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "9a0883b0-0ea7-43b0-9830-97902e811156": {
       "probabilidade": 22.0,
@@ -1499,7 +1873,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "PRIMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "c285c0b9-6ea6-47cb-a77e-108075d18ac8": {
       "probabilidade": 16.3,
@@ -1520,7 +1894,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "7dd231fa-7139-4702-a00c-164342816695": {
       "probabilidade": 26.8,
@@ -1541,7 +1915,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "bd2f5845-ac96-4cfa-abb1-98085d75a039": {
       "probabilidade": 47.2,
@@ -1572,7 +1946,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "e8effd87-62c2-47d7-8733-b1028db0ee1c": {
       "probabilidade": 33.3,
@@ -1598,7 +1972,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "0239c46e-20f5-404f-8c66-3df728391728": {
       "probabilidade": 16.3,
@@ -1619,7 +1993,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "SOCIO",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "abfe2c80-ff61-4292-af8b-d3decccefd11": {
       "probabilidade": 22.0,
@@ -1640,7 +2014,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "7e4ccffd-17cb-4bcd-8998-c67c83334e01": {
       "probabilidade": 35.0,
@@ -1666,7 +2040,7 @@
       ],
       "pep_cargo": "SECRETARIO",
       "pep_vinculo": "MAE",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "4e568c65-cb0b-4bfd-9267-76ca1a47d27c": {
       "probabilidade": 35.0,
@@ -1692,7 +2066,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "785b402a-e759-4e38-8695-639059a9a5b9": {
       "probabilidade": 26.8,
@@ -1713,7 +2087,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "e59f5e1a-2ff5-414e-8be6-2955d0bab3ed": {
       "probabilidade": 20.3,
@@ -1729,7 +2103,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "2f5d198e-d80e-4866-af6e-7c5e0a99a286": {
       "probabilidade": 9.8,
@@ -1745,7 +2119,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "b922a2b7-13c3-4738-a640-b886adb5b5ba": {
       "probabilidade": 20.3,
@@ -1761,7 +2135,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "3142b9ba-efb8-4d5a-9e7e-fcd1d74b6725": {
       "probabilidade": 26.8,
@@ -1782,7 +2156,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "7261ef7d-8cd3-4843-92bb-77c73dbcdc74": {
       "probabilidade": 20.3,
@@ -1798,7 +2172,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "86746d70-d87e-4d63-9a2a-b4cb95936df1": {
       "probabilidade": 99.0,
@@ -1814,7 +2188,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "281ca852-a543-44c8-836e-5e305a6c7dfb": {
       "probabilidade": 26.8,
@@ -1835,7 +2209,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "4d30f7cc-70af-4acc-a59b-d94470f4b736": {
       "probabilidade": 20.3,
@@ -1851,7 +2225,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "3a5dd7ee-5b37-4b66-bb19-a50c556f49aa": {
       "probabilidade": 20.3,
@@ -1861,13 +2235,13 @@
       "fatores": [
         {
           "id": "score_high",
-          "label": "Score PLD 1270 (HIGH)",
+          "label": "Score PLD 1070 (HIGH)",
           "nivel": "alto"
         }
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "d0b1c912-b0e3-41bd-ad39-e631c8abd6e9": {
       "probabilidade": 20.3,
@@ -1883,7 +2257,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "0401a07e-14c2-4738-97dd-04ad76192660": {
       "probabilidade": 26.8,
@@ -1904,7 +2278,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "ac762768-a56d-4b3e-9f93-7d580a9edf4c": {
       "probabilidade": 20.3,
@@ -1920,7 +2294,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "401922c4-6835-4860-ac8b-aad233686503": {
       "probabilidade": 20.3,
@@ -1936,7 +2310,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "161cba7c-9195-4fcb-b232-7af941ea5fe5": {
       "probabilidade": 26.8,
@@ -1957,7 +2331,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "719f82b4-c6d0-4f1f-b7ca-44e636b5b57e": {
       "probabilidade": 20.3,
@@ -1973,7 +2347,7 @@
       ],
       "pep_cargo": "",
       "pep_vinculo": "",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     },
     "27569b17-5b49-48b5-91e0-d527157867d9": {
       "probabilidade": 43.1,
@@ -1999,7 +2373,7 @@
       ],
       "pep_cargo": "VEREADOR",
       "pep_vinculo": "IRMA(O)",
-      "gerado_em": "2026-09-17T20:54:35Z"
+      "gerado_em": "2026-09-23T14:25:23Z"
     }
   }
 }

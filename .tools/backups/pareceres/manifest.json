@@ -1,9 +1,9 @@
 {
   "pareceres-sugestao.json": {
     "status": "OK",
-    "size": 378265,
-    "hash": "7aa92dd911a397a8abd23bf8068c811cc321790524db397a7c84ea2472373638",
-    "timestamp": "20260917_140001",
+    "size": 421636,
+    "hash": "6d38b6284bc6cb28d1bd0f98d58af8c83cbea703120f9aafcd668367d475bac7",
+    "timestamp": "20260922_140000",
     "backed_up": true,
     "description": "Sugest\u00f5es IA do parecer analista"
   },
@@ -11,7 +11,7 @@
     "status": "OK",
     "size": 235412,
     "hash": "f76545aec7a35688094690eb8b1556de5327cc30a86cd5ac8a2db41f01a09e63",
-    "timestamp": "20260917_140001",
+    "timestamp": "20260922_140000",
     "backed_up": true,
     "description": "Pareceres reais do analista"
   },
@@ -19,7 +19,7 @@
     "status": "OK",
     "size": 48851,
     "hash": "0fada95aa1f126e2978fadba239b333dc2ee200d9ec06f25d29fb04f2dce361a",
-    "timestamp": "20260917_140001",
+    "timestamp": "20260922_140000",
     "backed_up": true,
     "description": "Decis\u00f5es da lideran\u00e7a"
   },
@@ -27,7 +27,7 @@
     "status": "OK",
     "size": 1342896,
     "hash": "5432adfb11a1fba13566cad0bf453ef328bd6db019e2d83f450e2730139ec4ca",
-    "timestamp": "20260917_140001",
+    "timestamp": "20260922_140000",
     "backed_up": true,
     "description": "An\u00e1lises salvas (backup)"
   }

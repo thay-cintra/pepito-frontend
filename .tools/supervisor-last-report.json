@@ -1,28 +1,28 @@
 {
-  "timestamp": "2026-09-17T14:00:02.908901",
+  "timestamp": "2026-09-22T14:00:01.419755",
   "checks_executados": 10,
   "checks_falhados": 1,
   "alertas": [
     {
-      "nivel": "🟠 ALTO",
-      "titulo": "Parecer Sugestão IA ausente no JSON-fonte",
-      "descricao": "CHECK_ANALISTA sem sugestão: 17 (['bdb93555-3b64-4adf-8aad-8b775fb6a139', 'bf43bb48-56c8-49fc-8bef-287f4f417977', 'd1e7ad75-086a-4015-89a4-822f9b6568f9', '3f785fff-a290-4114-a9a6-74f0917efdef', '08493df4-bfd1-4ae0-83cf-7e04d971ab50']). CHECK_LIDERANCA sem sugestão: 1 (['8fb890bf-57a7-4b09-8617-c1a24089c6a9']). Rodar generate-sugestao-parecer.py / generate-sugestao-lideranca.py.",
-      "componente": "Parecer Sugestão IA",
-      "timestamp": "2026-09-17T14:00:02.650993"
+      "nivel": "🟡 MÉDIO",
+      "titulo": "Build desatualizado",
+      "descricao": "dist/ foi buildado há 99 horas. Atualizações recentes podem não estar visíveis.",
+      "componente": "Build System",
+      "timestamp": "2026-09-22T14:00:01.027736"
     },
     {
-      "nivel": "🟡 MÉDIO",
-      "titulo": "1 novo(s) caso(s) escalado(s) para CHECK_LIDERANCA",
-      "descricao": "Caso(s) derivado(s) pelo analista ou promovido(s) pelo Retool desde a última verificação. Conferir Fila de Revisão:\n• R N RIOS SERVICOS MEDICOS LTDA (CNPJ 49.233.058/0001-74, score 1556) — draft 8fb890bf-57a7-4b09-8617-c1a24089c6a9",
-      "componente": "Fila de Revisão — Liderança",
-      "timestamp": "2026-09-17T14:00:02.733183"
+      "nivel": "🟠 ALTO",
+      "titulo": "Parecer Sugestão IA ausente no JSON-fonte",
+      "descricao": "CHECK_ANALISTA sem sugestão: 5 (['3fa59b82-7f59-4fbe-870a-0dbf49c39b0e', '9884f4cc-96b2-4759-ab97-ce4848e8435e', '34033a15-1d61-484e-82da-d4a81e961f81', 'c19919d4-21ea-484a-939c-a37b6593e1f7', '704fdc30-db8b-41d3-95ef-41c49c6237ec']). CHECK_LIDERANCA sem sugestão: 1 (['8fb890bf-57a7-4b09-8617-c1a24089c6a9']). Rodar generate-sugestao-parecer.py / generate-sugestao-lideranca.py.",
+      "componente": "Parecer Sugestão IA",
+      "timestamp": "2026-09-22T14:00:01.048038"
     },
     {
       "nivel": "🔵 BAIXO",
       "titulo": "Mudanças não commitadas",
-      "descricao": "6 arquivo(s) modificado(s) sem commit.",
+      "descricao": "18 arquivo(s) modificado(s) sem commit.",
       "componente": "Git Repository",
-      "timestamp": "2026-09-17T14:00:02.908479"
+      "timestamp": "2026-09-22T14:00:01.419161"
     }
   ]
 }
