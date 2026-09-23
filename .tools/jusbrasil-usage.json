@@ -1,11 +1,11 @@
 {
-  "total": 235,
+  "total": 297,
   "by_month": {
     "2026-04": 31,
     "2026-05": 19,
     "2026-07": 2,
     "2026-08": 6,
-    "2026-09": 177
+    "2026-09": 239
   },
   "limit": 325,
   "note": "Limite mensal: 325 CONSULTAS DE CPF/m\u00eas (65% do contrato de 500 CPFs/m\u00eas; 35% = 175 CPFs/m\u00eas reservados para alertas de monitoramento). Cada consulta de CPF dispara 5 chamadas HTTP (criminal + civil + trabalhista + bnmp + mp), mas conta como 1 unidade \u2014 bloqueio e warning usam by_month do m\u00eas corrente, contando CPFs, n\u00e3o chamadas HTTP. Atualizado automaticamente por consultar_jusbrasil() em fetch-media-findings.py.",

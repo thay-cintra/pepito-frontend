@@ -1408,6 +1408,67 @@ def pesquisar_caso(case: dict) -> list[dict]:
     return findings
 
 
+def retry_jusbrasil_pendente(case: dict, existing: list[dict]) -> list[dict] | None:
+    """Retenta SÓ a parte JusBrasil de um caso que já tem findings mas ainda
+    carrega placeholder de cota (`Sistema Pepito — Controle de Quota`) —
+    sem re-rodar WebSearch/Credilink (já consultados com sucesso, re-rodar
+    seria desperdício e risco de duplicar/estourar cota deles). Achado real,
+    2026-09-23: o modo padrão de main() só cobre casos com ZERO findings
+    (`draft_id not in findings`) — um caso que já tem findings (mesmo que só
+    o placeholder de cota) nunca era retentado automaticamente, mesmo com
+    cota disponível no mês seguinte. Analistas ficavam vendo "cota esgotada"
+    indefinidamente sem depender de ação manual.
+
+    Retorna None se não havia placeholder de cota (nada a fazer). Retorna a
+    lista de findings atualizada quando algo foi retentado — com o
+    placeholder ainda presente (atualizado) para os CPFs que a cota
+    genuinamente ainda bloqueia agora, nunca escondendo essa ressalva."""
+    tem_pendencia = any(
+        f.get("source", "").startswith("Sistema Pepito — Controle de Quota") for f in existing
+    )
+    if not tem_pendencia:
+        return None
+
+    ja_ok: set[str] = set()
+    for f in existing:
+        if f.get("source", "").startswith("JusBrasil"):
+            m = re.search(r"CPF\s*([\d.\-]+)", f.get("match", ""))
+            if m:
+                ja_ok.add(_cpf_digits(m.group(1)))
+
+    cpf_owner = _cpf_digits(case.get("cpf", ""))
+    pendentes: list[tuple[str, str, str]] = []
+    if cpf_owner and cpf_owner not in ja_ok:
+        pendentes.append((cpf_owner, case.get("full_name_pf", ""), "owner"))
+    vistos = {cpf_owner}
+    for pep in (case.get("pep_pf") or []):
+        cpf_pep = _cpf_digits(pep.get("cpf_titular", ""))
+        if cpf_pep and cpf_pep not in vistos:
+            vistos.add(cpf_pep)
+            if cpf_pep not in ja_ok:
+                pendentes.append((cpf_pep, pep.get("nome_titular", ""), "relacionado"))
+
+    novos = [f for f in existing if not f.get("source", "").startswith("Sistema Pepito — Controle de Quota")]
+    if not pendentes:
+        # Placeholder órfão — os CPFs relevantes já têm cobertura JusBrasil
+        # real (achado a partir de outra consulta); só limpa o resíduo.
+        return novos
+
+    algo_bloqueado_ainda = False
+    for cpf, nome, papel in pendentes:
+        if _jus_quota_exceeded():
+            algo_bloqueado_ainda = True
+            continue
+        novos.extend(consultar_jusbrasil(cpf, nome, papel=papel))
+
+    if algo_bloqueado_ainda:
+        alert = dict(_FINDING_LIMITE_ATINGIDO)
+        alert["snippet"] = f"{alert['snippet']} Caso: {case.get('draft_id','')} ({case.get('full_name_pf','')})."
+        novos.append(alert)
+
+    return novos
+
+
 def main():
     import argparse
     parser = argparse.ArgumentParser()
@@ -1426,6 +1487,7 @@ def main():
     lideranca = [it for it in items if it.get("bucket") == "CHECK_LIDERANCA"]
     analista = [it for it in items if it.get("bucket") == "CHECK_ANALISTA"]
     todas = lideranca + analista
+    retry_alvos: list[dict] = []  # só populado no modo padrão (ver abaixo)
 
     if args.all_lideranca:
         alvos = todas  # Cobre AMBAS as filas — uso manual/backfill pontual
@@ -1443,9 +1505,29 @@ def main():
         # `findings` já cobre o caso desde a passagem pelo Analista). Cobrir
         # CHECK_LIDERANCA é exceção pontual — usar --force ou --all-lideranca.
         alvos = [it for it in analista if it["draft_id"] not in findings]
-        print(f"ANALISTA: {len(analista)} | Sem cobertura: {len(alvos)} | (LIDERANCA: {len(lideranca)} — não roda por padrão, ver --force/--all-lideranca)")
+        # Retry automático da cota JusBrasil (achado real 2026-09-23): um caso
+        # que já tem findings (mesmo que só o placeholder de cota) nunca
+        # entrava em `alvos` acima, então ficava com "cota esgotada" pra
+        # sempre no texto mesmo depois da cota liberar no mês seguinte —
+        # analistas reportaram a mensagem persistindo sem a cota real estar
+        # esgotada. Cobre ANALISTA + LIDERANCA (o caso pode ter migrado de
+        # bucket com o placeholder ainda pendente).
+        retry_alvos = [
+            it for it in todas
+            if it["draft_id"] in findings
+            and isinstance(findings.get(it["draft_id"]), list)
+            and any(
+                f.get("source", "").startswith("Sistema Pepito — Controle de Quota")
+                for f in findings[it["draft_id"]]
+            )
+        ]
+        print(
+            f"ANALISTA: {len(analista)} | Sem cobertura: {len(alvos)} | "
+            f"Retry cota JusBrasil pendente: {len(retry_alvos)} | "
+            f"(LIDERANCA sem retry: {len(lideranca)} — não roda pipeline completo por padrão, ver --force/--all-lideranca)"
+        )
 
-    if not alvos:
+    if not alvos and not retry_alvos:
         print("✓ Nenhum caso para pesquisar.")
         return
 
@@ -1490,9 +1572,39 @@ def main():
         if i < len(alvos):
             time.sleep(3)
 
-    print(f"\n✓ media-findings.json atualizado — {pesquisados}/{len(alvos)} caso(s) pesquisado(s) com sucesso")
-    if falhas:
-        print(f"⚠️  {len(falhas)} caso(s) falharam e ficaram sem cobertura (tentar de novo na próxima run): {falhas}")
+    if alvos:
+        print(f"\n✓ media-findings.json atualizado — {pesquisados}/{len(alvos)} caso(s) pesquisado(s) com sucesso")
+        if falhas:
+            print(f"⚠️  {len(falhas)} caso(s) falharam e ficaram sem cobertura (tentar de novo na próxima run): {falhas}")
+
+    # Retry automático da cota JusBrasil — só a parte JusBrasil, sem re-rodar
+    # WebSearch/Credilink (ver retry_jusbrasil_pendente() acima).
+    if retry_alvos:
+        retentados = 0
+        for i, case in enumerate(retry_alvos, 1):
+            did = case["draft_id"]
+            nome = case.get("full_name_pf", did[:8])
+            print(f"  [retry {i}/{len(retry_alvos)}] {nome:<45}")
+            try:
+                atualizado = retry_jusbrasil_pendente(case, findings[did])
+            except Exception as e:
+                print(f"     ✗ ERRO no retry — placeholder mantido, tenta de novo na próxima run: {e}")
+                continue
+            if atualizado is None:
+                continue
+            findings[did] = atualizado
+            retentados += 1
+            ainda_bloqueado = any(
+                f.get("source", "").startswith("Sistema Pepito — Controle de Quota") for f in atualizado
+            )
+            print(f"     ✓ atualizado ({'ainda com cota bloqueada' if ainda_bloqueado else 'cota resolvida'})")
+            tmp_path = FINDINGS_PATH.with_suffix(f".tmp{os.getpid()}")
+            with open(tmp_path, "w", encoding="utf-8") as f:
+                json.dump(findings, f, ensure_ascii=False, indent=2)
+            os.replace(tmp_path, FINDINGS_PATH)
+            if i < len(retry_alvos):
+                time.sleep(1.5)
+        print(f"\n✓ Retry de cota JusBrasil: {retentados}/{len(retry_alvos)} caso(s) atualizado(s)")
 
 
 if __name__ == "__main__":
