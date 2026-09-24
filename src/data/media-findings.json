@@ -16242,5 +16242,121 @@
       "achado_positivo": false,
       "sem_conteudo_verificavel": true
     }
+  ],
+  "e73ec9cc-12e9-484e-8ac4-1b0fa626e570": [
+    {
+      "title": "Processo criminal — AZENCLEVER EDUARDO ROGERIO (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0065979-04.2013.8.13.0134",
+      "snippet": "AZENCLEVER EDUARDO ROGERIO figura como réu (polo passivo) em processo criminal: PROCESSO_PRINCIPAL_ORDINARIO. Tipificação: Associação Criminosa, Quadrilha ou Bando. Processo nº 0065979-04.2013.8.13.0134. Tribunal: BAIXADO E DE NATUREZA CRIMINAL, NÃO ACESSÍVEL. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — BAIXADO E DE NATUREZA CRIMINAL, NÃO ACESSÍVEL",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 001.675.156-67 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Associação Criminosa, Quadrilha ou Bando. Risco criminal incompatível com apetite da instituição."
+    },
+    {
+      "title": "Processo criminal — AZENCLEVER EDUARDO ROGERIO (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0014293-93.2018.8.13.0684",
+      "snippet": "AZENCLEVER EDUARDO ROGERIO figura como réu (polo passivo) em processo criminal: PROCESSO_PRINCIPAL_ORDINARIO. Tipificação: Uso de documento falso, Falsidade de atestado médico, Uso de documento falso. Processo nº 0014293-93.2018.8.13.0684. Tribunal: BAIXADO. Confiança de associação ao CPF: ALTA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — BAIXADO",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 001.675.156-67 — confiança ALTA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Uso de documento falso, Falsidade de atestado médico, Uso de documento falso. Crimes de fraude são antecedentes diretos de lavagem de dinheiro."
+    },
+    {
+      "title": "Processo criminal — AZENCLEVER EDUARDO ROGERIO (OWNER)",
+      "url": "https://www.jusbrasil.com.br/consulta-pro/processos/0003830-38.2014.8.13.0133",
+      "snippet": "AZENCLEVER EDUARDO ROGERIO figura como réu (polo passivo) em processo criminal: PROCESSO_PRINCIPAL_ORDINARIO. Tipificação: Falsidade ideológica. Processo nº 0003830-38.2014.8.13.0133. Tribunal: BAIXADO E DE NATUREZA CRIMINAL, NÃO ACESSÍVEL. Confiança de associação ao CPF: BAIXA. Fonte: JusBrasil Background Check API (produção).",
+      "source": "JusBrasil Background Check — BAIXADO E DE NATUREZA CRIMINAL, NÃO ACESSÍVEL",
+      "risk_indicator": "alto",
+      "tipo": "processo",
+      "match": "CPF 001.675.156-67 — confiança BAIXA — polo_passivo=True",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — OWNER réu em processo criminal ativo por Falsidade ideológica. Crimes de fraude são antecedentes diretos de lavagem de dinheiro."
+    },
+    {
+      "title": "Processos criminais (6 encontrados) — AZENCLEVER EDUARDO ROGERIO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "AZENCLEVER EDUARDO ROGERIO tem 9 processo(s) criminal(is) no JusBrasil. Processos encontrados sem configurar réu em tipificação crítica. Validar manualmente os detalhes para descartar homônimos.",
+      "source": "JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 001.675.156-67 — 6 processo(s) sem polo passivo crítico",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo civil: 9 encontrado(s) — AZENCLEVER EDUARDO ROGERIO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "AZENCLEVER EDUARDO ROGERIO consta em 9 processo(s) civil(s) no JusBrasil; 5 no polo passivo. Exemplos: TRF6, Ipatinga, status {'inferido': 'Ativo', 'normalizado': None, 'tribunal': 'SUSP/SOBR-Parcel.Débito.', 'data': '2026-09-13'}, polo passivo, valor 362390.25; tjmg, Barão de Cocais, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado Definitivamente', 'tribunal': 'Arquivado definitivamente', 'data': '2026-09-13'}, polo passivo, valor 1332.35; tjmg, Tarumirim, status {'inferido': 'Arquivado definitivamente', 'normalizado': 'Arquivado Definitivamente', 'tribunal': 'Arquivado definitivamente', 'data': '2026-09-13'}, polo passivo, valor 165000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Civil",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 001.675.156-67 — 5 de 9 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "JusBrasil — processo trabalhista: 2 encontrado(s) — AZENCLEVER EDUARDO ROGERIO",
+      "url": "https://www.jusbrasil.com.br/processos/",
+      "snippet": "AZENCLEVER EDUARDO ROGERIO consta em 2 processo(s) trabalhista(s) no JusBrasil; 1 no polo passivo. Exemplos: TRT3, João Monlevade, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2026-07-21'}, polo ativo/outro, valor 1819447.1; TRT3, João Monlevade, status {'inferido': 'Arquivado definitivamente', 'normalizado': None, 'tribunal': None, 'data': '2025-09-11'}, polo passivo, valor 150000. Achado informativo para avaliação do analista; não gera reprovação automática.",
+      "source": "JusBrasil Background Check — Trabalhista",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 001.675.156-67 — 1 de 2 processo(s) no polo passivo",
+      "achado_positivo": true
+    },
+    {
+      "title": "MP — Inquérito/Investigação criminal — AZENCLEVER EDUARDO ROGERIO",
+      "url": "https://www.mpes.mp.br/",
+      "snippet": "AZENCLEVER EDUARDO ROGERIO consta em registro do Ministério Público (MP-ES) em procedimento de tipo Extrajudicial. Situação: Auto Arquivado. Assunto: (3402) DIREITO PENAL &gt;&gt; Crimes contra a liberdade pessoal &gt;&gt; Ameaça. Tipificação: Ameaça. Confiança: BAIXA.",
+      "source": "MP MP-ES via JusBrasil Background Check API",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 001.675.156-67 — confiança BAIXA",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Processo criminal grave, requer leitura manual (3) — Azenclever Eduardo Rogerio",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Azenclever Eduardo Rogerio consta em 3 processo(s) criminal(is) de natureza grave, mas ARQUIVADO(S) e/ou sem confirmação de que a pessoa é ré (parties sem doc correspondente ao CPF) — não fundamenta reprovação automática (processo arquivado não é indício de risco confirmado; papel não confirmado não é achado desabonador), mas precisa de leitura manual antes de descartar. Assuntos: PENAL > CRIMES CONTRA A FE PUBLICA > FALSIDADE IDEOLOGICA; DIREITO PENAL (287) - CRIMES CONTRA A FE PUBLICA (3523) - FA; PENAL > CRIMES CONTRA A PAZ PUBLICA > ASSOCIACAO CRIMINOSA.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "medio",
+      "tipo": "processo",
+      "match": "CPF 001.675.156-67 — natureza grave, arquivado e/ou papel não confirmado",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Processo criminal leve (9) — Azenclever Eduardo Rogerio",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Azenclever Eduardo Rogerio consta em 9 processo(s) criminal(is) de natureza leve (honra/trânsito/contravenção/outro sem gravidade PLD — não é tráfico, fraude, corrupção, violência ou crime patrimonial grave). Assuntos: DIREITO PENAL (287) - CRIMES CONTRA A INCOLUMIDADE PUBLICA (; PROCESSUAL CIVIL > ATOS PROCESSUAIS > INTIMACAO / NOTIFICACA; PROCESSUAL CIVIL > OBJETOS DE CARTAS PRECATORIAS/DE ORDEM > . Não escala a recomendação.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 001.675.156-67 — natureza leve",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Processos não-criminais (16) — Azenclever Eduardo Rogerio",
+      "url": "https://api.tesserati.com.br/api/ProcessoTribunalJustica",
+      "snippet": "Azenclever Eduardo Rogerio tem 16 processo(s) não-criminal(is) (cível/trabalhista/outro) via Credilink. Assuntos: CIVIL > OBRIGACOES > ESPECIES DE TITULOS DE CREDITO > CHEQUE; CIVIL > OBRIGACOES > ESPECIES DE TITULOS DE CREDITO > NOTA P; CIVIL > OBRIGACOES > ESPECIES DE TITULOS DE CREDITO > NOTA P. Sem indício criminal — não escala a recomendação, mas registrado para o analista avaliar.",
+      "source": "Credilink — ProcessoTribunalJustica",
+      "risk_indicator": "baixo",
+      "tipo": "processo",
+      "match": "CPF 001.675.156-67",
+      "achado_positivo": true
+    },
+    {
+      "title": "Credilink — Mídias Negativas — resultado sem conteúdo verificável — Azenclever Eduardo Rogerio",
+      "url": "https://www.em.com.br/app/noticia/gerais/2013/12/04/interna_gerais,475965/preso-em-operacao-contra-quadrilha-que-fraudava-vestibulares-se-passava-por-medico.shtml",
+      "snippet": "A busca de mídias negativas via Credilink para Azenclever Eduardo Rogerio retornou 6 resultado(s) SEM título nem resumo (dado incompleto da própria API — não é um erro técnico, a API respondeu OK). NÃO É POSSÍVEL confirmar se Azenclever Eduardo Rogerio é de fato mencionado no link retornado. Não tratar como mídia negativa confirmada sem verificação manual do link. Link: https://www.em.com.br/app/noticia/gerais/2013/12/04/interna_gerais,475965/preso-em-operacao-contra-quadrilha-que-fraudava-vestibulares-se-passava-por-medico.shtml",
+      "source": "Credilink — Mídias Negativas",
+      "risk_indicator": "baixo",
+      "tipo": "midia",
+      "match": "N/A — resultado sem título/resumo, não confirmável",
+      "achado_positivo": false,
+      "sem_conteudo_verificavel": true
+    }
   ]
 }

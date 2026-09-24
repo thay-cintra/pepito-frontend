@@ -371,5 +371,82 @@
       "motivo": "Caso migrou de CHECK_ANALISTA para CHECK_LIDERANCA sem sugestão de parecer da Liderança gerada (achado real: 9 casos na fila de Liderança sem entrada em pareceres-lideranca.json). Parecer derivado da investigação real já validada no parecer de Analista, no formato/template da Mesa de Liderança.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
+  },
+  "f381d957-fdc8-4aae-a597-3ffd31a7c997": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 37.867.611/0001-41 — TIANJING DO BRASIL LTDA\n\nConcordo com o analista. A titular Elenira Tatiana Lemos Vieira é a própria PEP (Secretária Municipal de Políticas para as Mulheres de Aparecida de Goiânia/GO, mandato encerrado, em carência PLD até 31/12/2030). Não foram identificadas mídias ou processos desabonadores; a atividade (fabricação de motocicletas) não guarda interface com a pasta pública exercida. Pendência única: a Credilink aponta vínculo societário com empresa não identificada — validação manual necessária para confirmar se está ativa/baixada e se tem relação com este cadastro.\n\nDiante da ausência de desabono e do encerramento do mandato, recomendo a APROVAÇÃO do cadastro, condicionada à validação manual do vínculo societário indicado, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR condicionado — sem desabono; mandato encerrado; pendente validar vínculo societário não identificado.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-09-24",
+    "generated_at": "2026-09-24T00:00:00Z",
+    "revisao_manual_2026_09_24": {
+      "motivo": "Caso migrou para CHECK_LIDERANCA sem sugestão de parecer gerada — o gerador automático (generate-sugestao-lideranca.py, chamado por queue-sync.sh) depende do proxy LiteLLM, cujo orçamento mensal está esgotado (HTTP 429 'Budget has been exceeded! Current cost: 100.31, Max budget: 100.0', confirmado ao vivo em 2026-09-24) — toda geração automática falha silenciosamente desde então. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "c189cbde-50b2-4935-ab4c-e563e829a194": {
+    "text": "Decisão: CADASTRO REPROVADO\nCNPJ: 27.060.793/0001-90 — BRASIL INTELECTO LTDA\n\nConcordo com o analista. A titular Wanira De Holanda Brasil é RÉ CONFIRMADA (confiança ALTA, polo passivo) em 9 processos criminais — falsidade ideológica, falsificação de documento público, crimes da Lei de Licitações, corrupção praticada por Prefeitos e Vereadores, supressão de documento e, em três processos distintos, lavagem/ocultação de bens oriundos de corrupção (TRF5). Há ainda múltiplos procedimentos do MPF em situação ATIVA sobre os mesmos temas. O quadro societário (Receita Federal/BrasilAPI) confirma a titular como única sócia — a PEP Andrezza Brasil Souto Bezerra (Prefeita de Sítio Novo/RN) não é sócia deste CNPJ.\n\nDiante de processos criminais confirmados de lavagem de dinheiro, corrupção e fraude em licitações da própria titular, com procedimentos do MPF ainda ativos, recomendo a NÃO APROVAÇÃO DO CADASTRO, por incompatibilidade com o apetite de risco da instituição, conforme Circular BACEN 3.978/2020.",
+    "resumo": "REPROVAR — titular ré confirmada em múltiplos processos de lavagem/corrupção/fraude em licitações, com MPF ativo.",
+    "decisao": "reprovado",
+    "model": "manual-revisao-lideranca-2026-09-24",
+    "generated_at": "2026-09-24T00:00:00Z",
+    "revisao_manual_2026_09_24": {
+      "motivo": "Caso migrou para CHECK_LIDERANCA sem sugestão de parecer gerada — o gerador automático (generate-sugestao-lideranca.py, chamado por queue-sync.sh) depende do proxy LiteLLM, cujo orçamento mensal está esgotado (HTTP 429 'Budget has been exceeded! Current cost: 100.31, Max budget: 100.0', confirmado ao vivo em 2026-09-24) — toda geração automática falha silenciosamente desde então. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "80dfda06-79df-4429-ae77-fc90f280f142": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 59.478.872/0001-02 — DOUGLAS LOURENCO DE FARIA\n\nConcordo com o analista. O titular é irmão do ex-PEP Tiago Lourenço de Faria Godinho (mandato encerrado, em carência PLD). A Credilink registra apenas 1 processo leve (crime de trânsito) e processos não criminais, achados informativos. A atividade (cabeleireiro/manicure) não guarda interface com o cargo público anteriormente exercido.\n\nDiante da ausência de desabono material, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — apenas achado leve/informativo; sem interface entre a empresa e o cargo do ex-PEP.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-09-24",
+    "generated_at": "2026-09-24T00:00:00Z",
+    "revisao_manual_2026_09_24": {
+      "motivo": "Caso migrou para CHECK_LIDERANCA sem sugestão de parecer gerada — o gerador automático (generate-sugestao-lideranca.py, chamado por queue-sync.sh) depende do proxy LiteLLM, cujo orçamento mensal está esgotado (HTTP 429 'Budget has been exceeded! Current cost: 100.31, Max budget: 100.0', confirmado ao vivo em 2026-09-24) — toda geração automática falha silenciosamente desde então. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "4ee79154-b223-4d5a-a9dc-133d1dd7b776": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 08.147.608/0001-55 — EDILSON DA ROCHA SILVA EMPLACAMENTOS\n\nConcordo com o analista. O titular é o próprio PEP (Vereador de Inhambupe/BA), com empresa constituída em 2006 — muito anterior ao exercício do mandato. A consulta ao JusBrasil, concluída, não retornou processo criminal nem trabalhista; apenas 8 processos civis, achado informativo. A atividade (fotocópias) não guarda interface com o cargo.\n\nDiante da ausência de desabono confirmado, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — sem processo criminal (JusBrasil concluído); empresa muito anterior ao mandato.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-09-24",
+    "generated_at": "2026-09-24T00:00:00Z",
+    "revisao_manual_2026_09_24": {
+      "motivo": "Caso migrou para CHECK_LIDERANCA sem sugestão de parecer gerada — o gerador automático (generate-sugestao-lideranca.py, chamado por queue-sync.sh) depende do proxy LiteLLM, cujo orçamento mensal está esgotado (HTTP 429 'Budget has been exceeded! Current cost: 100.31, Max budget: 100.0', confirmado ao vivo em 2026-09-24) — toda geração automática falha silenciosamente desde então. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "13a03b51-5446-43f1-9792-75e41cd232c6": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 06.171.167/0001-00 — CONDOMINIO DO EDIFICIO VISTA DO MAR\n\nConcordo com o analista. O titular é irmão do ex-PEP Carlos Eduardo da Costa Almeida (ex-Diretor-Presidente da CODERN, mandato encerrado em 17/02/2023, carência até 17/02/2028). Não foram identificadas mídias ou processos desabonadores para titular ou PEP. A atividade (administração condominial) não guarda interface com o cargo anteriormente exercido.\n\nDiante da ausência de desabono e do encerramento do mandato, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — sem desabono; mandato do PEP encerrado, sem interface com a atividade da empresa.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-09-24",
+    "generated_at": "2026-09-24T00:00:00Z",
+    "revisao_manual_2026_09_24": {
+      "motivo": "Caso migrou para CHECK_LIDERANCA sem sugestão de parecer gerada — o gerador automático (generate-sugestao-lideranca.py, chamado por queue-sync.sh) depende do proxy LiteLLM, cujo orçamento mensal está esgotado (HTTP 429 'Budget has been exceeded! Current cost: 100.31, Max budget: 100.0', confirmado ao vivo em 2026-09-24) — toda geração automática falha silenciosamente desde então. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "9dc3eed5-c854-47dc-8139-bd79da999697": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 57.014.856/0001-33 — ADILSON TAVARES OLIVEIRA\n\nConcordo com o analista. O titular é o próprio PEP (Vereador de Jandaia/GO). Não foram identificadas mídias ou processos desabonadores para o titular. A atividade (comércio varejista de bebidas) não guarda interface direta com o cargo público exercido.\n\nDiante da ausência de desabono confirmado, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — sem desabono; sem interface entre a atividade da empresa e o cargo do titular-PEP.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-09-24",
+    "generated_at": "2026-09-24T00:00:00Z",
+    "revisao_manual_2026_09_24": {
+      "motivo": "Caso migrou para CHECK_LIDERANCA sem sugestão de parecer gerada — o gerador automático (generate-sugestao-lideranca.py, chamado por queue-sync.sh) depende do proxy LiteLLM, cujo orçamento mensal está esgotado (HTTP 429 'Budget has been exceeded! Current cost: 100.31, Max budget: 100.0', confirmado ao vivo em 2026-09-24) — toda geração automática falha silenciosamente desde então. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "abfe2c80-ff61-4292-af8b-d3decccefd11": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 61.697.648/0001-53 — JEFFERSON LIMA VIANA\n\nConcordo com o analista. O titular é o próprio PEP (Vereador de Macarani/BA, mandato ativo). A empresa (atividades veterinárias) foi constituída cerca de 6 meses após a posse do próprio titular, em setor tipicamente contratável por prefeituras (controle de zoonoses, vacinação e castração animal) — fator de atenção mesmo sem contrato confirmado até o momento. A consulta ao JusBrasil, concluída, não confirmou o titular como réu em tipificação crítica; achados informativos apenas.\n\nDiante da ausência de desabono confirmado, mas reconhecendo o fator de timing/setor estrutural, recomendo a APROVAÇÃO DO CADASTRO SOB MONITORAMENTO REFORÇADO, com acompanhamento de eventuais contratos, dispensas ou inexigibilidades da empresa junto à Prefeitura de Macarani-BA, conforme Circular BACEN 3.978/2020.",
+    "resumo": "MONITORAR — empresa aberta durante o próprio mandato do titular-PEP, em setor contratável pelo município.",
+    "decisao": "monitoramento",
+    "model": "manual-revisao-lideranca-2026-09-24",
+    "generated_at": "2026-09-24T00:00:00Z",
+    "revisao_manual_2026_09_24": {
+      "motivo": "Caso migrou para CHECK_LIDERANCA sem sugestão de parecer gerada — o gerador automático (generate-sugestao-lideranca.py, chamado por queue-sync.sh) depende do proxy LiteLLM, cujo orçamento mensal está esgotado (HTTP 429 'Budget has been exceeded! Current cost: 100.31, Max budget: 100.0', confirmado ao vivo em 2026-09-24) — toda geração automática falha silenciosamente desde então. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
   }
 }
