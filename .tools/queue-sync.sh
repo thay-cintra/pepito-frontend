@@ -111,7 +111,16 @@ PYEOF
   echo "[4/6] fetch-media-findings.py — dupla-verificação JusBrasil/Tesserati/WebSearch (casos novos) ..."
   python pepito-frontend/.tools/fetch-media-findings.py || echo "  aviso: fetch-media-findings falhou (ver log acima)"
 
-  echo "[5/6] gerando sugestões IA para casos novos (Liderança + Analista) ..."
+  # Backup Codex (thay@cora.com.br, 2026-09-24): quando o orçamento do proxy
+  # LiteLLM está esgotado (HTTP 429 "Budget has been exceeded" — recorrente
+  # desde meados de setembro/2026), os dois geradores abaixo caem
+  # automaticamente pro Codex CLI (conta ChatGPT própria já autenticada em
+  # ~/.codex, orçamento independente) em vez de simplesmente falhar. Claude
+  # via LiteLLM continua sendo o caminho principal — o Codex só entra se o
+  # orçamento estiver mesmo esgotado (ver _orcamento_esgotado() em cada
+  # script). Cada parecer gerado via Codex fica marcado com
+  # model="codex-cli-fallback" para rastreabilidade.
+  echo "[5/6] gerando sugestões IA para casos novos (Liderança + Analista) — Claude via LiteLLM, com backup Codex se o orçamento estiver esgotado ..."
   if [ -n "${LITELLM_API_KEY:-}" ] && [ -n "${LITELLM_BASE_URL:-}" ]; then
     python pepito-frontend/.tools/generate-sugestao-lideranca.py || echo "  aviso: gerador Liderança falhou"
     python pepito-frontend/.tools/generate-sugestao-parecer.py    || echo "  aviso: gerador Analista falhou"

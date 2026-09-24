@@ -10,6 +10,8 @@ Saída: src/data/pareceres-sugestao.json (keyed by draft_id, somente ANALISTA)
 """
 import json
 import os
+import subprocess
+import tempfile
 import time
 from pathlib import Path
 from dotenv import load_dotenv
@@ -340,6 +342,10 @@ def gerar(case: dict, findings: list, max_retries: int = 5) -> str:
                 continue
             return text
         except Exception as e:
+            if _orcamento_esgotado(e):
+                # Não adianta retentar — o orçamento não se recompõe em
+                # segundos. Falha rápido pro caller acionar o backup Codex.
+                raise
             if attempt == max_retries - 1:
                 raise
             wait = 2 ** (attempt + 1)  # 2s, 4s, 8s, 16s
@@ -348,6 +354,114 @@ def gerar(case: dict, findings: list, max_retries: int = 5) -> str:
         f"sugestão de parecer truncada após {max_retries} tentativas (draft {case.get('draft_id')}): "
         f"{last_text[-120:]!r}"
     )
+
+
+def _orcamento_esgotado(exc: Exception) -> bool:
+    """Detecta especificamente o erro de orçamento do proxy LiteLLM esgotado
+    (HTTP 429, 'Budget has been exceeded') — não qualquer erro genérico, pra
+    não mascarar bugs reais (timeout, chave inválida, rede fora) como se
+    fosse falta de orçamento e cair pro backup Codex sem necessidade."""
+    msg = str(exc).lower()
+    return "budget" in msg and ("exceeded" in msg or "429" in msg)
+
+
+_MODO_RESTRITO_CODEX = """MODO RESTRITO — LEIA COM ATENÇÃO ANTES DE RESPONDER:
+Você deve se comportar como um modelo de completude de texto puro, SEM qualquer conhecimento
+prévio, busca na web ou ferramenta externa. Baseie sua resposta EXCLUSIVAMENTE nos dados
+fornecidos no prompt abaixo. Se você tiver qualquer informação de treinamento, memória ou busca
+sobre a pessoa ou empresa citada que NÃO esteja explicitamente no texto abaixo, IGNORE-A POR
+COMPLETO — não a mencione, não a use para complementar o achado, mesmo que pareça correta ou
+relevante. Cite apenas fatos, números de processo, datas e nomes de fonte que aparecem
+literalmente no texto fornecido. Não pesquise nada, não rode nenhum comando, apenas responda com
+o texto do parecer.
+
+"""
+
+
+def gerar_via_codex(prompt_completo: str, draft_id: str, timeout_s: int = 240) -> str:
+    """Backup do Claude via LiteLLM (thay@cora.com.br, 2026-09-24): quando o
+    orçamento do proxy está esgotado, usa o Codex CLI — conta ChatGPT própria
+    já autenticada nesta máquina (~/.codex), orçamento totalmente
+    independente do LiteLLM — pra gerar a MESMA sugestão, no mesmo formato.
+
+    `codex exec` roda não-interativo; `--sandbox read-only` porque só
+    precisamos do texto de volta, não de edição de arquivo; `-o <arquivo>`
+    grava só a ÚLTIMA mensagem do agente, evitando parsear o log completo
+    do CLI (banner, linhas de config etc.).
+
+    IMPORTANTE (achado real, teste 2026-09-24, draft e73ec9cc): sem o prefixo
+    MODO RESTRITO, o Codex (agente completo, não uma chamada de completion
+    pura) complementou o parecer com um achado real mas NÃO presente nos
+    dados fornecidos (uma operação policial e condenação de conhecimento
+    prévio do modelo) — reintroduzindo exatamente o problema de "parecer cita
+    coisa que não está nos Resultados de Pesquisa" que motivou toda a
+    investigação da Credilink nesta mesma sessão. O prefixo abaixo eliminou o
+    comportamento no reteste.
+
+    RETRY (achado real, mesmo teste): o subprocesso `codex` às vezes morre
+    com rc=-9 (SIGKILL) sem relação aparente com o tamanho do prompt —
+    reproduzido tanto num prompt curto (que antes tinha funcionado) quanto
+    num longo, em chamadas sucessivas na mesma máquina com o app desktop do
+    ChatGPT/Codex aberto e vários processos Codex concorrentes ativos.
+    Comportamento intermitente, não determinístico pelo conteúdo — mesmo
+    padrão de robustez já usado pra Credilink/BrasilAPI neste projeto:
+    retry com backoff antes de desistir."""
+    for attempt in range(2):
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".txt", delete=False) as tmp:
+            tmp_path = tmp.name
+        try:
+            result = subprocess.run(
+                [
+                    "codex", "exec",
+                    "--sandbox", "read-only",
+                    "--skip-git-repo-check",
+                    "-o", tmp_path,
+                    _MODO_RESTRITO_CODEX + prompt_completo,
+                ],
+                capture_output=True, text=True, timeout=timeout_s,
+            )
+            if result.returncode != 0:
+                raise RuntimeError(
+                    f"codex exec falhou (draft {draft_id}, rc={result.returncode}): {result.stderr[-500:]}"
+                )
+            text = Path(tmp_path).read_text(encoding="utf-8").strip()
+            break
+        except Exception as e:
+            if attempt == 0:
+                print(f"     ⚠️  codex exec falhou na 1ª tentativa ({e}) — tentando de novo...")
+                time.sleep(5)
+                continue
+            raise
+        finally:
+            try:
+                os.unlink(tmp_path)
+            except OSError:
+                pass
+
+    if text.startswith("```"):
+        text = text.split("\n", 1)[1] if "\n" in text else text[3:]
+    if text.endswith("```"):
+        text = text.rsplit("```", 1)[0].rstrip()
+    text = text.strip().replace("\n\n", " ").replace("\n", " ")
+
+    if not _parece_completo(text):
+        raise RuntimeError(f"sugestão via Codex (draft {draft_id}) parece incompleta: {text[-120:]!r}")
+    return text
+
+
+def gerar_com_fallback(case: dict, findings: list) -> tuple[str, str]:
+    """Tenta Claude via LiteLLM primeiro; se o orçamento estiver esgotado,
+    cai automaticamente pro Codex CLI. Retorna (texto, provedor_usado) — o
+    provedor é sempre registrado no campo `model` do parecer persistido."""
+    try:
+        return gerar(case, findings), MODEL
+    except Exception as e:
+        if not _orcamento_esgotado(e):
+            raise
+        print(f"     ⚠️  LiteLLM sem orçamento ({e}) — usando Codex CLI como backup...")
+        prompt_completo = SYSTEM_PROMPT + "\n\n" + montar_user_prompt(case, findings)
+        texto = gerar_via_codex(prompt_completo, case.get("draft_id", ""))
+        return texto, "codex-cli-fallback"
 
 
 def main():
@@ -381,10 +495,10 @@ def main():
             f = []
         print(f"  [{i}/{len(analistas)}] {c['full_name_pf']:42s} → gerando...")
         try:
-            texto = gerar(c, f)
+            texto, model_usado = gerar_com_fallback(c, f)
             sugestoes[did] = {
                 "text": texto,
-                "model": MODEL,
+                "model": model_usado,
                 "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
             }
             OUT_PATH.write_text(json.dumps(sugestoes, ensure_ascii=False, indent=2), encoding="utf-8")
