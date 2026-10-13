@@ -291,11 +291,15 @@
     }
   },
   "97f41fe2-cbd0-44d0-9b95-60472b2fac84": {
-    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO  \nCNPJ: 05.595.136/0001-05 — SILVA CRUZ EMPREENDIMENTOS LTDA  \nO analista recomenda aprovação — concordo parcialmente, com monitoramento reforçado.  \nHá registro criminal no JusBrasil para Marcos Eduardo Silva Cruz, ainda sem tipificação crítica e sujeito a validação de identidade; o vínculo é irmão de Marco Arthur Silva Cruz, Vereador de Paranaiguara/GO.  \nRecomendo aprovação sob monitoramento reforçado, condicionada à validação do achado, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação — concordo parcialmente, com monitoramento reforçado.",
-    "decisao": "monitoramento",
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 05.595.136/0001-05 — SILVA CRUZ EMPREENDIMENTOS LTDA\n\nConcordo com o comentário do analista (Jeniffer, ENVIAR_LIDERANCA_PLD). O titular Marcos Eduardo Silva Cruz é irmão e sócio do PEP Marco Arthur Silva Cruz (Vereador de Paranaiguara/GO). O registro criminal do JusBrasil para o titular não configura réu em tipificação crítica (achado informativo, exige apenas validação de homônimo); não foram identificadas mídias ou processos relacionados a improbidade/corrupção para titular ou PEP.\n\nDiante da ausência de desabono relevante sob a ótica de LD, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — concordância com o analista: registro criminal sem réu confirmado (achado informativo), sem desabono relevante.",
+    "decisao": "aprovado",
     "model": "codex-cli-fallback",
-    "generated_at": "2026-10-13T14:45:47Z"
+    "generated_at": "2026-10-13T14:45:47Z",
+    "revisao_manual_2026_10_13d": {
+      "motivo": "Entrada tinha sido gerada pelo backup Codex CLI (único caso que funcionou no lote de 2026-10-13) e divergia do comentário real do analista (Jeniffer, ENVIAR_LIDERANCA_PLD): Codex escalou para monitoramento reforçado citando o registro criminal do JusBrasil, mas esse mesmo achado já está classificado como 'sem configurar réu em tipificação crítica' (achado informativo) e o analista real, após revisar, concluiu aprovação simples sem menção a monitoramento. Corrigido para alinhar ao julgamento real do analista, consistente com o padrão de calibração já usado nos demais 38 casos revisados.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
   },
   "6037eecd-e795-4e5e-93b9-20af82920bee": {
     "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 32.768.197/0001-08 — BD CONSULTORIA EMPRESARIAL LTDA\n\nConcordo com o analista. O titular é o próprio PEP (Secretário de Estado da Casa Civil/BA). Os processos civis/trabalhistas e criminais sem réu confirmado são achados informativos que exigem leitura, mas não fundamentam reprovação. A empresa (consultoria empresarial) foi aberta durante o exercício do cargo, em setor com potencial interface com a administração estadual.\n\nDiante da ausência de desabono confirmado, mas reconhecendo o fator de timing/setor, recomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com acompanhamento de eventuais contratos com o Estado da Bahia, conforme Circular BACEN 3.978/2020.",
