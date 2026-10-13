@@ -133,13 +133,17 @@
     }
   },
   "9a0883b0-0ea7-43b0-9830-97902e811156": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 50.671.124/0001-77 — EDIVANDO DE LIMA DIAS LTDA\n\nConcordo com o analista. O titular Edivando de Lima Dias é o próprio PEP (Vereador de Jaicós/PI), e a empresa (atividades de rádio) foi constituída em maio/2023, antes do início do mandato (01/01/2025). Não foram identificados processos criminais nem mídia adversa para o titular. A atividade de rádio, embora sujeita a concessão pública, não apresenta interface direta com a pasta legislativa exercida.\n\nDiante da ausência de desabono confirmado, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — sem desabono; empresa de rádio anterior ao mandato, sem interface direta com o cargo.",
-    "decisao": "aprovado",
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 50.671.124/0001-77 — EDIVANDO DE LIMA DIAS LTDA\n\nConcordo com o comentário do analista (Jeniffer, ENVIAR_LIDERANCA_PLD). O titular é o próprio PEP (Vereador de Jaicós/PI). Não foram identificadas mídias ou processos desabonadores face à empresa ou ao titular; a atividade de rádio, ainda que sujeita a concessão pública, não apresenta interface direta com a pasta legislativa.\n\nDiante da ausência de desabono confirmado, mas tendo em vista o atual cumprimento de mandato pelo próprio titular, recomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, conforme Circular BACEN 3.978/2020.",
+    "resumo": "MONITORAR — concordância com o analista: sem desabono, mas mandato ativo do próprio titular-PEP justifica acompanhamento.",
+    "decisao": "monitoramento",
     "model": "manual-revisao-lideranca-2026-09-23",
     "generated_at": "2026-09-23T00:00:00Z",
     "revisao_manual_2026_09_23": {
       "motivo": "Caso migrou de CHECK_ANALISTA para CHECK_LIDERANCA sem sugestão de parecer da Liderança gerada (achado real: 9 casos na fila de Liderança sem entrada em pareceres-lideranca.json). Parecer derivado da investigação real já validada no parecer de Analista, no formato/template da Mesa de Liderança.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    },
+    "revisao_manual_2026_10_13c": {
+      "motivo": "A analista (Jeniffer) reportou que o comentário real do analista (ENVIAR_LIDERANCA_PLD em pareceres-real.json) não foi lido ao escrever este parecer em 2026-10-13 — ele foi derivado apenas da sugestão de IA do Check Analista (pareceres-sugestao.json), violando a regra já estabelecida de que a Mesa deve se basear no comentário real do analista. Verificação sistemática dos 39 pareceres escritos manualmente encontrou este caso entre os divergentes; texto reescrito para refletir fielmente o comentário real do analista.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -327,13 +331,17 @@
     }
   },
   "89aba1cb-fa59-4f5f-a2ab-14ce4081d7ec": {
-    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 11.749.847/0001-90 — HUGO JULIANO PIRES DE CARVALHO\n\nConcordo com o analista. O titular é ex-Vereador de Lapão/BA (mandato encerrado, carência PLD até 2029), com empresa de engenharia no mesmo município. Não há processo criminal confirmado — apenas volume de processos civis que exige acompanhamento.\n\nDiante da ausência de desabono criminal, mas do período de carência e do setor de engenharia no mesmo município, recomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, conforme Circular BACEN 3.978/2020.",
-    "resumo": "MONITORAR — ex-PEP em carência, empresa de engenharia no mesmo município do antigo mandato.",
-    "decisao": "monitoramento",
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 11.749.847/0001-90 — HUGO JULIANO PIRES DE CARVALHO\n\nConcordo com o comentário do analista (Jeniffer, ENVIAR_LIDERANCA_PLD). O titular é ex-Vereador de Lapão/BA, com mandato encerrado em 31/12/2024. Não há desabono identificado para o titular ou a empresa.\n\nDiante da ausência de atipicidades ou desabonos e do mandato já encerrado, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — concordância com o analista: sem desabono; mandato do próprio titular-PEP já encerrado.",
+    "decisao": "aprovado",
     "model": "manual-revisao-lideranca-2026-10-13",
     "generated_at": "2026-10-13T00:00:00Z",
     "revisao_manual_2026_10_13": {
       "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    },
+    "revisao_manual_2026_10_13c": {
+      "motivo": "A analista (Jeniffer) reportou que o comentário real do analista (ENVIAR_LIDERANCA_PLD em pareceres-real.json) não foi lido ao escrever este parecer em 2026-10-13 — ele foi derivado apenas da sugestão de IA do Check Analista (pareceres-sugestao.json), violando a regra já estabelecida de que a Mesa deve se basear no comentário real do analista. Verificação sistemática dos 39 pareceres escritos manualmente encontrou este caso entre os divergentes; texto reescrito para refletir fielmente o comentário real do analista.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -382,13 +390,17 @@
     }
   },
   "2c2c34ef-36f3-4f92-a7d0-dea3e73b4386": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 14.855.693/0001-09 — A A J TRANSPORTE SERVICOS E LOCACAO DE MAQUINAS LTDA\n\nConcordo com o analista. O titular é o próprio PEP (Vereador de Lauro de Freitas/BA). Os processos criminais sem réu confirmado e os processos civis/trabalhistas são achados informativos; a atividade de transporte de carga não guarda interface direta com o cargo legislativo.\n\nDiante da ausência de desabono material, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — achados informativos apenas; sem interface entre a empresa e o cargo legislativo.",
-    "decisao": "aprovado",
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 14.855.693/0001-09 — A A J TRANSPORTE SERVICOS E LOCACAO DE MAQUINAS LTDA\n\nConcordo com o comentário do analista (Jeniffer, ENVIAR_LIDERANCA_PLD). O titular é o próprio PEP (Vereador de Lauro de Freitas/BA, mandato ativo até 31/12/2028). Os 2 processos criminais do titular sem relevância sob a ótica de LD e os 43 processos civis (21 no polo passivo) e 2 trabalhistas são achados informativos; a atividade de transporte de carga não guarda interface direta com o cargo de vereador.\n\nDiante da ausência de desabono material, mas tendo em vista o atual cumprimento de mandato pelo próprio titular, recomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, conforme Circular BACEN 3.978/2020.",
+    "resumo": "MONITORAR — concordância com o analista: sem desabono material, mas mandato ativo do próprio titular-PEP justifica acompanhamento.",
+    "decisao": "monitoramento",
     "model": "manual-revisao-lideranca-2026-10-13",
     "generated_at": "2026-10-13T00:00:00Z",
     "revisao_manual_2026_10_13": {
       "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    },
+    "revisao_manual_2026_10_13c": {
+      "motivo": "A analista (Jeniffer) reportou que o comentário real do analista (ENVIAR_LIDERANCA_PLD em pareceres-real.json) não foi lido ao escrever este parecer em 2026-10-13 — ele foi derivado apenas da sugestão de IA do Check Analista (pareceres-sugestao.json), violando a regra já estabelecida de que a Mesa deve se basear no comentário real do analista. Verificação sistemática dos 39 pareceres escritos manualmente encontrou este caso entre os divergentes; texto reescrito para refletir fielmente o comentário real do analista.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
@@ -452,13 +464,17 @@
     }
   },
   "a0068ae9-06a7-4d78-bf1f-d8bf3cc66b09": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 05.746.595/0001-42 — ARAGUAIA SAGA LTDA\n\nConcordo com o analista. O titular é irmão do PEP Maycow Douglas de Oliveira Maximiano (Vereador de Fazenda Nova/GO). Os processos criminais sem réu confirmado e os civis são achados informativos; a atividade (comércio automotivo) não guarda interface com o cargo.\n\nDiante da ausência de desabono material, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — achados informativos apenas; sem interface entre a empresa e o cargo do PEP.",
-    "decisao": "aprovado",
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 05.746.595/0001-42 — ARAGUAIA SAGA LTDA\n\nConcordo com o comentário do analista (Jeniffer, ENVIAR_LIDERANCA_PLD). O titular é irmão do PEP Maycow Douglas de Oliveira Maximiano (Vereador de Fazenda Nova/GO, mandato ativo até 31/12/2028). Os processos criminais localizados para o PEP não demonstram relevância sob a ótica de PLD; a atividade (comércio automotivo) não guarda interface direta com o cargo.\n\nDiante da ausência de desabono material, mas tendo em vista o cumprimento atual de mandato pelo irmão do titular, recomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, conforme Circular BACEN 3.978/2020.",
+    "resumo": "MONITORAR — concordância com o analista: sem desabono, mas mandato ativo do irmão-PEP justifica acompanhamento.",
+    "decisao": "monitoramento",
     "model": "manual-revisao-lideranca-2026-10-13",
     "generated_at": "2026-10-13T00:00:00Z",
     "revisao_manual_2026_10_13": {
       "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    },
+    "revisao_manual_2026_10_13c": {
+      "motivo": "A analista (Jeniffer) reportou que o comentário real do analista (ENVIAR_LIDERANCA_PLD em pareceres-real.json) não foi lido ao escrever este parecer em 2026-10-13 — ele foi derivado apenas da sugestão de IA do Check Analista (pareceres-sugestao.json), violando a regra já estabelecida de que a Mesa deve se basear no comentário real do analista. Verificação sistemática dos 39 pareceres escritos manualmente encontrou este caso entre os divergentes; texto reescrito para refletir fielmente o comentário real do analista.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
