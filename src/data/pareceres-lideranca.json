@@ -110,169 +110,6 @@
       "autor": "thay@cora.com.br (via Claude Code) — reversão de proposta do Codex"
     }
   },
-  "12f79730-5920-400a-a1a9-8de889fca3cf": {
-    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 63.104.531/0001-44 — LALUCI MASSAS E SALGADOS LTDA\n\nO analista recomenda aprovação — concordo parcialmente, mantendo monitoramento reforçado. O vínculo societário entre Lucilei Pacheco De Almeida Salomão e a vereadora Rosangela de Souza Tezzon Martins (Câmara Municipal de Mirandópolis/SP, mandato ativo 2025–2029) é do tipo SÓCIO — a empresa em comum, antes não identificada pela Credilink, foi confirmada via API PH3A + Receita Federal (BrasilAPI) em 2026-09-15: ALMEIDA SALOMAO & MARTINS LTDA (nome fantasia CENTRO DE FORMAÇÃO DE CONDUTORES RODAS DE OURO), CNPJ 08.247.613/0001-30, com ambas as sócias em 50%/50% desde 24/08/2006. Situação cadastral: INAPTA desde 10/03/2021, por omissão de declarações — irregularidade fiscal, sem indicativo de fraude, processo criminal ou sanção associada. Ademais, a PJ do caso foi constituída em 08/10/2025, após o início do mandato da PEP, mas sem qualquer achado adverso de mídia, processos ou sanções para a empresa, o titular ou a PEP.\n\nCom a lacuna societária esclarecida e sem achado adverso adicional, mantenho a recomendação de APROVAÇÃO SOB MONITORAMENTO REFORÇADO como medida de cautela dado o histórico de inaptidão fiscal da empresa em comum — cabe à Mesa avaliar se o monitoramento pode ser reduzido ao padrão, já que a condição originalmente colocada (identificar a empresa e sua situação cadastral) foi cumprida sem indicar risco de LD/FT, conforme Circular BACEN 3.978/2020.",
-    "decisao": "monitoramento",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-12T00:23:55Z",
-    "revisao_manual_2026_09_15": {
-      "motivo": "Lacuna societária (empresa em comum não identificada) resolvida via PH3A + BrasilAPI — parecer atualizado com o CNPJ e situação cadastral real, condição originalmente colocada pelo próprio parecer.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
-  },
-  "c562e1c7-4e8c-42fc-8be4-bafee05f8495": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 33.634.909/0001-50 — JONAS RAFAEL DE BRITO 03216997421\n\nO analista recomenda aprovação — concordo. O único fator de risco é o vínculo de irmandade com Macilon Rafael de Brito, ex-vereador de Serra Branca/PB, cujo mandato encerrou em 31/12/2024 e permanece em carência PLD até 31/12/2029. A empresa, constituída em 2019 (anterior ao mandato), atua em comércio varejista de doces e similares, setor sem interface relevante com o poder público, e está sediada em município distinto do da atuação política do PEP. Não foram identificados processos judiciais, sanções, contratos públicos suspeitos ou mídia adversa para a empresa, o titular ou o PEP.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020, com manutenção do monitoramento transacional ordinário durante o período de carência.",
-    "resumo": "APROVAR — O analista recomenda aprovação — concordo.",
-    "decisao": "aprovado",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-12T00:24:02Z"
-  },
-  "ca6eac08-e054-4275-886d-c6f909554381": {
-    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 66.268.826/0001-44 — DIVINA CANTINA DISTRIBUITORA UNIPESSOAL LTDA\n\nO analista recomenda aprovação com monitoramento reforçado — concordo. Amélia Míriam De Oliveira é irmã de Tadeu Barbosa de Oliveira, Prefeito de Araçuaí/MG, com mandato ativo até 31/12/2028. A empresa, constituída em 10/04/2026 (durante o mandato do PEP), opera no ramo de restaurantes em Capelinha/MG — município distinto ao de atuação política do PEP —, o que mitiga o risco de conflito de interesses direto, embora a abertura recente em período de mandato ativo configure fator agravante que justifica atenção continuada. A pesquisa localizou, para a titular, 8 processos civis, 4 no polo passivo, 5 processos trabalhistas, todos no polo passivo, e 9 processos não criminais na Credilink; para o PEP, localizou 28 processos civis, 6 no polo passivo, 6 processos criminais classificados como leves e 5 processos não criminais. Esses registros são informativos e não geram reprovação automática.\n\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica dos fatores de risco, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação com monitoramento reforçado — concordo.",
-    "decisao": "monitoramento",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-12T00:24:09Z",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer de Liderança negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json; decisão original preservada.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
-  },
-  "a4378011-ca0e-42b4-a4be-1322c2ab7c15": {
-    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 61.636.770/0001-10 — ILUMINAR LTDA\n\nO analista recomenda aprovação — concordo parcialmente, porém o desfecho adequado é monitoramento reforçado, dado que a própria titular é a PEP (vereadora ativa em Varjão de Minas/MG, mandato 01/01/2025–31/12/2028) e a empresa foi constituída em julho de 2025, já durante o mandato, configurando fator agravante concreto para o risco de conflito de interesses. A atividade declarada (outras atividades profissionais, científicas e técnicas) é de natureza ampla e não permite descartar interface com contratações públicas municipais sem acompanhamento contínuo. A pesquisa localizou notícia segundo a qual a PEP recebeu R$ 42.733,36 em diárias da Câmara Municipal de Varjão de Minas em 2025 e 2026, em levantamento que aponta pagamentos elevados e repasses idênticos em lote; o finding não confirma fraude ou outro ilícito. O achado reforça a necessidade de vigilância já registrada, sem alterar a decisão de monitoramento.\n\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica das transações e verificação de eventuais contratos com o município de Varjão de Minas ou outros entes públicos, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação — concordo parcialmente, porém o desfecho adequado é monitoramento reforçado, dado que a própria titular é a PEP (vereadora ativa em Varjão de Minas/…",
-    "decisao": "monitoramento",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-12T00:24:18Z",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer de Liderança negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json; decisão original preservada.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
-  },
-  "10c5ad3f-c676-4ab0-b473-5c261fe55ba7": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 06.068.718/0001-04 — ROSILENE MARIA DE AZEVEDO BORGES LTDA\n\nO analista recomenda aprovação — concordo. O único fator de risco é o vínculo de irmandade com Reginaldo Liberato de Azevedo, vereador ativo em Ceres/GO (mandato 2025–2029). A empresa, constituída em 2003, é amplamente preexistente ao mandato, e sua atividade de creche (educação infantil) não apresenta interface relevante com o poder público municipal de forma a configurar conflito de interesses. A pesquisa localizou 1 processo trabalhista da titular, no polo passivo, além de 2 processos criminais do PEP sem configuração como réu em tipificação crítica e 4 processos civis do PEP, 1 no polo passivo; os registros exigem avaliação manual e não geram reprovação automática.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — O analista recomenda aprovação — concordo.",
-    "decisao": "aprovado",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-12T00:24:24Z",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer de Liderança negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json; decisão original preservada.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
-  },
-  "05375e39-357a-4bf4-bec0-b285551e29ee": {
-    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO PADRÃO\nCNPJ: 68.725.172/0001-66 — NEMALOG LOGISTICA E TRANSPORTES LTDA\n\nO analista recomenda aprovação — concordo. O vínculo é de irmandade com Edilson Fernandes da Silva Junior, Vereador de Paraú/RN. A Operação Mederi (PF/TRF-5) atinge o Município de Paraú/RN e tem como indiciado o PREFEITO do município (João Evaristo Peixoto) — pessoa diferente do PEP (vereador) e do titular, com coincidência apenas parcial de sobrenome com o titular. Nenhum achado confirma nominalmente vínculo do titular ou do PEP com a operação ou com o prefeito investigado — é contexto regional (mesma cidade), não nexo pessoal, consistente com o critério já adotado pela Mesa em casos análogos (achado sem nexo nominativo direto não fundamenta reprovação). Além do contexto regional da Operação Mederi, o titular consta em procedimento extrajudicial do MP-RN, com situação de baixa de carga, por crimes de trânsito e confiança baixa. Para o PEP, o JusBrasil registra 11 processos civis, 1 no polo passivo, e a Credilink registra 1 processo não criminal; esses achados são informativos e não geram reprovação automática.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme Circular BACEN 3.978/2020. Não há elemento concreto que justifique monitoramento reforçado além do padrão já aplicado a vínculos PEP — a coincidência de sobrenome, isoladamente, não é evidência de parentesco com o prefeito investigado.",
-    "decisao": "aprovado",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-12T00:24:31Z",
-    "revisao_manual_2026_09_15": {
-      "motivo": "Achado 'Operação Mederi' reclassificado: contexto regional/coincidência de sobrenome, sem confirmação nominal — mantida aprovação, monitoramento padrão (não reforçado).",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer de Liderança negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json; decisão original preservada.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
-  },
-  "5b91bd5d-b6bd-4e95-8c1f-1cca12c465e5": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 67.814.414/0001-25 — FROTA NORDESTE LTDA\n\nO analista recomenda aprovação simples — concordo, com ressalva sobre um fator agravante que merece registro. A empresa atua em locação de veículos, setor com interface relevante com o poder público, foi constituída em julho de 2026 (após o encerramento do mandato), e a titular é irmã de Gustavo Henrique Santos Menezes, ex-vereador de Pitimbu/PB (mandato encerrado em 31/12/2024, em carência PLD até 31/12/2029). A abertura da empresa durante o período de carência, combinada com o setor de atuação, configura fator de atenção concreto para eventual conflito de interesses, ainda que o mandato já tenha cessado. A pesquisa localizou, para a titular, 1 processo criminal no JusBrasil sem configuração como ré em tipificação crítica, 1 processo criminal leve e 9 processos não criminais na Credilink; para o ex-PEP, localizou 7 processos civis, 2 no polo passivo, e 1 processo não criminal. Os registros requerem avaliação, mas não geram reprovação automática e mantêm o risco em nível não impeditivo.\n\nRecomendo a APROVAÇÃO DO CADASTRO SOB MONITORAMENTO REFORÇADO, com revisão periódica durante o período de carência PLD, conforme Circular BACEN 3.978/2020.",
-    "decisao": "aprovado",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-12T00:24:40Z",
-    "revisao_manual_2026_09_15": {
-      "motivo": "Parecer favorável sinalizado por coexistir com 1 achado(s) real(is) de risco alto; decisão preservada para revisão humana.",
-      "autor": "thay@cora.com.br + Codex"
-    },
-    "revisao_manual_2026_09_15_aviso_removido": {
-      "motivo": "Aviso de achado-alto-não-refletido removido: o achado que motivou o aviso foi reclassificado para baixo risco após correção da lógica de classificação Credilink (réu não confirmado / natureza leve / arquivado) — era falso alarme, não achado real.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer de Liderança negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json; decisão original preservada.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
-  },
-  "16059106-2aeb-4e36-8978-9089db30942e": {
-    "text": "Decisão: CADASTRO REPROVADO (condicionado à confirmação de status processual)\nCNPJ: 28.639.509/0001-06 — ROSINEI DE FATIMA PIMENTEL 33987957816\n\nA titular Rosinei de Fatima Pimentel Santos figura como ré confirmada (confiança ALTA) em processo criminal por ESTELIONATO (processo nº 0000302-57.2006.8.26.0539). O tribunal de origem consta como extinto por reorganização judiciária — isso não equivale a arquivamento do processo; não há confirmação do desfecho. Diante da gravidade (estelionato) e da confirmação de identidade (não é homônimo), o processo por si só já afasta a aprovação simples, independentemente do vínculo com a PEP (irmã, Vereadora de Ipaussu/SP), que não apresenta achado adverso próprio além do já registrado.\n\nRecomendo a REPROVAÇÃO DO CADASTRO. Caso a área responsável confirme que o processo foi arquivado por prescrição ou absolvição, sem outro fator agravante, a decisão pode ser reavaliada para monitoramento reforçado — mas a aprovação simples não é recomendada com a informação hoje disponível.",
-    "decisao": "reprovado",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-12T00:24:47Z",
-    "revisao_manual_2026_09_15": {
-      "motivo": "Achado JusBrasil (estelionato, réu confirmado, confiança ALTA) da própria titular — não estava refletido no parecer original.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
-  },
-  "ef793f91-57bc-4354-8542-fe83688100e6": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 07.684.261/0001-17 — IGREJA EVANGELICA ASSEMBLEIA DE DEUS DE PARACURU UMA IGREJA DE REFUGIO\n\nO analista recomenda monitoramento reforçado — divergência parcial: o desfecho correto é aprovação simples. O vínculo é de irmandade com Eriemerson Nobre Gonçalves, vereador ativo de Caucaia/CE (mandato 2025–2028), mas a empresa é uma organização religiosa constituída em 2005, portanto preexistente ao mandato em cerca de 20 anos, sediada em Paracuru/CE — município distinto da atuação política do PEP —, sem qualquer interface identificável com contratações públicas ou conflito de interesses. A ausência total de mídia adversa, sanções, processos judiciais ou apontamentos desabonadores para a empresa, seu titular e o PEP, aliada à natureza da atividade e à divergência geográfica, afasta os fatores agravantes concretos que justificariam monitoramento diferenciado; o vínculo PEP isolado não é suficiente para elevar o desfecho.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — O analista recomenda monitoramento reforçado — divergência parcial: o desfecho correto é aprovação simples.",
-    "decisao": "aprovado",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-12T00:24:57Z"
-  },
-  "a116f88a-ab10-40fe-a80f-3c9515a55749": {
-    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 82.997.289/0001-20 — FARMA SUELI LTDA\n\nO analista recomenda aprovação com monitoramento reforçado — concordo. Franciele Garcia é irmã de Fernanda Garcia Sardanha, atual Prefeita de São Mateus do Sul/PR (mandato ativo até 31/12/2028).\nA empresa, constituída em 1991, é amplamente preexistente ao mandato e está sediada em Santa Cecília/SC, município e estado distintos da atuação política da PEP, o que mitiga o risco de conflito de interesses direto; a atividade varejista farmacêutica sem manipulação também não apresenta interface sensível com contratações públicas municipais. A pesquisa registra 1 processo criminal por difamação para a PEP, sem informação de polo ou desfecho, multa de R$ 3.984,60 aplicada pelo TCE-PR por irregularidade no Pregão Eletrônico nº 131/2022, representação julgada parcialmente procedente sem irregularidades graves e ato de inexigibilidade de chamamento público assinado pela prefeita. Também constam 68 processos civis, 30 no polo passivo, 1 processo trabalhista no polo passivo e referência duplicada aos mesmos 68 processos; os findings exigem avaliação e não geram reprovação automática por si sós. O mandato de alto escalão municipal recém-iniciado (jan/2025) justifica, por si só, a manutenção de monitoramento periódico.\n\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica dos fatores de risco durante a vigência do mandato, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação com monitoramento reforçado — concordo.",
-    "decisao": "monitoramento",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-12T00:25:06Z",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer de Liderança negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json; decisão original preservada.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
-  },
-  "45a36634-2643-4823-9269-cd03de7078b9": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 68.465.576/0001-68 — PIOVESAN CONSULTORIA FINANCEIRA LTDA\n\nO analista recomenda aprovação — concordo. O vínculo é de irmandade com Davi Cargnin Piovesan, ex-vereador de Palmeira das Missões/RS, cujo mandato encerrou em 31/12/2024 (em carência PLD até 31/12/2029). A empresa está sediada em Alegrete/RS, município distinto da atuação política do PEP, e atua em consultoria financeira, setor sem interface relevante com o cargo de vereador anteriormente exercido. A pesquisa localizou 21 processos civis do ex-PEP Davi Cargnin Piovesan no JusBrasil, 8 no polo passivo; o achado é informativo e não gera reprovação automática, sem alterar os demais fundamentos da aprovação.\n\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — O analista recomenda aprovação — concordo.",
-    "decisao": "aprovado",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-12T00:25:13Z",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer de Liderança negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json; decisão original preservada.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
-  },
-  "fdcfbd26-8a43-44c3-892a-006b11e2cee4": {
-    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 68.509.014/0001-79 — 68.509.014 DOUGLAS KUBICA\n\nO analista recomenda aprovação sob monitoramento reforçado — concordo. O vínculo direto é de irmandade com Luciana Aparecida Kubica, vereadora ativa em Monte Azul Paulista/SP (mandato 2025–2029); a atividade de minimercado/mercearia não apresenta interface relevante com o poder público municipal. Achado adicional (2026-09-15): o PAI da PEP, Gilberto Roberto Kubica (ex-vereador, 4 legislaturas, ex-presidente da Câmara), foi condenado por improbidade administrativa em esquema de fraude em licitação, condenação mantida pelo TJSP — vínculo familiar indireto (pai, não a própria PEP), ilícito administrativo/cível, sem processo criminal contra o titular ou a PEP. Ausência de sanções, processos judiciais ou mídia adversa para a empresa, seu titular e a PEP diretamente.\n\nRecomendo a APROVAÇÃO DO CADASTRO SOB MONITORAMENTO REFORÇADO conforme Circular BACEN 3.978/2020, dado o histórico de influência política da família Kubica no mesmo município onde a PEP hoje exerce mandato — cautela proporcional, não bloqueio.",
-    "decisao": "monitoramento",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-12T00:25:20Z",
-    "revisao_manual_2026_09_15": {
-      "motivo": "Achado WebSearch (condenação por improbidade do pai da PEP, mantida pelo TJSP) integrado ao texto do parecer — antes só um aviso em separado.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
-  },
-  "98deb27d-7534-429e-8089-a458b07bde50": {
-    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 50.321.708/0001-12 — AS1 - SERVICOS ADMINISTRATIVOS E CONSULTORIA\n\nO analista recomenda aprovação — concordo parcialmente, porém o desfecho adequado é aprovação sob monitoramento reforçado, dado que o próprio titular Alan Salviano Lima é o PEP, na condição de Vereador ativo em Várzea Alegre/CE (mandato 01/01/2025–31/12/2028), e a empresa foi constituída em abril de 2023 — portanto aberta antes do mandato, mas em setor de consultoria em gestão empresarial que, por natureza, possui interface potencial com contratos e serviços junto ao poder público municipal, exigindo atenção continuada. Não foram identificados processos judiciais, sanções ou mídia adversa para o titular ou a empresa.\n\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica das transações e do relacionamento durante a vigência do mandato, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação — concordo parcialmente, porém o desfecho adequado é aprovação sob monitoramento reforçado, dado que o próprio titular Alan Salviano Lima é o PEP, na…",
-    "decisao": "monitoramento",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-12T00:25:31Z"
-  },
-  "68df24fe-b9c6-4e60-a88d-fc735f0b7875": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 03.821.534/0001-77 — TAC CONTABEIS LTDA\n\nO analista recomenda aprovação — concordo. O vínculo é societário com Nilton Batista Raupp, ex-vereador de Garopaba/SC, cujo mandato encerrou em 31/12/2024 (em carência PLD até 31/12/2029). A empresa de contabilidade, constituída em 2000, é anterior ao mandato e não apresenta interface direta com a atividade parlamentar. Os achados de mídia PF no pipeline são descartados: trata-se de risco homônimo alto (sobrenomes \"Silva\" e \"Sousa\" extremamente comuns), com confiança de 42% e menção inconclusiva referente a terceiros no Piauí — sem qualquer conexão verificável com o titular. Para o PEP Nilton Batista Raupp, a pesquisa localizou perfil oficial, duas notícias sobre sua atuação política e 40 processos civis, 13 no polo passivo; os processos são informativos e não geram reprovação automática. As menções envolvendo nome parcialmente coincidente permanecem inconclusivas e com alta probabilidade de homônimo.\n\nAtualização (2026-09-15, via API PH3A + Receita Federal/BrasilAPI): a empresa em comum entre o titular e o ex-vereador, antes não identificada, foi confirmada — NBRAUPP CONTABILIDADE S/S LTDA, CNPJ 09.001.045/0001-55, situação cadastral ATIVA desde 20/08/2007. O finding societário não atribui irregularidade à NBRAUPP CONTABILIDADE S/S LTDA — trata-se de uma 2ª sociedade contábil ativa entre as mesmas partes, além da TAC CONTÁBEIS (empresa do caso), compatível com a atividade profissional declarada de ambos.\n\nCom a condição originalmente colocada (identificar a empresa em comum e sua situação cadastral) cumprida e com os findings devidamente registrados, mantenho a recomendação de APROVAÇÃO DO CADASTRO conforme Circular BACEN 3.978/2020, sem necessidade de monitoramento reforçado adicional além do já previsto pelo vínculo PEP.",
-    "decisao": "aprovado",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-12T00:25:41Z",
-    "revisao_manual_2026_09_15": {
-      "motivo": "Empresa em comum não identificada resolvida via PH3A + BrasilAPI — parecer atualizado com o CNPJ e situação cadastral real, condição originalmente colocada pelo próprio parecer.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    },
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer de Liderança negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json; decisão original preservada.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
-  },
-  "fcb6f395-952b-491c-b4b7-dd4b27205107": {
-    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 28.241.930/0001-56 — 28.241.930 THIAGO ANDREYFSON BRANDAO DE OLIVEIRA\n\nO analista recomenda aprovação sob monitoramento reforçado — concordo. O titular é irmão de Luís Afonso Brandão de Oliveira, vereador ativo pelo município de Breves/PA (mandato 2025–2028), e a empresa está sediada na mesma cidade de atuação política, configurando convergência geográfica relevante. A empresa, contudo, foi constituída em 2017, sendo anterior ao mandato, e atua em comércio varejista de saneantes, setor de baixa interface com contratações públicas típicas do Legislativo municipal. A pesquisa localizou 3 processos civis do titular, 1 no polo passivo, e, para o PEP, 11 processos civis, 6 no polo passivo, e 4 processos trabalhistas, 3 no polo passivo; os achados são informativos e não geram reprovação automática.\n\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica dos fatores de risco durante a vigência do mandato, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação sob monitoramento reforçado — concordo.",
-    "decisao": "monitoramento",
-    "model": "anthropic-claude-sonnet-4-6",
-    "generated_at": "2026-09-12T00:25:50Z",
-    "revisao_manual_2026_09_16": {
-      "motivo": "Correção de contradição factual: o parecer de Liderança negava ou omitia achado(s) positivo(s) existente(s) em media-findings.json; decisão original preservada.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
-  },
   "df5805d6-6cdd-46b4-b0b2-46e4c2667835": {
     "text": "Decisão: CADASTRO REPROVADO\nCNPJ: 65.259.898/0001-62 — ASSESSCON SOLUCOES FISCAIS E CONTABEIS LTDA\n\nConcordo com o analista. O titular Reinaldo dos Santos é o próprio PEP (Vereador de Cajamar/SP, mandato ativo até 31/12/2029) e figura como RÉU CONFIRMADO (confiança ALTA, polo passivo) em processo criminal por peculato e em processo por crime praticado por funcionário público — tipologia diretamente relacionada ao exercício do próprio mandato público. O achado é corroborado por duas fontes independentes (Credilink e JusBrasil); Nota técnica: o dossiê Credilink padrão (módulo Compliance) não lista este processo em seu campo de processos judiciais — trata-se de limitação conhecida desse módulo específico (retorna \"não encontrado\" mesmo para processos reais confirmados por fonte independente), não de inconsistência do achado; a confirmação decisiva vem do JusBrasil, fonte independente da Credilink.\n\nDiante de processo criminal confirmado do titular/PEP por peculato, com corroboração cruzada, recomendo a NÃO APROVAÇÃO DO CADASTRO, por incompatibilidade com o apetite de risco da instituição, conforme Circular BACEN 3.978/2020.",
     "resumo": "REPROVAR — titular/PEP réu confirmado em 2 processos ativos por peculato, crime ligado ao exercício do próprio mandato.",
@@ -446,6 +283,266 @@
     "generated_at": "2026-09-24T00:00:00Z",
     "revisao_manual_2026_09_24": {
       "motivo": "Caso migrou para CHECK_LIDERANCA sem sugestão de parecer gerada — o gerador automático (generate-sugestao-lideranca.py, chamado por queue-sync.sh) depende do proxy LiteLLM, cujo orçamento mensal está esgotado (HTTP 429 'Budget has been exceeded! Current cost: 100.31, Max budget: 100.0', confirmado ao vivo em 2026-09-24) — toda geração automática falha silenciosamente desde então. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "97f41fe2-cbd0-44d0-9b95-60472b2fac84": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO  \nCNPJ: 05.595.136/0001-05 — SILVA CRUZ EMPREENDIMENTOS LTDA  \nO analista recomenda aprovação — concordo parcialmente, com monitoramento reforçado.  \nHá registro criminal no JusBrasil para Marcos Eduardo Silva Cruz, ainda sem tipificação crítica e sujeito a validação de identidade; o vínculo é irmão de Marco Arthur Silva Cruz, Vereador de Paranaiguara/GO.  \nRecomendo aprovação sob monitoramento reforçado, condicionada à validação do achado, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação — concordo parcialmente, com monitoramento reforçado.",
+    "decisao": "monitoramento",
+    "model": "codex-cli-fallback",
+    "generated_at": "2026-10-13T14:45:47Z"
+  },
+  "6037eecd-e795-4e5e-93b9-20af82920bee": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 32.768.197/0001-08 — BD CONSULTORIA EMPRESARIAL LTDA\n\nConcordo com o analista. O titular é o próprio PEP (Secretário de Estado da Casa Civil/BA). Os processos civis/trabalhistas e criminais sem réu confirmado são achados informativos que exigem leitura, mas não fundamentam reprovação. A empresa (consultoria empresarial) foi aberta durante o exercício do cargo, em setor com potencial interface com a administração estadual.\n\nDiante da ausência de desabono confirmado, mas reconhecendo o fator de timing/setor, recomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com acompanhamento de eventuais contratos com o Estado da Bahia, conforme Circular BACEN 3.978/2020.",
+    "resumo": "MONITORAR — empresa de consultoria aberta durante o mandato do próprio titular-PEP, setor com interface estadual.",
+    "decisao": "monitoramento",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "1c019a58-ddb8-4d18-9670-61f06f59b0af": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 67.955.164/0001-43 — UP HOUSE ENGENHARIA E CONSTRUCOES LTDA\n\nConcordo com o analista. O titular é filho da PEP Ana Maria Peixoto de Araujo (Prefeita de Malta/PB); a empresa opera em outro estado (Goiânia/GO), sem nexo territorial com a Prefeitura — o vínculo familiar não configura conflito estrutural aqui. Há, porém, um registro criminal da Credilink (crime contra a administração da Justiça) sem confirmação de réu/status, pendente de validação.\n\nDiante da ausência de processo criminal confirmado, mas com pendência de confirmação do registro do titular, recomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, condicionada à validação manual desse registro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "MONITORAR — registro criminal do titular pendente de confirmação; sem conflito territorial com a PEP.",
+    "decisao": "monitoramento",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "e50ad409-18f6-4efb-8ed3-684f5a34e7d0": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 69.026.629/0001-07 — MARCIO ANTONIO COELHO DA SILVA\n\nConcordo com o analista. O titular é o próprio PEP (Vereador de Varjão/GO), com empresa de transporte municipal de cargas aberta durante o próprio mandato, no mesmo município. Os registros por calúnia/difamação e os processos civis não fundamentam reprovação, mas a coincidência territorial e o setor (transporte municipal) elevam a necessidade de acompanhamento.\n\nDiante da ausência de desabono confirmado, mas com o fator estrutural de timing/setor, recomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com acompanhamento de contratos municipais, conforme Circular BACEN 3.978/2020.",
+    "resumo": "MONITORAR — titular-PEP vereador com empresa de transporte municipal aberta no mesmo município do mandato.",
+    "decisao": "monitoramento",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "89aba1cb-fa59-4f5f-a2ab-14ce4081d7ec": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 11.749.847/0001-90 — HUGO JULIANO PIRES DE CARVALHO\n\nConcordo com o analista. O titular é ex-Vereador de Lapão/BA (mandato encerrado, carência PLD até 2029), com empresa de engenharia no mesmo município. Não há processo criminal confirmado — apenas volume de processos civis que exige acompanhamento.\n\nDiante da ausência de desabono criminal, mas do período de carência e do setor de engenharia no mesmo município, recomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, conforme Circular BACEN 3.978/2020.",
+    "resumo": "MONITORAR — ex-PEP em carência, empresa de engenharia no mesmo município do antigo mandato.",
+    "decisao": "monitoramento",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "31432378-3b07-4fc9-ab1c-466d49b4db7f": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 11.963.181/0001-78 — PRIMEIRA IGREJA BATISTA NO SERRO\n\nConcordo com o analista. O titular é irmão do PEP Weverson Leao Simoes (Vereador de Serro/MG, mandato ativo), com a entidade religiosa sediada no mesmo município. Não há achado desabonador para titular ou PEP, mas o parentesco direto e a coincidência territorial recomendam acompanhamento — entidades religiosas são canal conhecido de subvenção social/emenda parlamentar.\n\nDiante da ausência de desabono, mas do vínculo PEP ativo no mesmo município, recomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, conforme Circular BACEN 3.978/2020.",
+    "resumo": "MONITORAR — entidade religiosa no mesmo município do mandato do PEP; sem desabono confirmado.",
+    "decisao": "monitoramento",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "7de02545-27ce-4f88-bc0e-530934add08d": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 48.221.656/0001-60 — KMS SERVICOS ELETRICOS E CLIMATIZACAO LTDA\n\nConcordo com o analista. O titular é irmão da ex-PEP Larissa Alessandra Santos de Almeida (ex-Vereadora de Capela/AL, mandato encerrado, carência até 2029). Não há desabono criminal ou reputacional confirmado, e a empresa atua em município diferente (Maceió/AL), sem interface com o poder público local.\n\nDiante da ausência de desabono e de fator de sensibilidade materializado, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — sem desabono; empresa em município diferente do antigo mandato da ex-PEP.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "db093bf5-aa4b-4b28-a268-09a84c8a536f": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 60.939.004/0001-61 — AHS-CONSTRUTORA LTDA\n\nConcordo com o analista. O titular é sócio direto do PEP Eliton Santos do Nascimento (Vereador de Correntina/BA, mandato ativo), em empresa de obras de urbanização no mesmo município. Não há processo criminal confirmado para nenhum dos dois, mas a sociedade direta com vereador ativo, em empresa recém-constituída de obras urbanas potencialmente contratáveis pelo poder público, configura risco estrutural.\n\nDiante da ausência de desabono criminal, mas do vínculo societário direto em setor contratável pelo mesmo município, recomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, conforme Circular BACEN 3.978/2020.",
+    "resumo": "MONITORAR — sócio direto de vereador ativo em obras urbanas no mesmo município.",
+    "decisao": "monitoramento",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "6c6092e2-b707-492b-80a6-680b01806ff0": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 61.285.084/0001-41 — CLEAN BNB SERVICOS DE LIMPEZA LTDA\n\nConcordo com o analista. A titular é irmã do PEP Saulo Farhat Paiva (Diretor da Caixa Econômica Federal). A empresa de limpeza foi aberta durante o exercício do cargo diretivo do irmão — serviço potencialmente contratável pela Caixa em sua rede nacional, configurando risco estrutural de conflito de interesses independentemente do estado de constituição.\n\nDiante da ausência de ilícito criminal confirmado, mas do risco estrutural de timing/setor junto a instituição de alcance nacional, recomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, conforme Circular BACEN 3.978/2020.",
+    "resumo": "MONITORAR — empresa de limpeza aberta durante o mandato do irmão Diretor da Caixa, setor contratável nacionalmente.",
+    "decisao": "monitoramento",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "2c2c34ef-36f3-4f92-a7d0-dea3e73b4386": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 14.855.693/0001-09 — A A J TRANSPORTE SERVICOS E LOCACAO DE MAQUINAS LTDA\n\nConcordo com o analista. O titular é o próprio PEP (Vereador de Lauro de Freitas/BA). Os processos criminais sem réu confirmado e os processos civis/trabalhistas são achados informativos; a atividade de transporte de carga não guarda interface direta com o cargo legislativo.\n\nDiante da ausência de desabono material, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — achados informativos apenas; sem interface entre a empresa e o cargo legislativo.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "8de9af0d-cd6a-484d-9387-b88479d1b76d": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 10.657.323/0001-06 — MR TRANSPORTES E LOGISTICA LTDA\n\nConcordo com o analista. O titular é o próprio PEP (Vereador de Conde/PB). Os processos civis são achados informativos; a atividade de transporte de carga não guarda interface com o cargo de vereador.\n\nDiante da ausência de desabono material, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — apenas achados civis informativos; sem interface com o cargo legislativo.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "5a1bd3af-71da-4191-9485-6e586632e999": {
+    "text": "Decisão: CADASTRO REPROVADO\nCNPJ: 67.827.973/0001-70 — VM GRAOS E TRANSPORTES LTDA\n\nConcordo com o analista. A PEP Ielva Maria Melão Veloso Cerqueira é ré confirmada (confiança ALTA, duas fontes independentes — JusBrasil e Credilink) em processo criminal ativo por estelionato contra idoso e fraudes em certames de interesse público — crime patrimonial/fraude, configurando risco de contágio reputacional direto sobre o titular (filho da PEP).\n\nDiante de processo criminal ativo e confirmado da PEP por estelionato/fraude, com corroboração cruzada de duas fontes independentes, recomendo a NÃO APROVAÇÃO DO CADASTRO, por incompatibilidade com o apetite de risco da instituição, conforme Circular BACEN 3.978/2020.",
+    "resumo": "REPROVAR — PEP ré confirmada por estelionato/fraude, duas fontes independentes.",
+    "decisao": "reprovado",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "30b944d2-41fa-4bd9-96f3-8e4c4739db88": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 58.354.141/0001-92 — ARGGOS COMUNICACAO VISUAL LTDA\n\nConcordo com o analista. O titular é o próprio PEP (Vereador de Milagres/BA); a empresa (sinalização/letreiros, atividade tipicamente contratável por prefeituras) foi aberta 27 dias antes da posse do próprio titular. Buscas dirigidas ao portal de contas públicas de Milagres-BA e ao Portal da Transparência Federal não encontraram contrato, licitação ou sanção; sem mídia adversa ou processo criminal confirmado.\n\nDiante da ausência de contrato público ou desabono confirmado, mas reconhecendo o fator de timing entre a abertura da empresa e a posse no cargo, recomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com acompanhamento de contratos futuros junto à Prefeitura de Milagres-BA, conforme Circular BACEN 3.978/2020.",
+    "resumo": "MONITORAR — empresa de sinalização aberta 27 dias antes da posse do próprio titular-vereador; sem contrato encontrado até o momento.",
+    "decisao": "monitoramento",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "7d76fbda-ea77-4091-b3f9-51652b8a8839": {
+    "text": "Decisão: CADASTRO REPROVADO\nCNPJ: 55.095.408/0001-86 — EDMAR BASTOS MIRANDA\n\nConcordo com o analista. O PEP Vanderlei Bastos Miranda (Vereador de Brumado/BA) consta em registro ATIVO do Ministério Público Federal por corrupção/fraude eleitoral, confiança ALTA — investigação formal em curso, não arquivada, envolvendo diretamente a PEP.\n\nDiante de investigação ativa do MPF por corrupção/fraude contra a PEP, recomendo a NÃO APROVAÇÃO DO CADASTRO, por incompatibilidade com o apetite de risco da instituição, conforme Circular BACEN 3.978/2020.",
+    "resumo": "REPROVAR — PEP com investigação ativa do MPF por corrupção/fraude eleitoral.",
+    "decisao": "reprovado",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "3f6ddbb9-7896-4775-ba0b-eb2bca2f69a8": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 45.765.688/0001-39 — PAULO SERGIO SANTOS PINHEIRO\n\nConcordo com o analista. O titular é irmão do ex-PEP Alzemar Santos Pinheiro (mandato encerrado, carência até 2029). Buscas específicas (WebSearch M1-M13) não encontraram mídia adversa, corrupção ou irregularidade; nenhum processo criminal confirmado para titular ou ex-PEP; empresa em município distinto do antigo mandato.\n\nDiante da ausência de desabono e da distância geográfica, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — sem desabono confirmado; empresa em município distinto do antigo mandato do ex-PEP.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "a0068ae9-06a7-4d78-bf1f-d8bf3cc66b09": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 05.746.595/0001-42 — ARAGUAIA SAGA LTDA\n\nConcordo com o analista. O titular é irmão do PEP Maycow Douglas de Oliveira Maximiano (Vereador de Fazenda Nova/GO). Os processos criminais sem réu confirmado e os civis são achados informativos; a atividade (comércio automotivo) não guarda interface com o cargo.\n\nDiante da ausência de desabono material, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — achados informativos apenas; sem interface entre a empresa e o cargo do PEP.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "e454e72f-634b-45df-b18d-5f95064592b4": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 17.466.746/0001-98 — PERICLES DA SILVA DAVID\n\nConcordo com o analista. O titular é irmão do PEP Edson David Junior (Vereador de Urandi/BA). Não há desabono confirmado para titular, empresa ou PEP; a atividade (laboratório clínico) não guarda interface com a pasta legislativa, e a empresa está em município distinto.\n\nDiante da ausência de desabono, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — sem desabono; empresa em município distinto do mandato do PEP.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "aee57ba2-92d1-4f72-b892-238af96e902f": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 68.906.995/0001-98 — J F LAKE SOLUCOES COMERCIAIS LTDA\n\nConcordo com o analista. O titular é irmão do PEP Hélio Ribeiro do Lago Junior (Vereador de Jacutinga/MG). Não há desabono confirmado; a empresa está em município distante do mandato do PEP, sem interface com o cargo.\n\nDiante da ausência de desabono e da distância geográfica, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — sem desabono; distância geográfica entre empresa e mandato do PEP.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "47136df2-a5ae-4abf-a311-43f6c1ba6ecb": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 41.806.537/0001-20 — CLEDSON DOS SANTOS SILVA\n\nConcordo com o analista. O titular é irmão do PEP Tarcio dos Santos Silva (Vereador de Castro Alves/BA). A consulta ao JusBrasil, concluída para ambos, não configurou processo criminal confirmado; achados civis/não criminais são informativos. A atividade de transporte não guarda interface com o cargo.\n\nDiante da ausência de desabono material, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — JusBrasil concluído para ambos, sem processo criminal confirmado.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "8d19dffb-10c0-42d3-9876-395b6086c990": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 59.419.512/0001-30 — SANTIAGO COMERCIO LTDA.\n\nConcordo com o analista. O titular é o próprio ex-PEP (ex-Vereador de Gongogi/BA, mandato encerrado, carência até 2029). Não há desabono confirmado; a atividade comercial não guarda interface com o cargo anteriormente exercido.\n\nDiante da ausência de desabono e do encerramento do mandato, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — sem desabono; mandato do próprio titular encerrado, em carência.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "b24a6d43-1985-4f2f-b412-226c47f296d5": {
+    "text": "Decisão: CADASTRO REPROVADO\nCNPJ: 21.040.584/0001-07 — ORTENCIO CORDEIRO SOUZA 25788833515\n\nConcordo com o analista. O PEP Ricardo Almeida Nunes da Silva (ex-Prefeito de Cícero Dantas/BA), sócio direto do titular, é réu confirmado (confiança ALTA) em investigação ativa por peculato — crime de desvio de recursos públicos ligado diretamente ao seu mandato. O vínculo societário direto configura risco concreto de contágio reputacional e criminal.\n\nDiante de investigação ativa e confirmada do PEP sócio por peculato, recomendo a NÃO APROVAÇÃO DO CADASTRO, por incompatibilidade com o apetite de risco da instituição, conforme Circular BACEN 3.978/2020.",
+    "resumo": "REPROVAR — PEP sócio direto, ex-Prefeito, réu em investigação ativa por peculato.",
+    "decisao": "reprovado",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "e3665740-c963-464d-8eae-794867b22828": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 49.142.476/0001-56 — EMERSON RAIMUNDO FILHO\n\nConcordo com o analista. O titular é o próprio PEP (Vereador de Campos Novos Paulista/SP). Não há desabono confirmado para a empresa ou o titular; a atividade (comércio de bebidas) não guarda interface com o cargo.\n\nDiante da ausência de desabono, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — sem desabono; sem interface entre a empresa e o cargo do titular-PEP.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "7e4ccffd-17cb-4bcd-8998-c67c83334e01": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 30.459.180/0001-35 — PIPIEASY LOCACOES E SERVICOS LTDA\n\nConcordo com o analista. A titular é mãe da PEP Samantha Marchiori Rodrigues Ribeiro (Secretária da Presidência da República). A consulta ao JusBrasil, concluída, não retornou processo criminal, civil ou trabalhista para titular nem PEP; nenhuma mídia adversa identificada em nenhuma fonte.\n\nDiante da ausência de desabono confirmado após investigação completa, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — investigação completa (JusBrasil+Credilink) sem desabono para titular e PEP.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "27569b17-5b49-48b5-91e0-d527157867d9": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 63.522.757/0001-65 — BRASA SABOR & BEER LTDA\n\nConcordo com o analista. A titular é irmã da PEP Gislaine da Silva Guedes de Queiroz (Vereadora de Campos de Júlio/MT). Não há desabono confirmado; a empresa (restaurante) está em município distante do mandato da PEP, sem interface com o cargo.\n\nDiante da ausência de desabono e da distância geográfica, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — sem desabono; distância geográfica entre empresa e mandato da PEP.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-10-13",
+    "generated_at": "2026-10-13T00:00:00Z",
+    "revisao_manual_2026_10_13": {
+      "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   }

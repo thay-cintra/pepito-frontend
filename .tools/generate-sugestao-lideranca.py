@@ -11,6 +11,7 @@ Saída: src/data/pareceres-lideranca.json
 """
 import json
 import os
+import shutil
 import subprocess
 import tempfile
 import time
@@ -492,6 +493,30 @@ def _orcamento_esgotado(exc: Exception) -> bool:
     return "budget" in msg and ("exceeded" in msg or "429" in msg)
 
 
+def _resolve_codex_binary() -> str:
+    """Resolve o caminho absoluto do binário `codex` em vez de confiar em
+    resolução por PATH. Achado real, 2026-10-13: queue-sync.sh é spawnado
+    por server.cjs com PATH mínimo hardcoded ("/bin:/usr/bin:/usr/local/bin"),
+    que NÃO inclui /opt/homebrew/bin (onde o Homebrew instala o Codex CLI em
+    Mac Apple Silicon) — toda chamada ao backup Codex falhava com
+    "[Errno 2] No such file or directory: 'codex'" mesmo com o CLI instalado
+    e autenticado, derrubando 113/113 gerações do lote e deixando a fila de
+    Liderança inteira (24 casos) sem Sugestão de Parecer. `shutil.which` usa
+    o PATH do processo atual (resolve normal quando rodado manualmente);
+    os caminhos fixos cobrem o caso do PATH mínimo do queue-sync.sh."""
+    found = shutil.which("codex")
+    if found:
+        return found
+    for candidato in ("/opt/homebrew/bin/codex", "/usr/local/bin/codex"):
+        if Path(candidato).exists():
+            return candidato
+    raise RuntimeError(
+        "binário 'codex' não encontrado (nem via PATH, nem em /opt/homebrew/bin "
+        "ou /usr/local/bin) — verifique a instalação ('npm install -g @openai/codex') "
+        "ou ajuste _resolve_codex_binary()."
+    )
+
+
 _MODO_RESTRITO_CODEX = """MODO RESTRITO — LEIA COM ATENÇÃO ANTES DE RESPONDER:
 Você deve se comportar como um modelo de completude de texto puro, SEM qualquer conhecimento
 prévio, busca na web ou ferramenta externa. Baseie sua resposta EXCLUSIVAMENTE nos dados
@@ -534,13 +559,14 @@ def gerar_via_codex(prompt_completo: str, draft_id: str, timeout_s: int = 240) -
     Comportamento intermitente, não determinístico pelo conteúdo — mesmo
     padrão de robustez já usado pra Credilink/BrasilAPI neste projeto:
     retry com backoff antes de desistir."""
+    codex_bin = _resolve_codex_binary()
     for attempt in range(2):
         with tempfile.NamedTemporaryFile(mode="w", suffix=".txt", delete=False) as tmp:
             tmp_path = tmp.name
         try:
             result = subprocess.run(
                 [
-                    "codex", "exec",
+                    codex_bin, "exec",
                     "--sandbox", "read-only",
                     "--skip-git-repo-check",
                     "-o", tmp_path,
