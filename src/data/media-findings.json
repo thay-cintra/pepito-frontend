@@ -8646,6 +8646,17 @@
       "tipo": "processo",
       "match": "CPF 30663997372",
       "achado_positivo": true
+    },
+    {
+      "title": "MP investiga divergência de R$ 2,5 milhões em pagamentos de três prefeituras à empresa do titular",
+      "url": "https://lupa1.com.br/noticias/geral/mp-investiga-divergencia-de-r-25-milhoes-em-pagamentos-de-tres-prefeituras-75254.html",
+      "snippet": "Reportagem (Lupa1, 19/09/2026, atualizada 10/10/2026) aponta que o Ministério Público investiga a empresa V M Veloso Cerqueira Ltda. (V M Service), de Vinicius Melão Veloso Cerqueira, por divergência de R$ 2.755.523,10 em pagamentos recebidos de três prefeituras do Piauí (Teresina R$ 2.059.095,10; Elesbão Veloso R$ 367.228; Agricolândia R$ 329.200) frente a um único contrato localizado nos sistemas do TCE-PI, no valor de R$ 203.419,80 — pagamentos recebidos 13 vezes superiores ao contrato identificado. A apuração aponta ainda R$ 1.128.983,95 em saques e transferências sem justificativa aparente, envolvendo agentes públicos e pessoas politicamente expostas. Identidade do titular confirmada por nome completo (Vinicius Melão Veloso Cerqueira) e município de domicílio (Teresina/PI, um dos três entes citados na reportagem).",
+      "source": "Pesquisa Web — Mídia Adversa Owner (achado manual, thay@cora.com.br, 2026-10-13)",
+      "risk_indicator": "alto",
+      "tipo": "midia",
+      "match": "Nome completo idêntico (Vinicius Melão Veloso Cerqueira) + município de domicílio do titular (Teresina/PI) coincide com um dos três entes públicos citados na reportagem — achado real, não corrigido por WebSearch automático porque a reportagem é posterior à investigação original do caso (constituição da PJ em 03/07/2026; reportagem publicada em 19/09/2026).",
+      "achado_positivo": true,
+      "decisao_recomendada": "REPROVAÇÃO — investigação ativa do Ministério Público sobre pagamentos irregulares de recursos públicos (3 prefeituras) à empresa do PRÓPRIO TITULAR, com indício de saques/transferências sem justificativa envolvendo PEPs. Candidato a encaminhamento a subcomitê dado envolvimento direto do titular (não apenas de contraparte)."
     }
   ],
   "30b944d2-41fa-4bd9-96f3-8e4c4739db88": [

@@ -1,25 +1,25 @@
 {
   "pareceres-sugestao.json": {
     "status": "OK",
-    "size": 426018,
-    "hash": "bf038a2cc7606da0652187d19f403693a79f53e9fb858f252dcf7df65e29a37e",
-    "timestamp": "20261009_140001",
+    "size": 544760,
+    "hash": "2541f62a0fdac9f9beb95a95b75314a84d7f8c45cd633c4ae1ae1ee8b249e6c4",
+    "timestamp": "20261013_140001",
     "backed_up": true,
     "description": "Sugest\u00f5es IA do parecer analista"
   },
   "pareceres-real.json": {
     "status": "OK",
-    "size": 277146,
-    "hash": "3c5d5dfd2889c95da9894f515c223201ba242d914d72010a0175173421e89ff3",
-    "timestamp": "20261009_140001",
+    "size": 279810,
+    "hash": "f10aacfbe172e0ee4baa6d6daebe3eb19a5d71110ec57a7f51613d78f0db66af",
+    "timestamp": "20261013_140001",
     "backed_up": true,
     "description": "Pareceres reais do analista"
   },
   "pareceres-lideranca.json": {
     "status": "OK",
-    "size": 74438,
-    "hash": "1f75fbfdff4d2ab5620aa720ef2265e7a14f1b62ef59dd45f2d4c9b4022221e7",
-    "timestamp": "20261009_140001",
+    "size": 81007,
+    "hash": "428551c2fb4041d2a54d2d4c70f90798466031c0219efe65ebe3814d2422c7a4",
+    "timestamp": "20261013_140001",
     "backed_up": true,
     "description": "Decis\u00f5es da lideran\u00e7a"
   },
@@ -27,7 +27,7 @@
     "status": "OK",
     "size": 1342896,
     "hash": "5432adfb11a1fba13566cad0bf453ef328bd6db019e2d83f450e2730139ec4ca",
-    "timestamp": "20261009_140001",
+    "timestamp": "20261013_140001",
     "backed_up": true,
     "description": "An\u00e1lises salvas (backup)"
   }

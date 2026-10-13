@@ -1,28 +1,21 @@
 {
-  "timestamp": "2026-10-09T14:00:02.768079",
+  "timestamp": "2026-10-13T14:00:03.339957",
   "checks_executados": 10,
-  "checks_falhados": 1,
+  "checks_falhados": 0,
   "alertas": [
     {
-      "nivel": "🟠 ALTO",
-      "titulo": "Parecer Sugestão IA ausente no JSON-fonte",
-      "descricao": "CHECK_ANALISTA sem sugestão: 77 (['4582da2b-486c-4384-906f-f91ed3373a1a', 'c83edee4-7ca9-41c7-b346-e77e5eb8a114', '2a2981d8-2c47-4831-832c-29e2239f3ad8', '6fa3c452-a542-404c-b235-cbd61de54d04', '21ae9670-0386-4278-bd9b-2df2d225d773']). CHECK_LIDERANCA sem sugestão: 22 (['6037eecd-e795-4e5e-93b9-20af82920bee', '1c019a58-ddb8-4d18-9670-61f06f59b0af', 'e50ad409-18f6-4efb-8ed3-684f5a34e7d0', '89aba1cb-fa59-4f5f-a2ab-14ce4081d7ec', '31432378-3b07-4fc9-ab1c-466d49b4db7f']). Rodar generate-sugestao-parecer.py / generate-sugestao-lideranca.py.",
-      "componente": "Parecer Sugestão IA",
-      "timestamp": "2026-10-09T14:00:02.531836"
-    },
-    {
       "nivel": "🟡 MÉDIO",
-      "titulo": "5 novo(s) caso(s) escalado(s) para CHECK_LIDERANCA",
-      "descricao": "Caso(s) derivado(s) pelo analista ou promovido(s) pelo Retool desde a última verificação. Conferir Fila de Revisão:\n• 69.026.629 MARCIO ANTONIO COELHO DA SILVA (CNPJ 69.026.629/0001-07, score 1005) — draft e50ad409-18f6-4efb-8ed3-684f5a34e7d0\n• HUGO JULIANO PIRES DE CARVALHO (CNPJ 11.749.847/0001-90, score 990) — draft 89aba1cb-fa59-4f5f-a2ab-14ce4081d7ec\n• PRIMEIRA IGREJA BATISTA NO SERRO (CNPJ 11.963.181/0001-78, score 1000) — draft 31432378-3b07-4fc9-ab1c-466d49b4db7f\n• KMS SERVICOS ELETRICOS E CLIMATIZACAO LTDA (CNPJ 48.221.656/0001-60, score 985) — draft 7de02545-27ce-4f88-bc0e-530934add08d\n• CLEAN BNB SERVICOS DE LIMPEZA LTDA (CNPJ 61.285.084/0001-41, score 1035) — draft 6c6092e2-b707-492b-80a6-680b01806ff0",
+      "titulo": "2 novo(s) caso(s) escalado(s) para CHECK_LIDERANCA",
+      "descricao": "Caso(s) derivado(s) pelo analista ou promovido(s) pelo Retool desde a última verificação. Conferir Fila de Revisão:\n• SILVA CRUZ EMPREENDIMENTOS LTDA (CNPJ 05.595.136/0001-05, score 985) — draft 97f41fe2-cbd0-44d0-9b95-60472b2fac84\n• AHS-CONSTRUTORA LTDA (CNPJ 60.939.004/0001-61, score 1255) — draft db093bf5-aa4b-4b28-a268-09a84c8a536f",
       "componente": "Fila de Revisão — Liderança",
-      "timestamp": "2026-10-09T14:00:02.609113"
+      "timestamp": "2026-10-13T14:00:03.160358"
     },
     {
       "nivel": "🔵 BAIXO",
       "titulo": "Mudanças não commitadas",
-      "descricao": "52 arquivo(s) modificado(s) sem commit.",
+      "descricao": "6 arquivo(s) modificado(s) sem commit.",
       "componente": "Git Repository",
-      "timestamp": "2026-10-09T14:00:02.767908"
+      "timestamp": "2026-10-13T14:00:03.339751"
     }
   ]
 }
