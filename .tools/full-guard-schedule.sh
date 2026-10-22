@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-ROOT="/Users/thay/Projetos Thay"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 LOG="${ROOT}/pepito-frontend/.tools/full-guard.log"
 
 {

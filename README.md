@@ -205,12 +205,12 @@ git rev-parse origin/main corabank/main main   # os três hashes devem ser iguai
   ```
   (confira `coralago/` — o pacote de acesso ao Lake usado pelos scripts — se ele também precisa ser
   instalado/clonado separadamente na máquina nova).
-- **Caminhos fixos nos scripts de automação**: `.tools/queue-sync.sh`, `full-guard-schedule.sh`,
-  `supervisor-schedule.sh`, `refresh-daily.sh` e `athena-sync-guardrail.sh` têm a linha
-  `ROOT="/Users/thay/Projetos Thay"` **hardcoded** (não calculada a partir do usuário/máquina atual).
-  Numa instalação com outro usuário ou outro caminho de pasta, edite o `ROOT=` no topo de cada um
-  desses arquivos antes de rodá-los — sem isso, sincronização, cron e consultas falham silenciosamente
-  apontando para uma pasta inexistente.
+- **Caminhos nos scripts de automação**: `.tools/queue-sync.sh`, `full-guard-schedule.sh`,
+  `supervisor-schedule.sh`, `refresh-daily.sh` e `athena-sync-guardrail.sh` calculam `ROOT`
+  automaticamente a partir da própria localização do script (`$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)`)
+  — não precisa editar nada, desde que o clone mantenha o nome de pasta padrão `pepito-frontend`
+  (o nome que o `git clone` do passo 2 já usa por padrão), qualquer que seja o nome da pasta-pai;
+  os scripts referenciam `<pasta-pai>/pepito-frontend/...` internamente.
 
 ### 4. Variáveis de ambiente (`.env`)
 

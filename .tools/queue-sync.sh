@@ -8,7 +8,10 @@
 # mesmo depois da geração ter rodado com sucesso (recorrência 2026-08-06 → 08-10).
 set -euo pipefail
 
-ROOT="/Users/thay/Projetos Thay"
+# Calculado a partir da própria localização do script (não hardcoded) — funciona
+# em qualquer usuário/máquina, desde que a estrutura "<ROOT>/pepito-frontend/.tools/"
+# seja preservada.
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 LOG="$ROOT/pepito-frontend/.tools/queue-sync.log"
 
 {
@@ -27,10 +30,15 @@ LOG="$ROOT/pepito-frontend/.tools/queue-sync.log"
 
   # Exporta AWS_*/CORALAGO_* do .env ANTES de qualquer chamada coralago/boto3 —
   # sem isso, o spawn sem TTY cai em getpass e aborta com EOFError.
+  # Parser defensivo (NÃO usa `eval`) — mesmo padrão de full-guard-schedule.sh:
+  # um valor malformado/malicioso no .env não deve executar comandos arbitrários
+  # com os privilégios de quem roda este pipeline.
   if [ -f "$ROOT/.env" ]; then
-    set -a
-    eval "$(grep -E '^(AWS_|CORALAGO_|LITELLM|LLM_)' "$ROOT/.env" | sed 's/\r$//')"
-    set +a
+    while IFS= read -r line || [ -n "$line" ]; do
+      line="${line%$'\r'}"
+      [[ "$line" =~ ^(export[[:space:]]+)?(AWS_[A-Za-z0-9_]*|CORALAGO_[A-Za-z0-9_]*|LITELLM[A-Za-z0-9_]*|LLM_[A-Za-z0-9_]*)=(.*)$ ]] || continue
+      export "${BASH_REMATCH[2]}=${BASH_REMATCH[3]}"
+    done < "$ROOT/.env"
   fi
   if [ -z "${AWS_ACCESS_KEY_ID:-}" ]; then
     echo "[FATAL] AWS_ACCESS_KEY_ID ausente no ambiente. Rode 'aws sso login' (ou atualize .env) e tente de novo."

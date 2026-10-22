@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-ROOT="/Users/thay/Projetos Thay"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 LOG="${ROOT}/pepito-frontend/.tools/supervisor.log"
 
 {
@@ -13,11 +13,18 @@ LOG="${ROOT}/pepito-frontend/.tools/supervisor.log"
 
   cd "${ROOT}/pepito-frontend"
 
-  # Carrega variáveis de ambiente (incluindo SLACK_WEBHOOK_URL)
+  # Carrega variáveis de ambiente (incluindo SLACK_WEBHOOK_URL) — parser
+  # defensivo, NÃO usa `source`/`eval` (mesmo padrão de full-guard-schedule.sh):
+  # o .env raiz recebe blocos de credenciais AWS SSO com cabeçalhos estilo INI
+  # ("[perfil]"), que não são bash válido e abortariam o script inteiro sob
+  # `set -e`; além disso, um valor malformado/malicioso não deve poder
+  # executar comandos arbitrários. Só processa linhas KEY=VALUE.
   if [ -f "${ROOT}/.env" ]; then
-    set -a
-    source "${ROOT}/.env"
-    set +a
+    while IFS= read -r line || [ -n "$line" ]; do
+      line="${line%$'\r'}"
+      [[ "$line" =~ ^[[:space:]]*(export[[:space:]]+)?([A-Za-z_][A-Za-z0-9_]*)=(.*)$ ]] || continue
+      export "${BASH_REMATCH[2]}=${BASH_REMATCH[3]}"
+    done < "${ROOT}/.env"
   fi
 
   # Ativa venv se existir

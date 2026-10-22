@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-ROOT="/Users/thay/Projetos Thay"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 PEPITO="${ROOT}/pepito-frontend"
 LOG="${PEPITO}/.tools/athena-sync-guardrail.log"
 
