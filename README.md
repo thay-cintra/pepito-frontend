@@ -143,6 +143,182 @@ O binário portável do Node está em `.tools/node/bin/` — não precisa instal
 
 ---
 
+## Instalação em outra máquina
+
+O Pepito não roda de um servidor central — hoje ele vive inteiramente numa única máquina (launchd
+local + cron local). Isto significa que, sem este passo a passo, o app fica "preso" ao computador
+de quem o configurou originalmente. Útil para migrar de máquina ou para um colega cobrir durante
+férias/ausência.
+
+### 1. Pré-requisitos de acesso
+
+- Conta `@cora.com.br` com acesso aos dois repositórios GitHub (`origin` = pessoal, `corabank` =
+  interno — ver seção seguinte).
+- Acesso ao `.env` compartilhado da Thay (raiz de `Projetos Thay/`, fora deste repo) ou às
+  credenciais equivalentes de cada serviço — peça à Thay ou à liderança do time de PLD.
+- Credenciais AWS (Coralago/Athena) válidas — normalmente via `aws sso login`, renovadas
+  periodicamente (ver `reference_aws_credenciais_temporarias_coralago_expiram` se você tiver acesso
+  à memória do projeto).
+- Conta Google (ChatGPT) própria ou compartilhada para autenticar o Codex CLI (ver passo 6).
+
+### 2. Clonar os dois remotes
+
+Este repositório é espelhado em dois remotes que **devem ficar idênticos** a cada commit:
+
+```bash
+git clone https://github.com/thay-cintra/pepito-frontend.git
+cd pepito-frontend
+git remote add corabank https://github.com/corabank/front-pepito.git
+git fetch corabank
+```
+
+`origin` é o remote pessoal (GitHub da Thay); `corabank` é o remote interno da organização. Depois
+de qualquer commit, confirme que os dois apontam pro mesmo SHA:
+
+```bash
+git push origin main && git push corabank main
+git rev-parse origin/main corabank/main main   # os três hashes devem ser iguais
+```
+
+### 3. Node e Python
+
+- **Node**: não precisa instalar nada — há um binário portável vendorizado em `.tools/node/bin/`.
+  Exporte o PATH antes de rodar qualquer `npm`/`node` (já feito automaticamente por
+  `start-local.sh` e pelos scripts em `.tools/`):
+  ```bash
+  export PATH="$(pwd)/.tools/node/bin:$PATH"
+  npm install
+  ```
+- **Python**: os scripts de automação (`.tools/*.py`) rodam contra um `.venv` compartilhado **um
+  nível acima** deste repo, em `Projetos Thay/.venv`. Se ele não existir na máquina nova:
+  ```bash
+  cd ..   # volta para Projetos Thay/
+  python3 -m venv .venv
+  source .venv/bin/activate
+  pip install -r pepito-frontend/.tools/requirements.txt   # se existir; senão instalar manualmente:
+  pip install boto3 awswrangler python-dotenv requests
+  ```
+  (confira `coralago/` — o pacote de acesso ao Lake usado pelos scripts — se ele também precisa ser
+  instalado/clonado separadamente na máquina nova).
+
+### 4. Variáveis de ambiente (`.env`)
+
+Há **dois arquivos `.env` diferentes**, e os dois são necessários:
+
+| Arquivo | Para quê | Template |
+|---|---|---|
+| `Projetos Thay/.env` (raiz, fora deste repo) | Credenciais compartilhadas entre sub-projetos: AWS/Coralago, LiteLLM, Credilink, JusBrasil, PH3A, Slack | não versionado — copiar de outra máquina/cofre de credenciais |
+| `pepito-frontend/.env` (dentro deste repo) | Config específica do servidor Pepito: Google OAuth, JWT, porta | `.env.example` já existe neste repo — copie e preencha |
+
+```bash
+cp .env.example .env   # dentro de pepito-frontend/
+```
+
+Preencha `pepito-frontend/.env` com: `APP_URL`, `PORT`, `GOOGLE_CLIENT_ID`/`GOOGLE_CLIENT_SECRET`
+(ver passo 7 — SSO), `JWT_SECRET` (gere com
+`node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"`), `VITE_SSO_ATIVO`,
+e opcionalmente `LOCAL_MODE=true` (pula o SSO — só recomendado em rede VPN interna) e
+`VPN_ALLOWED_CIDRS`.
+
+No `.env` raiz compartilhado, **nunca reaproveite um nome de variável genérico** (`API_KEY`,
+`SLACK_WEBHOOK_URL` puro) — o `dotenv` mantém só a última ocorrência de uma chave duplicada e um
+serviço "some" silenciosamente. Use sempre a variável dedicada e comentada de cada serviço:
+`CREDILINK_API_KEY`, `JUSBRASIL_API_KEY`/`JUSBRASIL_API_BASE`, `PH3A_API_KEY`, `LITELLM_API_KEY`/
+`LITELLM_BASE_URL`, `GOOGLE_SERVICE_ACCOUNT_JSON`, `SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR`,
+`SLACK_WEBHOOK_URL_PEPITO_INTEGRITY`, além das credenciais AWS (`AWS_ACCESS_KEY_ID`,
+`AWS_SECRET_ACCESS_KEY`, `AWS_SESSION_TOKEN`, `AWS_DEFAULT_REGION`, `ATHENA_WORKGROUP`,
+`CORA_ATHENA_OUTPUT`).
+
+### 5. Certificados HTTPS (`certs/`)
+
+O modo "produção local" (`./start-local.sh` com SSO ativo) serve HTTPS com um certificado próprio
+(gerado via [mkcert](https://github.com/FiloSottile/mkcert)), em `certs/cert.pem` + `certs/key.pem`
++ `certs/rootCA.pem`. Esse certificado é emitido para o hostname `sslip.io` que **codifica o IP
+local da máquina original** (ex. `192-168-201-67.sslip.io` → `192.168.201.67`) — numa máquina nova,
+com um IP de rede diferente, o certificado antigo **não vai bater** com o novo hostname. Duas
+opções:
+- Copiar `certs/` de uma máquina que já tenha domínio/IP fixo compatível (ex. se a rede Cora atribui
+  sempre o mesmo IP via DHCP reservado).
+- Gerar um certificado novo na máquina nova:
+  ```bash
+  brew install mkcert
+  mkcert -install                 # instala a rootCA local
+  # descubra o IP local (ex. via `ipconfig getifaddr en0`) e gere para o hostname sslip.io correspondente
+  mkcert -cert-file certs/cert.pem -key-file certs/key.pem <ip-com-tracos>.sslip.io localhost 127.0.0.1
+  cp "$(mkcert -CAROOT)/rootCA.pem" certs/rootCA.pem
+  ```
+  O próprio servidor (`server.cjs`) serve uma página de instalação do `rootCA.pem` em
+  `http://<host>:<PORT+1>/` para quem for acessar de outro dispositivo na rede.
+- Alternativa mais simples para cobertura temporária (ex. férias): rodar em `LOCAL_MODE=true` sem
+  HTTPS próprio, só dentro da VPN — ver `start-local.sh`.
+
+### 6. Codex CLI (fallback de IA quando o orçamento LiteLLM estoura)
+
+Os geradores de parecer (`.tools/generate-sugestao-parecer.py` e
+`.tools/generate-sugestao-lideranca.py`) usam Claude via proxy LiteLLM como caminho principal e
+caem automaticamente para o Codex CLI quando o orçamento do proxy está esgotado. Isso depende de
+uma instalação própria, independente do `.env`:
+
+```bash
+npm install -g @openai/codex
+codex login          # autentica via conta ChatGPT (pode ser pessoal ou compartilhada pelo time)
+```
+
+Sem isso, o passo `[5/6]` do `queue-sync.sh` simplesmente não gera sugestão nenhuma quando o
+LiteLLM estiver sem orçamento (falha isolada, registrada em `.tools/queue-sync.log`, não trava o
+resto do pipeline).
+
+### 7. Google SSO
+
+Em produção (`VITE_SSO_ATIVO=true`, sem `LOCAL_MODE`), o login é feito via Google OAuth 2.0,
+restrito ao domínio `@cora.com.br` (`SSO_DOMAIN`, default `cora.com.br`). Configure um projeto em
+[console.cloud.google.com](https://console.cloud.google.com) (pode reusar o projeto já existente da
+Cora, ou criar um novo "pepito-pld"): tipo **Web application**, com *Authorized redirect URI*
+`https://<seu-dominio-ou-ip>/auth/google/callback`. Preencha `GOOGLE_CLIENT_ID` e
+`GOOGLE_CLIENT_SECRET` no `.env` deste repo.
+
+### 8. Subir o servidor como serviço (launchd)
+
+Para o Pepito sobreviver a reboots e reiniciar sozinho se cair, instale-o como `launchd` agent
+(equivalente a um serviço systemd no macOS). Copie
+`~/Library/LaunchAgents/com.cora.pepito.server.plist` da máquina original (ou recrie-o — ele só
+chama `.tools/node/bin/node server.cjs` na pasta deste repo, com restart automático em crash) e
+ajuste os caminhos (`/Users/<usuario>/...`) para o usuário da máquina nova. Depois:
+
+```bash
+launchctl load ~/Library/LaunchAgents/com.cora.pepito.server.plist
+launchctl kickstart -k gui/$(id -u)/com.cora.pepito.server
+```
+
+Logs ficam em `.tools/server.out.log` e `.tools/server.log`.
+
+### 9. Agentes de monitoramento (cron)
+
+O Supervisor Agent + Integrity Guard (ver seção seguinte) rodam 2x/dia via `crontab`, não launchd.
+Adicione na máquina nova com `crontab -e`:
+
+```cron
+0 6  * * * cd /Users/<usuario>/Projetos\ Thay/pepito-frontend && NODE_ENV=development PYTHONUNBUFFERED=1 bash .tools/full-guard-schedule.sh >> .tools/full-guard.log 2>&1
+0 14 * * * cd /Users/<usuario>/Projetos\ Thay/pepito-frontend && NODE_ENV=development PYTHONUNBUFFERED=1 bash .tools/full-guard-schedule.sh >> .tools/full-guard.log 2>&1
+```
+
+### 10. Verificando a instalação
+
+1. `npm run typecheck` e `npm run build` sem erros.
+2. `./start-local.sh` (ou `launchctl kickstart`) sobe o servidor — acesse pelo IP exibido no
+   terminal.
+3. Rode manualmente o Supervisor uma vez (`python3 .tools/supervisor-agent.py`) e confirme que ele
+   consegue postar no Slack (`SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR`).
+4. Dispare "Sincronizar Athena" na interface (ou rode `.tools/queue-sync.sh` manualmente) e confirme
+   no `.tools/queue-sync.log` que os passos `[0/3]` (credenciais AWS) e `[5/6]` (geração de
+   sugestão IA, Claude ou Codex) terminam sem `[FATAL]`.
+5. Depois de qualquer alteração de dado/código, lembre: **rebuild obrigatório** —
+   `npm run build` + `launchctl kickstart -k gui/$(id -u)/com.cora.pepito.server` — os JSONs em
+   `src/data/` são import estático, embutido no bundle em build-time; sem isso o app publicado
+   continua servindo o snapshot antigo.
+
+---
+
 ## Estrutura de arquivos relevantes
 
 ```
@@ -209,4 +385,4 @@ tail -f .tools/supervisor.log .tools/integrity.log
 
 ---
 
-**Última atualização:** 2026-09-11
+**Última atualização:** 2026-10-22
