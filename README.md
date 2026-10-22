@@ -33,29 +33,54 @@ Nada disso substitui o julgamento do analista/Liderança — é apoio à decisã
 
 ```mermaid
 flowchart TD
-    A["Caso entra na fila PLD<br/>(Retool/Athena, bucket CHECK_ANALISTA)"] --> B["Check Analista<br/>dados + vínculo PEP pré-carregados"]
-    B --> C{"Consulta real completa?<br/>Credilink (titular via tabela;<br/>PEP relacionado via API própria)<br/>+ JusBrasil/Credilink/WebSearch"}
-    C -- "Sim" --> E["Analista revisa achados<br/>e sugestão de parecer"]
-    C -- "Não / falhou / cota estourada" --> D["⚠️ Banner de pendência +<br/>checkbox obrigatório de<br/>verificação manual"]
-    D --> E
-    E --> F["Enviar à Mesa de Decisão<br/>(bloqueado até C ou D resolvido)"]
-    F --> G["Fila de Revisão — Mesa/Liderança<br/>vê parecer do analista + achados +<br/>mesmo status de consulta"]
-    G --> H{"Decisão da Liderança"}
-    H --> I["✅ CADASTRO APROVADO"]
-    H --> J["⚠️ APROVADO SOB<br/>MONITORAMENTO REFORÇADO"]
-    H --> K["❌ CADASTRO REPROVADO"]
-    H --> L["◽ FALSO POSITIVO<br/>(PEP não confirmado)"]
+    A["Caso entra na fila PLD<br/>(Retool/Athena, bucket CHECK_ANALISTA)<br/>fonte: squad_core.registration_notebook_output_single"] --> B["/check-analista<br/>dados + vínculo PEP (pep_pf) pré-carregados"]
+    B --> C{"Consulta real completa?<br/>Credilink titular (via tabela do onboarding)<br/>+ Credilink do PEP relacionado (API própria)<br/>+ JusBrasil (criminal/civil/trabalhista/BNMP/MP)<br/>+ WebSearch (mídia adversa)"}
+    C -- "Sim, tudo OK" --> E["Analista abre /primeira-camada<br/>revisa achados reais<br/>+ edita sugestão de parecer IA"]
+    C -- "Não / falhou / cota estourada" --> D["⚠️ Banner de pendência, por motivo<br/>(ex.: 'JusBrasil: cota atingida',<br/>'Credilink PEP: sem consulta')"]
+    D --> D2["Analista marca checkbox<br/>'verifiquei manualmente'<br/>(fica registrado: quem, quando, o que faltava)"]
+    D2 --> E
+    E --> F{"Enviar à Mesa de Decisão"}
+    F -- "bloqueado" --> C
+    F -- "liberado (C=Sim ou D2 confirmado)" --> G["/fila-revisao — Mesa/Liderança<br/>vê: parecer do Analista + achados reais<br/>+ comentário real do analista (ENVIAR_LIDERANCA_PLD)<br/>+ mesmo status de consulta (nunca reconsulta)"]
+    G --> H["Liderança lê o comentário REAL do analista<br/>(pareceres-real.json), não só a sugestão IA"]
+    H --> I{"Decisão da Liderança"}
+    I --> J["✅ APROVADO"]
+    I --> K["⚠️ APROVADO SOB<br/>MONITORAMENTO REFORÇADO"]
+    I --> L["❌ REPROVADO"]
+    I --> M["◽ FALSO POSITIVO<br/>(PEP não confirmado)"]
 ```
 
-**Onde cada verificação acontece:**
+**Onde cada verificação acontece (detalhado):**
 
-| Verificação | Fonte | Quando roda | Owner do dado |
-|---|---|---|---|
-| Identificação do PEP | Credilink (via notebook do onboarding, fora deste repo) | Antes do caso chegar ao Pepito | `pep_pf` / `token_pf_cred` |
-| Antecedentes do titular da conta | JusBrasil + Credilink | `fetch-media-findings.py`, disparado por `queue-sync.sh` | `media-findings.json` |
-| Antecedentes do PEP relacionado | JusBrasil + Credilink (mesmo script, mesmo CPF do PEP) | idem | `media-findings.json` |
-| Consulta Credilink do PEP relacionado (nunca existia antes de 2026-09-11) | `consultar-credilink-pep.py` | Manual/agendado, separado do fluxo de onboarding | `credilink-pep-consultas.json` |
-| Mídia adversa (WebSearch) | Anthropic web_search | idem `fetch-media-findings.py` | `media-findings.json` |
+| Verificação | Fonte real | Script/arquivo que roda | Quando | Dado final (owner) |
+|---|---|---|---|---|
+| Identificação do PEP | Credilink, via notebook do onboarding (fora deste repo) | — (já vem pronto no snapshot Athena) | Antes do caso chegar ao Pepito | campo `pep_pf` em `registration-queue-real.json` |
+| Antecedentes do titular da conta | JusBrasil (5 endpoints) + Credilink/Tesserati | `fetch-media-findings.py`, chamado por `queue-sync.sh` passo `[4/6]` | A cada "Sincronizar Athena" (só casos novos, sem `--force`) | `media-findings.json` |
+| Antecedentes do PEP relacionado | JusBrasil (mesmo CPF do PEP) + Credilink | idem, mesmo script | idem | `media-findings.json` |
+| Consulta Credilink do PEP relacionado | Credilink/Tesserati | `consultar-credilink-pep.py` (não faz parte do `queue-sync.sh` — roda separado/manual) | Manual/agendado, fora do fluxo padrão de sincronização | `credilink-pep-consultas.json` |
+| Mídia adversa / contratos públicos / Portal da Transparência | WebSearch (Anthropic, via proxy LiteLLM ou chave direta) | idem `fetch-media-findings.py` | idem | `media-findings.json` |
+| Empresa em comum titular↔PEP sócio | PH3A (DataBusca) | idem `fetch-media-findings.py` | idem | `media-findings.json` |
+| Sugestão de parecer (texto + decisão) | Claude via LiteLLM, com fallback Codex CLI | `generate-sugestao-parecer.py` / `generate-sugestao-lideranca.py`, passo `[5/6]` | idem | `pareceres-sugestao.json` / `pareceres-lideranca.json` |
+| Score de risco PLD/FT | Heurística própria sobre os dados já coletados | `generate-pld-risk-scores.py`, passo `[3/6]` | idem | `pld-risk-scores.json` |
+
+### Pipeline de sincronização (`queue-sync.sh`) — o que roda em cada passo
+
+```mermaid
+flowchart LR
+    S0["[0/3] Valida credenciais AWS<br/>(sts get_caller_identity)"] --> S1["[1/6] build-real-queue.py<br/>puxa fila do Athena"]
+    S1 --> S2["[2/6] Sincroniza token_pf_cred/pj_cred<br/>+ pareceres-real.json<br/>(comentário ENVIAR_LIDERANCA_PLD)"]
+    S2 --> S3["[3/6] generate-pld-risk-scores.py"]
+    S3 --> S4["[4/6] fetch-media-findings.py<br/>JusBrasil + Credilink + WebSearch + PH3A<br/>(só draft_ids novos em media-findings.json)"]
+    S4 --> S5["[5/6] Sugestão IA<br/>Claude/LiteLLM → fallback Codex CLI<br/>se orçamento esgotado"]
+    S5 --> S6["[6/6] npm run build<br/>(JSONs são import estático em build-time)"]
+    S6 --> U["[upload] gsutil → GCS pepito-data-stage<br/>(se disponível)"]
+```
+
+Qualquer passo `[1/6]`–`[5/6]` que falhe isoladamente **não aborta o pipeline inteiro** — os passos
+seguintes ainda rodam (achado real: cada script grava um placeholder de "verificação manual
+necessária" em vez de travar o lote). O passo `[6/6]` (rebuild) é o único que, se pulado, deixa
+**todo** o trabalho dos passos anteriores invisível no app publicado (import estático em
+build-time) — por isso ele nunca deve ser pulado manualmente.
 
 ---
 
@@ -107,12 +132,65 @@ análises por analista) e exportação CSV. Não participa da decisão regulató
 | Sugestão IA nunca diverge do parecer do analista | `getSugestaoParecer`/`getSugestaoLideranca` | Mesa sempre lê o comentário real do analista, nunca só o status sugerido |
 | Persistência com fallback | `storage.ts` | `localStorage` + backup em `analises-salvas.json`; reload não perde dado |
 
-**Limitação conhecida (não é bug, é contrato):** o JusBrasil Background Check só cobre processos
-criminais, BNMP e MP — não tem endpoint cível/trabalhista. Para isso, o Credilink
-(`ProcessoTribunalJustica`) complementa com achados não-criminais.
+**Atualizado em 2026-10-22:** o contrato JusBrasil Background Check cobre **todos os tipos de
+processo** — criminal, civil e trabalhista, além de BNMP e MP — sem distinção/exclusão de
+trabalhista (confirmado operacionalmente; os 5 endpoints já são consultados em
+`fetch-media-findings.py::consultar_jusbrasil()`: `lawsuits/criminal`, `lawsuits/civil`,
+`lawsuits/trabalhista`, `bnmp`, `mp`). Processos civis/trabalhistas não geram recomendação
+automática de reprovação (risco médio só se a pessoa está no polo passivo; baixo caso contrário) —
+a classificação de risco penal/criminal continua sendo o gatilho de REPROVAÇÃO automática. O
+Credilink (`ProcessoTribunalJustica`) continua rodando em paralelo como segunda fonte/checagem
+cruzada, não como complemento obrigatório para cobrir uma lacuna do JusBrasil.
 
 Detalhes de incidentes específicos (causa raiz, quando, como foi corrigido): ver
 `.tools/INCIDENT-REPORT-*.md`.
+
+---
+
+## Dados consultados — o quê, onde e por quê
+
+### Integrações externas
+
+| Serviço | Variável(is) `.env` | Base/URL real | Para quê | Chamado por |
+|---|---|---|---|---|
+| Credilink (vendor real: **Tesserati**) | `CREDILINK_API_KEY` | `api.tesserati.com.br` (default; `CREDILINK_API_BASE` sobrescreve) | Antecedentes/processos (`ProcessoTribunalJustica`) e PEP relacionado | `fetch-media-findings.py`, `consultar-credilink-pep.py` |
+| JusBrasil Background Check | `JUSBRASIL_API_KEY`, `JUSBRASIL_API_BASE` | `api.jusbrasil.com.br` | Processos criminal/civil/trabalhista + BNMP + MP por CPF (ver nota acima) | `fetch-media-findings.py::consultar_jusbrasil()` |
+| PH3A (DataBusca) | `PH3A_API_KEY` | `api.ph3a.com.br/DataBusca` | Achar em qual empresa titular e PEP são sócios em comum (`PartnerShips[]`) | `fetch-media-findings.py` |
+| Anthropic (WebSearch) | `LITELLM_API_KEY`+`LITELLM_BASE_URL` (proxy Cora) ou `ANTHROPIC_API_KEY` direto | proxy LiteLLM interno ou `api.anthropic.com` | Mídia adversa, Portal da Transparência, confirmação de cargo PEP, contratos públicos | `fetch-media-findings.py` |
+| Codex CLI (fallback de IA) | autenticação própria via `codex login`, fora do `.env` | ChatGPT (conta própria) | Gera sugestão de parecer quando o orçamento do LiteLLM está esgotado | `generate-sugestao-parecer.py`, `generate-sugestao-lideranca.py` |
+| Google OAuth 2.0 | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` | `accounts.google.com` | SSO restrito a `@cora.com.br` (`SSO_DOMAIN`) | `server.cjs` |
+| Google Cloud Storage | `GCS_BUCKET_NAME` (opcional) | `storage.googleapis.com` | Backup/sync de JSONs (`pepito-data-stage`) | `server.cjs`, `queue-sync.sh` (`gsutil`) |
+| Slack | `SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR`, `SLACK_WEBHOOK_URL_PEPITO_INTEGRITY` | webhooks dedicados | Alertas do Supervisor Agent / Integrity Guard | `supervisor-agent.py`, `integrity-guard.py` |
+| AWS Athena (via Coralago) | `AWS_ACCESS_KEY_ID`/`SECRET`/`SESSION_TOKEN`, `ATHENA_WORKGROUP`, `CORA_ATHENA_OUTPUT` | Athena/Glue Cora | Fonte da fila real + scores + histórico PEP (ver tabelas abaixo) | `build-real-queue.py`, `build-pep-history.py`, `generate-pld-risk-scores.py` |
+
+### Tabelas Athena consultadas
+
+| Tabela | Consultada por | Conteúdo |
+|---|---|---|
+| `squad_core.registration_notebook_output_single` | `build-real-queue.py` | Snapshot do notebook de onboarding — inclui `pep_pf` (vínculo PEP detectado), `token_pf_cred`/`token_pj_cred` |
+| `squad_core.registration_notebook_output` | `build-pep-history.py` | Versão histórica/agregada do mesmo notebook, usada para o funil do Dashboard |
+| `dumps.registration_draft_membership_registration_audit` | `build-real-queue.py` | Trilha de auditoria do draft (mudanças de status/bucket) |
+| `dumps.registration_draft_membership_registration_status` | `build-pep-history.py` | Histórico de status do draft ao longo do tempo |
+| `project_webhook.event_acompanhamento_analise_cadastral` | `build-real-queue.py` | Eventos de webhook do fluxo de análise cadastral (inclui `ENVIAR_LIDERANCA_PLD`) |
+
+Não há leitura direta do Postgres `ghost-pld` neste repositório — o vínculo com o motor de regras
+Ghost é só conceitual (mesmo universo de clientes PLD), não uma integração de dados.
+
+### Arquivos de dados locais (`src/data/*.json`) — import estático, build-time
+
+| Arquivo | Conteúdo | Gerado/atualizado por |
+|---|---|---|
+| `registration-queue-real.json` | Fila real (casos + `pep_pf` + tokens Credilink) | `build-real-queue.py` |
+| `media-findings.json` | Achados JusBrasil + Credilink + WebSearch, por `draft_id` | `fetch-media-findings.py` |
+| `credilink-pep-consultas.json` | Consulta Credilink do PEP relacionado (separada do onboarding) | `consultar-credilink-pep.py` |
+| `credilink-titular-overrides.json` | Correções manuais pontuais de dado Credilink do titular | edição manual |
+| `pareceres-sugestao.json` | Sugestão de parecer IA — camada Analista | `generate-sugestao-parecer.py` |
+| `pareceres-lideranca.json` | Sugestão de parecer IA — camada Liderança | `generate-sugestao-lideranca.py` |
+| `pareceres-real.json` | Comentários/decisões reais dos analistas humanos (inclui `ENVIAR_LIDERANCA_PLD`) | sincronizado por `queue-sync.sh` a partir do webhook |
+| `pareceres-llm.json` | Lote antigo de 32 pareceres de referência/seed (`generate-pareceres.py`) — não é o fluxo de produção atual | script ad hoc, não roda no pipeline regular |
+| `pld-risk-scores.json` | Score de probabilidade de LD/FT por caso | `generate-pld-risk-scores.py` |
+| `pep-history.json` | Histórico agregado de status PEP (funil do Dashboard) — feature distinta da consulta por caso | `build-pep-history.py` |
+| `analises-salvas.json` | Backup em disco do `localStorage` (rascunhos, decisões, devolvidos) | `storage.ts` (escrita pelo próprio app) |
 
 ---
 
@@ -154,16 +232,21 @@ férias/ausência.
 
 - Conta `@cora.com.br` com acesso aos dois repositórios GitHub (`origin` = pessoal, `corabank` =
   interno — ver seção seguinte).
-- Acesso ao `.env` compartilhado da Thay (raiz de `Projetos Thay/`, fora deste repo) ou às
-  credenciais equivalentes de cada serviço — peça à Thay ou à liderança do time de PLD.
-- Credenciais AWS (Coralago/Athena) válidas. **Atenção**: `.tools/queue-sync.sh` exige as variáveis
-  `AWS_ACCESS_KEY_ID`/`AWS_SECRET_ACCESS_KEY`/`AWS_SESSION_TOKEN` **literalmente preenchidas no
-  `.env` raiz** — ele não lê o cache de um `aws sso login` nem um profile do AWS CLI. Gere/renove
-  essas três variáveis (via `aws sso login` + exportar as credenciais temporárias geradas, ou via
-  DAM) e cole os valores no `.env`, não apenas rode o login isolado (ver
-  `reference_aws_credenciais_temporarias_coralago_expiram` se você tiver acesso à memória do
-  projeto).
-- Conta Google (ChatGPT) própria ou compartilhada para autenticar o Codex CLI (ver passo 6).
+- **Importante**: o `.env` raiz da máquina nova **não deve ser uma cópia do `.env` da Thay** —
+  várias credenciais ali são pessoais (amarradas a quem fez login em cada serviço) e precisam ser
+  geradas pela própria pessoa que vai operar esta instalação. O passo 4 detalha, credencial por
+  credencial, o que é pessoal (gerar do zero) e o que é segredo de serviço/contrato da Cora (pode
+  reaproveitar). Peça acesso aos serviços/segredos de contrato à liderança do time de PLD ou a
+  Data Engineering — não peça o `.env` da Thay pronto.
+- Acesso próprio ao AWS/Coralago (Athena) — peça à liderança/Data Engineering se ainda não tiver;
+  ver passo 4a para como gerar suas próprias credenciais temporárias (`AWS_ACCESS_KEY_ID`/
+  `AWS_SECRET_ACCESS_KEY`/`AWS_SESSION_TOKEN`). **Atenção**: `.tools/queue-sync.sh` exige essas três
+  variáveis **literalmente preenchidas no `.env` raiz** — ele não lê o cache de um `aws sso login`
+  nem um profile do AWS CLI isolado.
+- Chave própria do proxy LiteLLM — solicite via Slack **#data-help** (ver passo 4a; a chave da
+  Thay está com orçamento esgotado, então copiá-la simplesmente não funciona).
+- Conta ChatGPT própria (ou de time) para autenticar o Codex CLI via `codex login` (ver passo 6) —
+  não copie a pasta `~/.codex` de outra máquina.
 
 ### 2. Clonar os dois remotes
 
@@ -218,36 +301,73 @@ Há **dois arquivos `.env` diferentes**, e os dois são necessários:
 
 | Arquivo | Para quê | Template |
 |---|---|---|
-| `Projetos Thay/.env` (raiz, fora deste repo) | Credenciais compartilhadas entre sub-projetos: AWS/Coralago, LiteLLM, Credilink, JusBrasil, PH3A, Slack | não versionado — copiar de outra máquina/cofre de credenciais |
+| `Projetos Thay/.env` (raiz, fora deste repo) | Credenciais compartilhadas entre sub-projetos: AWS/Coralago, LiteLLM, Credilink, JusBrasil, PH3A, Slack | não versionado — montar do zero seguindo a tabela abaixo |
 | `pepito-frontend/.env` (dentro deste repo) | Config específica do servidor Pepito: Google OAuth, JWT, porta | `.env.example` já existe neste repo — copie e preencha |
 
 ```bash
 cp .env.example .env   # dentro de pepito-frontend/
 ```
 
-Preencha `pepito-frontend/.env` com: `APP_URL` (inclua a porta, ex.
-`https://192-168-201-67.sslip.io:4173` — precisa bater exatamente com o hostname do certificado em
-`certs/` e com o redirect URI cadastrado no Google, ver passo 7), `PORT`,
-`GOOGLE_CLIENT_ID`/`GOOGLE_CLIENT_SECRET` (ver passo 7 — SSO), `JWT_SECRET` (gere com
-`node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"`) e `VITE_SSO_ATIVO`.
-`LOCAL_MODE=true` pula o SSO (qualquer acesso autenticado passa) — o servidor escuta em `0.0.0.0`
-sem nenhum filtro de rede próprio (a variável `VPN_ALLOWED_CIDRS` que aparecia aqui **não é lida em
-nenhum lugar do código** — não confiar nela como controle de acesso); use esse modo só dentro de uma
-VPN/rede que já restrinja o acesso externamente (firewall/roteamento), nunca como única barreira.
+**⚠️ Regra central deste passo: o `.env` raiz da máquina nova NÃO é uma cópia do `.env` da Thay.**
+Várias dessas credenciais são pessoais — amarradas à identidade de quem está logado em cada serviço
+— e usar a credencial de outra pessoa não é só uma má prática, em pelo menos dois casos **nem
+funciona** (o orçamento já está no limite) e nos demais quebra a rastreabilidade de quem fez o quê.
+A tabela abaixo separa o que deve ser **gerado do zero por quem está instalando** do que é um
+segredo de serviço/contrato da Cora (mesmo valor, reutilizável por qualquer operador autorizado).
 
-No `.env` raiz compartilhado, **nunca reaproveite um nome de variável genérico** (`API_KEY`,
-`SLACK_WEBHOOK_URL` puro) — o `dotenv` mantém só a última ocorrência de uma chave duplicada e um
-serviço "some" silenciosamente. Use sempre a variável dedicada e comentada de cada serviço:
-`CREDILINK_API_KEY`, `JUSBRASIL_API_KEY`/`JUSBRASIL_API_BASE`, `PH3A_API_KEY`, `LITELLM_API_KEY`/
-`LITELLM_BASE_URL`, `GOOGLE_SERVICE_ACCOUNT_JSON`, `SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR`,
-`SLACK_WEBHOOK_URL_PEPITO_INTEGRITY`, além das credenciais AWS (`AWS_ACCESS_KEY_ID`,
-`AWS_SECRET_ACCESS_KEY`, `AWS_SESSION_TOKEN`, `AWS_DEFAULT_REGION`, `ATHENA_WORKGROUP`,
-`CORA_ATHENA_OUTPUT`).
+#### 4a. Credenciais pessoais — gere a sua própria, nunca copie a da Thay
 
-**Atenção de segurança**: `.tools/queue-sync.sh` faz `eval` em linhas selecionadas do `.env` raiz
-para exportá-las. Só use um `.env` vindo de um cofre de credenciais confiável/da própria Thay —
-nunca copie ou edite esse arquivo a partir de uma fonte não verificada, já que conteúdo malformado
-nele pode executar comandos arbitrários com os privilégios de quem roda o pipeline.
+| Variável(is) | Por que é pessoal | Como obter a sua própria |
+|---|---|---|
+| `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_SESSION_TOKEN` | São credenciais STS temporárias emitidas para a identidade AWS/Cora de quem fez login — carregam as permissões IAM daquela pessoa especificamente, e expiram em poucas horas | Peça acesso AWS/Coralago (Athena) à liderança/Data Engineering se ainda não tiver; gere as credenciais temporárias no DAM (portal interno de credenciais da Cora) ou via `aws sso login` + exportação das credenciais temporárias geradas; cole os três valores no `.env`. Renove quando expirar (`InvalidClientTokenId`/`ExpiredToken` no log é o sinal) |
+| `LITELLM_API_KEY` | É uma chave pessoal do proxy LiteLLM interno — o orçamento mensal é por chave, não compartilhado. A chave da Thay (`thay-cintra...`) está com o orçamento mensal esgotado (`Budget has been exceeded`) desde meados de setembro/2026 — **copiá-la não vai gerar sugestão nenhuma**, só vai bater no mesmo limite zerado | Solicite sua própria chave ao time de IA/Dados via Slack **#data-help**, informando que é para uso no proxy LiteLLM (`llm-proxi.stage.data.cora.team` ou equivalente). `LITELLM_BASE_URL` normalmente pode ser reaproveitado (é o endereço do proxy, não uma credencial) |
+| Autenticação do **Codex CLI** (`~/.codex`, fora do `.env`) | `codex login` grava um token da conta ChatGPT de quem autenticou; é o fallback de IA quando o LiteLLM está sem orçamento | Rode `codex login` na máquina nova com sua própria conta ChatGPT (ou uma conta de time, se o time decidir compartilhar uma). **Nunca copie a pasta `~/.codex` de outra máquina** — nesse caso o Codex rodaria autenticado como outra pessoa |
+| `JWT_SECRET` | Não é bem uma "credencial pessoal", mas também não deve ser reusado entre instalações — é o segredo que assina os cookies de sessão deste servidor específico | Gere um novo e exclusivo para esta instalação: `node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"` |
+
+#### 4b. Credenciais de serviço/contrato — reutilizar o valor já existente (não são pessoais)
+
+Estas são segredos de integração contratados pela Cora como organização — o mesmo valor serve para
+qualquer operador autorizado do Pepito, então **podem** vir de um cofre de credenciais/compartilhamento
+seguro do time, sem precisar gerar um valor novo por pessoa:
+
+| Variável(is) | Serviço real | Para quê |
+|---|---|---|
+| `CREDILINK_API_KEY` (+ opcional `CREDILINK_API_BASE`) | Tesserati (vendor por trás do produto "Credilink") | Antecedentes/processos e consulta do PEP relacionado |
+| `JUSBRASIL_API_KEY`, `JUSBRASIL_API_BASE` | JusBrasil Background Check | Processos criminal/civil/trabalhista + BNMP + MP (ver seção "Dados consultados") |
+| `PH3A_API_KEY` | PH3A DataBusca | Achar empresa em comum entre titular e PEP sócio |
+| `GOOGLE_SERVICE_ACCOUNT_JSON` | Google (service account do projeto) | Acesso a planilhas/Drive usados pelo pipeline |
+| `SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR`, `SLACK_WEBHOOK_URL_PEPITO_INTEGRITY` | Slack (webhooks dedicados) | Alertas do Supervisor Agent / Integrity Guard |
+| `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` (no `.env` deste repo) | Google Cloud (app OAuth do próprio Pepito) | Login SSO — ver passo 7 antes de decidir se reaproveita o app existente ou cria um novo |
+| `ATHENA_WORKGROUP`, `CORA_ATHENA_OUTPUT`, `AWS_DEFAULT_REGION` | AWS (configuração, não segredo) | Parâmetros fixos do workgroup/bucket de staging do Athena — mesmos valores de qualquer máquina |
+
+Se alguma dessas chaves de serviço estiver ausente/revogada na máquina nova, não é um problema de
+"instalação pessoal" — é um problema de acesso ao contrato/projeto, peça para a liderança de PLD ou
+Data Engineering.
+
+#### 4c. Regra de nomenclatura (vale para os dois grupos acima)
+
+**Nunca reaproveite um nome de variável genérico** (`API_KEY`, `SLACK_WEBHOOK_URL` puro) no `.env`
+raiz — o `dotenv` mantém só a última ocorrência de uma chave duplicada entre os vários sub-projetos
+que compartilham esse arquivo, e um serviço "some" silenciosamente. Use sempre a variável dedicada e
+comentada de cada serviço (todas as listadas nas tabelas 4a/4b acima, com prefixo do
+serviço/projeto).
+
+#### 4d. Config própria do servidor (`pepito-frontend/.env`)
+
+Preencha com: `APP_URL` (inclua a porta, ex. `https://192-168-201-67.sslip.io:4173` — precisa bater
+exatamente com o hostname do certificado em `certs/` e com o redirect URI cadastrado no Google, ver
+passo 7), `PORT`, `GOOGLE_CLIENT_ID`/`GOOGLE_CLIENT_SECRET` (ver passo 7 — SSO), `JWT_SECRET` (ver
+tabela 4a) e `VITE_SSO_ATIVO`. `LOCAL_MODE=true` pula o SSO (qualquer acesso autenticado passa) — o
+servidor escuta em `0.0.0.0` sem nenhum filtro de rede próprio (a variável `VPN_ALLOWED_CIDRS` que
+aparecia aqui **não é lida em nenhum lugar do código** — não confiar nela como controle de acesso);
+use esse modo só dentro de uma VPN/rede que já restrinja o acesso externamente (firewall/roteamento),
+nunca como única barreira.
+
+**Nota de segurança (corrigida em 2026-10-22):** os scripts de automação que leem o `.env` raiz
+(`queue-sync.sh`, `full-guard-schedule.sh`, `supervisor-schedule.sh`) usam um parser defensivo
+(sem `eval`/`source`) — um valor malformado no `.env` não executa mais comandos arbitrários. Ainda
+assim, trate o `.env` como segredo: não o versione, não o cole em chat/ticket, e revogue/gire
+qualquer credencial que tenha vazado.
 
 ### 5. Certificados HTTPS (`certs/`)
 
@@ -288,8 +408,11 @@ uma instalação própria, independente do `.env`:
 
 ```bash
 npm install -g @openai/codex
-codex login          # autentica via conta ChatGPT (pode ser pessoal ou compartilhada pelo time)
+codex login          # autentica via SUA PRÓPRIA conta ChatGPT (ou uma conta de time, se decidirem compartilhar)
 ```
+
+**Não copie a pasta `~/.codex` de outra máquina** — isso autenticaria o Codex como outra pessoa, na
+conta dela. Rode `codex login` de verdade na máquina nova.
 
 Sem isso, o passo `[5/6]` do `queue-sync.sh` simplesmente não gera sugestão nenhuma quando o
 LiteLLM estiver sem orçamento (falha isolada, registrada em `.tools/queue-sync.log`, não trava o
@@ -444,6 +567,57 @@ tail -f .tools/supervisor.log .tools/integrity.log
 | "Credilink/JusBrasil: pendente" mesmo após rodar consulta | Servidor rodando bundle antigo | rebuild + `launchctl kickstart -k gui/$(id -u)/com.cora.pepito.server` |
 | Draft some da fila | `camadaStatus` local desatualizado | ver `analises-salvas.json`, checar `devolvido`/`concluido` |
 | Nenhum alerta no Slack | Webhook errado/ausente | `grep SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR .env` |
+
+---
+
+## Pontos de atenção técnica (backlog de revisão, 2026-10-22)
+
+Revisão crítica da aplicação (fluxo, frontend, backend), feita com apoio do Codex CLI e verificada
+manualmente linha a linha antes de entrar aqui. São pontos reais, não implementados ainda — ficam
+registrados para priorização futura, não corrigidos automaticamente dado o risco de mudar
+comportamento de uma ferramenta que já está em uso operacional diário.
+
+**Mais relevantes (afetam a garantia dos guardrails, não só código):**
+
+- **Os guardrails de fluxo só existem no frontend.** `POST /api/analises` (`server.cjs`) aceita
+  qualquer `analises`/`exclusoes` de um usuário autenticado e só faz merge por `id`/timestamp — não
+  valida transição de status, papel (Analista vs Liderança) nem se a diligência obrigatória foi
+  cumprida. Ou seja: o bloqueio de "Enviar à Mesa sem consulta completa" é só uma barreira de UI,
+  contornável por qualquer chamada direta à API. Para um guardrail regulatório, isso é a lacuna mais
+  importante da lista.
+- Em `NovaAnalise.tsx` (Mesa de Decisão), `handleConcluir` valida só o tamanho do parecer (≥30
+  caracteres) — não re-verifica `consultaStatus.tudoOk` antes de permitir "Registrar decisão final",
+  mesmo quando o próprio banner da tela avisa que a diligência está pendente.
+- `fetch-media-findings.py` desabilita globalmente a verificação TLS (`verify=False`) nas chamadas
+  JusBrasil — CPFs e achados reputacionais trafegam sem validar o certificado do servidor.
+- O callback OAuth (`/auth/google/callback`) não usa parâmetro `state`, e as chamadas ao Google não
+  têm timeout — exposição a CSRF no login e a travar a request se o Google ficar lento/indisponível.
+- `server.cjs` dispara `git add/commit/push` por `spawn("/bin/bash", ...)` a cada save, interpolando
+  o e-mail do usuário autenticado direto na string do comando shell — tecnicamente um vetor de
+  injeção se esse e-mail alguma vez deixar de vir validado só do Google.
+
+**Simplificação / manutenibilidade:**
+
+- `registration-enrich.ts` passou de mil linhas concentrando parsing de dado externo, avaliação de
+  diligência, achados, heurística de risco e templates — qualquer mudança de conceito afeta vários
+  caminhos ao mesmo tempo. Candidato a separar por responsabilidade.
+- `generate-sugestao-parecer.py` e `generate-sugestao-lideranca.py` duplicam quase todo o desenho
+  (fallback Codex, retry, persistência incremental) — já acumularam pequenas diferenças de
+  comportamento entre si difíceis de justificar.
+- A fila (`registration-queue.ts`) é um estado global mutável atualizado por efeito colateral ao
+  importar o módulo — cada tela precisa lembrar de reler/ouvir evento; fonte comum de condição de
+  corrida no carregamento inicial.
+- Textos de parecer gerado por IA (`parecer.ts`) afirmam conclusões amplas ("atividade de baixo
+  risco", "sem aparente conflito") a partir de poucos campos — o aviso de pendência é só um prefixo,
+  o corpo segue com a afirmação. Vale revisar para linguagem condicionada à evidência disponível.
+- `localStorage` + `persistToDisk()` ignora silenciosamente falhas de rede (401/409/500) — a tela
+  confirma "salvo" antes de saber se persistiu no backend compartilhado.
+- Dois analistas em máquinas diferentes podem abrir o mesmo `draft_id` ao mesmo tempo sem aviso —
+  não há reserva/lock de caso, só `markTaken` local.
+
+Nada disso é bloqueante para uso atual, mas o primeiro item (guardrail só client-side) é o que mais
+merece uma decisão explícita da Liderança/Compliance sobre tolerância a risco, dado que é
+justamente o controle que a Circular 4.001/2020 espera que seja efetivo, não só visual.
 
 ---
 
