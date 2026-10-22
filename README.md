@@ -156,9 +156,13 @@ férias/ausência.
   interno — ver seção seguinte).
 - Acesso ao `.env` compartilhado da Thay (raiz de `Projetos Thay/`, fora deste repo) ou às
   credenciais equivalentes de cada serviço — peça à Thay ou à liderança do time de PLD.
-- Credenciais AWS (Coralago/Athena) válidas — normalmente via `aws sso login`, renovadas
-  periodicamente (ver `reference_aws_credenciais_temporarias_coralago_expiram` se você tiver acesso
-  à memória do projeto).
+- Credenciais AWS (Coralago/Athena) válidas. **Atenção**: `.tools/queue-sync.sh` exige as variáveis
+  `AWS_ACCESS_KEY_ID`/`AWS_SECRET_ACCESS_KEY`/`AWS_SESSION_TOKEN` **literalmente preenchidas no
+  `.env` raiz** — ele não lê o cache de um `aws sso login` nem um profile do AWS CLI. Gere/renove
+  essas três variáveis (via `aws sso login` + exportar as credenciais temporárias geradas, ou via
+  DAM) e cole os valores no `.env`, não apenas rode o login isolado (ver
+  `reference_aws_credenciais_temporarias_coralago_expiram` se você tiver acesso à memória do
+  projeto).
 - Conta Google (ChatGPT) própria ou compartilhada para autenticar o Codex CLI (ver passo 6).
 
 ### 2. Clonar os dois remotes
@@ -197,9 +201,16 @@ git rev-parse origin/main corabank/main main   # os três hashes devem ser iguai
   source .venv/bin/activate
   pip install -r pepito-frontend/.tools/requirements.txt   # se existir; senão instalar manualmente:
   pip install boto3 awswrangler python-dotenv requests
+  cd pepito-frontend   # volta pra este repo antes de seguir pro passo 4
   ```
   (confira `coralago/` — o pacote de acesso ao Lake usado pelos scripts — se ele também precisa ser
   instalado/clonado separadamente na máquina nova).
+- **Caminhos fixos nos scripts de automação**: `.tools/queue-sync.sh`, `full-guard-schedule.sh`,
+  `supervisor-schedule.sh`, `refresh-daily.sh` e `athena-sync-guardrail.sh` têm a linha
+  `ROOT="/Users/thay/Projetos Thay"` **hardcoded** (não calculada a partir do usuário/máquina atual).
+  Numa instalação com outro usuário ou outro caminho de pasta, edite o `ROOT=` no topo de cada um
+  desses arquivos antes de rodá-los — sem isso, sincronização, cron e consultas falham silenciosamente
+  apontando para uma pasta inexistente.
 
 ### 4. Variáveis de ambiente (`.env`)
 
@@ -214,11 +225,15 @@ Há **dois arquivos `.env` diferentes**, e os dois são necessários:
 cp .env.example .env   # dentro de pepito-frontend/
 ```
 
-Preencha `pepito-frontend/.env` com: `APP_URL`, `PORT`, `GOOGLE_CLIENT_ID`/`GOOGLE_CLIENT_SECRET`
-(ver passo 7 — SSO), `JWT_SECRET` (gere com
-`node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"`), `VITE_SSO_ATIVO`,
-e opcionalmente `LOCAL_MODE=true` (pula o SSO — só recomendado em rede VPN interna) e
-`VPN_ALLOWED_CIDRS`.
+Preencha `pepito-frontend/.env` com: `APP_URL` (inclua a porta, ex.
+`https://192-168-201-67.sslip.io:4173` — precisa bater exatamente com o hostname do certificado em
+`certs/` e com o redirect URI cadastrado no Google, ver passo 7), `PORT`,
+`GOOGLE_CLIENT_ID`/`GOOGLE_CLIENT_SECRET` (ver passo 7 — SSO), `JWT_SECRET` (gere com
+`node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"`) e `VITE_SSO_ATIVO`.
+`LOCAL_MODE=true` pula o SSO (qualquer acesso autenticado passa) — o servidor escuta em `0.0.0.0`
+sem nenhum filtro de rede próprio (a variável `VPN_ALLOWED_CIDRS` que aparecia aqui **não é lida em
+nenhum lugar do código** — não confiar nela como controle de acesso); use esse modo só dentro de uma
+VPN/rede que já restrinja o acesso externamente (firewall/roteamento), nunca como única barreira.
 
 No `.env` raiz compartilhado, **nunca reaproveite um nome de variável genérico** (`API_KEY`,
 `SLACK_WEBHOOK_URL` puro) — o `dotenv` mantém só a última ocorrência de uma chave duplicada e um
@@ -229,28 +244,40 @@ serviço "some" silenciosamente. Use sempre a variável dedicada e comentada de 
 `AWS_SECRET_ACCESS_KEY`, `AWS_SESSION_TOKEN`, `AWS_DEFAULT_REGION`, `ATHENA_WORKGROUP`,
 `CORA_ATHENA_OUTPUT`).
 
+**Atenção de segurança**: `.tools/queue-sync.sh` faz `eval` em linhas selecionadas do `.env` raiz
+para exportá-las. Só use um `.env` vindo de um cofre de credenciais confiável/da própria Thay —
+nunca copie ou edite esse arquivo a partir de uma fonte não verificada, já que conteúdo malformado
+nele pode executar comandos arbitrários com os privilégios de quem roda o pipeline.
+
 ### 5. Certificados HTTPS (`certs/`)
 
 O modo "produção local" (`./start-local.sh` com SSO ativo) serve HTTPS com um certificado próprio
 (gerado via [mkcert](https://github.com/FiloSottile/mkcert)), em `certs/cert.pem` + `certs/key.pem`
 + `certs/rootCA.pem`. Esse certificado é emitido para o hostname `sslip.io` que **codifica o IP
 local da máquina original** (ex. `192-168-201-67.sslip.io` → `192.168.201.67`) — numa máquina nova,
-com um IP de rede diferente, o certificado antigo **não vai bater** com o novo hostname. Duas
-opções:
-- Copiar `certs/` de uma máquina que já tenha domínio/IP fixo compatível (ex. se a rede Cora atribui
-  sempre o mesmo IP via DHCP reservado).
-- Gerar um certificado novo na máquina nova:
-  ```bash
-  brew install mkcert
-  mkcert -install                 # instala a rootCA local
-  # descubra o IP local (ex. via `ipconfig getifaddr en0`) e gere para o hostname sslip.io correspondente
-  mkcert -cert-file certs/cert.pem -key-file certs/key.pem <ip-com-tracos>.sslip.io localhost 127.0.0.1
-  cp "$(mkcert -CAROOT)/rootCA.pem" certs/rootCA.pem
-  ```
-  O próprio servidor (`server.cjs`) serve uma página de instalação do `rootCA.pem` em
-  `http://<host>:<PORT+1>/` para quem for acessar de outro dispositivo na rede.
-- Alternativa mais simples para cobertura temporária (ex. férias): rodar em `LOCAL_MODE=true` sem
-  HTTPS próprio, só dentro da VPN — ver `start-local.sh`.
+com um IP de rede diferente, o certificado antigo **não vai bater** com o novo hostname. `certs/`
+não é versionado no Git (não existe num clone novo) — gere um par próprio na máquina nova:
+
+```bash
+mkdir -p certs
+brew install mkcert
+mkcert -install                 # instala a rootCA local
+# descubra o IP local (ex. via `ipconfig getifaddr en0`) e gere para o hostname sslip.io correspondente
+mkcert -cert-file certs/cert.pem -key-file certs/key.pem <ip-com-tracos>.sslip.io localhost 127.0.0.1
+cp "$(mkcert -CAROOT)/rootCA.pem" certs/rootCA.pem
+```
+
+O próprio servidor (`server.cjs`) serve uma página de instalação do `rootCA.pem` em
+`http://<host>:<PORT+1>/` para quem for acessar de outro dispositivo na rede.
+
+**Não copie `certs/key.pem` de outra máquina** — é a chave privada do certificado; reutilizá-la fora
+da máquina onde foi gerada amplia a superfície de comprometimento sem necessidade. Gere um par novo
+por máquina; distribua só a CA pública (`rootCA.pem`) quando precisar que outro dispositivo confie
+no certificado.
+
+Alternativa mais simples para cobertura temporária (ex. férias): rodar em `LOCAL_MODE=true` sem
+HTTPS próprio, só dentro de uma rede já restrita por VPN/firewall — ver `start-local.sh` e o aviso
+de segurança no passo 4 sobre `LOCAL_MODE`.
 
 ### 6. Codex CLI (fallback de IA quando o orçamento LiteLLM estoura)
 
@@ -273,17 +300,52 @@ resto do pipeline).
 Em produção (`VITE_SSO_ATIVO=true`, sem `LOCAL_MODE`), o login é feito via Google OAuth 2.0,
 restrito ao domínio `@cora.com.br` (`SSO_DOMAIN`, default `cora.com.br`). Configure um projeto em
 [console.cloud.google.com](https://console.cloud.google.com) (pode reusar o projeto já existente da
-Cora, ou criar um novo "pepito-pld"): tipo **Web application**, com *Authorized redirect URI*
-`https://<seu-dominio-ou-ip>/auth/google/callback`. Preencha `GOOGLE_CLIENT_ID` e
-`GOOGLE_CLIENT_SECRET` no `.env` deste repo.
+Cora, ou criar um novo "pepito-pld"): tipo **Web application**, com *Authorized redirect URI* igual
+ao `APP_URL` do passo 4 + `/auth/google/callback` — ex. `https://192-168-201-67.sslip.io:4173/auth/google/callback`
+(inclua a porta se `APP_URL` não for a 443; o hostname precisa ser exatamente o mesmo coberto pelo
+certificado do passo 5). Preencha `GOOGLE_CLIENT_ID` e `GOOGLE_CLIENT_SECRET` no `.env` deste repo.
 
 ### 8. Subir o servidor como serviço (launchd)
 
 Para o Pepito sobreviver a reboots e reiniciar sozinho se cair, instale-o como `launchd` agent
-(equivalente a um serviço systemd no macOS). Copie
-`~/Library/LaunchAgents/com.cora.pepito.server.plist` da máquina original (ou recrie-o — ele só
-chama `.tools/node/bin/node server.cjs` na pasta deste repo, com restart automático em crash) e
-ajuste os caminhos (`/Users/<usuario>/...`) para o usuário da máquina nova. Depois:
+(equivalente a um serviço systemd no macOS). O plist **não é versionado neste repo** — crie
+`~/Library/LaunchAgents/com.cora.pepito.server.plist` na máquina nova com este conteúdo, trocando
+`/Users/<usuario>/Projetos Thay` pelo caminho real:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.cora.pepito.server</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/<usuario>/Projetos Thay/pepito-frontend/.tools/node/bin/node</string>
+    <string>server.cjs</string>
+  </array>
+  <key>WorkingDirectory</key>
+  <string>/Users/<usuario>/Projetos Thay/pepito-frontend</string>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <dict>
+    <key>SuccessfulExit</key>
+    <false/>
+    <key>Crashed</key>
+    <true/>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/Users/<usuario>/Projetos Thay/pepito-frontend/.tools/server.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/<usuario>/Projetos Thay/pepito-frontend/.tools/server.log</string>
+  <key>ThrottleInterval</key>
+  <integer>5</integer>
+</dict>
+</plist>
+```
+
+Depois:
 
 ```bash
 launchctl load ~/Library/LaunchAgents/com.cora.pepito.server.plist
