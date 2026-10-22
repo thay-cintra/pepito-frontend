@@ -155,7 +155,7 @@ férias/ausência.
 - Conta `@cora.com.br` com acesso aos dois repositórios GitHub (`origin` = pessoal, `corabank` =
   interno — ver seção seguinte).
 - Acesso ao `.env` compartilhado da Thay (raiz de `Projetos Thay/`, fora deste repo) ou às
-  credenciais equivalentes de cada serviço — peça à Thay ou à liderança do time de PLD.
+  credenciais equivalentes de cada serviço — peça ao time de PLD.
 - Credenciais AWS (Coralago/Athena) válidas. **Atenção**: `.tools/queue-sync.sh` exige as variáveis
   `AWS_ACCESS_KEY_ID`/`AWS_SECRET_ACCESS_KEY`/`AWS_SESSION_TOKEN` **literalmente preenchidas no
   `.env` raiz** — ele não lê o cache de um `aws sso login` nem um profile do AWS CLI. Gere/renove
