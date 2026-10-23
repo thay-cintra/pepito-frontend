@@ -230,21 +230,16 @@ férias/ausência.
 
 ### 1. Pré-requisitos de acesso
 
-- Conta `@cora.com.br` com acesso aos dois repositórios GitHub (`origin` = pessoal, `corabank` =
-  interno — ver seção seguinte).
-- **Importante**: o `.env` raiz da máquina nova **não deve ser uma cópia do `.env` da Thay** —
-  várias credenciais ali são pessoais (amarradas a quem fez login em cada serviço) e precisam ser
-  geradas pela própria pessoa que vai operar esta instalação. O passo 4 detalha, credencial por
-  credencial, o que é pessoal (gerar do zero) e o que é segredo de serviço/contrato da Cora (pode
-  reaproveitar). Peça acesso aos serviços/segredos de contrato à liderança do time de PLD ou a
-  Data Engineering — não peça o `.env` da Thay pronto.
-- Acesso próprio ao AWS/Coralago (Athena) — peça à liderança/Data Engineering se ainda não tiver;
-  ver passo 4a para como gerar suas próprias credenciais temporárias (`AWS_ACCESS_KEY_ID`/
-  `AWS_SECRET_ACCESS_KEY`/`AWS_SESSION_TOKEN`). **Atenção**: `.tools/queue-sync.sh` exige essas três
-  variáveis **literalmente preenchidas no `.env` raiz** — ele não lê o cache de um `aws sso login`
-  nem um profile do AWS CLI isolado.
-- Chave própria do proxy LiteLLM — solicite via Slack **#data-help** (ver passo 4a; a chave da
-  Thay está com orçamento esgotado, então copiá-la simplesmente não funciona).
+- O `.env` raiz da máquina nova **não deve ser uma cópia do `.env` de outra pessoa** — várias
+  credenciais ali são pessoais (amarradas a quem fez login em cada serviço) e precisam ser geradas
+  pela própria pessoa que vai operar esta instalação. O passo 4 detalha, credencial por credencial,
+  o que é pessoal (gerar do zero) e o que é segredo de serviço/contrato da Cora (pode reaproveitar).
+- Acesso próprio ao AWS/Coralago (Athena); ver passo 4a para como gerar suas próprias credenciais
+  temporárias (`AWS_ACCESS_KEY_ID`/`AWS_SECRET_ACCESS_KEY`/`AWS_SESSION_TOKEN`). **Atenção**:
+  `.tools/queue-sync.sh` exige essas três variáveis **literalmente preenchidas no `.env` raiz** —
+  ele não lê o cache de um `aws sso login` nem um profile do AWS CLI isolado.
+- Chave própria do proxy LiteLLM — solicite via Slack **#data-help** (ver passo 4a; o orçamento
+  mensal é por chave, não compartilhado entre usuários).
 - Conta ChatGPT própria (ou de time) para autenticar o Codex CLI via `codex login` (ver passo 6) —
   não copie a pasta `~/.codex` de outra máquina.
 
@@ -259,7 +254,7 @@ git remote add corabank https://github.com/corabank/front-pepito.git
 git fetch corabank
 ```
 
-`origin` é o remote pessoal (GitHub da Thay); `corabank` é o remote interno da organização. Depois
+`origin` é o remote pessoal; `corabank` é o remote interno da organização. Depois
 de qualquer commit, confirme que os dois apontam pro mesmo SHA:
 
 ```bash
@@ -308,19 +303,19 @@ Há **dois arquivos `.env` diferentes**, e os dois são necessários:
 cp .env.example .env   # dentro de pepito-frontend/
 ```
 
-**⚠️ Regra central deste passo: o `.env` raiz da máquina nova NÃO é uma cópia do `.env` da Thay.**
-Várias dessas credenciais são pessoais — amarradas à identidade de quem está logado em cada serviço
-— e usar a credencial de outra pessoa não é só uma má prática, em pelo menos dois casos **nem
-funciona** (o orçamento já está no limite) e nos demais quebra a rastreabilidade de quem fez o quê.
-A tabela abaixo separa o que deve ser **gerado do zero por quem está instalando** do que é um
-segredo de serviço/contrato da Cora (mesmo valor, reutilizável por qualquer operador autorizado).
+**⚠️ Regra central deste passo: o `.env` raiz da máquina nova NÃO é uma cópia do `.env` de outra
+pessoa.** Várias dessas credenciais são pessoais — amarradas à identidade de quem está logado em
+cada serviço — e usar a credencial de outra pessoa quebra a rastreabilidade de quem fez o quê (e,
+para as que têm orçamento/cota por usuário, consome o orçamento da outra pessoa, não o seu). A
+tabela abaixo separa o que deve ser **gerado do zero por quem está instalando** do que é um segredo
+de serviço/contrato da Cora (mesmo valor, reutilizável por qualquer operador autorizado).
 
-#### 4a. Credenciais pessoais — gere a sua própria, nunca copie a da Thay
+#### 4a. Credenciais pessoais — gere a sua própria, nunca copie a de outra pessoa
 
 | Variável(is) | Por que é pessoal | Como obter a sua própria |
 |---|---|---|
 | `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_SESSION_TOKEN` | São credenciais STS temporárias emitidas para a identidade AWS/Cora de quem fez login — carregam as permissões IAM daquela pessoa especificamente, e expiram em poucas horas | Peça acesso AWS/Coralago (Athena) à liderança/Data Engineering se ainda não tiver; gere as credenciais temporárias no DAM (portal interno de credenciais da Cora) ou via `aws sso login` + exportação das credenciais temporárias geradas; cole os três valores no `.env`. Renove quando expirar (`InvalidClientTokenId`/`ExpiredToken` no log é o sinal) |
-| `LITELLM_API_KEY` | É uma chave pessoal do proxy LiteLLM interno — o orçamento mensal é por chave, não compartilhado. A chave da Thay (`thay-cintra...`) está com o orçamento mensal esgotado (`Budget has been exceeded`) desde meados de setembro/2026 — **copiá-la não vai gerar sugestão nenhuma**, só vai bater no mesmo limite zerado | Solicite sua própria chave ao time de IA/Dados via Slack **#data-help**, informando que é para uso no proxy LiteLLM (`llm-proxi.stage.data.cora.team` ou equivalente). `LITELLM_BASE_URL` normalmente pode ser reaproveitado (é o endereço do proxy, não uma credencial) |
+| `LITELLM_API_KEY` | É uma chave pessoal do proxy LiteLLM interno — o orçamento mensal é por chave, não compartilhado entre usuários. Usar a chave de outra pessoa consome o orçamento dela, não o seu | Solicite sua própria chave ao time de IA/Dados via Slack **#data-help**, informando que é para uso no proxy LiteLLM (`llm-proxi.stage.data.cora.team` ou equivalente). `LITELLM_BASE_URL` normalmente pode ser reaproveitado (é o endereço do proxy, não uma credencial) |
 | Autenticação do **Codex CLI** (`~/.codex`, fora do `.env`) | `codex login` grava um token da conta ChatGPT de quem autenticou; é o fallback de IA quando o LiteLLM está sem orçamento | Rode `codex login` na máquina nova com sua própria conta ChatGPT (ou uma conta de time, se o time decidir compartilhar uma). **Nunca copie a pasta `~/.codex` de outra máquina** — nesse caso o Codex rodaria autenticado como outra pessoa |
 | `JWT_SECRET` | Não é bem uma "credencial pessoal", mas também não deve ser reusado entre instalações — é o segredo que assina os cookies de sessão deste servidor específico | Gere um novo e exclusivo para esta instalação: `node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"` |
 
