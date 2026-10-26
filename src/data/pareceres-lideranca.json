@@ -290,17 +290,6 @@
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
-  "97f41fe2-cbd0-44d0-9b95-60472b2fac84": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 05.595.136/0001-05 — SILVA CRUZ EMPREENDIMENTOS LTDA\n\nConcordo com o comentário do analista (Jeniffer, ENVIAR_LIDERANCA_PLD). O titular Marcos Eduardo Silva Cruz é irmão e sócio do PEP Marco Arthur Silva Cruz (Vereador de Paranaiguara/GO). O registro criminal do JusBrasil para o titular não configura réu em tipificação crítica (achado informativo, exige apenas validação de homônimo); não foram identificadas mídias ou processos relacionados a improbidade/corrupção para titular ou PEP.\n\nDiante da ausência de desabono relevante sob a ótica de LD, recomendo a APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — concordância com o analista: registro criminal sem réu confirmado (achado informativo), sem desabono relevante.",
-    "decisao": "aprovado",
-    "model": "codex-cli-fallback",
-    "generated_at": "2026-10-13T14:45:47Z",
-    "revisao_manual_2026_10_13d": {
-      "motivo": "Entrada tinha sido gerada pelo backup Codex CLI (único caso que funcionou no lote de 2026-10-13) e divergia do comentário real do analista (Jeniffer, ENVIAR_LIDERANCA_PLD): Codex escalou para monitoramento reforçado citando o registro criminal do JusBrasil, mas esse mesmo achado já está classificado como 'sem configurar réu em tipificação crítica' (achado informativo) e o analista real, após revisar, concluiu aprovação simples sem menção a monitoramento. Corrigido para alinhar ao julgamento real do analista, consistente com o padrão de calibração já usado nos demais 38 casos revisados.",
-      "autor": "thay@cora.com.br (via Claude Code)"
-    }
-  },
   "6037eecd-e795-4e5e-93b9-20af82920bee": {
     "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 32.768.197/0001-08 — BD CONSULTORIA EMPRESARIAL LTDA\n\nConcordo com o analista. O titular é o próprio PEP (Secretário de Estado da Casa Civil/BA). Os processos civis/trabalhistas e criminais sem réu confirmado são achados informativos que exigem leitura, mas não fundamentam reprovação. A empresa (consultoria empresarial) foi aberta durante o exercício do cargo, em setor com potencial interface com a administração estadual.\n\nDiante da ausência de desabono confirmado, mas reconhecendo o fator de timing/setor, recomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com acompanhamento de eventuais contratos com o Estado da Bahia, conforme Circular BACEN 3.978/2020.",
     "resumo": "MONITORAR — empresa de consultoria aberta durante o mandato do próprio titular-PEP, setor com interface estadual.",
@@ -567,6 +556,53 @@
     "generated_at": "2026-10-13T00:00:00Z",
     "revisao_manual_2026_10_13": {
       "motivo": "Caso ficou sem Sugestão de Parecer de Liderança porque o gerador automático (generate-sugestao-lideranca.py) falhava 100% das vezes — orçamento do LiteLLM esgotado e o backup Codex CLI não encontrava o binário (PATH mínimo do queue-sync.sh não inclui /opt/homebrew/bin), bug já corrigido no código. Parecer escrito manualmente a partir da investigação real já validada no parecer de Analista.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "8824a1f0-06de-4ada-a495-cc24e4d5f666": {
+    "text": "Decisão: CADASTRO REPROVADO  \nCNPJ: 69.072.955/0001-50 — LEAO ODONTOLOGIA LTDA  \nO analista recomenda aprovação sob monitoramento, porém identificou processo criminal concreto contra o PEP, seu filho e Vereador GILDASIO FIGUEIREDO LEAO — divergência: reprovar.  \nO Processo n.º 0802262-15.2021.8.10.0028, no TJMA, apura suposto desvio de verba pública e irregularidades contratuais superiores a R$ 10 milhões, permanecendo sem desfecho definitivo.  \nRecomendo a NÃO APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "REPROVAR — O analista recomenda aprovação sob monitoramento, porém identificou processo criminal concreto contra o PEP, seu filho e Vereador GILDASIO FIGUEIREDO LEAO — divergência: reprovar.",
+    "decisao": "reprovado",
+    "model": "codex-cli-fallback",
+    "generated_at": "2026-10-26T15:20:15Z"
+  },
+  "bf43bb48-56c8-49fc-8bef-287f4f417977": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 46.380.885/0001-00 — MARCO ANTONIO FRANCO FILHO 40488592852\nConcordo com a recomendação do analista. O titular é irmão de Marco Aurelio Franco, Vereador de Viradouro/SP, sem fator agravante concreto além do vínculo PEP.\nA ausência total de sanções, processos por improbidade ou mídia adversa sustenta a mitigação do risco.\nRecomendo a APROVAÇÃO DO CADASTRO conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — Concordo com a recomendação do analista.",
+    "decisao": "aprovado",
+    "model": "codex-cli-fallback",
+    "generated_at": "2026-10-26T15:20:32Z"
+  },
+  "45a772d8-e8bc-44b4-8d05-9ff4f5bd6ea9": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 66.572.316/0001-66 — ACARNEIRO REFORMA LTDA\n\nO analista recomenda aprovação sob monitoramento reforçado — concordo. O titular, Antonio Carneiro de Oliveira Junior, é irmão do ex-PEP Jose Ariel Rodrigues de Oliveira, ex-Vereador de Queimadas/BA, atuando em obras de alvenaria no mesmo município. Para Antonio, a investigação não encontrou processos criminais ou trabalhistas; os 2 processos civis identificados estão no polo ativo ou em outra posição, sem registro desabonador. Para Jose Ariel, porém, o JusBrasil confirmou pelo CPF sua condição de réu em processo criminal ativo por homicídio qualificado, além de outros processos criminais sem polo passivo crítico e 18 processos civis (11 no polo passivo), e há procedimento ativo do MPF por corrupção/fraude eleitoral. Os achados graves recaem sobre o ex-PEP familiar, sem sociedade empresarial confirmada com o titular — não há base para reprovar o cadastro automaticamente, mas o risco reputacional por vínculo familiar com ex-PEP exige acompanhamento.\n\nRecomendo APROVAÇÃO SOB MONITORAMENTO REFORÇADO em razão do vínculo familiar com ex-PEP sob achados criminais graves, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação sob monitoramento reforçado — concordo.",
+    "decisao": "monitoramento",
+    "model": "manual-revisao-lideranca-2026-10-26",
+    "generated_at": "2026-10-26T15:53:34Z",
+    "revisao_manual_2026_10_26": {
+      "motivo": "Caso ausente da fila de Liderança (sem sugestão gerada pelo pipeline automático); parecer escrito a partir do comentário real do analista (ENVIAR_LIDERANCA_PLD, m.matos@cora.com.br), concordando com a decisão por ele recomendada.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "788684ae-94e1-47ef-91a6-f2920480a7df": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 10.340.873/0001-05 — ASSOCIACAO BENEFICENTE PRIMAVERA\n\nO analista recomenda aprovação sob monitoramento reforçado — concordo. O titular, Sebastiao Ivan Pereira de Souza, é o próprio PEP, Vereador de Envira/AM em mandato ativo, atuando na mesma organização religiosa que preside no mesmo município. A investigação não encontrou processos criminais ou trabalhistas para o titular; os 4 processos civis localizados não o colocam no polo passivo, parte deles já arquivada — não há achado criminal ou reputacional material que justifique reprovação. Contudo, o exercício atual do mandato municipal pelo próprio titular, à frente de uma organização que movimenta recursos de terceiros, recomenda acompanhamento periódico.\n\nRecomendo APROVAÇÃO SOB MONITORAMENTO REFORÇADO em razão do vínculo PEP direto e ativo do próprio titular, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação sob monitoramento reforçado — concordo.",
+    "decisao": "monitoramento",
+    "model": "manual-revisao-lideranca-2026-10-26",
+    "generated_at": "2026-10-26T15:53:34Z",
+    "revisao_manual_2026_10_26": {
+      "motivo": "Caso ausente da fila de Liderança (sem sugestão gerada pelo pipeline automático); parecer escrito a partir do comentário real do analista (ENVIAR_LIDERANCA_PLD, m.matos@cora.com.br), concordando com a decisão por ele recomendada.",
+      "autor": "thay@cora.com.br (via Claude Code)"
+    }
+  },
+  "6b26e14d-6d47-4b44-98b2-3a118116b0a2": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 68.136.633/0001-65 — S H MED LTDA\n\nO analista recomenda aprovação — concordo. A titular, Sandy de Souza Paiva Holanda, é sócia do ex-PEP Jose Amarilo Sampaio Junior, ex-Vereador de Cedro/CE, ainda em período de carência PEP até 31/12/2029, atuando em atividade médica ambulatorial em Tianguá/CE. Para Sandy, a investigação não encontrou processo criminal ou trabalhista; foram localizados 3 processos civis, apenas 1 no polo passivo e de valor aproximado de R$ 1 mil, além de registros não criminais de direito administrativo. Para Jose Amarilo, o JusBrasil apontou 2 processos criminais sem configuração como réu em tipificação crítica e 7 processos civis (1 no polo passivo) — sem processo criminal ativo e confirmado por fraude, corrupção ou lavagem, não há base para reprovar o cadastro.\n\nRecomendo APROVAÇÃO DO CADASTRO, sem achado desabonador material para a titular ou para o ex-PEP relacionado, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — O analista recomenda aprovação — concordo.",
+    "decisao": "aprovado",
+    "model": "manual-revisao-lideranca-2026-10-26",
+    "generated_at": "2026-10-26T15:53:34Z",
+    "revisao_manual_2026_10_26": {
+      "motivo": "Caso ausente da fila de Liderança (sem sugestão gerada pelo pipeline automático); parecer escrito a partir do comentário real do analista (ENVIAR_LIDERANCA_PLD, m.matos@cora.com.br), concordando com a decisão por ele recomendada.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   }
