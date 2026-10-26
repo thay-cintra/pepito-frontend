@@ -124,6 +124,47 @@ def _registro_pep_principal(pep_pf: list) -> dict:
     return next((p for p in pep_pf if p.get("tipo") == "T"), pep_pf[0])
 
 
+def _registros_pep_distintos(pep_pf: list) -> list[dict]:
+    """Agrupa pep_pf por cpf_titular (PESSOAS distintas) e devolve 1 registro
+    "principal" por pessoa, via _registro_pep_principal() aplicado só aos
+    registros daquela pessoa (resolve reeleição corretamente dentro do grupo).
+
+    _registro_pep_principal() sozinho escolhe 1 ÚNICO registro entre TODOS os
+    registros de pep_pf — correto quando são só reeleições da MESMA pessoa,
+    mas quando o titular tem vínculo com DOIS PEPs diferentes ao mesmo tempo
+    (cpf_titular diferentes — ex.: sócio de dois PEPs em empresas distintas,
+    ou irmã de dois Deputados), ele descarta um dos dois silenciosamente, e o
+    parecer nunca menciona o PEP descartado. Achado real (thay@cora.com.br,
+    2026-10-26): casos 0a7d161c, 5658c4bb, b8127ed6, 33864c75. Ver
+    .tools/INCIDENT-REPORT-2026-10-26-PEP-MULTIPLO-DESCARTADO.md."""
+    if not pep_pf:
+        return []
+    por_pessoa: dict[str, list[dict]] = {}
+    ordem: list[str] = []
+    for p in pep_pf:
+        cpf = p.get("cpf_titular") or ""
+        if cpf not in por_pessoa:
+            por_pessoa[cpf] = []
+            ordem.append(cpf)
+        por_pessoa[cpf].append(p)
+    return [_registro_pep_principal(por_pessoa[cpf]) for cpf in ordem]
+
+
+def _empresa_comum_ph3a(nome_pep: str, findings: list) -> str:
+    """Procura um achado PH3A de 'sociedade em comum' citando este PEP pelo
+    nome e devolve o snippet real (sociedade já identificada, com CNPJ e
+    situação cadastral) — para não reportar 'empresa não identificada' quando
+    o pipeline já encontrou e confirmou a empresa."""
+    nome_up = (nome_pep or "").strip().upper()
+    if not nome_up:
+        return ""
+    for f in findings or []:
+        if "PH3A" in (f.get("title") or "") and "sociedade em comum" in (f.get("title") or "").lower():
+            if nome_up in (f.get("snippet") or "").upper():
+                return f.get("snippet", "")
+    return ""
+
+
 def _resumir_campo_pipeline(raw, max_itens: int = 3) -> str:
     """Resume pj_midianegativas/pf_midianegativas/processosjudiciais_pj/pf —
     campos JSON estruturados do pipeline Credilink/midiamonitor — em texto
@@ -240,21 +281,92 @@ ESTRUTURA:
 Retorne APENAS o parágrafo do parecer, sem nada antes ou depois."""
 
 
+def _bloco_vinculacao_pep(p: dict, case: dict, findings: list, indice: int) -> str:
+    """Bloco de texto para UM PEP distinto, usado quando há mais de um PEP
+    vinculado ao mesmo caso (ver _registros_pep_distintos)."""
+    nome_pep = p.get("nome_titular") or "(não informado)"
+    cargo_real = p.get("cargo_formal") or p.get("perfil") or "cargo não informado"
+    orgao = p.get("orgao") or case.get("uf", "")
+    vinculo = vinculo_natural(p.get("ds_vinculo"))
+    is_vinculo_societario = (p.get("ds_vinculo") or "").strip().upper() in VINCULOS_SOCIETARIOS
+    data_inicio = p.get("data_inicio") or ""
+    data_fim = p.get("data_fim") or ""
+    status_mandato = _status_mandato_label(p) if p else "vigência não informada"
+    cpf_owner = (case.get("cpf") or "").replace(".", "").replace("-", "")
+    cpf_pep = (p.get("cpf_titular") or "").replace(".", "").replace("-", "")
+    is_titular = cpf_owner == cpf_pep
+
+    linhas = [
+        f"PEP #{indice}: {nome_pep}"
+        + (" — O OWNER É O PRÓPRIO PEP TITULAR" if is_titular else f" — Owner é {vinculo or 'vínculo'} deste PEP"),
+        f"- Cargo formal: {cargo_real}",
+        f"- Órgão/Município: {orgao}",
+        f"- Mandato: {data_inicio} → {data_fim}",
+        f"- Status do mandato (já calculado, não infira sozinho): {status_mandato}",
+    ]
+    if not is_titular and vinculo:
+        linhas.append(f"- Tipo de vínculo (DSVINCULO): {vinculo}")
+    if is_vinculo_societario:
+        empresa_comum = _empresa_comum_ph3a(nome_pep, findings)
+        if empresa_comum:
+            linhas.append(f"- ✅ Vínculo SÓCIO: sociedade em comum JÁ IDENTIFICADA — {empresa_comum}")
+        else:
+            linhas.append(
+                "- ⚠️ Vínculo SÓCIO: a Credilink NÃO informa em qual empresa titular e PEP são sócios, "
+                "nem CNPJ nem situação cadastral — NÃO presuma que é a mesma PJ do cadastro nem invente "
+                "outra empresa (ver REGRA 12). Declare essa lacuna e recomende validar manualmente "
+                "(inclusive se a empresa está ativa ou baixada)."
+            )
+    return "\n".join(linhas)
+
+
 def montar_user_prompt(case: dict, findings: list) -> str:
     pep = case.get("pep_pf") or []
-    pep_titular = _registro_pep_principal(pep)
-    nome_pep = pep_titular.get("nome_titular") or "(não informado)"
-    cargo_real = pep_titular.get("cargo_formal") or pep_titular.get("perfil") or "cargo não informado"
-    orgao = pep_titular.get("orgao") or case.get("uf", "")
-    vinculo = vinculo_natural(pep_titular.get("ds_vinculo"))
-    is_vinculo_societario = (pep_titular.get("ds_vinculo") or "").strip().upper() in VINCULOS_SOCIETARIOS
-    data_inicio = pep_titular.get("data_inicio") or ""
-    data_fim = pep_titular.get("data_fim") or ""
-    status_mandato = _status_mandato_label(pep_titular) if pep_titular else "vigência não informada"
+    peps_distintos = _registros_pep_distintos(pep)
 
-    cpf_owner = (case.get("cpf") or "").replace(".", "").replace("-", "")
-    cpf_pep = (pep_titular.get("cpf_titular") or "").replace(".", "").replace("-", "")
-    is_titular = cpf_owner == cpf_pep
+    if len(peps_distintos) > 1:
+        bloco_pep = "\n\n".join(
+            _bloco_vinculacao_pep(p, case, findings, indice=i + 1) for i, p in enumerate(peps_distintos)
+        )
+        bloco_pep += (
+            "\n\n⚠️ ESTE CADASTRO TEM MAIS DE UM PEP VINCULADO (pessoas distintas — não é reeleição da "
+            "mesma pessoa). Cite CADA PEP acima no parecer, nunca mencione só um deles. A recomendação "
+            "final deve refletir o de MAIOR risco entre os listados (ex.: se um indica APROVAÇÃO e outro "
+            "exige REPROVAÇÃO, a recomendação final é REPROVAÇÃO)."
+        )
+    else:
+        pep_titular = peps_distintos[0] if peps_distintos else {}
+        nome_pep = pep_titular.get("nome_titular") or "(não informado)"
+        cargo_real = pep_titular.get("cargo_formal") or pep_titular.get("perfil") or "cargo não informado"
+        orgao = pep_titular.get("orgao") or case.get("uf", "")
+        vinculo = vinculo_natural(pep_titular.get("ds_vinculo"))
+        is_vinculo_societario = (pep_titular.get("ds_vinculo") or "").strip().upper() in VINCULOS_SOCIETARIOS
+        data_inicio = pep_titular.get("data_inicio") or ""
+        data_fim = pep_titular.get("data_fim") or ""
+        status_mandato = _status_mandato_label(pep_titular) if pep_titular else "vigência não informada"
+        cpf_owner = (case.get("cpf") or "").replace(".", "").replace("-", "")
+        cpf_pep = (pep_titular.get("cpf_titular") or "").replace(".", "").replace("-", "")
+        is_titular = cpf_owner == cpf_pep
+        aviso_societario = ""
+        if is_vinculo_societario:
+            empresa_comum = _empresa_comum_ph3a(nome_pep, findings)
+            if empresa_comum:
+                aviso_societario = f"- ✅ Vínculo SÓCIO: sociedade em comum JÁ IDENTIFICADA — {empresa_comum}"
+            else:
+                aviso_societario = (
+                    "- ⚠️ Vínculo SÓCIO: a Credilink NÃO informa em qual empresa titular e PEP são sócios, "
+                    "nem CNPJ nem situação cadastral — NÃO presuma que é a mesma PJ do cadastro nem invente "
+                    "outra empresa (ver REGRA 12). Declare essa lacuna e recomende validar manualmente "
+                    "(inclusive se a empresa está ativa ou baixada)."
+                )
+        bloco_pep = f"""- {'O OWNER É O PRÓPRIO PEP TITULAR' if is_titular else f'Owner é {vinculo or "vínculo"} de PEP'}
+- PEP titular: {nome_pep}
+- Cargo formal: {cargo_real}
+- Órgão/Município: {orgao}
+- Mandato: {data_inicio} → {data_fim}
+- Status do mandato (já calculado, não infira sozinho): {status_mandato}
+{f'- Tipo de vínculo (DSVINCULO): {vinculo}' if not is_titular and vinculo else ''}
+{aviso_societario}""".rstrip()
 
     findings_summary = ""
     if findings:
@@ -283,14 +395,7 @@ def montar_user_prompt(case: dict, findings: list) -> str:
 - Data abertura PJ: {case.get('data_constituicao', '')}
 
 VINCULAÇÃO PEP (Credilink):
-- {'O OWNER É O PRÓPRIO PEP TITULAR' if is_titular else f'Owner é {vinculo or "vínculo"} de PEP'}
-- PEP titular: {nome_pep}
-- Cargo formal: {cargo_real}
-- Órgão/Município: {orgao}
-- Mandato: {data_inicio} → {data_fim}
-- Status do mandato (já calculado, não infira sozinho): {status_mandato}
-{f'- Tipo de vínculo (DSVINCULO): {vinculo}' if not is_titular and vinculo else ''}
-{'- ⚠️ Vínculo SÓCIO: a Credilink NÃO informa em qual empresa titular e PEP são sócios, nem CNPJ nem situação cadastral — NÃO presuma que é a mesma PJ do cadastro nem invente outra empresa (ver REGRA 12). Declare essa lacuna e recomende validar manualmente (inclusive se a empresa está ativa ou baixada).' if is_vinculo_societario else ''}
+{bloco_pep}
 
 ACHADOS RELEVANTES: {findings_summary or '(nenhum achado externo material)'}
 
