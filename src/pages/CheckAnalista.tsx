@@ -16,7 +16,7 @@ import type {
   RegistrationStatus,
 } from "@/types/registration";
 import type { StatusAnalise } from "@/types/kyc";
-import { getDecisaoIA } from "@/data/registration-enrich";
+import { getDecisaoIA, getSugestaoParecer } from "@/data/registration-enrich";
 import { RegistrationCaseCard } from "@/components/RegistrationCaseCard";
 import { registrationCaseMatchesSearch } from "@/lib/registration-search";
 
@@ -96,6 +96,11 @@ export function CheckAnalista() {
     return map;
   }, [casos]);
 
+  const semSugestaoCount = useMemo(
+    () => casos.filter((c) => !getSugestaoParecer(c.draft_id)).length,
+    [casos],
+  );
+
   return (
     <div className="p-6 space-y-6 max-w-[1400px]">
       <div className="flex items-start justify-between gap-3 flex-wrap">
@@ -113,7 +118,7 @@ export function CheckAnalista() {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <QueueRefreshHeader onRefresh={() => setRefreshKey((k) => k + 1)} />
+          <QueueRefreshHeader onRefresh={() => setRefreshKey((k) => k + 1)} semSugestaoCount={semSugestaoCount} />
           <Button
             variant="outline"
             size="sm"

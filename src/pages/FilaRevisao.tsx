@@ -13,7 +13,7 @@ import type {
   RegistrationStatus,
 } from "@/types/registration";
 import type { StatusAnalise } from "@/types/kyc";
-import { getDecisaoIA } from "@/data/registration-enrich";
+import { getDecisaoIA, getSugestaoLideranca } from "@/data/registration-enrich";
 import { RegistrationCaseCard } from "@/components/RegistrationCaseCard";
 import { QueueRefreshHeader } from "@/components/QueueRefreshHeader";
 import { registrationCaseMatchesSearch } from "@/lib/registration-search";
@@ -72,6 +72,11 @@ export function FilaRevisao() {
     });
   }, [escalados, statusFiltro, decisaoFiltro, busca]);
 
+  const semSugestaoCount = useMemo(
+    () => escalados.filter((c) => !getSugestaoLideranca(c.draft_id)).length,
+    [escalados],
+  );
+
   const distribuicaoDecisao = useMemo(() => {
     const map: Record<StatusAnalise, number> = {
       aprovado: 0,
@@ -105,7 +110,7 @@ export function FilaRevisao() {
               CHECK_LIDERANÇA — escalonados ({escalados.length})
             </h2>
           </div>
-          <QueueRefreshHeader onRefresh={() => setRefreshKey((k) => k + 1)} />
+          <QueueRefreshHeader onRefresh={() => setRefreshKey((k) => k + 1)} semSugestaoCount={semSugestaoCount} />
         </div>
         <p className="text-xs text-muted-foreground max-w-4xl">
           Filtros aplicados:{" "}

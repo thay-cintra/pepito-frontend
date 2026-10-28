@@ -10,7 +10,17 @@ const POLL_INTERVAL_MS = 90_000; // auto-refresh da fila a cada 90 segundos
 
 type SyncState = "idle" | "running" | "done" | "error";
 
-export function QueueRefreshHeader({ onRefresh }: { onRefresh?: () => void }) {
+export function QueueRefreshHeader({
+  onRefresh,
+  semSugestaoCount = 0,
+}: {
+  onRefresh?: () => void;
+  /** Quantos casos da fila atual ainda não têm Sugestão IA — deixa o botão
+   * de sincronização explícito ("é este aqui que gera") em vez de um ícone
+   * discreto perdido entre badges (achado real: thay@cora.com.br, 2026-10-28,
+   * "qual botão devo clicar?"). */
+  semSugestaoCount?: number;
+}) {
   const { toast } = useToast();
   const [meta, setMeta] = useState(getQueueSnapshotMeta());
   const [syncState, setSyncState] = useState<SyncState>("idle");
@@ -152,18 +162,31 @@ export function QueueRefreshHeader({ onRefresh }: { onRefresh?: () => void }) {
         <RefreshCw className="h-3 w-3" /> Atualizar
       </Button>
 
-      {/* Sincronizar: consulta Athena via Python e atualiza o JSON.
-          Restrito a usuários autorizados (canSync). */}
+      {/* Sincronizar: consulta Athena, gera Sugestão IA pendente e atualiza o
+          JSON. Restrito a usuários autorizados (canSync). Quando há casos sem
+          Sugestão IA, vira um botão explícito (cor cheia + contagem) em vez
+          do ícone discreto de rotina — é o único jeito de disparar a geração
+          hoje (não há agendamento automático; ver
+          .tools/INCIDENT-REPORT-2026-10-28-LIDERANCA-REGENERA-TUDO.md). */}
       {canSync && (
         <Button
-          variant="outline" size="sm"
+          variant={semSugestaoCount > 0 && syncState !== "running" ? "default" : "outline"}
+          size="sm"
           onClick={handleSincronizarAthena}
           disabled={syncState === "running"}
           className="h-7 text-xs"
-          title="Consulta o Athena agora e atualiza a fila sem precisar reiniciar o servidor"
+          title={
+            semSugestaoCount > 0
+              ? `${semSugestaoCount} caso${semSugestaoCount > 1 ? "s" : ""} sem Sugestão IA — clique para gerar agora`
+              : "Consulta o Athena agora, gera Sugestão IA para casos novos e atualiza a fila sem precisar reiniciar o servidor"
+          }
         >
           <Zap className={`h-3 w-3 ${syncState === "running" ? "animate-pulse" : ""}`} />
-          {syncState === "running" ? "Sincronizando…" : "Sincronizar Athena"}
+          {syncState === "running"
+            ? "Sincronizando…"
+            : semSugestaoCount > 0
+              ? `Gerar Sugestão IA (${semSugestaoCount} pendente${semSugestaoCount > 1 ? "s" : ""})`
+              : "Sincronizar Athena"}
         </Button>
       )}
     </div>
