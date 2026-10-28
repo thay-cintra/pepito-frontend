@@ -601,6 +601,36 @@ isto é tarefa manual recorrente, não um "nice to have":
 **Sintoma:** um ou mais analistas abrem a URL de sempre e o Chrome mostra "Sua conexão não é
 particular" / `NET::ERR_CERT_AUTHORITY_INVALID`, mesmo tendo acessado normalmente antes.
 
+### Para o analista — instalação única do certificado (resolve o aviso)
+
+Mensagem pronta para copiar e enviar ao time (Slack/e-mail) — o passo é único por pessoa, depois
+disso o aviso não volta a menos que o IP do servidor mude (nesse caso o link de acesso muda, mas o
+certificado raiz já instalado continua valendo):
+
+```markdown
+📋 Pepito — instalação única do certificado (resolve o aviso "conexão não particular")
+
+Se o Chrome mostrar "Sua conexão não é particular" / NET::ERR_CERT_AUTHORITY_INVALID ao abrir o
+Pepito, é porque seu navegador ainda não confia no certificado interno da Cora usado pelo servidor.
+É um passo único — depois de feito, nunca mais aparece.
+
+1. Acesse (dentro da VPN Cora): http://192-168-201-67.sslip.io:4174/install-cert
+2. Clique em "⬇ Baixar rootCA.pem"
+3. Siga o passo do seu sistema (a própria página já tem o comando certo):
+   - Mac: abra o Terminal e cole o comando da seção "macOS" (clique no bloco cinza pra copiar),
+     depois feche e reabra o Chrome.
+   - Windows: abra o PowerShell como Administrador e cole o comando da seção "Windows", depois
+     reinicie o Chrome/Edge.
+4. Acesse normalmente: https://192-168-201-67.sslip.io:4173
+
+Qualquer dúvida, chama a Thay.
+```
+
+A porta `4174` roda em HTTP puro (sem o problema de certificado) só para servir essa página de
+instalação + o `rootCA.pem` — depois do passo 3, o acesso normal continua todo em HTTPS na `4173`.
+
+### Para quem administra o Pepito — diagnóstico e reemissão
+
 **Causa:** o certificado em `certs/cert.pem` é emitido (via mkcert) para IPs/hostnames
 específicos — hoje ele cobre o IP da VPN Cora (`192.168.201.67` → `192-168-201-67.sslip.io`) e o
 IP da rede Wi-Fi local (`192.168.1.191`). A interface da VPN (`utun4`, ponto-a-ponto) **recebe um
@@ -636,14 +666,9 @@ chmod 600 certs/key.pem
 launchctl kickstart -k gui/$(id -u)/com.cora.pepito.server
 ```
 
-Depois, atualize a URL no banner do topo deste README e avise o time do novo endereço (o IP muda,
-então a URL `https://<ip-com-tracos>.sslip.io:4173` muda junto).
-
-**Para analistas que nunca instalaram o certificado** (erro acontece na primeira vez, não depois de
-uma mudança de IP): acesse `http://<mesmo-host>:4174/install-cert` — essa porta roda em HTTP puro
-(sem o problema de certificado) e serve o `rootCA.pem` para baixar + instalar (passo a passo por
-sistema operacional na própria página). Depois de instalado uma vez, o aviso não volta a menos que
-o IP mude (aí cai no fix acima).
+Depois, atualize a URL no banner do topo deste README e reenvie a mensagem da seção acima ao time
+(o IP muda, então o link `https://<ip-com-tracos>.sslip.io:4173` muda junto — mas quem já instalou
+o `rootCA.pem` antes não precisa reinstalar nada, só trocar o link).
 
 ---
 
