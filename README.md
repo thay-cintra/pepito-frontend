@@ -9,6 +9,8 @@ camadas exigido pela Circular BCB nº 4.001/2020.
 > Liderança de Compliance.
 >
 > **Acesso:** `https://192-168-201-67.sslip.io:4173` (VPN Cora) — único servidor, não subir instância paralela.
+> Esse IP muda quando a VPN reconecta; se o navegador acusar "conexão não particular", ver
+> [Certificado HTTPS quebra quando o IP da VPN muda](#certificado-https-quebra-quando-o-ip-da-vpn-muda).
 
 ---
 
@@ -562,6 +564,58 @@ tail -f .tools/supervisor.log .tools/integrity.log
 | "Credilink/JusBrasil: pendente" mesmo após rodar consulta | Servidor rodando bundle antigo | rebuild + `launchctl kickstart -k gui/$(id -u)/com.cora.pepito.server` |
 | Draft some da fila | `camadaStatus` local desatualizado | ver `analises-salvas.json`, checar `devolvido`/`concluido` |
 | Nenhum alerta no Slack | Webhook errado/ausente | `grep SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR .env` |
+| Analista vê "Sua conexão não é particular" / `NET::ERR_CERT_AUTHORITY_INVALID` | Ver seção "Certificado HTTPS quebra" abaixo — ou nunca instalou o rootCA, ou o IP da VPN mudou e o certificado ficou desatualizado | `http://<host>:4174/install-cert` (analista) ou regerar o cert (Thay, ver abaixo) |
+
+---
+
+## Certificado HTTPS quebra quando o IP da VPN muda
+
+**Sintoma:** um ou mais analistas abrem a URL de sempre e o Chrome mostra "Sua conexão não é
+particular" / `NET::ERR_CERT_AUTHORITY_INVALID`, mesmo tendo acessado normalmente antes.
+
+**Causa:** o certificado em `certs/cert.pem` é emitido (via mkcert) para IPs/hostnames
+específicos — hoje ele cobre o IP da VPN Cora (`192.168.201.67` → `192-168-201-67.sslip.io`) e o
+IP da rede Wi-Fi local (`192.168.1.191`). A interface da VPN (`utun4`, ponto-a-ponto) **recebe um
+IP novo a cada reconexão** — não é estático. Quando isso acontece, o IP real da máquina muda mas o
+certificado continua listando o IP antigo, e o navegador rejeita a conexão (o erro de "autoridade
+inválida" aparece mesmo quando o problema real é hostname/IP não coberto pelo certificado — o
+Chrome reporta a falha de cadeia antes de chegar a checar o hostname).
+
+**Diagnóstico rápido** (rodar na máquina do servidor):
+
+```bash
+# IP atual da VPN
+ifconfig | grep -A1 utun | grep inet
+
+# Hostnames/IPs que o certificado atual realmente cobre
+openssl x509 -in certs/cert.pem -noout -ext subjectAltName
+```
+
+Se o IP da VPN não aparecer na lista do certificado, é isso.
+
+**Fix — reemitir o certificado para o IP atual** (não precisa redistribuir `rootCA.pem` de novo
+para quem já instalou antes — é a mesma CA, só o certificado-folha muda):
+
+```bash
+cd "pepito-frontend"
+IP_VPN=$(ifconfig | grep -A1 utun | grep inet | awk '{print $2}' | head -1)
+IP_WIFI=$(ipconfig getifaddr en0)
+mkcert -cert-file certs/cert.pem.new -key-file certs/key.pem.new \
+  "${IP_VPN//./-}.sslip.io" "${IP_WIFI//./-}.sslip.io" localhost 127.0.0.1 "$IP_VPN" "$IP_WIFI"
+mv certs/cert.pem.new certs/cert.pem
+mv certs/key.pem.new certs/key.pem
+chmod 600 certs/key.pem
+launchctl kickstart -k gui/$(id -u)/com.cora.pepito.server
+```
+
+Depois, atualize a URL no banner do topo deste README e avise o time do novo endereço (o IP muda,
+então a URL `https://<ip-com-tracos>.sslip.io:4173` muda junto).
+
+**Para analistas que nunca instalaram o certificado** (erro acontece na primeira vez, não depois de
+uma mudança de IP): acesse `http://<mesmo-host>:4174/install-cert` — essa porta roda em HTTP puro
+(sem o problema de certificado) e serve o `rootCA.pem` para baixar + instalar (passo a passo por
+sistema operacional na própria página). Depois de instalado uma vez, o aviso não volta a menos que
+o IP mude (aí cai no fix acima).
 
 ---
 
