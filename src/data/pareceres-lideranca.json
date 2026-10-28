@@ -559,20 +559,6 @@
       "autor": "thay@cora.com.br (via Claude Code)"
     }
   },
-  "8824a1f0-06de-4ada-a495-cc24e4d5f666": {
-    "text": "Decisão: CADASTRO REPROVADO  \nCNPJ: 69.072.955/0001-50 — LEAO ODONTOLOGIA LTDA  \nO analista recomenda aprovação sob monitoramento, porém identificou processo criminal concreto contra o PEP, seu filho e Vereador GILDASIO FIGUEIREDO LEAO — divergência: reprovar.  \nO Processo n.º 0802262-15.2021.8.10.0028, no TJMA, apura suposto desvio de verba pública e irregularidades contratuais superiores a R$ 10 milhões, permanecendo sem desfecho definitivo.  \nRecomendo a NÃO APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
-    "resumo": "REPROVAR — O analista recomenda aprovação sob monitoramento, porém identificou processo criminal concreto contra o PEP, seu filho e Vereador GILDASIO FIGUEIREDO LEAO — divergência: reprovar.",
-    "decisao": "reprovado",
-    "model": "codex-cli-fallback",
-    "generated_at": "2026-10-26T15:20:15Z"
-  },
-  "bf43bb48-56c8-49fc-8bef-287f4f417977": {
-    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 46.380.885/0001-00 — MARCO ANTONIO FRANCO FILHO 40488592852\nConcordo com a recomendação do analista. O titular é irmão de Marco Aurelio Franco, Vereador de Viradouro/SP, sem fator agravante concreto além do vínculo PEP.\nA ausência total de sanções, processos por improbidade ou mídia adversa sustenta a mitigação do risco.\nRecomendo a APROVAÇÃO DO CADASTRO conforme Circular BACEN 3.978/2020.",
-    "resumo": "APROVAR — Concordo com a recomendação do analista.",
-    "decisao": "aprovado",
-    "model": "codex-cli-fallback",
-    "generated_at": "2026-10-26T15:20:32Z"
-  },
   "45a772d8-e8bc-44b4-8d05-9ff4f5bd6ea9": {
     "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 66.572.316/0001-66 — ACARNEIRO REFORMA LTDA\n\nO analista recomenda aprovação sob monitoramento reforçado — concordo. O titular, Antonio Carneiro de Oliveira Junior, é irmão do ex-PEP Jose Ariel Rodrigues de Oliveira, ex-Vereador de Queimadas/BA, atuando em obras de alvenaria no mesmo município. Para Antonio, a investigação não encontrou processos criminais ou trabalhistas; os 2 processos civis identificados estão no polo ativo ou em outra posição, sem registro desabonador. Para Jose Ariel, porém, o JusBrasil confirmou pelo CPF sua condição de réu em processo criminal ativo por homicídio qualificado, além de outros processos criminais sem polo passivo crítico e 18 processos civis (11 no polo passivo), e há procedimento ativo do MPF por corrupção/fraude eleitoral. Os achados graves recaem sobre o ex-PEP familiar, sem sociedade empresarial confirmada com o titular — não há base para reprovar o cadastro automaticamente, mas o risco reputacional por vínculo familiar com ex-PEP exige acompanhamento.\n\nRecomendo APROVAÇÃO SOB MONITORAMENTO REFORÇADO em razão do vínculo familiar com ex-PEP sob achados criminais graves, conforme Circular BACEN 3.978/2020.",
     "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação sob monitoramento reforçado — concordo.",
@@ -605,5 +591,110 @@
       "motivo": "Caso ausente da fila de Liderança (sem sugestão gerada pelo pipeline automático); parecer escrito a partir do comentário real do analista (ENVIAR_LIDERANCA_PLD, m.matos@cora.com.br), concordando com a decisão por ele recomendada.",
       "autor": "thay@cora.com.br (via Claude Code)"
     }
+  },
+  "6a5f9185-763f-4c56-8f35-808b2e24dac4": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO  \nCNPJ: 51.460.112/0001-66 — A X GOMES  \nO analista recomenda aprovação sob monitoramento reforçado — concordo; a titular é irmã de PEP, VEREADOR de SANTANA-AP.  \nA atuação no mesmo município demanda acompanhamento; há seis processos criminais em nome do PEP no JusBrasil, ainda sujeitos à validação manual para afastar homônimos.  \nRecomendo a aprovação sob monitoramento reforçado, com revisão periódica e validação dos processos apontados, conforme BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação sob monitoramento reforçado — concordo; a titular é irmã de PEP, VEREADOR de SANTANA-AP.",
+    "decisao": "monitoramento",
+    "model": "codex-cli-fallback",
+    "generated_at": "2026-10-28T15:39:28Z"
+  },
+  "8824a1f0-06de-4ada-a495-cc24e4d5f666": {
+    "text": "Decisão: CADASTRO REPROVADO  \nCNPJ: 69.072.955/0001-50 — LEAO ODONTOLOGIA LTDA  \nO analista recomenda aprovação sob monitoramento, porém identificou processo criminal concreto contra o PEP, seu filho e Vereador GILDASIO FIGUEIREDO LEAO — divergência: reprovar.  \nO Processo n.º 0802262-15.2021.8.10.0028, no TJMA, apura suposto desvio de verba pública e irregularidades contratuais superiores a R$ 10 milhões, permanecendo sem desfecho definitivo.  \nRecomendo a NÃO APROVAÇÃO do cadastro, conforme Circular BACEN 3.978/2020.",
+    "resumo": "REPROVAR — O analista recomenda aprovação sob monitoramento, porém identificou processo criminal concreto contra o PEP, seu filho e Vereador GILDASIO FIGUEIREDO LEAO — divergência: reprovar.",
+    "decisao": "reprovado",
+    "model": "codex-cli-fallback",
+    "generated_at": "2026-10-26T15:20:15Z"
+  },
+  "bf43bb48-56c8-49fc-8bef-287f4f417977": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 46.380.885/0001-00 — MARCO ANTONIO FRANCO FILHO 40488592852\nConcordo com a recomendação do analista. O titular é irmão de Marco Aurelio Franco, Vereador de Viradouro/SP, sem fator agravante concreto além do vínculo PEP.\nA ausência total de sanções, processos por improbidade ou mídia adversa sustenta a mitigação do risco.\nRecomendo a APROVAÇÃO DO CADASTRO conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — Concordo com a recomendação do analista.",
+    "decisao": "aprovado",
+    "model": "codex-cli-fallback",
+    "generated_at": "2026-10-26T15:20:32Z"
+  },
+  "2c9226bc-fdfb-48b0-b361-197ec2013412": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 47.876.600/0001-81 — WALLACE REGIS DE SOUZA LTDA\nO analista recomenda aprovação sob monitoramento reforçado — concordo, diante do vínculo de irmão com o PEP Vereador em exercício.\nA atuação da empresa no mesmo município do mandato exige acompanhamento; a menção de mídia da Rádio Rio Mar é parcial e demanda confirmação de identidade.\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação sob monitoramento reforçado — concordo, diante do vínculo de irmão com o PEP Vereador em exercício.",
+    "decisao": "monitoramento",
+    "model": "codex-mcp-batch-2026-10-28",
+    "generated_at": "2026-10-28T16:24:33Z"
+  },
+  "f9a0d106-f716-4c39-bb8c-c799947ea0ed": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 49.878.229/0001-12 — E SANTANA OLIVEIRA\nO analista recomenda aprovação sob monitoramento reforçado — concordo; o titular é irmão de PEP Vereador cujo mandato consta ativo.\nO inquérito nº 5002306-03.2026.8.13.0778 apura suposto estelionato na negociação de placas solares, ainda sem condenação, configurando fator de atenção concreto.\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica do procedimento, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação sob monitoramento reforçado — concordo; o titular é irmão de PEP Vereador cujo mandato consta ativo.",
+    "decisao": "monitoramento",
+    "model": "codex-mcp-batch-2026-10-28",
+    "generated_at": "2026-10-28T16:24:33Z"
+  },
+  "0455f538-769d-403a-b139-d4513571ef1a": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 20.781.216/0001-49 — A L M CONSTRUCOES LTDA\nO analista recomenda aprovação, porém identificou processo contra a PEP Vereadora, irmã do titular — ajusto para monitoramento reforçado.\nO processo nº 0000343-94.2025.8.04.2600 apura suposto falso testemunho, sem acesso aos autos ou tipificação crítica confirmada; o mandato em município distinto mitiga o risco.\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão do processo, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação, porém identificou processo contra a PEP Vereadora, irmã do titular — ajusto para monitoramento reforçado.",
+    "decisao": "monitoramento",
+    "model": "codex-mcp-batch-2026-10-28",
+    "generated_at": "2026-10-28T16:24:33Z"
+  },
+  "8953fe82-e600-4ae6-83b2-d11ede9b264a": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 13.188.710/0001-39 — SUL ART PERSIANAS LTDA\nO analista recomenda aprovação sob monitoramento reforçado, porém divirjo: o vínculo de sócio com o PEP Vereador, por si só, não justifica esse agravamento.\nA sociedade em comum S.A PARTICIPACOES SOCIETARIAS LTDA está identificada e ativa, sem sanções, processos por improbidade ou mídia adversa confirmada.\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — O analista recomenda aprovação sob monitoramento reforçado, porém divirjo: o vínculo de sócio com o PEP Vereador, por si só, não justifica esse agravamento.",
+    "decisao": "aprovado",
+    "model": "codex-mcp-batch-2026-10-28",
+    "generated_at": "2026-10-28T16:24:33Z"
+  },
+  "34033a15-1d61-484e-82da-d4a81e961f81": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 26.402.680/0001-63 — SAGA SOLUCOES EDUCACIONAIS LTDA\nO analista recomenda aprovação, porém divirjo parcialmente: o titular é irmão de ex-PEP Vereador em período de carência e possui apontamentos criminais na JusBrasil.\nA fonte JusBrasil indica três processos criminais para o titular, sem tipificação crítica detalhada; a confirmação manual dos autos e da identidade é necessária.\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, condicionada à validação dos apontamentos, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — O analista recomenda aprovação, porém divirjo parcialmente: o titular é irmão de ex-PEP Vereador em período de carência e possui apontamentos criminais na JusBrasil.",
+    "decisao": "monitoramento",
+    "model": "codex-mcp-batch-2026-10-28",
+    "generated_at": "2026-10-28T16:24:33Z"
+  },
+  "01493876-050d-4f9d-86d1-b463c55cebd5": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 63.873.454/0001-97 — 63.873.454 ADEMILTON JAIR MARTINS MARIANO\nO analista recomenda aprovação — concordo; o titular é irmão de PEP Vereador, sem fator agravante adicional concreto.\nA empresa atua em município distinto e não há sanções, processos por improbidade ou mídia adversa; os registros cível e trabalhista estão arquivados e sem polo passivo.\nRecomendo a APROVAÇÃO DO CADASTRO conforme política PLD/FT vigente e Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — O analista recomenda aprovação — concordo; o titular é irmão de PEP Vereador, sem fator agravante adicional concreto.",
+    "decisao": "aprovado",
+    "model": "codex-mcp-batch-2026-10-28",
+    "generated_at": "2026-10-28T16:24:33Z"
+  },
+  "bdb93555-3b64-4adf-8aad-8b775fb6a139": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 41.941.039/0001-90 — AGRO MAIS LTDA\nConcordo com a aprovação: o titular é o próprio PEP, ex-Vereador de Sinimbu/RS, em período de carência.\nO processo criminal identificado foi qualificado pelo analista como crime de trânsito, sem relevância PLD, sem sanções, improbidade ou mídia adversa confirmada.\nRecomendo a APROVAÇÃO DO CADASTRO conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — Concordo com a aprovação: o titular é o próprio PEP, ex-Vereador de Sinimbu/RS, em período de carência.",
+    "decisao": "aprovado",
+    "model": "codex-mcp-batch-2026-10-28",
+    "generated_at": "2026-10-28T16:24:33Z"
+  },
+  "3f785fff-a290-4114-a9a6-74f0917efdef": {
+    "text": "Decisão: CADASTRO APROVADO\nCNPJ: 69.090.360/0001-28 — AZURI UNIDADES LTDA\nConcordo com a aprovação: o titular é sócio do PEP Diretor-Presidente da Fundação Hospital Adriano Jorge.\nA sociedade em comum foi confirmada em empresa ativa, sem desabonos reputacionais relevantes ou apontamentos confirmados de PLD.\nRecomendo a APROVAÇÃO DO CADASTRO conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR — Concordo com a aprovação: o titular é sócio do PEP Diretor-Presidente da Fundação Hospital Adriano Jorge.",
+    "decisao": "aprovado",
+    "model": "codex-mcp-batch-2026-10-28",
+    "generated_at": "2026-10-28T16:24:33Z"
+  },
+  "08493df4-bfd1-4ae0-83cf-7e04d971ab50": {
+    "text": "Decisão: CADASTRO REPROVADO\nCNPJ: 69.054.097/0001-11 — DJR SERVICOS MEDICOS LTDA\nDiverjo do analista: o titular é irmão do PEP Vereador de Ponta Grossa/PR e foi alvo de Ação Civil de Improbidade Administrativa por supostos atestados falsos no SAMU.\nO ANPC cumprido e o lapso temporal mitigam a exposição, mas não afastam o achado de improbidade contra o owner-relacionado.\nRecomendo a NÃO APROVAÇÃO do relacionamento comercial, conforme Circular BACEN 3.978/2020.",
+    "resumo": "REPROVAR — Diverjo do analista: o titular é irmão do PEP Vereador de Ponta Grossa/PR e foi alvo de Ação Civil de Improbidade Administrativa por supostos atestados falsos no SAMU.",
+    "decisao": "reprovado",
+    "model": "codex-mcp-batch-2026-10-28",
+    "generated_at": "2026-10-28T16:24:33Z"
+  },
+  "238129eb-96e1-4505-a1e9-5e1b675f5f3b": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 28.639.509/0001-06 — ROSINEI DE FATIMA PIMENTEL 33987957816\nConcordo com a recomendação do analista: a titular é irmã da PEP Vereadora de Ipaussu/SP.\nO processo por estelionato em que a titular figurou como réu está extinto, segundo JusBrasil, não havendo condenação ou achado PLD conclusivo.\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, com revisão periódica, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — Concordo com a recomendação do analista: a titular é irmã da PEP Vereadora de Ipaussu/SP.",
+    "decisao": "monitoramento",
+    "model": "codex-mcp-batch-2026-10-28",
+    "generated_at": "2026-10-28T16:24:33Z"
+  },
+  "c19919d4-21ea-484a-939c-a37b6593e1f7": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 40.003.963/0001-63 — 40.003.963 JOELIO DE LIMA ALVES\nDiverjo da aprovação simples: o titular é filho da PEP Vereadora de Pilões/PB, cujo mandato está ativo até 2028.\nHá referência da Credilink a processo criminal grave arquivado e sem confirmação de que o titular seja réu, exigindo validação de identidade antes de afastar o risco.\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, condicionada à validação do processo, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — Diverjo da aprovação simples: o titular é filho da PEP Vereadora de Pilões/PB, cujo mandato está ativo até 2028.",
+    "decisao": "monitoramento",
+    "model": "codex-mcp-batch-2026-10-28",
+    "generated_at": "2026-10-28T16:24:33Z"
+  },
+  "704fdc30-db8b-41d3-95ef-41c49c6237ec": {
+    "text": "Decisão: CADASTRO APROVADO SOB MONITORAMENTO REFORÇADO\nCNPJ: 66.636.792/0001-01 — DESTINO LIVRE BR LTDA\nDiverjo da aprovação simples: o titular é o próprio PEP, ex-Vereador de Jaguarari/BA, em período de carência.\nA JusBrasil indica quatro processos criminais sem confirmação de réu em tipificação crítica; o achado é inconclusivo e requer validação manual de identidade e teor.\nRecomendo a APROVAÇÃO SOB MONITORAMENTO REFORÇADO, condicionada à validação dos processos, conforme Circular BACEN 3.978/2020.",
+    "resumo": "APROVAR com Diligência Reforçada — Diverjo da aprovação simples: o titular é o próprio PEP, ex-Vereador de Jaguarari/BA, em período de carência.",
+    "decisao": "monitoramento",
+    "model": "codex-mcp-batch-2026-10-28",
+    "generated_at": "2026-10-28T16:24:33Z"
   }
 }
