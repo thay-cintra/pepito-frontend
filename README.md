@@ -14,6 +14,54 @@ camadas exigido pela Circular BCB nº 4.001/2020.
 
 ---
 
+## Você está com alguma dúvida ou problema?
+
+Veja se o seu caso já está aqui antes de investigar do zero — a maioria dos problemas reais já
+apareceu antes e tem solução conhecida.
+
+**Problema: o navegador mostra "Sua conexão não é particular" / `NET::ERR_CERT_AUTHORITY_INVALID`
+ao abrir o Pepito.**
+Solução: é um passo único de instalar o certificado interno da Cora no seu navegador. Acesse
+`http://<mesmo-host>:4174/install-cert` (ex.: `http://192-168-201-67.sslip.io:4174/install-cert`),
+baixe o `rootCA.pem` e siga o comando do seu sistema na própria página. Detalhes e mensagem pronta
+para o time em [Certificado HTTPS quebra quando o IP da VPN muda](#certificado-https-quebra-quando-o-ip-da-vpn-muda).
+
+**Problema (Windows): `Import-Certificate` falha com "Acesso negado" / `E_ACCESSDENIED`.**
+Solução: o comando da página de instalação pedia `Cert:\LocalMachine\Root`, que exige PowerShell
+como Administrador — em laptop corporativo sem privilégio de admin local, isso falha mesmo seguindo
+o passo certo. Troque por `Cert:\CurrentUser\Root` (já é o padrão atual da página) — não precisa de
+elevação, e é suficiente para o Chrome/Edge confiarem.
+
+**Problema: esse mesmo erro de certificado volta depois de ter funcionado antes.**
+Solução: o IP da VPN Cora muda a cada reconexão, e o certificado só cobre os IPs para os quais foi
+emitido. Quem administra o Pepito precisa reemitir o certificado para o IP atual (comando em
+[Certificado HTTPS quebra quando o IP da VPN muda](#certificado-https-quebra-quando-o-ip-da-vpn-muda))
+— quem já instalou o `rootCA.pem` antes não precisa reinstalar nada, só usar o novo link.
+
+**Problema: um caso na fila (Analista ou Liderança) não tem Sugestão IA.**
+Solução: a geração não é automática hoje (depende de `.tools/queue-sync.sh` estar no `crontab` —
+confira com `crontab -l`). Quem tiver a permissão `canSync` deve clicar no botão que aparece no topo
+da fila — ele mostra "Gerar Sugestão IA (N pendentes)" em cor cheia quando há casos sem sugestão.
+Ver [Dever operacional: manter a Sugestão IA em dia](#dever-operacional-manter-a-sugestão-ia-em-dia).
+
+**Problema: "Credilink/JusBrasil: pendente" mesmo depois de rodar a consulta.**
+Solução: o servidor está servindo um bundle antigo — os JSONs de dados são import estático,
+embutidos no build. Rode `npm run build` e reinicie:
+`launchctl kickstart -k gui/$(id -u)/com.cora.pepito.server`.
+
+**Problema: um draft sumiu da fila sem motivo aparente.**
+Solução: confira `camadaStatus` em `src/data/analises-salvas.json` — provavelmente já foi marcado
+como `concluido` ou `devolvido` localmente.
+
+**Problema: nenhum alerta chega no Slack do Supervisor/Integrity Guard.**
+Solução: confira se o webhook está configurado — `grep SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR .env`
+(variável ausente ou com valor errado é a causa mais comum).
+
+**Nenhum desses é o seu caso?** Veja `.tools/INCIDENT-REPORT-*.md` para o histórico completo de
+bugs já investigados (causa raiz, diagnóstico, fix) — boa chance de já ter passado por algo parecido.
+
+---
+
 ## O que o Pepito faz
 
 Para cada cadastro suspeito de PEP na fila (vindo do Retool/Athena), o Pepito:
@@ -583,16 +631,6 @@ isto é tarefa manual recorrente, não um "nice to have":
   nada). Nenhum desses casos é silencioso — o log sempre registra o motivo.
 
 ---
-
-## Troubleshooting rápido
-
-| Sintoma | Causa provável | Ação |
-|---|---|---|
-| Sugestão IA ausente para caso novo | `pareceres-*.json` regenerado mas app não rebuildado (import estático em build-time) | `npm run build` + reiniciar `com.cora.pepito.server` |
-| "Credilink/JusBrasil: pendente" mesmo após rodar consulta | Servidor rodando bundle antigo | rebuild + `launchctl kickstart -k gui/$(id -u)/com.cora.pepito.server` |
-| Draft some da fila | `camadaStatus` local desatualizado | ver `analises-salvas.json`, checar `devolvido`/`concluido` |
-| Nenhum alerta no Slack | Webhook errado/ausente | `grep SLACK_WEBHOOK_URL_PEPITO_SUPERVISOR .env` |
-| Analista vê "Sua conexão não é particular" / `NET::ERR_CERT_AUTHORITY_INVALID` | Ver seção "Certificado HTTPS quebra" abaixo — ou nunca instalou o rootCA, ou o IP da VPN mudou e o certificado ficou desatualizado | `http://<host>:4174/install-cert` (analista) ou regerar o cert (Thay, ver abaixo) |
 
 ---
 
