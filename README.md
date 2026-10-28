@@ -619,8 +619,9 @@ Pepito, é porque seu navegador ainda não confia no certificado interno da Cora
 3. Siga o passo do seu sistema (a própria página já tem o comando certo):
    - Mac: abra o Terminal e cole o comando da seção "macOS" (clique no bloco cinza pra copiar),
      depois feche e reabra o Chrome.
-   - Windows: abra o PowerShell como Administrador e cole o comando da seção "Windows", depois
-     reinicie o Chrome/Edge.
+   - Windows: abra o PowerShell comum (NÃO precisa "Executar como Administrador" — se usar, dá
+     erro "Acesso negado / E_ACCESSDENIED") e cole o comando da seção "Windows", depois reinicie
+     o Chrome/Edge.
 4. Acesse normalmente: https://192-168-201-67.sslip.io:4173
 
 Qualquer dúvida, chama a Thay.

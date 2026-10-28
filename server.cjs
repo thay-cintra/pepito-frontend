@@ -647,9 +647,10 @@ ${rootCaExists ? `<a class="btn" href="/rootCA.pem" download="rootCA.pem">⬇ Ba
 <pre onclick="navigator.clipboard.writeText(this.innerText)">sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/Downloads/rootCA.pem</pre>
 <p class="note">Clique para copiar. Feche e reabra o browser após executar.</p>
 
-<h2><span class="tag">Windows</span> PowerShell como Administrador</h2>
-<pre onclick="navigator.clipboard.writeText(this.innerText)">Import-Certificate -FilePath "$env:USERPROFILE\\Downloads\\rootCA.pem" -CertStoreLocation Cert:\\LocalMachine\\Root</pre>
-<p class="note">Clique para copiar. Reinicie o Chrome/Edge após executar.</p>
+<h2><span class="tag">Windows</span> PowerShell (sem precisar de Administrador)</h2>
+<pre onclick="navigator.clipboard.writeText(this.innerText)">Import-Certificate -FilePath "$env:USERPROFILE\\Downloads\\rootCA.pem" -CertStoreLocation Cert:\\CurrentUser\\Root</pre>
+<p class="note">Clique para copiar. Funciona em PowerShell comum (não precisa "Executar como Administrador") — instala só para o seu usuário do Windows, que já é suficiente para o Chrome/Edge confiarem. Reinicie o Chrome/Edge após executar.</p>
+<p class="note">Se preferir instalar para <strong>todos</strong> os usuários da máquina (raro — exige PowerShell como Administrador e privilégio de admin local, que laptops corporativos geralmente não liberam): troque <code>Cert:\CurrentUser\Root</code> por <code>Cert:\LocalMachine\Root</code> no comando acima.</p>
 
 <h2><span class="tag">Chrome / Edge</span> Alternativa visual</h2>
 <ol>
