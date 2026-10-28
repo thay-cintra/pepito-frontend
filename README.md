@@ -556,6 +556,34 @@ tail -f .tools/supervisor.log .tools/integrity.log
 
 ---
 
+## Dever operacional: manter a Sugestão IA em dia
+
+**Hoje a geração de Sugestão IA não é automática** — depende de alguém clicar no botão
+"Sincronizar Athena" / "Gerar Sugestão IA" na interface (topo de `/check-analista` e
+`/fila-revisao`), ou de `.tools/queue-sync.sh` estar agendado no `crontab` da máquina (ver seção
+"9. Agentes de monitoramento (cron)" — a cada 20 min, quando configurado). **Confira com
+`crontab -l` se essa linha existe antes de assumir que está automático.** Enquanto não estiver,
+isto é tarefa manual recorrente, não um "nice to have":
+
+- **Quem**: quem tiver a permissão `canSync` (`SYNC_ATHENA_OWNERS` no `.env` — hoje
+  `thay@cora.com.br` e `lucasfeller@cora.com.br` por padrão). Só essas contas veem o botão.
+- **Quando**: o próprio botão avisa — ele muda de ícone discreto ("Sincronizar Athena") para um
+  botão de cor cheia com contagem explícita ("Gerar Sugestão IA (N pendentes)") sempre que há caso
+  sem sugestão na tela aberta. Clicar assim que esse estado aparecer, não só quando lembrar.
+- **Por quê isso importa de verdade**: sem Sugestão IA, o analista/Liderança perde o rascunho
+  inicial que acelera a revisão — não é um bloqueio regulatório (a decisão sempre foi humana), mas
+  é retrabalho e lentidão evitáveis. Historicamente este é o problema que mais se repetiu nesta
+  ferramenta (ver `.tools/INCIDENT-REPORT-2026-10-28-LIDERANCA-REGENERA-TUDO.md`) — a causa raiz já
+  foi corrigida (o gerador de Liderança não perde mais pareceres prontos a cada execução), mas a
+  **falta de agendamento automático continua sendo a causa mais provável de recorrência** até o
+  cron ser efetivamente instalado.
+- **Se o clique falhar ou não resolver**: confira `.tools/queue-sync.log` — causas comuns são
+  orçamento do LiteLLM esgotado (cai para o fallback Codex CLI, que pode falhar sob pouca memória
+  na máquina) ou credenciais AWS expiradas (`.tools/queue-sync.sh` aborta com `[FATAL]` sem gerar
+  nada). Nenhum desses casos é silencioso — o log sempre registra o motivo.
+
+---
+
 ## Troubleshooting rápido
 
 | Sintoma | Causa provável | Ação |
@@ -670,4 +698,4 @@ justamente o controle que a Circular 4.001/2020 espera que seja efetivo, não s�
 
 ---
 
-**Última atualização:** 2026-10-22
+**Última atualização:** 2026-10-28
