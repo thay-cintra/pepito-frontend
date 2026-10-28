@@ -14,10 +14,29 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 LOG="$ROOT/pepito-frontend/.tools/queue-sync.log"
 
+LOCKDIR="$ROOT/pepito-frontend/.tools/.queue-sync.lock"
+
 {
   echo ""
   echo "=== $(date -Iseconds) queue-sync start ==="
   cd "$ROOT"
+
+  # Lock (mkdir é atômico, portável — macOS não tem `flock` por padrão).
+  # Necessário agora que o script roda tanto via cron (a cada poucos minutos,
+  # ver crontab) quanto via botão "Sincronizar Athena" — sem isso, duas
+  # execuções simultâneas corromperiam a escrita concorrente dos JSONs.
+  if ! mkdir "$LOCKDIR" 2>/dev/null; then
+    OLD_PID="$(cat "$LOCKDIR/pid" 2>/dev/null || echo "")"
+    if [ -n "$OLD_PID" ] && kill -0 "$OLD_PID" 2>/dev/null; then
+      echo "[SKIP] queue-sync.sh já em execução (PID $OLD_PID) — pulando este ciclo."
+      exit 0
+    fi
+    echo "[LOCK] lock órfão de PID $OLD_PID (processo morto) — reaproveitando."
+    rm -rf "$LOCKDIR"
+    mkdir "$LOCKDIR"
+  fi
+  echo $$ > "$LOCKDIR/pid"
+  trap 'rm -rf "$LOCKDIR"' EXIT
 
   # Este script é spawnado por server.cjs (launchd → node → child_process.spawn)
   # com PATH mínimo hardcoded ("/bin:/usr/bin:/usr/local/bin:$PATH"), que NÃO

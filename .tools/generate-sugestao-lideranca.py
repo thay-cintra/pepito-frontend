@@ -758,13 +758,23 @@ def main():
     items = payload["items"] if isinstance(payload, dict) else payload
     findings_all = json.loads(FINDINGS_PATH.read_text(encoding="utf-8"))
 
-    # Carrega pareceres existentes — preserva os revisados manualmente (model=manual-*)
+    # Carrega pareceres existentes — preserva TUDO que já tem texto, não só as
+    # revisões manuais. Corrigido 2026-10-28: a versão anterior só preservava
+    # entradas com "manual" no `model` e tratava qualquer outra (incluindo
+    # sugestões via LLM/Codex já corretas) como se precisasse ser regenerada
+    # do zero a cada execução — reexpondo pareceres já prontos ao mesmo risco
+    # de falha (orçamento LiteLLM esgotado / Codex CLI sob pressão de memória)
+    # a cada ciclo, e os PERDENDO de vez se a regeneração falhasse (a escrita
+    # incremental só grava o que está em `sugestoes`, que começava vazio para
+    # qualquer entrada não-manual). Mesmo padrão incremental já usado em
+    # generate-sugestao-parecer.py. Ver
+    # .tools/INCIDENT-REPORT-2026-10-28-LIDERANCA-REGENERA-TUDO.md.
     sugestoes = {}
     if OUT_PATH.exists():
-        existing = json.loads(OUT_PATH.read_text(encoding="utf-8"))
-        for did, entry in existing.items():
-            if isinstance(entry, dict) and "manual" in (entry.get("model") or ""):
-                sugestoes[did] = entry  # nunca sobrescreve revisões manuais
+        try:
+            sugestoes = json.loads(OUT_PATH.read_text(encoding="utf-8"))
+        except Exception:
+            sugestoes = {}
 
     liderancas = [c for c in items if c.get("bucket") == "CHECK_LIDERANCA"]
     print(f"Total LIDERANCA: {len(liderancas)}")
@@ -772,14 +782,17 @@ def main():
 
     for i, c in enumerate(liderancas, 1):
         did = c["draft_id"]
-        # Pula casos revisados manualmente — decisão já está correta
-        if did in sugestoes:
-            # Garante que o resumo existe nos manuais
-            if not sugestoes[did].get("resumo") and sugestoes[did].get("text"):
-                sugestoes[did]["resumo"] = _gerar_resumo(
-                    sugestoes[did]["text"], sugestoes[did].get("decisao", "monitoramento")
+        existing = sugestoes.get(did)
+        # Preserva qualquer sugestão já existente (manual ou gerada) — não
+        # regenerar para economizar orçamento/tokens e não arriscar perder uma
+        # entrada boa numa falha de regeneração.
+        if isinstance(existing, dict) and existing.get("text"):
+            if not existing.get("resumo"):
+                existing["resumo"] = _gerar_resumo(
+                    existing["text"], existing.get("decisao", "monitoramento")
                 )
-            print(f"  [{i}/{len(liderancas)}] {c['full_name_pf']:42s} → preservado (revisão manual: {sugestoes[did].get('decisao')})")
+            manual_tag = f" (revisão manual: {existing.get('decisao')})" if "manual" in (existing.get("model") or "") else ""
+            print(f"  [{i}/{len(liderancas)}] {c['full_name_pf']:42s} → preservado{manual_tag}")
             continue
         f = findings_all.get(did) or []
         if not isinstance(f, list):

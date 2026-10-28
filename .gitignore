@@ -16,3 +16,4 @@ certs/
 # Lock files transientes (fcntl.flock) do merge-write do ledger Credilink-PEP
 # — sincronização entre processos concorrentes, sem valor em git.
 *.json.lock
+.tools/.queue-sync.lock/
