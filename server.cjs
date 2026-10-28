@@ -604,6 +604,18 @@ function startServer() {
     const ROOT_CA_FILE = path.join(__dirname, "certs", "rootCA.pem");
     const rootCaExists = fs.existsSync(ROOT_CA_FILE);
 
+    // Validade real do certificado em uso — lida do próprio arquivo, nunca
+    // hardcoded (a data fica errada toda vez que o cert é reemitido, ex.:
+    // achado real 2026-10-28, rodapé ainda dizia "ago/2028" com o cert já
+    // válido até jan/2029).
+    const certValidadeLabel = (() => {
+      try {
+        const { X509Certificate } = require("crypto");
+        const validTo = new X509Certificate(fs.readFileSync(CERT_FILE)).validTo;
+        return new Date(validTo).toLocaleDateString("pt-BR", { year: "numeric", month: "short" });
+      } catch { return "data de validade não disponível"; }
+    })();
+
     const certInstallHtml = (host) => {
       const httpsHost = host.replace(`:${httpPort}`, `:${PORT}`);
       const caUrl = `http://${host}/rootCA.pem`;
@@ -650,7 +662,7 @@ ${rootCaExists ? `<a class="btn" href="/rootCA.pem" download="rootCA.pem">⬇ Ba
 <h2>Após instalar</h2>
 <p>Acesse: <a href="https://${httpsHost}">https://${httpsHost}</a></p>
 
-<footer>Certificado gerado com mkcert — válido até ago/2028 — uso interno Cora</footer>
+<footer>Certificado gerado com mkcert — válido até ${certValidadeLabel} — uso interno Cora</footer>
 </body>
 </html>`;
     };
